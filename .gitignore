@@ -1,0 +1,10 @@
+.idea
+.vscode
+__pycache__
+/auxil/
+
+
+*.synctex.gz
+*.synctex(busy)
+*.aux
+*.log

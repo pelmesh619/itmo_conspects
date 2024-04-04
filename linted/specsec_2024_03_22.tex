@@ -1,0 +1,186 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Специальные разделы \\ высшей математики}
+\fancyhead[CO,CE]{22.03.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    \vspace{3mm}
+\textit{Nota}. $Ker\ \mathcal{A}$ и $Im\ \mathcal{A}$ - подпространства $V$ ($\mathcal{A} : V \rightarrow V$)
+
+    Вообще-то $Ker\ \mathcal{A} \subset V, Im\ \mathcal{A} \subset W \ (\mathcal{A} : V \rightarrow W)$
+
+    $\dim W \leq \dim V$, тогда можно считать, что $W \subset V^\prime$ и
+    рассмотрим $\mathcal{A} : V \rightarrow V^\prime$ (где $V^\prime$ изоморфен $V$)
+
+    $Ker \mathcal{A}$ - подпространство, то есть $Ker \mathcal{A} \subset V$ и
+    $\displaystyle \Sigma c_i x_i \subset \mathcal{A}$, если $\forall x_i \in Ker \mathcal{A}$
+
+    $\displaystyle \mathcal{A} (\Sigma c_i x_i) = \Sigma c_i \mathcal{A} x_i \stackrel{x_i \in \mathcal{A}}{=} \Sigma c_i \texttt{0} = \texttt{0}$
+
+    Следствие: $Ker \mathcal{A} = \texttt{0} \Longrightarrow \mathcal{A}$ - вз.-однозн.
+
+    $\Box$ От противного:
+
+    $\sqsupset \mathcal{A}$ - не вз.-однозн., то есть $\exists x_1, x_2 \in V (x_1 \neq x_2) | \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A} (x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \in Ker \mathcal{A}$ - противоречие
+
+    \vspace{5mm}
+    \textbf{
+    \vspace{3mm}
+\textit{Nota}. Обратное также верно:}
+
+    $\mathcal{A}$ - вз.-однозн. $\Longleftrightarrow y_1 = y_2 \Longrightarrow x_1 = x_2$, так как $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 = 0$
+
+    Тогда $\texttt{0}$ является образом только $\texttt{0}$-вектора $\Longrightarrow Ker \mathcal{A} = \texttt{0}$
+
+    \vspace{3mm}
+\textit{Nota}. Также очевидно, что
+
+    $Ker \mathcal{A} = 0 \Longleftrightarrow Im \mathcal{A} = V$
+
+    $Ker \mathcal{A} = V \Longrightarrow Im \mathcal{A} = \texttt{0}$ и $\mathcal{A} = 0$
+
+    \vspace{3mm}
+\textit{Th}. $\mathcal{A} : V \rightarrow V$, тогда $\dim Ker \mathcal{A} + \dim Im \mathcal{A} = \dim V$
+
+    $\Box$ Так как $Ker \mathcal{A}$ - подпространство $V$, то можно построить дополнение до прямой суммы (взяв базисные векторы ядра, дополнить их набор до базиса $V$: $e^k_1, \dots e^k_m, e^k_{m+1}, \dots e^k_n$)
+
+    Обозначим дополнение $W$, тогда $Ker \mathcal{A} \xor W = V \Longrightarrow \dim Ker \mathcal{A} + \dim W = \dim V$
+
+    Докажем, что $W$ и $Im \mathcal{A}$ - изоморфны
+
+    $\mathcal{A} : W \rightarrow Im \mathcal{A}$
+
+    $\mathcal{A} : Ker \mathcal{A} \rightarrow \texttt{0}$
+
+    Докажем, что $\mathcal{A}$ действует из $W$ в $Im \mathcal{A}$ взаимно-однозначно
+
+    $\sqsupset \mathcal{A}$ невз.-однозн., тогда $\exists x_1, x_2 \in W (x_1 \neq x_2) | \mathcal{A}x_1 = \mathcal{A}x_2 \in Im \mathcal{A}$
+
+    $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \stackrel{\text{обозн.}}{=} x \in Ker \mathcal{A}$, но $x \neq 0$, так как $x_1 \neq x_2$
+
+    Но для прямой суммы $W \union Ker \mathcal{A} = \texttt{0}, x \ni W \union Ker \mathcal{A} \Longrightarrow$ предположение неверно
+
+    $\Longrightarrow \mathcal{A}$ - лин. вз.-однозн. $\Longrightarrow \dim W = \dim Im \mathcal{A}$
+
+    $V = W_1 \xor W_2$ найдется ЛО $\mathcal{A} : V \rightarrow V$
+
+    $W_1 = Ker \mathcal{A}, W_2 = Im \mathcal{A}$
+
+    \vspace{3mm}
+\textit{Def}. Рангом оператора $\mathcal{A}$ называется $\dim Im \mathcal{A}$: $rang \mathcal{A} \stackrel{def}{=} \dim Im \mathcal{A} (= r(\mathcal{A}) = rank \mathcal{A})$
+
+    \vspace{3mm}
+\textit{Nota}. Сравним ранг оператора с рангом его матрицы
+
+    $\mathcal{A} x = y \quad \mathcal{A} : V^n \rightarrow W^m$
+
+    $A$ - матрица $\mathcal{A}, x = x_1 e_1 + x_2 e_2 + \dots + x_n e_n, y = y_1 f_1 + \dots + y_m f_m$
+
+    $\mathcal{A}x = y \Longleftrightarrow \begin{pmatrix}
+         a_{11} & \dots & a_{1n} \\
+         \vdots & \ddots & \vdots \\
+         a_{m1} & \dots & a_{mn}
+    \end{pmatrix} \begin{pmatrix}
+         x_1 \\
+         \vdots \\
+         x_n
+    \end{pmatrix} = \begin{pmatrix}
+         y_1 \\
+         \vdots \\
+         y_m
+    \end{pmatrix}$
+
+    Или при преобразовании базиса $Ae_i = e^\prime_i$:
+
+    $\begin{pmatrix}
+         a_{11} & \dots & a_{1n} \\
+         \vdots & \ddots & \vdots \\
+         a_{m1} & \dots & a_{mn}
+    \end{pmatrix} \begin{pmatrix}
+         e_1 \\
+         \vdots \\
+         e_n
+    \end{pmatrix}^T = \begin{pmatrix}
+         e_1^\prime \\
+         \vdots \\
+         e_m^\prime
+    \end{pmatrix}$
+
+    Здесь $\begin{pmatrix}
+         e_1 \\
+         \vdots \\
+         e_n
+    \end{pmatrix}^T$ - это матрица $\begin{pmatrix}
+         e_1 & \dots & e_n
+    \end{pmatrix} = \begin{pmatrix}
+         e_{11} & e_{12} & \dots \\
+         \vdots & \vdots & \vdots \\
+         e_{n1} & e_{n2} & \dots
+    \end{pmatrix}$
+
+    \vspace{3mm}
+\textit{Nota}. Поиск матрицы $\mathcal{A}$ можно осуществить, найдя ее в \enquote{домашнем} базисе $\Set{e_i}$, то есть $A (e_1, \dots e_n) = (e_1^\prime, \dots, e_m^\prime)$
+
+    Затем, можно найти матрицу в другом (нужном) базисе, используя формулы преобразований (см. th. позже)
+
+    Тогда $Ker \mathcal{A} = K$ - множество векторов, которые решают систему
+
+    $AX = \texttt{0} \quad (\dim K = m = \dim \text{ФСР} = n - rang A)$ и при этом $\dim K = n - \dim Im \mathcal{A}$
+
+    $rang \mathcal{A} = rang A = \dim Im \mathcal{A}$
+
+    Следствия (без док-в)
+
+    1) $rang(\mathcal{AB}) \leq rang(\mathcal{A})$ (или $rang \mathcal{B}$)
+
+    2) $rang(\mathcal{AB}) \geq rang(\mathcal{A}) + rang(\mathcal{B}) - \dim V$
+
+    \vspace{3mm}
+\textit{Nota}. Рассмотрим преобразование координат, как линейный оператор $T : V^n \rightarrow V^n$ (переход из системы $Ox_i \rightarrow Ox_i^\prime$, $i = 1..n$)
+
+    $\dim Im T = n, \dim Ker T = 0 \Longrightarrow T$ - вз.-однозн.
+
+    Поставим задачу отыскания матрицы в другом базисе, используя $T_{e \to e^\prime}$
+
+    \vspace{10mm}
+
+    \textbf{2.6 Преобразование матрицы оператора при переходе к другому базису}
+
+    \vspace{3mm}
+\textit{Th}. $\mathcal{A} : V^n \rightarrow V^n$
+
+    $\Set{e_i} \stackrel{\text{об}}{=} e$ и $\Set{e^\prime_i} \stackrel{\text{об}}{=} e^\prime$ - базисы пространства $V$
+
+    $\mathcal{T} : V^n \rightarrow V^n$ - преобразование координат, то есть $Te_i = e^\prime_i$
+
+    $\sqsupset A, A^\prime$ - матрицы $\mathcal{A}$ в базисах $e$ и $e^\prime$
+
+    Тогда $A^\prime = TAT^{-1}$ ($A^\prime_{e^\prime} = T_{e\to e^\prime}AT^{-1}_{e\to e^\prime}$)
+
+    $\Box \sqsupset y = \mathcal{A}x$, где $x, y$ - векторы в базисе $e$ ($x_e = x^\prime_{e^\prime}$ - один вектор)
+
+    $y^\prime = \mathcal{A} x^\prime$, где $x^\prime, y^\prime$ - векторы в базисе $e^\prime$
+
+    $\mathcal{T}x = x^\prime, \mathcal{T}y = y^\prime$
+
+    $y = Ax$, $y^\prime = A^\prime x^\prime$, тогда $Ty = A^\prime (Tx) \quad \Big| \cdots T^{-1}$
+
+    $T^{-1}Ty = (T^{-1}A^\prime T)x$
+    
+    $Ax = y = (T^{-1}A^\prime T)x$
+
+    $A = T^{-1}A^\prime T \Longrightarrow A^\prime = TA T^{-1}$
+
+
+
+
+
+
+
+\end{document}
+
+

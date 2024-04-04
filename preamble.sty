@@ -1,0 +1,755 @@
+\ProvidesPackage{preamble}
+
+%% English-only
+% \usepackage{T1}
+% \usepackage[utf8]{inputenc}
+
+%% With Russian
+\usepackage{cmap}
+\usepackage[T2A, T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+
+\usepackage{amsthm,thmtools}
+\usepackage{amsmath,mathtools}
+\usepackage{amssymb}
+% \usepackage{libertinust1math}
+\usepackage[libertine,smallerops]{newtxmath}
+\usepackage{microtype}
+\usepackage[margin=2cm]{geometry}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{wrapfig}
+\usepackage{pdfpages}
+\usepackage{setspace}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage[skip=2pt]{caption}
+\usepackage{scalerel}
+\usepackage[Export]{adjustbox}
+\usepackage[autostyle]{csquotes}
+\usepackage{xifthen}
+\usepackage{cancel}
+\usepackage[normalem]{ulem}
+\usepackage{centernot}
+\usepackage{float}
+\usepackage{bm}
+\usepackage[shortcuts]{extdash}
+\usepackage{fancyhdr}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{fontawesome5}
+\usepackage{lipsum}
+\usepackage{ragged2e}
+\usepackage[user,lastpage]{zref}
+\usepackage{silence}
+\usepackage{datetime2}
+\usepackage{witharrows}
+\usepackage{nicematrix}
+
+%% Fix mapping for ligatures
+% https://tex.stackexchange.com/a/450394
+\input glyphtounicode
+\pdfgentounicode=1
+
+%% New random seed every build
+\usepackage{pgf}
+\pgfmathsetseed{\number\pdfrandomseed}
+
+\makeatletter
+\def\input@path{{../}}%
+\makeatother
+
+\usepackage{subfiles}
+\newcommand{\onlyinsubfile}[1]{#1}
+\newcommand{\notinsubfile}[1]{}
+%% Note: place the following lines after \begin{document} !!!
+%%%% \renewcommand{\onlyinsubfile}[1]{}
+%%%% \renewcommand{\notinsubfile}[1]{#1}
+
+\makeatletter
+\newcommand{\onlyinpreamble}[1]{% {<text>}
+    \ifx\@onlypreamble\@notprerr% after \begin{document}
+    \else% before \begin{document}
+        #1%
+    \fi}
+\makeatother
+
+%% Usage:
+%%   place "\enabletikzpreview%"
+%%   after "\documentclass[../main.tex]{subfiles}%"
+%%   in your "tikz-something.tex" subfile.
+\newcommand{\enabletikzpreview}{%
+    \onlyinpreamble{%
+        \usepackage[active,tightpage]{preview}
+        \PreviewBorder=2pt
+        \PreviewEnvironment{tikzpicture}
+    }}
+
+\usepackage{tikz}
+\usetikzlibrary{
+    arrows.meta,
+    backgrounds,
+    calc,
+    decorations.pathreplacing,
+    decorations.pathmorphing,
+    fit,
+    matrix,
+    patterns,
+    positioning,
+    shapes.misc,
+}
+\tikzstyle{every text node part}=[align=center]
+
+\usepackage{tcolorbox}
+\tcbuselibrary{most}
+% \tcbuselibrary{minted}
+
+%% Setup column types
+\usepackage{array}
+\newcolumntype{\ML}[1]{>{$}\ml{#1}<{$}}
+\newcolumntype{\MC}[1]{>{$}\mc{#1}<{$}}
+\newcolumntype{\MR}[1]{>{$}\mr{#1}<{$}}
+\newcolumntype{\ml}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{\mc}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{\mr}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
+\newcolumntype{L}{>{$}l<{$}}
+\newcolumntype{C}{>{$}c<{$}}
+\newcolumntype{R}{>{$}r<{$}}
+\newcolumntype{B}{>{$\boldmath$}c}
+\newcolumntype{Y}{>{$}X<{$}}
+\newcolumntype{\BC}{>{\boldmath$}c<{$}}
+
+%% Left-aligned equation
+\newenvironment{flusheqs}[1][]% [<array's valign>]
+    {\noindent\(\begin{array}[#1]{@{}>{\displaystyle}l@{}}}
+    {\end{array}\)\par}
+
+%% Setup makecell
+\usepackage{makecell}
+\renewcommand\theadfont{\bfseries\normalsize}
+\renewcommand\theadset{\def\arraystretch{.8}}
+
+%% Spacing above and below multicol environment
+% Default \multicolsep=12pt plus 4pt minus 3pt
+\setlength{\multicolsep}{2pt plus 6pt minus 0pt}
+
+%% Setup display glue
+% Default \abovedisplayskip=12pt plus 3pt minus 9pt
+% Default \belowdisplayskip=12pt plus 3pt minus 9pt
+% Default \abovedisplayshortskip=0pt plus 3pt
+% Default \belowdisplayshortskip=7pt plus 3pt minus 4pt
+\AtBeginDocument{
+\setlength{\abovedisplayskip}{4pt plus 8pt minus 2pt}
+\setlength{\belowdisplayskip}{8pt plus 4pt minus 6pt}
+\setlength{\abovedisplayshortskip}{0pt plus 4pt}
+\setlength{\belowdisplayshortskip}{5pt plus 5pt minus 2pt}
+}
+
+%% Setup muglue
+% Default (rel) \thickmuskip=5mu plus 5mu
+% Default (bin) \medmuskip=4mu plus 2mu minus 4mu
+% Default (op)  \thinmuskip=3mu
+\thickmuskip=4mu plus 4mu minus 1mu
+\medmuskip=3mu plus 3mu minus 2mu
+\thinmuskip=3mu
+
+%% Setup float spacings
+% Space to intext float
+\setlength{\intextsep}{6pt plus 4pt minus 2pt}
+% Space between text and arbitrary float
+\setlength{\textfloatsep}{6pt plus 4pt}
+
+%% Force TeX not to break in math mode (9999 = almost never)
+\relpenalty=9999
+\binoppenalty=9999
+
+%% Emergency stretch
+\emergencystretch=1em
+
+% %% Frame around the text area
+% \usepackage{showframe}
+% \renewcommand\ShowFrameLinethickness{0.1pt}
+% \renewcommand*\ShowFrameColor{\color{gray}}
+
+%% Setup enumitem
+% Standard lists
+\setlist{noitemsep, topsep=0pt}
+% Tasks
+\newlist{tasks}{enumerate}{1}
+\setlist[tasks]{
+    label=\arabic*.,
+    align=left,
+    left=0pt .. 15pt,
+    % left=0pt,
+    % labelsep=4pt,
+    itemsep=8pt,
+    topsep=0pt,
+}
+% Subtasks
+\newlist{subtasks}{enumerate}{1}
+\setlist[subtasks]{
+    label=(\alph*),
+    align=left,
+    left=0pt .. 18pt,
+    itemsep=2pt,
+    topsep=2pt,
+}
+% Items
+\newlist{items}{itemize}{1}
+\setlist[items]{
+    label=$\ast$,
+    left=0pt .. 10pt,
+    noitemsep,
+    topsep=0pt,
+}
+% Terms
+\newlist{terms}{itemize}{3}
+\setlist[terms]{
+    noitemsep,
+    topsep=0pt,
+    left=2pt .. 12pt,
+}
+\setlist[terms,1]{
+    label=$\ast$,
+    itemsep=2pt,
+}
+\setlist[terms,2]{
+    label=$\circ$,
+}
+\setlist[terms,3]{
+    label=\textbullet,
+}
+% Cases subtask (one subtask per case)
+\newlist{casessubtask}{enumerate}{1}
+\setlist[casessubtask]{
+    label={\TextCase\ \arabic*:},
+    align=parleft,
+    left=0pt,
+    itemsep=2pt,
+    topsep=0pt,
+}
+
+% \newenvironment{colsubtasks}[1]{% {<cols>}
+%     \begin{multicols}{#1}
+%     \begin{subtasks}
+% }{%
+%     \end{subtasks}
+%     \end{multicols}
+% }
+
+\newboolean{is-adjustbox-cframe}
+
+% Case environment (column)
+\newenvironment{case}[2][0.3\linewidth]{% [<width>]{<case>}
+    \providecommand{\TextCase}{\TextCaseEng}%
+    \ifthenelse{\boolean{is-adjustbox-cframe}}{%
+        \begin{adjustbox}{valign=t,minipage=#1,cframe=red}%
+    }{%
+        \begin{adjustbox}{valign=t,minipage=#1}%
+    }%
+    \RaggedRight%
+    \strut\TextCase\ #2:\par
+}{%
+    \end{adjustbox}%
+}
+
+% Case subtasks environment (column with subtasks for the case)
+\newenvironment{casesubtasks}[2][0.3\linewidth]{% [<width>]{<case>}
+    \begin{case}[#1]{#2}
+    \begin{subtasks}[topsep=0pt]
+}{%
+    \end{subtasks}
+    \end{case}%
+}
+
+%% Back-reference from footnote
+\usepackage{footnotebackref}
+% https://tex.stackexchange.com/a/78438
+\makeatletter
+\LetLtxMacro{\BHFN@Old@footnotemark}{\@footnotemark}
+\renewcommand*{\@footnotemark}{%
+    \refstepcounter{BackrefHyperFootnoteCounter}%
+    \xdef\BackrefFootnoteTag{bhfn:\theBackrefHyperFootnoteCounter}%
+    \label{\BackrefFootnoteTag}%
+    \BHFN@Old@footnotemark
+}
+\makeatother
+
+%% Bookmarks
+% Note: use [numbered] option to obtain numbered sections
+\usepackage{bookmark}
+% \setcounter{tocdepth}{2}
+
+%% Setup hyperref
+\usepackage{hyperref}
+\hypersetup{
+    breaklinks=true,% allow links to break over lines
+    pdfstartview=,% empty value leads to using viewer's defaults
+    pdfauthor={Konstantin Chukharev},
+    pdfsubject={Discrete Math},
+    allcolors=black,
+    urlcolor=blue,
+    linkcolor=red,
+    colorlinks=true,
+}
+
+%% Enable correct jumping to figures when referencing
+% \usepackage[all]{hypcap}
+
+%%%%%%%%%%%%
+%% MACROS %%
+%%%%%%%%%%%%
+
+%% Abbreviations
+\newcommand{\eg}{\textit{e.g.},\ }
+\newcommand{\ie}{\textit{i.e.}\ }
+\newcommand{\wLoG}[1][\ ]{\textit{w.l.o.g.}#1}
+\newcommand{\WLoG}[1][\ ]{\textit{W.l.o.g.}#1}
+\newcommand{\wrt}{\textit{w.r.t.}\ }
+\newcommand{\etc}{\textit{etc}.\@\spacefactor=\the\sfcode`\c}
+
+%% Missing big greek letters
+\providecommand{\Alpha}{\mathrm{A}}
+\providecommand{\Beta}{\mathrm{B}}
+\providecommand{\Epsilon}{\mathrm{E}}
+\providecommand{\Zeta}{\mathrm{Z}}
+\providecommand{\Iota}{\mathrm{I}}
+\providecommand{\Kappa}{\mathrm{K}}
+\providecommand{\Mu}{\mathrm{M}}
+\providecommand{\Nu}{\mathrm{N}}
+\providecommand{\Tau}{\mathrm{T}}
+\providecommand{\Chi}{\mathrm{X}}
+
+%% Current font size
+\makeatletter
+\newcommand\thefontsize{\f@size}
+\makeatother
+
+%% Cat symbol
+\newcommand\CatSymbol[1]{% {<height>}
+    \includegraphics[height=#1]{img/Cat.pdf}}
+\newcommand\Cat[1][\thefontsize pt]{% [<height>]
+    \smash[b]{\raisebox{-0.2\height}{\CatSymbol{#1}}}}
+
+%% Leaf symbol
+\newcommand{\Leaf}{%
+    \scalerel*{\text{\faLeaf}}{A}}
+
+%% Bird symbol
+% \newcommand{\Bird}{%
+%     \scalerel*{\text{\faBird}}{A}}
+
+%% Seedling symbol
+\newcommand{\Seedling}{%
+    \scalerel*{\text{\faSeedling}}{A}}
+
+%% External link symbol
+\newcommand{\Link}{%
+    \scalerel*{\text{\faExternalLink*}}{A}}
+
+%% Superscript link (href)
+\newcommand{\Href}[1]{% {<url>}
+    \textsuperscript{\kern1pt\href{#1}{\Link}}}
+
+%% Circle symbol
+\let\oldcircle\circle
+\renewcommand\circle{%
+    \mathord{\scalerel*{\tikz \draw circle[radius=0.7ex];}{A}}}
+
+%% Triangle symbol
+% \let\oldtriangle\triangle
+% \renewcommand\triangle{%
+%     \mathord{\scalerel*{\tikz \node[draw, isosceles triangle, isosceles triangle apex angle=60, minimum width=1ex, shape border rotate=90] {};}{A}}}
+
+%% Partial function arrow with stroke
+\makeatletter
+\@ifpackageloaded{libertinust1math}{
+    % Just use symbol from libertinust1math (symbol)
+    \DeclareMathSymbol{\pto}{\mathrel}{symbols}{"4E}
+}{
+    % https://tex.stackexchange.com/a/47146
+    \newcommand{\pto}{}% just for safety
+    \newcommand{\pgets}{}% just for safety
+    \DeclareRobustCommand{\pto}{\mathrel{\mathpalette\p@to@gets\to}}
+    \DeclareRobustCommand{\pgets}{\mathrel{\mathpalette\p@to@gets\gets}}
+    \newcommand{\p@to@gets}[2]{%
+        \ooalign{\hidewidth$\m@th#1\mapstochar\mkern5mu$\hidewidth\cr$\m@th#1\to$\cr}}
+}
+\makeatother
+
+%% Double forward slash
+\makeatletter
+\@ifpackageloaded{libertinust1math}{
+    \newcommand\dslash{/\mkern-3mu/}
+}{
+    \newcommand\dslash{/\mkern-5mu/}
+}
+\makeatother
+
+%% 1-multicolumn shortcut
+\newcommand\mc[2][c]{\multicolumn{1}{#1}{#2}}
+
+%% Two dots for integer intervals: [1..C] = [1 \dd C]
+% \newcommand{\twodots}{\mathinner{\ldotp\ldotp}}
+\newcommand\twodots{\mathinner{..}}
+\let\dd\twodots
+
+%% Range operation [low .. high]
+% Note: outer {}-braces ensure non-breakable range
+\newcommand\Range[2]{% {<low>}{<high>}
+    {[#1 \twodots #2]}}
+
+%% Boolean vector
+\newcommand\boolvec[1]{\Bool^{\card{#1}}}
+\let\BoolVec\boolvec
+
+%% Some sets
+\newcommand\Bool{\mathbb{B}}
+\newcommand\Natural{\mathbb{N}}
+\newcommand\NaturalPlus{\Natural^{+}}
+\newcommand\NaturalZero{\Natural_{0}}
+\newcommand\Integer{\mathbb{Z}}
+\newcommand\PositiveInteger{\Integer^{+}}
+\newcommand\Rational{\mathbb{Q}}
+\newcommand\Real{\mathbb{R}}
+
+%% Big operators factory
+\newcommand\newbigop[2]{% {<name>}{<symbol>}
+    \expandafter\newcommand\csname big#1\endcsname{%
+        #2\limits}
+    \expandafter\newcommand\csname big#1nolim\endcsname{%
+        #2\nolimits}
+    \expandafter\newcommand\csname big#1clap\endcsname[1]{% {<sub>}
+        #2\limits_{\mathclap{##1}}}
+    \expandafter\newcommand\csname big#1smashl\endcsname[1]{% {<sub>}
+        \smashoperator[l]{#2_{##1}}}
+    \expandafter\newcommand\csname big#1smashr\endcsname[1]{% {<sub>}
+        \smashoperator[r]{#2_{##1}}}
+}
+%% Big operators
+\newbigop{land}{\bigwedge}
+\newbigop{lor}{\bigvee}
+\newbigop{union}{\bigcup}
+\newbigop{intersection}{\bigcap}
+\newbigop{xor}{\bigoplus}
+\newbigop{sum}{\sum}
+
+%% Set declaration syntax (from mathtools manual)
+\providecommand\given{}
+\newcommand\GivenSymbol[1][]{%
+    \nonscript\:
+    #1\vert\allowbreak
+    \nonscript\:
+    \mathopen{}
+}
+\DeclarePairedDelimiterX\Set[1]\{\}{%
+    \renewcommand\given{\GivenSymbol[\delimsize]}
+    #1
+}
+
+%% Pair and tuple declaration syntax
+\DeclarePairedDelimiter{\Pair}\langle\rangle
+\DeclarePairedDelimiter{\Triple}\langle\rangle
+\DeclarePairedDelimiter{\Tuple}\lparen\rparen
+\DeclarePairedDelimiter{\Vector}\langle\rangle
+
+%% Rounding up/down (ceil/floor) operations
+\DeclarePairedDelimiter{\Ceil}\lceil\rceil
+\DeclarePairedDelimiter{\Floor}\lfloor\rfloor
+\DeclarePairedDelimiter{\Round}\lbrack\rbrack
+
+%% Union and intersection operators
+\newcommand\union{\cup}
+\newcommand\intersection{\cap}
+
+%% Xor operator
+\newcommand\xor{\oplus}
+\newcommand\lxor{\mathbin{\veebar}}
+
+%% (mod n) operator
+\newcommand\Mod[1]{(\mathrm{mod}\ #1)}
+
+%% Entailment operator
+\newcommand\entails{\vDash}
+\newcommand\nentails{\nvDash}
+
+%% Empty and universal sets
+\renewcommand\emptyset{\varnothing}
+\newcommand\universalset{\mathfrak{U}}
+
+%% Powerset operation (via "Weierstrass p")
+\newcommand{\powerset}[1]{% {<arg>}
+    \mathcal{P}\mkern-1mu({#1})}
+
+%% Set cardinality operation
+\DeclarePairedDelimiter{\card}\lvert\rvert
+
+%% Absolute value and norm operations
+% Note: use "physics" package instead
+% \DeclarePairedDelimiter{\abs}\lvert\rvert
+% \DeclarePairedDelimiter{\norm}\lVert\rVert
+
+%% Relation matrix operation
+\DeclarePairedDelimiter{\relmatrix}\lVert\rVert
+
+%% Binary relation operator
+\newcommand\rel[1][R]{\mathrel{#1}}
+\newcommand\nrel[1][R]{\centernot{\rel[#1]}}
+
+%% Composition of relations (⨾)
+\newcommand\relcomp{\mathbin{;}}
+
+%% Congruence operator
+\newcommand{\congruent}[1][]{% [<modulo>]
+    \mathrel{\equiv_{#1}}}
+% \newcommand{\ncongruent}[1][]{% [<modulo>]
+%     \mathrel{\centernot\equiv_{#1}}}
+
+%% Divisibility operator
+\newcommand{\divides}{\mathrel{|}}
+\newcommand{\ndivides}{\centernot\divides}
+\newcommand{\divby}{%
+    \mathrel{\vbox{\baselineskip.65ex\lineskiplimit0pt%
+        \hbox{.}\hbox{.}\hbox{.}}}}
+\newcommand{\ndivby}{%
+    \centernot\divby}
+
+%% Equivalence class operation
+\newcommand\equivclass[2][R]{% [<relation>]{<element>}
+    [#2]_{#1}}
+
+%% Quotient (partition) operation
+\newcommand{\quotient}[2][R]{% [<relation>]{<set>}
+    {#2/_{\!#1}}}
+
+%% Empty, identity and universal relations
+\newcommand\emptyrel[1]{\mathcal{E}_{#1}}
+\newcommand\idrel[1]{\mathrm{id}_{#1}}
+\newcommand\universalrel[1]{\mathfrak{U}_{#1}}
+
+%% Overlines
+\newcommand\overlinesmashed[1]{%
+    \vphantom{#1}\smash{\overline{#1}}}
+\newcommand\doverline[1]{%
+    \overline{\overline{#1}}}
+\newcommand\doverlinesmashed[1]{%
+    \vphantom{#1}\smash{\doverline{#1}}}
+
+%% Equalizer
+% \makeatletter
+% \newcommand{\equalizeto}[3]{% {<symbol>}{<base>}{<type>}
+%     #3{\mathpalette\equalize@to{{#1}{#2}}}}
+% \newcommand{\equalize@to}[2]{\equalize@@to#1#2}
+% \newcommand{\equalize@@to}[3]{%
+%     \begingroup
+%     \settowidth\dimen@{$\m@th#1#3$}% measure #3 in the current style
+% %\vcenter{\hbox{\resizebox{\dimen@}{!}{$\m@th#1#2$}}}%
+%     \makebox[\dimen@]{$\m@th#1#2$}%
+%     \endgroup
+% }
+% \makeatother
+
+%% Symmetric difference operator
+\newcommand{\symdiff}{%
+    \mathbin{\triangle}}
+% \newcommand\symdiff{%
+%     \equalizeto{\triangle}{\intersection}{\mathbin}}
+%%% %% Set difference operator
+%%% % \let\oldsetminus\setminus
+%%% % \renewcommand\setminus{%
+%%% %     \equalizeto{\oldsetminus}{\intersection}{\mathbin}}
+%% Cartesian product operator
+% \let\oldtimes\times
+% \renewcommand\times{%
+%     \equalizeto{\oldtimes}{\intersection}{\mathbin}}
+%% Composition operator
+% \let\oldcirc\circ
+% \renewcommand\circ{%
+%     \equalizeto{\oldcirc}{\intersection}{\mathbin}}
+
+
+%% Setminus operator
+% \newcommand\rsetminus{\mathbin{\mathpalette\rsetminusaux\relax}}
+% \newcommand\rsetminusaux[2]{%
+%     \mspace{-4mu}
+%     \raisebox{\rsmraise{#1}\depth}{\rotatebox[origin=c]{-20}{$#1\smallsetminus$}}
+%     \mspace{-4mu}
+% }
+% \newcommand\rsmraise[1]{%
+%   \ifx#1\displaystyle .8\else
+%     \ifx#1\textstyle .8\else
+%       \ifx#1\scriptstyle .6\else
+%         .45%
+%       \fi
+%     \fi
+%   \fi
+% }
+% \let\oldsetminus\setminus
+% \renewcommand\setminus{%
+%     \equalizeto{\rsetminus}{\intersection}{\mathbin}}
+
+%% Struts
+\newcommand\TopStrut{\rule{0pt}{2.6ex}}
+\newcommand\BotStrut{\rule[-1.2ex]{0pt}{0pt}}
+
+%% Single-line arrows for implication and iff
+\def\implies{\mathrel{\rightarrow}}
+\def\impliedby{\mathrel{\leftarrow}}
+\def\iff{\mathrel{\leftrightarrow}}
+
+%% Fancy letters (Note: only UPPERCASE)
+\newcommand{\fancy}[1]{%
+    \ensuremath{\mathcal{#1}}}
+\newcommand{\fancybold}[1]{%
+    \texorpdfstring%
+        {\ensuremath{\bm{\mathcal{#1}}}}%
+        {#1}}
+
+%% Headers usage:
+% Make[Double]Header[Homework/Test/other]{Rus/Eng}
+% e.g. \MakeDoubleHeaderHomeworkRus
+
+%% Header factory
+\newcommand{\MakeHeader}[3]{% {<height>}{<left>}{<right>}
+    \setlength{\headheight}{#1}
+    \renewcommand{\headrulewidth}{0.5pt}
+    \fancyhead{}
+    \fancyhead[L]{\textbf{#2}}
+    \fancyhead[R]{\textbf{#3}}
+}
+\newcommand{\MakeSingleHeader}[2]{% {<left>}{<right>}
+    \MakeHeader{15pt}{#1}{#2}
+}
+\newcommand{\MakeDoubleHeader}[4]{% {<left-first>}{<left-second>}{<right-first>}{<right-second>}
+    \MakeHeader{30pt}{#1\\#2}{#3\\#4}
+}
+
+%% Eng headers
+% Single header
+\newcommand{\MakeSingleHeaderEng}[1]{% {<left>}
+    \MakeSingleHeader{#1}{\TextDiscreteMathEng, \TextDateEng}}
+% Double header
+\newcommand{\MakeDoubleHeaderEng}[2]{% {<left-first>}{<left-second>}
+    \MakeDoubleHeader{#1}{#2}{\TextDiscreteMathEng}{\TextDateEng}}
+% Single Homework header
+\newcommand{\MakeSingleHeaderHomeworkEng}[2]{% {<number>}{<title>}
+    \MakeSingleHeaderEng{\TextHomeworkEng\ \##1: #2}}
+% Double Homework header
+\newcommand{\MakeDoubleHeaderHomeworkEng}[2]{% {<number>}{<title>}
+    \MakeDoubleHeaderEng{\TextHomeworkEng\ \##1}{#2}}
+% Single Test header
+\newcommand{\MakeSingleHeaderTestEng}[2]{% {<number>}{<title>}
+    \MakeSingleHeaderEng{\TextTestEng\ \##1: #2}}
+% Double Test header
+\newcommand{\MakeDoubleHeaderTestEng}[2]{% {<number>}{<title>}
+    \MakeDoubleHeaderEng{\TextTestEng\ \##1}{#2}}
+
+%% Eng defs
+\newcommand{\TextDiscreteMathEng}{%
+    \fancybold{D}iscrete % space!
+    \fancybold{M}%
+    \kern-.05em%
+    \raisebox{-0.5ex}{$\forall$}%
+    th%
+}
+\newcommand{\TextHomeworkEng}{%
+    \fancybold{H}\kern-.03em omework%
+}
+\newcommand{\TextTestEng}{%
+    \fancybold{T}\kern-.12em est%
+}
+\newcommand{\TextCheatsheetEng}{%
+    \fancybold{C}heatsheet%
+}
+\newcommand{\TextQuestionsetEng}{%
+    \fancybold{Q}\kern-.03em uestion Set%
+}
+\newcommand{\TextCaseEng}{%
+    Case%
+}
+
+%% Rus headers
+% Single header
+\newcommand{\MakeSingleHeaderRus}[1]{% {<left>}
+    \MakeSingleHeader{#1}{\TextDiscreteMathRus, \TextDateRus}}
+% Double header
+\newcommand{\MakeDoubleHeaderRus}[2]{% {<left-first>}{<left-second>}
+    \MakeDoubleHeader{#1}{#2}{\TextDiscreteMathRus}{\TextDateRus}}
+% Single Homework header
+\newcommand{\MakeSingleHeaderHomeworkRus}[2]{% {<number>}{<title>}
+    \MakeSingleHeaderRus{\TextHomeworkRus\ \##1: #2}}
+% Double Homework header
+\newcommand{\MakeDoubleHeaderHomeworkRus}[2]{% {<number>}{<title>}
+    \MakeDoubleHeaderRus{\TextHomeworkRus\ \##1}{#2}}
+% Single Test header
+\newcommand{\MakeSingleHeaderTestRus}[2]{% {<number>}{<title>}
+    \MakeSingleHeaderRus{\TextTestRus\ \##1: #2}}
+% Double Test header
+\newcommand{\MakeDoubleHeaderTestRus}[2]{% {<number>}{<title>}
+    \MakeDoubleHeaderRus{\TextTestRus\ \##1}{#2}}
+
+%% Rus defs
+\newcommand{\TextDiscreteMathRus}{%
+    \fancybold{D}искретная математика%
+}
+\newcommand{\TextHomeworkRus}{%
+    \fancybold{D}\kern-.03em омашнее задание%
+}
+\newcommand{\TextTestRus}{%
+    \fancybold{K}\kern-.06em онтрольная работа%
+}
+\newcommand{\TextCheatsheetRus}{%
+    Шпаргалка%
+}
+\newcommand{\TextCaseRus}{%
+    Вариант%
+}
+
+%% Icons
+\newcommand{\IconFall}{%
+    \raisebox{-0.3ex}{\Leaf}}
+\newcommand{\IconSpring}{%
+    \raisebox{-0.05ex}{\Seedling}}
+
+%% Math color
+% Source: https://tex.stackexchange.com/a/261480/216486
+\makeatletter
+\def\mathcolor#1#{\@mathcolor{#1}}
+\def\@mathcolor#1#2#3{%
+    \protect\leavevmode
+    \begingroup
+        \color#1{#2}#3%
+    \endgroup
+}
+\makeatother
+
+%% Hidden (boxed) math
+\newcommand{\mathhide}[1]{% {<arg>}
+    \boxed{\phantom{#1}}}
+
+
+\newcommand\letsymbol{\mathord{\sqsupset}}
+
+
+\DeclareMathOperator{\rank}{rank}
+\makeatletter
+\newenvironment{sqcases}{%
+  \matrix@check\sqcases\env@sqcases
+}{%
+  \endarray\right.%
+}
+\def\env@sqcases{%
+  \let\@ifnextchar\new@ifnextchar
+  \left\lbrack
+  \def\arraystretch{1.2}%
+  \array{@{}l@{\quad}l@{}}%
+}
+\makeatother
+
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+

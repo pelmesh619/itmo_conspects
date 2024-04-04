@@ -1,0 +1,311 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Математический анализ}
+\fancyhead[CO,CE]{06.03.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    Дифференциал
+
+    \textit{\vspace{3mm}
+\textit{Th}.} $\displaystyle z : D \rightarrow \Real, \ D \subset \Real^2, \ \exists$
+    непрерывные $\displaystyle \frac{\partial z}{\partial x}$, $\displaystyle \frac{\partial z}{\partial y}$
+
+    Тогда функция представима $\displaystyle \Delta z = A dx + B dy + \alpha \Delta x + \beta \Delta y$, где $\displaystyle A, B \in \Real, \ \alpha, \beta = $ б. м.
+
+    $\displaystyle \Box \quad \Delta z = z (x + \Delta x, y + \Delta y) - z (x, y) = z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y) +
+    z(x + \Delta x, y) - z(x, y)$
+
+    \vspace{5mm}
+    \textbf{
+    По теореме Лагранжа:}
+
+    $\displaystyle z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y) = z^\prime_y(\eta) \Delta y$
+
+    $\displaystyle z(x + \Delta x, y) - z(x, y) = z^\prime_x(\xi)\Delta x$
+
+    \vspace{5mm}
+    \textbf{
+    По теореме о представлении функции ее пределом:}
+
+    $\displaystyle z^\prime_x(\xi) = \lim_{\xi \to x (\Delta x \to 0)} z^\prime_x(\xi) + \alpha$
+
+    $\displaystyle z^\prime_y(\eta) = \lim_{\eta \to y} z^\prime_y(\eta) + \beta$
+
+    Так как $\displaystyle z^\prime_x(\xi), z^\prime_y(\eta)$ непрерывны, то $\displaystyle \lim_{\xi \to x} z^\prime_x(\xi) = \frac{\partial z}{\partial x}, \lim_{\eta \to y} z^\prime_y(\eta) = \frac{\partial z}{\partial y}$
+
+    Тогда $\displaystyle \Delta z = \left(\frac{\partial z}{\partial x} + \alpha\right) \Delta x + \left(\frac{\partial z}{\partial y} + \beta\right)\Delta y =
+    \Delta z = \frac{\partial z}{\partial x}\Delta x + \frac{\partial z}{\partial y}\Delta y + \alpha \Delta x + \beta \Delta y$
+
+    Заметим, что $\displaystyle \alpha \Delta x$ и $\displaystyle \beta \Delta y$ - б. м. порядка выше, чем $\displaystyle \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2} \Longleftrightarrow$
+
+    $\displaystyle 1 = \sqrt{\left(\frac{\Delta x}{\Delta \rho}\right)^2 + \left(\frac{\Delta y}{\Delta \rho}\right)^2} \quad |\frac{\Delta x}{\Delta \rho}| \leq 1, |\frac{\Delta y}{\Delta \rho}| \leq 1$
+
+    Сравним $\displaystyle \frac{\alpha \Delta x}{\Delta \rho} =$ б. м. огр. $\displaystyle \stackrel{\Delta \rho \to 0}{\to} 0$, $\displaystyle \frac{\beta \Delta y}{\Delta \rho} \stackrel{\Delta \rho \to 0}{\to} 0$
+
+    Функция, приращение которой представимо $\displaystyle \Delta z = \frac{\partial z}{\partial x}\Delta x + \frac{\partial z}{\partial y}\Delta y + o(\Delta \rho)$, называется дифференцируемой в точке $\displaystyle (x, y)$,
+    линейная часть приращения называется полным дифференциалом
+
+    Обозначение: $\displaystyle dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$
+
+    \vspace{3mm}
+\textit{Ex}: $\displaystyle z = 3xy^2 + 4cosxy$
+
+    $\displaystyle \frac{\partial z}{\partial x} \stackrel{y = const}{=} 3y^2 - 4sinxy \cdot y$
+
+    $\displaystyle \frac{\partial z}{\partial y} \stackrel{x = const}{=} 6xy - 4sinxy \cdot x$
+
+    $\displaystyle dz = (3y^2 - 4ysinxy)dx + (6xy - 4xsinxy)dy$
+    
+    \vspace{8mm}
+
+    4.3 Правила дифференцирования
+
+    \textit{\vspace{3mm}
+\textit{Nota}}: При нахождении $\displaystyle \frac{\partial z}{\partial x_i}$ ($x_i$ - какая-либо переменная) дифференцирование проводится по правилам для функции одной переменной ($x_j \neq x_i$ считаются константами)
+
+    Выпишем более сложные правила
+    
+    \vspace{3mm}
+
+    1* Сложная функция
+
+    \vspace{3mm}
+\textit{Mem}: $\displaystyle (f(g(x)))^\prime = f^\prime(g(x)) \cdot g^\prime(x)$
+
+    \textit{\vspace{3mm}
+\textit{Def}}: Сложная функция двух переменных: $\displaystyle z = z(u, v), u = u(x, y), v = v(x, y)$
+
+    Формула: Найдем $\displaystyle frac{\partial z(u, v)}{\partial x}$ и $\displaystyle frac{\partial z(u, v)}{\partial y}$
+
+    \textit{\vspace{3mm}
+\textit{Th}}: $\displaystyle z = z(u, v), \ u(x, y), v(x, y)$ непрерывно дифференцируемы по $\displaystyle x, y$
+
+    Тогда $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x}$
+    $\displaystyle \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial y} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial y}$
+
+    $\displaystyle \Box \quad z$ дифференцируема $\displaystyle \Longleftrightarrow \Delta z = \frac{\partial z}{\partial u} \Delta u + \frac{\partial z}{\partial v} \Delta v + \alpha \Delta u + \beta \Delta v$
+
+    Зададим приращение $\displaystyle \Delta x$ (представление $\displaystyle \Delta z$ не должно измениться)
+
+    $\displaystyle \Delta_x z = \frac{\partial z}{\partial u} \Delta_x u + \frac{\partial z}{\partial v} \Delta_x v + \alpha \Delta_x u + \beta \Delta_x + v \quad \Big| \cdot \Delta x$
+
+    $\displaystyle \frac{\Delta_x z}{\Delta x} = \frac{\partial z}{\partial u} \frac{\Delta_x u}{\Delta x} + \frac{\partial z}{\partial v} \frac{\Delta_x v}{\Delta x} + \alpha \frac{\Delta_x u}{\Delta x} + \beta \frac{\Delta_x v}{\Delta x} \quad \Big| \cdot \Delta x$
+
+    \vspace{5mm}
+    \textbf{
+    По теореме Лагранжа:} $\displaystyle \frac{\partial u}{\partial x}(\xi) \stackrel{\Delta x \to 0}{\rightarrow} \frac{\partial u}{\partial x}$
+
+    В пределе: $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial x}$
+
+    Аналогично для $\displaystyle \frac{\partial z}{\partial y}$
+
+    \textit{\vspace{3mm}
+\textit{Nota}}: Интересен случай $\displaystyle z = z(x, u, v)$, где $\displaystyle u = u(x), v = v(x)$
+
+    Здесь $\displaystyle z$ является функцией одной переменной $\displaystyle x$
+
+    Обобщая правило на случай трех переменных, можем записать формулу полной производной, которая имеет смысл
+
+    $\displaystyle \frac{dz}{dx} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial x} +
+    \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} +
+    \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x} =
+    \frac{\partial z}{\partial x} +
+    \frac{\partial z}{\partial u} \cdot \frac{du}{dx} +
+    \frac{\partial z}{\partial v} \cdot \frac{dv}{dx}
+    $\displaystyle 
+
+    \vspace{3mm}
+\textit{Ex}: Пусть $\displaystyle w = w(x, y, z)$ - функция координат $\displaystyle x = x(t), y = y(t), z = z(t)$ - функции времени
+
+    $\displaystyle w$ явно не зависит от времени, тогда $\displaystyle \frac{dw}{dt} = w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z$, где $\displaystyle v_x$ - проекция скорости
+
+    Если $\displaystyle w = w(x, y, z, t)$, то $\displaystyle \frac{dw}{dt} = \frac{\partial w}{\partial t} w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z$
+    
+    \vspace{3mm}
+    
+    2* Неявная функция одной переменной: пусть $\displaystyle F(x, y(x)) = 0$ - неявное задание $\displaystyle y = y(x)$
+
+    Найдем $\displaystyle dF = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy = 0$
+
+    Отсюда $\displaystyle \frac{dy}{dx} = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}$
+    
+    \vspace{8mm}
+
+    4.4 Производная высших порядков
+
+    \textit{\vspace{3mm}
+\textit{Nota}}: Пусть $\displaystyle z = z(x, y)$ дифференцируема и $\displaystyle \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}$ также дифференцируемы, при этом в общем случае
+    $\displaystyle \frac{\partial z}{\partial x} = f(x, y), \frac{\partial z}{\partial y} = g(x, y)$
+
+    Тогда определены вторые частные производные
+    
+    \vspace{3mm}
+
+    \textit{\vspace{3mm}
+\textit{Def}}: $\displaystyle \frac{\partial^2 z}{\partial x^2} \stackrel{def}{=} \frac{\partial}{\partial x} \frac{\partial z}{\partial x}$
+
+    $\displaystyle \frac{\partial^2 z}{\partial y^2} = \frac{\partial}{\partial y} \frac{\partial z}{\partial y}$ - чистые производные
+
+
+    $\displaystyle \frac{\partial^2 z}{\partial x \partial y} = \frac{\partial}{\partial y} \frac{\partial z}{\partial x}$
+
+    $\displaystyle \frac{\partial^2 z}{\partial y \partial x} = \frac{\partial}{\partial x} \frac{\partial z}{\partial y}$ - смешанные производные
+
+    \vspace{3mm}
+
+    \textit{\vspace{3mm}
+\textit{Th}.} $\displaystyle z = z(x, y)$, функции $\displaystyle z(x, y), z^\prime_x, z^\prime_y, z^{\prime\prime}_{xy}, z^{\prime\prime}_{yx}$ определены и непрерывны в $\displaystyle \stackrel{o}{U}(M(x, y))$
+
+    Тогда $\displaystyle z^{\prime\prime}_{xy} = z^{\prime\prime}_{yx}$
+
+    $\displaystyle \Box \quad$ Введем вспомогательную величину
+
+    $\displaystyle \Phi = (z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y)) - (z(x, y + \Delta y) - z(x, y))$
+
+    Обозначим $\displaystyle \phi(x) = z(x, y + \Delta y) - z(x, y)$
+
+    Тогда $\displaystyle \Phi = \phi(x + \Delta x) - \phi(x)$ - дифференцируема, непрерывна, как комбинация
+
+    По теореме Лагранжа $\displaystyle \phi(x + \Delta x) - \phi(x) = \phi^\prime(\xi) \Delta x = (z^\prime_x(\xi, y + \Delta y) - z^\prime_x(\xi, y)) \Delta x$, где $\displaystyle \xi \in (x; x + \Delta x)$
+
+    Здесь $\displaystyle z^\prime_x$ дифференцируема также на $\displaystyle [y, y + \Delta y]$
+
+
+    Тогда по теореме Лагранжа $\displaystyle \exists \eta \in (y, y + \Delta y) \ | \ z^\prime_x(\xi, y + \Delta y) - z^\prime_x(\xi, y) = z^{\prime\prime}_{xy} (\xi, \eta) \Delta y$
+
+    Таким образом $\displaystyle \Phi = z^{\prime\prime}_{xy} (\xi, \eta) \Delta x \Delta y$
+
+    Перегруппируем $\displaystyle \Phi$, далее аналогично для $\displaystyle z^{\prime\prime}_{yx}$
+
+    Тогда $\displaystyle z^{\prime\prime}_{xy} (\xi, \eta) \Delta x \Delta y = \Phi = z^{\prime\prime}_{yx} (\xi^\prime, \eta^\prime) \Delta x \Delta y$
+
+    \vspace{8mm}
+
+    4.5 Дифференциалы
+    
+    \vspace{3mm}
+\textit{Mem}. Полный дифференциал (1-ого порядка) функции $\displaystyle z = z(x, y)$
+
+    $\displaystyle dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$ - сумма частных дифференциалов
+
+    \vspace{3mm}
+\textit{Mem} 2: Инвариантность формы первого дифференциала функции одной переменной
+
+    $\displaystyle dy(x) = y^\prime(x)dx \stackrel{x = \phi(t)}{=} y^\prime(t)dt$
+
+    \vspace{3mm}
+    
+    \textit{\vspace{3mm}
+\textit{Th}.} Инвариантность полного дифференциала первого порядка.
+
+    $\displaystyle z = z(u, v), \quad u = u(x, y), \quad v = v(x, y)$ - дифференциалы
+
+    Тогда $\displaystyle dz = \frac{\partial z}{\partial u}du + \frac{\partial z}{\partial v} dv = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$
+
+    $\displaystyle \Box \quad dz = \frac{\partial z}{\partial u} \left(\frac{\partial u}{\partial x} dx + \frac{\partial u}{\partial y} dy\right) +
+    \frac{\partial z}{\partial v} \left(\frac{\partial v}{\partial x} dx + \frac{\partial v}{\partial y} dy\right) =
+    \left(\frac{\partial z}{\partial u} \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial x}\right) dx +
+    \left(\frac{\partial z}{\partial u} \frac{\partial u}{\partial y} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial y}\right) dy =
+    \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$
+
+
+    \vspace{3mm}
+\textit{Mem}: $\displaystyle d^2 y(x) \stackrel{def}{=} d(dy(x)) = y^{\prime\prime}(x) dx^2 \neq y^{\prime\prime}(t) dt^2$
+
+    \vspace{3mm}
+    
+    \textit{\vspace{3mm}
+\textit{Def}}: $\displaystyle z = z(x, y)$ - дифференцируема и $\displaystyle dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy$ - дифференцируемая функция
+
+    \vspace{5mm}
+    \textbf{
+    Тогда второй полный дифференциал:}
+
+    $\displaystyle d^2 z \stackrel{def}{=} d(dz)$
+
+    Формула: $\displaystyle d^2 z = d\left(\frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy\right) = (z^\prime_x dx + z^\prime_y dy)^\prime_x dx + (z^\prime_x dx + z^\prime_y dy)^\prime_y dy =
+    (z^\prime_x dx)^\prime_x dx + (z^\prime_y dy)^\prime_x dx + (z^\prime_x dx)^\prime_y dy + (z^\prime_y dy)^\prime_y dy =
+    (z^\prime_x)^\prime_x (dx)^2 + (z^\prime_y)^\prime_x dxdy + (z^\prime_x)^\prime_y dydx + (z^\prime_y)^\prime_y (dy)^2 =
+    \frac{\partial^2 z}{\partial x^2} (dx)^2 + 2 \frac{\partial^2 z}{\partial x \partial y} dxdy + \frac{\partial^2 z}{\partial y^2} (dy)^2$
+
+    \textit{\vspace{3mm}
+\textit{Nota}}: Заметим формальное сходство с биномом Ньютона: $\displaystyle a^2 + 2ab + b^2 = (a + b)^2$
+
+    Введем условное обозначение $\displaystyle \frac{\partial^2}{\partial x^2} + 2 \frac{\partial^2}{\partial x \partial y} + \frac{\partial^2}{\partial y^2} = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2$
+
+    Тогда $\displaystyle d^2 z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z$, здесь $\displaystyle \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2$ - оператор второго полного дифференцирования
+
+    $\displaystyle d^n z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^n z$ - дифференциал $\displaystyle n$-ого порядка
+
+    \textit{\vspace{3mm}
+\textit{Nota}}: Можно ли утверждать, что $\displaystyle d^2 z(x, y) = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z \stackrel{x = x(u, v), y = y(u, v)}{=} \left(\frac{\partial}{\partial u} + \frac{\partial}{\partial v}\right)^2 z$ ???
+
+    Нет, нельзя ($d^2 z$ не инвариантен при замене)
+
+    Покажем, что не выполняется в простом случае: $\displaystyle z  = z(x, y) = z(x(t), y(t))$ - параметризация.
+    Геометрически, это выбор пути в области $\displaystyle D$ от точки $\displaystyle M_0(x_0, y_0)$ до точки $\displaystyle M(x, y)$
+
+    Итак
+
+    $\displaystyle d(dz) \stackrel{z - \text{Ф}_1\text{П}}{=} (dz)^\prime_t dt =
+    \left(\frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y}dy\right)^\prime_t dt
+    \stackrel{dx(t) = \frac{dx}{dt}dt, dy(t) = \frac{dy}{dt}dt}{=}
+    \left(\frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}\right)^{\prime}_t dt^2 =
+    \left(\frac{\partial z}{\partial x}\frac{dx}{dt}\right)^{\prime}_t dt^2 + \left(\frac{\partial z}{\partial y}\frac{dy}{dt}\right)^{\prime}_t dt^2 =
+    \left(\left(\frac{\partial z}{\partial x}\right)^{\prime}_t\frac{dx}{dt} + \frac{\partial z}{\partial x}\left(\frac{dx}{dt}\right)^{\prime}_t\right) dt^2 +
+    \left(\left(\frac{\partial z}{\partial y}\right)^{\prime}_t\frac{dy}{dt} + \frac{\partial z}{\partial y}\left(\frac{dy}{dt}\right)^{\prime}_t\right) dt^2 =
+    \left(\frac{\partial^2 z}{\partial x^2} \left(\frac{dx}{dt}\right)^2 + \frac{\partial z}{\partial x} \frac{d^2 x}{dt^2}\right) dt^2 +
+    \left(\frac{\partial^2 z}{\partial y^2} \left(\frac{dy}{dt}\right)^2 + \frac{\partial z}{\partial y} \frac{d^2 y}{dt^2}\right) dt^2 +
+    \left(\frac{\partial^2 z}{\partial x \partial y}\frac{dy}{dt}\frac{dx}{dt} + \frac{\partial^2 z}{\partial y \partial x}\frac{dx}{dt}\frac{dy}{dt}\right) dt^2 =
+    \frac{\partial^2 z}{\partial x^2} dx^2 + \frac{\partial z}{\partial x} d^2 x +
+    \frac{\partial^2 z}{\partial y^2} dy^2 + \frac{\partial z}{\partial y} d^2 y +
+    2 \frac{\partial^2 z}{\partial x \partial y}dydx =
+    \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z \frac{\partial z}{\partial x} d^2 x + \frac{\partial z}{\partial y} d^2 y
+    $\displaystyle 
+
+    $\displaystyle \begin{cases}
+        x = mt + x_0 \\
+         y = nt + y_0
+    \end{cases}$ - линейная параметризация
+
+    Lab: Дать инвариантность при линейной параметризации
+
+    Причем, это свойство верно для $\displaystyle d^n z$, то есть если $\displaystyle \begin{cases}
+        x = mt + x_0 \\
+         y = nt + y_0
+    \end{cases}$ (например), то
+
+    $\displaystyle d^n z \stackrel{z = z(t)}{=} z^{(n)}(t)dt$
+
+    \vspace{8mm}
+    
+    4.6 Формула Тейлора
+
+    \vspace{3mm}
+\textit{Mem}: $\displaystyle f(x) = f(x_0) + \frac{f^\prime(x_0)}{1!}(x - x_0) + \dots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n +
+    \begin{sqcases}
+        o((x - x_0)^n) - \text{Пеано}\\
+        \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1} - \text{Лагранжа}
+    \end{sqcases}$
+
+    \vspace{5mm}
+    \textbf{
+    В дифференциалах:}
+
+    $\displaystyle f(x) = f(x_0) + \frac{df(x_0)}{1!} + \frac{d^2 f(x_0)}{2!} + \dots + \frac{d^n f(x_0)}{n!} +$  остаток
+
+    Формула Тейлора для $\displaystyle z = z(x, y)$ в окрестности $\displaystyle M_0(x_0, y_0)$ (как раньше $\displaystyle \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$)
+
+    $\displaystyle z(M = \stackrel{o}{U}(M_0)) = z(M_0) + \frac{dz(M_0)}{1!} + \dots + \frac{d^n z(M_0)}{n!} + o((\Delta \rho)^n)$
+
+    \textit{\vspace{3mm}
+\textit{Nota}}. \textit{\vspace{3mm}
+\textit{Th}.} Формула выше верна, если $\displaystyle z = z(x, y)$ - непрерывна со своими частными производными до $\displaystyle n + 1$ порядка
+    включительно в некоторой окрестности $\displaystyle U_\delta(M_0(x_0, y_0))$, где $\displaystyle M(x, y) \in U_\delta(M_0)$
+
+
+\end{document}
