@@ -19,18 +19,24 @@
 
         1) Дробление на $[x_{i-1}, x_i]$ длиной $\Delta x$
 
-        2) Выбор средней точки $M_i(\xi_i, \eta_i)$, по значению $z(M_i)$ строим элементарный параллелепипед объемом
+        2) Выбор средней точки $M_i(\xi_i, \eta_i)$, по значению $z(M_i)$ строим элемент. параллелепипед объемом
         $\nu_i = z(M_i) \Delta x_i \Delta y_i \approx V_{\text{малого цилиндра}}$
 
-        3) Интеграл суммы $\displaystyle v_i = \Sigma_{i=1}^n \nu_i = \Sigma z(M_i) \Delta x_i \Delta y_i$
+        3) Интеграл суммы
 
-        4) Если $\exists \lim v_n \in \Real$, не зависящий от ранга, типа дробления и т.д. при $n \rightarrow \infty$ и
+        $\displaystyle v_i = \Sigma_{i=1}^n \nu_i = \Sigma z(M_i) \Delta x_i \Delta y_i$
+
+        4) Если $\exists \lim v_n \in \Real$, не зависящий от типа дробления и т.д. при $n \rightarrow \infty$ и
         $\tau = \max \Delta x_i, \Delta y_i \to 0$, то $\displaystyle \lim_{n\to\infty} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
+
+
 
         \vspace{3mm}
 \textit{Mem}. $\displaystyle \int_a^b f(x) dx$
 
         $f(x) : [a, b] \rightarrow \Real^+$
+
+        \vspace{10mm}
 
         1) Дробление на элементы $P_i$ прямыми $x = const, y = const$, $S_{P_i} = \Delta x_i \Delta y_i$ (дали $dx$, $dy$)
 
@@ -39,6 +45,7 @@
         3) Интеграл суммы $\displaystyle \sigma_n = \Sigma_{i=1}^n f(\xi_i) \Delta x_i$
 
         4) $\displaystyle \lim_{n\to\infty} \sigma_n = \int^b_a f(x) dx$
+
     \end{multicols}
 
     \vspace{3mm}
