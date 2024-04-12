@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Специальные разделы \\ высшей математики}
+\fancyhead[CO,CE]{12.04.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    Th. $\mathcal{A}: V^n \to V^n, \mathcal{A} = \mathcal{A}^* \ \Longrightarrow \ \exists \Set{e_i}^n_{i=1}, e_1$ -
+    собственные вектора $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
+
+    $\Box \ \supsqset e_1$ - собственный вектор $\mathcal{A}$
+
+    $e_1$ найдется, если $\mathcal{A}x = \lambda x$ имеет нетривиального решение \ \Longleftrightarrow \
+    $\det(\mathcal{A} - \lambda I) = 0$ \ \stackrel{\mathcal{A}\text{ - самосопр.}}{\Longrightarrow} \ $\exists \lambda \in \Real$
+
+    Для вектора $e_1$ строим инвариантное подпространство $V_1 \perp e_1$ (см. лемму), $\dim V_1 = n - 1$
+
+    В подпространстве $V_1$ $\mathcal{A}$ действует как самосопряженный и имеет собственный вектор $e_2 \perp e_1$.
+    Для $e_2$ строим $V_2 \perp e_2, e_1$
+
+    Затем, $V_3, V_4, V_5, \dots,$ в котором, найдя $e_i$, ортогональный всем предыдущим
+
+    Составили ортогональный базис из $e_i$, который можно нормировать
+
+    $\Box$
+
+    Nota. Чтобы упорядочить построение базиса, в котором $V_i$ может брать $\max \lambda_i$
+
+    Nota. Из теоремы следует, что самосопряженный оператор диагонализируется: $\Sigma$ алг. крат. $ = n$ (степень уравнения), а $\Sigma$ геом. крат. $= \dim \Set{e_1, \dots, _n} = n$
+
+
+    Разложение самосопряж. оператора в спектр:
+
+    $x \in V^n \quad \Set{e_i}_{i=1}^n$ - базис из собственных векторов $\mathcal{A}$ (ортонорм.)
+
+    $x = x_1 e_1 + \dots + x_n e_n = (x, e_1) e_1 + \dots + (x, e_n) e_n = \overset{n}{\underset{i = 1}{\Sigma}} (x, e_i) e_i$
+
+    Def. Оператор $P_i x = (x, e_i) e_i$ называется проектором на одномерное пространство, порожденное $e_i$ (линейная оболочка)
+
+    Свойства:
+
+    1) $P_i^2 = P_i$ (более того $P^m_i = P_i$)
+
+    2) $P_i P_j = 0$
+
+    3) $P_i = P_i^* \quad ((P_i x, y) \stackrel{?}{=} (x, P_i y)) \Longleftrightarrow (P_i x, y) = ((x, e_i) e_i, y) = (x, e_i) (e_i, y) = (x, (y, e_i) e_i) = (x, P_i y)$
+
+    Итак, если $\mathcal{A}: V^n \to V^n$ - самосопряженный и $\Set{e_i}$ - ортонормированный базис собственных векторов $\mathcal{A}$, то
+
+    $x = \overset{n}{\underset{i = 1}{\Sigma}} P_i x = \overset{n}{\underset{i = 1}{\Sigma}} (x, e_i) e_i$
+
+    $\mathcal{A} x \stackrel{y = \Sigma (y, e_i) e_i}{=} \overset{n}{\underset{i = 1}{\Sigma}} (\mathcal{A}x, e_i) e_i =
+    \overset{n}{\underset{i = 1}{\Sigma}} (x, \mathcal{A}e_i) e_i = \overset{n}{\underset{i = 1}{\Sigma}} (x, \lambda_i e_i) e_i =
+    \overset{n}{\underset{i = 1}{\Sigma}} \lambda_i (x, e_i) e_i = \overset{n}{\underset{i = 1}{\Sigma}} \lambda_i P_i x$
+
+    $\Longleftrightarrow \mathcal{A} = \overset{n}{\underset{i = 1}{\Sigma}} \lambda_i P_i$ - спектральное разложение $\mathcal{A}$,
+    спектр $= \Set{\lambda_1, \dots, \lambda_n \ | \ \lambda_i \leq \dots \leq \lambda_n}$
+
+    Ex.
+
+    $y = y_1 e_1 + y_2 e_2 = (y, e_1) e_1 + (y, e_2) e_2 = (\mathcal{A}x, e_1) e_1 + (\mathcal{A}x, e_2) e_2 = \lambda_1 x_1 e_1 + \lambda_2 x_2 e_2$
+
+    \vspace{10mm}
+
+    \textbf{2.9 Ортогональный оператор}
+
+    Mem. Орт. оператор $T: V^n \to V^n \overset{def}{\Longleftrightarrow} \forall$ о/н базиса матрица $T$ - ортогональная $T^{-1} = T^T$
+
+    Nota. Иначе, $T$ - ортогональный оператор \Longleftrightarrow $T^{-1} = T^*$ \Longrightarrow $T T^* = I$
+
+    Def. $T$ - ортог. оператор, если $(T_x, T_y) = (x, y)$
+
+    Следствие: $\|Tx\| = \|x\|$, то есть $T$ сохраняет расстояние
+
+    Nota. Ранее в теореме об изменении матрицы $A$ при преобразовании координат $T$ - ортогональный оператор
+
+    Это необязательно, то есть можно переходить в другой произвольный базис (док-во теоремы позволяет)
+
+    Диагонализация самосопряженного оператора:
+
+    Дана матрица $A_f$
+
+    1) Находим $\lambda_1, \dots, \lambda_n$
+
+    2) Находим $e_1, \dots e_n$ - ортогональный базис собственных векторов
+
+    3) Составляем $T = \begin{pmatrix}e_{11} & \dots & e_{1n} \\ \vdots & \ddots & \vdots \\ e_{n1} & \dots & e_{nn}\end{pmatrix}$ - матрица поворота базиса
+
+    4) Находим $T_{e\to f}A_f T_{f\to e} = A_e$ - диагональная
+
+    Таким образом диагонализация самосопряженного $\mathcal{A}$ - это нахождение композиции поворотов и симметрий,
+    как приведение пространства к главным направлением
+
+    \clearpage
+
+    \textbf{3 Билинейные и квадратичные формы}
+
+    \vspace{10mm}
+
+    \textbf{3.1 Билинейные}
+
+    Def. $x, y \in V^n \quad$ Отображение $\mathcal{B}: V^n \to \Real$ (обозн. $\mathcal{B}(x, y)$)
+    называется билинейной формой, если выполнены
+
+    1) $\mathcal{B}(\lambda x + \mu y, z) = \lambda \mathcal{B}(x, z) + \mu \mathcal{B}(y, z)$
+
+    2) $\mathcal{B}(x, \lambda y + \mu z) = \lambda \mathcal{B}(x, y) + \mu \mathcal{B}(x, z)$
+
+    Ex.
+
+    1) $\mathcal{B}(x, y) \stackrel{\text{в } E^n_\Real}{=} (x, y)$
+
+    2) $\mathcal{B}(x, y) = P_y x$ - проектор $x$ на $y$
+
+    Матрица Б.Ф.
+
+    Th. $\Set{e_i}_{i=1}^n$ - базис $V_n$, $u, v \in V^n$. Тогда $\mathcal{B}(u, v) =
+    \overset{n}{\underset{j = 1}{\Sigma}}\overset{n}{\underset{i = 1}{\Sigma}} b_{ij} u_i v_j$, где $b_{ij} \in \Real$
+
+    $\Box \ \begin{matrix}u = u_1 e_1 + \dots + u_n e_n \\ v = v_1 e_1 + \dots + v_n e_n\end{matrix} \quad
+    \mathcal{B}(u, v) = \mathcal{B}(\overset{n}{\underset{i = 1}{\Sigma}} u_i e_i, \overset{n}{\underset{j = 1}{\Sigma}} v_j e_j) =
+    \overset{n}{\underset{i = 1}{\Sigma}} u_i \mathcal{B}(e_i, \overset{n}{\underset{j = 1}{\Sigma}} v_j e_j) =
+    \overset{n}{\underset{i = 1}{\Sigma}} u_i (\overset{n}{\underset{j = 1}{\Sigma}} v_j \mathcal{B}(e_i, e_j)) = \overset{\text{обозн. } \mathcal{B}(e_i, e_j) = b_{ij}}{=}
+    \overset{n}{\underset{i = 1}{\Sigma}} u_i \overset{n}{\underset{j = 1}{\Sigma}} v_j b_{ij} = \overset{n}{\underset{i = 1}{\Sigma}} \overset{n}{\underset{j = 1}{\Sigma}} u_i v_j b_{ij}$
+
+    $\Box$
+
+    Nota. Составим матрицу из $\mathcal{B}(e_i, e_j)$
+
+    $B = \begin{pmatrix}b_{11} & \dots & b_{1n} \\ \vdots & \ddots & \vdots \\ b_{n1} & \dots & b_{nn}\end{pmatrix}$
+
+    Def. Если
+
+    1) $\mathcal{B}(u, v) = \mathcal{B}(v, u)$, то $\mathcal{B}$ - симметричная
+
+    2) $\mathcal{B}(u, v) = -\mathcal{B}(v, u)$, то $\mathcal{B}$ - антисимметричная
+
+    3) $\mathcal{B}(u, v) = \overline{\mathcal{B}(v, u)}$, то $\mathcal{B}$ - кососимметричная (в $\mathcal{C}$)
+
+    Def. $rang \mathcal{B}(u, v) \stackrel{def}{=} rang B$
+
+    Nota.
+
+    1) $\mathcal{B}$ называется невырожденной, если $rang \mathcal{B} = n$
+
+    2) $rang \mathcal{B}_e = rang \mathcal{B}_{e^\prime} $ ($e, e^\prime$ - различные базисы $V^n$), то есть $rang \mathcal{B}$ инвариантно относительно преобразования $e \to e^\prime$
+
+    Ex. $\mathcal{B}(u, v) \stackrel{\text{ск. пр.}}{=} (u, v)$
+
+    $\begin{matrix}u = u_1 e_1 + u_2 e_2 \\ v = v_1 e_1 + v_2 e_2\end{matrix}$, тогда $\mathcal{B}(e_i, e_j) = \stackrel{\text{об}}{=} b_{ij} = (e_i, e_j)$
+
+    Таким образом, $B = \begin{pmatrix}(e_1, e_1) & (e_1, e_2) \\ (e_2, e_1) & (e_2, e_2)\end{pmatrix}$ - матрица Грама
+
+    Ex. $\begin{matrix}u(t) = 1 + 3t \\ v(t) = 2 - t\end{matrix}$, $\Set{e_i} = (1, t)$, $\mathcal{B}(u, v) = (u, v) = \int_{-1}^1 uv dt$
+
+    Тогда, $B = \begin{pmatrix}\int_{-1}^1 dt & \int_{-1}^1 t dt \\ \int_{-1}^1 t dt & \int_{-1}^1 t^2 dt\end{pmatrix} = \begin{pmatrix}2 & 0 \\ 0 & \frac{2}{3}\end{pmatrix}$
+
+\end{document}
+
