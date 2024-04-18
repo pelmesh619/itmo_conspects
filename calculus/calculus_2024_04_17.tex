@@ -99,9 +99,9 @@
     2) \begin{multicols}{2}
         I рода
 
-        \vspace{5mm}
+        $\int_{L} f(x, y) dl \stackrel{dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|}{=\joinrel=\joinrel=\joinrel}$
 
-        $\int_{L} f(x, y) dl \stackrel{dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|}{=\joinrel=\joinrel=\joinrel} \int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
+        $\int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
 
         II рода
 
@@ -122,7 +122,7 @@
 
     2) $\int_{AB} (x + y) dx + (x + y) dy = \begin{bmatrix}x \uparrow^3_1, y \uparrow^5_1 \\
     y = 2x - 1, x = \frac{y + 1}{2} \\
-    dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 (\frac{y + 1}{2} + y) dy =
+    dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 (\frac{y + 1}{2} + y) dy = \\
     (\frac{3x^2}{2} - x) \Big|_1^3 + \frac{1}{2} (\frac{3y^2}{2} + y) \Big|_1^5 = 10 + 20 = 30$
 
     Th. Формула Грина
@@ -139,7 +139,7 @@
     \iint_D \frac{\partial Q}{\partial x} dxdy - \iint_D \frac{\partial P}{\partial y} dxdy =
     \int^\beta_\alpha dy \int_{x=x_1(y)}^{x=x_2(y)} \frac{\partial Q}{\partial x} dx -
     \int^b_a dx \int_{y=y_1(x)}^{y=y_2(x)} \frac{\partial P}{\partial y} dy =
-    \int^\beta_\alpha (Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)})dy - \int^b_a (P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)})dx =
+    \int^\beta_\alpha (Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)})dy - \int^b_a (P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)})dx = \\
     \int_\alpha^\beta (Q(x_2(y), y) - Q(x_1(y), y)) dy - \int_a^b (P(x, y_2(x)) - P(x, y_1(x))) dx =
     \int_{NST}Q dy - \int_{NMT} Q dy - \int_{MTS} P dx + \int_{MNS}Pdx =
     \underset{\oint_{K^+}Qdy}{\undergroup{\int_{NST} Qdy + \int_{TMN} Qdy}} +
