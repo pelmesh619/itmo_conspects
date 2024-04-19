@@ -8,20 +8,17 @@
 
 
 \begin{document}
-    
-    \vspace{5mm}
-    \textbf{\vspace{3mm}
-\textit{Nota}. В строгом определении интегральная сумма строится так:}
+    \Nota В строгом определении интегральная сумма строится так:
 
-    $\overset{\smile}{M_{i-1}M_i}$ - элементарная дуга
+    $\displaystyle \overset{\smile}{M_{i-1}M_i}$ - элементарная дуга
 
-    $\Delta l_i$ - длина элемента
+    $\displaystyle \Delta l_i$ - длина элемента
 
-    $\Delta s_i$ - длина стягивающей дуги
+    $\displaystyle \Delta s_i$ - длина стягивающей дуги
 
-    $\Delta l_i \approx \Delta s_i$
+    $\displaystyle \Delta l_i \approx \Delta s_i$
 
-    $M_{\text{ср.}}(\xi_i, \eta_i)$ - ср. точка элемента
+    $\displaystyle M_{\text{ср.}}(\xi_i, \eta_i)$ - ср. точка элемента
 
     \[\sigma_n = \overset{n}{\underset{i = 1}{\Sigma}} f(\xi_i, \eta_i) \Delta s_i\]
 
@@ -31,25 +28,23 @@
 
     Вдоль пути $\overset{\smile}{AB}$ действует сила $\overrightarrow{F} = (P(x, y), Q(x, y))$
 
-    Найдем элементарную работу $dA = \overrightarrow{F}_{\text{ср.}} d\overrightarrow{s}$, где $d\overrightarrow{s}$ - элементарное приращение
+    Найдем элементарную работу $\displaystyle dA = \overrightarrow{F}_{\text{ср.}} d\overrightarrow{s}$, где $d\overrightarrow{s}$ - элементарное приращение
 
     $d\overrightarrow{s} = (dx, dy) = (\cos\alpha ds, \sin\alpha ds)$
 
-    $\overrightarrow{F}_{\text{ср.}}$ - значение силы на эл. участке в какой-либо его точке
+    $\displaystyle \overrightarrow{F}_{\text{ср.}}$ - значение силы на эл. участке в какой-либо его точке
 
     Тогда. $dA = (P(x, y), Q(x, y)) \cdot (dx, dy) = P(x, y)dx + Q(x, y)dy$
 
     $\displaystyle A = \int_{AB} dA = \int_{AB} Pdx + Qdy$ - интеграл II рода (в проекциях)
 
-    \vspace{3mm}
-\textit{Nota}. В проекциях, потому что $F_x = P, F_y = Q$, таким образом скалярное произведение записано в проекциях
+    \Nota В проекциях, потому что $\displaystyle F_x = P, F_y = Q$, таким образом скалярное произведение записано в проекциях
 
     При этом часто рассматривают по отдельности
 
     $\displaystyle \int_{AB} f(x, y) dx$ и $\displaystyle \int_{AB} g(x, y) dy$
 
-    \vspace{3mm}
-\textit{Nota}. Связь интегралов I и II рода
+    \Nota Связь интегралов I и II рода
 
     $\displaystyle \int_L Pdx + Qdy = \int_L (P, Q)(dx, dy) = \int_L (P, Q) (\cos\alpha, \cos\beta) \underset{\approx dl}{\undergroup{ds}} =
     \int_L (P\cos\alpha + Q\cos\beta)dl$
@@ -63,12 +58,9 @@
     Тогда $\displaystyle \int_L Pdx + Qdy \stackrel{\text{пред. в вект. форме}}{=\joinrel=} \int_L \overrightarrow{F}\overrightarrow{\tau} dl =
     \int_L \overrightarrow{F}\underset{\text{ориент. эл. дуги}}{\undergroup{\overrightarrow{dl}}}$
 
-    \vspace{5mm}
-    \textbf{
-    Свойства:}
+    Свойства:
 
-    \vspace{3mm}
-\textit{Nota}. Свойства, не зависящие от прохода дуги, аналогичны свойствам определенного интеграла
+    \Nota Свойства, не зависящие от прохода дуги, аналогичны свойствам определенного интеграла
 
     Направление обхода.
 
@@ -82,12 +74,11 @@
         $\displaystyle \int_{AB}Pdx + Qdy = -\int_{BA}Pdx + Qdy$
     \end{multicols}
 
-    \vspace{3mm}
-\textit{Def}. Часто рассматривают замкнутую дугу, называемую контур. Тогда интегралы обозначаются
+    \Def Часто рассматривают замкнутую дугу, называемую контур. Тогда интегралы обозначаются
 
-    $\oint_K f dl$ и $\oint_K Pdx + Qdy$.
+    $\displaystyle \oint_K f dl$ и $\displaystyle \oint_K Pdx + Qdy$.
 
-    Если $K$ (контур) обходят против ч. с., то обозн. $\oint_{K^+}$
+    Если $K$ (контур) обходят против ч. с., то обозн. $\displaystyle \oint_{K^+}$
 
     Вычисление. (Сведение к $\displaystyle \int_a^b dx$ или $\displaystyle \int_\alpha^\beta dy$ или $\displaystyle \int_\tau^T dt$)
 
@@ -96,7 +87,7 @@
     \begin{cases}
         x = \varphi(t) \\
         y = \psi(t)
-    \end{cases} $\varphi, \psi \in C^1_{[\tau, T]}$
+    \end{cases} $\displaystyle \varphi, \psi \in C^1_{[\tau, T]}$
 
     \begin{matrix}
         A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
@@ -121,8 +112,7 @@
 
     \end{multicols}
 
-    \vspace{3mm}
-\textit{Ex}. Дуга $L$ - отрезок прямой от $A(1, 1)$ до $B(3, 5)$
+    \Ex Дуга $L$ - отрезок прямой от $A(1, 1)$ до $B(3, 5)$
 
     1) $\displaystyle \int_{AB} (x + y) dl = \begin{bmatrix}AB: \frac{x - 1}{2} = \frac{y - 1}{4} \\
     \text{или} y = 2x - 1, x \in [1, 3] \\
@@ -135,12 +125,11 @@
     dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 (\frac{y + 1}{2} + y) dy = \\
     (\frac{3x^2}{2} - x) \Big|_1^3 + \frac{1}{2} (\frac{3y^2}{2} + y) \Big|_1^5 = 10 + 20 = 30$
 
-    \vspace{3mm}
-\textit{Th}. Формула Грина
+    \Th Формула Грина
 
-    $D \subset R^2$ - прав. $\uparrow Ox, \uparrow Oy$
+    $\displaystyle D \subset R^2$ - прав. $\uparrow Ox, \uparrow Oy$
 
-    $\Gamma_D$ - гладкая замкнутая кривая
+    $\displaystyle \Gamma_D$ - гладкая замкнутая кривая
 
     В области $D$ действует $\overrightarrow{F} = (P(x, y), Q(x, y))$ - непрерывные дифференциалы
 

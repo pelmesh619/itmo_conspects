@@ -10,7 +10,7 @@
 \begin{document}
     Теорема: $\displaystyle J^\prime_\alpha = \left(\int^b_a f(x, \alpha)dx\right)^\prime_\alpha = \int^b_a f^\prime_\alpha(x, \alpha)dx)$
 
-    Ex:
+    \Ex
 
     $\displaystyle I(\alpha) = \int^{+\infty}_0 e^{-x} \frac{sin\alpha x}{x}dx$
     $\displaystyle I^\prime_\alpha(\alpha) = \int^{+\infty}_0 (e^{-x} \frac{sin\alpha x}{x})^\prime_\alpha dx = \int^{+\infty}_0 e^{-x} \frac{1}{x} x cos\alpha x dx =
@@ -23,7 +23,7 @@
     $\displaystyle I(0) = \int^{+\infty}_0 e^{-x} \frac{sin 0 * x}{x}dx = 0 \Longrightarrow C = 0$
     Таким образом, $\displaystyle I(\alpha) = (\int^{+\infty}_0 e^{-x} \frac{sin\alpha x}{x} dx)^\prime_\alpha = arctg(\alpha)$
 
-    Ex: Гамма-функция
+    \Ex Гамма-функция
 
     \[\Gamma(\alpha) = \int^{+\infty}_0 x^{\alpha - 1} e^{-x} dx \quad (\alpha > 0)\]
 
@@ -47,63 +47,61 @@
 
     $\Gamma(n + 1) = n!$
 
-    Lab: Посмотреть, как обобщается понятие факториала на вещественные числа:
+    \Lab Посмотреть, как обобщается понятие факториала на вещественные числа:
 
     \includegraphics[height=70mm]{images/calculus_2024_02_28_1}
 
-    \vspace{20mm}
+    \clearpage
 
-    \textbf{4. Функция нескольких переменных (ФНП)}
+    \section{4. Функция нескольких переменных (ФНП)}
 
-    \textbf{4.1. Определение}
+    \section{4.1. Определение}
 
-    \vspace{5mm}
-
-    Nota: Дадим определение ФНП
+    \Nota Дадим определение ФНП
 
     \includegraphics[height=90mm]{images/calculus_2024_02_28_2}
 
     $\forall M(x, y) \exists! z \in \Real : z = f(x, y) \Longleftrightarrow z = f(x, y)$ - функция двух переменных
 
-    Def: Окрестность точки $M_0(x_0, y_0)$
+    \Def Окрестность точки $M_0(x_0, y_0)$
 
     $U_\delta (M_0) = \Set{(x, y) \in Oxy : (x - x_0)^2 + (y - y_0)^2 < \delta^2, \delta > 0 \text{ - радиус}}$
 
     $\stackrel{o}{U}_\delta (M_0)$ - выколотая
 
-    Nota: $\Delta x = x - x_0, \Delta y = y - y_0$, одновременное стремление $\Delta x, \Delta y \rightarrow 0$
+    \Nota $\Delta x = x - x_0, \Delta y = y - y_0$, одновременное стремление $\Delta x, \Delta y \rightarrow 0$
     можно заменить $\Delta \pho = \sqrt{(x - x_0)^2 + (y - y_0)^2} \rightarrow 0$\\[1\baselineskip]
 
 
-    Def: $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \exists \delta > 0 (\delta = \delta(\varepsilon)) | \forall M \in \stackrel{o}{U}_\delta(M_0) \text{ } |z(x, y) - L| < \varepsilon$
+    \Def $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \exists \delta > 0 (\delta = \delta(\varepsilon)) | \forall M \in \stackrel{o}{U}_\delta(M_0) \text{ } |z(x, y) - L| < \varepsilon$
 
     $M_0$ - точка сгущения и $x_0, y_0 \in \Real$ (здесь)
 
-    Nota: На плоскости $Oxy$ возможно стремление $M \rightarrow M_0$ по разным путям $F(x, y) = 0$ (уравнение кривой)
+    \Nota На плоскости $Oxy$ возможно стремление $M \rightarrow M_0$ по разным путям $F(x, y) = 0$ (уравнение кривой)
 
     При этом значение предела вдоль разных путей могут отличаться (аналог односторонних пределов)
 
     Предел в определении - предел в общем смысле: его существование и значение не зависит от пути
 
-    Def: $z = f(x, y)$ называется непрерывной в точке $M_(x_0, y_0)$, если $z = f(x_0, y_0) = \lim_{M \to M_0} z(x, y)$
+    \Def $z = f(x, y)$ называется непрерывной в точке $M_(x_0, y_0)$, если $z = f(x_0, y_0) = \lim_{M \to M_0} z(x, y)$
 
     $z$ непрерывна на $D$, если $z$ непрерывна $\forall (x, y) \in D$
 
     \includegraphics[height=90mm]{images/calculus_2024_02_28_3}
 
-    Nota: Справедливы теоремы Вейерштрасса и Больцано-Коши для функции, непрерывной в заданной области
+    \Nota Справедливы теоремы Вейерштрасса и Больцано-Коши для функции, непрерывной в заданной области
 
     $z = f(x, y)$ непрерывна на $\overline{D} = D \union \Gamma_D$, где $\overline{D}$ - закрытая область, $D$ - открытая область, $\Gamma_D$ - граница
 
-    Th. W1 - $z = f(x, y)$ ограничена на $\overline{D}$
+    \ThN{W1} $z = f(x, y)$ ограничена на $\overline{D}$
 
-    Th. W2 - $\exists$ наибольшее и наименьшее $z \in \overline{D}$
+    \ThN{W2} $\exists$ наибольшее и наименьшее $z \in \overline{D}$
 
-    Th. B-C1 - на границе $\Gamma_D$ $z$ принимает значения разных знаков $\Longrightarrow \exists M \in \overline{D} : z(M) = 0$
+    \ThN{B-C1} на границе $\Gamma_D$ $z$ принимает значения разных знаков $\Longrightarrow \exists M \in \overline{D} : z(M) = 0$
 
-    Th. B-C1 - $z(x, y)$ принимает все значения от $z_{\text{наим}}$ до $z_{\text{наиб}}$ \\[1\baselineskip]
+    \ThN{B-C1} $z(x, y)$ принимает все значения от $z_{\text{наим}}$ до $z_{\text{наиб}}$ \\[1\baselineskip]
 
-    4.2 Производные функции двух переменных
+    \section{4.2. Производные функции двух переменных}
 
     Путям $l_1, l_2$ соответствуют кривые $L_1, L_2$ на поверхности $z = f(x, y)$.
 
@@ -119,13 +117,13 @@
 
     Определили частную производную $z$ по $y$
 
-    Lab: Дать определение $\displaystyle \frac{\partial z}{\partial x}$
+    \Lab Дать определение $\displaystyle \frac{\partial z}{\partial x}$
 
-    Nota: $\Delta_y z = z(x, y + \Delta y) - z(x, y)$ и  $\Delta_y z$ называют частным приращением
+    \Nota $\Delta_y z = z(x, y + \Delta y) - z(x, y)$ и  $\Delta_y z$ называют частным приращением
 
-    Def: Полное приращение $\Delta z \stackrel{def}{=} z(x + \Delta x, y + \Delta y) - z(x, y)$
+    \Def Полное приращение $\Delta z \stackrel{def}{=} z(x + \Delta x, y + \Delta y) - z(x, y)$
 
-    Nota! $\Delta z \neq \Delta_x z + \Delta_y z$
+    \Nota $\Delta z \neq \Delta_x z + \Delta_y z$ !!!
 
     Обозн.: $\displaystyle \frac{\partial z}{\partial x} = z^\prime_x = z_x$, $\displaystyle \frac{\partial z}{\partial y} = z^\prime_y = z_y$
 

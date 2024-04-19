@@ -9,11 +9,11 @@
 
 \begin{document}
 
-    2) Несобственные интегралы
+    \section{2. Несобственные интегралы}
 
-    2.1 Определения
+    \section{2.1 Определения}
 
-    1* Интегралы на неограниченном промежутке
+    \textbf{1* Интегралы на неограниченном промежутке}
 
     Геометрический смысл: пусть $f(x) : [a; +\infty] \to \Real$, $f(x) \in C_{[a; +\infty]}$
 
@@ -27,22 +27,22 @@
 
     Предел функции $\Phi (b) = \int^{b}_{a} f(x) dx$ при $b \to +\infty$ может быть конечным или бесконечным
 
-    Def.1: Определим несобственный интеграл первого рода (на неограниченном промежутке) ($f(x)$ любого знака):
+    \DefN{1} Определим несобственный интеграл первого рода (на неограниченном промежутке) ($f(x)$ любого знака):
 
     \[\int^{+\infty}_{a} f(x) dx = \lim_{b \to +\infty} \int^{b}_{a} f(x) dx\]
 
-    Nota: Если этот предел существует и конечен, то говорят, что интеграл сходится. В противном случае расходится
+    \Nota Если этот предел существует и конечен, то говорят, что интеграл сходится. В противном случае расходится
 
-    Def.2: Функция определена на полуинтервале $[-\infty; b]$ и непрерывна. Тогда определен:
+    \DefN{2} Функция определена на полуинтервале $[-\infty; b]$ и непрерывна. Тогда определен:
 
     \[\int^{b}_{-\infty} f(x) dx = \lim_{a \to -\infty} \int^{b}_{a} f(x) dx\]
 
-    Def.3: $\displaystyle \int^{+\infty}_{-\infty} f(x) dx = \int^{c}_{-\infty} f(x) dx + \int^{+\infty}_{c} f(x) dx$
+    \DefN{3} $\displaystyle \int^{+\infty}_{-\infty} f(x) dx = \int^{c}_{-\infty} f(x) dx + \int^{+\infty}_{c} f(x) dx$
 
-    Nota: Этот интеграл сходится, если сходятся оба интеграла справа, и расходится, если расходится хотя бы один из них
+    \Nota Этот интеграл сходится, если сходятся оба интеграла справа, и расходится, если расходится хотя бы один из них
     (в том числе если возникает неопределенность $\infty - \infty$)
 
-    Ex: $f(x) = \frac{1}{x}$
+    \Ex $f(x) = \frac{1}{x}$
 
     \includegraphics[height=90mm]{images/calculus_2024_02_21_2}
 
@@ -62,61 +62,61 @@
 
     Разложение по формуле Ньютона-Лейбница
 
-    Ex.1: \[\int^{+\infty}_{-\infty} \frac{dx}{1 + x^2} = arctg x \Big|^{+\infty}_{-\infty} = arctg x \Big|^{c = 0}_{-\infty} + arctg x \Big|^{+\infty}_{c = 0} =
+    \ExN{1} \[\int^{+\infty}_{-\infty} \frac{dx}{1 + x^2} = arctg x \Big|^{+\infty}_{-\infty} = arctg x \Big|^{c = 0}_{-\infty} + arctg x \Big|^{+\infty}_{c = 0} =
     \lim_{x \to +\infty} arctgx - arctg(0) + arctg(0) - \lim_{x \to -\infty} arctgx = \frac{\pi}{2} + \frac{\pi}{2} = \pi\]
 
-    Ex.2: \[\int^{+\infty}_{1} \frac{dx}{xlnx} = \int^{+\infty}_{1} \frac{dlnx}{lnx} = \int^{+\infty}_{0} \frac{dt}{t}
+    \ExN{2} \[\int^{+\infty}_{1} \frac{dx}{xlnx} = \int^{+\infty}_{1} \frac{dlnx}{lnx} = \int^{+\infty}_{0} \frac{dt}{t}
      = lnt \Big|^{+\infty}_{0} = ln ln x \Big|^{+\infty}_{1} = \lim_{x \to +\infty} ln ln x - \lim_{x \to 1} ln ln x = \infty - \infty\] - расходится
 
     Заметим нарушение непрерывности функции $\frac{1}{xlnx}$ в $x = 1$, что привело к $ln lnx \to -\infty$ при $x \to 1$
 
     Это не интеграл первого рода, а комбинация интегралов первого и второго рода
 
-    2* Интеграл от неограниченной на отрезке функции:
+    \textbf{2* Интеграл от неограниченной на отрезке функции}
 
     \includegraphics[height=90mm]{images/calculus_2024_02_21_4}
 
     $f(x) : [a; b) \to \Real$, где $b$ - точка разрыва второго рода, а именно бесконечного
 
-    Def.1: Интеграл второго рода (несобственный)
+    \DefN{1} Интеграл второго рода (несобственный)
 
     \[\int^{b}_{a} f(x) dx = \lim_{\beta \to b} \int^{\beta}_{a} f(x) dx\]
 
     Этот интеграл сходится, если предел существует и конечен
 
-    Def.2: Аналогично ($a$ - точка бесконечного разрыва):
+    \DefN{2} Аналогично ($a$ - точка бесконечного разрыва):
 
     \[\int^{b}_{a} f(x) dx = \lim_{\alpha \to a} \int^{b}_{\alpha} f(x) dx\]
 
-    Def.3 $c \in [a;b]$ - точка бесконечного разрыва:
+    \DefN{3} $c \in [a;b]$ - точка бесконечного разрыва:
 
     \[\int^{b}_{a} f(x) dx = \int^{c}_{a} f(x) dx + \int^{b}_{c} f(x) dx\]
 
     Сходится, если оба интеграла сходятся
 
-    Ex.1:
+    \ExN{1}
 
     \[\int^{1}_{-1} \frac{dx}{x} = \int^{0}_{-1} \frac{dx}{x} + \int^{1}_{0} \frac{dx}{x} =
     ln |x| \Big|^{0}_{-1} + ln |x| \Big|^{1}_{0}\] - интеграл расходится
 
     Не заметили $\displaystyle \int^{1}_{-1} \frac{dx}{x} = ln |x| \Big|^{1}_{-1} = 0$ ???
 
-    Ex.2:
+    \ExN{2}
 
     \[\int^{1}_{-1} \frac{dx}{x^2} = -\frac{dx}{x} \Big|^{1}_{-1} = -2\] - неверно
 
     \[\int^{1}_{-1} \frac{dx}{x^2} = \int^{0}_{-1} \frac{dx}{x^2} + \int^{1}_{0} \frac{dx}{x^2} =
     -\frac{dx}{x} \Big|^{0}_{-1} + -\frac{dx}{x} \Big|^{1}_{0}\] - расходится
 
-    Nota: Если нет разбиения $[a; b]$ по аддитивности, то неопределенности раскрываются
+    \Nota Если нет разбиения $[a; b]$ по аддитивности, то неопределенности раскрываются
 
-    Ex: $\int^{2}_{1} \frac{dx}{x^2 - 1} = \frac{1}{2} \int^{2}_{1} (\frac{1}{x - 1} - \frac{1}{x + 1})dx =
+    \Ex $\int^{2}_{1} \frac{dx}{x^2 - 1} = \frac{1}{2} \int^{2}_{1} (\frac{1}{x - 1} - \frac{1}{x + 1})dx =
     \frac{1}{2} (ln|x - 1| - ln|x + 1|) \Big|^{2}_{1} = \\
     = \frac{1}{2} (ln|1 - 1| - ln|x + 1|) \Big|^{2}_{1} = \infty \text{,  т. к. разбивается отрезок}\\
     = \frac{1}{2} (ln|\frac{x - 1}{x + 1}) \Big|^{2}_{1} = \frac{1}{2} (ln\frac{1}{3} - ln(0)) = \infty \text{  - теперь точно } \infty
     $
 
-    2.1 Свойства
+    \section{2.2 Свойства}
 
     1) Линейность: $\displaystyle \int^{+\infty}_{a} (\lambda f(x) + \mu g(x)) dx = \lambda \int^{+\infty}_{a} f(x) dx + \mu \int^{+\infty}_{a} g(x) dx$
     - если интегралы сходятся (иначе исследуем по определению через предел)
@@ -130,16 +130,16 @@
 
     В частности $\displaystyle \int^{+\infty}_{a} f(x) dx \geq 0$ при $f(x) \leq 0$ на $[a; +\infty]$
 
-    Nota: Исследование интегралов двух функций используется для определения их сходимости
+    \Nota Исследование интегралов двух функций используется для определения их сходимости
 
 
-    2.3 Сходимость несобственных интегралов
+    \section{2.3 Сходимость несобственных интегралов}
 
     Задача: Часто нужно исследовать интеграл на сходимость без или до его вычисления (обычно приближенного для неберущихся интегралов)
 
     Требуются признаки сходимости интегралов, часто использующие сравнение с эталонными интегралами (вычисляемые по формуле Ньютона-Лейбница)
 
-    1* Признак сравнения в неравенствах (далее только для интегралов $\displaystyle \int^{+\infty}_{a} f(x) dx$, для остальных аналогично)
+    \textbf{2* Признак сравнения в неравенствах} (далее только для интегралов $\displaystyle \int^{+\infty}_{a} f(x) dx$, для остальных аналогично)
 
     $f(x), g(x) : [a;+\infty) \to \Real^+$, непрерывны на $[a;+\infty)$ и $\forall x \in [a;+\infty) f(x) \leq g(x)$
 
@@ -164,7 +164,7 @@
 
     \[0 \leq J \leq I\]
 
-    Nota: Можно аналогично сравнить функции отрицательного знака
+    \Nota Можно аналогично сравнить функции отрицательного знака
 
     Если сходится $\displaystyle \int^{+\infty}_{a} g(x) dx$ при $g(x) \leq f(x) \leq 0$, то сходится $\displaystyle \int^{+\infty}_{a} f(x) dx$
 
@@ -172,17 +172,17 @@
 
     $f(x) \leq g(x) \forall x \in [a;+\infty)$, но функции разных знаков, и нижняя площадь, т. е. $\displaystyle \int^{b}_{a} |f(x)| dx$, больше верхней
 
-    1* $f(x), g(x) \in C_{[a;+\infty)}$, $0 \leq f(x) \leq g(x) \forall x \in [a;+\infty)$
+    \textbf{1* $f(x), g(x) \in C_{[a;+\infty)}$, $0 \leq f(x) \leq g(x) \forall x \in [a;+\infty)$}
 
     $\displaystyle J = \int^{+\infty}_{a} f(x) dx \text{  расходится. Тогда  } I = \int^{+\infty}_{a} g(x) dx \text{  расходится}$
 
-    $\Box$ Lab. (от противного)
+    $\Box$ \Lab (от противного)
 
-    Nota. Отметим, что если $f(x)$ не является убывающей к нулю, т. е. б. м. на $+\infty$, то $\displaystyle \int^{+\infty}_{a} f(x) dx$ разойдется
+    \Nota Отметим, что если $f(x)$ не является убывающей к нулю, т. е. б. м. на $+\infty$, то $\displaystyle \int^{+\infty}_{a} f(x) dx$ разойдется
 
     Таким образом, если сравнить б. м. $\displaystyle \frac{f(x)}{g(x)}$, то можно исследовать их интегралы на сходимость
 
-    2* Предельный признак сравнения
+    \textbf{2* Предельный признак сравнения}
 
     $f(x), g(x) \in C_{[a;+\infty)}$, $f(x), g(x) > 0$
 
@@ -204,11 +204,11 @@
     Если $I = \infty$ (но $k - \varepsilon \neq 0$), то по первому признаку (линейность) $J$ расходится
     Если $I \in \Real$ ($k + \varepsilon \neq \infty$), то по первому признаку (линейность) $J$ сходится
 
-    3* Абсолютная сходимость
+    \textbf{3* Абсолютная сходимость}
 
     $\displaystyle \int^{+\infty}_{a} |f(x)| dx = I \in \Real \Longrightarrow \int^{+\infty}_{a} f(x) dx = J \in \Real$
 
-    Nota: Обратное неверно
+    \Nota Обратное неверно
 
     $\Box$ ОИ и модуль:
 
@@ -220,9 +220,9 @@
 
     \[0 \leq \lim_{b \to \infty}|\int^{b}_{a} f(x) dx| = |\lim_{b \to \infty} \int^{b}_{a} f(x) dx| \leq \int^{b}_{a} |f(x)| dx = I\]
 
-    Nota: Если $\displaystyle I = \int^{+\infty}_{a} f(x) dx$ сходится, но $\displaystyle |\int^{+\infty}_{a} f(x) dx|$ расходится, то $I$ называют условно сходящимся
+    \Nota Если $\displaystyle I = \int^{+\infty}_{a} f(x) dx$ сходится, но $\displaystyle |\int^{+\infty}_{a} f(x) dx|$ расходится, то $I$ называют условно сходящимся
 
-    Ex: $\displaystyle I = \int^{+\infty}_{a} \frac{sinx}{8x^2 + 3} dx$
+    \Ex $\displaystyle I = \int^{+\infty}_{a} \frac{sinx}{8x^2 + 3} dx$
 
     $\displaystyle \int^{+\infty}_{a} |\frac{sinx}{8x^2 + 3}| dx = \int^{+\infty}_{a} \frac{|sinx|}{8x^2 + 3} dx \text{синус ограничен} \leq \int^{+\infty}_{a} \frac{dx}{8x^2 + 3} dx = \frac{1}{k} arctg\frac{x}{k} \Big|^{+\infty}_{1} \in \Real$
 
@@ -232,9 +232,11 @@
 
     II рода: $\displaystyle \int^{b}_{a} \frac{dx}{(b - x)^n}$
 
-    Lab. Исследовать на сходимость в зависимости от $n \in \Integer (\Rational)$
+    \Lab Исследовать на сходимость в зависимости от $n \in \Integer (\Rational)$
 
-    3 Интегралы зависящие от параметра
+    \clearpage
+
+    \section{3. Интегралы зависящие от параметра}
 
     Задача. Ex ($\alpha \neq 0$). $\displaystyle \int^{1}_{0} cos\alpha x dx = \frac{1}{\alpha} \int^{1}_{0} cos\alpha x d\alpha x = \frac{1}{\alpha} sin \alpha x \Big|^{1}_{0} = \frac{sin\alpha}{\alpha} = \phi(\alpha)$
 

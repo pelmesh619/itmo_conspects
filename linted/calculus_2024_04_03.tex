@@ -8,39 +8,36 @@
 
 
 \begin{document}
-    \textbf{5.3 Двойной и тройной интегралы}
+    \section{5.3. Двойной и тройной интегралы}
 
-    \vspace{3mm}
-\textit{Nota}. Дадим строгое определение
+    \Nota Дадим строгое определение
 
     \begin{multicols}{2}
-        \vspace{3mm}
-\textit{Def}. $z = z(x, y) \quad z : D \subset \Real^2 \rightarrow \Real$
+        \Def $\displaystyle z = z(x, y) \quad z : D \subset \Real^2 \rightarrow \Real$
 
-        1) Дробление на $[x_{i-1}, x_i]$ длиной $\Delta x$
+        1) Дробление на $\displaystyle [x_{i-1}, x_i]$ длиной $\Delta x$
 
-        2) Выбор средней точки $M_i(\xi_i, \eta_i)$, по значению $z(M_i)$ строим элемент. параллелепипед объемом
-        $\nu_i = z(M_i) \Delta x_i \Delta y_i \approx V_{\text{малого цилиндра}}$
+        2) Выбор средней точки $\displaystyle M_i(\xi_i, \eta_i)$, по значению $\displaystyle z(M_i)$ строим элемент. параллелепипед объемом
+        $\displaystyle \nu_i = z(M_i) \Delta x_i \Delta y_i \approx V_{\text{малого цилиндра}}$
 
         3) Интеграл суммы
 
         $\displaystyle v_i = \Sigma_{i=1}^n \nu_i = \Sigma z(M_i) \Delta x_i \Delta y_i$
 
-        4) Если $\exists \lim v_n \in \Real$, не зависящий от типа дробления и т.д. при $n \rightarrow \infty$ и
-        $\tau = \max \Delta x_i, \Delta y_i \to 0$, то $\displaystyle \lim_{n\to\infty} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
+        4) Если $\displaystyle \exists \lim v_n \in \Real$, не зависящий от типа дробления и т.д. при $n \rightarrow \infty$ и
+        $\displaystyle \tau = \max \Delta x_i, \Delta y_i \to 0$, то $\displaystyle \lim_{n\to\infty} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
 
 
 
-        \vspace{3mm}
-\textit{Mem}. $\displaystyle \int_a^b f(x) dx$
+        \Mem $\displaystyle \int_a^b f(x) dx$
 
-        $f(x) : [a, b] \rightarrow \Real^+$
+        $\displaystyle f(x) : [a, b] \rightarrow \Real^+$
 
         \vspace{10mm}
 
-        1) Дробление на элементы $P_i$ прямыми $x = const, y = const$, $S_{P_i} = \Delta x_i \Delta y_i$ (дали $dx$, $dy$)
+        1) Дробление на элементы $\displaystyle P_i$ прямыми $x = const, y = const$, $\displaystyle S_{P_i} = \Delta x_i \Delta y_i$ (дали $dx$, $dy$)
 
-        2) Выбор $\xi_i \in [x_{i-1}, x_i]$, площадь элементарных прямоугольников $f(\xi_i)\Delta x_i \approx S_{\text{полоски}}$
+        2) Выбор $\displaystyle \xi_i \in [x_{i-1}, x_i]$, площадь элементарных прямоугольников $\displaystyle f(\xi_i)\Delta x_i \approx S_{\text{полоски}}$
 
         3) Интеграл суммы $\displaystyle \sigma_n = \Sigma_{i=1}^n f(\xi_i) \Delta x_i$
 
@@ -48,26 +45,21 @@
 
     \end{multicols}
 
-    \vspace{3mm}
-\textit{Nota}: Об области $D$
+    \Nota Об области $D$
 
-    В простейшем случае рассматривают выпуклую, односвязную $\Real^2$-область
+    В простейшем случае рассматривают выпуклую, односвязную $\displaystyle \Real^2$-область
 
-    \vspace{5mm}
-    \textbf{
-    a) Выпуклость:}
+    a) Выпуклость:
 
-    $\exists M_1, M_2 \in D \ | \ \overline{M_1 M_2} \notin D$ - не выпуклая
+    $\displaystyle \exists M_1, M_2 \in D \ | \ \overline{M_1 M_2} \notin D$ - не выпуклая
 
-    $\forall M_1, M_2 \in D \ | \ \overline{M_1 M_2} \in D$ - выпуклая
+    $\displaystyle \forall M_1, M_2 \in D \ | \ \overline{M_1 M_2} \in D$ - выпуклая
 
-    \vspace{5mm}
-    \textbf{
-    б) Связность:}
+    б) Связность:
 
-    $D = D^\prime \union D^{\prime\prime}$ - не связная: $\exists M_1, M_2 \in D \ | \ \overset{\LARGE\smile}{M_1 M_2} \notin D$
+    $\displaystyle D = D^\prime \union D^{\prime\prime}$ - не связная: $\displaystyle \exists M_1, M_2 \in D \ | \ \overset{\LARGE\smile}{M_1 M_2} \notin D$
 
-    $D$ - связная: $\forall M_1, M_2 \in D \ | \ \overset{\LARGE\smile}{M_1 M_2} \in D$
+    $D$ - связная: $\displaystyle \forall M_1, M_2 \in D \ | \ \overset{\LARGE\smile}{M_1 M_2} \in D$
 
     Обычно область - открытая, дальше будем рассматривать в том числе области с границей.
 
@@ -85,8 +77,7 @@
 
     $\displaystyle V = \int^b_a S(x) dx = \int_a^b \left(\int^{y_2(x)}_{y_1(x)} z(x = c, y) dy\right) dx$
 
-    \vspace{3mm}
-\textit{Nota}. Кратный
+    \Nota Кратный
 
     Если найдена первообразная для $z(x = c, y)$ (обозн. $F(x, y(x))$), то по формуле N-L:
 
@@ -104,25 +95,22 @@
 
     Но при другом порядке интегрирования область $D$ может оказаться неправильной
 
-    \vspace{3mm}
-\textit{Def}. При проходе области $D$ в направлении $Oy \uparrow$ граница области (верхняя) меняет аналитическое задание. Такая область называется направильной в направлении $Oy$
+    \Def При проходе области $D$ в направлении $Oy \uparrow$ граница области (верхняя) меняет аналитическое задание. Такая область называется направильной в направлении $Oy$
 
     Выгодно выбирать правильное направление, чтобы не делить интеграл по аддитивности
 
-    \vspace{3mm}
-\textit{Ex}. $\displaystyle \iint_D xy dx dy$, $D : x^2 + y^2 \leq 1$
+    \Ex $\displaystyle \iint_D xy dx dy$, $\displaystyle D : x^2 + y^2 \leq 1$
 
     $\displaystyle \iint_D xy dx dy = \int_{-1}^1 (\int_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}} xy dy) dx = \int_{-1}^1 (\frac{x}{2} y^2 \Big|_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}}) dx =
     \int_{-1}^1 (\frac{x}{2} ((1 - x^2) - (1 - x^2)) dx = 0$
 
-    \vspace{3mm}
-\textit{Def}. Тройной интеграл
+    \Def Тройной интеграл
 
-    $T \subset \Real^3 \rightarrow \Real$
+    $\displaystyle T \subset \Real^3 \rightarrow \Real$
 
     1) дробление на элементы объема $dv = dxdydz$
 
-    2) Вычисление среднего содержания $u(x, y, z)$ в $dv$: $u(\xi_i, \eta_i, \zeta_i) dv$
+    2) Вычисление среднего содержания $u(x, y, z)$ в $dv$: $\displaystyle u(\xi_i, \eta_i, \zeta_i) dv$
 
     3) Интегральная сумма $\displaystyle \sigma_n = \Sigma u(M_i) dv$
 

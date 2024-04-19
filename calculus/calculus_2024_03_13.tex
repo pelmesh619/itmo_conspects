@@ -34,7 +34,7 @@
 
     ($r_n(t) \stackrel{n \to \infty}{\rightarrow}$, если $\varphi(t)$ нужное число раз дифференцируема $Rightarrow$ ограничена, $r_n(t)$ - огр. б. м.)
 
-    Nota: В дальнейшем для исследования $z(x, y)$ на экстремум достаточно разложения по формуле Тейлора до 2-ого порядка включительно.
+    \Nota В дальнейшем для исследования $z(x, y)$ на экстремум достаточно разложения по формуле Тейлора до 2-ого порядка включительно.
     Покажем сходимость $r_n(x, y) \stackrel{(\Delta \rho)^n \to 0}{\rightarrow} 0$ на примере $\displaystyle r_2 (x, y) = \frac{d^3 z(M_{\text{сред.}})}{3!}$
 
 
@@ -52,24 +52,22 @@
 
     $\frac{r_2(x, y)}{(\Delta \rho)^2} = \frac{1}{3!} \frac{(\Delta \rho)^3 \cdot \text{огр.}}{(\Delta \rho)^2} = \frac{1}{3!} \Delta \rho \cdot \text{огр.} \stackrel{\Delta \rho \to 0}{\rightarrow} 0$
 
-    \clearpage
+    \section{4.7. Геометрия ФНП}
 
-    \textbf{4.7 Геометрия ФНП}
 
-    \vspace{4mm}
-    \textbf{4.7.1 Линии и поверхности уровня}
+    \section{4.7.1. Линии и поверхности уровня}
 
     Положим $z = const$. В сечении плоскостью $z = c$ образуется кривая $l$ с уравнением $\begin{cases}z = c \\ \varphi(x, y) = 0 \leftarrow \text{уравнение $l_\text{проек}$ на $Oxy$}\end{cases}$
 
     Кривая $l$ с уравнением $z(x, y) = c$ называется линией уровня Ф$_2$П $z = z(x, y)$
 
-    Def. Поверхность уровня $\mathcal{P}$ - это поверхность с уровнем $u(x, y, z) = c$
+    \Def Поверхность уровня $\mathcal{P}$ - это поверхность с уровнем $u(x, y, z) = c$
 
     Физ. смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ - скаляры). Тогда говорят, что в $\Real^3$ задано скалярное поле. Например, поле температур, давления, плотности и т. д.
 
     Тогда $u = c$ - поверхности постоянных температур, давления и т. п. (изотермические, изобарные, эквипотенциальные)
 
-    Ex. Конус - $z = -\sqrt{x^2 + y^2}$
+    \Ex Конус - $z = -\sqrt{x^2 + y^2}$
 
     \includegraphics[height=90mm]{images/calculus_2024_03_13_1}
 
@@ -81,9 +79,8 @@
         \item $c < 0 \quad -|c| = -\sqrt{x^2 + y^2} \quad c^2 = x^2 + y^2$
     \end{enumerate}
 
-    \vspace{7mm}
 
-    \textbf{4.7.2 Производная по направлению, Градиент}
+    \section{4.7.2. Производная по направлению, Градиент}
 
     Задача. Дано скалярное поле $u = u(x, y, z)$ (напр. давления). Как меняется давление при перемещении в заданном направлении?
 
@@ -107,17 +104,17 @@
 
     $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
 
-    Nota: Изначально $\Delta u = du + \text{(б. м.)} \Delta x + \text{(б. м.)} \Delta y + \text{(б. м.)} \Delta z \quad \Big| \cdot \frac{1}{\Delta s}$
+    \Nota Изначально $\Delta u = du + \text{(б. м.)} \Delta x + \text{(б. м.)} \Delta y + \text{(б. м.)} \Delta z \quad \Big| \cdot \frac{1}{\Delta s}$
 
     $\frac{\Delta u}{\Delta s} = \frac{du}{\Delta s} + \text{(б. м.)} \cos\alpha$, $\text{(б. м.)} \cos\alpha \rightarrow 0$
 
-    Def. $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
+    \Def $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
 
     где $\alpha, \beta, \gamma$ - направления $\overrightarrow{s}$, называют производной функции $u = u(x, y, z)$ в направлении $\overrightarrow{s}$
 
-    Nota. Производная в определении - число, но $\frac{\partial u}{\partial s} \overrightarrow{s^0}$ - вектор скорости
+    \Nota Производная в определении - число, но $\frac{\partial u}{\partial s} \overrightarrow{s^0}$ - вектор скорости
 
-    Nota. Заметим, что если $\overrightarrow{i}, \overrightarrow{j}, \overrightarrow{k}$ - декартовы орты, то
+    \Nota Заметим, что если $\overrightarrow{i}, \overrightarrow{j}, \overrightarrow{k}$ - декартовы орты, то
 
     $\frac{\partial u}{\partial i} = \frac{\partial u}{\partial x} 1 + \frac{\partial u}{\partial y} 0 + \frac{\partial u}{\partial z} 0 = \frac{\partial u}{\partial x}$
 
@@ -127,17 +124,17 @@
 
     $\overrightarrow{\triangledown}$ - набла-оператор (оператор Гамильтона); $\overrightarrow{\triangledown} = (\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z})$ - условный вектор
 
-    Def. $\overrightarrow{grad} \ u \stackrel{def}{=} \overrightarrow{\triangledown} u$ - называют градиентом функции $u(x, y, z)$
+    \Def $\overrightarrow{grad} \ u \stackrel{def}{=} \overrightarrow{\triangledown} u$ - называют градиентом функции $u(x, y, z)$
 
     Свойства градиентов:
 
-    Th 1. $\frac{\partial u}{\partial s} = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
+    \ThN{1} $\frac{\partial u}{\partial s} = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
 
-    Th 2. $\overrightarrow{\triangledown} u$ - направление наибольшего значения $\frac{\partial u}{\partial s}$
+    \ThN{2} $\overrightarrow{\triangledown} u$ - направление наибольшего значения $\frac{\partial u}{\partial s}$
 
-    Th 3. $\overrightarrow{s} \perp \overrightarrow{\triangledown} u \Longrightarrow \frac{\partial u}{\partial s} = 0$
+    \ThN{3} $\overrightarrow{s} \perp \overrightarrow{\triangledown} u \Longrightarrow \frac{\partial u}{\partial s} = 0$
 
-    Th 4. $u = u(x, y), u = c$ - линии уровня $l$. Тогда $\overrightarrow{\triangledown} u \perp l$
+    \ThN{4} $u = u(x, y), u = c$ - линии уровня $l$. Тогда $\overrightarrow{\triangledown} u \perp l$
 
     Доказательства:
 
@@ -146,9 +143,9 @@
         \overrightarrow{\triangledown} u \overrightarrow{s^0} = |\overrightarrow{\triangledown} u| |\overrightarrow{s^0}| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) =
         |\overrightarrow{\triangledown} u| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
 
-        \item $\frac{\partial u}{\partial s} = |\overrightarrow{\triangledown} u| \cos\varphi \dots $ \underline{Lab}
+        \item $\frac{\partial u}{\partial s} = |\overrightarrow{\triangledown} u| \cos\varphi \dots $ \Lab
 
-        \item \underline{Lab}
+        \item \Lab
 
         \item $u = c$ - уравнение $l_{\text{пр}}$ в плоскости $Oxy$, то есть $u(x, y) = c$, можем рассмотреть как неявную функцию $u(x, y(x)) - c = 0$
 
