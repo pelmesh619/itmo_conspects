@@ -1,6 +1,13 @@
-import os, re
+import os
+import re
+import sys
 
-folder = "specsec"
+if len(sys.argv) <= 1:
+    print('Enter source filename as command argument')
+    exit(1)
+
+
+folder = sys.argv[1]
 supername = folder + "_superconspect.tex"
 
 subject = None
