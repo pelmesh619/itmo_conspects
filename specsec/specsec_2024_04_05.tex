@@ -9,7 +9,7 @@
 
 \begin{document}
 
-    Mem. $(x, y)$ в $\Real$
+    \Mem $(x, y)$ в $\Real$
 
     $(x, y) = (y, x)$
 
@@ -27,19 +27,19 @@
 
     $(x, \lambda y) = \overline{\lambda} (x, y)$ в $\mathcal{C}$
 
-    Def 1. Оператор $\mathcal{A}^*$ называется сопряженным для $\mathcal{A} : V \to V$, если
+    \DefN{1} Оператор $\mathcal{A}^*$ называется сопряженным для $\mathcal{A} : V \to V$, если
 
     $(\mathcal{A}x, y) = (x, \mathcal{A}^* y)$
 
-    Def 2. $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любой ортонормированном базисе
+    \DefN{2} $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любой ортонормированном базисе
 
-    Nota. Def 1. \Longleftrightarrow Def \ 2.
+    \textbf{Def. 1.} \Longleftrightarrow \textbf{Def. 2.}
 
     $(\mathcal{A}x, y) \stackrel{\text{на языке матриц}}{=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel=} (AX, Y) = (AX)^T \cdot Y = X^T \cdot A^T \cdot Y$
 
     $\stackrel{||}{(x, \mathcal{A}^* y)} = X^T \cdot (A^* Y) = (X^T A^*) \cdot Y = X^T \cdot A^T \cdot Y \Longrightarrow A^* = A^T$
 
-    Lab. Очевидно существование $\mathcal{A}^* \ \forall \mathcal{A}$ (определяется в ортонормированном базисе действием $\mathcal{A}^T$)
+    \Lab Очевидно существование $\mathcal{A}^* \ \forall \mathcal{A}$ (определяется в ортонормированном базисе действием $\mathcal{A}^T$)
 
     Доказать единственность $\mathcal{A}^*$ рассмотреть от противного $(x, \mathcal{A}_1^* y) \neq (x, \mathcal{A}_2^* y)$)
 
@@ -61,9 +61,9 @@
 
     Можно использовать линейные свойства умножения матриц $A^* (\lambda X + \mu Y) = \lambda \mathcal{A}^* X + \mu \mathcal{A}^* Y$
 
-    2* Самосопряженный оператор
+    \textbf{2* Самосопряженный оператор}
 
-    Def. $\mathcal{A}$ называется самосопряженным, если $\mathcal{A} = \mathcal{A}^*$
+    \Def $\mathcal{A}$ называется самосопряженным, если $\mathcal{A} = \mathcal{A}^*$
 
     Следствие. $A^T = A \Longrightarrow$ матрица $A$ симметричная
 
@@ -87,7 +87,7 @@
 
     Так как $\lambda_1 \neq \lambda_2$, то $(\lambda_1 - \lambda_2) (x_1, x_2) = 0 \Longrightarrow (x_1, x_2) = 0 \qed$
 
-    Th. Лемма. $\mathcal{A} = \mathcal{A}^*$, $e$ - собственный вектор ($l_{\Set{e}}$ - линейная оболочка $e$ - инвариантное подпространство для $\mathcal{A}$)
+    \Th Лемма. $\mathcal{A} = \mathcal{A}^*$, $e$ - собственный вектор ($l_{\Set{e}}$ - линейная оболочка $e$ - инвариантное подпространство для $\mathcal{A}$)
 
     $V_1 = \Set{x \in V \ | \ x \perp e}$
 
@@ -100,26 +100,26 @@
 
     $\qed$
 
-    Th. $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
+    \Th $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
     тогда $\exists e_1, \dots, e_n$ - набор собственных векторов $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
 
     (другими словами: $\mathcal{A}$ - диагонализируем)
 
     Наводящие соображения.
 
-    Ex 1. $A = \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} = I$
+    \ExN{1} $A = \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} = I$
 
     $\mathcal{I}x = x = 1 \cdot x, \quad \lambda_{1,2,3} = 1$
 
     Здесь $U_{\lambda_{1,2,3}} = V^3, \ \Set{\overrightarrow{i}, \overrightarrow{j}, \overrightarrow{k}}$ - базис из собственных векторов, ортонормированный
 
-    Ex 2. $A = \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix} = \mathcal{O}$
+    \ExN{2} $A = \begin{pmatrix}0 & 0 & 0 \\ 0 & 0 & 0 \\ 0 & 0 & 0\end{pmatrix} = \mathcal{O}$
 
     $\mathcal{O}x = 0, \quad \lambda_{1,2,3} = 0$
 
     И здесь $U_{\lambda_{1,2,3}} = V^3$, так как $0 \in U_\lambda$ и $\forall x \ \mathcal{O}x = 0 \in U_\lambda$
 
-    Ex 3. Поворот $\Real^2$ на $\frac{\pi}{4}$
+    \ExN{3} Поворот $\Real^2$ на $\frac{\pi}{4}$
 
     $T = \begin{pmatrix}\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}}\end{pmatrix}$
 

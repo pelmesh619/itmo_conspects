@@ -9,59 +9,51 @@
 
 
 \begin{document}
-    \textit{\vspace{3mm}
-\textit{Nota}: } Изоморфизм $E^n \rightarrow E^{\prime n}$ позволяет переносить свойства скалярного произведения
+    \Nota Изоморфизм $\displaystyle E^n \rightarrow E^{\prime n}$ позволяет переносить свойства скалярного произведения
     из одного в другое пространство
 
-    \vspace{3mm}
-\textit{Ex}: $\|x + y\| \leq \|x\| + \|y\|$ - арифметические векторы со скалярным произведением $\displaystyle (x, y) = \Sigma^n_{i=1} x_i y_i$
+    Ex: $\|x + y\| \leq \|x\| + \|y\|$ - арифметические векторы со скалярным произведением $\displaystyle (x, y) = \Sigma^n_{i=1} x_i y_i$
 
-    $E^{\prime n} \in C_{[a;b]}$ со скалярным произведением $\displaystyle (f, g) = \int^b_a f * g dx$
+    $\displaystyle E^{\prime n} \in C_{[a;b]}$ со скалярным произведением $\displaystyle (f, g) = \int^b_a f * g dx$
 
     $\displaystyle \sqrt{\int^b_a (f * g)^2 dx} \leq \sqrt{\int^b_a f^2 dx} + \sqrt{\int^b_a g^2 dx}$
 
     \textbf{Задача о перпендикуляре}
 
-    Постановка: Нужно опустить перпендикуляр из точки пространства $E^n$ на подпространство $G$
+    Постановка: Нужно опустить перпендикуляр из точки пространства $\displaystyle E^n$ на подпространство $G$
 
     \includegraphics[height=90mm]{images/specsec_2024_03_01_1}
 
-    Точка $M$ - конец вектора $x$ в пространстве $E^n$.
-    Нужно найти $M_0$ (конец вектора $x_0$, проекции $x$ на $G$)
+    Точка $M$ - конец вектора $x$ в пространстве $\displaystyle E^n$.
+    Нужно найти $\displaystyle M_0$ (конец вектора $\displaystyle x_0$, проекции $x$ на $G$)
 
     \[x_0 + h = x\]
 
     где $h \perp G$. Правда ли что, длина перпендикулярного вектора $h$ - минимальная длина от точки $M$ до $G$?
 
-    \textit{\vspace{3mm}
-\textit{Th}: } $h \perp G, x_0 \in G, x = x_0 + h$. Тогда $\forall x^\prime \in G (x^\prime \neq x_0) \ \ \|x - x^\prime\| > \|x - x_0\|$
+    \Th $\displaystyle h \perp G, x_0 \in G, x = x_0 + h$. Тогда $\displaystyle \forall x^\prime \in G (x^\prime \neq x_0) \ \ \|x - x^\prime\| > \|x - x_0\|$
 
-    $\Box \|x - x^\prime\| = \|x - x_0 + x_0 - x^\prime\| \stackrel{\text{по теореме Пифагора}}{====} \|x - x_0\| + \|x_0 - x^\prime\| = \|h\| + \|x_0 - x^\prime\| > \|x - x_0\|$
+    $\displaystyle \Box \|x - x^\prime\| = \|x - x_0 + x_0 - x^\prime\| \stackrel{\text{по теореме Пифагора}}{====} \|x - x_0\| + \|x_0 - x^\prime\| = \|h\| + \|x_0 - x^\prime\| > \|x - x_0\|$
 
-    \vspace{5mm}
-
-    \textit{\vspace{3mm}
-\textit{Nota}: } $x_0$ называется ортогональной проекцией, возникает вопрос о ее вычислении (так находятся основания перпендикуляров)
+    \Nota $\displaystyle x_0$ называется ортогональной проекцией, возникает вопрос о ее вычислении (так находятся основания перпендикуляров)
 
     \vspace{5mm}
 
-    \textit{Алгоритм:} $x_0 = \lambda_1 e_1 + \lambda_2 e2 + \dots + \lambda_k + e_k$, $\{e_i\}^k_{i=1}$ - базис $G$ (необязательно ортонормированный)
+    \textit{Алгоритм:} $\displaystyle x_0 = \lambda_1 e_1 + \lambda_2 e2 + \dots + \lambda_k + e_k$, $\displaystyle \{e_i\}^k_{i=1}$ - базис $G$ (необязательно ортонормированный)
 
-    Дан вектор $x$, пространство $G$, нужно найти $\lambda_i$
+    Дан вектор $x$, пространство $G$, нужно найти $\displaystyle \lambda_i$
 
-    $h = x - x_0$, $h \perp G \quad  (h, e_i) \stackrel{h \perp e_i \ \forall i}{=} 0$
+    $\displaystyle h = x - x_0$, $\displaystyle h \perp G \quad  (h, e_i) \stackrel{h \perp e_i \ \forall i}{=} 0$
 
-    $(x - x_0, e_i) = (x, e_i) - (x_0, e_i) = 0$
+    $\displaystyle (x - x_0, e_i) = (x, e_i) - (x_0, e_i) = 0$
 
-    $(x, e_i) = (x_0, e_i)$
+    $\displaystyle (x, e_i) = (x_0, e_i)$
 
-    Тогда $\forall i \quad (x_0, e_i) = (\lambda_1 e_1 + \dots + \lambda_k e_k, e_i) = \lambda_1 (e_1, e_i) + \dots + \lambda_k (e_k, e_i)$ - $(e_k, e_i)$ - числа, а $\lambda_i$ - неизвестные
+    Тогда $\displaystyle \forall i \quad (x_0, e_i) = (\lambda_1 e_1 + \dots + \lambda_k e_k, e_i) = \lambda_1 (e_1, e_i) + \dots + \lambda_k (e_k, e_i)$ - $\displaystyle (e_k, e_i)$ - числа, а $\displaystyle \lambda_i$ - неизвестные
 
-    \vspace{5mm}
-    \textbf{
-    Получили СЛАУ:}
+    Получили СЛАУ:
 
-    $\begin{array}{|cccc|}
+    $\displaystyle \begin{array}{|cccc|}
     (e_1, e_1) & (e_1, e_2) & \ldots & (e_1, e_k)\\
     \ldots & \ldots & \ldots & \ldots\\
     (e_k, e_1) & (e_k, e_2) & \ldots & (e_k, e_k)\\
@@ -79,13 +71,11 @@
     (x,e_k) \\
     \end{array}$
 
-    \textit{\vspace{3mm}
-\textit{Nota}:} В матрице $\Gamma$ нет нулевых строк, так как $e_i$ - бизисная и по крайней мере $e_i^2 \neq 0$
+    \Nota В матрице $\Gamma$ нет нулевых строк, так как $\displaystyle e_i$ - бизисная и по крайней мере $\displaystyle e_i^2 \neq 0$
 
-    Таким образом по теореме Крамера $\exists! (\lambda_1, \dots, \lambda_k)$
+    Таким образом по теореме Крамера $\displaystyle \exists! (\lambda_1, \dots, \lambda_k)$
 
-    \textit{\vspace{3mm}
-\textit{Def}:} Матрица $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
+    \Def Матрица $\displaystyle \Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
 
     $\Gamma = I = \begin{array}{|ccc|}
     1 & 0 & \ldots\\
@@ -95,8 +85,7 @@
 
     Далее, $I$ - единичная матрица Грама
 
-    \textit{\vspace{3mm}
-\textit{Nota}:} Тогда $I \times \begin{array}{|c|}
+    \Nota Тогда $\displaystyle I \times \begin{array}{|c|}
     \lambda_1\\
     \ldots\\
     \lambda_k \\
@@ -118,15 +107,15 @@
 
     В качестве простейшей модели зависимости $y = y(x)$ берем линейную функцию $y = \lambda x$
 
-    Ищем минимально отстоящую прямую от данных $(x_i, y_i)$, то есть ищем $\lambda$
+    Ищем минимально отстоящую прямую от данных $\displaystyle (x_i, y_i)$, то есть ищем $\lambda$
 
     Определим расстояние (в этом методе) как $\displaystyle \sigma^2 = \Sigma^n_{i=1} (y_i - y_{0i})^2 = \Sigma^n_{i=1} (y_i - \lambda x_i)^2$ - минимизируем
 
-    Таким образом, ищем $y_0$ (ортог. проекция) такое, что $(y - y_0)^2 = \sigma^2$ - минимальное
+    Таким образом, ищем $\displaystyle y_0$ (ортог. проекция) такое, что $\displaystyle (y - y_0)^2 = \sigma^2$ - минимальное
 
-    Если $y_0 = \lambda_1 x_1 + \dots + \lambda_k x_k$, где $x_i$ - набор измерений для $i$-ой точки
+    Если $\displaystyle y_0 = \lambda_1 x_1 + \dots + \lambda_k x_k$, где $\displaystyle x_i$ - набор измерений для $i$-ой точки
 
-    Рассмотрим $y_0$ как разложение по базису $\{x_i\}$
+    Рассмотрим $\displaystyle y_0$ как разложение по базису $\displaystyle \{x_i\}$
 
     \vspace{5mm}
 
@@ -139,73 +128,63 @@
     Задача в том, чтобы для функции $f(t)$, определенной на отрезке $[0;2\pi]$ найти минимально отстоящий многочлен $P(t)$ при том,
     что расстояние определяется как $\displaystyle \sigma^2 = \int_0^{2\pi} (f(t) - P(t))^2 dt$
 
-    Нужно найти $a_i$ и $b_i$ - обычные скалярные произведения $\displaystyle a_i = k \int_0^{2\pi} f(t) cos(it) dt$, $\displaystyle b_i = m \int_0^{2\pi} f(t) sin(it) dt$ ($k, m$ - нормирующие множители)
+    Нужно найти $\displaystyle a_i$ и $\displaystyle b_i$ - обычные скалярные произведения $\displaystyle a_i = k \int_0^{2\pi} f(t) cos(it) dt$, $\displaystyle b_i = m \int_0^{2\pi} f(t) sin(it) dt$ ($k, m$ - нормирующие множители)
 
     \clearpage
 
-    \textbf{2. Линейный оператор (линейное отображение, линейный функционал, линейное преображение)}
+    \section[p2]{2. Линейный оператор (линейное отображение, линейный функционал, линейное преображение)}
 
-    \textbf{2.1 Определение}
+    \section[p2\_1]{2.1. Определение}
 
-    \textit{Линейный оператор} - это отображение $V^n \stackrel{\mathcal{A}}{\Longrightarrow} W^m$
+    \textit{Линейный оператор} - это отображение $\displaystyle V^n \stackrel{\mathcal{A}}{\Longrightarrow} W^m$
 
-    ($V^n, W^m$ - линейные пространства размерности $n \neq m$ в общем случае),
+    ($\displaystyle V^n, W^m$ - линейные пространства размерности $n \neq m$ в общем случае),
 
-    которое $\forall x \in V^n$ сопоставляет один какой-либо $y \in W^m$ и
+    которое $\displaystyle \forall x \in V^n$ сопоставляет один какой-либо $\displaystyle y \in W^m$ и
 
-    $\mathcal{A} (\lambda x_1 + \mu x_2) = \lambda \mathcal{A} x_1 + \mu \mathcal{A} x_2 = \lambda y_1 + \mu y_2$
+    $\displaystyle \mathcal{A} (\lambda x_1 + \mu x_2) = \lambda \mathcal{A} x_1 + \mu \mathcal{A} x_2 = \lambda y_1 + \mu y_2$
 
-    \vspace{3mm}
-
-    \textit{\vspace{3mm}
-\textit{Nota}:} Заметим, что если 0 представим как $0 * x$, где $x \neq 0$, то
+    \Nota Заметим, что если 0 представим как $0 * x$, где $x \neq 0$, то
 
     $\mathcal{A}(0) = \mathcal{A}(0 * x) = 0 * \mathcal{A}x \stackrel{0 * y}{=} 0$
 
-    \textit{\vspace{3mm}
-\textit{Nota}:} Если $V = W$, то $\mathcal{A}$ называют линейным преобразованием, но далее будем рассматривать в основном операторы $\mathcal{A}: \ \ V \rightarrow V$, $\mathcal{A}: \ \ V^n \rightarrow W^n$
+    \Nota Если $V = W$, то $\mathcal{A}$ называют линейным преобразованием, но далее будем рассматривать в основном операторы $\mathcal{A}: \ \ V \rightarrow V$, $\displaystyle \mathcal{A}: \ \ V^n \rightarrow W^n$
 
-    \vspace{3mm}
 
-    \textit{\vspace{3mm}
-\textit{Ex}.1:} $V = \Real^2$ - пространство направленных отрезков
+
+    \ExN{1} $\displaystyle V = \Real^2$ - пространство направленных отрезков
 
     $\mathcal{A}: V \leftarrow V$
 
-    $\mathcal{A}x = y = \lambda y_1 + \mu y_2$ для таких $\mathcal{A}$ как сдвиг, поворот, гомотетия, симметрия
+    $\displaystyle \mathcal{A}x = y = \lambda y_1 + \mu y_2$ для таких $\mathcal{A}$ как сдвиг, поворот, гомотетия, симметрия
 
-    \textit{\vspace{3mm}
-\textit{Ex}.2:} $V^n = W^m$, где $m < n$
+    \ExN{2} $\displaystyle V^n = W^m$, где $m < n$
 
     $\mathcal{A}$ - оператор проектирования (убедиться, что он линейный)
 
-    \textit{\vspace{3mm}
-\textit{Ex}.3:} $V^n$ - пространство числовых строк длины $n$
+    \ExN{3} $\displaystyle V^n$ - пространство числовых строк длины $n$
 
-    $\mathcal{A}: V^n \leftarrow V^n$
+    $\displaystyle \mathcal{A}: V^n \leftarrow V^n$
 
-    $x = (x_1, \dots, x_n), y = (y_1, \dots, y_n)$
+    $\displaystyle x = (x_1, \dots, x_n), y = (y_1, \dots, y_n)$
 
-    $\mathcal{A}x = y : \begin{array}{|ccc|}
+    $\displaystyle \mathcal{A}x = y : \begin{array}{|ccc|}
     a_{11} & \ldots & a_{1n}\\
     \vdots & \ddots & \vdots\\
     a_{n1} & \ldots & a_{nn}\\
     \end{array}x = y$
 
-    \vspace{5mm}
 
-    \textbf{2.2. Действия с операторами}
+    \section[p2\_2]{2.2. Действия с операторами}
 
-    \textit{\vspace{3mm}
-\textit{Def}:} $\mathcal{A}\mathcal{B}: V \rightarrow W$
+    \Def $\mathcal{A}\mathcal{B}: V \rightarrow W$
 
     \begin{enumerate}
         \item $(\mathcal{A} + \mathcal{B})x \stackrel{def}{=} \mathcal{A}x + \mathcal{B}x$ - определение суммы $\mathcal{A} + \mathcal{B} = \mathcal{C}$
         \item $(\lambda\mathcal{A})x \stackrel{def}{=} \lambda(\mathcal{A}x)$ - $\lambda\mathcal{A} = \mathcal{D}$
     \end{enumerate}
 
-    \textit{\vspace{3mm}
-\textit{Nota}:} Сформируем линейное пространство из операторов $\mathcal{A}: V \rightarrow W$
+    \Nota Сформируем линейное пространство из операторов $\mathcal{A}: V \rightarrow W$
 
     \begin{enumerate}
         \item Ассоциативность сложения (очевидно)
@@ -215,7 +194,6 @@
         \item \dots \textit{LAB}
     \end{enumerate}
 
-    \textit{\vspace{3mm}
-\textit{Def}:} $\mathcal{I}$ - тождественный - $\forall x \in V \ \ \mathcal{I}x = x$
+    \textit{Def:} $\mathcal{I}$ - тождественный - $\forall x \in V \ \ \mathcal{I}x = x$
 
 \end{document}

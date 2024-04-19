@@ -8,9 +8,9 @@
 
 
 \begin{document}
-    Th. $A^\prime = T_{e\to e^\prime} A T^{-1}_{e\to e^\prime}$
+    \Th $A^\prime = T_{e\to e^\prime} A T^{-1}_{e\to e^\prime}$
 
-    Nota. $C = A + \lambda B$
+    \Nota $C = A + \lambda B$
 
     Следствия:
 
@@ -20,9 +20,9 @@
 
     3) $\det A^{-1} = \det (T A T^{-1}) = \det T \det A \det T^{-1} = \det A \cdot 1$
 
-    Nota: То есть характеристика нашего объекта - инвариант при преобразовании $T$
+    \Nota То есть характеристика нашего объекта - инвариант при преобразовании $T$
 
-    Def: Матрица $A$ называется ортогональной если $A^{-1} = A^T$
+    \Def Матрица $A$ называется ортогональной если $A^{-1} = A^T$
 
     Следствие: $AA^{-1} = AA^T = I$
 
@@ -48,13 +48,13 @@
 
     В общем $(A_i, A_j) = \begin{sqcases}1, i = j \\ 0, i \neq j \end{sqcases}$
 
-    Def. Оператор $\mathcal{A}$ называется ортогональным, если его матрица ортогональна
+    \Def Оператор $\mathcal{A}$ называется ортогональным, если его матрица ортогональна
 
     ? $A$ ортогональна в каком-либо базисе или во всех?
 
     Свойство. $\mathcal{A}$ - ортогонален, то $\det A = \pm 1$ (следует из определения $\det(AA^T) = \det^2(A) = \det(I)$)
 
-    Th. $T_{e\to e^\prime}$ - преобразование координат в $V^n$. Тогда $T$ - ортогональный оператор
+    \Th $T_{e\to e^\prime}$ - преобразование координат в $V^n$. Тогда $T$ - ортогональный оператор
 
     Базис $e$ - ортонормированный базис
 
@@ -74,51 +74,50 @@
 
     Таким образом, матрица $T$ - ортогональна
 
-    Nota. Тогда $A^\prime = T A T^{-1} = T A T^T$
+    \Nota Тогда $A^\prime = T A T^{-1} = T A T^T$
 
-    \vspace{10mm}
-    \textbf{2.7. Собственные векторы и значения оператора}
+    \section[p2\_7]{2.7. Собственные векторы и значения оператора}
 
-    Def. Инвариантное подпространство оператора $\mathcal{A} : V \rightarrow V$ -
+    \Def Инвариантное подпространство оператора $\mathcal{A} : V \rightarrow V$ -
     это $U = \Set{x \in V_1 \in V | \mathcal{A}x \in V_1}$
 
-    Ex. $V = \mathcal{P}_n(t)$ - пространство многочленов степени $\leq n$ на $[a; b]$, $\mathcal{D} = \frac{d}{dt}$
+    \Ex $V = \mathcal{P}_n(t)$ - пространство многочленов степени $\leq n$ на $[a; b]$, $\mathcal{D} = \frac{d}{dt}$
 
-    Nota. $Ker \mathcal{A}, Im \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
+    \Nota $Ker \mathcal{A}, Im \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
 
-    Def. Характеристический многочлен оператора $\mathcal{A} : V \rightarrow V$
+    \Def Характеристический многочлен оператора $\mathcal{A} : V \rightarrow V$
     ($\mathcal{A}x = Ax, A$ - матрица в неком базисе)
 
     $\xi(\lambda) = \det(A - \lambda I)$
 
-    Nota. Матрица $A - \lambda I$:
+    \Nota Матрица $A - \lambda I$:
 
     $\begin{vmatrix}a_{11} - \lambda & \dots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \dots & a_{nn} - \lambda \end{vmatrix}$
 
-    Nota. Уравнение $\xi(\lambda) = 0$ называется вековым
+    \Nota Уравнение $\xi(\lambda) = 0$ называется вековым
 
-    Def. Собственным вектором оператора $\mathcal{A}$, отвечающим собственному значению $\lambda$,
+    \Def Собственным вектором оператора $\mathcal{A}$, отвечающим собственному значению $\lambda$,
     называется $x \neq 0 \ | \ \mathcal{A}x = \lambda x$
 
-    Def. Собственное подпространство оператора $\mathcal{A}$, отвечающее числу $\lambda_i$,
+    \Def Собственное подпространство оператора $\mathcal{A}$, отвечающее числу $\lambda_i$,
 
     $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
 
-    Def. $\dim U_{\lambda_i} = \beta$ - геометрическая кратность число $\lambda_i$
+    \Def $\dim U_{\lambda_i} = \beta$ - геометрическая кратность число $\lambda_i$
 
-    Th. $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
+    \Th $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
 
     $\Box \Longleftrightarrow |A - \lambda I| = 0 \Longleftrightarrow rang (A - \lambda I) < n \Longleftrightarrow
     \dim Im(A - \lambda I) < n \Longleftrightarrow \dim Ker(A - \lambda I) \geq 1$
 
     $\exists x \in Ker(A - \lambda I), x \neq 0 \ | \ (A - \lambda I) x = 0 \Longleftrightarrow Ax - \lambda I x = 0 \Longleftrightarrow Ax = \lambda x$
 
-    Nota. По основной теореме алгебры вековое уравнение имеет $n$ корней (не всех из них вещественные).
+    \Nota По основной теореме алгебры вековое уравнение имеет $n$ корней (не всех из них вещественные).
     В конкретном множестве $\mathcal{K} \ni \lambda$ их может не быть
 
-    Def. Кратность корня $\lambda_i$ называется алгебраической кратностью
+    \Def Кратность корня $\lambda_i$ называется алгебраической кратностью
 
-    Th. $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ - линейно независимы
+    \Th $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ - линейно независимы
 
     $\Box$ Составим комбинацию: $c_1 x_1 + c_2 x_2 = 0 \quad \Big| \cdot \mathcal{A}$
 
@@ -136,7 +135,7 @@
 
     Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
 
-    Nota. Приняв доказательство за базу индукции, можно доказать линейную независимость для $k$-ой системы собственных векторов для попарно различных $k$ чисел $\lambda$
+    \Nota Приняв доказательство за базу индукции, можно доказать линейную независимость для $k$-ой системы собственных векторов для попарно различных $k$ чисел $\lambda$
 
 \end{document}
 

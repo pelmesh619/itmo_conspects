@@ -9,7 +9,7 @@
 
 
 \begin{document}
-    \textit{Nota: } Изоморфизм $E^n \rightarrow E^{\prime n}$ позволяет переносить свойства скалярного произведения
+    \Nota Изоморфизм $E^n \rightarrow E^{\prime n}$ позволяет переносить свойства скалярного произведения
     из одного в другое пространство
 
     Ex: $\|x + y\| \leq \|x\| + \|y\|$ - арифметические векторы со скалярным произведением $(x, y) = \Sigma^n_{i=1} x_i y_i$
@@ -31,13 +31,11 @@
 
     где $h \perp G$. Правда ли что, длина перпендикулярного вектора $h$ - минимальная длина от точки $M$ до $G$?
 
-    \textit{Th: } $h \perp G, x_0 \in G, x = x_0 + h$. Тогда $\forall x^\prime \in G (x^\prime \neq x_0) \ \ \|x - x^\prime\| > \|x - x_0\|$
+    \Th $h \perp G, x_0 \in G, x = x_0 + h$. Тогда $\forall x^\prime \in G (x^\prime \neq x_0) \ \ \|x - x^\prime\| > \|x - x_0\|$
 
     $\Box \|x - x^\prime\| = \|x - x_0 + x_0 - x^\prime\| \stackrel{\text{по теореме Пифагора}}{====} \|x - x_0\| + \|x_0 - x^\prime\| = \|h\| + \|x_0 - x^\prime\| > \|x - x_0\|$
 
-    \vspace{5mm}
-
-    \textit{Nota: } $x_0$ называется ортогональной проекцией, возникает вопрос о ее вычислении (так находятся основания перпендикуляров)
+    \Nota $x_0$ называется ортогональной проекцией, возникает вопрос о ее вычислении (так находятся основания перпендикуляров)
 
     \vspace{5mm}
 
@@ -73,11 +71,11 @@
     (x,e_k) \\
     \end{array}$
 
-    \textit{Nota:} В матрице $\Gamma$ нет нулевых строк, так как $e_i$ - бизисная и по крайней мере $e_i^2 \neq 0$
+    \Nota В матрице $\Gamma$ нет нулевых строк, так как $e_i$ - бизисная и по крайней мере $e_i^2 \neq 0$
 
     Таким образом по теореме Крамера $\exists! (\lambda_1, \dots, \lambda_k)$
 
-    \textit{Def:} Матрица $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
+    \Def Матрица $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
 
     $\Gamma = I = \begin{array}{|ccc|}
     1 & 0 & \ldots\\
@@ -87,7 +85,7 @@
 
     Далее, $I$ - единичная матрица Грама
 
-    \textit{Nota:} Тогда $I \times \begin{array}{|c|}
+    \Nota Тогда $I \times \begin{array}{|c|}
     \lambda_1\\
     \ldots\\
     \lambda_k \\
@@ -134,9 +132,9 @@
 
     \clearpage
 
-    \textbf{2. Линейный оператор (линейное отображение, линейный функционал, линейное преображение)}
+    \section[p2]{2. Линейный оператор (линейное отображение, линейный функционал, линейное преображение)}
 
-    \textbf{2.1 Определение}
+    \section[p2\_1]{2.1. Определение}
 
     \textit{Линейный оператор} - это отображение $V^n \stackrel{\mathcal{A}}{\Longrightarrow} W^m$
 
@@ -146,27 +144,25 @@
 
     $\mathcal{A} (\lambda x_1 + \mu x_2) = \lambda \mathcal{A} x_1 + \mu \mathcal{A} x_2 = \lambda y_1 + \mu y_2$
 
-    \vspace{3mm}
-
-    \textit{Nota:} Заметим, что если 0 представим как $0 * x$, где $x \neq 0$, то
+    \Nota Заметим, что если 0 представим как $0 * x$, где $x \neq 0$, то
 
     $\mathcal{A}(0) = \mathcal{A}(0 * x) = 0 * \mathcal{A}x \stackrel{0 * y}{=} 0$
 
-    \textit{Nota:} Если $V = W$, то $\mathcal{A}$ называют линейным преобразованием, но далее будем рассматривать в основном операторы $\mathcal{A}: \ \ V \rightarrow V$, $\mathcal{A}: \ \ V^n \rightarrow W^n$
+    \Nota Если $V = W$, то $\mathcal{A}$ называют линейным преобразованием, но далее будем рассматривать в основном операторы $\mathcal{A}: \ \ V \rightarrow V$, $\mathcal{A}: \ \ V^n \rightarrow W^n$
 
-    \vspace{3mm}
 
-    \textit{Ex.1:} $V = \Real^2$ - пространство направленных отрезков
+
+    \ExN{1} $V = \Real^2$ - пространство направленных отрезков
 
     $\mathcal{A}: V \leftarrow V$
 
     $\mathcal{A}x = y = \lambda y_1 + \mu y_2$ для таких $\mathcal{A}$ как сдвиг, поворот, гомотетия, симметрия
 
-    \textit{Ex.2:} $V^n = W^m$, где $m < n$
+    \ExN{2} $V^n = W^m$, где $m < n$
 
     $\mathcal{A}$ - оператор проектирования (убедиться, что он линейный)
 
-    \textit{Ex.3:} $V^n$ - пространство числовых строк длины $n$
+    \ExN{3} $V^n$ - пространство числовых строк длины $n$
 
     $\mathcal{A}: V^n \leftarrow V^n$
 
@@ -178,18 +174,17 @@
     a_{n1} & \ldots & a_{nn}\\
     \end{array}x = y$
 
-    \vspace{5mm}
 
-    \textbf{2.2. Действия с операторами}
+    \section[p2\_2]{2.2. Действия с операторами}
 
-    \textit{Def:} $\mathcal{A}\mathcal{B}: V \rightarrow W$
+    \Def $\mathcal{A}\mathcal{B}: V \rightarrow W$
 
     \begin{enumerate}
         \item $(\mathcal{A} + \mathcal{B})x \stackrel{def}{=} \mathcal{A}x + \mathcal{B}x$ - определение суммы $\mathcal{A} + \mathcal{B} = \mathcal{C}$
         \item $(\lambda\mathcal{A})x \stackrel{def}{=} \lambda(\mathcal{A}x)$ - $\lambda\mathcal{A} = \mathcal{D}$
     \end{enumerate}
 
-    \textit{Nota:} Сформируем линейное пространство из операторов $\mathcal{A}: V \rightarrow W$
+    \Nota Сформируем линейное пространство из операторов $\mathcal{A}: V \rightarrow W$
 
     \begin{enumerate}
         \item Ассоциативность сложения (очевидно)
