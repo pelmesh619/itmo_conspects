@@ -16,13 +16,9 @@ print(list(re.finditer(r'\$.+?\$', file, re.MULTILINE | re.DOTALL)))
 for i in list(re.finditer(r'\$.+?\$', file, re.MULTILINE | re.DOTALL)):
     if '\\displaystyle' in i.group(0):
         continue
-    if any(map(lambda x: x in i.group(0), ['\\frac', '\\Sigma', '\\int', '\\iint', '\\iiint'])):
+    if any(map(lambda x: x in i.group(0), ['\\frac', '\\Sigma', '\\int', '\\iint', '\\iiint', '^', '_'])):
         file = file.replace(i.group(0), '$\\displaystyle ' + i.group(0)[1:])
 
-for i in list(re.finditer(r'\n *([^ ].+:)\n', file)):
-    if '$' not in i.group(1):
-        print(i)
-        file = file.replace(i.group(1), f'\n    \\vspace{{5mm}}\n    \\textbf{{{i.group(1)}}}')
 
 for i in ['Nota', 'Def', 'Mem', 'Th', 'Ex']:
     file = file.replace(i, f'\\vspace{{3mm}}\n\\textit{{{i}}}')
