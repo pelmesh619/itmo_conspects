@@ -1,10 +1,10 @@
+%% THIS FILE IS GENERATED AUTOMATICALLY BY linter.py, ALL CHANGES WILL BE LOST
+
+
 \ProvidesPackage{preamble}
 
-%% English-only
-% \usepackage{T1}
-% \usepackage[utf8]{inputenc}
+% Thanks Mr. Choo for this preamble
 
-%% With Russian
 \usepackage{cmap}
 \usepackage[T2A, T1]{fontenc}
 \usepackage[utf8]{inputenc}
@@ -232,13 +232,6 @@
     topsep=0pt,
 }
 
-% \newenvironment{colsubtasks}[1]{% {<cols>}
-%     \begin{multicols}{#1}
-%     \begin{subtasks}
-% }{%
-%     \end{subtasks}
-%     \end{multicols}
-% }
 
 \newboolean{is-adjustbox-cframe}
 
@@ -339,8 +332,8 @@
     \scalerel*{\text{\faLeaf}}{A}}
 
 %% Bird symbol
-% \newcommand{\Bird}{%
-%     \scalerel*{\text{\faBird}}{A}}
+\newcommand{\Bird}{%
+    \scalerel*{\text{\faBird}}{A}}
 
 %% Seedling symbol
 \newcommand{\Seedling}{%
@@ -627,92 +620,7 @@
     \MakeHeader{30pt}{#1\\#2}{#3\\#4}
 }
 
-%% Eng headers
-% Single header
-\newcommand{\MakeSingleHeaderEng}[1]{% {<left>}
-    \MakeSingleHeader{#1}{\TextDiscreteMathEng, \TextDateEng}}
-% Double header
-\newcommand{\MakeDoubleHeaderEng}[2]{% {<left-first>}{<left-second>}
-    \MakeDoubleHeader{#1}{#2}{\TextDiscreteMathEng}{\TextDateEng}}
-% Single Homework header
-\newcommand{\MakeSingleHeaderHomeworkEng}[2]{% {<number>}{<title>}
-    \MakeSingleHeaderEng{\TextHomeworkEng\ \##1: #2}}
-% Double Homework header
-\newcommand{\MakeDoubleHeaderHomeworkEng}[2]{% {<number>}{<title>}
-    \MakeDoubleHeaderEng{\TextHomeworkEng\ \##1}{#2}}
-% Single Test header
-\newcommand{\MakeSingleHeaderTestEng}[2]{% {<number>}{<title>}
-    \MakeSingleHeaderEng{\TextTestEng\ \##1: #2}}
-% Double Test header
-\newcommand{\MakeDoubleHeaderTestEng}[2]{% {<number>}{<title>}
-    \MakeDoubleHeaderEng{\TextTestEng\ \##1}{#2}}
 
-%% Eng defs
-\newcommand{\TextDiscreteMathEng}{%
-    \fancybold{D}iscrete % space!
-    \fancybold{M}%
-    \kern-.05em%
-    \raisebox{-0.5ex}{$\forall$}%
-    th%
-}
-\newcommand{\TextHomeworkEng}{%
-    \fancybold{H}\kern-.03em omework%
-}
-\newcommand{\TextTestEng}{%
-    \fancybold{T}\kern-.12em est%
-}
-\newcommand{\TextCheatsheetEng}{%
-    \fancybold{C}heatsheet%
-}
-\newcommand{\TextQuestionsetEng}{%
-    \fancybold{Q}\kern-.03em uestion Set%
-}
-\newcommand{\TextCaseEng}{%
-    Case%
-}
-
-%% Rus headers
-% Single header
-\newcommand{\MakeSingleHeaderRus}[1]{% {<left>}
-    \MakeSingleHeader{#1}{\TextDiscreteMathRus, \TextDateRus}}
-% Double header
-\newcommand{\MakeDoubleHeaderRus}[2]{% {<left-first>}{<left-second>}
-    \MakeDoubleHeader{#1}{#2}{\TextDiscreteMathRus}{\TextDateRus}}
-% Single Homework header
-\newcommand{\MakeSingleHeaderHomeworkRus}[2]{% {<number>}{<title>}
-    \MakeSingleHeaderRus{\TextHomeworkRus\ \##1: #2}}
-% Double Homework header
-\newcommand{\MakeDoubleHeaderHomeworkRus}[2]{% {<number>}{<title>}
-    \MakeDoubleHeaderRus{\TextHomeworkRus\ \##1}{#2}}
-% Single Test header
-\newcommand{\MakeSingleHeaderTestRus}[2]{% {<number>}{<title>}
-    \MakeSingleHeaderRus{\TextTestRus\ \##1: #2}}
-% Double Test header
-\newcommand{\MakeDoubleHeaderTestRus}[2]{% {<number>}{<title>}
-    \MakeDoubleHeaderRus{\TextTestRus\ \##1}{#2}}
-
-%% Rus defs
-\newcommand{\TextDiscreteMathRus}{%
-    \fancybold{D}искретная математика%
-}
-\newcommand{\TextHomeworkRus}{%
-    \fancybold{D}\kern-.03em омашнее задание%
-}
-\newcommand{\TextTestRus}{%
-    \fancybold{K}\kern-.06em онтрольная работа%
-}
-\newcommand{\TextCheatsheetRus}{%
-    Шпаргалка%
-}
-\newcommand{\TextCaseRus}{%
-    Вариант%
-}
-
-%% Icons
-\newcommand{\IconFall}{%
-    \raisebox{-0.3ex}{\Leaf}}
-\newcommand{\IconSpring}{%
-    \raisebox{-0.05ex}{\Seedling}}
 
 %% Math color
 % Source: https://tex.stackexchange.com/a/261480/216486
@@ -752,4 +660,38 @@
 \makeatletter
 \renewcommand{\@seccntformat}[1]{}
 \makeatother
+
+% some my macros
+
+\newcommand{\Nota}{ \vspace{5mm}%
+%
+\textit{Nota. }%
+}
+
+\newcommand{\NotaN}[1]{\Nota\textit{#1.}}
+
+\newcommand{\Def}{ \vspace{5mm}%
+%
+\textbf{Def. }}
+
+\newcommand{\DefN}[1]{\Def\textbf{#1.}}
+
+\newcommand{\Mem}{ \vspace{5mm}%
+%
+\textit{Mem. }%
+}
+
+
+\newcommand{\Th}{ \vspace{5mm}%
+%
+\textbf{Th. }}
+
+\newcommand{\ThN}[1]{\Th\textbf{#1.}}
+
+\newcommand{\Ex}{ \vspace{5mm}%
+%
+\textit{Ex. }%
+}
+\newcommand{\ExN}[1]{\Ex\textit{#1.}}
+
 
