@@ -1,15 +1,18 @@
 \documentclass[12pt]{article}
 \usepackage{preamble}
-\usepackage{biblatex}
 
 \pagestyle{fancy}
 \fancyhead[LO,LE]{$\mathcal{D}$искретная математика}
-\fancyhead[CO,CE]{23.04.2024}
 \fancyhead[RO,RE]{Лекции Чухарева К. И.}
 
-
+\renewcommand{\thesection}{}
 
 \begin{document}
+
+    \tableofcontents
+    \clearpage
+
+    
     \section{7. Комбинаторика}
 
     \textbf{Базовые понятия:}
@@ -68,26 +71,26 @@
 
         \vspace{5mm}
 
-        \item $S_n = P_n = P(n, n)$ - множество всех перестановок. Также чаще всего нас будет интересовать не множество, а его размер
+        \item $\displaystyle S_n = P_n = P(n, n)$ - множество всех перестановок. Также чаще всего нас будет интересовать не множество, а его размер
 
-        $|S_n| = n!$ - всего существует $n!$ перестановок
+        $\displaystyle |S_n| = n!$ - всего существует $n!$ перестановок
 
-        $|P(n, k)| = n \cdot (n - 1) \cdot (n - 2) \cdot \dots \cdot (n - k + 1) = \frac{n!}{(n - k)!}$
+        $\displaystyle |P(n, k)| = n \cdot (n - 1) \cdot (n - 2) \cdot \dots \cdot (n - k + 1) = \frac{n!}{(n - k)!}$
 
         \vspace{5mm}
 
         \item \textbf{Циклические $k$-перестановки} (Circular $k$-permutations)
 
-        $\pi_1, \pi_2 \in P(n, k)$ - циклические эквивалентны тогда и только тогда:
+        $\displaystyle \pi_1, \pi_2 \in P(n, k)$ - циклические эквивалентны тогда и только тогда:
 
-        $\exists s \ | \ \forall i \ \pi_1((i + s) \% k) = \pi_2(i)$
+        $\displaystyle \exists s \ | \ \forall i \ \pi_1((i + s) \% k) = \pi_2(i)$
 
 
-        \Ex $\pi_1 = \mathtt{76123}, \pi_2 = \mathtt{12376}$
+        \Ex $\displaystyle \pi_1 = \mathtt{76123}, \pi_2 = \mathtt{12376}$
 
         \begin{tikzpicture}
         \node[circle, draw=black!60, thick, minimum size=0.5cm] (s00) {\mathtt{7}};
-        \node[below=1cm of s00] (pi1) {$\pi_1$};
+        \node[below=1cm of s00] (pi1) {$\displaystyle \pi_1$};
         \node[below left=0.66cm and 1cm of s00] (s01) {\mathtt{6}};
         \node[below right=1cm and 0.13cm of s01] (s02) {\mathtt{1}};
         \node[below right=0.66cm and 1cm of s00] (s04) {\mathtt{3}};
@@ -101,7 +104,7 @@
         ;
 
         \node[circle, draw=black!60, thick, minimum size=0.5cm, right=3cm of s00] (s0) {\mathtt{1}};
-        \node[below=1cm of s0] (pi) {$\pi_2$};
+        \node[below=1cm of s0] (pi) {$\displaystyle \pi_2$};
         \node[below left=0.66cm and 1cm of s0] (s1) {\mathtt{2}};
         \node[below right=1cm and 0.13cm of s1] (s2) {\mathtt{3}};
         \node[below right=0.66cm and 1cm of s0] (s4) {\mathtt{6}};
@@ -115,17 +118,17 @@
         ;
         \end{tikzpicture}
 
-        $P_C(n, k)$ - множество всех циклических $k$-перестановок в $\Sigma$
+        $\displaystyle P_C(n, k)$ - множество всех циклических $k$-перестановок в $\Sigma$
 
-        $|P_C(n, k)| \cdot k = |P(n, k)|$
+        $\displaystyle |P_C(n, k)| \cdot k = |P(n, k)|$
 
-        $|P_C(n, k)| = \frac{|P(n, k)|}{k} = \frac{n!}{k(n - k)!}$
+        $\displaystyle |P_C(n, k)| = \frac{|P(n, k)|}{k} = \frac{n!}{k(n - k)!}$
 
         \vspace{5mm}
 
-        \item \textbf{Неупорядоченная расстановка $k$ элементов} (Unordered arrangement of $k$ elements) - мультимножество $\Sigma^*$ размера $k$
+        \item \textbf{Неупорядоченная расстановка $k$ элементов} (Unordered arrangement of $k$ elements) - мультимножество $\displaystyle \Sigma^*$ размера $k$
 
-        \Ex $\Sigma^* = \Set{\triangle, \triangle, \Box, \triangle, \circ, \Box}^* = \Set{3 \cdot \triangle, 2 \cdot \Box, 1 \cdot \circ} = (\Sigma, r)$
+        \Ex $\displaystyle \Sigma^* = \Set{\triangle, \triangle, \Box, \triangle, \circ, \Box}^* = \Set{3 \cdot \triangle, 2 \cdot \Box, 1 \cdot \circ} = (\Sigma, r)$
 
         Неупорядоченную расстановку можно представить как функцию:
 
@@ -137,13 +140,13 @@
 
         Соответственно $C(n, k)$ - множество всех таких $k$-сочетаний
 
-        $|C(n, k)| = C^k_n = \begin{pmatrix}n \\ k\end{pmatrix}$
+        $\displaystyle |C(n, k)| = C^k_n = \begin{pmatrix}n \\ k\end{pmatrix}$
 
         $C(n, k) = \begin{pmatrix}\Sigma \\ k\end{pmatrix}$
 
         $\begin{pmatrix}n \\ k\end{pmatrix} \cdot k! = |P(n, k)|$
 
-        $|C(n, k)| = \begin{pmatrix}n \\ k\end{pmatrix} = \frac{n!}{k!(n - k)!}$
+        $\displaystyle |C(n, k)| = \begin{pmatrix}n \\ k\end{pmatrix} = \frac{n!}{k!(n - k)!}$
 
     \end{itemize}
 
@@ -157,6 +160,10 @@
 
     \[(x_1 + \dots + x_r)^n = \sum_{\substack{k_i \in 1..n, \\ k_1 + \dots + k_r = n}} \begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} x^{k_1}_1 \cdot \dots \cdot x^{k_r}_r\]
 
-    $\begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} = \frac{n!}{k_1! \dots k_r!}$ - мультиномиальный коэффициент
+    $\displaystyle \begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} = \frac{n!}{k_1! \dots k_r!}$ - мультиномиальный коэффициент
+
+
+
 
 \end{document}
+
