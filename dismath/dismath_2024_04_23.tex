@@ -19,7 +19,7 @@
 
         \vspace{5mm}
 
-        \item \textbf{Диапозон} (Range) $[n] = \Set{1, \dots, n}$ - конечное множество последовательных натуральных чисел
+        \item \textbf{Диапазон} (Range) $[n] = \Set{1, \dots, n}$ - конечное множество последовательных натуральных чисел
 
         \vspace{5mm}
 
@@ -87,11 +87,11 @@
 
         \begin{tikzpicture}
         \node[circle, draw=black!60, thick, minimum size=0.5cm] (s00) {\mathtt{7}};
-        \node[below=1.5cm of s00] (pi1) {$\pi_1$};
-        \node[below left=1cm and 1.5cm of s00] (s01) {\mathtt{6}};
-        \node[below right=1.5cm and 0.5cm of s01] (s02) {\mathtt{1}};
-        \node[below right=1cm and 1.5cm of s00] (s04) {\mathtt{3}};
-        \node[below left=1.5cm and 0.5cm of s04] (s03) {\mathtt{2}};
+        \node[below=1cm of s00] (pi1) {$\pi_1$};
+        \node[below left=0.66cm and 1cm of s00] (s01) {\mathtt{6}};
+        \node[below right=1cm and 0.13cm of s01] (s02) {\mathtt{1}};
+        \node[below right=0.66cm and 1cm of s00] (s04) {\mathtt{3}};
+        \node[below left=1cm and 0.13cm of s04] (s03) {\mathtt{2}};
         \path[->]
         (s00) edge [bend right] node {} (s01)
         (s01) edge [bend right] node {} (s02)
@@ -100,12 +100,12 @@
         (s04) edge [bend right] node {} (s00)
         ;
 
-        \node[circle, draw=black!60, thick, minimum size=0.5cm, right=4cm of s00] (s0) {\mathtt{1}};
-        \node[below=1.5cm of s0] (pi) {$\pi_2$};
-        \node[below left=1cm and 1.5cm of s0] (s1) {\mathtt{2}};
-        \node[below right=1.5cm and 0.5cm of s1] (s2) {\mathtt{3}};
-        \node[below right=1cm and 1.5cm of s0] (s4) {\mathtt{6}};
-        \node[below left=1.5cm and 0.5cm of s4] (s3) {\mathtt{7}};
+        \node[circle, draw=black!60, thick, minimum size=0.5cm, right=3cm of s00] (s0) {\mathtt{1}};
+        \node[below=1cm of s0] (pi) {$\pi_2$};
+        \node[below left=0.66cm and 1cm of s0] (s1) {\mathtt{2}};
+        \node[below right=1cm and 0.13cm of s1] (s2) {\mathtt{3}};
+        \node[below right=0.66cm and 1cm of s0] (s4) {\mathtt{6}};
+        \node[below left=1cm and 0.13cm of s4] (s3) {\mathtt{7}};
         \path[->]
         (s0) edge [bend right] node {} (s1)
         (s1) edge [bend right] node {} (s2)
