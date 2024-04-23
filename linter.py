@@ -21,7 +21,7 @@ open(preamble_path, 'w', encoding='utf8').write(preamble_text)
 for i in list(re.finditer(r'\$.+?\$', file, re.MULTILINE | re.DOTALL)):
     if '\\displaystyle' in i.group(0):
         continue
-    if any(map(lambda x: x in i.group(0), ['\\frac', '\\Sigma', '\\int', '\\iint', '\\iiint', '^', '_'])):
+    if any(map(lambda x: x in i.group(0), ['\\frac', '\\sum', '\\int', '\\iint', '\\iiint', '^', '_', '\\lim'])):
         file = file.replace(i.group(0), '$\\displaystyle ' + i.group(0)[1:])
 
 

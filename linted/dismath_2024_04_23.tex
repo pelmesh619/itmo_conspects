@@ -1,0 +1,162 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+\usepackage{biblatex}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{$\mathcal{D}$искретная математика}
+\fancyhead[CO,CE]{23.04.2024}
+\fancyhead[RO,RE]{Лекции Чухарева К. И.}
+
+
+
+\begin{document}
+    \section{7. Комбинаторика}
+
+    \textbf{Базовые понятия:}
+
+    \begin{itemize}
+        \item \textbf{Алфавит} (Alphabet) $\Sigma$ (или $X$, \Exs $X = \Set{a, b, c}$) - множество символов в нашей системе
+
+        \vspace{5mm}
+
+        \item \textbf{Диапозон} (Range) $[n] = \Set{1, \dots, n}$ - конечное множество последовательных натуральных чисел
+
+        \vspace{5mm}
+
+        \item \textbf{Расстановка} (Ordered arrangement) - последовательность каких-либо элементов (тоже самое, что кортеж),
+        \Exs $x = (a, b, c, d, b, b, c) \quad |x| = n$
+
+        Расстановку можно представить как функцию $f : \underset{\text{domain}}{\undergroup{[n]}} \to \underset{\text{codomain}}{\undergroup{\Sigma}}$, которая по порядковому номеру выдается символ
+
+        $ran f = \Set{c \in \Sigma \ | \ \exists i \in [n]\ :\ f(i) = c}$
+
+        \vspace{5mm}
+
+        \item \textbf{Перестановка} (Permutation) - $\pi : [n] \to \Sigma$, где $n = |\Sigma|$
+
+        Расстановка $\pi$ - биекция между $[n]$ и $\Sigma$
+
+        \Ex $\pi = \mathtt{2713546}$
+
+        \vspace{3mm}
+
+        \begin{tabular}{l|ccccccc}
+            i      & 1          & 2          & 3          & 4          & 5          & 6          & 7          \\
+            \hline
+            \pi(i) & \mathtt{2} & \mathtt{7} & \mathtt{1} & \mathtt{3} & \mathtt{5} & \mathtt{4} & \mathtt{6}
+        \end{tabular}
+
+        \vspace{5mm}
+
+        \underline{Одна из задач комбинаторики} - посчитать количество различных расстановок или перестановок при заданных $n$ и $\Sigma$}
+
+        \vspace{5mm}
+
+        \item \textbf{$k$-перестановка} (k-permutation) - расстановка из $k$ различных элементов из $\Sigma$
+
+        \Ex $\underset{\text{5-perm из } \Sigma = [7]}{\undergroup{|31475|}} = 5$
+
+        $k$-перестановка - инъекция $\pi : [k] \to \Sigma$ ($k \leq n = |\Sigma|$)
+
+        \vspace{5mm}
+
+        \item $P(n, k)$ - множество всех $k$-перестановок алфавита $\Sigma = [n]$ (если исходный алфавит не состоит из чисел, то мы можем сделать биекцию между ним и $[n]$)
+
+        $P(n, k) = \Set{f \ | \ f : [k] \to [n]}$
+
+        Чаще интересует не само множество, а его размер, поэтому под обозначением $P(n, k)$ подразумевается $|P(n, k)|$
+
+        \vspace{5mm}
+
+        \item $\displaystyle S_n = P_n = P(n, n)$ - множество всех перестановок. Также чаще всего нас будет интересовать не множество, а его размер
+
+        $\displaystyle |S_n| = n!$ - всего существует $n!$ перестановок
+
+        $\displaystyle |P(n, k)| = n \cdot (n - 1) \cdot (n - 2) \cdot \dots \cdot (n - k + 1) = \frac{n!}{(n - k)!}$
+
+        \vspace{5mm}
+
+        \item \textbf{Циклические $k$-перестановки} (Circular $k$-permutations)
+
+        $\displaystyle \pi_1, \pi_2 \in P(n, k)$ - циклические эквивалентны тогда и только тогда:
+
+        $\displaystyle \exists s \ | \ \forall i \ \pi_1((i + s) \% k) = \pi_2(i)$
+
+
+        \Ex $\displaystyle \pi_1 = \mathtt{76123}, \pi_2 = \mathtt{12376}$
+
+        \begin{tikzpicture}
+        \node[circle, draw=black!60, thick, minimum size=0.5cm] (s00) {\mathtt{7}};
+        \node[below=1.5cm of s00] (pi1) {$\displaystyle \pi_1$};
+        \node[below left=1cm and 1.5cm of s00] (s01) {\mathtt{6}};
+        \node[below right=1.5cm and 0.5cm of s01] (s02) {\mathtt{1}};
+        \node[below right=1cm and 1.5cm of s00] (s04) {\mathtt{3}};
+        \node[below left=1.5cm and 0.5cm of s04] (s03) {\mathtt{2}};
+        \path[->]
+        (s00) edge [bend right] node {} (s01)
+        (s01) edge [bend right] node {} (s02)
+        (s02) edge [bend right] node {} (s03)
+        (s03) edge [bend right] node {} (s04)
+        (s04) edge [bend right] node {} (s00)
+        ;
+
+        \node[circle, draw=black!60, thick, minimum size=0.5cm, right=4cm of s00] (s0) {\mathtt{1}};
+        \node[below=1.5cm of s0] (pi) {$\displaystyle \pi_2$};
+        \node[below left=1cm and 1.5cm of s0] (s1) {\mathtt{2}};
+        \node[below right=1.5cm and 0.5cm of s1] (s2) {\mathtt{3}};
+        \node[below right=1cm and 1.5cm of s0] (s4) {\mathtt{6}};
+        \node[below left=1.5cm and 0.5cm of s4] (s3) {\mathtt{7}};
+        \path[->]
+        (s0) edge [bend right] node {} (s1)
+        (s1) edge [bend right] node {} (s2)
+        (s2) edge [bend right] node {} (s3)
+        (s3) edge [bend right] node {} (s4)
+        (s4) edge [bend right] node {} (s0)
+        ;
+        \end{tikzpicture}
+
+        $\displaystyle P_C(n, k)$ - множество всех циклических $k$-перестановок в $\Sigma$
+
+        $\displaystyle |P_C(n, k)| \cdot k = |P(n, k)|$
+
+        $\displaystyle |P_C(n, k)| = \frac{|P(n, k)|}{k} = \frac{n!}{k(n - k)!}$
+
+        \vspace{5mm}
+
+        \item \textbf{Неупорядоченная расстановка $k$ элементов} (Unordered arrangement of $k$ elements) - мультимножество $\displaystyle \Sigma^*$ размера $k$
+
+        \Ex $\displaystyle \Sigma^* = \Set{\triangle, \triangle, \Box, \triangle, \circ, \Box}^* = \Set{3 \cdot \triangle, 2 \cdot \Box, 1 \cdot \circ} = (\Sigma, r)$
+
+        Неупорядоченную расстановку можно представить как функцию:
+
+        $r : \Sigma \to \Natural, r(x)$ - кол-во повторений объекта $x$
+
+        \vspace{5mm}
+
+        \item \textbf{$k$-сочетание} ($k$-combination) - неупорядоченная перестановка из $k$ различных элементов из $\Sigma$ (еще называют $k$-подмножеством, $k$-subset)
+
+        Соответственно $C(n, k)$ - множество всех таких $k$-сочетаний
+
+        $\displaystyle |C(n, k)| = C^k_n = \begin{pmatrix}n \\ k\end{pmatrix}$
+
+        $C(n, k) = \begin{pmatrix}\Sigma \\ k\end{pmatrix}$
+
+        $\begin{pmatrix}n \\ k\end{pmatrix} \cdot k! = |P(n, k)|$
+
+        $\displaystyle |C(n, k)| = \begin{pmatrix}n \\ k\end{pmatrix} = \frac{n!}{k!(n - k)!}$
+
+    \end{itemize}
+
+    \Th Биномиальная теорема (Binomial theorem):
+
+    \[(x + y)^n = \sum_{k=0}^n \begin{pmatrix}n \\ k\end{pmatrix} x^k y^{n - k}\]
+
+    $\begin{pmatrix}n \\ k\end{pmatrix}$ - биномиальный коэффициент
+
+    \Th Мультиномиальная теорема (Multinomial theorem)
+
+    \[(x_1 + \dots + x_r)^n = \sum_{\substack{k_i \in 1..n, \\ k_1 + \dots + k_r = n}} \begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} x^{k_1}_1 \cdot \dots \cdot x^{k_r}_r\]
+
+    $\displaystyle \begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} = \frac{n!}{k_1! \dots k_r!}$ - мультиномиальный коэффициент
+
+\end{document}
