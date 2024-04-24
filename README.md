@@ -6,6 +6,8 @@
 
 [**Весь курс**](out/calculus_superconspect.pdf)
 
+* Лекция №1 - TODO
+* Лекция №2 - TODO
 * [Лекция №3](out/calculus_2024_02_21.pdf)
 * [Лекция №4](out/calculus_2024_02_28.pdf)
 * [Лекция №5](out/calculus_2024_03_06.pdf)
@@ -15,6 +17,7 @@
 * [Лекция №9](out/calculus_2024_04_03.pdf)
 * [Лекция №10](out/calculus_2024_04_10.pdf)
 * [Лекция №11](out/calculus_2024_04_17.pdf)
+* [Лекция №12](out/calculus_2024_04_24.pdf)
 
 ## Специальные разделы высшей математики
 

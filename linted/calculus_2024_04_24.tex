@@ -1,0 +1,169 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Математический анализ}
+\fancyhead[CO,CE]{24.04.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    \underline{Следствие}. $\displaystyle S_D = \frac{1}{2} \oint_K xdy - ydx$
+
+    $\displaystyle \frac{\partial P}{\partial y} = \frac{\partial}{\partial y}(- \frac{y}{2}) = -\frac{1}{2},
+    \frac{\partial Q}{\partial x} = \frac{\partial}{\partial x}(\frac{x}{2}) = \frac{1}{2}$
+
+    Формула Грина: $\displaystyle \iint_D (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x})dxdy = \iint_D (\frac{1}{2} - (\-\frac{1}{2}))dxdy =
+    \iint_D dxdy = S_D \stackrel{\text{Ф. Гр.}}{=} \oint_{K^+} (-\frac{y}{2})dx + \frac{x}{2} dy$
+
+    $\displaystyle \int$НЗП -  Интеграл, не зависящий от пути интегрирования.
+
+    \Def $\displaystyle P, Q : D \subset \Real^2 \to \Real$, непрерывно дифференцируемы по 2-м переменным
+
+    $\overset{\smile}{AB} \subset D \quad \forall M, N \in D$
+
+    Параметризация $\overset{\smile}{AB}:
+    \begin{cases}x = \varphi(t) \\ y = \psi(t)\end{cases}$ - $\varphi, \psi$ - непр. дифф (кусочно)
+
+    $\displaystyle I = \int_{AB}Pdx + Qdy$ называется интегралом НЗП, если $\displaystyle \forall M, N \in D \quad \int_{AMB}Pdx + Qdy = \int_{ANB}Pdx + Qdy$
+
+    \Nota Обозначают $\displaystyle \int_A^B Pdx + Qdy$ или $\displaystyle \int_{(x_2,y_2)}^{(x_1,y_1)} Pdx + Qdy$
+
+    \Th Об интеграле НЗП
+
+    В условиях def
+
+    \begin{enumerate}[label=\Roman*.]
+
+    $\displaystyle \int_{AB} Pdx + Qdy$ - инт. НЗП
+
+    $\displaystyle \oint_K Pdx + Qdy = 0 \quad \forall K \subset D$
+
+    $\displaystyle \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
+
+    $\exists \Phi(x, y) \ | \ d\Phi = P(x, y)dx + Q(x, y)dy$ в обл. $D$
+
+    Причем $\displaystyle \Phi(x, y) = \int_{(x_0,y_0)}^{(x_1,y_1)}Pdx+Qdy$, где $\displaystyle (x_0, y_0), (x_1,y_1) \in D$
+
+    \end{enumerate}
+
+    Тогда $I \Longleftrightarrow II \Longleftrightarrow III \Longleftrightarrow IV$
+
+    $\Box I \Longleftrightarrow II$
+
+    $\fbox{\Longrightarrow}$ По def $\displaystyle \int$НЗП $|longleftrightarrow$ \int_{AMB} = \int_{ANB}
+
+    Рассмотрим $\displaystyle \int_{AMB} - \int_{ANB} = \int_{AMB} + \int_{BNA} = \oint_K = 0 \forall K \subset D$
+
+    $\fbox{\Longleftarrow}$ Достаточно разбить $\displaystyle \oint_{K^+} = \int_{AMB} + \int_{BNA} = 0$
+
+    Поскольку $\displaystyle \int_{AMB} + \int_{BNA} = 0$, то $\displaystyle \int_{AMB} - \int_{ANB} = 0$
+
+    II $\Longleftrightarrow$ III
+
+    $\displaystyle \fbox{\Longrightarrow} \oint_K = 0 \stackrel{?}{\Longrightarrow} \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
+
+    От противного $\displaystyle \quad \exists M_0(x_0, y_0) \in D \ | \ \frac{\partial P}{\partial y} \Big|_{M_0} \neq \frac{\partial Q}{\partial x} \Big|_{M_0} \Longleftrightarrow (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} \neq 0$
+
+    Для определенности $\displaystyle \letsymbol (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} > 0$
+
+    Тогда $\displaystyle \exists \delta > 0 \ | \ (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} > \delta > 0$
+
+    Выберем малую окрестность в точке $\displaystyle M_0$ ($\displaystyle U(M_0)$) и обозначим ее контур $\Gamma$
+
+    Так как $P$ и $Q$ непр. дифф., $\displaystyle (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} > 0$ в $\displaystyle U(M_0)$
+
+    Формула Грина: $\displaystyle \iint_{U(M_0)} (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) dxdy > \iint_{U(M_0)} \delta dxdy = \delta S_{U(M_0)} > 0$
+
+    С другой стороны $\displaystyle \iint_{U(M_0)} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})dxdy = \oint_{\Gamma^+} Pdx + Qdy = 0$
+
+    Таким образом, возникаем противоречие
+
+    $\displaystyle \fbox{\Longleftarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \forall M \in D$
+
+    Тогда $\displaystyle \forall D^\prime \subset D \ \ \iint_{D^\prime} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy = 0 = \oint_{\Gamma_{D^\prime}} Pdx + Qdy \forall \Gamma_{D^\prime} \subset D$
+
+    III \Longleftrightarrow IV
+
+    $\displaystyle \fbox{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \Longrightarrow \exists \Phi(x, y)$
+
+    Так как доказано $I \Longleftrightarrow III$, то докажем $I \Longrightarrow IV$
+
+    $\displaystyle \int_{AM} Pdx + Qdy = \int^{M(x,y)}_{A(x_0,y_0)} Pdx + Qdy$ - НЗП $\forall A, M \in D$
+
+    Обозн. $\displaystyle \int^{M(x,y)}_{A(x_0,y_0)} Pdx + Qdy - \Phi(x,y)$
+
+    Докажем, что $d\Phi = Pdx + Qdy$
+
+    Так как $\displaystyle d\Phi(x,y) = \frac{\partial \Phi}{\partial x}dx - \frac{\partial \Phi}{\partial y}dy$, то нужно доказать $\displaystyle \frac{\partial \Phi}{\partial x} = P(x, y), \frac{\partial \Phi}{\partial y} = Q(x, y)$
+
+    $\displaystyle \frac{\partial \Phi}{\partial x} = \lim_{\Delta x \to 0}\frac{\Delta_x \Phi}{\Delta x} = $ [задали приращение вдоль $\displaystyle MM_1$] $\displaystyle  =
+    \lim_{\Delta x \to 0} \frac{\Phi(x + \Delta x, y) - \Phi(x,y)}{\Delta x} = \\
+    \lim_{\Delta x \to 0} \frac{\int^{M_1}_A Pdx + Qdy - \int^M_A Pdx + Qdy}{\Delta x} =
+    \lim_{\Delta x \to 0} \frac{\int^M_A + \int^{M_1}_M - \int^M_A}{\Delta x} = \lim_{\Delta x \to 0} \frac{\int^{M_1}_M}{\Delta x} \stackrel{\text{НЗП}}{=}
+    \lim_{\Delta x \to 0} \frac{\int_{(x,y)}^{(x + \Delta x, y)} P dx}{\Delta x} = [\text{по th Лагранжа } \exists \xi \in [x; x + \Delta x]] = \lim_{\Delta x \to 0} \frac{P(\xi, y) \Delta x}{\Delta x} =
+    \lim_{\Delta x \to 0} P(\xi, y) = P(x, y)$
+
+    Аналогично $\displaystyle \frac{\partial \Phi}{\partial y} = Q(x, y)$
+
+    $\displaystyle \fbox{\Longleftarrow} d\Phi = Pdx + Qdy \stackrel{?}{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$
+
+    Известно $\displaystyle P = \frac{\partial \Phi}{\partial x}, Q = \frac{\partial \Phi}{\partial y}$
+
+    Тогда $\displaystyle \frac{\partial Q}{\partial x} = \frac{\partial^2 \Phi}{\partial x \partial y} = \frac{\partial^2 \Phi}{\partial y \partial x} = \frac{\partial P}{\partial y}$
+
+    $\Box$
+
+    \Nota $\Phi$ - первообразная для $Pdx + Qdy$:
+
+    \Th Ньютона-Лейбница
+
+    Выполнены условия th об интеграле НЗП
+
+    Тогда $\displaystyle \int_A^B Pdx + Qdy = \Phi(B) - \Phi(A)$
+
+    $\displaystyle \Box \int_A^B Pdx + Qdy \stackrel{\exists \Phi | d\Phi = Pdx + Qdy}{=} \int_A^B d\Phi(x, y) \stackrel{\text{параметр.} AB}{=}
+    \int_\alpha^\beta d\Phi(t) = \Phi(t) \Big|_\alpha^\beta = \Phi(\beta) - \Phi(\alpha) = \Phi(B) - \Phi(A)$
+
+    $\Box$
+
+    \underline{Применение}
+
+    \Ex $\displaystyle \int_{AB} (4 - \frac{y^2}{x^2})dx + \frac{2y}{x}dy$
+
+    Проверим НЗП: $\displaystyle \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$: $\displaystyle \frac{\partial P}{\partial y} = -\frac{2y}{x^2}$, $\displaystyle \frac{\partial Q}{\partial x} -\frac{2y}{x^2}$ \Longleftrightarrow НЗП
+
+    Найдем первообразную $\Phi(x, y)$ на все случаи жизни:
+
+    $\displaystyle \Phi(x, y) = \int_{M_0(x_0, y_0)}^{M(x, y)} Pdx + Qdy$
+
+    Выберем путь (самый удобный)
+
+    $\displaystyle \Phi(x, y) = \int_{M_0}^{N} + \int_{N}^{M}$
+
+    $\displaystyle \int_{M_0}^{N} \stackrel{y = 0, x_0 = 1, dy = 0}{=} \int_{(1, 0)}^{(x, 0)} 4 dx = 4x \Big|_{(1,0)}^{(x,0)} = 4x - 4$
+
+    $\displaystyle \int_{N}^{M} \stackrel{dx = 0}{=} \int_{(x, 0)}^{(x, y)} \frac{2y}{x} dy = \frac{y^2}{x} \Big|_{(x,0)}^{(x,y)} = \frac{y^2}{x}$
+
+    $\displaystyle \Phi(x, y) = 4x - 4 + \frac{y^2}{x} + C = 4x + \frac{y^2}{x} + C$
+
+    Проверим: $\displaystyle \frac{\partial \Phi}{\partial x} = 4 - \frac{y^2}{x^2} = P$, $\displaystyle \frac{\partial \Phi}{\partial y} = \frac{2y}{x} = Q$
+
+    Теперь можем искать $\displaystyle \int_{AB} \forall A, B \in D$ по N-L
+
+    $\letsymbol A(1, 1), B(2, 2)$
+
+    $\displaystyle \int_{AB} Pdx + Qdy = \Phi \Big|_A^B = \frac{y^2}{x} + 4x \Big|_{(1,1)}^{(2,2)} = \frac{4}{2} + 8 - 1 - 4 = 5$
+
+    \Nota Функция $\Phi$ ищется в тех случаях, когда $\displaystyle \int_A^B Pdx + Qdy = \int^B_A (P, Q) (dx, dy) = A$ - работа силы, которая не зависит от пути
+
+    (\Exs работа силы тяжести не зависит от пути, а силы трения - зависит)
+
+    \Ex $\letsymbol \overrightarrow{F} = (P, Q) = (0, -mg)$
+
+    $\displaystyle \Phi(x, y) = \int_O^M 0dx - mgdy = -\int_0^y mgdy = -mgy$ - потенциал гравитационного поля (или силы тяжести)
+
+\end{document}
+
+
+
