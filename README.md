@@ -6,8 +6,8 @@
 
 [**Весь курс**](out/calculus_superconspect.pdf)
 
-* Лекция №1 - TODO
-* Лекция №2 - TODO
+* [Лекция №1](out/calculus_2024_02_07.pdf)
+* [Лекция №2](out/calculus_2024_02_14.pdf) - STILL [TODO](calculus/calculus_2024_02_14.tex)
 * [Лекция №3](out/calculus_2024_02_21.pdf)
 * [Лекция №4](out/calculus_2024_02_28.pdf)
 * [Лекция №5](out/calculus_2024_03_06.pdf)
@@ -23,6 +23,8 @@
 
 [**Весь курс**](out/specsec_superconspect.pdf)
 
+* [Лекция №1](out/specsec_2024_02_09.pdf)
+* Лекция №2 - [TODO](specsec/specsec_2024_02_16.tex)
 * Лекция №3 (отсутствует, был праздник)
 * [Лекция №4](out/specsec_2024_03_01.pdf)
 * Лекция №5 (отсутствует, был праздник)

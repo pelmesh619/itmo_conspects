@@ -13,11 +13,132 @@
     \clearpage
 
     
+    \section{1. Евклидовы пространства}
+
+
+    \section{1.1. Скалярное произведение}
+
+    $L$ - линейное пространство $\quad \forall x, y \in L \ \unserset{c = (x, y) - \text{ск. произв.}}{x, y \to c \in \Real}$
+
+    \begin{enumerate}
+        \item $(x, y) = (y, x)$
+        \item $(\lambda x, y) = \lambda (x, y), \quad \lambda \in \Real$
+        \item $(x + z, y) = (x, y) + (z, y)$
+        \item $\forall x \in L\ (x, x) \geq 0$ и $(x, x) = 0 \Longrightarrow x = 0$
+    \end{enumerate}
+
+    Если векторы и коэффициенты комплескно-значные, то определения будут другими
+
+    \Def Скалярная функция $c = (x, y)$ со свойствами 1-4 называется скалярным произведением элементов $x$ и $y$
+
+    \Def Линейное пространство со скалярным произведением называется \underline{Евклидовым}
+
+    \ExN{1} ЛП - пространство геометрических векторов
+
+    $(\overrightarrow{a}, \overrightarrow{b}) =
+    \begin{sqcases}
+        |\overrightarrow{a}||\overrightarrow{b}|\cos\varphi, \quad \overrightarrow{a}, \overrightarrow{b} \neq 0 \\
+        0, \quad \overrightarrow{a} = 0 \lor \overrightarrow{b} = 0
+    \end{sqcases}$
+
+    \ExN{2} ЛП $\displaystyle = C_{[a;b]}$
+
+    $\displaystyle (f(x), g(x)) \stackrel{def}{=} \int^b_a f(x)g(x) dx$
+
+    Очевидно, что 1-3 выполняются, проверим 4:
+
+    $\displaystyle \int^b_a f^2(x) dx = 0 \stackrel{?}{\Longrightarrow} f(x) = 0$
+
+    \ExN{3} ЛП - пространство числовых строк вида $\displaystyle x = (x_1, x_2, \dots, x_n)$
+
+    $\displaystyle (x, y) = x_1 y_1 + \dots x_n y_n = \sum_{i=1}^n x_i y_i$ - сумма произведений компонент
+
+    \section{1.2. Свойства евклидова пространства - $E$}
+
+    \Th Неравенство Коши-Буняковского
+
+    $\displaystyle (x, y)^2 \leq (x, x)(y, y)$
+
+    $\Box$
+
+    Нетрудно заметить, что:
+
+    $\displaystyle \sphericalangle (\lambda x - y, \lambda x - y) = (\lambda x - y, \lambda x) - (\lambda x - y, y) =
+    (\lambda x, \lambda x) - (y, \lambda x) - (\lambda x, y) + (y, y) = \lambda^2 (x, x) - 2\lambda (x, y) + (y, y) \stackrel{\text{пусть}}{=} 0$
+
+    Решим относительно $\lambda$
+
+    $\displaystyle D = 4(x, y)^2 - 4(x, x)(y, y)$
+
+    $\displaystyle \frac{D}{4} = (x, y)^2 - (x, x)(y, y)$
+
+    Так как $(\lambda x - y) \geq 0$ (4-ое свойство ск. произв.), то уравнение имеет $\leq 1$ корня, значит
+    $\displaystyle \frac{D}{4} = (x, y)^2 - (x, x)(y, y) \leq 0$
+
+    $\Box$
+
+    \section{1.3. Норма}
+
+    ЛП $= L, \forall x \in L$ определена функция так, что выполняется $x \to n \in \Real, n = \|x\|$
+
+    \begin{enumerate}
+        \item $\|x\| \geq 0$ и $\|x\| = 0 \Longrightarrow x = 0$
+        \item $\|\lambda x\| = |\lambda| \cdot \|x\| \quad \lambda \in \Real$
+        \item $\|x + y\| \leq \|x\| + \|y\| \quad \forall x, y \in L$
+    \end{enumerate}
+
+    Евклидово пространство с нормой называется нормированным
+
+    \Th $\displaystyle E^n$ является нормированным, если $\|x\| = \sqrt{(x, x)}$
+
+    $\Box$
+
+    Свойства 1-2 очевидны, докажем 3 свойство:
+
+    $\|x + y\| = \sqrt{(x + y, x + y)} \leq \sqrt{(x, x)} + \sqrt{(y, y)} = \|x\| + \|y\|$
+
+    $\sqrt{(x, x) + 2(x, y) + (y, y)} \leq \sqrt{(x, x)} + \sqrt{(y, y)}$
+
+    $(x, x) + 2(x, y) + (y, y) \leq (x, x) + (y, y) + 2\sqrt{(x, x)(y, y)}$
+
+    $(x, y) \leq \sqrt{(x, x)(y, y)}$
+
+    $\displaystyle (x, y)^2 \leq (x, x)(y, y)$ - верно по неравенству Коши-Буняковского
+
+    $\Box$
+
+    Обобщим геометрические понятия ортогональности и косинуса угла на случай произвольных векторов
+
+    \Def $x, y$ - ортогональны, если $(x, y) = 0$ и $x \neq 0$ и $y \neq 0 \quad x \perp y$
+
+    \Def $\displaystyle \cos(\widehat{x, y}) = \frac{(x, y)}{\|x\|\cdot\|y\|}$ - косинус угла между векторами
+
+    \Def $\displaystyle x, y \in E^n \quad x \perp y \quad z = x + y$ - гипотенуза
+
+    \Th $x \perp y$, тогда $\displaystyle \|x + y\|^2 = \|x\|^2 + \|y\|^2$
+
+    $\Box$
+
+    $\displaystyle \|x + y\|^2 = (x + y, x + y) = (x, x)^2 + \underset{= 0, x \perp y}{\undergroup{2(x, y)}} + (y, y)^2 = (x, x)^2 + (y, y)^2$
+
+    $\Box$
+
+    \Def $\displaystyle B = \Set{e_i}_{i=1}^n$ - базис $\displaystyle L^n$
+
+    На $\displaystyle L^n$ введены $(x, y)$ и $\|x\|$ (то есть $\displaystyle L^n \to E^n_{\|\cdot\|}$ - нормированное евклидово)
+
+    $B$ называют ортонормированным базисом, если $\displaystyle (e_i, e_j) = \begin{cases}0, i \neq j \\ 1, i = j\end{cases}$
+
+    \Nota Докажем, что всякая такая система из $n$ векторов линейно независима (то есть всякая нулевая комбинация тривиальная):
+
+    $\displaystyle \sum_{i=1}^n \lambda_i e_i = 0 \stackrel{?}{\Longrightarrow} \forall \lambda_i = 0$
+
+    $\displaystyle (e_k, \sum_{i=1}^n \lambda_i e_i) = \sum_{i=1}^n \lambda_i (e_k, e_i) \stackrel{k \neq i \Rightarrow (e_k, e_i) = 0}{=\joinrel=\joinrel=}
+    \lambda_k \|e_k\|^2 = \lambda_k = 0 \quad \forall k$
 
 
 
-
-
+    \textit{(записи внезапно обрываются)}
 
 
 

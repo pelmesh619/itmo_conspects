@@ -1,6 +1,6 @@
 import os
 
-folder = "calculus"
+folder = "specsec"
 
 for i in os.listdir(folder):
     if i.endswith('tex'):
