@@ -13,6 +13,14 @@
     \clearpage
 
     
+
+
+
+
+
+
+
+
     \Nota Изоморфизм $\displaystyle E^n \rightarrow E^{\prime n}$ позволяет переносить свойства скалярного произведения
     из одного в другое пространство
 
@@ -926,7 +934,7 @@
 
     \Nota Чтобы упорядочить построение базиса, в котором $\displaystyle V_i$ может брать $\displaystyle \max \lambda_i$
 
-    \Nota Из теоремы следует, что самосопряженный оператор диагонализируется: $\displaystyle \Sigma$ алг. крат. $ = n$ (степень уравнения), а $\displaystyle \Sigma$ геом. крат. $\displaystyle = \dim \Set{e_1, \dots, _n} = n$
+    \Nota Из теоремы следует, что самосопряженный оператор диагонализируется: $\Sigma$ алг. крат. $ = n$ (степень уравнения), а $\Sigma$ геом. крат. $\displaystyle = \dim \Set{e_1, \dots, _n} = n$
 
 
     Разложение самосопряж. оператора в спектр:
@@ -1331,6 +1339,191 @@
     Сведем к виду: $\displaystyle \frac{dy}{dx} = \frac{P(x, y)}{-Q(x, y)} \Longrightarrow -Q(x, y)dy = P(x, y)dx \Longrightarrow $
 
     \fbox{$P(x, y)dx + Q(x, y)dy = 0$} - форма в дифференциалах
+
+
+
+    \section{4.2 ДУ первого порядка (ДУ$\displaystyle _1$)}
+
+    \Nota Среди ДУ$\displaystyle _1$ рассмотрим несколько типов точно интегрируемых ДУ
+
+    1) Уравнение с разделяющимися переменными (УРП)
+
+    2) Однородное уравнение (ОУ)
+
+    3) Уравнение полных дифференциалов (УПД)
+
+    4) Линейное дифференциальное уравнение первого порядка (ЛДУ$\displaystyle _1$)
+
+    Кроме этого интегрируются дифференциальные уравнения Бернулли, Лагранжа, Клеро, Рикатти и др. (см. литературу)
+
+    1* УРП
+
+    \Def $m(x)N(y)dx + M(x)n(y)dy = 0$
+
+    \underline{Решение} : $N(y)M(x) \neq 0$
+
+    $\displaystyle \frac{m(x)}{M(x)}dx + \frac{n(y)}{N(y)}dy = 0 \quad y = y(x)$ - неизвестная функция (ее ищем, решая ДУ)
+
+    $\displaystyle (\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime)dx = 0$
+
+    Интегрируем по $dx$:
+
+    $\displaystyle \int \left(\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime\right)dx = const$
+
+    По свойствам интеграла:
+
+    $\displaystyle \int \frac{m(x)}{M(x)}dx + \int\frac{n(y)}{N(y)}dy = const$
+
+    или: $\displaystyle \int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$
+
+    \Ex $xdy - ydx = 0$
+
+    $xdy = ydx$
+
+    $\displaystyle \frac{dy}{y} = \frac{dx}{x} \quad (x, y \neq 0)$
+
+    $\displaystyle \int \frac{dy}{y} = \int \frac{dx}{x}$
+
+    $\ln|y| = \ln|x| + \tilde{C} = \ln|\tilde{\tilde{C}}x|$
+
+    $|y| = |\tilde{\tilde{C}}x|$
+
+    $y = Cx, \quad C \in \Real$
+
+    Заметим, $x = y = 0$ - решение, но они учтены общим решением $y = Cx$, (при $C = 0, y = 0$) и подстановкой в ДУ $x = 0$
+
+    \Nota В процессе решения нужно проверить $M(x) = 0$ и $N(y) = 0$
+
+    $M(x) = 0$ при $x = a$ и $N(y) = 0$ при $y = b$
+
+    $m(a)\underset{=0}{\undergroup{N(b)}}dx + n(b)\underset{=0}{\undergroup{M(a)}}dy = 0$
+
+    То есть $M(x) = 0$ и $N(y) = 0$ - решение
+
+    2* ОУ
+
+    \DefN{1} Однородная функция $n$-ого порядка называется функция $f(x, y)$ такая, что
+
+    $\displaystyle f(\lambda x, \lambda y) = \lambda^k f(x, y), \quad \lambda \in \Real, \lambda \neq 0$
+
+    \Ex $\displaystyle f = \cos\left(\frac{x}{y}\right), \cos(\frac{\lambda x}{\lambda y}) = \cos(\frac{x}{y})$ - нулевой порядок однородности
+
+    $\displaystyle f = \sqrt{x^2 + y^2}$ - первый порядок
+
+    \DefN{2} \fbox{$P(x, y)dx + Q(x, y)dy = 0$, где $P(x, y), Q(x, y)$ - однородные функции одного порядка} - ОУ
+
+    \underline{Решение} $\displaystyle P(x, y) = P\left(x \cdot 1, x \cdot \frac{y}{x}\right) = x^k P\left(1, \frac{y}{x}\right)$
+
+    $\displaystyle Q(x, y) = x^k Q\left(1, \frac{y}{x}\right)$
+
+    Тогда, $\displaystyle P\left(1, \frac{y}{x}\right)dx + Q\left(1, \frac{y}{x}\right)dy = 0$.
+
+    Обозначим $\displaystyle \frac{y}{x} = t, \quad y^\prime = \frac{dy}{dx} \stackrel{y = tx}{=\joinrel=} t^\prime_x x + t x^\prime_x = t^\prime_x x + t$
+
+    $\displaystyle P(1, t) + Q(1, t)y^\prime = P(1, t) + Q(1, t)(t^\prime x + t) = 0$
+
+    $\displaystyle t^\prime x + t = -\frac{P(1, t)}{Q(1, t)} \stackrel{\text{обозн}}{=} f(t)$
+
+    $\displaystyle t^\prime x = f(t) - t$
+
+    $\displaystyle \frac{dt}{dx}x = f(t) - t \neq 0$
+
+    $\displaystyle \frac{dt}{f(t) - t} = \frac{dx}{x}$
+
+    $\displaystyle \int\frac{dt}{f(t) - t} = \int\frac{dx}{x} = \ln|Cx|$
+
+    $\displaystyle Cx = e^{\int\frac{dt}{f(t) - t}} = \varphi(x, y)$ - общий интеграл
+
+    Если $f(t) - t = 0$, то пусть $t = k$ - корень, тогда $\displaystyle k = \frac{y}{x} \to y = kx$ - тоже решение
+
+    \Ex $(x + y)dx + (x - y)dy = 0$
+
+    $\displaystyle \frac{y}{x} = t \quad y^\prime = t^\prime x + t$
+
+    $\displaystyle y = tx \quad dy = (t^\prime x + t)dx$
+
+    $\displaystyle (x + tx)dx + (x - tx)(t^\prime x + t)dx = 0$
+
+    $\displaystyle (1 + t) + (1 - t)(t^\prime x + t) = 0$
+
+    $\displaystyle t^\prime (1 - t) x + t - t^2 + 1 + t = 0$
+
+    $\displaystyle t^\prime (1 - t) x = t^2 - 2t - 1$
+
+    $\displaystyle \frac{(1 - t) dx}{t^2 - 2t - 1} = \frac{dx}{x}$ - УРП
+
+    $\displaystyle \frac{(1 - t)dt}{(1 - t)^2 - 2} = -\frac{1}{2}\frac{d((1 - t)^2) - 2}{(1 - t)^2 - 2} = -\frac{1}{2}\ln|(1 - t)^2 - 2| = \ln\frac{1}{\sqrt{(1 - t)^2 - 2}} = \ln|Cx|$
+
+    $\displaystyle \tilde{C}x = \frac{1}{\sqrt{(1 - t)^2 - 2}} \Longleftrightarrow Cx^2 = \frac{1}{(1 - t)^2 - 2} = \Longleftrightarrow Cx^2 ((1 - t)^2 - 2) = 1$
+
+    $\displaystyle C ((y - x)^2 - 2x^2) = 1$
+
+    $\displaystyle C (y^2 - 2xy - x^2) = 1$
+
+    $\displaystyle y^2 - 2xy - x^2 = C$ - гиперболы
+
+    $\displaystyle (t - 1)^2 - 2 = 0 \quad \frac{y}{x} = 1 \pm \sqrt{2} \quad y = (1 \pm \sqrt{2})x$ - асимптоты
+
+    3* Уравнение в полных дифференциалах
+
+    \Def \fbox{$\displaystyle P(x, y)dx + Q(x, y)dy = 0 \\ \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$} - УПД
+
+    \vspace{5mm}
+
+    \underline{Решение} \Mems \Ths об интеграле НЗП $\quad \exists \Phi(x, y)\ | \ d\Phi = P(x, y)dx + Q(x, y)dy$
+
+    $\displaystyle \Phi(x, y) = \int^{(x,y)}_{(x_0,y_0)} Pdx + Qdy$
+
+    \Ex $\displaystyle (x + y)dx + (x - y)dy = 0 \quad \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$
+
+    $\displaystyle \Phi(x, y) = \int^{(x, y)}_{(x_0,y_0)} (x + y)dx + (x - y)dy =
+    \int^{(x,0)}_{(0,0)} xdx + \int^{(x,y)}_{(x,0)} (x - y)dy = \frac{x^2}{2} \Big|_{(0, 0)}^{(x, 0)} +
+    (xy + \frac{y^2}{2}) \Big|_{(x, 0)}^{(x, y)} = \frac{x^2}{2} + xy - \frac{y^2}{2} + C$ - общий интеграл
+
+    $\displaystyle x^2 + 2xy - y^2 = C$
+
+    4* ЛДУ
+
+    \Def \fbox{$\displaystyle y^\prime + p(x)y = q(x)$} - ЛДУ$\displaystyle _1$
+
+    $\displaystyle p, q \in C_{[a, b]}$
+
+    \Nota Будем решать методом Лагранжа (метод вариации произвольной постоянной)
+
+    Принцип: если удалось найти частное решение ДУ$\displaystyle _\text{однор}$ (обозначим $\displaystyle y_0$), то общее решение ДУ$\displaystyle _\text{неод}$
+    можно искать в виде $\displaystyle y = C(x)y_0$
+
+    \Def Однородное (ЛОДУ): $\displaystyle y^\prime + p(x)y = 0$
+
+    \Def Неоднородное (ЛНДУ): $\displaystyle y^\prime + p(x)y = q(x)$
+
+    \Ex $\displaystyle \letsymbol y(x) = x^2 e^{-x}$ - частное решение ЛНДУ
+
+    А $\displaystyle y_0 = x e^{-x}$, тогда $\displaystyle y = x xe^{-x} = C(x) x e^{-x}$
+
+    То есть $C(x)$ варьируется, чтобы получить решение $y = y(x)$
+
+    \underline{Решение} а) $\displaystyle y^\prime + p(x)y = 0$
+
+    $\displaystyle \frac{dy}{dx} + p(x)y = 0$ - УРП
+
+    $\displaystyle \frac{dy}{y} = -p(x)dx$
+
+    $\displaystyle \ln|\tilde{C}y| = -\int p(x)dx$
+
+    $\displaystyle \overline{y} = Ce^{-\int p(x) dx} = Cy_0$
+
+    б) $\displaystyle y^\prime + p(x)y = q(x)$
+
+    Ищем $y(x)$ в виде $\displaystyle y = C(x)y_0$
+
+    $\displaystyle C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
+
+    $\displaystyle C^\prime(x)y_0 + C(x)\underset{=0}{\undergroup{(y^\prime_0 + p(x)y_0)}} = q(x)$
+
+    $\displaystyle C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
+
+    $\displaystyle C(x) = \int q(x) e^{\int p(x)dx} dx$
 
 
 

@@ -1,0 +1,195 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Специальные разделы \\ высшей математики}
+\fancyhead[CO,CE]{26.04.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    \section{4.2 ДУ первого порядка (ДУ$_1$)}
+
+    \Nota Среди ДУ$_1$ рассмотрим несколько типов точно интегрируемых ДУ
+
+    1) Уравнение с разделяющимися переменными (УРП)
+
+    2) Однородное уравнение (ОУ)
+
+    3) Уравнение полных дифференциалов (УПД)
+
+    4) Линейное дифференциальное уравнение первого порядка (ЛДУ$_1$)
+
+    Кроме этого интегрируются дифференциальные уравнения Бернулли, Лагранжа, Клеро, Рикатти и др. (см. литературу)
+
+    1* УРП
+
+    \Def $m(x)N(y)dx + M(x)n(y)dy = 0$
+
+    \underline{Решение} : $N(y)M(x) \neq 0$
+
+    $\frac{m(x)}{M(x)}dx + \frac{n(y)}{N(y)}dy = 0 \quad y = y(x)$ - неизвестная функция (ее ищем, решая ДУ)
+
+    $(\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime)dx = 0$
+
+    Интегрируем по $dx$:
+
+    $\int \left(\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime\right)dx = const$
+
+    По свойствам интеграла:
+
+    $\int \frac{m(x)}{M(x)}dx + \int\frac{n(y)}{N(y)}dy = const$
+
+    или: $\int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$
+
+    \Ex $xdy - ydx = 0$
+
+    $xdy = ydx$
+
+    $\frac{dy}{y} = \frac{dx}{x} \quad (x, y \neq 0)$
+
+    $\int \frac{dy}{y} = \int \frac{dx}{x}$
+
+    $\ln|y| = \ln|x| + \tilde{C} = \ln|\tilde{\tilde{C}}x|$
+
+    $|y| = |\tilde{\tilde{C}}x|$
+
+    $y = Cx, \quad C \in \Real$
+
+    Заметим, $x = y = 0$ - решение, но они учтены общим решением $y = Cx$, (при $C = 0, y = 0$) и подстановкой в ДУ $x = 0$
+
+    \Nota В процессе решения нужно проверить $M(x) = 0$ и $N(y) = 0$
+
+    $M(x) = 0$ при $x = a$ и $N(y) = 0$ при $y = b$
+
+    $m(a)\underset{=0}{\undergroup{N(b)}}dx + n(b)\underset{=0}{\undergroup{M(a)}}dy = 0$
+
+    То есть $M(x) = 0$ и $N(y) = 0$ - решение
+
+    2* ОУ
+
+    \DefN{1} Однородная функция $n$-ого порядка называется функция $f(x, y)$ такая, что
+
+    $f(\lambda x, \lambda y) = \lambda^k f(x, y), \quad \lambda \in \Real, \lambda \neq 0$
+
+    \Ex $f = \cos\left(\frac{x}{y}\right), \cos(\frac{\lambda x}{\lambda y}) = \cos(\frac{x}{y})$ - нулевой порядок однородности
+
+    $f = \sqrt{x^2 + y^2}$ - первый порядок
+
+    \DefN{2} \fbox{$P(x, y)dx + Q(x, y)dy = 0$, где $P(x, y), Q(x, y)$ - однородные функции одного порядка} - ОУ
+
+    \underline{Решение} $P(x, y) = P\left(x \cdot 1, x \cdot \frac{y}{x}\right) = x^k P\left(1, \frac{y}{x}\right)$
+
+    $Q(x, y) = x^k Q\left(1, \frac{y}{x}\right)$
+
+    Тогда, $P\left(1, \frac{y}{x}\right)dx + Q\left(1, \frac{y}{x}\right)dy = 0$.
+
+    Обозначим $\frac{y}{x} = t, \quad y^\prime = \frac{dy}{dx} \stackrel{y = tx}{=\joinrel=} t^\prime_x x + t x^\prime_x = t^\prime_x x + t$
+
+    $P(1, t) + Q(1, t)y^\prime = P(1, t) + Q(1, t)(t^\prime x + t) = 0$
+
+    $t^\prime x + t = -\frac{P(1, t)}{Q(1, t)} \stackrel{\text{обозн}}{=} f(t)$
+
+    $t^\prime x = f(t) - t$
+
+    $\frac{dt}{dx}x = f(t) - t \neq 0$
+
+    $\frac{dt}{f(t) - t} = \frac{dx}{x}$
+
+    $\int\frac{dt}{f(t) - t} = \int\frac{dx}{x} = \ln|Cx|$
+
+    $Cx = e^{\int\frac{dt}{f(t) - t}} = \varphi(x, y)$ - общий интеграл
+
+    Если $f(t) - t = 0$, то пусть $t = k$ - корень, тогда $k = \frac{y}{x} \to y = kx$ - тоже решение
+
+    \Ex $(x + y)dx + (x - y)dy = 0$
+
+    $\frac{y}{x} = t \quad y^\prime = t^\prime x + t$
+
+    $y = tx \quad dy = (t^\prime x + t)dx$
+
+    $(x + tx)dx + (x - tx)(t^\prime x + t)dx = 0$
+
+    $(1 + t) + (1 - t)(t^\prime x + t) = 0$
+
+    $t^\prime (1 - t) x + t - t^2 + 1 + t = 0$
+
+    $t^\prime (1 - t) x = t^2 - 2t - 1$
+
+    $\frac{(1 - t) dx}{t^2 - 2t - 1} = \frac{dx}{x}$ - УРП
+
+    $\frac{(1 - t)dt}{(1 - t)^2 - 2} = -\frac{1}{2}\frac{d((1 - t)^2) - 2}{(1 - t)^2 - 2} = -\frac{1}{2}\ln|(1 - t)^2 - 2| = \ln\frac{1}{\sqrt{(1 - t)^2 - 2}} = \ln|Cx|$
+
+    $\tilde{C}x = \frac{1}{\sqrt{(1 - t)^2 - 2}} \Longleftrightarrow Cx^2 = \frac{1}{(1 - t)^2 - 2} = \Longleftrightarrow Cx^2 ((1 - t)^2 - 2) = 1$
+
+    $C ((y - x)^2 - 2x^2) = 1$
+
+    $C (y^2 - 2xy - x^2) = 1$
+
+    $y^2 - 2xy - x^2 = C$ - гиперболы
+
+    $(t - 1)^2 - 2 = 0 \quad \frac{y}{x} = 1 \pm \sqrt{2} \quad y = (1 \pm \sqrt{2})x$ - асимптоты
+
+    3* Уравнение в полных дифференциалах
+
+    \Def \fbox{$P(x, y)dx + Q(x, y)dy = 0 \\ \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$} - УПД
+
+    \vspace{5mm}
+
+    \underline{Решение} \Mems \Ths об интеграле НЗП $\quad \exists \Phi(x, y)\ | \ d\Phi = P(x, y)dx + Q(x, y)dy$
+
+    $\Phi(x, y) = \int^{(x,y)}_{(x_0,y_0)} Pdx + Qdy$
+
+    \Ex $(x + y)dx + (x - y)dy = 0 \quad \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$
+
+    $\Phi(x, y) = \int^{(x, y)}_{(x_0,y_0)} (x + y)dx + (x - y)dy =
+    \int^{(x,0)}_{(0,0)} xdx + \int^{(x,y)}_{(x,0)} (x - y)dy = \frac{x^2}{2} \Big|_{(0, 0)}^{(x, 0)} +
+    (xy + \frac{y^2}{2}) \Big|_{(x, 0)}^{(x, y)} = \frac{x^2}{2} + xy - \frac{y^2}{2} + C$ - общий интеграл
+
+    $x^2 + 2xy - y^2 = C$
+
+    4* ЛДУ
+
+    \Def \fbox{$y^\prime + p(x)y = q(x)$} - ЛДУ$_1$
+
+    $p, q \in C_{[a, b]}$
+
+    \Nota Будем решать методом Лагранжа (метод вариации произвольной постоянной)
+
+    Принцип: если удалось найти частное решение ДУ$_\text{однор}$ (обозначим $y_0$), то общее решение ДУ$_\text{неод}$
+    можно искать в виде $y = C(x)y_0$
+
+    \Def Однородное (ЛОДУ): $y^\prime + p(x)y = 0$
+
+    \Def Неоднородное (ЛНДУ): $y^\prime + p(x)y = q(x)$
+
+    \Ex $\letsymbol y(x) = x^2 e^{-x}$ - частное решение ЛНДУ
+
+    А $y_0 = x e^{-x}$, тогда $y = x xe^{-x} = C(x) x e^{-x}$
+
+    То есть $C(x)$ варьируется, чтобы получить решение $y = y(x)$
+
+    \underline{Решение} а) $y^\prime + p(x)y = 0$
+
+    $\frac{dy}{dx} + p(x)y = 0$ - УРП
+
+    $\frac{dy}{y} = -p(x)dx$
+
+    $\ln|\tilde{C}y| = -\int p(x)dx$
+
+    $\overline{y} = Ce^{-\int p(x) dx} = Cy_0$
+
+    б) $y^\prime + p(x)y = q(x)$
+
+    Ищем $y(x)$ в виде $y = C(x)y_0$
+
+    $C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
+
+    $C^\prime(x)y_0 + C(x)\underset{=0}{\undergroup{(y^\prime_0 + p(x)y_0)}} = q(x)$
+
+    $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
+
+    $C(x) = \int q(x) e^{\int p(x)dx} dx$
+
+\end{document}
+
