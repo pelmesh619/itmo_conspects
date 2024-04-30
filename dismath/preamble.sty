@@ -323,7 +323,7 @@
 
 %% Cat symbol
 \newcommand\CatSymbol[1]{% {<height>}
-    \includegraphics[height=#1]{img/Cat.pdf}}
+    \includegraphics[height=#1]{images/Cat.pdf}}
 \newcommand\Cat[1][\thefontsize pt]{% [<height>]
     \smash[b]{\raisebox{-0.2\height}{\CatSymbol{#1}}}}
 
@@ -678,16 +678,18 @@
 
 \newcommand{\DefN}[1]{\Def\textbf{#1.}}
 
+\newcommand{\Mems}{\textit{Mem. }} % s - for silent
 \newcommand{\Mem}{ \vspace{5mm}%
 %
-\textit{Mem. }%
+\Mems%
 }
 \newcommand{\MemN}[1]{\Mem\textit{#1.}}
 
 
+\newcommand{\Ths}{\textbf{Th. }} % s - for silent
 \newcommand{\Th}{ \vspace{5mm}%
 %
-\textbf{Th. }}
+\Ths}
 
 \newcommand{\ThN}[1]{\Th\textbf{#1.}}
 
