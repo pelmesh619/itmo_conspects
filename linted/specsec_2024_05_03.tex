@@ -1,0 +1,210 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Специальные разделы \\ высшей математики}
+\fancyhead[CO,CE]{03.05.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    \Mem $\displaystyle y^\prime + p(x)y = q(x)$
+
+    1) $\displaystyle y^\prime + p(x)y = 0$
+
+    $\displaystyle \frac{dy}{y} = -p(x)dx$
+
+    $\displaystyle y_0 = e^{-\int p(x)dx}$
+
+    $\displaystyle \overline{y} = Ce^{-\int p(x)dx}$ - общее решение ЛОДУ
+
+    2) $\displaystyle y^\prime + p(x)y = q(x)$
+
+    $\displaystyle y(x) = C(x)y_0$
+
+    $\displaystyle C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
+
+    $\displaystyle C(x)(y_0^\prime + p(x)y_0) = 0$ - так как $\displaystyle y_0$ - решение ЛОДУ
+
+    $\displaystyle C^\prime(x) = \frac{q(x)}{y_0}$
+
+    $\displaystyle C(x) = \int q(x)e^{\int p(x)dx} dx + C$
+
+    Окончательно, $\displaystyle y(x) = \left(\left(\int q(x) e^{\int p(x)dx} + C\right) dx\right) e^{-\int p(x) dx} =
+    Ce^{-\int p dx} + e^{-\int pdx} \int q e^{\int p dx} = \overline{y} + y^*$
+
+
+    \section{4.3. Существование и единственность решения}
+
+    \Mem
+    \begin{cases}
+        y^{\prime} = f(x, y) \\
+        y(x_0) = y_0
+    \end{cases} \Ths Если $\displaystyle \exists U(M_0) \ | \
+    \begin{cases}
+        f(x,y) \in C_{U(M_0)} \\
+        \frac{\partial f}{\partial y}\text{ - огр. в } U(M_0)
+    \end{cases}$, то в $\displaystyle M_0\ \exists! y(x)$ - решение ДУ
+
+    \vspace{5mm}
+
+    Решение ДУ называется особым, если $\forall$ его точке нарушается \Ths существования и единственности, то есть
+    через каждую точку проходит несколько интегральных кривых
+
+    \Def $P(x, y)dx + Q(x, y)dy = 0$ задает поле интегральных кривых, заполняющих область $D$
+
+    Соответственно точки $D$ могут быть особыми или обыкновенными (выпол. усл. \Ths)
+    \vspace{5mm}
+
+    \underline{Условия особого решения} $\ P(x, y)$ или $Q(x, y) = 0$
+
+    \begin{tabular}{c|{5mm}l{6cm}c{5mm}p{3cm}}
+        \Exs 1. & $\displaystyle \frac{dy}{\sqrt{1 - y^2}} = dx$       & \longrightarrow & $\displaystyle \sqrt{1 - y^2}dx - dy = 0$         \\
+        & Обычное решение                        &                 & Особое решение:                     \\
+        & $\arcsin y = x + C$                    &                 & $\displaystyle p = \sqrt{1 - y^2} = 0$            \\
+        & $y = \sin(x + C)$                      &                 & $\displaystyle 1 - y^2 = 0 \rightarrow y = \pm 1$ \\
+        &                                        &                 &                                     \\
+        \Exs 2. & $\displaystyle \frac{1}{3} y^{-\frac{2}{3}} dy = dx$ & \longrightarrow & $\displaystyle y^{-\frac{2}{3}} dy - 3dx = 0$     \\
+        & $\displaystyle y^{\frac{1}{3}} = x + C$              &                 & $\displaystyle dy - 3y^{-\frac{2}{3}} = 0$        \\
+        & $\displaystyle y = (x + C)^3$                        &                 & $P = 0 \Longrightarrow y = 0$       \\
+    \end{tabular}
+
+
+    \section{4.4. ДУ высших порядков}
+
+    \Nota Рассмотрим три типа интегрируемых ДУ
+
+    1* Непосредственно интегрирование
+
+    $\displaystyle y^{(n)} = f(x)$
+
+    Решение: $\displaystyle y^{(n - 1)} = \int f(x) dx + C_1$
+
+    $\displaystyle y^{(n - 2)} = \int (\int f(x) dx + C_1) dx + C_2$
+
+    \Ex См. Задачу 2 в начале
+
+    2* ДУ$\displaystyle _2$, не содержащие $y(x)$
+
+    $\displaystyle F(x, y^\prime(x), y^{\prime\prime}(x)) = 0$
+
+    Замена $\displaystyle y^\prime(x) = z(x)$, получаем:
+
+    $\displaystyle F(x, z(x), z^\prime(x)) = 0$ - ДУ$\displaystyle _1$
+
+    \Ex $\displaystyle (1 + x^2)y^{\prime\prime} + (1 + y^\prime^2) = 0 \quad y^\prime = z$
+
+    $\displaystyle (1 + x^2)z^\prime + 1 + z^2 = 0$
+
+    $\displaystyle z^\prime + \frac{1 + z^2}{1 + x^2} = 0 \Longleftrightarrow z^\prime = -\frac{1 + z^2}{1 + x^2} \Longleftrightarrow \frac{dz}{1 + z^2} = -\frac{dx}{1 + x^2}$
+
+    $\arctan x = \arctan(-x) + C$
+
+    $\displaystyle z = \frac{-x + \tan(C)}{1 + x \tan C} = y^\prime$
+
+    $\displaystyle y = \int \frac{-x + \tan(C)}{1 + x \tan C} dx = \dots $
+
+    3* ДУ$\displaystyle _2$, не содержащие $x$
+
+    $\displaystyle F(y(x), y^\prime(x), y^{\prime\prime}(x)) = 0$
+
+    Замена $\displaystyle y^\prime(x) = z(y) \quad y^{\prime\prime}(x) = \frac{dz(y(x))}{dx} = \frac{dz}{dx} \frac{dy}{dx} = z^\prime_y y^\prime = z^\prime z$
+
+    ДУ: $\displaystyle F(y, z(y), z^\prime(y)) = 0$
+
+    \Ex $\displaystyle y^{\prime\prime} + y^{\prime 2} = yy^\prime$
+
+    $\displaystyle y^\prime = z(y) \quad y^{\prime\prime} = z^\prime z$
+
+    $\displaystyle z^\prime z + z^2 = yz \quad | \ : z \neq 0 \quad\quad z = 0 \Longrightarrow y = const$
+
+    $\displaystyle z^\prime + z = y$ - ЛДУ
+
+    \begin{tabular}{p{5cm}p{10cm}}
+        1) $\displaystyle z^\prime + z = 0$ & 2) $\displaystyle C^\prime (y) e^{-y} = y$                                                                                              \\
+
+        $\ln|z| = -y + C$     & $\displaystyle C^\prime (y) = ye^{y}$                                                                                                   \\
+
+        $\displaystyle z = Ce^{-y}$         & $\displaystyle C(y) = \int y e^y dy = \int y de^y = ye^y - e^y + C_1$                                                                   \\
+
+        & $\displaystyle z(y) = (ye^y - e^y + C_1)e^{-y} = \underset{z^*}{\undergroup{y - 1}} + \underset{\overline{z}}{\undergroup{C_1 e^{-y}}}$ \\
+
+        & $\displaystyle y^\prime = C_1 e^{-y} + y - 1 \Longrightarrow ? \dots $
+
+    \end{tabular}
+
+
+    \section{4.5. ЛДУ$\displaystyle _2$}
+
+
+    \section{4.5.1. Определения}
+
+    \Def $\displaystyle a_0(x) y^{(n)}(x) + a_1(x)y^{(x)} + \dots + a_{n - 1}y^\prime(x) + a^n(x)y = f(x)$, где $y = y(x)$ - неизв. функция, - это ЛДУ$\displaystyle _n$
+
+    \Nota Если $n = 2$ - ЛДУ$\displaystyle _2$, $\displaystyle y^{\prime\prime}(x) + p(x)y^\prime(x) + q(x)y = f(x)$ - разрешенное относительно старших производных ЛДУ$\displaystyle _2$
+
+    \Nota Если $\displaystyle a_i(x) = a_i \in \Real$ - ЛДУ$\displaystyle _n$ с постоянными коэффициентами
+
+
+    \section{4.5.2. Решение ЛДУ$\displaystyle _2$ с постоянными коэффициентами}
+
+    $\displaystyle y^{\prime\prime} + p y^\prime + q y = f(x), \quad p, q \in \Real$
+
+    $\forall p, q \in \Real \exists $ уравнение: $\displaystyle \quad \lambda^2 + p\lambda + q = 0$ и $\displaystyle \lambda_{1,2} \in \mathbb{C} \ | \ \lambda_1 + \lambda_2 = -p, \lambda_1 \lambda_2 = q$ - корни
+
+    Назовем уравнение характеристическим (ХрУ) \Cat
+
+    \Nota $\displaystyle \lambda_{1, 2}$ могут быть только
+    1) вещественными различными;
+    2) вещественными одинаковыми ($\displaystyle \lmabda_1 = \lambda_2 = \lambda$ - корень 2-ой кратности);
+    3) $\displaystyle \lambda_{1,2} = \alpha \pm i \beta \in \mathbb{C}$, где $\alpha, \beta \in \Real$
+
+    Запишем ЛДУ$\displaystyle _2$ через $\displaystyle \lambda_{1, 2}$:
+
+    $\displaystyle y^{\prime\prime} - (\lambda_1 + \lambda_2) y^\prime + \lambda_1 \lambda_2 y = f(x)$
+
+    $\displaystyle y^{\prime\prime} - \lambda_1 y^\prime - \lambda_2 y^\prime + \lambda_1 \lambda_2 y = f(x)$
+
+    $\displaystyle (y^\prime - \lambda_2 y)^\prime - \lambda_1 (y^\prime - \lambda_2 y) = f(x)$
+
+    Обозначим $\displaystyle u(x) = y^\prime - \lambda_2 y$
+
+    Тогда ДУ: $\displaystyle \begin{cases}
+                   y^\prime - \lambda_2 y = u(x) \\ u^\prime - \lambda_1 u = f(x)
+    \end{cases}$
+
+    Решим: $\displaystyle u^\prime - \lambda_1 u = f(x)$
+
+    \begin{tabular}{p{5cm}p{10cm}}
+        1) $\displaystyle u^\prime - \lambda_1 u = 0$      & 2) $\displaystyle u^\prime - \lambda_1 u = f(x)$            \\
+
+        $\displaystyle \frac{du}{u} = \lambda_1 dx$        & $\displaystyle u(x) = C_1(x)e^{\lambda_1 x}$                \\
+
+        $\displaystyle \overline{u} = C_1 e^{\lambda_1 x}$ & Далее $u(x)$ следует подставить в ДУ с $f(x)$ \\
+    \end{tabular}
+
+    Поступим лучше, решим ЛОДУ$\displaystyle _2$ $(f(x) = 0)$
+
+    Эта система \begin{cases}
+                    y^\prime - \lambda_2 y u(x) \\ u^\prime - \lambda_1 u = 0
+    \end{cases}
+    \Longleftrightarrow \begin{cases}
+                            y^\prime - \lambda_2 y u(x) \\ u = C_1 e^{\lambda_1 x}
+    \end{cases}
+
+    Решим $\displaystyle y^\prime - \lambda_2 y = C_1 e^{\lambda_1 x}$:
+
+    \begin{tabular}{p{5cm}p{10cm}}
+        1) $\displaystyle y^\prime - \lambda_2 y = 0$      & 2) $\displaystyle y^\prime - \lambda_2 y = C_1 e^{\lambda_1 x}$     \\
+
+        $\displaystyle \overline{y} = C_2 e^{\lambda_2 x}$ & $\displaystyle y(x) = C_2(x)e^{\lambda_2 x}$                        \\
+
+        & $\displaystyle C_2^\prime(x) e^{\lambda_2 x} = C_1 e^{\lambda_1 x}$ \\
+
+        & $\displaystyle C^\prime_2 (x) = C_1 e^{\lambda_1 = \lambda_2} x$
+    \end{tabular}
+
+    Далее все зависит от $\displaystyle \lambda_{1,2}$
+
+\end{document}
+
