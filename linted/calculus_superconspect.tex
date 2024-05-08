@@ -2125,6 +2125,132 @@
 
 
 
+    \section{5.6. Поверхностные интегралы}
+
+    1* Поверхностные интегралы I рода (по участку поверхности)
+
+    \underline{Задача}. Масса поверхности
+
+    $u = u(x, y, z)$ - плотность (физ. смысл)
+
+    Элементарная масса: $\displaystyle dm = u_{\text{ср.}}(\xi, \eta, \zeta) d\sigma$, $d\sigma$ - элемент поверхности
+
+    $\displaystyle M = \iint_S dm = \iint_S u(x, y, z)$ - пов. инт. I рода
+
+    \Def 1) Дробление $S$ на элементы $\displaystyle \Delta \sigma_k$ коорд. плоскостями $\displaystyle x = x_i, y = y_j$
+
+    2) Ср. точка $\displaystyle (\xi_k, \eta_k, \zeta_k)$
+
+    3) Инт. сумма $\displaystyle \nu_n = \sum_{k = 1}^{n} u(\xi_k, \eta_k, \zeta_k) \Delta \sigma_k$
+
+    4) $\displaystyle \iint_S u(x, y, z) \Delta \sigma = \lim_{\substack{n \to \infty \\ \tau = \max \Delta \sigma_k \to 0}} \nu_n$
+
+    Свойства: Смена обхода поверхности $S$ не меняет знака интеграла: $\displaystyle \iint_{S^+} u d\sigma = \iint_{S^-} u d\sigma$
+
+    \underline{Вычисление}
+
+    \Mem Вычисление $\displaystyle \int_L f(x, y) dl$
+
+    1) Параметризация $L \quad \begin{cases}x = \varphi(t) \\ y = \psi(t)\end{cases} \quad t \in [\alpha, \beta]$
+
+    2) $\displaystyle dl = \sqrt{\varphi^{\prime 2}(t) + \psi^{\prime 2}(t)} |dt|$
+
+    3) $f(x, y) = \tilde{f}(t)$
+
+    $\displaystyle \iint_L f(x, y)dl = \int_\alpha^\beta \tilde{f}(t) \sqrt{\varphi^{\prime 2}(t) + \psi^{\prime 2}(t)} |dt|$
+
+    \underline{Поверхностный}
+
+    $\displaystyle \iint_S u(x, y, z) d\sigma$
+
+    1) Параметризация $S$: самая частая - $z = z(x, y), (x, y) \in D$ - пределы интегрирования
+
+    2) $\displaystyle d\sigma = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} |dxdy|$, но т. к.
+    в двойном интеграле договорились, что $dxdy > 0$ (площадь), модуль можно не ставить (область $D$ проходится в направлении против часовой стрелки)
+
+    3) $u(x, y, z) = \tilde{u}(x, y, z(x, y)) = \tilde{u}(x, y)$
+
+    $\displaystyle \iint_S u(x, y, z) d\sigma = \iint_{D^+} \tilde{u}(x, y) \sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}} dxdy$
+
+    \Ex $\displaystyle S: \ x^2 + y^2 = z^2, z = 0, z = 1$
+
+    $u(x, y, z) = z$
+
+    $\displaystyle \iint_S zd\sigma =
+    \begin{bmatrix}
+        S: z = \sqrt{x^2 + y^2} \\
+        D: \text{круг}, x^2 + y^2 = 1 \\
+        d\sigma = \sqrt{1 + \frac{x^2}{x^2 + y^2} + \frac{y^2}{x^2 + y^2}} dxdy = \sqrt{2} dxdy \\
+    \end{bmatrix} =
+    \iint_D \sqrt{x^2 + y^2} \sqrt{2} dxdy = \sqrt{2} \int^{2\pi}_{0} d\varphi \int_{0}^{\rho} \rho \underset{|j|}{\undergroup{\rho}} d\rho = \sqrt{2} 2\pi \frac{\rho^3}{3} \Big|_0^1 = \frac{2\sqrt{2}\pi}{3}$
+
+    2* II рода
+
+    \underline{Задача} Поток
+
+    Будем говорить о потоке вектора $\overrightarrow{F} = (P, Q, R)$ через площадку $S$ в направлении нормали $\displaystyle \overrightarrow{n^+}$ или $\displaystyle \overrightarrow{n^-}$
+
+    Если задано поле жидких скоростей, то потоком называют количество жидкости, протекающей через $S$ за время $\Delta t$
+
+    В простой ситуации поток $\Pi = FS (\overrightarrow{F} \perp S, \overrightarrow{F} = const)$
+
+    В общем случаем $\overrightarrow{F}$ - переменная, $S$ - искривленная и $\displaystyle \angle \overrightarrow{F}, S \neq \frac{\pi}{2}$
+
+    Переходим к вычислению элементарного потока $d\Pi$
+
+    $d\sigma$ - малый элемент поверхности (почти плоский)
+
+    В пределах $d\sigma$ $\overrightarrow{F}$ меняется мало, за среднее берем $\overrightarrow{F} = (P, Q, R)$, где $P = P(x, y, z), Q = Q(x, y, z), R(x, y, z)$
+
+    Разберемся с наклоном: если площадка перпендикулярна, то $d\Pi = F d\sigma$,
+    но в нашем случае высота цилиндра равна $\displaystyle \text{пр.}_\overrightarrow{n} \overrightarrow{F} = (\overrightarrow{n}, \overrightarrow{F}) = F \cos\varphi$, где $\overrightarrow{n}$ - единичный вектор нормали, $\varphi$ - угол между нормалью и потоком,
+    $\displaystyle d\Pi = (\overrightarrow{F}, \overrightarrow{n}) d\sigma = F_n d\sigma$
+
+    Пусть $\overrightarrow{n} = (\cos\alpha, \cos\beta, \cos\gamma)$, тогда $d\Pi = (\overrightarrow{F}, (\cos\alpha, \cos\beta, \cos\gamma)) d\sigma =
+    (P\cos\alpha, Q\cos\beta, R\cos\gamma)d\sigma$
+
+    Итак, $\displaystyle \Pi = \iint_{S^{\overrightarrow{n}}} d\Pi = \iint_{S^{\overrightarrow{n}}} F_n d\sigma = \iint_{S^{\overrightarrow{n}}} (\overrightarrow{F}, \overrightarrow{n})d\sigma = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma)d\sigma$
+
+    Но, еще нет координатной записи подынтегрального выражения
+
+    Спроектируем $d\sigma$ на координатные плоскости
+
+    Сначала разрежем поверхность $S$ на элементы плоскостями $x = const, y = const$ (уточним форму $d\sigma$). Т. к. $d\sigma$ мал, то можно считать его плоским параллелограммом
+
+    Тогда $\cos\gamma d\sigma = \pm dxdy$ ($\gamma$ - угол между нормалью и осью $Oz$)
+
+    Нашли последнее слагаемое $\displaystyle \iint_{S^{\overrightarrow{n}}} R\cos\gamma d\sigma$ в исходном интеграле (I рода, т. к. по участку $d\sigma$)
+
+    Найдем $\displaystyle \iint_{S^{\overrightarrow{n}}} Q\cos\beta d\sigma$, разобьем поверхность на участки $d\sigma$ плоскостями $x = const, y = const$
+
+    Аналогично $\cos\beta d\sigma = \pm dxdz$
+
+    Тогда в $\displaystyle \iint_{S^{\overrightarrow{n}}} P\cos\alpha d\sigma \quad \cos\alpha d\sigma = \pm dydz$
+
+    Окончательно, поток $\displaystyle \Pi = \iint_{S^{\overrightarrow{n}}} \pm Pdydz \pm Qdxdz \pm Rdxdy = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma) d\sigma$ - связь интегралов I и II рода
+
+    \Nota Формулу интеграла можно получить еще так: $(\overrightarrow{F}, \overrightarrow{n})d\sigma = \overrightarrow{F}\overrightarrow{n}d\sigma = \overrightarrow{F}d\overrightarrow{\sigma}$, где $d\overrightarrow{\sigma} = (\pm dydz, \pm dxdz, \pm dxdy)$
+
+    \DefN{Математическое}
+
+    Определим $\displaystyle I = \iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy$
+
+    $\displaystyle I = \lim_{\substack{n \to \infty \\ \tau = \max \Delta s_k \to 0}} \sum_{k=1}^n f(\xi_k, \eta_k, \zeta_k) \Delta s_k$ ($\displaystyle \Delta s_k = \Delta x\Delta y$ - любого знака, согласованного с обходом)
+
+    Свойства: Меняет знак при смене обхода с $\displaystyle \overrightarrow{n}^+$ на $\displaystyle \overrightarrow{n}^-$
+
+    \underline{Вычисление}
+
+    1) Параметризация $S$ \quad для $\displaystyle \iint Rdxdy \quad z = z(x, y)$, для $\displaystyle \iint Qdxdz \quad y = y(x, z)$, для $\displaystyle \iint Pdydz \quad x = x(y, z)$
+
+    Пределы интегрирования $\displaystyle D_{xy} = \text{пр.}_{Oxy} S$ и т. д.
+
+    2) $dxdy \to \pm dxdy$, если обход $\displaystyle D_{xy}$ в направлении против часовой стрелки
+
+    3) $R(x, y, z) = \tilde{R}(x, y, z(x, y)), \dots$
+
+
+
 
 \end{document}
 
