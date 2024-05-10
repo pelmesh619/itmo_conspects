@@ -1,0 +1,190 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Специальные разделы \\ высшей математики}
+\fancyhead[CO,CE]{10.05.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    \Mem $\displaystyle y^{\prime\prime} + py^\prime + qy = f(x), \quad p, q \in \Real$
+
+    Для начала $\displaystyle y^{\prime\prime} + py^\prime + qy = 0$ - ЛОДУ$\displaystyle _2$
+
+    $\displaystyle C^\prime_2 (x) = C_1 e^{(\lambda_1 - \lambda_2)x}$
+
+    Рассмотрим три случай для $\displaystyle \lambda_{1,2}$
+
+    1) $\displaystyle \lambda_{1.2} \in \Real, \lambda_1 \neq \lambda_2$ - случай различных вещественных корней
+
+    $\displaystyle C_2(x) = \int C_1 e^{(\lambda_1 - \lambda_2)x} dx = \frac{C_1 e^{(\lambda_1 - \lambda_2)x}}{\lambda_1 - \lambda_2} + C_2 =
+    \underset{\tilde{C_1}}{\undergroup{\frac{C_1}{\lambda_1 - \lambda_2}}} e^{(\lambda_1 - \lambda_2)x} + C_2$
+
+    Тогда, $\displaystyle y(x) = C_2(x) e^{\lambda_2 x} = (\tilde{C_1}e^{\lambda_1 - \lambda_2}x + C_2)e^{\lambda_2 x} = $\fbox{$\displaystyle C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$} - решение ЛОДУ, $\displaystyle \lambda_1 \neq \lambda_2$
+
+    2) $\displaystyle \lambda_1 = \lambda_2 = \lambda \in \Real$ - случай вещ. кратных корней
+
+    $\displaystyle C_2^\prime (x) = C_1 e^{0x} = C_1 \Longrightarrow C_2(x) = \int C_1 dx = C_1 x + C_2$
+
+    $\displaystyle y(x) = (C_1 x + C_2)e^{\lambda x} = $\fbox{$\displaystyle C_1 x e^{\lambda x} + C_2 e^{\lambda x} = y(x)$} - решение ЛОДУ, $\displaystyle \lambda_1 = \lambda_2$
+
+    3) $\lambda = \alpha \pm i \beta \in \mathbb{C}$ - случай комплексно сопряженных корней
+
+    Так как $\displaystyle \lambda_1 \neq \lambda_2$, то аналогично первому случаю $\displaystyle y(x) = C_1 e^{(\alpha + i \beta)x + C_2 e} + C_2 e^{(\alpha - i \beta) x}$ - решение ЛОДУ
+
+    Получим $\Real$-решения:
+
+    $\displaystyle y(x) = C_1 e^{\alpha x} e^{i\beta x} + C_2 e^{\alpha x} e^{-i\beta x} = e^{\alpha x} (C_1 (\cos\beta x + i\sin\beta x) + C_2 (\cos\beta x - i\sin \beta x)) =
+    e^{\alpha x} (C_1 + C_2) \cos\beta x + e^{\alpha x} i (C_1 - C_2) \sin\beta x$
+
+    $\displaystyle Re y(x) = \underset{u(x)}{\undergroup{(C_1 + C_2) e^{\alpha x} \cos\beta x}}, Im y(x) = \underset{v(x)}{\undergroup{(C_1 + C_2) e^{\alpha x} \sin\beta x}} \quad y(x) = u(x) + iv(x)$
+
+    Так как $y(x)$ - решение ЛОДУ:
+
+    $\displaystyle u^{\prime\prime} + iv^{\prime\prime} + pu^\prime + ipv\prime + qu + iqv = 0$
+
+    $\displaystyle (u^{\prime\prime} + pu^\prime + qu) + i(v^{\prime\prime} + pv\prime + qv) = 0 \quad \forall x \in [\alpha; \beta]$, то есть $z \in \mathbb{C}$ и $z = 0$
+
+    \begin{cases}
+        u^{\prime\prime} + pu^\prime + qu = 0,
+        v^{\prime\prime} + pv\prime + qv = 0
+    \end{cases}
+
+    Тогда можно считать решением $\displaystyle y(x) = u(x) + v(x) = C_1 e^{\alpha x}\cos\beta x + C_2 e^{\alpha x} \sin\beta x$ - решение ЛОДУ, $\displaystyle \lambda_{1,2} \in \mathbb{C}$
+
+    \Nota Ни про одно из полученных решений нельзя сказать, что оно общее (см. след. пункт)
+
+    Также еще не решено ЛНДУ$\displaystyle _2$
+
+    \section{4.5.3. Свойства решений ЛДУ$\displaystyle _2$}
+
+    \Def $\displaystyle Ly \stackrel{def}{=} y^{\prime\prime}(x) + py^\prime(x) + qy(x)$ - лин. дифф. оператор
+
+    $\displaystyle L : E \subset C^2_{[a;b]} \implies F \subset C_[a;b]$
+
+    \Nota Все определения лин. пространства, базиса, лин. независимости, лин. оболочки сохраняются
+
+    И ЛДУ$\displaystyle _2$ записывается как $Ly = 0$ - ЛОДУ$\displaystyle _2$, $Ly = f(x)$ - ЛНДУ$\displaystyle _2$
+
+    \ThN{1} $\displaystyle \letsymbol y_1, y_2$ - частные решение ЛОДУ, то есть $\displaystyle Ly_1 = 0, Ly_2 = 0$
+
+    Тогда $Ly = 0$, если $\displaystyle y = C_1 y_1 + C_2 y_2$
+
+    $\Box$
+
+    $\displaystyle Ly = y^{\prime\prime} + py^\prime + qy = (C_1 y_1 + C_2 y_2)^{\prime\prime} + p(C_1 y_1 + C_2 y_2)^{\prime} + q(C_1 y_1 + C_2 y_2) = C_1 Ly_1 + C_2 L y_2 = 0$
+
+    $\Box$
+
+    \Def $\displaystyle y_1, y_2$ - лин. нез. $\displaystyle \Longleftrightarrow C_1 y_1 + C_2 y_2 = 0 \Longrightarrow \forall C_1 = 0 \Longleftrightarrow \nexists k : y_2 = k y_1, k \in \Real$
+
+    \Mem Для определения лин. независимости в Линале использовали $rg A$ или $\det A$
+
+    Введем индикатор лин. независимости
+
+    Заметим, что если $\displaystyle y_1, y_2$ - лин. зав., то $\displaystyle y_1^\prime, y_2^\prime$ - лин. зав.
+
+    \Def $\displaystyle W \stackrel{\text{обозн}}{=} \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix}$ - определитель Вронского или вронскиан
+
+    \ThN{2} $\displaystyle y_1, y_2$ - лин. зав. $\Longrightarrow W = 0$ на $[a;b]$
+
+    $\Box$
+
+    $\displaystyle \begin{matrix}y_2 = k y_1 \\ y_2^\prime = k y_1^\prime\end{matrix} \Longrightarrow W = \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = 0$
+
+    $\Box$
+
+    \ThN{3} $\displaystyle x_0 \in [a;b], \quad \letsymbol W(x_0) = W_0$
+
+    Тогда $\displaystyle \begin{matrix}W_0 = 0 \Longrightarrow W(x) = 0 \forall x \in [a;b] \\
+    W_0 \neq 0 \Longrightarrow W(x) \neq 0 \forall x \in [a;b]\end{matrix}$
+
+    $\Box$
+
+    $\displaystyle \letsymbol y_1(x), y_2(x)$ - реш ЛОДУ,
+
+    $\displaystyle \begin{cases}
+        Ly_1 = 0 \quad | \cdot y_2 \\
+        Ly_2 = 0 \quad | \cdot y_1 \\
+    \end{cases} \Longleftrightarrow
+    \begin{cases}
+        y_1^{\prime\prime} y_2 + py_1^{\prime} y_2 + q y_1 y_2 = 0
+        y_2^{\prime\prime} y_1 + py_2^{\prime} y_1 + q y_1 y_2 = 0
+    \end{cases}$
+
+    $\displaystyle (y_1^{\prime\prime} y_2 - y_2^{\prime\prime} y_1) + p (y_1^{\prime} y_2 - y_2^{\prime} y_1) = 0$
+
+    $\displaystyle W^\prime(x) + pW(x) = 0$
+
+    $\displaystyle \frac{dW(x)}{W(x)} = -pdx$
+
+    $\displaystyle W(x) = Ce^{-\int_{x_0}^x pdx}$
+
+    $\displaystyle W_0 = Ce^{-\int^{x_0}_{x_0} pdx} = C$
+
+    Тогда $\displaystyle W(x) = W_0 e^{-\int_{x_0}^x pdx} \Longleftrightarrow \begin{sqcases}W_0 = 0 \Longrightarrow W(x) = 0 \\ W_0 \neq 0 \Longrightarrow W(x) \neq 0\end{sqcases} \forall x \in [a;b]$
+
+    $\Box$
+
+    \ThN{4} $\displaystyle y_1, y_2$ - лин. нез. $\Longrightarrow W(x) \neq 0$ на $[a;b]$
+
+    $\Box$ Докажем от противного
+
+    $\displaystyle \letsymbol \exists x_0 \in [a;b] \ | \ W(x_0)= 0 \Longrightarrow W(x) = 0 \forall x \in [a;b] \Longleftrightarrow
+    \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = y_1(x) y_2^\prime(x) - y_2(x) y_1^\prime(x) \forall x \in [a;b]$
+
+    Можно поделить на $\displaystyle y_1^2$, так как $\displaystyle y_1, y_2$ - лин. нез. Тогда $\displaystyle \frac{W}{y^2_1} = \left(\frac{y_2}{y_1}\right)^\prime = 0 \Longrightarrow \frac{y_2}{y_1} = k \in \Real \Longleftrightarrow y_2 = k y_1$ - лин. зав., противоречие
+
+    $\Box$
+
+    \Nota Общее решение ЛОДУ$\displaystyle _2$ - это семейство всех решений (интегральных кривых), каждое из которых проходит через точку
+    $\displaystyle (x_0, y_0) \in D$ и ему соответствует свой и единственный набор $\displaystyle (C_1, C_2)$
+
+    \ThN{5} $\displaystyle y_1, y_2$ - лин. нез. решения ЛОДУ, тогда $\displaystyle \overline{y}(x) = C_1 y_1 + C_2 y_2$ - общее решение ЛОДУ$\displaystyle _2$
+
+    $\Box$ Нужно убедиться, что через точку $\displaystyle (x_0, y_0) \in D$ проходит и только одна кривая $\displaystyle \overline{y}(x_0)$
+
+    Зададим НУ: $\displaystyle \begin{cases}
+                     y_1(x_0) = y_{10} \\
+                     y_2(x_0) = y_{20}
+    \end{cases}$, тогда $\displaystyle \begin{matrix}\overline{y}(x_0) = C_1 y_{10} + C_2 y_{20} \\ \overline{y}^\prime(x_0) = C_1 y_{10}^\prime + C_2 y_{20}^\prime\end{matrix}$ - задача Коши
+
+    Знаем, что $\displaystyle \overline{y} = C_1 y_1 + C_2 y_2$ - решение (просто, не общее)
+
+    Тогда в $\displaystyle x_0$ $\displaystyle \begin{cases}
+                       C_1 y_{10} + C_2 y_{20} = \overline{y}_0 \\
+                       C_1 y_{10}^\prime + C_2 y_{20}^\prime = \overline{y}_0^\prime \\
+    \end{cases} \Longleftrightarrow \begin{pmatrix}y_{10} & y_{20} \\ y_{10}^\prime & y_{20}^\prime \end{pmatrix} \begin{pmatrix}C_1 \\ C_2\end{pmatrix} = \begin{pmatrix}\overline{y}_0 \\ \overline{y}^\prime_0\end{pmatrix}$ -
+    система крамеровского типа
+
+    $\displaystyle \begin{vmatrix}y_{10} & y_{20} \\ y^\prime_{10} & y^\prime_{20}\end{vmatrix} = W_0 \neq 0 \Longleftrightarrow \exists! (C_1, C_2)$ - решение СЛАУ
+
+    Таким образом через всякую $\displaystyle x_0$ проходит одна! кривая $\displaystyle \overline{y}(x) = C_1 y_1 + C_2 y_2$
+
+    $\Box$
+
+    \Nota Вывод: если найдены какие-либо лин. нез. $\displaystyle y_1, y_2$, то общее решение ЛОДУ$\displaystyle _2$ будет $\displaystyle C_1 y_1 + C_2 + y_2 = \overline{y}$
+
+    \Def Такие $\displaystyle \Set{y_1, y_2}$ называется ФСР ЛОДУ$\displaystyle _2$
+
+    \Nota Тогда, найденные решения ЛОДУ - все общие
+
+    1) $\displaystyle \lambda_1 \neq \lambda_2$: ФСР $\displaystyle \Set{e^{\lambda_1 x}, e^{\lambda_2 x}}, \lambda_i \in \Real$
+
+    2) $\displaystyle \lambda_1 = \lambda_2 = \lambda$: ФСР $\displaystyle \Set{e^{\lambda x}, x e^{\lambda x}}$
+
+    3) $\displaystyle \lambda_{1,2} = \alpha \pm i \beta \in \mathbb{\Complex}$: ФСР $\displaystyle \Set{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin \beta x}$
+
+    \ThN{6} Решение ЛНДУ $Ly = f(x)$
+
+    $\overline{y}(x): L\overline{y} = 0$ - общее решение ЛОДУ
+
+    $\displaystyle y^*(x): Ly^*(x) = f(x)$ - частное решение ЛНДУ
+
+    Тогда $\displaystyle y(x) = \overline{y} + y^*$ - общее решение ЛНДУ
+
+    $\Box$ \Lab $\Box$
+
+\end{document}
+
