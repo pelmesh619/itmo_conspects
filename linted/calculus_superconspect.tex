@@ -2407,7 +2407,7 @@
 
     $\displaystyle \overrightarrow{\triangledown} \cdot \overrightarrow{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z}$
 
-    $\displaystyle \overrightarrow{\triangledown} \cross \overrightarrow{a} =
+    $\displaystyle \overrightarrow{\triangledown} \times \overrightarrow{a} =
     \begin{vmatrix}
         \overrightarrow{i}          & \overrightarrow{j}          & \overrightarrow{j}          \\
         \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
@@ -2416,7 +2416,7 @@
 
     Причем $\displaystyle \overrightarrow{\triangledown} \cdot \overrightarrow{\triangledown} = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} = \triangle$ - лапласиан
 
-    $\overrightarrow{\triangledown} \cross \overrightarrow{\triangledown} = 0$
+    $\overrightarrow{\triangledown} \times \overrightarrow{\triangledown} = 0$
 
     \Nota $\displaystyle \triangle u = \underset{\text{часть волнового уравнения матфизики}}{\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}} = 0$ - уравнение, определяющее гармоническую функцию $u(x, y, z)$, уравнение Лапласа
 
@@ -2426,7 +2426,7 @@
 
     \DefN{2} Вихрь (ротор) поля
 
-    $rot \overrightarrow{F} \stackrel{def} \overrightarrow{\triangledown} \cross \overrightarrow{F}$
+    $rot \overrightarrow{F} \stackrel{def} \overrightarrow{\triangledown} \times \overrightarrow{F}$
 
     \DefN{3} Если $rot \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется безвихревым полем
 
@@ -2460,7 +2460,7 @@
 
     \fbox{\Longleftarrow} $\overrightarrow{F} = \overrightarrow{\triangledown}u$ - дана
 
-    $rot \overrightarrow{F} = \overrightarrow{\triangledown} \cross \overrightarrow{F} = \overrightarrow{\triangledown} \cross (\overrightarrow{\triangledown} u) = (\overrightarrow{\triangledown} \cross \overrightarrow{\triangledown}) u = 0$
+    $rot \overrightarrow{F} = \overrightarrow{\triangledown} \times \overrightarrow{F} = \overrightarrow{\triangledown} \times (\overrightarrow{\triangledown} u) = (\overrightarrow{\triangledown} \times \overrightarrow{\triangledown}) u = 0$
 
     $\Box$
 
@@ -2476,13 +2476,13 @@
 
     $\Box$
 
-    $div (rot \overrightarrow{F}) = div \overrightarrow{a} = \overrightarrow{\triangledown} \overrightarrow{a} = \overrightarrow{\triangledown} (\overrightarrow{\triangledown} \cross \overrightarrow{F}) = (\overrightarrow{\triangledown} \cross \overrightarrow{\triangledown}) \cdot \overrightarrow{F} = 0$
+    $div (rot \overrightarrow{F}) = div \overrightarrow{a} = \overrightarrow{\triangledown} \overrightarrow{a} = \overrightarrow{\triangledown} (\overrightarrow{\triangledown} \times \overrightarrow{F}) = (\overrightarrow{\triangledown} \times \overrightarrow{\triangledown}) \cdot \overrightarrow{F} = 0$
 
     $\Box$
 
     \section{6.4. Интегральные характеристики. Теоремы теории поля}
 
-    \Mem 1) Поток поля $\displaystyle \overrightarrow{F}: \Pi = \iint_S \overrightarrow{F}d\overrightarrow{sigma}$
+    \Mem 1) Поток поля $\displaystyle \overrightarrow{F}: \Pi = \iint_S \overrightarrow{F}d\overrightarrow{\sigma}$
 
     \Def 2) Циркуляция поля $\displaystyle \overrightarrow{F}: \Gamma = \oint_L Pdx + Qdy + Rdz$
 
