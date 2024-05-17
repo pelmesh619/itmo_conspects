@@ -16,7 +16,7 @@ teacher = None
 text = ''
 
 for i in os.listdir(folder):
-    if i.endswith('tex') and i != supername:
+    if i.endswith('tex') and 'cheatsheet' not in i and i != supername:
         t = open(os.path.join(folder, i), 'r', encoding='utf8').read()
         if subject is None:
             subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t).group(1)

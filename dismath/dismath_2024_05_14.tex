@@ -90,9 +90,8 @@
         * Плохое свойство $P_i \ : \ X_i = \Set{f : [k] \to [n] \ | \ \nexists j \in [k] : f(j) = i}$
 
         * $|\Set{\text{сюръекции } f : [k] \to [n]}| = |X \setminus (X_1 \union \dots \union X_m)| \stackrel{\text{PIE}}{=}
-        \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m]} (-1)^{|S|} (n - |S|)^k = \sum^n_{i = 0} (-1)^{i} \begin{pmatrix}
-                                                                                                                               n \\ i
-        \end{pmatrix} (n - i)^k$
+        \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m]} (-1)^{|S|} (n - |S|)^k =
+        \sum^k_{i = 0} (-1)^{i} \begin{pmatrix} k \\ i \end{pmatrix} (k - i)^n$
 
         \vspace{5mm}
         \item \textbf{Количество биекций}
@@ -105,9 +104,7 @@
 
         Заметим, что сюръекция = разбиение, тогда:
 
-        $\sum_{i = 0}^n (-1)^i \begin{pmatrix}
-                                   n \\ i
-        \end{pmatrix} (n - i)^k = n! S^{II}_n (k)$
+        $\sum^k_{i = 0} (-1)^{i} \begin{pmatrix} k \\ i \end{pmatrix} (k - i)^n = n! S^{II}_n (k)$
 
         \vspace{5mm}
         \item \textbf{Беспорядки} (Derangements) - перестановка без фиксированных точек
