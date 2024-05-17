@@ -54,6 +54,7 @@
 * Лекция №14 (внезапно отменилась)
 * [Лекция №15](out/dismath_2024_05_14.pdf)
 
+[**Шпаргалка по Комбинаторике**](out/dismath_cheatsheet_combinatorics.pdf)
 
 ## TODO
 
