@@ -1,4 +1,4 @@
-# conspects
+# itmo_conspects
 
 ### Конспекты по разным предметам первого потока ИСy27 университета ИТМО
 
@@ -42,15 +42,17 @@
 * [Лекция №12](out/specsec_2024_04_26.pdf)
 * [Лекция №13](out/specsec_2024_05_03.pdf)
 * [Лекция №14](out/specsec_2024_05_10.pdf)
+* [Лекция №15](out/specsec_2024_05_17.pdf)
 
 
 ## Дискретная математика II
 
-[**Весь курс**](out/dismath_superconspect.pdf)
+[**Почти весь курс**](out/dismath_superconspect.pdf)
 
 * [Лекция №12](out/dismath_2024_04_23.pdf)
 * [Лекция №13](out/dismath_2024_04_30.pdf)
 * Лекция №14 (внезапно отменилась)
+* [Лекция №15](out/dismath_2024_05_14.pdf)
 
 
 ## TODO
