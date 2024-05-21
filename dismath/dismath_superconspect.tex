@@ -497,67 +497,182 @@
 
     \section{8. Рекуррентности и производящие функции}
 
-    \item \textbf{Производящие функции} (Generating Functions)
+    \begin{itemize}
+        \item \textbf{Производящие функции} (Generating Functions)
 
-    $\sum_{n = 0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots$
+        $\sum_{n = 0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots$
 
-    Функция выше задает последовательность $a_0, a_1, a_2, \dots$
+        Функция выше задает последовательность $a_0, a_1, a_2, \dots$
 
-    \Ex $3 + 8x^2 + x^3 + \frac{1}{7}x^5 + 100x^6 + \dots \implies (3, 0, 8, 1, 0, \frac{1}{7}, 100, \dots)$
+        \Ex $3 + 8x^2 + x^3 + \frac{1}{7}x^5 + 100x^6 + \dots \implies (3, 0, 8, 1, 0, \frac{1}{7}, 100, \dots)$
 
-    \Ex Последовательность $(1, 1, 1, \dots)$ задает функцию $1 + x + x^2 + \dots = \sum_{n = 0}^\infty x^n$
+        \Ex Последовательность $(1, 1, 1, \dots)$ задает функцию $1 + x + x^2 + \dots = \sum_{n = 0}^\infty x^n$
 
-    Пусть $S = 1 + x + x^2 + \dots$, тогда $xS = x + x^2 + \dots$, $(1 - x) S = 1 \Longrightarrow $
+        Пусть $S = 1 + x + x^2 + \dots$, тогда $xS = x + x^2 + \dots$, $(1 - x) S = 1 \Longrightarrow $
 
-    \fbox{$S = \frac{1}{1 - x}$ задает последовательность $(1, 1, 1, \dots)$}
+        \fbox{$S = \frac{1}{1 - x}$ задает последовательность $(1, 1, 1, \dots)$}
+    
+        \Ex
 
-    \Ex
+        $\frac{1}{1 + x} = 1 - x + x^2 - x^3 + \dots = \sum_{n = 0}^\infty (-1)^n x^n$
 
-    $\frac{1}{1 + x} = 1 - x + x^2 - x^3 + \dots = \sum_{n = 0}^\infty (-1)^n x^n$
+        $\frac{1}{1 - 3x} = 1 + 3x + 9x^2 + 27x^3 + \dots = \sum_{n = 0}^\infty 3^n x^n$
 
-    $\frac{1}{1 - 3x} = 1 + 3x + 9x^2 + 27x^3 + \dots = \sum_{n = 0}^\infty 3^n x^n$
+        $\frac{2}{1 - x} = 2 + 2x + 2x^2 + 2x^3 + \dots = \sum_{n = 0}^\infty 2 x^n$
 
-    $\frac{2}{1 - x} = 2 + 2x + 2x^2 + 2x^3 + \dots = \sum_{n = 0}^\infty 2 x^n$
+        $(2, 4, 10, 28, 82, \dots) = (1, 1, 1, 1, 1, \dots) + (1, 3, 9, 27, 81, \dots)$
 
-    $(2, 4, 10, 28, 82, \dots) = (1, 1, 1, 1, 1, \dots) + (1, 3, 9, 27, 81, \dots)$
+        $\frac{1}{1 - x} + \frac{1}{1 - 3x} = \frac{2 - 4x}{(1 - x)(1 - 3x)}$
 
-    $\frac{1}{1 - x} + \frac{1}{1 - 3x} = \frac{2 - 4x}{(1 - x)(1 - 3x)}$
+        $\frac{1}{1 - x^2} = 1 + x^2 + x^4 + x^6 + \dots = \sum_{n = 0}^\infty x^{2n} \implies (1, 0, 1, 0, \dots)$
 
-    $\frac{1}{1 - x^2} = 1 + x^2 + x^4 + x^6 + \dots = \sum_{n = 0}^\infty x^{2n} \implies (1, 0, 1, 0, \dots)$
+        $\frac{x}{1 - x^2} = x + x^3 + x^5 + \dots = \sum_{n = 0}^\infty x^{2n + 1} \implies (0, 1, 0, 1, \dots)$
 
-    $\frac{x}{1 - x^2} = x + x^3 + x^5 + \dots = \sum_{n = 0}^\infty x^{2n + 1} \implies (0, 1, 0, 1, \dots)$
+        \textbf{Взятие производной}:
 
-    \textbf{Взятие производной}:
+        $\frac{d}{dx} (\frac{1}{1 - x}) = \frac{1}{1 - x^2} = \frac{d}{dx} (1 + x + x^2 + \dots) = 1 + 2x + 3x^2 + 4x^3 + \dots \implies (1, 2, 3, 4, \dots)$
 
-    $\frac{d}{dx} (\frac{1}{1 - x}) = \frac{1}{1 - x^2} = \frac{d}{dx} (1 + x + x^2 + \dots) = 1 + 2x + 3x^2 + 4x^3 + \dots \implies (1, 2, 3, 4, \dots)$
+        \Ex Найти ПФ для $(1, 3, 5, 7, 9, \dots)$
 
-    \Ex Найти ПФ для $(1, 3, 5, 7, 9, \dots)$
+        $A(x) = 1 + 3x + 5x^2 + \dots$
 
-    $A(x) = 1 + 3x + 5x^2 + \dots$
+        $xA = 0 + x + 3x^2 + 5x^3 + \dots$
 
-    $xA = 0 + x + 3x^2 + 5x^3 + \dots$
+        $(1 - x)A = 1 + 2x + 2x^2 + 2x^3 + \dots$
 
-    $(1 - x)A = 1 + 2x + 2x^2 + 2x^3 + \dots$
+        $(1 - x)A = 1 + \frac{2x}{1 - x} \quad A = \frac{1 + \frac{2x}{1 - x}}{1 - x} = \frac{1 + x}{(1 - x)^2}$
 
-    $(1 - x)A = 1 + \frac{2x}{1 - x} \quad A = \frac{1 + \frac{2x}{1 - x}}{1 - x} = \frac{1 + x}{(1 - x)^2}$
+        \Ex Найти ПФ для $(1, 4, 9, 16, \dots)$
 
-    \Ex Найти ПФ для $(1, 4, 9, 16, \dots)$
+        $A = 1 + 4x + 9x^2 + 16x^3 + \dots \quad (1 - x)A = $
 
-    $A = 1 + 4x + 9x^2 + 16x^3 + \dots \quad (1 - x)A = $
+        \item \textbf{Подсчет, используя производящие функции}
 
-    \item \textbf{Подсчет, используя производящие функции}
+        Найти число решений для $x_1 + x_2 + x_3 = 6$, где $x_i \geq 0, x_1 \leq 4, x_2 \leq 3, x_3 \leq 5$
 
-    Найти число решений для $x_1 + x_2 + x_3 = 6$, где $x_i \geq 0, x_1 \leq 4, x_2 \leq 3, x_3 \leq 5$
+        $A_1(x) = 1 + x + x^2 + x^3 + x^4$
 
-    $A_1(x) = 1 + x + x^2 + x^3 + x^4$
+        $A_2(x) = 1 + x + x^2 + x^3$
 
-    $A_2(x) = 1 + x + x^2 + x^3$
+        $A_3(x) = 1 + x + x^2 + x^3 + x^4 + x^5$
 
-    $A_3(x) = 1 + x + x^2 + x^3 + x^4 + x^5$
+        $A(x) = A_1 \cdot A_2 \cdot A_3 = 1 + 3x + 6x^2 + 10x^3 + 14x^4 + 17x^5 + \underline{18x^6} + 17x^7 + \dots$
 
-    $A(x) = A_1 \cdot A_2 \cdot A_3 = 1 + 3x + 6x^2 + 10x^3 + 14x^4 + 17x^5 + \underline{18x^6} + 17x^7 + \dots$
+        Ответ - 18
 
-    Ответ - 18
+    \end{itemize}
+
+
+
+    \begin{itemize}
+        \item \textbf{Рекуррентные соотношения} (Recurrence relations)
+
+        \underline{Решить рекуррентное соотношение} - найти закрытую формулу
+
+        \Ex Арифметическая прогрессия
+
+        $a_n = \begin{cases}a_0 = const \quad n = 0 \\ a_{n - 1} + d, \quad n > 0\end{cases}$
+
+        Решение: $a_n = a_0 + nd$ - анзац (Ansatz, догадка)
+
+        Проверка: $a_n = a_0 + nd = a_{n - 1} + d = a_0 + (n - 1)d + d = a_0 + nd \quad$ - {\Large👍👍}
+
+        \item Метод характеристического уравнения
+
+        \substack{\text{Рекуррентное} \\ \text{соотношение}} \ $\stackrel{a_n \to r^n}{\rightsquigarrow}$ \ \substack{\text{Характеристическое} \\ \text{уравнение}} \ $\stackrel{\text{решение}}{\rightsquigarrow}$ Корни $\stackrel{\text{магия}}{\rightsquigarrow}$ Решение $\rightsquigarrow$ Проверка
+
+        \Ex $a_n = a_{n - 1} + 6a_{n - 2}$
+
+        $r^n - r^{n - 1} - 6r^{n - 2} = 0$
+
+        $r^{n-  2} (r^2 - r - 6) = 0$
+
+        $r_{1,2} = -2, 3$
+
+        \fbox{Если $r_1 \neq r_2$, то $a_n = ar_1^n + br_2^n$ - общее решение \\
+
+        Если $r_1 = r_2 = r$, то $a_n = ar^n + bnr^n$}
+
+        $a_n = a(-2)^n + b(3)^n$
+
+        Пусть $\begin{cases}a_0 = 1 = a + b \\ a_1 = 8 = -2a + 3b\end{cases}$
+
+        $-5a = 5 \Longrightarrow \begin{cases}a = -1 \\ b = 2\end{cases} \Longrightarrow a_n = -(-2)^n + 2 \cdot 3^n$
+
+        \item \textbf{Разделяй и властвуй} (Divide-and-Conquer)
+
+        $T(n) = \underset{\text{работа рекурсии}}{\undergroup{2T\left(\frac{n}{2}\right)}} + \underset{\text{работа разделения/слияния}}{\undergroup{\theta(n)}}$
+
+        \item \textbf{Основная теорема о рекуррентных соотношениях} (Master Theorem)
+        \hfill\href{https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F_%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%BE_%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D1%85_%D1%81%D0%BE%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%D1%85}{*тык*}
+
+
+        $T(n) = aT\left(\frac{n}{b}\right) + f(n)$
+
+        Из этого, $c_{crit} = \log_b a$
+
+        \vspace{5mm}
+
+        \underline{I случай}: слияние $<$ рекурсия
+
+        $f(n) \in O(n^c)$, где $c < c_{crit} \Longrightarrow T(n) \in \Theta(n^{c_{crit}})$
+
+        $f(n) \in O(n^c) \Longleftrightarrow f(n) \in o(n^{c_{crit}})$
+
+        \vspace{5mm}
+
+        \underline{II случай}: слияние $\approx$ рекурсия
+
+        $f(n) \in \Theta(n^{c_{crit}} \log^k n) \Longrightarrow T(n) \in \Theta(n^{c_{crit}} \log^{k + 1} n)$
+
+        Здесь $k \geq 0$. В общем случае см. википедию
+
+        \vspace{5mm}
+
+        \underline{III случай}: слияние $>$ рекурсия
+
+        $f(n) \in \Omega(n^c)$, где $c > c_{crit} \Longrightarrow T(n) \in \Theta(f(n))$
+
+        \item \textbf{Метод Акра-Бацци} (Akra-Bazzi method)
+        \hfill\href{https://en.wikipedia.org/wiki/Akra%E2%80%93Bazzi_method}{*тык*}
+
+
+        $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n)) \Longrightarrow T(n) \in \Theta\left(n^p \cdot \left(1 + \int_1^n \frac{f(x)}{x^{p + 1}} dx\right)\right)$, где $p$ - решение для $\sum_{i = 1}^k a_i b_i^p = 1$
+
+        \begin{cases}
+            k = const \\
+            a_i > 0 \\
+            0 < b_i < 1 \\
+            h_1(n) \in O(\frac{n}{\log^2 n}) \text{ - малые возмущения}
+        \end{cases}
+
+        \Ex $T(n) = T\left(\lfloor\frac{n}{2}\rfloor\right) + T\left(\lceil\frac{n}{2}\rceil\right) + n$ - асимптотика сортировки слиянием
+
+        $T(n) = T\left(\frac{n}{2} + O(1)\right) + T\left(\frac{n}{2} - O(1)\right) + \theta(n)$
+
+        Здесь $b_i = \frac{1}{2}, \quad h = \pm O(1) \in O\left(\frac{n}{\log^2 n}\right)$
+
+        \Ex $T(n) = T\left(\frac{3n}{4}\right) + T\left(\frac{n}{4}\right) + n$
+
+        $a_1 = 1, b_1 = \frac{3}{4}, a_2 = 1, b_2 = \frac{1}{4}, f(n) = n$
+
+        $(\frac{3}{4})^p + \left(\frac{1}{4}\right)^p = 1$
+
+        $p = 1$
+
+        $\int_1^n \frac{x}{x^{1 + 1}}dx = \int_1^n \frac{dx}{x} = \ln x \Big|_1^n = \ln n$
+
+        $T(n) \in \Theta(n \cdot (1 + \ln n))$
+
+        $T(n) \in \Theta(n \ln n)$
+
+        \item Решить рекуррентное соотношение $a_n = 3a_{n-1} - 2a_{n-1}$, где $a_0 = 1, a_1 = 3$
+
+        Используем производящие функции:
+
+        $A(x) = \frac{1}{1 - 3x + 2x^2} = \frac{1}{(1 - x)(1 - 2x)} = \frac{-1}{1 - x} + \frac{2}{1 - 2x} \to 2^{n + 1} - 1$
+
+    \end{itemize}
 
 
 
