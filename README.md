@@ -58,6 +58,12 @@
 
 [**Шпаргалка по Комбинаторике**](out/dismath_cheatsheet_combinatorics.pdf)
 
+## Алгоритмы и Структуры Данных I-II
+
+Почти все алгоритмы из курса и некоторые пояснения к ним есть в моем другом репозитории: [pelmesh619/algorithm_archives](https://github.com/pelmesh619/algorithm_archives)
+
+
+
 ## TODO
 
 Буду рад, если вы поможете мне:
