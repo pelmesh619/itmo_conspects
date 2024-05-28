@@ -8,3 +8,5 @@ __pycache__
 *.synctex(busy)
 *.aux
 *.log
+
+/linted/
