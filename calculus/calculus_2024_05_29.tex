@@ -1,0 +1,114 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Математический анализ}
+\fancyhead[CO,CE]{29.05.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    \Mem Дифф. хар.: $div \overrightarrow{F} = \overrightarrow{\trianlgedown} \overrightarrow{F}, rot \overrightarrow{F} = \overrightarrow{\trianlgedown} \times \overrightarrow{F}$
+
+    Инт. хар.: $\Pi = \iint_S \overrightarrow{F} d\overrightarrow{\sigma}, \Gamma = \oint_L \overrightarrow{F} d\overrightarrow{l}$
+
+    Мех. смысл: 1) $div \overrightarrow{F} \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ - мощность точечного источника
+
+    Г.-О.: поток через замкнутую поверхность равен суммарной мощности испочников внутри
+
+    2) $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ - циркуляция по б. м. контуру. Мех. смысл - ?
+
+    3) Поток $\Pi$ - кол-во жидкости через площадку за единицу времени
+
+    4) $\Gamma$ - ?
+
+    \Nota Выясним смысл ротора и циркуляции на примере конкретного поля
+
+    \Ex $\overrightarrow{F} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ - поле линейных скоростей, вращающегося твердого тела, где $\overrightarrow{\omega} = const$ - угловая скорость
+
+    Выберем контур $L$, ограничивающий область $S$
+
+    Найдем $\Gamma_L = \oint_L \overrightarrow{F}d\overrightarrow{l} = \oint_L (-\omega y) dx + \omega x dy \stackrel{\text{Стокс}}{=}
+    \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\cos \gamma d\sigma =
+    \iint_S 2\omega \cos \gamma d\sigma$
+
+    Так как ротор сонаправлен оси $Oz$, получаем $\cos \gamma = 1$
+
+    $\iint_S 2\omega \cos \gamma d\sigma = 2\omega \iint_S d\sigma = 2\omega S$
+
+    Раньше в интеграле видно, что $rot \overrightarrow{F} \overrightarrow{n} \Longrightarrow |rot \overrightarrow{F}| = 2\omega$
+
+    То есть механический смысл ротора - удвоенная угловая скорость вращающегося тела (или диска)
+
+    \Nota Чтобы уточнить смысл $\Gamma$, рассмотрим такое же поле жидких скоростей (водоворот)
+
+    $\overrightarrow{v} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ и погруженное в него колесо с лопатками (водяная мельница)
+
+    В качестве контура $L$ ерем обод колева, а его располагаем под углом $\gamma$ к вектору $\overrightarrow{\omega}$
+
+    Все равно $\Gamma_L = \iint_S 2\omega \cos \gamma d\sigma = 2\omega\cos \gamma S$
+
+    Если $\gamma = 0$, то $\Gamma_L = 2\omega S$ - максимальная мощность вращения нашей мельницы
+
+    Если, например, $\gamma = \frac{\pi}{2}$, то $\Gamma_L = 0$ - колесо перпендикулярно полю, поэтому оно не вращается
+
+    \section{6.6. Приложения к физике}
+
+    1* Уравнение неразрывности (в гидромеханике)
+
+    \Nota Здесь потребуются формулы:
+
+    $\frac{du(x(t), y(t), z(t))}{dt} = \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x}\frac{dx}{dt} + \dots$
+
+    $\overrightarrow{\triangledown} \cdot (f\overrightarrow{F}) = \overrightarrow{\triangledown} f \cdot \overrightarrow{F} + f \cdot (\overrightarrow{\triangledown} \overrightarrow{F})$, где $f$ - скалярное поле, $\overrightarrow{F}$ - векторное поле
+
+    \underline{Задача} Дано $\overrightarrow{F} = \rho \overrightarrow{v}$ - поле скоростей жидкости с весом $\rho = \rho(x, y, z, t)$
+
+    Через площадку $dS$ за время $dt$ протекает $d\Pi = \rho v_n dt dS$ или за ед. времени $d\Pi = \rho v_n dS$
+
+    Приращение жидкости за единицу времени $|dm| = |\frac{\partial \rho}{\partial t} dV|$
+
+    Поток жидкости равен ее убыли в объеме $V$, то есть $\Pi = \oiint_S \rho v_n dS = -\iiint_V \frac{\partial \rho}{\partial t} dV$
+
+    Применяя Г.-О.: $\Pi = \iiint_V \div (\rho \overrightarrow{v}) dV = -\iiint_V \frac{\partial \rho}{\partial t} dV \Longleftrightarrow \iiint_V (div (\rho \overrightarrow{v}) + \frac{\partial \rho}{\partial t}) dV = 0 \quad \forall V$ (поэтому подынт. функ. = 0)
+
+    $\Longleftrightarrow \overrightarrow{\triangledown} (\rho \overrightarrow{v}) + \frac{\partial \rho}{\partial t} = 0$
+
+    Учтем: $\frac{d \rho}{dt} = \frac{\partial \rho}{\partial t} +  \frac{\partial \rho}{\partial x} \frac{dx}{dt} +  \frac{\partial \rho}{\partial y} \frac{dy}{dt} +  \frac{\partial \rho}{\partial z} \frac{dz}{dt} = \frac{\partial \rho}{\partial t} + \overrightarrow{\triangledown} \rho \overrightarrow{v}$
+
+    % TODO
+
+    $\overrightarrow{\triangledown} (\rho \overrightarrow{v}) = \overrightarrow{\triangledown} \rho \cdot \overrightarrow{v} + \rho \overrightarrow{\triangledown} \overrightarrow{v} \Longleftrightarrow \overrightarrow{\triangledown} \rho \overrightarrow{v} = \overrightarrow{\triangledown} (\rho \overrightarrow{v}) - \rho \overrightarrow{\triangledown} \overrightarrow{v}$
+
+    $\frac{d\rho}{dt} + \rho div \overrightarrow{v} = 0$ - уравнение неразрывности (при несжимаемой жидкости $div \overrightarrow{v} = 0$)
+
+    2* Уравнения Максвелла
+
+    Экспериментально: 1) $\int_L \overrightarrow{H} d\overrightarrow{l} = \iint_S \overrightarrow{r}d\overrightarrow{\sigma}$ - закон Био-Савара
+
+    2) $\int_L \overrightarrow{E} d\overrightarrow{l} = -\frac{\partial}{\partial t} \iint_S \overrightarrow{B}d\overrightarrow{\sigma}$ - закон Фарадея
+
+    где $\overrightarrow{H}$ - магнитная сила, $\overrightarrow{r}$ - полный ток, $\overrightarrow{E}$ - электрическая сила, $\overrightarrow{B}$ - магнитная индукция
+
+    Максвелл: $\overrightarrow{r}$ = ток проводимости + ток смещения = $\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}$
+
+    $\lambda$ - коэффициент проводимости, $\varepsilon, \mu$ - проницаемость
+
+    1) $\oint_L \overrightarrow{H} d\overrightarrow{l} = \iint_S (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}) d\overrightarrow{\sigma}$
+
+    Стокс: $\iint_S rot \overrightarrow{H} d\overrightarrow{\sigma} - \iint_S (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}) d\overrightarrow{\sigma} = 0$
+
+    В векторной форме: $rot \overrightarrow{H} = (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t})$ - источники магнитного поля - токи проводимости и смещения
+
+    2) $\oint_L \overrightarrow{E}d\overrightarrow{l} = \iint_S rot \overrightarrow{E}d\overrightarrow{\sigma} = -\iint_S \frac{\partial \overrightarrow{B}}{\partial t}d\overrightarrow{\sigma} \Longleftrightarrow
+    rot \overrightarrow{E} = -\frac{\partial \overrightarrow{B}}{\partial t}$ - изменение индукции дает эл. ток в соленоиде.
+
+    3) $\overrightarrow{\triangledown} \varepsilon \overrightarrow{E} = \rho$
+
+    4) $\overrightarrow{\triangledown} \mu \overrightarrow{H} = 0$
+
+\end{document}
+
+
+
+

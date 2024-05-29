@@ -48,6 +48,7 @@
 \usepackage{datetime2}
 \usepackage{witharrows}
 \usepackage{nicematrix}
+\usepackage{hwemoji}
 
 %% Fix mapping for ligatures
 % https://tex.stackexchange.com/a/450394
@@ -665,10 +666,14 @@
 
 \setcounter{secnumdepth}{0}
 
+\newcommand{\Notas}{\textit{Nota. }}
+
 \newcommand{\Nota}{ \vspace{5mm}%
 %
-\textit{Nota. }%
+\Notas%
 }
+
+
 
 \newcommand{\NotaN}[1]{\Nota\textit{#1.}}
 

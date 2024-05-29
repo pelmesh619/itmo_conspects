@@ -1,0 +1,98 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Специальные разделы \\ высшей математики}
+\fancyhead[CO,CE]{29.05.2024}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
+
+
+\begin{document}
+    \underline{Классификация точек покоя}. Будем рассматривать СДУ (автономную)
+
+    $\begin{cases}\frac{dx}{dt} = ax + by \\ \frac{dy}{dt} = kx + my\end{cases} \quad
+    \dot X = AX \Longrightarrow \det(A - \lambda E) = 0$
+
+    Далее все зависит от $\lambda_{1,2}$
+
+    Заметим, что функции $x = 0$ и $y = 0$ являются решениями (подстановка)
+
+    Причем, точка $(0, 0)$ - особая, так как СДУ $\to \frac{dy}{dx} = \frac{kx + my}{ax + by}$
+
+    Рассмотрим различные случаи значений $\lambda_{1,2}$:
+
+    1) $\lambda_1 \neq \lambda_2, \lambda_{1,2} \in \Real^-$
+
+    Тогда решения СДУ будут $x(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}, \quad
+    \dot x(t) = C_1 \lambda_1 e^{\lambda_1 t} + C_2 \lambda_2 e^{\lambda_2 t}$
+
+    Подставляем в первое уравнение, из него получаем $y(t) = \frac{1}{b}(C_1 (\lambda_1 - a)e^{\lambda_1 t} + C_2 (\lambda_2 - a)e^{\lambda_2 t})$
+
+    Введем Н.У. $y(0) = y_0, x(0) = x_0$
+
+    Решение З.К.: $\begin{cases}x(t) = \frac{ax_0 + by_0 - x_0 \lambda_2}{\lambda_1 - \lambda_2} e^{\lambda_1 t} + \frac{x_0 \lambda_1 - ax_0 - by_0}{\lambda_1 - \lambda_2} e^{\lambda_2 t} \\
+    y(t) = \frac{1}{b}(\frac{ax_0 + by_0 - x_0 \lambda_2}{\lambda_1 - \lambda_2} (\lambda_1 - a) e^{\lambda_1 t} + \frac{x_0 \lambda_1 - ax_0 - by_0}{\lambda_1 - \lambda_2} (\lambda_2 - a) e^{\lambda_2 t}) \\
+    \end{cases}$
+
+    При $t \to +\infty \ |e^{\lambda_i t}| < 1$ и $\forall \varepsilon > 0 \begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases} \Longrightarrow
+    \begin{cases}|\tilde{x}(t) - x(t)| < \varepsilon \\ |\tilde{y}(t) - y(t)| < \varepsilon\end{cases}$
+
+    $\lim_{t \to +\infty} x(t) = 0, \lim_{t \to +\infty} y(t) = 0$, то есть $(0, 0)$ - устойчивое решение
+
+    \ExN{1} \begin{cases}\dot x = -x \\ \dot y = -2y\end{cases} $\Longleftrightarrow$
+    \begin{cases}\frac{dx}{x} = -dt \\ \frac{dy}{y} = -2dt\end{cases} $\Longleftrightarrow$
+    \begin{cases}x = C_1 e^{-t} \\ y = C_2 e^{-2t}\end{cases} + Н.У. $\Longrightarrow$
+    \begin{cases}x = x_0 e^{-t} \\ y = y_0 e^{-2t}\end{cases}
+
+    Изобразим интегральные кривые (фазовый портрет системы): СДУ $\Longrightarrow \frac{dy}{dx} = \frac{2y}{x} \Longrightarrow y = Cx^2$
+
+    В этом примере получается семейство парабол, при $t \to +\infty$ они все стремятся к $(0, 0)$ - устойчивому узлу
+
+    2) $\lambda_1 \cdot \lambda_2 < 0, \lambda_{1,2} \in \Real$
+
+    \ExN{2} \begin{cases}\dot x = x \\ \dot y = -2y\end{cases} \quad  \begin{cases}x = x_0 e^t \\ y = y_0 e^{-2t}\end{cases}
+
+    Фазовый портрет $\frac{dy}{dx} = \frac{-2y}{x} \Longrightarrow y = \frac{C}{x^2}$
+
+    Гиперболы при $t \to \infty$ стремятся к точками $(\pm \infty, 0)$ и образуют так называемое седло неустойчивости
+
+    3) $\lambda_{1,2} = \alpha \pm i \beta, \alpha < 0$
+
+    \ExN{3} \begin{cases}\dot x = -x + y \\ \dot y = -x - y\end{cases} $\lambda_{1,2} = -1 \pm i$
+
+    \begin{cases}x(t) = e^{-t} (x_0 \cos t + y_0 \sin t) \\ y(t) = e^{-t} (y_0 \cos t - x_0 \sin t)\end{cases} - устойчивая
+
+    Фазовый портрет: перейдем в ПСК $\begin{matrix}x = \rho \cos \varphi \\ y = \rho \sin \varphi\end{matrix} \quad \begin{matrix}x_0 = A\cos \varphi_0 \\ y_0 = A \sin \varphi_0\end{matrix}$
+
+    Тогда $\begin{cases}\rho \cos \varphi = e^{-t} = A \cos (t - \varphi_0) \\ \rho \sin \varphi = e^{-t} = A \sin (t - \varphi_0)\end{cases} \Longrightarrow
+    \rho^2 = A^2 e^{-2t} \Longrightarrow \rho = Ae^{-t}$
+
+    Выразим $t$ через $\varphi$: $\tan \varphi = \tan (t - \varphi_0)$
+
+    Получаем $\rho = Ae^{-(\varphi + \varphi_0 + \pi n)}$
+
+    Получается семейство логарифмических спиралей ($\rho = Ae^{\varphi}$)
+
+    3$^\prime$) $\lambda_{1,2} = \pm i\beta (\alpha = 0)$
+
+    $\begin{cases}x(t) = x_0 \cos \beta t + y_0 \sin \beta t \\ y(t) = y_0 \cos \beta t - x_0 \sin \beta t\end{cases}$.
+
+    Фазовый портрет - семейство соосных и концентрических эллипсов. Центр этих эллипсов устойчивый
+
+    4) $\lambda_{1,2} \in \Real, \lambda_1 \cdot \lambda_2 = 0$
+
+    \Lab
+
+    1. \begin{cases}\dot x = 0 \\ \dot y = -y\end{cases}
+
+    2. \begin{cases}\dot x = -x \\ \dot y = -y\end{cases}
+
+    3. \begin{cases}\dot x = y \\ \dot y = -0\end{cases}
+
+    \underline{Обобщим}. Если хотя бы один $\lambda \neq 0$ и лежит слева от $Im \lambda$, то решение устойчивое
+
+
+
+
+\end{document}
+
