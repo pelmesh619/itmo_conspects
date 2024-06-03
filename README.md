@@ -62,6 +62,8 @@
 
 [**Шпаргалка по Комбинаторике**](out/dismath_cheatsheet_combinatorics.pdf)
 
+[**Шпаргалка по Рекуррентностям и Производящим функциям**](out/dismath_cheatsheet_recurrences.pdf)
+
 ## Алгоритмы и Структуры Данных I-II
 
 Почти все алгоритмы из курса и некоторые пояснения к ним есть в моем другом репозитории: [pelmesh619/algorithm_archives](https://github.com/pelmesh619/algorithm_archives)

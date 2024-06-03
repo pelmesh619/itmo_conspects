@@ -1,0 +1,323 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\pagenumbering{gobble}
+
+\fancyhead[LO,LE]{Шпаргалка по \\ Рекуррентностям {\LARGE 🔁} и Производящим функциям {\LARGE 🏭}}
+\fancyhead[RO,RE]{$\mathcal{D}$искретная математика \\ Лекции Чухарева К. И.}
+
+\fancyfoot[L]{\scriptsize исходники есть тута: \url{https://github.com/pelmesh619/itmo_conspects} \\ made by discrete math lovers \Cat}
+
+\begin{document}
+    \section{8 \quad Рекуррентности и Производящие функции}
+
+    \begin{itemize}
+        \item \textbf{Производящие функции} (Generating Functions)
+        \hfill\href{https://ru.wikipedia.org/wiki/%D0%9F%D1%80%D0%BE%D0%B8%D0%B7%D0%B2%D0%BE%D0%B4%D1%8F%D1%89%D0%B0%D1%8F_%D1%84%D1%83%D0%BD%D0%BA%D1%86%D0%B8%D1%8F_%D0%BF%D0%BE%D1%81%D0%BB%D0%B5%D0%B4%D0%BE%D0%B2%D0%B0%D1%82%D0%B5%D0%BB%D1%8C%D0%BD%D0%BE%D1%81%D1%82%D0%B8}{*тык*}
+
+
+        $\sum_{n = 0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots$
+
+        Функция выше задает последовательность $a_0, a_1, a_2, \dots$
+
+        \Exs Последовательность $(1, 1, 1, \dots)$ задает функцию $1 + x + x^2 + \dots = \sum_{n = 0}^\infty x^n$
+
+        Пусть $S = 1 + x + x^2 + \dots$, тогда $xS = x + x^2 + \dots$, $(1 - x) S = 1 \Longrightarrow $
+
+        $S = \frac{1}{1 - x}$ задает последовательность $(1, 1, 1, \dots)$
+
+        {
+        \footnotesize
+        \begin{tabular}{|p{0.5\textwidth}|p{0.3\textwidth}|}
+            \hline
+
+            \hfil Что? & \hfil Куда? \\
+
+            \hline
+            $\frac{1}{1 + x} = 1 - x + x^2 - x^3 + \dots \hfill = \sum_{n = 0}^\infty (-1)^n x^n$ & $(1, -1, 1, -1, \dots)$ \\
+
+            $\frac{1}{1 - kx} = 1 + kx + k^2 x^2 + k^3 x^3 + \dots \hfill = \sum_{n = 0}^\infty k^n x^n$ & $(1, k, k^2, k^3, \dots)$ \\
+
+            $\frac{1}{1 - kx} + \frac{1}{1 - mx} = 1 + (k + m)x + (k + m)^2 x^2 + \dots \hfill = \sum_{n = 0}^\infty (k + m)^n x^n$ & $(1, k + m, (k + m)^2, (k + m)^3, \dots)$ \\
+
+            $\frac{k}{1 - x} = 2 + 2x + 2x^2 + 2x^3 + \dots \hfill = \sum_{n = 0}^\infty 2 x^n$ & $(k, k, k, k, \dots)$ \\
+
+            $\frac{1}{1 - x^2} = 1 + x^2 + x^4 + x^6 + \dots \hfill = \sum_{n = 0}^\infty x^{2n}$ & $(1, 0, 1, 0, \dots)$ \\
+
+            $\frac{x}{1 - x} = x + x^2 + \dots \hfill = \sum_{n = 0}^\infty x^{n + 1}$ & $(0, 1, 1, 1, \dots)$ \\
+
+            $\frac{1 - x^k}{1 - x} = 1 + x + x^2 + x^3 + \dots + x^{k - 1} \hfill = \sum_{n = 0}^{k - 1} x^n$ & $\underset{k \text{ раз}}{(1, 1, 1, \dots, 1)}$ \\
+
+            $\frac{d}{dx}\frac{1}{1 - x} = \frac{1}{(1 - x)^2} = 1 + 2x + 3x^2 + \dots \hfill = \sum_{n = 0}^{\infty} n x^n$ & $(1, 2, 3, 4, \dots)$ \\\hline
+
+        \end{tabular}
+        }
+
+        \vspace{2mm}
+
+        \item \textbf{Подсчет, используя производящие функции}
+
+        Найти число решений для $x_1 + x_2 + x_3 = 6$, где $x_i \geq 0, x_1 \leq 4, x_2 \leq 3, x_3 \leq 5$
+
+        Пусть $A_1(x) = 1 + x + \dots + x^4$, $A_2(x) = 1 + x + \dots + x^3$, $A_3(x) = 1 + x + \dots + x^5$
+
+        Тогда: $A(x) = A_1 \cdot A_2 \cdot A_3 = 1 + 3x + 6x^2 + 10x^3 + 14x^4 + 17x^5 + \underline{18x^6} + 17x^7 + \dots$
+
+        Ответ - 18
+
+        \item \textbf{Рекуррентные соотношения} (Recurrence relations)
+        \hfill\href{https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%B0%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0}{*тык*}
+
+
+        \underline{Решить рекуррентное соотношение} - найти закрытую формулу
+
+        \Exs Арифметическая прогрессия $a_n = a_{n - 1} + d, a_0 = const$
+
+        Решение: $a_n = a_0 + nd$ - анзац (Ansatz, догадка)
+
+        Проверка: $a_n = a_0 + nd = a_{n - 1} + d = a_0 + (n - 1)d + d = a_0 + nd \quad$ - {\Large👍👍👍}
+
+        \item \textbf{Решение при помощи производящих функций}
+
+        Решить рекуррентное соотношение $a_n = 3a_{n-1} - 2a_{n-1}$, где $a_0 = 1, a_1 = 3$
+
+        Используем производящие функции:
+
+        \setlength{\tabcolsep}{2pt}
+        \begin{tabular}{cccrcrcccll}
+            $A(x) = $ & $a_0$ & $+$ & $a_1 x$ & $+$ & $a_2 x^2$    & $+$ & $a_3 x^3$ & $+$ & $\dots$  &  $ = A(x)$                  \\ \hline
+             &       &     &         &     & $3x(a_1 x$   & $+$ & $a_2 x^2$ & $+$ & $\dots)$ & $= 3x(A(x) - a_0)$ \\
+                   &       &     &         &     & $-2x^2(a_0 $ & $+$ & $a_1 x$   & $+$ & $\dots)$ & $= -2x^2 A(x)$     \\
+                   & $a_0$ & $+$ & $a_1 x$ &     &              &     &           &     &          & $= a_0 + a_1 x$
+        \end{tabular}
+
+        $A(x) = a_0 + a_1 x + 3x(A(x) - a_0) - 2x^2 A(x) = 1 + 3x + 3xA(x) - 3x - 2x^2 A(x)$
+
+        $A(x) (2x^2 - 3x + 1) = 1 \Longrightarrow A(x) = \frac{1}{1 - 3x + 2x^2} = \frac{-1}{1 - x} + \frac{2}{1 - 2x} \Longrightarrow a_n = 2^{n + 1} - 1$
+
+
+        \item \textbf{Метод характеристического уравнения}
+
+        \substack{\text{Рекуррентное} \\ \text{соотношение}} \ $\stackrel{a_n \to r^n}{\rightsquigarrow}$ \ \substack{\text{Характеристическое} \\ \text{уравнение}} \ $\stackrel{\text{решение}}{\rightsquigarrow}$ Корни $\stackrel{\text{магия}}{\rightsquigarrow}$ Решение $\rightsquigarrow$ Проверка
+
+        \vspace{3mm}
+
+        \Exs $a_n = a_{n - 1} + 6a_{n - 2}, \quad a_0 = 1, a_1 = 8$
+
+        ХрУ: $r^n - r^{n - 1} - 6r^{n - 2} = 0 \Longrightarrow r_{1,2} = -2, 3$
+
+        \fbox{\begin{tabular}{l}
+            Если $r_1 \neq r_2$, то $a_n = ar_1^n + br_2^n$ - общее решение \\
+            Если $r_1 = r_2 = r$, то $a_n = ar^n + bnr^n$
+        \end{tabular}}
+
+        \vspace{3mm}
+
+        $
+        \begin{cases}a_n = a(-2)^n + b(3)^n \\ a_0 = 1 = a + b \\ a_1 = 8 = -2a + 3b\end{cases} \Longleftrightarrow
+        \begin{cases}a = -1 \\ b = 2 \\ a_n = -(-2)^n + 2 \cdot 3^n \text{ - решение}\end{cases}
+        $
+
+        \item \textbf{Разделяй и властвуй} (Divide-and-Conquer)
+
+        $T(n) = \underset{\text{работа рекурсии}}{\undergroup{2T\left(\frac{n}{2}\right)}} + \underset{\text{работа разделения/слияния}}{\undergroup{\theta(n)}}$
+
+        \item \textbf{Основная теорема о рекуррентных соотношениях} (Master Theorem)
+        \hfill\href{https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F_%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%BE_%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D1%85_%D1%81%D0%BE%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%D1%85}{*тык*}
+
+        Пусть асимптотика алгоритма - $T(n) = aT\left(\frac{n}{b}\right) + f(n)$, из этого, $c_{crit} = \log_b a$, тогда:
+
+        \begin{tabular}{cll}
+            \hline
+
+            Что? & \hfil Когда? & \hfil Что делать? \\
+
+            \hline
+
+            I случай: слияние $<$ рекурсия & $f(n) \in O(n^c)$, где $c < c_{crit}$ & $T(n) \in \Theta(n^{c_{crit}})$ \\
+
+            \hline
+
+            II случай: слияние $\approx$ рекурсия & $f(n) \in O(n^c) \Longleftrightarrow f(n) \in o(n^{c_{crit}})$ & \\
+
+            \hline
+
+            & II.a случай - $k \geq 0$ & $T(n) \in \Theta(n^{c_{crit}} \log^{k + 1} n)$ \\
+
+            & II.b случай - $k = -1$ & $T(n) \in \Theta(n^{c_{crit}} \log \log n)$ \\
+
+            & II.c случай - $k < -1$ & $T(n) \in \Theta(n^{c_{crit}})$ \\
+
+            \hline
+
+            III случай: слияние $>$ рекурсия & $f(n) \in \Omega(n^c)$, где $c > c_{crit}$ & $T(n) \in \Theta(f(n))$\\
+
+            \hline
+
+        \end{tabular}
+
+        \vspace{4mm}
+
+        \item \textbf{Метод Акра-Бацци} (Akra-Bazzi method)
+        \hfill\href{https://en.wikipedia.org/wiki/Akra%E2%80%93Bazzi_method}{*тык*}
+
+
+        Пусть асимптотика алгоритма - $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n))$,
+
+        где $a_i > 0$, $0 < b_i < 1$, $k = const$, $h_i(n) \in O\left(\frac{n}{\log^2 n}\right)$ - малые возмущения
+
+        \textbf{Тогда} $T(n) \in \Theta\left(n^p \cdot \left(1 + \int_1^n \frac{f(x)}{x^{p + 1}} dx\right)\right)$, где $p$ - решение для $\sum_{i = 1}^k a_i b_i^p = 1$
+
+        \Exs $T(n) = T\left(\frac{3n}{4}\right) + T\left(\frac{n}{4}\right) + n$
+
+        $a_1 = a_2 = 1, b_1 = \frac{3}{4}, b_2 = \frac{1}{4}, f(n) = n, \quad \left(\frac{3}{4}\right)^p + \left(\frac{1}{4}\right)^p = 1 \Longrightarrow p = 1$
+
+        $\int_1^n \frac{x}{x^{1 + 1}}dx = \int_1^n \frac{dx}{x} = \ln x \Big|_1^n = \ln n$
+
+        $T(n) \in \Theta(n \cdot (1 + \ln n)) \quad T(n) \in \Theta(n \ln n)$
+
+        \vspace{3mm}
+
+        \item \textbf{Линейные рекуррентности} (Linear recurrences)
+        \hfill\href{https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%B0%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0#%D0%9B%D0%B8%D0%BD%D0%B5%D0%B9%D0%BD%D1%8B%D0%B5_%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D0%B5_%D1%83%D1%80%D0%B0%D0%B2%D0%BD%D0%B5%D0%BD%D0%B8%D1%8F}{*тык*}
+
+        $\underset{\text{линейная комб. рекуррентных членов}}{\undergroup{k_1 a_n + k_2 a_{n - 1} + k_3 a_{n - 2} + \dots}} =
+        \underset{\text{функция от }n}{\undergroup{f(n)}}$
+
+        Линейное рекуррентное соотношение - $\begin{cases}f = 0 \Longrightarrow \text{гомогенное (однородное)} \\ f \neq 0 \Longrightarrow \text{негомогенное (неоднородное)}\end{cases}$
+
+        \Exs Последовательность Фибоначчи:
+
+        $F(n) = \begin{cases}0, \quad n = 0 \\ 1, \quad n = 1 \\ F(n - 1) + F(n - 2)\end{cases}$
+
+        $F(n) - F(n - 1) - F(n - 2) = 0$ - однородное
+
+        \item \textbf{Операторы}:
+
+        \begin{tabular}{ll}
+            \hline
+
+            \hfil Что? & \hfil Как? \\
+
+            \hline
+
+            Сумма & $(f + g)(n) = f(n) + g(n)$ \\
+
+            \hline
+
+            Умножение на число & $(\alpha \cdot f)(n) = \alpha f(n)$ \\
+
+            \hline
+
+            Сдвиг & $E f(n) = f(n + 1)$ \\
+
+            \hline
+
+            Сдвиг на $k$ & $E^k f(n) = f(n + k)$ \\
+
+            \hline
+
+            Композиция & $(X + Y) f(n) = Xf(n) + Yf(n)$ \\
+
+             & $(XY) f(n) = X(Yf(n)) = Y(Xf(n))$ \\
+
+        \end{tabular}
+
+        \vspace{4mm}
+
+        \begin{minipage}{0.9\textwidth}
+
+            \begin{wrapfigure}{r}{0pt}
+        \begin{tabular}{lc}
+            \hline
+
+            \hfil Что? & Что аннигилирует? \\
+
+            \hline
+
+            $(E - 1)$ & $\alpha$ \\
+
+            \hline
+
+            $(E - c)$ & $c^n$ \\
+
+            \hline
+
+            $(E - a)(E - b)$ & $\alpha a^n + \beta b^n$ \\
+
+            \hline
+
+            $(E - 1)^2$ & $\alpha n + \beta$ \\
+
+            \hline
+
+            $(E - a)^2$ & $(\alpha n + \beta) a^n$ \\
+
+            \hline
+
+            $(E - c)^d$ & $P_{d - 1}(n) \cdot c^n$ \\
+
+            \hline
+
+        \end{tabular}
+
+        \end{wrapfigure}
+
+        \item \textbf{Аннигилятор} (Annihilator) - оператор, который трансформирует $f$ в функцию, тождественную $0$
+
+        \Notas Любой составной оператор аннигилирует класс функций
+
+        \Notas Любая функция, составленная из полинома и экспоненты, имеет свой единственный аннигилятор
+
+        Если $X$ аннигилирует $f$, то $X$ также аннигилирует $Ef$
+
+        Если $X$ аннигилирует $f$ и $Y$ аннигилирует $g$, то $XY$ аннигилирует $f \pm g$
+
+        \end{minipage}
+
+        \vspace{4mm}
+
+        \item \textbf{Аннигилирование рекуррентностей}:
+
+        1. Запишите рекуррентное соотношение в форме операторов
+
+        2. Выделите аннигилятор для соотношения
+
+        3. Разложите на множители (если понадобится)
+
+        4. Выделите общее решение из аннигилятора
+
+        5. Найдите коэффициенты используя базовые случаи (если даны)
+
+        \vspace{3mm}
+
+        \Exs $r(n) = 5r(n - 1), r(0) = 3$
+
+        1. $r(n + 1) - 5r(n) = 0 \quad (E - 5)r(n) = 0$
+
+        2. $(E - 5)$ аннигилирует $r(n)$
+
+        3. $(E - 5)$ уже разложен
+
+        4. $r(n) = \alpha \cdot 5^n$
+
+        5. $r(0) = 3 \Longrightarrow \alpha = 3$
+
+        \item \textbf{Псевдонелинейные уравнения} (Pseudo-non-linear equations)
+
+        \Exs $a_n = 3a_{n - 1}^2, a_0 = 1$
+
+        $\log_2 a_n = \log_2 (3a_{n - 1}^2)$
+
+        Пусть $b_n = \log_2 a_n$
+
+        $b_n = 2b_{n - 1} + \log_2 3, b_0 = 0$
+
+        $b_n = (2^n - 1)\log_2 3$
+
+        $a_n = 2^{(2^n - 1)\log_2 3} = 3^{2^n - 1}$
+
+    \end{itemize}
+
+\end{document}
