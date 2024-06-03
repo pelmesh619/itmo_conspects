@@ -18,7 +18,17 @@ shutil.copyfile('preamble.sty', preamble_path)
 preamble_text = "%% THIS FILE IS GENERATED AUTOMATICALLY BY linter.py, ALL CHANGES WILL BE LOST\n\n\n" + open(preamble_path, 'r', encoding='utf8').read()
 open(preamble_path, 'w', encoding='utf8').write(preamble_text)
 
-for i in list(re.finditer(r'\$.+?\$', file, re.MULTILINE | re.DOTALL)):
+to_display = True
+
+for i in list(re.finditer(r'(\$.+?\$)|(%nodisplay)|(%yesdisplay)', file, re.MULTILINE | re.DOTALL)):
+    if '%nodisplay' in i.group(0):
+        to_display = False
+    if '%yesdisplay' in i.group(0):
+        to_display = True
+
+    if not to_display:
+        continue
+
     if '\\displaystyle' in i.group(0):
         continue
     if any(map(lambda x: x in i.group(0), ['\\frac', '\\sum', '\\int', '\\iint', '\\iiint', '^', '_', '\\lim'])):
