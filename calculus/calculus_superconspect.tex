@@ -1268,7 +1268,9 @@
 
     \Th Все касательные прямые к $\pi$ в обыкновенной точке $M_0$ лежат в одной плоскости
 
-    $\Box d \overrightarrow{s}$ - направляющий вектор касательной $\tau$, проведенной к кривой $l$ в некоторой секущей плоскости
+    $\Box$
+
+    $d \overrightarrow{s}$ - направляющий вектор касательной $\tau$, проведенной к кривой $l$ в некоторой секущей плоскости
 
     $d \overrightarrow{s}$ - вектор малых приращений, то есть $d \overrightarrow{s} = (dx, dy, dz)$
 
@@ -1293,12 +1295,14 @@
 
     \[F^\prime_t = \frac{\partial F}{\partial x}\frac{dx}{dt} + \frac{\partial F}{\partial y}\frac{dy}{dt} + \frac{\partial F}{\partial z}\frac{dz}{dt} = 0\]
 
-    Или $(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}) \cdot (\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}) = 0$
+    Или $\left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}\right) \cdot \left(\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}\right) = 0$
 
     Таким образом, $\overrightarrow{N} \cdot \frac{d\overrightarrow{s}}{dt} = 0$. То есть $\overrightarrow{N} \perp \frac{d\overrightarrow{s}}{dt}$, при том, что $d\overrightarrow{s}$ выбран произвольно (кривая $l$ - кривая произвольного сечения)
 
     Итак, вектор $\overrightarrow{N} \perp$ любой касательной $\tau$ к поверхности $\pi$ в точке $M_0$.
-    Следовательно все касательные лежат в плоскости $\kappa$ такой, что $\overrightarrow{N} \perp \kappa$
+    Следовательно, все касательные лежат в плоскости $\kappa$ такой, что $\overrightarrow{N} \perp \kappa$
+
+    $\Box$
 
     \Def Плоскость $\kappa$ (содержащая все касательные прямые $\tau$ к $\pi$ в точке $M_0$) называется касательной плоскостью к $\pi$ в $M_0$
 
@@ -1306,7 +1310,7 @@
 
     $\overrightarrow{N}$ - вектор нормали к поверхности в точке
 
-    Уравнение ($\pi$) $\quad F(x, y, z) = 0, \ \overrightarrow{N} = (\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}), \ M_0(x_0, y_0, z_0) \in \pi, \kappa, n$
+    Уравнение ($\pi$) $\quad F(x, y, z) = 0, \ \overrightarrow{N} = \left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}\right), \ M_0(x_0, y_0, z_0) \in \pi, \kappa, n$
 
     Касательная плоскость ($\kappa$) $\quad \frac{\partial F}{\partial x} (x - x_0) + \frac{\partial F}{\partial y} (y - y_0) + \frac{\partial F}{\partial z} (z - z_0) = 0$
 
@@ -1328,21 +1332,21 @@
 
     Введем вектор $d\overrightarrow{p} || \overrightarrow{p}$
 
-    $d\overrightarrow{p} = (0, dy, \frac{\partial z}{\partial y}dy) = (0, 1, \frac{\partial z}{\partial y}) dy$
+    $d\overrightarrow{p} = \left(0, dy, \frac{\partial z}{\partial y}dy\right) = \left(0, 1, \frac{\partial z}{\partial y}\right) dy$
 
     Аналогично найдем $\overrightarrow{m}$ в сечении $y = y_0$
 
-    $\overrightarrow{m} || d\overrightarrow{m} = (dx, 0, \frac{\partial z}{\partial x}dx) = (1, 0, \frac{\partial z}{\partial x}) dx$
+    $\overrightarrow{m} || d\overrightarrow{m} = \left(dx, 0, \frac{\partial z}{\partial x}dx\right) = \left(1, 0, \frac{\partial z}{\partial x}\right) dx$
 
     Так как модуль $\overrightarrow{n}$ не важен, а только направление, то будем искать
-    $\overrightarrow{n} = (1, 0, \frac{\partial z}{\partial x}) \times (0, 1, \frac{\partial z}{\partial y})$
+    $\overrightarrow{n} = \left(1, 0, \frac{\partial z}{\partial x}\right) \times \left(0, 1, \frac{\partial z}{\partial y}\right)$
 
     \[\overrightarrow{n} =
     \begin{vmatrix} \overrightarrow{i} & \overrightarrow{j} & \overrightarrow{k} \\
         1 & 0 & \frac{\partial z}{\partial x} \\ 0 & 1 & \frac{\partial z}{\partial y}
-    \end{vmatrix} = \overrightarrow{i} (-\frac{\partial z}{\partial x}) - \overrightarrow{j} \frac{\partial z}{\partial y} + \overrightarrow{k} = \]
+    \end{vmatrix} = \overrightarrow{i} \left(-\frac{\partial z}{\partial x}\right) - \overrightarrow{j} \frac{\partial z}{\partial y} + \overrightarrow{k} = \]
 
-    \[= (-\frac{\partial z}{\partial x}; -\frac{\partial z}{\partial y}; 1)\]
+    \[= \left(-\frac{\partial z}{\partial x}; -\frac{\partial z}{\partial y}; 1\right)\]
 
     Тогда уравнение $\kappa$:
 
@@ -1352,13 +1356,13 @@
 
     \Nota Последние уравнения можно получить проще, если свести уравнение $z = f(x, y)$ к уравнению $z - f(x, y) = F(x, y, z) = 0$
 
-    \Lab Вывести уравнение $\kappa$ и $n$, пользуясь предыдущем замечанием
+    \Lab Вывести уравнение $\kappa$ и $n$, пользуясь предыдущим замечанием
 
     \Nota Если найти $\overrightarrow{n^-} = \overrightarrow{p} \times \overrightarrow{m} = - (\overrightarrow{m} \times \overrightarrow{p})$, то получим также вектор нормали, но обращенный в противоположную сторону
 
     Будем говорить, что $\overrightarrow{n^+}$ - положительный вектор нормали, если угол $\angle\gamma = \angle (\overrightarrow{n^+}, Oz) \in [0; \frac{pi}{2})$
 
-    $\overrightarrow{n^-}$ - отрицательный, если угол $\angle\gamma = \angle (\overrightarrow{n^-}, Oz) \in (\frac{\pi}{2}; \pi)$
+    $\overrightarrow{n^-}$ - отрицательный, если угол $\angle\gamma = \angle (\overrightarrow{n^-}, Oz) \in \left(\frac{\pi}{2}; \pi\right)$
 
     Соответственно этому верхней стороной $\pi$ называется та, к которой вектор нормали положительный
 
@@ -1372,28 +1376,28 @@
 
     \Nota То же, что $z(M) - z(M_0) = z - z_0 = \Delta z \leq 0$ (max), $\quad \Delta z \geq 0$ (min)
 
-    \Mem Для ФОП формулировали Н. условие экстремума (Ферма), из этого условия получали точки, подозрительные на экстремум : критические - $f^\prime(x_0) = 0$ или $\nexists f^\prime(x_0)$ (для острого экстремума); стационарные - $\exists f^\prime(x_0) = 0$ (частный случай критич.)
+    \Mem Для ФОП формулировали Необходимое условие экстремума (Ферма), из этого условия получали точки, подозрительные на экстремум : критические - $f^\prime(x_0) = 0$ или $\nexists f^\prime(x_0)$ (для острого экстремума); стационарные - $\exists f^\prime(x_0) = 0$ (частный случай критич.)
 
     Далее при помощи достаточных условий (признаков) проверяем наличие экстремума в критических точках
 
     \Nota Все термины переносятся на ФНП
 
-    Н. У. и Д. У аналогично
+    Необходимое условие и достаточное условие аналогично
 
-    \Th Н. условие экстремума (гладкого):
+    \Th Необходимое условие экстремума (гладкого):
 
     $z = z(x, y) : \Real^2 \rightarrow \Real$; $\quad z_0$ - точка гладкого экстремума,
     то есть $\exists \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}$ в $M_0$ и $\forall M \in U_\delta(M_0) \ z_0 \leq z(M)$ или $z_0 \geq z(M)$
 
     Тогда $\begin{cases}\frac{\partial z}{\partial x} |_{M_0} = 0 \\ \frac{\partial z}{\partial y} |_{M_0} = 0\end{cases}$
 
-    $\Box$ Аналогично лемме Ферма в сечениях $x = x_0$, $y = y_0$
+    $\Box$ Аналогично лемме Ферма в сечениях $x = x_0$, $y = y_0$ $\Box$
 
     Для существования острого экстремума нужно рассмотреть не существования или бесконечность $\frac{\partial z}{\partial x}$ или $\frac{\partial z}{\partial y}$
 
     Если же функция трижды дифференцируема исследования на характер экстремума можно проводить с помощью вторых производных
 
-    \Th Д. условие (гладкого) экстремума
+    \Th Достаточное условие (гладкого) экстремума
 
     Пусть $z = z(x, y)$ непрерывна в окрестности $x_0$ (критическая точка $\frac{\partial z}{\partial x} |_{M_0} = 0, \frac{\partial z}{\partial y} |_{M_0} = 0$)
     вместе со своими первыми и вторыми производными (можно потребовать трижды дифференцируемость)
@@ -1407,7 +1411,9 @@
         \item $AC - B^2 = 0\Longrightarrow$ нельзя утверждать наличие или отсутствие экстремума в точке (требуются дополнительные исследования)
     \end{enumerate}
 
-    $\Box$ Функция $z$ дважды дифференцируема, тогда ($z_0 = z(M_0)$)
+    $\Box$
+
+    Функция $z$ дважды дифференцируема, тогда ($z_0 = z(M_0)$)
 
     $\Delta z = z - z_0 = \frac{dz}{1!} |_{M_0} + \frac{d^2 z}{2!} |_{M_0} + o((\Delta \rho)^2) \quad \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2} = \sqrt{(dx)^2 + (dy)^2}, \ dx = \Delta\rho \cos\alpha, dy = \Delta\rho \sin\alpha$
 
@@ -1415,7 +1421,7 @@
 
     Заметим, что $dz |_{M_0} = 0$, так как $M_0$ - критическая
 
-    $d^2 z = (\frac{\partial}{\partial x} + \frac{\partial}{\partial y})^2 z = (\frac{\partial^2}{\partial x^2} + 2 \frac{\partial^2}{\partial x \partial y} + \frac{\partial^2}{\partial y^2}) z =
+    $d^2 z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z = \left(\frac{\partial^2}{\partial x^2} + 2 \frac{\partial^2}{\partial x \partial y} + \frac{\partial^2}{\partial y^2}\right) z =
     \frac{\partial^2 z}{\partial x^2} (dx)^2 + 2 \frac{\partial^2 z}{\partial x \partial y} dxdy + \frac{\partial^2 z}{\partial y^2} (dy)^2 = A (dx)^2 + 2B dxdy + C(dy)^2 =
     A(\Delta \rho)^2 \cos^2\alpha + 2B (\Delta \rho)^2 \cos\alpha\sin\alpha + C(\Delta \rho)^2 \sin^2\alpha$
 
@@ -1455,6 +1461,8 @@
     То есть $\Delta z$ колеблется вместе с $\alpha$ по знаку $\Longrightarrow$ нет экстремума
 
     Можно доказать при $A \neq 0$, например, выбрав $tg \alpha = -\frac{A}{B}$, что знак $\Delta z$ зависит от $\alpha$
+
+    $\Box$
 
 
 
