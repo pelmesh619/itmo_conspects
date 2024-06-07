@@ -3,7 +3,7 @@ import re
 import sys
 
 if len(sys.argv) <= 1:
-    print('Enter source filename as command argument')
+    print('Enter source folder name as command argument')
     exit(1)
 
 
