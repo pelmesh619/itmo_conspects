@@ -1568,40 +1568,33 @@
 
     \section{5.3. Двойной и тройной интегралы}
 
-    \Nota Дадим строгое определение
+    \indent \Nota Дадим строгое определение
 
-    \begin{multicols}{2}
-        \Def $z = z(x, y) \quad z : D \subset \Real^2 \rightarrow \Real$
-
+    \begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
+        \Defs $z = z(x, y) \quad z : D \subset \Real^2 \rightarrow \Real$
+        &
+        \Mems $\int_a^b f(x) dx \quad\quad f(x) : [a, b] \rightarrow \Real^+$ \\
         1) Дробление на $[x_{i-1}, x_i]$ длиной $\Delta x$
-
+        &
+        1) Дробление на элементы $P_i$ прямыми $x = const, y = const$, $S_{P_i} = \Delta x_i \Delta y_i$ (дали $dx$, $dy$) \\
         2) Выбор средней точки $M_i(\xi_i, \eta_i)$, по значению $z(M_i)$ строим элемент. параллелепипед объемом
-        $\nu_i = z(M_i) \Delta x_i \Delta y_i \approx V_{\text{малого цилиндра}}$
 
+        $\nu_i = z(M_i) \Delta x_i \Delta y_i \approx V_{\text{малого цилиндра}}$
+        &
+        2) Выбор $\xi_i \in [x_{i-1}, x_i]$, площадь элементарных прямоугольников $f(\xi_i)\Delta x_i \approx S_{\text{полоски}}$ \\
         3) Интеграл суммы
 
-        $v_i = \Sigma_{i=1}^n \nu_i = \Sigma z(M_i) \Delta x_i \Delta y_i$
-
+        $v_i = \sum_{i=1}^n \nu_i = \sum z(M_i) \Delta x_i \Delta y_i$
+        &
+        3) Интеграл суммы $\sigma_n = \sum_{i=1}^n f(\xi_i) \Delta x_i$ \\
         4) Если $\exists \lim v_n \in \Real$, не зависящий от типа дробления и т.д. при $n \rightarrow \infty$ и
-        $\tau = \max \Delta x_i, \Delta y_i \to 0$, то $\lim_{n\to\infty} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
+        $\tau = \max (\Delta x_i, \Delta y_i) \to 0$,
 
+        то $\lim_{\substack{n\to\infty \\ \tau \to 0}} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
+        &
+        4) $\lim_{\substack{n\to\infty \\ \tau \to 0}} \sigma_n = \int^b_a f(x) dx$
 
-
-        \Mem $\int_a^b f(x) dx$
-
-        $f(x) : [a, b] \rightarrow \Real^+$
-
-        \vspace{10mm}
-
-        1) Дробление на элементы $P_i$ прямыми $x = const, y = const$, $S_{P_i} = \Delta x_i \Delta y_i$ (дали $dx$, $dy$)
-
-        2) Выбор $\xi_i \in [x_{i-1}, x_i]$, площадь элементарных прямоугольников $f(\xi_i)\Delta x_i \approx S_{\text{полоски}}$
-
-        3) Интеграл суммы $\sigma_n = \Sigma_{i=1}^n f(\xi_i) \Delta x_i$
-
-        4) $\lim_{n\to\infty} \sigma_n = \int^b_a f(x) dx$
-
-    \end{multicols}
+    \end{tabular}
 
     \Nota Об области $D$
 
@@ -1623,11 +1616,11 @@
 
     Добавим к определению $\iint_{\partial D \text{ - граница } D} z(x, y) dx dy$
 
-    Геометрический смысл: В определении при $z(x, y) \geq 0$ интегральная сумма $v_n = \Sigma_{i=1}^n \nu_i$ была суммой объемов элементарных параллелепипедов и приближала объем подповерхности
+    Геометрический смысл: В определении при $z(x, y) \geq 0$ интегральная сумма $v_n = \sum_{i=1}^n \nu_i$ была суммой объемов элементарных параллелепипедов и приближала объем подповерхности
 
     Тогда $\iint_D z(x, y) dx dy \stackrel{z \geq 0}{=} V_{\text{цилиндра с осн. } D}$, а при $z = 1$ $\iint_D dx dy = S_D$
 
-    Вычисление: По геометрическому смыслу - найти $\iint_D z(x, y) dx dy$ значит найти объем подповерхности
+    Вычисление: По геометрическому смыслу найти $\iint_D z(x, y) dx dy$ - значит найти объем подповерхности
 
     Можно найти $S(x) = \int^{y_2(x)}_{y_1(x)} z(x = c, y) dy$ - площадь поперечного сечения
 
@@ -1645,7 +1638,7 @@
 
     Пределы интегрирования во внутреннем интеграле - функции, во внешнем - точки
 
-    ? Можно вычислить V, рассекая тело сечениями $y = const$. Верно ли, что $\int_a^b \left(\int_{y_1(x)}^{y_2(x)} z(x, y) dy\right) dx = \int_\alpha^\beta \left(\int_{x_1(y)}^{x_2(y)} z(x, y) dx\right) dy$?
+    ? Можно ли вычислить V, рассекая тело сечениями $y = const$? Верно ли, что $\int_a^b \left(\int_{y_1(x)}^{y_2(x)} z(x, y) dy\right) dx = \int_\alpha^\beta \left(\int_{x_1(y)}^{x_2(y)} z(x, y) dx\right) dy$?
 
     Верно, $V$ не зависит от порядка сечения
 
@@ -1653,32 +1646,32 @@
 
     Но при другом порядке интегрирования область $D$ может оказаться неправильной
 
-    \Def При проходе области $D$ в направлении $Oy \uparrow$ граница области (верхняя) меняет аналитическое задание. Такая область называется направильной в направлении $Oy$
+    \Def При проходе области $D$ в направлении $Oy \uparrow$ граница области (верхняя) меняет аналитическое задание. Такая область называется неправильной в направлении $Oy$
 
     Выгодно выбирать правильное направление, чтобы не делить интеграл по аддитивности
 
     \Ex $\iint_D xy dx dy$, $D : x^2 + y^2 \leq 1$
 
-    $\iint_D xy dx dy = \int_{-1}^1 (\int_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}} xy dy) dx = \int_{-1}^1 (\frac{x}{2} y^2 \Big|_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}}) dx =
+    $\iint_D xy dx dy = \int_{-1}^1 \left(\int_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}} xy dy\right) dx = \int_{-1}^1 \left(\frac{x}{2} y^2 \Big|_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}}\right) dx =
     \int_{-1}^1 (\frac{x}{2} ((1 - x^2) - (1 - x^2)) dx = 0$
 
     \Def Тройной интеграл
 
-    $T \subset \Real^3 \rightarrow \Real$
+    Пусть дана функция $u(x, y, z) \ : \ T \subset \Real^3 \rightarrow \Real$
 
-    1) дробление на элементы объема $dv = dxdydz$
+    1) Дробление на элементы объема $dv = dxdydz$
 
     2) Вычисление среднего содержания $u(x, y, z)$ в $dv$: $u(\xi_i, \eta_i, \zeta_i) dv$
 
-    3) Интегральная сумма $\sigma_n = \Sigma u(M_i) dv$
+    3) Интегральная сумма $\sigma_n = \Sum u(M_i) dv$
 
-    4) $\lim_{n \to \infty, \tau = \max dv \to 0} \stackrel{def}{=} \iiint_T u(x, y, z) dxdydz$
+    4) $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dxdydz$
 
-    Геометрический смысл. Только при $u = 1$ $\iiint_T dxdydz = V_T$
+    Геометрический смысл. Только при $u = 1$ интеграл $\iiint_T dxdydz = V_T$ равен объему
 
-    Физический смысл. $u(x, y, z)$ - плотность в каждой точке $T$
+    Физический смысл. Пусть $u(x, y, z)$ - плотность в каждой точке $T$
 
-    $\iiint_T u(x, y, z) dxdydz = m_T$ - масса
+    Тогда $\iiint_T u(x, y, z) dxdydz = m_T$ - масса
 
     Вычисление. $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
 
