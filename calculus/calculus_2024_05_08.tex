@@ -11,7 +11,7 @@
 \begin{document}
     \section{5.6. Поверхностные интегралы}
 
-    1* Поверхностные интегралы I рода (по участку поверхности)
+    \paragraph{1* Поверхностные интегралы I рода} (по участку поверхности)
 
     \underline{Задача}. Масса поверхности
 
@@ -27,13 +27,15 @@
 
     3) Инт. сумма $\nu_n = \sum_{k = 1}^{n} u(\xi_k, \eta_k, \zeta_k) \Delta \sigma_k$
 
-    4) $\iint_S u(x, y, z) \Delta \sigma = \lim_{\substack{n \to \infty \\ \tau = \max \Delta \sigma_k \to 0}} \nu_n$
+    4) $\iint_S u(x, y, z) \Delta \sigma = \lim_{\substack{n \to \infty \\ \tau = \max \Delta \sigma_k \to 0}} \nu_n$ - поверхностный интеграл первого рода
 
     Свойства: Смена обхода поверхности $S$ не меняет знака интеграла: $\iint_{S^+} u d\sigma = \iint_{S^-} u d\sigma$
 
+    \mediumvspace
+
     \underline{Вычисление}
 
-    \Mem Вычисление $\int_L f(x, y) dl$
+    \Mems Вычисление $\int_L f(x, y) dl$
 
     1) Параметризация $L \quad \begin{cases}x = \varphi(t) \\ y = \psi(t)\end{cases} \quad t \in [\alpha, \beta]$
 
@@ -68,9 +70,9 @@
     \end{bmatrix} =
     \iint_D \sqrt{x^2 + y^2} \sqrt{2} dxdy = \sqrt{2} \int^{2\pi}_{0} d\varphi \int_{0}^{\rho} \rho \underset{|j|}{\undergroup{\rho}} d\rho = \sqrt{2} 2\pi \frac{\rho^3}{3} \Big|_0^1 = \frac{2\sqrt{2}\pi}{3}$
 
-    2* II рода
+    \paragraph{2* II рода.} \\
 
-    \underline{Задача} Поток
+    \underline{Задача}. Поток
 
     Будем говорить о потоке вектора $\overrightarrow{F} = (P, Q, R)$ через площадку $S$ в направлении нормали $\overrightarrow{n^+}$ или $\overrightarrow{n^-}$
 
@@ -87,7 +89,7 @@
     В пределах $d\sigma$ $\overrightarrow{F}$ меняется мало, за среднее берем $\overrightarrow{F} = (P, Q, R)$, где $P = P(x, y, z), Q = Q(x, y, z), R(x, y, z)$
 
     Разберемся с наклоном: если площадка перпендикулярна, то $d\Pi = F d\sigma$,
-    но в нашем случае высота цилиндра равна $\text{пр.}_\overrightarrow{n} \overrightarrow{F} = (\overrightarrow{n}, \overrightarrow{F}) = F \cos\varphi$, где $\overrightarrow{n}$ - единичный вектор нормали, $\varphi$ - угол между нормалью и потоком,
+    но в нашем случае высота цилиндра равна $\text{пр.}_{\overrightarrow{n}} \overrightarrow{F} = (\overrightarrow{n}, \overrightarrow{F}) = F \cos\varphi$, где $\overrightarrow{n}$ - единичный вектор нормали, $\varphi$ - угол между нормалью и потоком,
     $d\Pi = (\overrightarrow{F}, \overrightarrow{n}) d\sigma = F_n d\sigma$
 
     Пусть $\overrightarrow{n} = (\cos\alpha, \cos\beta, \cos\gamma)$, тогда $d\Pi = (\overrightarrow{F}, (\cos\alpha, \cos\beta, \cos\gamma)) d\sigma =
@@ -119,13 +121,16 @@
 
     Определим $I = \iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy$
 
-    $I = \lim_{\substack{n \to \infty \\ \tau = \max \Delta s_k \to 0}} \sum_{k=1}^n f(\xi_k, \eta_k, \zeta_k) \Delta s_k$ ($\Delta s_k = \Delta x\Delta y$ - любого знака, согласованного с обходом)
+    $I = \lim_{\substack{n \to \infty \\ \tau = \max \Delta s_k \to 0}} \sum_{k=1}^n f(\xi_k, \eta_k, \zeta_k) \Delta s_k$ - поверхностный интеграл второго рода
+    ($\Delta s_k = \Delta x\Delta y$ - любого знака, согласованного с обходом)
 
     Свойства: Меняет знак при смене обхода с $\overrightarrow{n}^+$ на $\overrightarrow{n}^-$
 
     \underline{Вычисление}
 
-    1) Параметризация $S$ \quad для $\iint Rdxdy \quad z = z(x, y)$, для $\iint Qdxdz \quad y = y(x, z)$, для $\iint Pdydz \quad x = x(y, z)$
+    1) Параметризация $S$ \quad для $\iint Rdxdy \quad z = z(x, y)$, для $\iint Qdxdz \quad y = y(x, z)$,
+
+    для $\iint Pdydz \quad x = x(y, z)$
 
     Пределы интегрирования $D_{xy} = \text{пр.}_{Oxy} S$ и т. д.
 
