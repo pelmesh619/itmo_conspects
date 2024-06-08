@@ -740,16 +740,16 @@
 
     \Ex
 
-    $\displaystyle I(\alpha) = \int^{+\infty}_0 e^{-x} \frac{sin\alpha x}{x}dx$
-    $\displaystyle I^\prime_\alpha(\alpha) = \int^{+\infty}_0 (e^{-x} \frac{sin\alpha x}{x})^\prime_\alpha dx = \int^{+\infty}_0 e^{-x} \frac{1}{x} x cos\alpha x dx =
-    \int^{+\infty}_0 e^{-x} cos\alpha x dx = \frac{1}{a + \alpha^2}$
+    $\displaystyle I(\alpha) = \int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x}dx$
+    $\displaystyle I^\prime_\alpha(\alpha) = \int^{+\infty}_0 \left(e^{-x} \frac{\sin\alpha x}{x}\right)^\prime_\alpha dx = \int^{+\infty}_0 e^{-x} \frac{1}{x} x \cos\alpha x dx =
+    \int^{+\infty}_0 e^{-x} \cos\alpha x dx = \frac{1}{a + \alpha^2}$
 
     Из этого следует, что $\displaystyle I(\alpha) = \int_{+\infty}_{0} \frac{1}{a + \alpha^2} dx = arctg(\alpha) + C$
 
     Так как $I(\alpha)$ - несобственный интеграл, это функция, а не семейство функций. Найдем $C$.
 
-    $\displaystyle I(0) = \int^{+\infty}_0 e^{-x} \frac{sin 0 * x}{x}dx = 0 \Longrightarrow C = 0$
-    Таким образом, $\displaystyle I(\alpha) = (\int^{+\infty}_0 e^{-x} \frac{sin\alpha x}{x} dx)^\prime_\alpha = arctg(\alpha)$
+    $\displaystyle I(0) = \int^{+\infty}_0 e^{-x} \frac{\sin 0 * x}{x}dx = 0 \Longrightarrow C = 0$
+    Таким образом, $\displaystyle I(\alpha) = \left(\int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x} dx\right)^\prime_\alpha = arctg(\alpha)$
 
     \Ex Гамма-функция
 
@@ -789,6 +789,8 @@
 
     \includegraphics[height=90mm]{calculus/images/calculus_2024_02_28_2}
 
+    \hypertarget{functionoftwovariables}{}
+
     $\forall M(x, y) \exists! z \in \Real : z = f(x, y) \Longleftrightarrow z = f(x, y)$ - функция двух переменных
 
     \Def Окрестность точки $M_0(x_0, y_0)$
@@ -798,10 +800,10 @@
     $\stackrel{o}{U}_\delta (M_0)$ - выколотая
 
     \Nota $\Delta x = x - x_0, \Delta y = y - y_0$, одновременное стремление $\Delta x, \Delta y \rightarrow 0$
-    можно заменить $\Delta \pho = \sqrt{(x - x_0)^2 + (y - y_0)^2} \rightarrow 0$\\[1\baselineskip]
+    можно заменить $\Delta \pho = \sqrt{(x - x_0)^2 + (y - y_0)^2} \rightarrow 0$
 
-
-    \Def $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \exists \delta > 0 (\delta = \delta(\varepsilon)) | \forall M \in \stackrel{o}{U}_\delta(M_0) \text{ } |z(x, y) - L| < \varepsilon$
+    \hypertarget{limitoffunctionoftwovariables}{}
+    \Def $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ | \ \forall M \in \stackrel{o}{U}_\delta(M_0) \ \ |z(x, y) - L| < \varepsilon$
 
     $M_0$ - точка сгущения и $x_0, y_0 \in \Real$ (здесь)
 
@@ -811,7 +813,8 @@
 
     Предел в определении - предел в общем смысле: его существование и значение не зависит от пути
 
-    \Def $z = f(x, y)$ называется непрерывной в точке $M_(x_0, y_0)$, если $z = f(x_0, y_0) = \lim_{M \to M_0} z(x, y)$
+    \hypertarget{continuityoffunctionoftwovariables}{}
+    \Def $z = f(x, y)$ называется непрерывной в точке $M(x_0, y_0)$, если $z = f(x_0, y_0) = \lim_{M \to M_0} z(x, y)$
 
     $z$ непрерывна на $D$, если $z$ непрерывна $\forall (x, y) \in D$
 
@@ -839,6 +842,8 @@
     Поэтому для определения производной выберем координатные направления $x = const$ и $y = const$
 
     $z = f(x = c, y)$
+
+    \hypertarget{partialderivativeoffunctionoftwovariables}{}
 
     $\displaystyle \frac{\partial z}{\partial y} \stackrel{def}{=} \lim_{\Delta y \to 0} \frac{\Delta_y z}{\Delta y}$,
     где $\Delta_y z = z(x, y + \Delta y) - z(x, y)$
