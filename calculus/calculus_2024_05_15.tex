@@ -25,12 +25,12 @@
 
     $\iint_{S_3} zdxdy \stackrel{z |_{S_3} = 1}{=} \iint_{S_3} dxdy \stackrel{\text{с "+", так как }\overrightaarrow{n_3} \uparrow\uparrow Oz}{=} \iint_{D_{xy}} dxdy = \pi$
 
-    $\iint_{S_1} xdydz + ydxdz = \iint_{D^+_{yz}: x = \sqrt{1 - y^2}} xdydz + (-\iint_{D^-_{yz}: x = -\sqrt{1 - y^2}} xdydz) + \iint_{D^+_{xz}} ydxdz + (-\iint_{D^-_{xz}} ydxdz) = \dots$
+    $\iint_{S_1} xdydz + ydxdz = \iint_{D^+_{yz}: x = \sqrt{1 - y^2}} xdydz + \left(-\iint_{D^-_{yz}: x = -\sqrt{1 - y^2}} xdydz\right) + \iint_{D^+_{xz}} ydxdz + \left(-\iint_{D^-_{xz}} ydxdz\right) = \dots$
 
 
     \section{5.7. Связь поверхностных интегралов с другими}
 
-    \Th Гаусса-Остроградского
+    \Th \hypertarget{gaussostrogradskyy}{Гаусса-Остроградского}
 
     $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ - кривая)
 
@@ -38,21 +38,21 @@
 
     $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ - непр. дифф., действуют в области $\Omega \supset T$
 
-    Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}) dxdydz$
+    Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
 
     \Mem Формула Грина
 
-    $\oint_K Pdx + Qdy = \iint_{D_{xy}} (\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}) dxdy$
+    $\oint_K Pdx + Qdy = \iint_{D_{xy}} \left(\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}\right) dxdy$
 
     $\Box$
 
-    Вычислим почленно $\iiint_T (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}) dv$
+    Вычислим почленно $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv$
 
-    $\iiint_T (\frac{\partial R(x, y, z)}{\partial z} dz) dxdy = \iint_{D_{xy}} R(x, y, z) \Big|_{z = z_1 (x, y)}^{z = z_3(x, y)} dxdy = \iint_{D_{xy}} (R(x, y, z_3(x, y)) - R(x, y, z_1(x, y))) dxdy =
+    $\iiint_T \left(\frac{\partial R(x, y, z)}{\partial z} dz\right) dxdy = \iint_{D_{xy}} R(x, y, z) \Big|_{z = z_1 (x, y)}^{z = z_3(x, y)} dxdy = \iint_{D_{xy}} (R(x, y, z_3(x, y)) - R(x, y, z_1(x, y))) dxdy =
     \underset{\text{двойной}}{\iint_{D_{xy}} R(x, y, z_3) dxdy} - \iint_{D_{xy}} R(x, y, z_1(x, y)) dxdy = \underset{\text{поверхностный}}{\iint_{S_3} R(x, y, z) dxdy} + \iint_{S_1} R(x, y, z) dxdy +
-    \underset{ =\ 0,\ dxdy\ |_{S_2} = 0}{\iint_{S_2} R(x, y, z) dxdy} = \iint_{S_{\text{внешн.}}} Rdxdy$
+    \underset{\text{равен } 0\text{, т.к. } dxdy\ |_{S_2} = 0}{\iint_{S_2} R(x, y, z) dxdy} = \iint_{S_{\text{внешн.}}} Rdxdy$
 
-    \vspace{4mm}
+    \smallvspace
 
     Аналогично остальные члены:
 
@@ -62,10 +62,10 @@
 
     \Nota Если $\iint_{S_{\text{внутр}}}$, то $\iint_S = - \iiint_T$
 
-    \Nota С учетом связи поверхностных интегралов $\iiint_T (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}) dv =
+    \Nota С учетом связи поверхностных интегралов $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv =
     \iint_S (P\cos\alpha + Q\cos\beta + R\cos\gamma) dv$
 
-    \Th Стокса
+    \Th \hypertarget{stoks}{Стокса}
 
     Пусть $S : z = z(x, y)$ - незамкнутая поверхность, $L$ - контур, на которую она опирается
 
@@ -73,25 +73,25 @@
 
     В области $\Omega \supset S$ действуют функции $P, Q, R$ - непр. дифф.
 
-    Тогда $\oint_{L^+} Pdx + Qdy + Rdz = \iint_{S^+} ((\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z})\cos\alpha +
-    (\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x})\cos\alpha + (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\cos\gamma) d\sigma$
+    Тогда $\oint_{L^+} Pdx + Qdy + Rdz = \iint_{S^+} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha +
+    \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\alpha + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma$
 
     $\Box$
 
     Найдем слагаемое $\oint_L P(x, y, z) dx \stackrel{\text{на } L\ : \ z = z(x, y)}{=\joinrel=\joinrel=\joinrel=}
     \oint_{K^+_{xy}} \tilde{P}(x, y, z(x, y)) dx = \oint_{K_{xy}} \tilde{P}dx + \tilde{Q}dy =
-    \iint_{D_{xy}} (\frac{\partial \tilde{Q}}{\partial x} - \frac{\partial \tilde{P}}{\partial y}) dxdy =
+    \iint_{D_{xy}} \left(\frac{\partial \tilde{Q}}{\partial x} - \frac{\partial \tilde{P}}{\partial y}\right) dxdy =
     -\iint_{D_{xy}} \frac{\partial \tilde{P}(x, y)}{\partial y} dxdy =
     -\iint_{S^+} \frac{\partial P(x, y, z)}{\partial y} dxdy =
-    -\iint_{S^+} (\frac{\partial P}{\partial y} + \frac{\partial P}{\partial z} \frac{\partial z}{\partial y}) dxdy =
-    -\iint_{S^+} (\frac{\partial P}{\partial y}\cos\gamma + \frac{\partial P}{\partial z} (-\cos\beta)) d\sigma$
+    -\iint_{S^+} \left(\frac{\partial P}{\partial y} + \frac{\partial P}{\partial z} \frac{\partial z}{\partial y}\right) dxdy =
+    -\iint_{S^+} \left(\frac{\partial P}{\partial y}\cos\gamma + \frac{\partial P}{\partial z} (-\cos\beta)\right) d\sigma$
 
-    $\overrightarrow{n} = (\frac{-\frac{\partial z}{\partial x}}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}})$
+    $\overrightarrow{n} = \left(\frac{-\frac{\partial z}{\partial x}}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}}\right)$
 
     $\cos\gamma = \frac{1}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}}$
 
-    Аналогично $\oint_L Qdy = \iint_{S^+} (\frac{\partial Q}{\partial x}\cos\beta - \frac{\partial Q}{\partial z}\cos\alpha) d\sigma,
-    \oint_L Rdz = \iint_{S^+} (\frac{\partial R}{\partial y}\cos\alpha - \frac{\partial R}{\partial x}\cos\beta) d\sigma$
+    Аналогично $\oint_L Qdy = \iint_{S^+} \left(\frac{\partial Q}{\partial x}\cos\beta - \frac{\partial Q}{\partial z}\cos\alpha\right) d\sigma,
+    \oint_L Rdz = \iint_{S^+} \left(\frac{\partial R}{\partial y}\cos\alpha - \frac{\partial R}{\partial x}\cos\beta\right) d\sigma$
 
     Остается сложить интегралы
 
@@ -101,11 +101,11 @@
 
     В \Exs пункте 5.6. (вычисление поверхностного):
 
-    $\iint_{S_{\text{внешн}} \text{ - замкнута!}} xdydz + ydxdz + zdxdy = \iiint_T (\frac{\partial x}{\partial x} + \frac{\partial y}{\partial y} + \frac{\partial z}{\partial z}) dv = 3V_{\text{цил.}}$
+    $\iint_{S_{\text{внешн}} \text{ - замкнута!}} xdydz + ydxdz + zdxdy = \iiint_T \left(\frac{\partial x}{\partial x} + \frac{\partial y}{\partial y} + \frac{\partial z}{\partial z}\right) dv = 3V_{\text{цил.}}$
 
     \ExN{2} Те же $P, Q, R$
 
-    $\oint_L Pdx + Qdy + Rdz = \iint_{S} (\overset{= 0}{\overgroup{(\frac{\partial z}{\partial y} - \frac{\partial y}{\partial z})}} \cos\alpha + 0 + 0) d\sigma$
+    $\oint_L Pdx + Qdy + Rdz = \iint_{S} \left(\overset{= 0}{\overgroup{\left(\frac{\partial z}{\partial y} - \frac{\partial y}{\partial z}\right)}} \cos\alpha + 0 + 0\right) d\sigma$
 
     \clearpage
 
@@ -156,9 +156,9 @@
 
     \section{6.3. Дифференциальные характеристики}
 
-    \Mem $\overrightarrow{\triangledown}u = \overrightarrow{grad}u = (\frac{\partial u}{\partial x}; \frac{\partail u}{\partial y}; \frac{\partial u}{\partial z})$ - градиент скалярного поля
+    \Mems $\overrightarrow{\triangledown}u = \overrightarrow{grad}u = \left(\frac{\partial u}{\partial x}; \frac{\partial u}{\partial y}; \frac{\partial u}{\partial z}\right)$ - градиент скалярного поля
 
-    $\overrightarrow{\triangledown} = (\frac{\partial}{\partial x}; \frac{\partail}{\partial y}; \frac{\partial}{\partial z})$ - набла-оператор
+    $\overrightarrow{\triangledown} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ - набла-оператор
 
     \Nota Для $\overrightarrow{\triangledown}$ определены действия:
 
@@ -177,17 +177,17 @@
 
     \Nota $\triangle u = \underset{\text{часть волнового уравнения матфизики}}{\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}} = 0$ - уравнение, определяющее гармоническую функцию $u(x, y, z)$, уравнение Лапласа
 
-    \DefN{1} Дивергенция поля (\textit{divergence} - расхождение)
+    \DefN{1} \hypertarget{divergencyya}{Дивергенция} поля (\textit{divergence} - расхождение)
 
     $div \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \cdot \overrightarrow{F}$
 
-    \DefN{2} Вихрь (ротор) поля
+    \DefN{2} \hypertarget{rotor}{Вихрь (ротор)} поля
 
-    $rot \overrightarrow{F} \stackrel{def} \overrightarrow{\triangledown} \times \overrightarrow{F}$
+    $rot \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \times \overrightarrow{F}$
 
-    \DefN{3} Если $rot \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется безвихревым полем
+    \DefN{3} Если $rot \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется \hypertarget{bezvihrevoepole}{безвихревым} полем
 
-    \DefN{4} Если $div \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется соленоидальным
+    \DefN{4} Если $div \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется \hypertarget{solenoidalnoepole}{соленоидальным}
 
     \Nota Безвихревое поле имеет незамкнутые векторные линии, а вихревое - замкнутые
 
@@ -202,7 +202,7 @@
         \overrightarrow{i}          & \overrightarrow{j}          & \overrightarrow{j}          \\
         \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
         P & Q & R
-    \end{vmatrix} = (\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z})\overrightarrow{i} + (\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x})\overrightarrow{j} + (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\overrightarrow{k} = 0$
+    \end{vmatrix} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\overrightarrow{i} + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\overrightarrow{j} + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\overrightarrow{k} = 0$
 
     $\Longleftrightarrow
     \begin{cases}
@@ -213,7 +213,7 @@
 
     Рассмотрим $u = u(x, y, z) \ | \ \frac{\partial u}{\partial x} = P, \frac{\partial u}{\partial y} = Q, \frac{\partial u}{\partial z} = R$ - удовлетворяет системе равенств
 
-    $\overrightarrow{F} = (P, Q, R) = (\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z}) = \overrightarrow{\triangledown} u$
+    $\overrightarrow{F} = (P, Q, R) = \left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z}\right) = \overrightarrow{\triangledown} u$
 
     \fbox{\Longleftarrow} $\overrightarrow{F} = \overrightarrow{\triangledown}u$ - дана
 
@@ -239,34 +239,34 @@
 
     \section{6.4. Интегральные характеристики. Теоремы теории поля}
 
-    \Mem 1) Поток поля $\overrightarrow{F}: \Pi = \iint_S \overrightarrow{F}d\overrightarrow{\sigma}$
+    \Mems 1) Поток поля $\overrightarrow{F}: \Pi = \iint_S \overrightarrow{F}d\overrightarrow{\sigma}$
 
     \Def 2) Циркуляция поля $\overrightarrow{F}: \Gamma = \oint_L Pdx + Qdy + Rdz$
 
-    \Nota Запишем \Ths-мы на векторном языке
+    \Nota Запишем \Ths на векторном языке
 
-    1* \textbf{Гаусса-Остроградского}
+    1* \hypertarget{gaussostrogradskyyvector}{\textbf{Гаусса-Остроградского}}
 
-    $\iint_S Pdydz + Qdxdz + Rdxdy = \iiint_T (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}) dxdydz$
+    $\iint_S Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
 
     $\iint_S (P, Q, R) (dydx, dxdz, dxdy) = \iint_S (P, Q, R) (\cos\alpha d\sigma, \cos\beta d\sigma, \cos\gamma d\sigma) =
     \iint_S \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S \overrightarrow{F} d\overrightarrow{\sigma}$
 
-    $\iiint_T (\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}) dxdydz = \iiint_T (\overrightarrow{\triangledown} \overrightarrow{F}) = \iiint_T div \overrightarrow{F}$
+    $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz = \iiint_T (\overrightarrow{\triangledown} \overrightarrow{F}) = \iiint_T div \overrightarrow{F}$
 
     \fbox{$\iint_S \overrightarrow{F} d\overrightarrow{\sigma} = \iiint_T div \overrightarrow{F}$}
 
-    \vspace{5mm}
+    \mediumvspace
 
-    2* \textbf{Стокса}
+    2* \hypertarget{stoksvector}{\textbf{Стокса}}
 
     $Pdx + Qdy + Rdz = \overrightarrow{F}d\overrightarrow{l}$
 
     $\oint_L \overrightarrow{F}d\overrightarrow{l} = \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma}$
 
-    \vspace{5mm}
+    \mediumvspace
 
-    3* \textbf{\Th о потенциале}
+    3* \hypertarget{potentialvector}{\textbf{\Ths о потенциале}}
 
     $\forall L \ \oint_L \overrightarrow{F}d\overrightarrow{l} = 0 \Longleftrightarrow rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown} = \overrightarrow{F}$
 
@@ -274,7 +274,7 @@
 
     \Ex $\overrightarrow{F} = x\overrightarrow{i} + xy \overrightarrow{j}, L: x = y, x = -y, x = 1$
 
-    По формуле Грина (Стокса) $\oint_L \overrightarrow{F} d\overrightarrow{l} = \iint_{D} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy =
+    По формуле Грина (Стокса) $\oint_L \overrightarrow{F} d\overrightarrow{l} = \iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
     \iint_D y dxdy \quad rot \overrightarrow{F} \neq 0$
 
     $\oint_L xdx + xydy = \int_{L_1} + \int_{L_2} + \int_{L_3} = \int_0^1 (x + x^2) dx + \int_{-1}^1 y dy - \int_0^1 (x + x^2) dx = \int_{-1}^1 y dy = 0$
@@ -297,7 +297,7 @@
 
     \Nota Утверждение $rot (\overrightarrow{grad} u) = 0$ - поле потенциалов свободно от вихрей
 
-    \vspace{5mm}
+    \mediumvspace
 
     2* Ротор
 

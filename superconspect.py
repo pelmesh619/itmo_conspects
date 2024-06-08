@@ -9,6 +9,7 @@ if len(sys.argv) <= 1:
 
 folder = sys.argv[1]
 supername = folder + "_superconspect.tex"
+BLACKLIST = ['cheatsheet', 'exam', supername]
 
 subject = None
 teacher = None
@@ -16,7 +17,7 @@ teacher = None
 text = ''
 
 for i in os.listdir(folder):
-    if i.endswith('tex') and 'cheatsheet' not in i and i != supername:
+    if i.endswith('tex') and not any([j in i for j in BLACKLIST]):
         t = open(os.path.join(folder, i), 'r', encoding='utf8').read()
         if subject is None:
             subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t).group(1)
