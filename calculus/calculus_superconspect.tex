@@ -1155,7 +1155,7 @@
 
     Для линейной параметризации форма дифференциала сохраняется
 
-    $d^2 z = (\frac{\partial }{\partial x}dx + \frac{\partial}{\partial y}dy)^2 z \stackrel{\text{инвариант}}{=} z^{(n)}_t dt^n$
+    $d^2 z = \left(\frac{\partial }{\partial x}dx + \frac{\partial}{\partial y}dy\right)^2 z \stackrel{\text{инвариант}}{=} z^{(n)}_t dt^n$
 
     Введем функцию: $z(x(t), y(t)) \stackrel{\text{обозн}}{=} \varphi (t)$ - $(n + 1)$ раз дифференцируема (композиция $(n + 1)$ дифференцируемых и линейных функций)
 
@@ -1183,15 +1183,15 @@
     Покажем сходимость $r_n(x, y) \stackrel{(\Delta \rho)^n \to 0}{\rightarrow} 0$ на примере $\displaystyle r_2 (x, y) = \frac{d^3 z(M_{\text{сред.}})}{3!}$
 
 
-    $r_2(x, y) = \frac{1}{3!} (\frac{\partial}{\partial x} \Delta x + \frac{\partial}{\partial y} \Delta y)^3 z =
-    \frac{1}{3!} (\frac{\partial^3 z}{\partial x^3} (\Delta x)^3 + 3 \frac{\partial^3 z}{\partial x^2 \partial y} (\Delta x)^2 \Delta y +
-    3 \frac{\partial^3 z}{\partial x \partial y^2} (\Delta y)^2 \Delta x \frac{\partial^3 z}{\partial y^3} (\Delta y)^3)$
+    $r_2(x, y) = \frac{1}{3!} \left(\frac{\partial}{\partial x} \Delta x + \frac{\partial}{\partial y} \Delta y\right)^3 z =
+    \frac{1}{3!} \left(\frac{\partial^3 z}{\partial x^3} (\Delta x)^3 + 3 \frac{\partial^3 z}{\partial x^2 \partial y} (\Delta x)^2 \Delta y +
+    3 \frac{\partial^3 z}{\partial x \partial y^2} (\Delta y)^2 \Delta x \frac{\partial^3 z}{\partial y^3} (\Delta y)^3\right)$
 
     Вообще говоря, значения частных производных берутся в различных средних точках
 
     $r_2(x, y) = \frac{1}{3!} (z_{xxx}(\mu_1)(\Delta x)^3 + 3 z_{xxy}(\mu_2)(\Delta x)^2 \Delta y + z_{xyy}(\mu_3)(\Delta y)^2 \Delta x + 3 z_{yyy}(\mu_4)(\Delta y)^3) = \Big|$ вынесем $(\Delta \rho)^3$
 
-    $= \frac{(\Delta \rho)^3}{3!} (\text{огран.} \cdot \frac{(\Delta x)^3}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta x)^2 \Delta y}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^2 \Delta x}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^3}{(\Delta \rho)^3})$
+    $= \frac{(\Delta \rho)^3}{3!} \left(\text{огран.} \cdot \frac{(\Delta x)^3}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta x)^2 \Delta y}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^2 \Delta x}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^3}{(\Delta \rho)^3}\right)$
 
     $\frac{(\Delta x)^3}{(\Delta \rho)^3} = \frac{(\Delta x)^3}{\sqrt{(\Delta x)^2 + (\Delta y)^2}^3} \stackrel{\Delta x \to 0}{\rightarrow} 0$, то есть дробь и выражение выше ограничены
 
@@ -1202,13 +1202,17 @@
 
     \section{4.7.1. Линии и поверхности уровня}
 
-    Положим $z = const$. В сечении плоскостью $z = c$ образуется кривая $l$ с уравнением $\begin{cases}z = c \\ \varphi(x, y) = 0 \leftarrow \text{уравнение $l_\text{проек}$ на $Oxy$}\end{cases}$
+    Положим $z = const$.
+
+    В сечении плоскостью $z = c$ образуется кривая $l$ с уравнением $\begin{cases}z = c \\ \varphi(x, y) = 0 \leftarrow \text{уравнение $l_\text{проек}$ на $Oxy$}\end{cases}$
 
     Кривая $l$ с уравнением $z(x, y) = c$ называется линией уровня Ф$_2$П $z = z(x, y)$
 
     \Def Поверхность уровня $\mathcal{P}$ - это поверхность с уровнем $u(x, y, z) = c$
 
-    Физ. смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ - скаляры). Тогда говорят, что в $\Real^3$ задано скалярное поле. Например, поле температур, давления, плотности и т. д.
+    Физ. смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ - скаляры).
+    Тогда говорят, что в $\Real^3$ задано скалярное поле.
+    Например, поле температур, давления, плотности и т. д.
 
     Тогда $u = c$ - поверхности постоянных температур, давления и т. п. (изотермические, изобарные, эквипотенциальные)
 
@@ -1227,7 +1231,7 @@
 
     \section{4.7.2. Производная по направлению, Градиент}
 
-    Задача. Дано скалярное поле $u = u(x, y, z)$ (напр. давления). Как меняется давление при перемещении в заданном направлении?
+    \underline{Задача}. Дано скалярное поле $u = u(x, y, z)$ (напр. давления). Как меняется давление при перемещении в заданном направлении?
 
     Это задача о нахождении скорости изменения $u(x, y, z)$ в заданном направлении $\overrightarrow{s}$
 
@@ -1235,7 +1239,7 @@
 
     $\Delta s = \sqrt{(\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2} \quad \Big| \cdot \frac{1}{\Delta s}$
 
-    $1 = \sqrt{(\frac{\Delta x}{\Delta s})^2 + (\frac{\Delta y}{\Delta s})^2 + (\frac{\Delta z}{\Delta s})^2}$
+    $1 = \sqrt{\left(\frac{\Delta x}{\Delta s}\right)^2 + \left(\frac{\Delta y}{\Delta s}\right)^2 + \left(\frac{\Delta z}{\Delta s}\right)^2}$
 
     $(\frac{\Delta x}{\Delta s}, \frac{\Delta y}{\Delta s}, \frac{\Delta z}{\Delta s}) = (\cos\alpha, \cos\beta, \cos\gamma) = \overrightarrow{s^0}$
 
@@ -1253,6 +1257,8 @@
 
     $\frac{\Delta u}{\Delta s} = \frac{du}{\Delta s} + \text{(б. м.)} \cos\alpha$, $\text{(б. м.)} \cos\alpha \rightarrow 0$
 
+    \hypertarget{derivativeoffunctionindirection}{}
+
     \Def $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
 
     где $\alpha, \beta, \gamma$ - направления $\overrightarrow{s}$, называют производной функции $u = u(x, y, z)$ в направлении $\overrightarrow{s}$
@@ -1267,9 +1273,13 @@
 
     Составим вектор $\frac{\partial u}{\partial x} \overrightarrow{i} + \frac{\partial u}{\partial y} \overrightarrow{j} + \frac{\partial u}{\partial z} \overrightarrow{k} \stackrel{\text{обозн}}{=} \overrightarrow{\triangledown} u$
 
-    $\overrightarrow{\triangledown}$ - набла-оператор (оператор Гамильтона); $\overrightarrow{\triangledown} = (\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z})$ - условный вектор
+    \hypertarget{gradientdefinition}{}
+
+    $\overrightarrow{\triangledown}$ - набла-оператор (оператор Гамильтона); $\overrightarrow{\triangledown} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ - условный вектор
 
     \Def $\overrightarrow{grad} \ u \stackrel{def}{=} \overrightarrow{\triangledown} u$ - называют градиентом функции $u(x, y, z)$
+
+    \hypertarget{gradientproperties}{}
 
     Свойства градиентов:
 
@@ -1284,7 +1294,7 @@
     Доказательства:
 
     \begin{enumerate}
-        \item $\frac{\partial u}{\partial s} = (\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}) \cdot \overrightarrow{s^0} =
+        \item $\frac{\partial u}{\partial s} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right) \cdot \overrightarrow{s^0} =
         \overrightarrow{\triangledown} u \overrightarrow{s^0} = |\overrightarrow{\triangledown} u| |\overrightarrow{s^0}| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) =
         |\overrightarrow{\triangledown} u| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
 
