@@ -70,10 +70,10 @@
 
         Иначе получим неуничтожаемую погрешность
 
-        \item \Def Если существует конечный предел интегральной суммы и он не зависит от типа,
+        \item \Def \hypertarget{intergraldefinition}{Если существует конечный предел интегральной суммы} и он не зависит от типа,
         ранга дробления и выбора средних точек, то он называется определенным интегралом
 
-        \[\lim_{n\to\infty,\ \tau\to0} \sigma_n = \lim_{n\to\infty,\ \tau\to0} \sum^n_{i=1} \Delta x_i f(\xi_i) \stackrel{\text{def}}{=} \int_a^b f(x)dx\]
+        \[\lim_{\substack{n\to\infty \\ \tau\to0}} \sigma_n = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum^n_{i=1} \Delta x_i f(\xi_i) \stackrel{\text{def}}{=} \int_a^b f(x)dx\]
 
     \end{enumerate}
 
@@ -106,12 +106,13 @@
 
     Можно доказать, что определенный интеграл существует для всякой непрерывной на отрезке функции
 
-    \underline{Геом. смысл}. Заметим в определении площадь подграфика функции $(f(x) \geq 0)$
+    \underline{Геом. смысл}: \hypertarget{integralgeommeaning}{Заметим, что в определении интеграл} - площадь подграфика функции $(f(x) \geq 0)$
 
     Заметим, что для $f(x) \leq 0 \quad \int_a^b f(x)dx = -S$
 
 
     \section{1.2. Свойства}
+    \hypertarget{integralproperties}{}
 
     \begin{enumerate}
         \item Линейность пределов $\Longrightarrow$ линейность пределов
@@ -124,7 +125,7 @@
 
         Доказательства строятся на свойствах конечных сумм и пределов
 
-        \item Оценка определенного интеграла
+        \item \hypertarget{integralevaluation}{Оценка определенного интеграла}
 
         $f(x)$ непрерывна на $[a; b]$ (имеет наимен. ($m$) и наибол. ($M$) значения). Тогда:
 
@@ -144,16 +145,16 @@
 
         Предельный переход:
 
-        $\lim_{n\to\infty,\ \tau\to0} m \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq \lim_{n\to\infty,\ \tau\to0} M \sum_{i=1}^n \Delta x_i$
+        $\lim_{\substack{n\to\infty \\ \tau\to0}} m \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq \lim_{\substack{n\to\infty \\ \tau\to0}} M \sum_{i=1}^n \Delta x_i$
 
-        $m \lim_{n\to\infty,\ \tau\to0} \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq M \lim_{n\to\infty,\ \tau\to0} \sum_{i=1}^n \Delta x_i$
+        $m \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq M \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \Delta x_i$
 
         $m (b - a) \leq \int^b_a f(x) dx \leq M (b - a)$
 
         $\Box$
 
 
-        \item \Th Лагранжа о среднем (в интегральной форме)
+        \item \Th \hypertarget{theoremlagrangeaboutaverage}{Лагранжа о среднем} (в интегральной форме)
 
         $f(x) \in C^\prime_{[a,b]} \Longrightarrow \exists \xi \in (a, b) \ f^\prime(\xi) = \frac{f(b) - f(a)}{b - a}$
 
@@ -182,7 +183,7 @@
         $\Box$
 
         $\int_a^b f(x)dx - \int_a^b g(x)dx = \int_a^b (f(x) - g(x))dx =
-        \lim_{n\to\infty,\ \tau\to0} \sum_{i=1}^n \underset{\geq 0}{\undergroup{(f(\xi_i) - g(\xi_i))}} \underset{\geq 0}{\undergroup{\Delta x_i}} \geq 0$
+        \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \underset{\geq 0}{\undergroup{(f(\xi_i) - g(\xi_i))}} \underset{\geq 0}{\undergroup{\Delta x_i}} \geq 0$
 
         $\Box$
 
@@ -193,9 +194,9 @@
 
         $\Box$
 
-        $\int^b_a f(x)dx = \lim_{n\to\infty,\ \tau\to0} \sum_{i=1}^n f(\xi_i) \Delta x_i = \lim_{n\to\infty} \sigma_n$
+        $\int^b_a f(x)dx = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n f(\xi_i) \Delta x_i = \lim_{n\to\infty} \sigma_n$
 
-        $\int^b_a |f(x)|dx = \lim_{n\to\infty,\ \tau\to0} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$
+        $\int^b_a |f(x)|dx = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$
 
         Докажем, что $\lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n|$
 
@@ -212,7 +213,7 @@
         $S = 0: \lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n| = 0$
 
         $\left| \int^b_a f(x)dx \left| = |\lim_{n\to\infty} \sigma_n| = \lim_{n\to\infty} |\sigma_n| =
-        \lim_{n\to\infty,\ \tau\to0} \left|\sum_{i=1}^n f(\xi_i) \Delta x_i\right| \leq \lim_{n\to\infty,\ \tau\to0} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$ (модуль суммы меньше или равен сумме модулей)
+        \lim_{\substack{n\to\infty \\ \tau\to0}} \left|\sum_{i=1}^n f(\xi_i) \Delta x_i\right| \leq \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$ (модуль суммы меньше или равен сумме модулей)
 
         $\Box$
 
@@ -242,6 +243,7 @@
 
 
     \section{1.3.1. Интеграл с переменным верхним пределом}
+    \hypertarget{integralwithvariableupperlimit}{}
 
     Дана $f(x): [a; +\infty), f(x) \in C_{[a; +\infty)}$
 
@@ -249,7 +251,7 @@
 
     Таким образом определена функция $S(x) = \int_a^x f(x)dx$ - переменная площадь
 
-    В общем случае обозначим $\Phi(x) = \int^x_a f(t) dt \quad t in [a, x]$
+    В общем случае обозначим $\Phi(x) = \int^x_a f(t) dt \quad t \in [a, x]$
 
     Итак, различают три объекта:
 
@@ -261,7 +263,7 @@
 
     Выявим связь между ними.
 
-    \Th Об интеграле с переменным верхним пределом (Барроу)
+    \Th \hypertarget{theorembarrow}{Об интеграле с переменным верхним пределом} (Барроу)
 
     $f(x) : [a;+\infty) \to \Real \quad f(x) \in C_{[a;+\infty+}$
 
@@ -278,7 +280,7 @@
 
     $\Box$
 
-    \Th Основная теорема математического анализа (формула Ньютона-Лейбница, N-L)
+    \Th \hypertarget{formulanewtonleibniz}{Основная теорема математического анализа} (формула Ньютона-Лейбница, N-L)
 
     $f(x) \in C_{[a;b]}, F(x)$ - какая-либо первообразная $f(x)$
 
@@ -301,7 +303,7 @@
 
     \section{1.3.2. Методы интегрирования}
 
-    1* Замена переменной в определенном интеграле
+    1* \hypertarget{integralsubstitution}{Замена переменной в определенном интеграле}
 
     \Th $f(x) \in C_{[a;b]} \quad x = \varphi(t) \in C^\prime_{[\alpha;\beta]}, \varphi(\alpha) = a, \varphi(\beta) = b$
 
@@ -325,7 +327,7 @@
     \int_0^\frac{\pi}{6} \frac{dt}{\sqrt{1 - \sin^2 t}}\cos t =
     \int_0^\frac{\pi}{6} \frac{dt}{|\cos t|} \cos t = \int_0^\frac{\pi}{6} dt = t \Big|_0^\frac{\pi}{6} = \frac{\pi}{6}$
 
-    2* По частям
+    2* \hypertarget{integralbyparts}{По частям}
 
     \Th $u, v \in C^\prime_{[a;b]} \quad uv \Big|_a^b = u(b)v(b) - u(a)v(a)$
 
