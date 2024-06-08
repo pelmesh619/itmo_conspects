@@ -7,7 +7,7 @@
 [**Весь курс**](conspects/calculus/calculus_superconspect.pdf)
 
 * [Лекция №1](conspects/calculus/calculus_2024_02_07.pdf)
-* [Лекция №2](conspects/calculus/calculus_2024_02_14.pdf) - STILL [TODO](calculus/calculus_2024_02_14.tex)
+* [Лекция №2](conspects/calculus/calculus_2024_02_14.pdf) 
 * [Лекция №3](conspects/calculus/calculus_2024_02_21.pdf)
 * [Лекция №4](conspects/calculus/calculus_2024_02_28.pdf)
 * [Лекция №5](conspects/calculus/calculus_2024_03_06.pdf)
