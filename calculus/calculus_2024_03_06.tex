@@ -64,17 +64,20 @@
     
     \vspace{3mm}
 
+    \hypertarget{derivativeofcomplexfunctionoftwovariables}{}
+
     \textbf{1* Сложная функция}
 
     \Mem $\displaystyle (f(g(x)))^\prime = f^\prime(g(x)) \cdot g^\prime(x)$
 
     \Def Сложная функция двух переменных: $\displaystyle z = z(u, v), u = u(x, y), v = v(x, y)$
 
-    Формула: Найдем $\displaystyle frac{\partial z(u, v)}{\partial x}$ и $\displaystyle frac{\partial z(u, v)}{\partial y}$
+    Формула: Найдем $\displaystyle \frac{\partial z(u, v)}{\partial x}$ и $\displaystyle \frac{\partial z(u, v)}{\partial y}$
 
     \Th $\displaystyle z = z(u, v), \ u(x, y), v(x, y)$ непрерывно дифференцируемы по $\displaystyle x, y$
 
     Тогда $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x}$
+
     $\displaystyle \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial y} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial y}$
 
     $\displaystyle \Box \quad z$ дифференцируема $\displaystyle \Longleftrightarrow \Delta z = \frac{\partial z}{\partial u} \Delta u + \frac{\partial z}{\partial v} \Delta v + \alpha \Delta u + \beta \Delta v$
@@ -91,6 +94,8 @@
 
     Аналогично для $\displaystyle \frac{\partial z}{\partial y}$
 
+    \hypertarget{completederivativeoffunctionoftwovariables}{}
+
     \Nota Интересен случай $\displaystyle z = z(x, u, v)$, где $\displaystyle u = u(x), v = v(x)$
 
     Здесь $\displaystyle z$ является функцией одной переменной $\displaystyle x$
@@ -103,13 +108,13 @@
     \frac{\partial z}{\partial x} +
     \frac{\partial z}{\partial u} \cdot \frac{du}{dx} +
     \frac{\partial z}{\partial v} \cdot \frac{dv}{dx}
-    $\displaystyle 
+    $
 
     \Ex Пусть $\displaystyle w = w(x, y, z)$ - функция координат $\displaystyle x = x(t), y = y(t), z = z(t)$ - функции времени
 
     $\displaystyle w$ явно не зависит от времени, тогда $\displaystyle \frac{dw}{dt} = w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z$, где $\displaystyle v_x$ - проекция скорости
 
-    Если $\displaystyle w = w(x, y, z, t)$, то $\displaystyle \frac{dw}{dt} = \frac{\partial w}{\partial t} w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z$
+    Если $\displaystyle w = w(x, y, z, t)$, то $\displaystyle \frac{dw}{dt} = \frac{\partial w}{\partial t} (w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z)$
     
     \vspace{3mm}
     
@@ -122,6 +127,8 @@
     \vspace{8mm}
 
     \section{4.4. Производная высших порядков}
+
+    \hypertarget{secondderivativeoffunctionoftwovariables}{}
 
     \Nota Пусть $\displaystyle z = z(x, y)$ дифференцируема и $\displaystyle \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}$ также дифференцируемы, при этом в общем случае
     $\displaystyle \frac{\partial z}{\partial x} = f(x, y), \frac{\partial z}{\partial y} = g(x, y)$
@@ -140,6 +147,8 @@
     $\displaystyle \frac{\partial^2 z}{\partial y \partial x} = \frac{\partial}{\partial x} \frac{\partial z}{\partial y}$ - смешанные производные
 
     \vspace{3mm}
+
+    \hypertarget{equalityofsecondderivativesoffunctionoftwovariables}{}
 
     \Th $\displaystyle z = z(x, y)$, функции $\displaystyle z(x, y), z^\prime_x, z^\prime_y, z^{\prime\prime}_{xy}, z^{\prime\prime}_{yx}$ определены и непрерывны в $\displaystyle \stackrel{o}{U}(M(x, y))$
 
@@ -170,6 +179,7 @@
 
     \section{4.5. Дифференциалы}
     
+    \hypertarget{completedifferentialoffunctionoftwovariables}{}
     \MemN{1} Полный дифференциал (1-ого порядка) функции $\displaystyle z = z(x, y)$
 
     $\displaystyle dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$ - сумма частных дифференциалов
@@ -179,7 +189,8 @@
     $\displaystyle dy(x) = y^\prime(x)dx \stackrel{x = \phi(t)}{=} y^\prime(t)dt$
 
     \vspace{3mm}
-    
+
+    \hypertarget{invariantofdifferentialoffunctionoftwovariables}{}
     \Th Инвариантность полного дифференциала первого порядка.
 
     $\displaystyle z = z(u, v), \quad u = u(x, y), \quad v = v(x, y)$ - дифференциалы
@@ -199,6 +210,8 @@
     
     \textit{Def}: $\displaystyle z = z(x, y)$ - дифференцируема и $\displaystyle dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy$ - дифференцируемая функция
 
+    \hypertarget{seconddifferentialoffunctionoftwovariables}{}
+
     Тогда второй полный дифференциал:
 
     $\displaystyle d^2 z \stackrel{def}{=} d(dz)$
@@ -215,6 +228,8 @@
     Тогда $\displaystyle d^2 z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z$, здесь $\displaystyle \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2$ - оператор второго полного дифференцирования
 
     $\displaystyle d^n z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^n z$ - дифференциал $\displaystyle n$-ого порядка
+
+    \hypertarget{noninvariantofseconddifferentialoffunctionoftwovariables}{}
 
     \textit{Nota}: Можно ли утверждать, что $\displaystyle d^2 z(x, y) = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z \stackrel{x = x(u, v), y = y(u, v)}{=} \left(\frac{\partial}{\partial u} + \frac{\partial}{\partial v}\right)^2 z$ ???
 
@@ -258,6 +273,8 @@
     \vspace{8mm}
     
     \section{4.6. Формула Тейлора}
+
+    \hypertarget{formulataylor}{}
 
     \Mem $\displaystyle f(x) = f(x_0) + \frac{f^\prime(x_0)}{1!}(x - x_0) + \dots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n +
     \begin{sqcases}
