@@ -12,7 +12,7 @@
 
     \section{2. Несобственные интегралы}
 
-    \section{2.1 Определения}
+    \section{2.1. Определения}
 
     \textbf{1* Интегралы на неограниченном промежутке}
 
@@ -28,7 +28,7 @@
 
     Предел функции $\Phi (b) = \int^{b}_{a} f(x) dx$ при $b \to +\infty$ может быть конечным или бесконечным
 
-    \DefN{1} Определим несобственный интеграл первого рода (на неограниченном промежутке) ($f(x)$ любого знака):
+    \DefN{1} \hypertarget{improperintegralfirstkind}{Определим несобственный интеграл первого рода} (на неограниченном промежутке) ($f(x)$ любого знака):
 
     \[\int^{+\infty}_{a} f(x) dx = \lim_{b \to +\infty} \int^{b}_{a} f(x) dx\]
 
@@ -67,9 +67,9 @@
     \lim_{x \to +\infty} arctgx - arctg(0) + arctg(0) - \lim_{x \to -\infty} arctgx = \frac{\pi}{2} + \frac{\pi}{2} = \pi\]
 
     \ExN{2} \[\int^{+\infty}_{1} \frac{dx}{xlnx} = \int^{+\infty}_{1} \frac{dlnx}{lnx} = \int^{+\infty}_{0} \frac{dt}{t}
-     = lnt \Big|^{+\infty}_{0} = ln ln x \Big|^{+\infty}_{1} = \lim_{x \to +\infty} ln ln x - \lim_{x \to 1} ln ln x = \infty - \infty\] - расходится
+     = lnt \Big|^{+\infty}_{0} = \ln \ln x \Big|^{+\infty}_{1} = \lim_{x \to +\infty} \ln \ln x - \lim_{x \to 1} \ln \ln x = \infty - \infty\] - расходится
 
-    Заметим нарушение непрерывности функции $\frac{1}{xlnx}$ в $x = 1$, что привело к $ln lnx \to -\infty$ при $x \to 1$
+    Заметим нарушение непрерывности функции $\frac{1}{xlnx}$ в $x = 1$, что привело к $\ln lnx \to -\infty$ при $x \to 1$
 
     Это не интеграл первого рода, а комбинация интегралов первого и второго рода
 
@@ -79,7 +79,7 @@
 
     $f(x) : [a; b) \to \Real$, где $b$ - точка разрыва второго рода, а именно бесконечного
 
-    \DefN{1} Интеграл второго рода (несобственный)
+    \DefN{1} \hypertarget{improperintegralsecondkind}{Интеграл второго рода (несобственный)}
 
     \[\int^{b}_{a} f(x) dx = \lim_{\beta \to b} \int^{\beta}_{a} f(x) dx\]
 
@@ -98,9 +98,9 @@
     \ExN{1}
 
     \[\int^{1}_{-1} \frac{dx}{x} = \int^{0}_{-1} \frac{dx}{x} + \int^{1}_{0} \frac{dx}{x} =
-    ln |x| \Big|^{0}_{-1} + ln |x| \Big|^{1}_{0}\] - интеграл расходится
+    \ln |x| \Big|^{0}_{-1} + \ln |x| \Big|^{1}_{0}\] - интеграл расходится
 
-    Не заметили $\displaystyle \int^{1}_{-1} \frac{dx}{x} = ln |x| \Big|^{1}_{-1} = 0$ ???
+    Не заметили $\displaystyle \int^{1}_{-1} \frac{dx}{x} = \ln |x| \Big|^{1}_{-1} = 0$ ???
 
     \ExN{2}
 
@@ -111,13 +111,14 @@
 
     \Nota Если нет разбиения $[a; b]$ по аддитивности, то неопределенности раскрываются
 
-    \Ex $\int^{2}_{1} \frac{dx}{x^2 - 1} = \frac{1}{2} \int^{2}_{1} (\frac{1}{x - 1} - \frac{1}{x + 1})dx =
-    \frac{1}{2} (ln|x - 1| - ln|x + 1|) \Big|^{2}_{1} = \\
-    = \frac{1}{2} (ln|1 - 1| - ln|x + 1|) \Big|^{2}_{1} = \infty \text{,  т. к. разбивается отрезок}\\
-    = \frac{1}{2} (ln|\frac{x - 1}{x + 1}) \Big|^{2}_{1} = \frac{1}{2} (ln\frac{1}{3} - ln(0)) = \infty \text{  - теперь точно } \infty
+    \Ex $\int^{2}_{1} \frac{dx}{x^2 - 1} = \frac{1}{2} \int^{2}_{1} \left(\frac{1}{x - 1} - \frac{1}{x + 1}\right)dx =
+    \frac{1}{2} (\ln|x - 1| - \ln|x + 1|) \Big|^{2}_{1} = \\
+    = \frac{1}{2} (\ln|1 - 1| - \ln|x + 1|) \Big|^{2}_{1} = \infty \text{,  т. к. разбивается отрезок}\\
+    = \frac{1}{2} \left(\ln|\frac{x - 1}{x + 1}\right) \Big|^{2}_{1} = \frac{1}{2} \left(\ln\frac{1}{3} - \ln(0)\right) = \infty \text{  - теперь точно } \infty
     $
 
     \section{2.2 Свойства}
+    \hypertarget{improperintegralproperties}{}
 
     1) Линейность: $\displaystyle \int^{+\infty}_{a} (\lambda f(x) + \mu g(x)) dx = \lambda \int^{+\infty}_{a} f(x) dx + \mu \int^{+\infty}_{a} g(x) dx$
     - если интегралы сходятся (иначе исследуем по определению через предел)
@@ -127,20 +128,22 @@
 
     3) Знаки интегралов:
 
-    $\displaystyle \int^{+\infty}_{a} f(x) dx \geq \int^{+\infty}_{a} g(x) dx $ при $f(x) \leq g(x)$ и интегралы сходятся
+    $\displaystyle \int^{+\infty}_{a} f(x) dx \leq \int^{+\infty}_{a} g(x) dx $ при $f(x) \leq g(x)$. Если $g(x)$ сходится, то $f(x)$ тоже сходится
 
-    В частности $\displaystyle \int^{+\infty}_{a} f(x) dx \geq 0$ при $f(x) \leq 0$ на $[a; +\infty]$
+    В частности $\displaystyle \int^{+\infty}_{a} f(x) dx \leq 0$ при $f(x) \leq 0$ на $[a; +\infty]$
 
     \Nota Исследование интегралов двух функций используется для определения их сходимости
 
 
     \section{2.3 Сходимость несобственных интегралов}
+    \hypertarget{improperintegralconvergence}{}
 
     Задача: Часто нужно исследовать интеграл на сходимость без или до его вычисления (обычно приближенного для неберущихся интегралов)
 
     Требуются признаки сходимости интегралов, часто использующие сравнение с эталонными интегралами (вычисляемые по формуле Ньютона-Лейбница)
 
-    \textbf{2* Признак сравнения в неравенствах} (далее только для интегралов $\displaystyle \int^{+\infty}_{a} f(x) dx$, для остальных аналогично)
+    \hypertarget{improperintegralconvergenceininequalities}{}
+    \textbf{1* Признак сравнения в неравенствах} (далее только для интегралов $\displaystyle \int^{+\infty}_{a} f(x) dx$, для остальных аналогично)
 
     $f(x), g(x) : [a;+\infty) \to \Real^+$, непрерывны на $[a;+\infty)$ и $\forall x \in [a;+\infty) f(x) \leq g(x)$
 
@@ -177,17 +180,18 @@
 
     $\displaystyle J = \int^{+\infty}_{a} f(x) dx \text{  расходится. Тогда  } I = \int^{+\infty}_{a} g(x) dx \text{  расходится}$
 
-    $\Box$ \Lab (от противного)
+    $\Box$ \Lab (от противного) $\Box$
 
     \Nota Отметим, что если $f(x)$ не является убывающей к нулю, т. е. б. м. на $+\infty$, то $\displaystyle \int^{+\infty}_{a} f(x) dx$ разойдется
 
     Таким образом, если сравнить б. м. $\displaystyle \frac{f(x)}{g(x)}$, то можно исследовать их интегралы на сходимость
 
+    \hypertarget{improperintegralconvergenceinlimits}{}
     \textbf{2* Предельный признак сравнения}
 
     $f(x), g(x) \in C_{[a;+\infty)}$, $f(x), g(x) > 0$
 
-    $\displaystyle \exists \lim_{x\to+\infty} \frac{f(x)}{g(x)} = k \in \Real \Setminus \Set{0}$.
+    $\displaystyle \exists \lim_{x\to+\infty} \frac{f(x)}{g(x)} = k \in \Real \setminus \Set{0}$.
     Тогда $\displaystyle I = \int^{+\infty}_{a} g(x)dx$ и $\displaystyle J = \int^{+\infty}_{a} f(x)dx$ одновременно сходятся или расходятся
 
     $\displaystyle \Box \lim_{x\to+\infty} \frac{f(x)}{g(x)} = k \Longleftrightarrow \forall \varepsilon > 0 \exists \delta > 0 | \forall x > \delta |\frac{f(x)}{g(x)} - k| < \varepsilon $
@@ -205,6 +209,7 @@
     Если $I = \infty$ (но $k - \varepsilon \neq 0$), то по первому признаку (линейность) $J$ расходится
     Если $I \in \Real$ ($k + \varepsilon \neq \infty$), то по первому признаку (линейность) $J$ сходится
 
+    \hypertarget{improperintegralabsoluteconvergence}{}
     \textbf{3* Абсолютная сходимость}
 
     $\displaystyle \int^{+\infty}_{a} |f(x)| dx = I \in \Real \Longrightarrow \int^{+\infty}_{a} f(x) dx = J \in \Real$
@@ -221,7 +226,7 @@
 
     \[0 \leq \lim_{b \to \infty}|\int^{b}_{a} f(x) dx| = |\lim_{b \to \infty} \int^{b}_{a} f(x) dx| \leq \int^{b}_{a} |f(x)| dx = I\]
 
-    \Nota Если $\displaystyle I = \int^{+\infty}_{a} f(x) dx$ сходится, но $\displaystyle |\int^{+\infty}_{a} f(x) dx|$ расходится, то $I$ называют условно сходящимся
+    \Nota \hypertarget{improperintegralconditionalconvergence}{}Если $\displaystyle I = \int^{+\infty}_{a} f(x) dx$ сходится, но $\displaystyle \int^{+\infty}_{a} |f(x)| dx$ расходится, то $I$ называют условно сходящимся
 
     \Ex $\displaystyle I = \int^{+\infty}_{a} \frac{sinx}{8x^2 + 3} dx$
 
@@ -239,7 +244,7 @@
 
     \section{3. Интегралы зависящие от параметра}
 
-    Задача. Ex ($\alpha \neq 0$). $\displaystyle \int^{1}_{0} cos\alpha x dx = \frac{1}{\alpha} \int^{1}_{0} cos\alpha x d\alpha x = \frac{1}{\alpha} sin \alpha x \Big|^{1}_{0} = \frac{sin\alpha}{\alpha} = \phi(\alpha)$
+    Задача. Ex ($\alpha \neq 0$). $\displaystyle \int^{1}_{0} \cos\alpha x dx = \frac{1}{\alpha} \int^{1}_{0} \cos\alpha x d\alpha x = \frac{1}{\alpha} \sin \alpha x \Big|^{1}_{0} = \frac{\sin\alpha}{\alpha} = \phi(\alpha)$
 
     $\displaystyle J(\alpha) = \int^b_a f(x, \alpha)dx$ - интеграл, зависящий от параметра
 
@@ -250,8 +255,8 @@
     Если последний интеграл берется лучше, чем исходный, то теорема полезна
 
     $\displaystyle \Box J^\prime_\alpha(\alpha) = \lim_{\Delta \alpha \to 0} \frac{J(\alpha + \Delta \alpha) - J(\alpha)}{\Delta \alpha} =
-    \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} (\int^b_a f(x, \alpha + \Delta \alpha)dx - \int^b_a f(x, \alpha)dx) =
-    = \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} (\int^b_a (f(x, \alpha + \Delta \alpha) - f(x, \alpha))dx)$
+    \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} \left(\int^b_a f(x, \alpha + \Delta \alpha)dx - \int^b_a f(x, \alpha)dx\right) =
+    = \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} \left(\int^b_a (f(x, \alpha + \Delta \alpha) - f(x, \alpha))dx\right)$
 
     По теореме Лагранжа о среднем $\exists \xi \in [\alpha; \alpha + \Delta \alpha]$
 
