@@ -10,6 +10,8 @@
 \begin{document}
     \section{5.4. Замена переменной в двойном и тройном интегралах}
 
+    \hypertarget{substitutionindoubleintegral}{}
+
     Проблема. $S = \iint_D dxdy$
 
     Если $S_{D^\prime} = \int_0^{2\pi} d\varphi \int_0^R d\rho = \iint_{D^\prime} d\rho d\varphi$ - то это не площадь круга, а площадь прямоугольника $S$ в распрямленных координатах
@@ -70,13 +72,15 @@
     \begin{vmatrix}
         \frac{\partial \varphi}{\partial u} & \frac{\partial \varphi}{\partial u} \\
         \frac{\partial \psi}{\partial v}    & \frac{\partial \psi}{\partial u}
-    \end{vmatrix}\right| \stackrel{\Delta s^\prime}{\overgroup{\Delta v \Delta u}} \stackrel{|det| = |J|}{\Longrightarrow} \Delta s \approx |J|\Delta s^\prime$
+    \end{vmatrix}\right| \stackrel{\Delta s^\prime}{\overgroup{\Delta v \Delta u}} \stackrel{|\det| = |J|}{\Longrightarrow} \Delta s \approx |J|\Delta s^\prime$
 
     \Nota В пределе это точное равенство:
 
     $|J| = \lim_{\Delta x \to 0} \frac{\Delta s}{\Delta s^\prime}$
 
     (легко понять, если считать частные приращения по теореме Лагранжа $\Delta_u \varphi = \frac{\partial \varphi}{\partial u}(\xi, \eta) \Delta u \rightarrow \frac{\partial \varphi}{\partial u}(u, v) \Delta u$)
+
+    \hypertarget{determinantJaсobi}{}
 
     \Def Определитель $J = \begin{vmatrix}
                                \frac{\partial x_1}{\partial \xi_1} & \dots  & \frac{\partial x_1}{\partial \xi_n} \\
@@ -98,7 +102,7 @@
         \item Выбор средней точки, поиск значения $f(\xi_i, \eta_i)$
 
         Значение величины на элементе $f(\xi_i, \eta_i) |J| du dv$
-        \item Интегральная сумма $\sigma_n = \Sigma f(\xi_i, \eta_i) |J| du dv$
+        \item Интегральная сумма $\sigma_n = \sum f(\xi_i, \eta_i) |J| du dv$
         \item В пределе интеграл $\iint_D f(x, y) dx dy = \iint_{D^\prime} f(u, v) |J| du dv$
     \end{enumerate}
 
@@ -132,12 +136,14 @@
 
     $V_T = \iiint_T dxdydz = \iiint_{T^\prime}\rho d\rho d\varphi dz = \int_0^{2\pi} d\varphi \int_0^1 d \rho \int_{z_1 = \rho^2}^{z_2=\rho} \rho dz =
     2\pi \int_0^1 \rho z \Big|_{z_1 = \rho^2}^{z_2=\rho} d\rho = 2\pi \int_0^1 (\rho^2 - \rho^3) d\rho =
-    2\pi (\frac{\rho^3}{3} - \frac{\rho^4}{4}) \Big|_0^1 = 2\pi (\frac{1}{3} - \frac{1}{4}) = \frac{\pi}{6}$
+    2\pi \left(\frac{\rho^3}{3} - \frac{\rho^4}{4}\right) \Big|_0^1 = 2\pi \left(\frac{1}{3} - \frac{1}{4}\right) = \frac{\pi}{6}$
 
     \Lab $T: \begin{matrix}x^2 + y^2 + z^2 = 1 \\ \sqrt{x^2 + y^2} = z\end{matrix}$ - мороженка, считать в СфСК
 
 
     \section{5.5. Криволинейные интегралы}
+
+    \hypertarget{curvilinearintegraloffirstkind}{}
 
     I рода. Область интегрирования - кривая $l = \stackrel{\HUGE\smile}{AB}$ (дуга) (начнем с плоской дуги)
 
