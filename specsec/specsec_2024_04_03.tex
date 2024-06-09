@@ -24,11 +24,11 @@
     1) $\sqsupset \quad \stackrel{x_1 \in U_{\lambda_1}}{\overgroup{\alpha_1 e^{(1)}_1 + \dots + \alpha_{k_1} e^{(1)}_{k_1}}} + \dots +
     \stackrel{x_p \in U_{\lambda_p}}{\overgroup{\gamma_1 e^{(p)}_1 + \dots + \gamma_{k_p} e^{(p)}_{k_p}}} = 0$
 
-    Тогда $\Sigma_{i=1}^p x_i = 0$ ($x_i$ - линейно независимы, так как $\lambda_i$ - различны) - этого не может быть, так как $\forall i \ x_i \neq 0$ (как собственный вектор)
+    Тогда $\sum_{i=1}^p x_i = 0$ ($x_i$ - линейно независимы, так как $\lambda_i$ - различны) - этого не может быть, так как $\forall i \ x_i \neq 0$ (как собственный вектор)
 
-    2) В $\forall U_{\lambda_i}$ содержится $0$-вектор. Тогда $\Sigma_{i=1}^n x_i = 0 \Longleftrightarrow \forall x_i = 0$
+    2) В $\forall U_{\lambda_i}$ содержится $0$-вектор. Тогда $\sum_{i=1}^n x_i = 0 \Longleftrightarrow \forall x_i = 0$
 
-    Но $x_j = \Sigma_{j=1}^{k_i} c_i e^{(j)}_i = 0$ ($e^{(j)}_i$ - базисные, т. е. л/нез) $\Longrightarrow \forall c_j = 0$ (комбинация должна быть тривиальна)
+    Но $x_j = \sum_{j=1}^{k_i} c_i e^{(j)}_i = 0$ ($e^{(j)}_i$ - базисные, т. е. л/нез) $\Longrightarrow \forall c_j = 0$ (комбинация должна быть тривиальна)
 
     $\Box$
 
@@ -36,7 +36,7 @@
 
     Что можно сказать о размерности системы $e$ (*) ?
 
-    Обозначим $S = \Sigma_{i=1}^p \dim U_{\lambda_i} = \Sigma_{i=1}^p \beta_i$, $\beta_i$ - геометрическая кратность $\lambda_i$
+    Обозначим $S = \sum_{i=1}^p \dim U_{\lambda_i} = \sum_{i=1}^p \beta_i$, $\beta_i$ - геометрическая кратность $\lambda_i$
 
     Очевидно, $S \leq n$
 
@@ -50,13 +50,15 @@
 
     $\Box$
 
-    \Nota Условие Th равносильно: $V^n = \Sigma_{i=1}^p \xor U_{\lambda_i} (\lambda_i \neq \lambda_j)$
+    \Nota Условие Th равносильно: $V^n = \sum_{i=1}^p \xor U_{\lambda_i} (\lambda_i \neq \lambda_j)$
 
-    Действительно: $\dim V^n = \Sigma_{i=1}^p \dim U_{\lambda_i}$ и $\forall i, j \ U_{\lambda_i} \intersect U_{\lambda_j} = 0$
+    Действительно: $\dim V^n = \sum_{i=1}^p \dim U_{\lambda_i}$ и $\forall i, j \ U_{\lambda_i} \intersect U_{\lambda_j} = 0$
 
     \Ex Если $\exists n$ различных собственных чисел $\lambda_1, \dots, \lambda_n$, то $\dim U_{\lambda_i} = 1 \forall i$
 
     \Def Оператор $\mathcal{A}$ диагонализируемый, если существует базис $e \ | \ A_e$ - диагональна
+
+    \hypertarget{diagonalizedmatrixtheorem}{}
 
     \Th $\mathcal{A}$ - диаг.-ем $\Longleftrightarrow \exists$ базис из собственных векторов
 
@@ -65,8 +67,8 @@
     Собственный вектор (def): $\exists \lambda_i \ | \ \mathcal{A}e_i = \lambda_i e_i = 0 \cdot e_1 + \dots + \lambda_i e_i + \dots + 0 \cdot e_n$
 
     $\begin{cases}
-         \mathcal{A}e_1 = \lambda_1 e_1 + \Sigma_{k \neq 1} 0 \cdot e_k \\
-         \mathcal{A}e_2 = \lambda_2 e_2 + \Sigma_{k \neq 2} 0 \cdot e_k \\
+         \mathcal{A}e_1 = \lambda_1 e_1 + \sum_{k \neq 1} 0 \cdot e_k \\
+         \mathcal{A}e_2 = \lambda_2 e_2 + \sum_{k \neq 2} 0 \cdot e_k \\
          \vdots
     \end{cases} \Longleftrightarrow \begin{pmatrix}
                                         \lambda_1 & 0         & \dots  & 0         \\
@@ -98,7 +100,7 @@
 
     $\Box \beta_i$ по определению $\dim U_{\lambda_i}$ и не связана с базисом
 
-    Для $\alpha$: строим вековое уравнение $|A_f - \lambda I| = 0 \Longrightarrow \lambda_i$ с кратностью $\alpha_i$, $\alpha = \Sigma \alpha_i$
+    Для $\alpha$: строим вековое уравнение $|A_f - \lambda I| = 0 \Longrightarrow \lambda_i$ с кратностью $\alpha_i$, $\alpha = \sum \alpha_i$
 
     $\sqsupset A_g$ - матрица $\mathcal{A}$ в базисе $g$
 
