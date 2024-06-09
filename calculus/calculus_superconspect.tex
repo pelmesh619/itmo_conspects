@@ -1947,9 +1947,11 @@
 
     $M_{\text{ср.}}(\xi_i, \eta_i)$ - ср. точка элемента
 
-    \[\sigma_n = \overset{n}{\underset{i = 1}{\Sigma}} f(\xi_i, \eta_i) \Delta s_i\]
+    \[\sigma_n = \sum_{i = 1}^n f(\xi_i, \eta_i) \Delta s_i\]
 
     \vspace{10mm}
+
+    \hypertarget{curvilinearintegralofsecondkind}{}
 
     II рода. Задача (вычисление работы силы вдоль пути)
 
@@ -1971,6 +1973,8 @@
 
     $\int_{AB} f(x, y) dx$ и $\int_{AB} g(x, y) dy$
 
+    \hypertarget{connectionbetweencurvilinearintegrals}{}
+
     \Nota Связь интегралов I и II рода
 
     $\int_L Pdx + Qdy = \int_L (P, Q)(dx, dy) = \int_L (P, Q) (\cos\alpha, \cos\beta) \underset{\approx dl}{\undergroup{ds}} =
@@ -1984,6 +1988,8 @@
 
     Тогда $\int_L Pdx + Qdy \stackrel{\text{пред. в вект. форме}}{=\joinrel=} \int_L \overrightarrow{F}\overrightarrow{\tau} dl =
     \int_L \overrightarrow{F}\underset{\text{ориент. эл. дуги}}{\undergroup{\overrightarrow{dl}}}$
+
+    \hypertarget{curvilinearintegraloffirstkindproperties}{}
 
     Свойства:
 
@@ -2007,35 +2013,34 @@
 
     Если $K$ (контур) обходят против ч. с., то обозн. $\oint_{K^+}$
 
+    \hypertarget{curvilinearintegraloffirstkindcalculation}{}
+
     Вычисление. (Сведение к $\int_a^b dx$ или $\int_\alpha^\beta dy$ или $\int_\tau^T dt$)
 
     1) Параметризация дуги $L$:
 
-    \begin{cases}
+    $\begin{cases}
         x = \varphi(t) \\
         y = \psi(t)
-    \end{cases} $\varphi, \psi \in C^1_{[\tau, T]}$
-
-    \begin{matrix}
+    \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
         A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
         B(x_B, y_B) = (\varphi(T), \psi(T))
-    \end{matrix}
+    \end{matrix}$
 
     При этом задании $L \quad y = y(x), x \in [a, b]$ или $x = x(y), y \in [\alpha, \beta]$ - частные случаи параметризации
 
     2) \begin{multicols}{2}
         I рода
 
-        $\int_{L} f(x, y) dl \stackrel{dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|}{=\joinrel=\joinrel=\joinrel}$
+        $\int_{L} f(x, y) dl = \left[dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|\right] = $
 
         $\int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
 
         II рода
 
-        $\int_{L = \overset{\smile}{AB}}Pdx + Qdy \stackrel{dx = \varphi_t^\prime dt, dy = \psi_t^\prime}{=\joinrel=\joinrel=\joinrel}
-        $
+        $\int_{L = \overset{\smile}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = $
 
-        $\int_\tau^T f(t) (P\varphi^\prime + Q\varphi_\prime)dt|$
+        $\int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
 
     \end{multicols}
 
@@ -2045,28 +2050,30 @@
     \text{или} y = 2x - 1, x \in [1, 3] \\
     f(x, y) = x + 2x - 1 = 3x - 1 \\
     dl = \sqrt{1 + y^{\prime 2}}dx = \sqrt{5}dx\end{bmatrix} =
-    \int_1^3 (3x - 1) \sqrt{5}dx = \sqrt{5} (\frac{3x^2}{2} - x) \Big|_1^3 = \sqrt{5}(12 - 2) = 10\sqrt{5}$
+    \int_1^3 (3x - 1) \sqrt{5}dx = \sqrt{5} \left(\frac{3x^2}{2} - x\right) \Big|_1^3 = \sqrt{5}(12 - 2) = 10\sqrt{5}$
 
     2) $\int_{AB} (x + y) dx + (x + y) dy = \begin{bmatrix}x \uparrow^3_1, y \uparrow^5_1 \\
     y = 2x - 1, x = \frac{y + 1}{2} \\
-    dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 (\frac{y + 1}{2} + y) dy = \\
-    (\frac{3x^2}{2} - x) \Big|_1^3 + \frac{1}{2} (\frac{3y^2}{2} + y) \Big|_1^5 = 10 + 20 = 30$
+    dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 \left(\frac{y + 1}{2} + y\right) dy = \\
+    \left(\frac{3x^2}{2} - x\right) \Big|_1^3 + \frac{1}{2} \left(\frac{3y^2}{2} + y\right) \Big|_1^5 = 10 + 20 = 30$
+
+    \hypertarget{formulaGreen}{}
 
     \Th Формула Грина
 
     $D \subset R^2$ - прав. $\uparrow Ox, \uparrow Oy$
 
-    $\Gamma_D$ - гладкая замкнутая кривая
+    $K$ - гладкая замкнутая кривая (контур), которая ограничивает $D$
 
     В области $D$ действует $\overrightarrow{F} = (P(x, y), Q(x, y))$ - непрерывные дифференциалы
 
-    Тогда $\iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy = \oint_{K^+} Pdx + Qdy$
+    Тогда $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = \oint_{K^+} Pdx + Qdy$
 
-    $\Box \iint_D (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy =
+    $\Box \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
     \iint_D \frac{\partial Q}{\partial x} dxdy - \iint_D \frac{\partial P}{\partial y} dxdy =
     \int^\beta_\alpha dy \int_{x=x_1(y)}^{x=x_2(y)} \frac{\partial Q}{\partial x} dx -
     \int^b_a dx \int_{y=y_1(x)}^{y=y_2(x)} \frac{\partial P}{\partial y} dy =
-    \int^\beta_\alpha (Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)})dy - \int^b_a (P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)})dx = \\
+    \int^\beta_\alpha \left(Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)}\right)dy - \int^b_a \left(P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)}\right)dx = \\
     \int_\alpha^\beta (Q(x_2(y), y) - Q(x_1(y), y)) dy - \int_a^b (P(x, y_2(x)) - P(x, y_1(x))) dx =
     \int_{NST}Q dy - \int_{NMT} Q dy - \int_{MTS} P dx + \int_{MNS}Pdx =
     \underset{\oint_{K^+}Qdy}{\undergroup{\int_{NST} Qdy + \int_{TMN} Qdy}} +
