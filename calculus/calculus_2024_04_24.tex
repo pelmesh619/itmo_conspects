@@ -10,11 +10,11 @@
 \begin{document}
     \underline{Следствие}. $S_D = \frac{1}{2} \oint_K xdy - ydx$
 
-    $\frac{\partial P}{\partial y} = \frac{\partial}{\partial y}(- \frac{y}{2}) = -\frac{1}{2},
-    \frac{\partial Q}{\partial x} = \frac{\partial}{\partial x}(\frac{x}{2}) = \frac{1}{2}$
+    $\frac{\partial P}{\partial y} = \frac{\partial}{\partial y}\left(- \frac{y}{2}\right) = -\frac{1}{2},
+    \frac{\partial Q}{\partial x} = \frac{\partial}{\partial x}\left(\frac{x}{2}\right) = \frac{1}{2}$
 
-    Формула Грина: $\iint_D (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x})dxdy = \iint_D (\frac{1}{2} - (\-\frac{1}{2}))dxdy =
-    \iint_D dxdy = S_D \stackrel{\text{Ф. Гр.}}{=} \oint_{K^+} (-\frac{y}{2})dx + \frac{x}{2} dy$
+    Формула Грина: $\iint_D \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right)dxdy = \iint_D \left(\frac{1}{2} - \left(\-\frac{1}{2}\right)\right)dxdy =
+    \iint_D dxdy = S_D \stackrel{\text{Ф. Гр.}}{=} \oint_{K^+} \left(-\frac{y}{2}\right)dx + \frac{x}{2} dy$
 
     $\int$НЗП -  Интеграл, не зависящий от пути интегрирования.
 
@@ -25,9 +25,13 @@
     Параметризация $\overset{\smile}{AB}:
     \begin{cases}x = \varphi(t) \\ y = \psi(t)\end{cases}$ - $\varphi, \psi$ - непр. дифф (кусочно)
 
+    \hypertarget{pathindependentintegrals}{}
+
     $I = \int_{AB}Pdx + Qdy$ называется интегралом НЗП, если $\forall M, N \in D \quad \int_{AMB}Pdx + Qdy = \int_{ANB}Pdx + Qdy$
 
     \Nota Обозначают $\int_A^B Pdx + Qdy$ или $\int_{(x_2,y_2)}^{(x_1,y_1)} Pdx + Qdy$
+
+    \hypertarget{theorempathindependentintegrals}{}
 
     \Th Об интеграле НЗП
 
@@ -51,7 +55,7 @@
 
     $\Box I \Longleftrightarrow II$
 
-    $\fbox{\Longrightarrow}$ По def $\int$НЗП $\Longleftrightarrow$ \int_{AMB} = \int_{ANB}
+    $\fbox{\Longrightarrow}$ По def $\int$НЗП $\Longleftrightarrow \int_{AMB} = \int_{ANB}$
 
     Рассмотрим $\int_{AMB} - \int_{ANB} = \int_{AMB} + \int_{BNA} = \oint_K = 0 \forall K \subset D$
 
@@ -63,25 +67,25 @@
 
     $\fbox{\Longrightarrow} \oint_K = 0 \stackrel{?}{\Longrightarrow} \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
 
-    От противного $\quad \exists M_0(x_0, y_0) \in D \ | \ \frac{\partial P}{\partial y} \Big|_{M_0} \neq \frac{\partial Q}{\partial x} \Big|_{M_0} \Longleftrightarrow (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} \neq 0$
+    От противного $\quad \exists M_0(x_0, y_0) \in D \ | \ \frac{\partial P}{\partial y} \Big|_{M_0} \neq \frac{\partial Q}{\partial x} \Big|_{M_0} \Longleftrightarrow \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} \neq 0$
 
-    Для определенности $\letsymbol (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} > 0$
+    Для определенности $\letsymbol \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} > 0$
 
-    Тогда $\exists \delta > 0 \ | \ (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} > \delta > 0$
+    Тогда $\exists \delta > 0 \ | \ \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} > \delta > 0$
 
     Выберем малую окрестность в точке $M_0$ ($U(M_0)$) и обозначим ее контур $\Gamma$
 
     Так как $P$ и $Q$ непр. дифф., $(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} > 0$ в $U(M_0)$
 
-    Формула Грина: $\iint_{U(M_0)} (\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) dxdy > \iint_{U(M_0)} \delta dxdy = \delta S_{U(M_0)} > 0$
+    Формула Грина: $\iint_{U(M_0)} \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) dxdy > \iint_{U(M_0)} \delta dxdy = \delta S_{U(M_0)} > 0$
 
-    С другой стороны $\iint_{U(M_0)} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})dxdy = \oint_{\Gamma^+} Pdx + Qdy = 0$
+    С другой стороны $\iint_{U(M_0)} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\Gamma^+} Pdx + Qdy = 0$
 
     Таким образом, возникаем противоречие
 
     $\fbox{\Longleftarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \forall M \in D$
 
-    Тогда $\forall D^\prime \subset D \ \ \iint_{D^\prime} (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}) dxdy = 0 = \oint_{\Gamma_{D^\prime}} Pdx + Qdy \forall \Gamma_{D^\prime} \subset D$
+    Тогда $\forall D^\prime \subset D \ \ \iint_{D^\prime} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = 0 = \oint_{\Gamma_{D^\prime}} Pdx + Qdy \forall \Gamma_{D^\prime} \subset D$
 
     III \Longleftrightarrow IV
 
@@ -116,20 +120,24 @@
 
     \Nota $\Phi$ - первообразная для $Pdx + Qdy$:
 
+    \hypertarget{theoremNewtonLeibnizforpathindependantintegral}{}
+
     \Th Ньютона-Лейбница
 
     Выполнены условия th об интеграле НЗП
 
     Тогда $\int_A^B Pdx + Qdy = \Phi(B) - \Phi(A)$
 
-    $\Box \int_A^B Pdx + Qdy \stackrel{\exists \Phi | d\Phi = Pdx + Qdy}{=} \int_A^B d\Phi(x, y) \stackrel{\text{параметр.} AB}{=}
+    $\Box$
+
+    $\int_A^B Pdx + Qdy \stackrel{\exists \Phi | d\Phi = Pdx + Qdy}{=} \int_A^B d\Phi(x, y) \stackrel{\text{параметр.} AB}{=}
     \int_\alpha^\beta d\Phi(t) = \Phi(t) \Big|_\alpha^\beta = \Phi(\beta) - \Phi(\alpha) = \Phi(B) - \Phi(A)$
 
     $\Box$
 
     \underline{Применение}
 
-    \Ex $\int_{AB} (4 - \frac{y^2}{x^2})dx + \frac{2y}{x}dy$
+    \Ex $\int_{AB} \left(4 - \frac{y^2}{x^2}\right)dx + \frac{2y}{x}dy$
 
     Проверим НЗП: $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$: $\frac{\partial P}{\partial y} = -\frac{2y}{x^2}$, $\frac{\partial Q}{\partial x} -\frac{2y}{x^2}$ \Longleftrightarrow НЗП
 
