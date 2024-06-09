@@ -1252,6 +1252,8 @@
 
     \section{3.2. Квадратичные формы}
 
+    \hypertarget{quadraticform}{}
+
     \Def Квадратичной формой, порожденной Б. Ф. $\mathcal{B}(u, v)$, называется форма $\mathcal{B}(u, u)$
 
     \Ex Поверхность
@@ -1275,6 +1277,8 @@
     $\mathcal{B}(v, v)_{\text{канон.}} = c_{11}x^2 + c_{22}y^2 + c_{33}z^2$
 
     Поэтому квадратичная форма, соответствующая поверхности второго порядка, рассматривается, как форма, порожденная симметричной билинейной формой
+
+    \hypertarget{positivedefinedoperator}{}
 
     \Def Положительно определенная форма
 
@@ -1308,10 +1312,12 @@
 
     \Nota $\det A$ инвариантен при замене базиса, $\det A = \lambda_1 \cdot \dots \cdot \lambda_n > 0$. Тогда $\exists \mathcal{A}^{-1}$
 
+    \hypertarget{criterionSilvester}{}
+
     \Th Критерий Сильвестра
 
     $\mathcal{A}: V^n \to V^n$ - положительно определен \Longleftrightarrow $\forall k = 1..n \ \Delta_k =
-    \begin{vmatrix}a_{11} & \dots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \dots & a_{nn}\end{vmatrix}$
+    \begin{vmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{vmatrix} > 0$
 
     $\Box \Longrightarrow \quad \mathcal{A}$ - пол. опред.
 
@@ -1319,7 +1325,7 @@
     Тогда, $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_k}$, $k \leq n$
 
     $A_k = \begin{pmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{pmatrix} \quad
-    \Delta_k = \det A_k \stackrel{inv}{=} \begin{vmatrix}\lambda_{1} & \dots & 0 \\ & \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{k}\end{vmatrix} > 0$
+    \Delta_k = \det A_k \stackrel{inv}{=} \begin{vmatrix}\lambda_{1} & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{k}\end{vmatrix} > 0$
 
     $\Longleftarrow$ ММИ
 
