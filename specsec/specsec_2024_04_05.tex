@@ -31,7 +31,7 @@
 
     $(\mathcal{A}x, y) = (x, \mathcal{A}^* y)$
 
-    \DefN{2} $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любой ортонормированном базисе
+    \DefN{2} $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любом ортонормированном базисе
 
     \textbf{Def. 1.} \Longleftrightarrow \textbf{Def. 2.}
 
@@ -42,6 +42,8 @@
     \Lab Очевидно существование $\mathcal{A}^* \ \forall \mathcal{A}$ (определяется в ортонормированном базисе действием $\mathcal{A}^T$)
 
     Доказать единственность $\mathcal{A}^*$ рассмотреть от противного $(x, \mathcal{A}_1^* y) \neq (x, \mathcal{A}_2^* y)$)
+
+    \hypertarget{conjugateoperatorproperties}{}
 
     Свойства:
 
@@ -61,11 +63,15 @@
 
     Можно использовать линейные свойства умножения матриц $A^* (\lambda X + \mu Y) = \lambda \mathcal{A}^* X + \mu \mathcal{A}^* Y$
 
+    \hypertarget{selfconjugateoperator}{}
+
     \textbf{2* Самосопряженный оператор}
 
     \Def $\mathcal{A}$ называется самосопряженным, если $\mathcal{A} = \mathcal{A}^*$
 
     Следствие. $A^T = A \Longrightarrow$ матрица $A$ симметричная
+
+    \hypertarget{selfconjugateoperatorproperties}{}
 
     Свойства самосопряженных операторов:
 
@@ -87,6 +93,8 @@
 
     Так как $\lambda_1 \neq \lambda_2$, то $(\lambda_1 - \lambda_2) (x_1, x_2) = 0 \Longrightarrow (x_1, x_2) = 0 \qed$
 
+    \hypertarget{lemmaabouteigenvectors}{}
+
     \Th Лемма. $\mathcal{A} = \mathcal{A}^*$, $e$ - собственный вектор ($l_{\Set{e}}$ - линейная оболочка $e$ - инвариантное подпространство для $\mathcal{A}$)
 
     $V_1 = \Set{x \in V \ | \ x \perp e}$
@@ -99,6 +107,8 @@
     $(\mathcal{A}x, e) = (x, \mathcal{A}e) = (x, \lambda e) = \lambda (x, e) \stackrel{x \perp e}{=\joinrel=} 0$
 
     $\qed$
+
+    \hypertarget{theoremabouteigenvectorsinselfconjugateoperator}{}
 
     \Th $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
     тогда $\exists e_1, \dots, e_n$ - набор собственных векторов $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
