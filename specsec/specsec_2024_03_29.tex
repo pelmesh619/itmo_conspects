@@ -43,8 +43,8 @@
          0 & 0 & \dots & 1 \\
     \end{pmatrix}$
 
-    $\forall i \Sigma^n_{j=1} a_{ij} a_{ij} = (A_i, A_i) = 1$
-    $\forall i, j (i \neq j) \Sigma^n_{kk=1} a_{ik} a_{jk} = (A_i, A_j) = 0$
+    $\forall i \sum^n_{j=1} a_{ij} a_{ij} = (A_i, A_i) = 1$
+    $\forall i, j (i \neq j) \sum^n_{kk=1} a_{ik} a_{jk} = (A_i, A_j) = 0$
 
     В общем $(A_i, A_j) = \begin{sqcases}1, i = j \\ 0, i \neq j \end{sqcases}$
 
@@ -64,9 +64,9 @@
           \tau_{n1} & \dots & \tau_{nn} \\
     \end{pmatrix}$ - неортогональна
 
-    Тогда $e_1^\prime = \Sigma_{i=1}^n \tau_{1i} e_i \quad \Big| \cdot e_1^\prime$
+    Тогда $e_1^\prime = \sum_{i=1}^n \tau_{1i} e_i \quad \Big| \cdot e_1^\prime$
 
-    $1 = (e_1^\prime, e_1^\prime) = (\Sigma_{i=1}^n \tau_{1i} e_i)^2 =
+    $1 = (e_1^\prime, e_1^\prime) = (\sum_{i=1}^n \tau_{1i} e_i)^2 =
     \tau^2_{11} e^2_1 + \tau_{11} e_1 \tau_{12} e_2 + \dots = \tau_{11}^2 + \dots + \tau_{1n}^2 = 1$ - то есть строка - единичный вектор
 
     $0 = (e_1^\prime, e_2^\prime) = (\tau_{11} e_1 + \tau_{12}e_1 + \dots) \cdot
@@ -85,6 +85,8 @@
 
     \Nota $Ker \mathcal{A}, Im \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
 
+    \hypertarget{eigenvalue}{}
+
     \Def Характеристический многочлен оператора $\mathcal{A} : V \rightarrow V$
     ($\mathcal{A}x = Ax, A$ - матрица в неком базисе)
 
@@ -96,6 +98,8 @@
 
     \Nota Уравнение $\xi(\lambda) = 0$ называется вековым
 
+    \hypertarget{eigenvector}{}
+
     \Def Собственным вектором оператора $\mathcal{A}$, отвечающим собственному значению $\lambda$,
     называется $x \neq 0 \ | \ \mathcal{A}x = \lambda x$
 
@@ -103,7 +107,7 @@
 
     $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
 
-    \Def $\dim U_{\lambda_i} = \beta$ - геометрическая кратность число $\lambda_i$
+    \Def $\dim U_{\lambda_i} = \beta$ - геометрическая кратность числа $\lambda_i$
 
     \Th $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
 
