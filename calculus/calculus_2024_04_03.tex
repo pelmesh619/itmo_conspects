@@ -10,6 +10,8 @@
 \begin{document}
     \section{5.3. Двойной и тройной интегралы}
 
+    \hypertarget{doubleintegral}{}
+
     \indent \Nota Дадим строгое определение
 
     \begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
@@ -62,6 +64,8 @@
 
     Тогда $\iint_D z(x, y) dx dy \stackrel{z \geq 0}{=} V_{\text{цилиндра с осн. } D}$, а при $z = 1$ $\iint_D dx dy = S_D$
 
+    \hypertarget{doubleintegralcalculation}{}
+
     Вычисление: По геометрическому смыслу найти $\iint_D z(x, y) dx dy$ - значит найти объем подповерхности
 
     Можно найти $S(x) = \int^{y_2(x)}_{y_1(x)} z(x = c, y) dy$ - площадь поперечного сечения
@@ -69,6 +73,8 @@
     Найдем $V$ как объем тела с известными площадями сечений
 
     $V = \int^b_a S(x) dx = \int_a^b \left(\int^{y_2(x)}_{y_1(x)} z(x = c, y) dy\right) dx$
+
+    \hypertarget{multipleintegral}{}
 
     \Nota Кратный
 
@@ -94,8 +100,10 @@
 
     \Ex $\iint_D xy dx dy$, $D : x^2 + y^2 \leq 1$
 
-    $\iint_D xy dx dy = \int_{-1}^1 \left(\int_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}} xy dy\right) dx = \int_{-1}^1 \left(\frac{x}{2} y^2 \Big|_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}}\right) dx =
-    \int_{-1}^1 (\frac{x}{2} ((1 - x^2) - (1 - x^2)) dx = 0$
+    $\iint_D xy dx dy = \int_{-1}^1 \left(\int_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}} xy dy\right) dx = \int_{-1}^1 \left(\frac{x}{2} y^2 \Big|_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\right) dx =
+    \int_{-1}^1 \left(\frac{x}{2} ((1 - x^2) - (1 - x^2))\right) dx = 0$
+
+    \hypertarget{tripleintegral}{}
 
     \Def Тройной интеграл
 
@@ -107,13 +115,15 @@
 
     3) Интегральная сумма $\sigma_n = \Sum u(M_i) dv$
 
-    4) $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dxdydz$
+    4) $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dv = \iiint_T u(x, y, z) dxdydz$
 
     Геометрический смысл. Только при $u = 1$ интеграл $\iiint_T dxdydz = V_T$ равен объему
 
     Физический смысл. Пусть $u(x, y, z)$ - плотность в каждой точке $T$
 
     Тогда $\iiint_T u(x, y, z) dxdydz = m_T$ - масса
+
+    \hypertarget{tripleintegralcalculation}{}
 
     Вычисление. $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
 

@@ -1629,8 +1629,11 @@
     \underline{Итак.} Схема интегрирования:
 
     \textbf{1*} Дробление области $\Omega$ на элементы $d\omega$
+
     \textbf{2*} Выбор постоянного значения функции на $d\omega$, то есть $g_{\text{ср.}}$ или $\overrightarrow{G_\text{ср.}}$
+
     \textbf{3*} Составление подынтегрального выражения $g_{\text{ср.}}d\omega$ или $\overrightarrow{G_\text{ср.}}d\overrightarrow{\omega}$
+
     \textbf{4*} \enquote{Суммирование} элементарных величин $\int gd\omega$ или $\int \overrightarrow{G}d\overrightarrow{\omega}$
 
 
@@ -1664,6 +1667,8 @@
 
 
     \section{5.3. Двойной и тройной интегралы}
+
+    \hypertarget{doubleintegral}{}
 
     \indent \Nota Дадим строгое определение
 
@@ -1717,6 +1722,8 @@
 
     Тогда $\iint_D z(x, y) dx dy \stackrel{z \geq 0}{=} V_{\text{цилиндра с осн. } D}$, а при $z = 1$ $\iint_D dx dy = S_D$
 
+    \hypertarget{doubleintegralcalculation}{}
+
     Вычисление: По геометрическому смыслу найти $\iint_D z(x, y) dx dy$ - значит найти объем подповерхности
 
     Можно найти $S(x) = \int^{y_2(x)}_{y_1(x)} z(x = c, y) dy$ - площадь поперечного сечения
@@ -1724,6 +1731,8 @@
     Найдем $V$ как объем тела с известными площадями сечений
 
     $V = \int^b_a S(x) dx = \int_a^b \left(\int^{y_2(x)}_{y_1(x)} z(x = c, y) dy\right) dx$
+
+    \hypertarget{multipleintegral}{}
 
     \Nota Кратный
 
@@ -1749,8 +1758,10 @@
 
     \Ex $\iint_D xy dx dy$, $D : x^2 + y^2 \leq 1$
 
-    $\iint_D xy dx dy = \int_{-1}^1 \left(\int_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}} xy dy\right) dx = \int_{-1}^1 \left(\frac{x}{2} y^2 \Big|_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}}\right) dx =
-    \int_{-1}^1 (\frac{x}{2} ((1 - x^2) - (1 - x^2)) dx = 0$
+    $\iint_D xy dx dy = \int_{-1}^1 \left(\int_{y_1 = -\sqrt{1-x^2}}^{y_2 = \sqrt{1-x^2}} xy dy\right) dx = \int_{-1}^1 \left(\frac{x}{2} y^2 \Big|_{-\sqrt{1-x^2}}^{\sqrt{1-x^2}}\right) dx =
+    \int_{-1}^1 \left(\frac{x}{2} ((1 - x^2) - (1 - x^2))\right) dx = 0$
+
+    \hypertarget{tripleintegral}{}
 
     \Def Тройной интеграл
 
@@ -1762,13 +1773,15 @@
 
     3) Интегральная сумма $\sigma_n = \Sum u(M_i) dv$
 
-    4) $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dxdydz$
+    4) $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dv = \iiint_T u(x, y, z) dxdydz$
 
     Геометрический смысл. Только при $u = 1$ интеграл $\iiint_T dxdydz = V_T$ равен объему
 
     Физический смысл. Пусть $u(x, y, z)$ - плотность в каждой точке $T$
 
     Тогда $\iiint_T u(x, y, z) dxdydz = m_T$ - масса
+
+    \hypertarget{tripleintegralcalculation}{}
 
     Вычисление. $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
 
@@ -2587,7 +2600,7 @@
 
     $\iint_S Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
 
-    $\iint_S (P, Q, R) (dydx, dxdz, dxdy) = \iint_S (P, Q, R) (\cos\alpha d\sigma, \cos\beta d\sigma, \cos\gamma d\sigma) =
+    $\iint_S (P, Q, R) (dydz, dxdz, dxdy) = \iint_S (P, Q, R) (\cos\alpha d\sigma, \cos\beta d\sigma, \cos\gamma d\sigma) =
     \iint_S \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S \overrightarrow{F} d\overrightarrow{\sigma}$
 
     $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz = \iiint_T (\overrightarrow{\triangledown} \overrightarrow{F}) = \iiint_T div \overrightarrow{F}$
@@ -2653,7 +2666,7 @@
 
     Мех. смысл: 1) $div \overrightarrow{F} \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ - мощность точечного источника
 
-    Г.-О.: поток через замкнутую поверхность равен суммарной мощности испочников внутри
+    Г.-О.: поток через замкнутую поверхность равен суммарной мощности источников внутри
 
     2) $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ - циркуляция по б. м. контуру. Мех. смысл - ?
 
@@ -2683,7 +2696,7 @@
 
     $\overrightarrow{v} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ и погруженное в него колесо с лопатками (водяная мельница)
 
-    В качестве контура $L$ ерем обод колева, а его располагаем под углом $\gamma$ к вектору $\overrightarrow{\omega}$
+    В качестве контура $L$ берем обод колеса, а его располагаем под углом $\gamma$ к вектору $\overrightarrow{\omega}$
 
     Все равно $\Gamma_L = \iint_S 2\omega \cos \gamma d\sigma = 2\omega\cos \gamma S$
 
@@ -2713,7 +2726,7 @@
 
     $\Longleftrightarrow \overrightarrow{\triangledown} (\rho \overrightarrow{v}) + \frac{\partial \rho}{\partial t} = 0$
 
-    Учтем: $\frac{d \rho}{dt} = \frac{\partial \rho}{\partial t} +  \frac{\partial \rho}{\partial x} \frac{dx}{dt} +  \frac{\partial \rho}{\partial y} \frac{dy}{dt} +  \frac{\partial \rho}{\partial z} \frac{dz}{dt} = \frac{\partial \rho}{\partial t} + \overrightarrow{\triangledown} \rho \overrightarrow{v}$
+    Учтем: $\frac{d \rho}{dt} = \frac{\partial \rho}{\partial t} +  \frac{\partial \rho}{\partial x} \frac{dx}{dt} +  \frac{\partial \rho}{\partial y} \frac{dy}{dt} + \frac{\partial \rho}{\partial z} \frac{dz}{dt} = \frac{\partial \rho}{\partial t} + \overrightarrow{\triangledown} \rho \overrightarrow{v}$
 
     % TODO
 
