@@ -283,6 +283,8 @@
 
     \section{2. Линейный оператор (линейное отображение, линейный функционал, линейное преображение)}
 
+    \hypertarget{linearoperatordefinition}{}
+
     \section{2.1. Определение}
 
     \textit{Линейный оператор} - это отображение $V^n \stackrel{\mathcal{A}}{\Longrightarrow} W^m$
@@ -353,6 +355,8 @@
 
     $(\mathcal{A}\mathcal{B}) x = \mathcal{A}(\mathcal{B}x); \quad x \in U$
 
+    \hypertarget{linearoperatorproperties}{}
+
     Свойства: \underline{Lab} доказать
 
     1* $\lambda (\mathcal{A}\mathcal{B}) = (\lambda \mathcal{A})\mathcal{B}$
@@ -372,6 +376,8 @@
 
     \section{2.3. Обратимость оператора}
 
+    \hypertarget{onetoonelinearoperator}{}
+
     Def: $\mathcal{A} : V \rightarrow W$ так, что $\mathcal{A}V = W$ и $\forall x_1 \neq x_2 (x_1, x_2 \in V) \quad
     \begin{cases}y_1 = \mathcal{A}x_1 \\ y_2 = \mathcal{A}x_2\end{cases} \Longrightarrow y_1 \neq y_2$
 
@@ -385,32 +391,34 @@
 
     $\Box \sqsupset \mathcal{A} : V \rightarrow W$ и $\texttt{0}_V, \texttt{0}_W$ - нули $V$ и $W$ соответственно
     \begin{enumerate}
-        \item $\mathcal{A}(\texttt{0}_V) = \mathcal{A}(\Sigma^k_{i=1} 0 \cdot e_i) = \Sigma^k_{i=1} 0 \cdot \mathcal{A}e_i = \texttt{0}_W$
+        \item $\mathcal{A}(\texttt{0}_V) = \mathcal{A}(\sum^k_{i=1} 0 \cdot e_i) = \sum^k_{i=1} 0 \cdot \mathcal{A}e_i = \texttt{0}_W$
 
         \item Докажем, что если ${x_i} \subset V$ - лин. нез., то ${y_i} \subset W$ - лин. нез.
 
-        Составим $\Sigma^m_{j=1} \lambda_j y_j = \texttt{0}_W$ (От противного) $\sqsupset \Set{y_i}$ - лин. зав., тогда $\exists \lambda_k \neq 0$
+        Составим $\sum^m_{j=1} \lambda_j y_j = \texttt{0}_W$ (От противного) $\sqsupset \Set{y_i}$ - лин. зав., тогда $\exists \lambda_k \neq 0$
 
         При этом $\forall j \ \ y_j = \mathcal{A}x_j$ (т. к. $\mathcal{A}$ - вз.-однозн., то $n^\prime = m^\prime$: кол-во $x_i$ и $y_i$ равно)
 
-        $\Sigma^m^\prime_{j=1} \lambda_j \mathcal{A}x_j \stackrel{\text{линейность}}{=} \mathcal{A} (\Sigma^m^\prime_{j=1} \lambda_j x_j) = \texttt{0}_W$
+        $\sum^{m^\prime}_{j=1} \lambda_j \mathcal{A}x_j \stackrel{\text{линейность}}{=} \mathcal{A} (\sum^{m^\prime}_{j=1} \lambda_j x_j) = \texttt{0}_W$
 
         Так как $\mathcal{A}\texttt{0}_V = \texttt{0}_W$, то $\texttt{0}_W$ - образ $x = \texttt{0}_V$, но так как $\mathcal{A}$ - вз.-однозн., то
         $\nexists x^\prime \neq x \ | \ \mathcal{A}(x^\prime) = \texttt{0}_W$
 
-        Значит $\Sigma^m^\prime_{j=1} \lambda_j x_j = \texttt{0}_V$, но $\exists \lambda_k \neq 0 \Longrightarrow \Set{x_j}$ - лин. зав. - \underline{противоречие}
+        Значит $\sum^{m^\prime}_{j=1} \lambda_j x_j = \texttt{0}_V$, но $\exists \lambda_k \neq 0 \Longrightarrow \Set{x_j}$ - лин. зав. - \underline{противоречие}
 
         \item $\sqsupset$ теперь $\Set{y_i}$ - л. нез., а $\Set{x_i}$ (по предположению от противного) - лин. зав.
 
-        $\Sigma^{n^\prime}_{i = 1} \lambda_i x_i \stackrel{\exists \lambda_k \neq 0}{=} \texttt{0}_V \quad \Big| \mathcal{A}$
+        $\sum^{n^\prime}_{i = 1} \lambda_i x_i \stackrel{\exists \lambda_k \neq 0}{=} \texttt{0}_V \quad \Big| \mathcal{A}$
 
-        $\Sigma^{n^\prime}_{i = 1} \lambda_i \mathcal{A}x_i = \texttt{0}_W$
+        $\sum^{n^\prime}_{i = 1} \lambda_i \mathcal{A}x_i = \texttt{0}_W$
 
         При этом $\exists \lambda_k \neq 0 \Longrightarrow \Set{y_i}$ - лин. зав. - \underline{противоречие}
 
     \end{enumerate}
 
     Следствие: $\dim V = \dim W \Longleftarrow \mathcal{A}$ - лин. изоморфизм
+
+    \hypertarget{reverselinearoperator}{}
 
     Def: $\mathcal{B} : W \rightarrow V$ называется обратным оператором для $\mathcal{A} : V \rightarrow W$
 
@@ -422,7 +430,7 @@
 
     $\Box \mathcal{A}^{-1}\mathcal{A} x = \mathcal{A}^{-1}(\mathcal{A} x) = \mathcal{A}^{-1} \texttt{0}_W = \texttt{0}_V \Longrightarrow x = \texttt{0}$
 
-    \Th Н. и Д. условия существования $\mathcal{A}^{-1}$
+    \Th Необходимые и Достаточные условия существования $\mathcal{A}^{-1}$
 
     $\exists \mathcal{A}^{-1} \Longleftrightarrow \mathcal{A}$ - вз.-однозн.
 
@@ -434,13 +442,13 @@
 
     Докажем, что $\mathcal{A}^\prime : W \rightarrow V$ - линейный оператор
 
-    ? $\mathcal{A}^\prime (\Sigma \lambda_i y_i) = \Sigma \lambda_i \mathcal{A}^\prime y_i = \Sigma \lambda_i x_i$
+    ? $\mathcal{A}^\prime (\sum \lambda_i y_i) = \sum \lambda_i \mathcal{A}^\prime y_i = \sum \lambda_i x_i$
 
-    $\mathcal{A}$ - вз.-однозн. $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \Sigma$
+    $\mathcal{A}$ - вз.-однозн. $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \sum$
 
-    $\mathcal{A}(\Sigma \lambda_i x_i) = \mathcal{A} x = y = \Sigma \lambda_i y_i \quad$ и $y$ имеет только один прообраз $x$
+    $\mathcal{A}(\sum \lambda_i x_i) = \mathcal{A} x = y = \sum \lambda_i y_i \quad$ и $y$ имеет только один прообраз $x$
 
-    Применим $\mathcal{A}^\prime$ к $y = \Sigma \lambda_i y_i \quad \mathcal{A}^\prime y = x = \Sigma \lambda_i x_i$ - единственный прообраз $y$
+    Применим $\mathcal{A}^\prime$ к $y = \sum \lambda_i y_i \quad \mathcal{A}^\prime y = x = \sum \lambda_i x_i$ - единственный прообраз $y$
 
     Таким образом, $\mathcal{A}^\prime$ переводит лин. комбинацию в такую же лин. комбинацию прообразов, то есть $\mathcal{A}^\prime$ - линейный: $\mathcal{A}^\prime = \mathcal{A}^{-1}$
 
@@ -450,11 +458,11 @@
 
     Возьмем вектор $x \in V^n$ и разложим по какому-либо базису $\Set{e_j}^n_{j=1}$
 
-    $\mathcal{A}x = \mathcal{A} (\Sigma^n_{j=1} c_j e_j) = \Sigma^n_{j=1} c_j \mathcal{A}e_j$
+    $\mathcal{A}x = \mathcal{A} (\sum^n_{j=1} c_j e_j) = \sum^n_{j=1} c_j \mathcal{A}e_j$
 
-    $\mathcal{A} e_j \stackrel{\text{образ базисного вектора}}{=} y_j \stackrel{\Set{f_i} - \text{ базис } W^m}{=} \Sigma^m_{i=1} a_{ij}f_i$
+    $\mathcal{A} e_j \stackrel{\text{образ базисного вектора}}{=} y_j \stackrel{\Set{f_i} - \text{ базис } W^m}{=} \sum^m_{i=1} a_{ij}f_i$
 
-    $\mathcal{A}x = \Sigma^n_{j=1} c_j \mathcal{A}e_j = \Sigma^n_{j=1} c_j \Sigma^m_{i=1} a_{ij}f_i = \Sigma^n_{j=1} \Sigma^m_{i=1} c_j a_{ij} f_i = \Sigma^m_{i=1} \Sigma^n_{j=1} c_j a_{ij} f_i$
+    $\mathcal{A}x = \sum^n_{j=1} c_j \mathcal{A}e_j = \sum^n_{j=1} c_j \sum^m_{i=1} a_{ij}f_i = \sum^n_{j=1} \sum^m_{i=1} c_j a_{ij} f_i = \sum^m_{i=1} \sum^n_{j=1} c_j a_{ij} f_i$
 
     Иллюстрация:
 
@@ -471,6 +479,8 @@
          \vdots \\
          b_{m} \\
     \end{pmatrix}$
+
+    \hypertarget{operatorsmatrix}{}
 
     Def: Матрица $A = {a_{ij}}_{i=1..m, j=1..n}$ называется матрицей оператора $\mathcal{A} : V^n \rightarrow W^m$ в базисе $\Set{e_j}^n_{j=1}$ пространства $V^n$
 
@@ -501,6 +511,8 @@
     2) поиск наиболее простой матрицы в некотором базисе
 
     \section{2.5. Ядро и образ оператора}
+
+    \hypertarget{kernalandimageofoperator}{}
 
     \Def Ядро оператора - $Ker \mathcal{A} \stackrel{def}{=} \Set{x \in V \ | \ \mathcal{A}x = \texttt{0}_W}$
 
