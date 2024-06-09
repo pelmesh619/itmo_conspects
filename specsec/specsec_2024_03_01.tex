@@ -17,6 +17,8 @@
 
     $\displaystyle \sqrt{\int^b_a (f * g)^2 dx} \leq \sqrt{\int^b_a f^2 dx} + \sqrt{\int^b_a g^2 dx}$
 
+    \hypertarget{perpendicularproblem}{}
+
     \textbf{Задача о перпендикуляре}
 
     Постановка: Нужно опустить перпендикуляр из точки пространства $E^n$ на подпространство $G$
@@ -32,7 +34,7 @@
 
     \Th $h \perp G, x_0 \in G, x = x_0 + h$. Тогда $\forall x^\prime \in G (x^\prime \neq x_0) \ \ \|x - x^\prime\| > \|x - x_0\|$
 
-    $\Box \|x - x^\prime\| = \|x - x_0 + x_0 - x^\prime\| \stackrel{\text{по теореме Пифагора}}{====} \|x - x_0\| + \|x_0 - x^\prime\| = \|h\| + \|x_0 - x^\prime\| > \|x - x_0\|$
+    $\Box \|x - x^\prime\| = \|x - x_0 + x_0 - x^\prime\| \stackrel{\text{по теореме Пифагора}}{=\joinrel=\joinrel=\joinrel=} \|x - x_0\| + \|x_0 - x^\prime\| = \|h\| + \|x_0 - x^\prime\| > \|x - x_0\|$
 
     \Nota $x_0$ называется ортогональной проекцией, возникает вопрос о ее вычислении (так находятся основания перпендикуляров)
 
@@ -74,7 +76,9 @@
 
     Таким образом по теореме Крамера $\exists! (\lambda_1, \dots, \lambda_k)$
 
-    \Def Матрица $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
+    \hypertarget{grammatrix}{}
+
+    \Def Матрицу $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
 
     $\Gamma = I = \begin{array}{|ccc|}
     1 & 0 & \ldots\\
@@ -120,14 +124,14 @@
 
     2) Многочлен Фурье
 
-    $P(t) = \frac{a_0}{2} + a_1 cos t + b_1 sin t + \dots a_n cos nt + b_n sin nt$ - линейная комбинация
+    $P(t) = \frac{a_0}{2} + a_1 \cos t + b_1 \sin t + \dots a_n \cos nt + b_n \sin nt$ - линейная комбинация
 
-    Функции ${1, cos t, sin t, \dots, cos nt, sin nt}$ - ортогональны
+    Функции ${1, \cos t, \sin t, \dots, \cos nt, \sin nt}$ - ортогональны
 
     Задача в том, чтобы для функции $f(t)$, определенной на отрезке $[0;2\pi]$ найти минимально отстоящий многочлен $P(t)$ при том,
     что расстояние определяется как $\displaystyle \sigma^2 = \int_0^{2\pi} (f(t) - P(t))^2 dt$
 
-    Нужно найти $a_i$ и $b_i$ - обычные скалярные произведения $\displaystyle a_i = k \int_0^{2\pi} f(t) cos(it) dt$, $\displaystyle b_i = m \int_0^{2\pi} f(t) sin(it) dt$ ($k, m$ - нормирующие множители)
+    Нужно найти $a_i$ и $b_i$ - обычные скалярные произведения $\displaystyle a_i = k \int_0^{2\pi} f(t) \cos(it) dt$, $\displaystyle b_i = m \int_0^{2\pi} f(t) \sin(it) dt$ ($k, m$ - нормирующие множители)
 
     \clearpage
 

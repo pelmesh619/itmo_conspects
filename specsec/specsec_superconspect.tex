@@ -18,7 +18,9 @@
 
     \section{1.1. Скалярное произведение}
 
-    $L$ - линейное пространство $\quad \forall x, y \in L \ \unserset{c = (x, y) - \text{ск. произв.}}{x, y \to c \in \Real}$
+    $L$ - линейное пространство $\quad \forall x, y \in L \quad \underset{x, y \to c \in \Real}{c = (x, y) - \text{ск. произв.}}$
+
+    \hypertarget{scalarproductdefinition}{}
 
     \begin{enumerate}
         \item $(x, y) = (y, x)$
@@ -27,9 +29,11 @@
         \item $\forall x \in L\ (x, x) \geq 0$ и $(x, x) = 0 \Longrightarrow x = 0$
     \end{enumerate}
 
-    Если векторы и коэффициенты комплескно-значные, то определения будут другими
+    Если векторы и коэффициенты комплексно-значные, то определения будут другими!
 
     \Def Скалярная функция $c = (x, y)$ со свойствами 1-4 называется скалярным произведением элементов $x$ и $y$
+
+    \hypertarget{euclidspacedefinition}{}
 
     \Def Линейное пространство со скалярным произведением называется \underline{Евклидовым}
 
@@ -55,6 +59,8 @@
 
     \section{1.2. Свойства евклидова пространства - $E$}
 
+    \hypertarget{inequalityofCauchyBunyakovsky}{}
+
     \Th Неравенство Коши-Буняковского
 
     $(x, y)^2 \leq (x, x)(y, y)$
@@ -79,13 +85,17 @@
 
     \section{1.3. Норма}
 
+    \hypertarget{normdefinition}{}
+
     ЛП $= L, \forall x \in L$ определена функция так, что выполняется $x \to n \in \Real, n = \|x\|$
 
     \begin{enumerate}
         \item $\|x\| \geq 0$ и $\|x\| = 0 \Longrightarrow x = 0$
         \item $\|\lambda x\| = |\lambda| \cdot \|x\| \quad \lambda \in \Real$
-        \item $\|x + y\| \leq \|x\| + \|y\| \quad \forall x, y \in L$
+        \item $\|x + y\| \leq \|x\| + \|y\| \quad \forall x, y \in L$ - неравенство треугольника
     \end{enumerate}
+
+    \hypertarget{normalizedeuclidspace}{}
 
     Евклидово пространство с нормой называется нормированным
 
@@ -127,6 +137,8 @@
 
     На $L^n$ введены $(x, y)$ и $\|x\|$ (то есть $L^n \to E^n_{\|\cdot\|}$ - нормированное евклидово)
 
+    \hypertarget{ortonormalizedbasis}{}
+
     $B$ называют ортонормированным базисом, если $(e_i, e_j) = \begin{cases}0, i \neq j \\ 1, i = j\end{cases}$
 
     \Nota Докажем, что всякая такая система из $n$ векторов линейно независима (то есть всякая нулевая комбинация тривиальная):
@@ -151,11 +163,13 @@
 
     $\displaystyle \sqrt{\int^b_a (f * g)^2 dx} \leq \sqrt{\int^b_a f^2 dx} + \sqrt{\int^b_a g^2 dx}$
 
+    \hypertarget{perpendicularproblem}{}
+
     \textbf{Задача о перпендикуляре}
 
     Постановка: Нужно опустить перпендикуляр из точки пространства $E^n$ на подпространство $G$
 
-    \includegraphics[height=90mm]{images/specsec_2024_03_01_1}
+    \includegraphics[height=90mm]{specsec/images/specsec_2024_03_01_1}
 
     Точка $M$ - конец вектора $x$ в пространстве $E^n$.
     Нужно найти $M_0$ (конец вектора $x_0$, проекции $x$ на $G$)
@@ -166,7 +180,7 @@
 
     \Th $h \perp G, x_0 \in G, x = x_0 + h$. Тогда $\forall x^\prime \in G (x^\prime \neq x_0) \ \ \|x - x^\prime\| > \|x - x_0\|$
 
-    $\Box \|x - x^\prime\| = \|x - x_0 + x_0 - x^\prime\| \stackrel{\text{по теореме Пифагора}}{====} \|x - x_0\| + \|x_0 - x^\prime\| = \|h\| + \|x_0 - x^\prime\| > \|x - x_0\|$
+    $\Box \|x - x^\prime\| = \|x - x_0 + x_0 - x^\prime\| \stackrel{\text{по теореме Пифагора}}{=\joinrel=\joinrel=\joinrel=} \|x - x_0\| + \|x_0 - x^\prime\| = \|h\| + \|x_0 - x^\prime\| > \|x - x_0\|$
 
     \Nota $x_0$ называется ортогональной проекцией, возникает вопрос о ее вычислении (так находятся основания перпендикуляров)
 
@@ -208,7 +222,9 @@
 
     Таким образом по теореме Крамера $\exists! (\lambda_1, \dots, \lambda_k)$
 
-    \Def Матрица $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
+    \hypertarget{grammatrix}{}
+
+    \Def Матрицу $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
 
     $\Gamma = I = \begin{array}{|ccc|}
     1 & 0 & \ldots\\
@@ -254,14 +270,14 @@
 
     2) Многочлен Фурье
 
-    $P(t) = \frac{a_0}{2} + a_1 cos t + b_1 sin t + \dots a_n cos nt + b_n sin nt$ - линейная комбинация
+    $P(t) = \frac{a_0}{2} + a_1 \cos t + b_1 \sin t + \dots a_n \cos nt + b_n \sin nt$ - линейная комбинация
 
-    Функции ${1, cos t, sin t, \dots, cos nt, sin nt}$ - ортогональны
+    Функции ${1, \cos t, \sin t, \dots, \cos nt, \sin nt}$ - ортогональны
 
     Задача в том, чтобы для функции $f(t)$, определенной на отрезке $[0;2\pi]$ найти минимально отстоящий многочлен $P(t)$ при том,
     что расстояние определяется как $\displaystyle \sigma^2 = \int_0^{2\pi} (f(t) - P(t))^2 dt$
 
-    Нужно найти $a_i$ и $b_i$ - обычные скалярные произведения $\displaystyle a_i = k \int_0^{2\pi} f(t) cos(it) dt$, $\displaystyle b_i = m \int_0^{2\pi} f(t) sin(it) dt$ ($k, m$ - нормирующие множители)
+    Нужно найти $a_i$ и $b_i$ - обычные скалярные произведения $\displaystyle a_i = k \int_0^{2\pi} f(t) \cos(it) dt$, $\displaystyle b_i = m \int_0^{2\pi} f(t) \sin(it) dt$ ($k, m$ - нормирующие множители)
 
     \clearpage
 
