@@ -9,7 +9,7 @@ if len(sys.argv) <= 1:
 
 folder = sys.argv[1]
 supername = folder + "_superconspect.tex"
-BLACKLIST = ['cheatsheet', 'exam', supername]
+BLACKLIST = ['cheatsheet', supername]
 
 subject = None
 teacher = None

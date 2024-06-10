@@ -8,5 +8,79 @@
 
 
 \begin{document}
-    \textit{(записи внезапно обрываются)}
+    \hypertarget{orthogonalbasisinspace}{}
+
+    \Th Во всяком $E^n$ можно выделить ортонормированный базис
+
+    $\Box$
+
+    В $E^n_{\|\cdot\|} \ \exists B = \{\beta_1, \dots, \beta_n\}$ - базис
+
+    ? Можно ли выделить $\mathcal{E} = \{e_1, \dots, e_n\}$ - ортонормированный базис?
+
+    Метод мат. индукции:
+
+    База: построим один ортогональный вектор для $\beta_1 = e_1^\prime$ (потом $e_1 = \frac{e_1^\prime}{\|e_1^\prime\|}$)
+
+    Рассмотрим $e_2^\prime = \beta_1 - \lambda e^\prime_1$. Требуем $e_2^\prime \perp e_1^\prime$, то есть $(e_1^\prime, e_2^\prime) = 0$
+
+    Отсюда найдем нужный $\lambda: (e_1^\prime, e_2^\prime) = (e_1^\prime, \beta_2 - \lambda e_1^\prime) = (e_1^\prime, \beta_2) - \lambda (e_1^\prime, e_1^\prime) = 0$
+
+    Тогда $\lambda = \frac{(e_1^\prime, \beta_2)}{(e_1^\prime, e_1^\prime)}$
+
+    Переход: Пусть построена система ортогональных векторов $\{e_1^\prime, e_2^\prime, \dots, e_k^\prime\}$
+
+    Построим $k + 1$ систему:
+
+    Рассмотрим $e_{k+1}^\prime = \beta_{k + 1} - \lambda_k e_k^\prime - \lambda_{k - 1}^\prime e_{k - 1}^\prime - \dots - \lambda_1 e_1^\prime \quad (*)$
+
+    Требуем $e_{k+1}^\prime \perp e_i \quad \forall i \in [1;k]$
+
+    $(e_{k+1}^\prime, e_k^\prime) = (\beta_{k + 1}, e_k^\prime) - \lambda_k (e_k^\prime, e_k^\prime) = 0$, так как $(e_i^\prime, e_j^\prime) = 0 \quad i \neq j$
+
+    $\lambda_k = \frac{(\beta_{k + 1}, e_k^\prime)}{(e_k^\prime, e_k^\prime)}$
+
+    Аналогично: $(e_{k+1}^\prime, e_{k - 1}^\prime) = (\beta_{k+1}, e_{k - 1}^\prime) - \lambda_{k - 1}(e_{k - 1}^\prime, e_{k-1}^\prime)$
+
+    $\lambda_{k - 1} = \frac{(\beta_{k + 1}, e_{k - 1}^\prime)}{(e_{k - 1}^\prime, e_{k - 1}^\prime)}$
+
+    $\Box$
+
+    Изложенный метод называется методом ортогонализации базиса, при этом $(*)$ определяет ненулевой вектор, иначе получим нулевую тривиальную линейную комбинацию векторов $\beta_i$ ($e_i$ выражается через них), но это невозможно, так как вектора базисные.
+
+    Полученную систему стоит нормировать
+
+    \Ex Формула скалярного произведения в о/н базисе
+
+    $E_{\|\cdot\|}, B = \{\beta_1, \dots, \beta_n\}$ - какой-либо базис
+
+    Рассмотрим $x = x_1 \beta_1 + x_2 \beta_2 + \dots + x_n \beta_n$ и $y = y_1 \beta_1 + \dots + y_n \beta_n$
+
+    Найдем $(x, y)$, как произведение компонент: $(x_1 \beta_1 + \dots + x_n \beta_n, y_1 \beta_1 + \dots + y_n \beta_n) = \sum_{i = 1}^n \sum_{j = 1}^n x_i y_j (\beta_i, \beta_j)$
+
+    Обозначим $(\beta_i, \beta_j) = a_{ij} \in \Real$
+
+    Таким образом, $(x, y) = \sum_i \sum_j a_{ij} x_i y_j$ - дальше назовем квадратичной формой
+
+    Ранее (в аналитической геометрии) $(a, b) = \sum_{i = 1}^n a_i b_i$ - произведение координат векторов $\vec{a}, \vec{b}$ в ДПСК (с о/н базисом)
+
+    Действительно: если $\beta_i = e_i$, $\beta_j = e_j$, $e_{ij} \in $ о/н базису
+
+    $a_{ij} = \begin{sqcases}1, i = j \\ 0, i \neq j\end{sqcases}$
+
+    Таким образом, $(x, y) = \sum_{i = 1}^n x_i, y_i$
+
+    Причем $x = x_1 e_1 + \dots + x_n e_n \Longrightarrow x_i = (x, e_i)$
+
+    \Ex Система функций, непрерывных на $[0, 2\pi]$
+
+    $\Phi = \{1, \sin t, \cos t, \sin 2t, \dots, \sin nt, \cos nt\}$
+
+    Система ортогональна (\Lab), но не нормированная (\Lab)
+
+    $\Phi_{\|\cdot\|} = \{\frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}}\sin t, \frac{1}{\sqrt{\pi}} \cos t, \dots\}$ - нормированная система
+
+    Тогда функция, определенная и непрерывная на $[0, 2\pi]$ может быть разложена по базису $\Phi_{\|\cdot\|}$
+    и ее координат (как вектора): $f_i = \int_0^{2\pi} f \cdot e_i dx$, где $e_i \in \Phi_{\|\cdot\|}$
+
 \end{document}

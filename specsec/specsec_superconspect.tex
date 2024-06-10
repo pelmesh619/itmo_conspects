@@ -150,7 +150,80 @@
 
 
 
-    \textit{(записи внезапно обрываются)}
+    \hypertarget{orthogonalbasisinspace}{}
+
+    \Th Во всяком $E^n$ можно выделить ортонормированный базис
+
+    $\Box$
+
+    В $E^n_{\|\cdot\|} \ \exists B = \{\beta_1, \dots, \beta_n\}$ - базис
+
+    ? Можно ли выделить $\mathcal{E} = \{e_1, \dots, e_n\}$ - ортонормированный базис?
+
+    Метод мат. индукции:
+
+    База: построим один ортогональный вектор для $\beta_1 = e_1^\prime$ (потом $e_1 = \frac{e_1^\prime}{\|e_1^\prime\|}$)
+
+    Рассмотрим $e_2^\prime = \beta_1 - \lambda e^\prime_1$. Требуем $e_2^\prime \perp e_1^\prime$, то есть $(e_1^\prime, e_2^\prime) = 0$
+
+    Отсюда найдем нужный $\lambda: (e_1^\prime, e_2^\prime) = (e_1^\prime, \beta_2 - \lambda e_1^\prime) = (e_1^\prime, \beta_2) - \lambda (e_1^\prime, e_1^\prime) = 0$
+
+    Тогда $\lambda = \frac{(e_1^\prime, \beta_2)}{(e_1^\prime, e_1^\prime)}$
+
+    Переход: Пусть построена система ортогональных векторов $\{e_1^\prime, e_2^\prime, \dots, e_k^\prime\}$
+
+    Построим $k + 1$ систему:
+
+    Рассмотрим $e_{k+1}^\prime = \beta_{k + 1} - \lambda_k e_k^\prime - \lambda_{k - 1}^\prime e_{k - 1}^\prime - \dots - \lambda_1 e_1^\prime \quad (*)$
+
+    Требуем $e_{k+1}^\prime \perp e_i \quad \forall i \in [1;k]$
+
+    $(e_{k+1}^\prime, e_k^\prime) = (\beta_{k + 1}, e_k^\prime) - \lambda_k (e_k^\prime, e_k^\prime) = 0$, так как $(e_i^\prime, e_j^\prime) = 0 \quad i \neq j$
+
+    $\lambda_k = \frac{(\beta_{k + 1}, e_k^\prime)}{(e_k^\prime, e_k^\prime)}$
+
+    Аналогично: $(e_{k+1}^\prime, e_{k - 1}^\prime) = (\beta_{k+1}, e_{k - 1}^\prime) - \lambda_{k - 1}(e_{k - 1}^\prime, e_{k-1}^\prime)$
+
+    $\lambda_{k - 1} = \frac{(\beta_{k + 1}, e_{k - 1}^\prime)}{(e_{k - 1}^\prime, e_{k - 1}^\prime)}$
+
+    $\Box$
+
+    Изложенный метод называется методом ортогонализации базиса, при этом $(*)$ определяет ненулевой вектор, иначе получим нулевую тривиальную линейную комбинацию векторов $\beta_i$ ($e_i$ выражается через них), но это невозможно, так как вектора базисные.
+
+    Полученную систему стоит нормировать
+
+    \Ex Формула скалярного произведения в о/н базисе
+
+    $E_{\|\cdot\|}, B = \{\beta_1, \dots, \beta_n\}$ - какой-либо базис
+
+    Рассмотрим $x = x_1 \beta_1 + x_2 \beta_2 + \dots + x_n \beta_n$ и $y = y_1 \beta_1 + \dots + y_n \beta_n$
+
+    Найдем $(x, y)$, как произведение компонент: $(x_1 \beta_1 + \dots + x_n \beta_n, y_1 \beta_1 + \dots + y_n \beta_n) = \sum_{i = 1}^n \sum_{j = 1}^n x_i y_j (\beta_i, \beta_j)$
+
+    Обозначим $(\beta_i, \beta_j) = a_{ij} \in \Real$
+
+    Таким образом, $(x, y) = \sum_i \sum_j a_{ij} x_i y_j$ - дальше назовем квадратичной формой
+
+    Ранее (в аналитической геометрии) $(a, b) = \sum_{i = 1}^n a_i b_i$ - произведение координат векторов $\vec{a}, \vec{b}$ в ДПСК (с о/н базисом)
+
+    Действительно: если $\beta_i = e_i$, $\beta_j = e_j$, $e_{ij} \in $ о/н базису
+
+    $a_{ij} = \begin{sqcases}1, i = j \\ 0, i \neq j\end{sqcases}$
+
+    Таким образом, $(x, y) = \sum_{i = 1}^n x_i, y_i$
+
+    Причем $x = x_1 e_1 + \dots + x_n e_n \Longrightarrow x_i = (x, e_i)$
+
+    \Ex Система функций, непрерывных на $[0, 2\pi]$
+
+    $\Phi = \{1, \sin t, \cos t, \sin 2t, \dots, \sin nt, \cos nt\}$
+
+    Система ортогональна (\Lab), но не нормированная (\Lab)
+
+    $\Phi_{\|\cdot\|} = \{\frac{1}{\sqrt{2\pi}}, \frac{1}{\sqrt{\pi}}\sin t, \frac{1}{\sqrt{\pi}} \cos t, \dots\}$ - нормированная система
+
+    Тогда функция, определенная и непрерывная на $[0, 2\pi]$ может быть разложена по базису $\Phi_{\|\cdot\|}$
+    и ее координат (как вектора): $f_i = \int_0^{2\pi} f \cdot e_i dx$, где $e_i \in \Phi_{\|\cdot\|}$
 
 
 
@@ -165,7 +238,7 @@
 
     \hypertarget{perpendicularproblem}{}
 
-    \textbf{Задача о перпендикуляре}
+    \section{1.4. Задача о перпендикуляре}
 
     Постановка: Нужно опустить перпендикуляр из точки пространства $E^n$ на подпространство $G$
 
@@ -2625,6 +2698,277 @@
     3. \begin{cases}\dot x = y \\ \dot y = -0\end{cases}
 
     \underline{Обобщим}. Если хотя бы один $\lambda \neq 0$ и лежит слева от $Im \lambda$, то решение устойчивое
+
+
+
+    \clearpage
+
+
+    \section{X. Программа экзамена в 2023/2024}
+
+
+    \begin{center}
+        \textbf{Линейная алгебра.}
+    \end{center}
+
+    \begin{enumerate}
+        \item Евклидово пространство: определение, неравенство Коши-Буняковского. Нормированное евклидово пространство.
+
+        \hyperlink{scalarproductdefinition}{Скалярное произведение} - функция $(x, y)$, обладающая свойствами:
+
+        \begin{enumerate}
+            \item $(x, y) = (y, x)$
+            \item $(\lambda x, y) = \lambda (x, y), \quad \lambda \in \Real$
+            \item $(x + z, y) = (x, y) + (z, y)$
+            \item $\forall x \in L\ (x, x) \geq 0$ и $(x, x) = 0 \Longrightarrow x = 0$
+        \end{enumerate}
+
+        \hyperlink{euclidspacedefinition}{Евклидовым} называет такое линейное пространство, на котором определено скалярное произведение
+
+        \hyperlink{inequalityofCauchyBunyakovsky}{Неравенство Коши-Буняковского}: $(x, y)^2 \leq (x, x)(y, y)$
+
+        \hyperlink{normdefinition}{Норма} - функция $\|x\|$, такая что
+
+        \begin{enumerate}
+            \item $\|x\| \geq 0$ и $\|x\| = 0 \Longrightarrow x = 0$
+            \item $\|\lambda x\| = |\lambda| \cdot \|x\| \quad \lambda \in \Real$
+            \item $\|x + y\| \leq \|x\| + \|y\| \quad \forall x, y \in L$ - неравенство треугольника
+        \end{enumerate}
+
+        \hyperlink{normalizedeuclidspace}{Нормированное Евклидово пространство}: $E^n$ является нормированным, если $\|x\| = \sqrt{(x, x)}$
+
+        \item Ортонормированный базис, ортогонализация базиса. Матрица Грама. Инвариантность евклидовых пространств.
+
+        \hyperlink{ortonormalizedbasis}{Ортонормированный базис} - такой базис, что $(e_i, e_j) = \begin{cases}
+                                                                                                      0, i \neq j \\ 1, i = j
+        \end{cases}$
+
+        \hyperlink{orthogonalbasisinspace}{Теорема о существовании ортонормированного базиса} (доказывается по матиндукции)
+
+
+        \hyperlink{grammatrix}{Матрица Грама}: Матрицу $\Gamma = {(e_i, e_j)}_{i, j = 1\dots k}$ называют матрицей Грама
+
+        \item Ортогональность вектора подпространству, ортогональное дополнение. Задача о перпендикуляре.
+
+        \hyperlink{perpendicularproblem}{Задача о перпендикуляре}: Постановка: Нужно опустить перпендикуляр из точки пространства $E^n$ на подпространство $G$
+
+        Точка $M$ - конец вектора $x$ в пространстве $E^n$.
+        Нужно найти $M_0$ (конец вектора $x_0$, проекции $x$ на $G$)
+
+        \Ths $h \perp G, x_0 \in G, x = x_0 + h$. Тогда $\forall x^\prime \in G (x^\prime \neq x_0) \ \ \|x - x^\prime\| > \|x - x_0\|$
+
+        \item Линейный оператор: определение, основные свойства.
+
+        \hypertarget{linearoperatordefinition}{Линейный оператор} - это отображение $V^n \stackrel{\mathcal{A}}{\Longrightarrow} W^m$
+
+        \hypertarget{linearoperatorproperties}{Свойства}:
+
+        1* $\lambda (\mathcal{A}\mathcal{B}) = (\lambda \mathcal{A})\mathcal{B}$
+
+        2* $(\mathcal{A} + \mathcal{B}) \mathcal{C} = \mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C}$
+
+        3* $\mathcal{A} (\mathcal{B} + \mathcal{C}) = \mathcal{A}\mathcal{B} + \mathcal{A}\mathcal{C}$
+
+        4* $\mathcal{A} (\mathcal{B}\mathcal{C}) = (\mathcal{A}\mathcal{B}) \mathcal{C}$
+
+
+        \item Обратный оператор. Взаимно-однозначный оператор.
+
+        \hyperlink{reverselinearoperator}{Обратный оператор}: $\mathcal{B} : W \rightarrow V$ называется обратным оператором для $\mathcal{A} : V \rightarrow W$
+        если $\mathcal{B}\mathcal{A} = \mathcal{A}\mathcal{B} = \mathcal{I}$ (обозначается $\mathcal{B} = \mathcal{A}^{-1}$)
+
+        \hyperlink{onetoonelinearoperator}{Взаимно-однозначный оператор}: $\mathcal{A} : V \rightarrow W$ так, что $\mathcal{A}V = W$ и $\forall x_1 \neq x_2 (x_1, x_2 \in V) \quad
+        \begin{cases}y_1 = \mathcal{A}x_1 \\ y_2 = \mathcal{A}x_2\end{cases} \Longrightarrow y_1 \neq y_2$
+
+        Тогда $\mathcal{A}$ называется взаимно-однозначно действующим
+
+        \item Матрица линейного оператора. Преобразование матрицы при переходе к новому базису.
+
+        \hyperlink{operatorsmatrix}{Матрица оператора}: Матрица $A = {a_{ij}}_{i=1..m, j=1..n}$ называется матрицей оператора $\mathcal{A} : V^n \rightarrow W^m$ в базисе $\Set{e_j}^n_{j=1}$ пространства $V^n$
+
+        \hyperlink{transformationtodifferentbasis}{Преобразование к другому базису}:     $\mathcal{T} : V^n \rightarrow V^n$ - преобразование координат, то есть $Te_i = e^\prime_i$
+
+        Тогда $A^\prime = TAT^{-1}$ ($A^\prime_{e^\prime} = T_{e\to e^\prime}AT^{-1}_{e\to e^\prime}$)
+
+        \item Ядро и образ оператора. Теорема о размерностях.
+
+        \hyperlink{kernalandimageofoperator}{Ядро и образ}:
+
+        Ядро оператора - $Ker \mathcal{A} \stackrel{def}{=} \Set{x \in V \ | \ \mathcal{A}x = \texttt{0}_W}$
+
+        Образ оператора - $Im \mathcal{A} \stackrel{def}{=} \Set{y \in W \ | \ \mathcal{A}x = y}$
+
+        \hyperlink{theoremaboutdimensions}{Теорема о размерностях}: $\mathcal{A} : V \rightarrow V$, тогда $\dim Ker \mathcal{A} + \dim Im \mathcal{A} = \dim V$
+
+
+        \item Собственные числа и собственные векторы оператора. Теоремы о диагональной матрице оператора.
+
+        \hyperlink{eigenvalue}{Собственное число} $\lambda$ - такое, что удовлетворяет вековому уравнению $|A - \lambda I| = 0$
+
+        Кратность корня $\lambda_i$ называется алгебраической кратностью
+
+        \hyperlink{eigenvector}{Собственный вектор} - такой вектор $x$, что $\mathcal{A}x = \lambda x$
+
+        $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
+
+        $\dim U_{\lambda_i}$ - геометрическая кратность числа $\lambda_i$
+
+        \hyperlink{diagonalizedmatrixtheorem}{Теорема о диагонализации}: $\mathcal{A}$ - диаг.-ем $\Longleftrightarrow \exists$ базис из собственных векторов $\Longleftrightarrow$ сумма алгебраических кратностей равна сумме геометрических
+
+        \item Сопряженный и самосопряженный операторы в вещественном евклидовом пространстве: определения, основные свойства. Свойства собственных чисел и собственных векторов самосопряженного оператора.
+
+        \hyperlink{conjugateoperator}{Сопряженный оператор}: Оператор $\mathcal{A}^*$ называется сопряженным для $\mathcal{A} : V \to V$, если
+
+        $(\mathcal{A}x, y) = (x, \mathcal{A}^* y)$
+
+        $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любом ортонормированном базисе
+
+        \hyperlink{conjugateoperatorproperties}{Свойства}:
+
+        1) $\mathcal{I} = \mathcal{I}^*$
+
+        2) $(\mathcal{A} + \mathcal{B})^* = \mathcal{A}^* + \mathcal{B}^*$
+
+        3) $(\lambda \mathcal{A})^* = \lambda \mathcal{A}^*$
+
+        4) $(\mathcal{A}^*)^* = \mathcal{A}$
+
+        5) $(\mathcal{A}\mathcal{B})^* = \mathcal{B}^* \mathcal{A}^*$ (св-во транспонирования матриц)
+
+        или $((\mathcal{AB})x, y) = (\mathcal{A}(\mathcal{B}x), y) = (\mathcal{B}x, \mathcal{A}^* y) = (x, \mathcal{B}^* \mathcal{A}^* y)$
+
+        6) $\mathcal{A}^*$ - линейный оператор ($\mathcal{A}x = x^\prime, \mathcal{A}y = y^\prime \Longrightarrow \mathcal{A}(\lambda x + \mu y) = \lambda x^\prime + \mu y^\prime$)
+
+        \hyperlink{selfconjugateoperator}{Самосопряженный оператор}: $\mathcal{A}$ называется самосопряженным, если $\mathcal{A} = \mathcal{A}^*$
+
+        Следствие. $A^T = A \Longrightarrow$ матрица $A$ симметричная
+
+        \hyperlink{selfconjugateoperatorproperties}{Свойства}:
+
+        1) $\mathcal{A} = \mathcal{A}^*, \ \lambda : \ \mathcal{A}x = \lambda x (x \neq 0)$. Тогда, $\lambda \in \Real$
+
+        2) $\mathcal{A} = \mathcal{A}^*, \ \mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2$ и $\lambda_1 \neq \lambda_2$. Тогда $x_1 \perp x_2$
+
+        \hyperlink{theoremabouteigenvectorsinselfconjugateoperator}{Теорема о базисе собственных векторов}: $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
+        тогда $\exists e_1, \dots, e_n$ - набор собственных векторов $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
+
+        (другими словами: $\mathcal{A}$ - диагонализируем)
+
+        \item Структура образа самосопряженного оператора. Проектор. Спектральное разложение оператора.
+
+        \hyperlink{projector}{Проектор}: Оператор $P_i x = (x, e_i) e_i$ называется проектором на одномерное пространство, порожденное $e_i$ (линейная оболочка)
+
+        \hyperlink{spectraldecomposition}{Спектральное разложение}: $\mathcal{A} = \sum_{i = 1}^{n} \lambda_i P_i$
+
+        \item Ортогональная матрица и ортогональный оператор. Геометрический смысл ортогонального преобразования.
+
+        \hyperlink{orthogonaloperator}{Ортогональный оператор}: $T$ - ортогональный оператор, если $(Tx, Ty) = (x, y)$
+
+        Следствие: $\|Tx\| = \|x\|$, то есть $T$ сохраняет расстояние
+
+        \hyperlink{orthogonalmatrix}{Ортогональная матрица}: Матрица $A$ называется ортогональной если $A^{-1} = A^T$
+
+
+
+        \item Билинейные формы: определения, свойства. Матрица билинейной формы.
+
+        \hyperlink{bilinearforms}{Билинейная форма}: $x, y \in V^n \quad$ Отображение $\mathcal{B}: V^n \to \Real$ (обозн. $\mathcal{B}(x, y)$)
+        называется билинейной формой, если выполнены
+
+        1) $\mathcal{B}(\lambda x + \mu y, z) = \lambda \mathcal{B}(x, z) + \mu \mathcal{B}(y, z)$
+
+        2) $\mathcal{B}(x, \lambda y + \mu z) = \lambda \mathcal{B}(x, y) + \mu \mathcal{B}(x, z)$
+
+        \hyperlink{bilinearformmatrix}{Матрица}: $\Set{e_i}_{i=1}^n$ - базис $V_n$, $u, v \in V^n$. Тогда $\mathcal{B}(u, v) =
+        \sum_{j = 1}^{n}\sum_{i = 1}^{n} b_{ij} u_i v_j$, где $b_{ij} \in \Real$ - матрица
+
+
+        \item Квадратичная форма: определения, приведение к каноническому виду.
+
+        \hyperlink{quadraticform}{Квадратичная форма}: Квадратичной формой, порожденной Б. Ф. $\mathcal{B}(u, v)$, называется форма $\mathcal{B}(u, u)$
+
+
+        \item Знакоопределенность квадратичной формы: необходимые и достаточные условия. Критерий Сильвестра.
+
+        \hyperlink{positivedefinedoperator}{Положительно определенный оператор}: 1) Оператор $\mathcal{A}$ называется положительно определенным, если
+        $\exists \gamma > 0 \ | \ \forall x \in V \quad (\mathcal{A}x, x) \geq \gamma \|x\|^2$
+
+        2) $\mathcal{A}$ называется положительным, если
+        $\forall x \in V, \ x \neq 0 \quad (\mathcal{A}x, x) > 0$
+
+
+        \hyperlink{criterionSilvester}{Критерий Сильвестра}: $\mathcal{A}: V^n \to V^n$ - положительно определен $\Longleftrightarrow \\ \forall k = 1..n $ угловые миноры $ \Delta_k =
+        \begin{vmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{vmatrix} > 0$
+
+
+    \end{enumerate}
+
+    \begin{center}
+        \textbf{Дифференциальные уравнения.}
+    \end{center}
+
+    \begin{enumerate}
+        \item Обыкновенное дифференциальное уравнение (ДУ): задача о радиоактивном распаде и задача о падении тела. Определение ДУ, решения ДУ и их геометрический смысл. Задача Коши.
+
+
+        \item Уравнение с разделяющимися переменными.
+
+
+        \item Однородное уравнение.
+
+
+        \item Уравнение в полных дифференциалах.
+
+
+        \item Линейное уравнение первого порядка. Метод Лагранжа.
+
+
+        \item Теорема существования и единственности решения задачи Коши. Особые решения.
+
+
+        \item Уравнения n-ого порядка, допускающие понижение порядка.
+
+
+        \item Линейные однородные дифференциальные уравнения (ЛОДУ): определения, решение ЛОДУ2 с постоянными коэффициентами для случая различных вещественных корней характеристического уравнения.
+
+
+        \item Решение ЛОДУ2 с постоянными коэффициентами для случая вещественных кратных корней характеристического уравнения.
+
+
+        \item Решение ЛОДУ2 с постоянными коэффициентами для случая комплексных корней характеристического уравнения.
+
+
+        \item Свойства решений ЛОДУ2: линейная независимость решений, определитель Вронского. Теоремы 1,2.
+
+
+        \item Свойства решений ЛОДУ2: линейная комбинация решений, линейная зависимость решений. Определитель Вронского. Теоремы о вронскиане.
+
+
+        \item Свойства решений ЛОДУ2: линейная комбинация решений, линейная зависимость решений. Теорема о структуре общего решения ЛОДУ2. Фундаментальная система решений (определение).
+
+
+        \item Свойства решений ЛНДУ2: теоремы о структуре общего решения и решении ДУ с суммой правых частей.
+
+
+        \item Структура решения ЛОДУn: линейная независимость решений, нахождение фундаментальной системы решений по корням характеристического уравнения.
+
+
+        \item Решение ЛНУ2 с постоянными коэффициентами: специальная правая часть, поиск частного решения методом неопределенных коэффициентов.
+
+
+        \item Решение ЛНУ2: метод вариации произвольных постоянных (Лагранжа).
+
+
+        \item Системы дифференциальных уравнений: определения, решение методом исключения.
+
+
+        \item Системы дифференциальных уравнений: определения, решение матричным методом в случае различных вещественных собственных чисел.
+
+
+        \item Теория устойчивости: определение устойчивости по Ляпунову, фазовая плоскость, траектории ДУ. Примеры устойчивого и неустойчивого решения.
+
+
+    \end{enumerate}
 
 
 
