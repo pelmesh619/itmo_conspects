@@ -2045,6 +2045,8 @@
 
     Рассмотрим три случай для $\lambda_{1,2}$
 
+    \hypertarget{ldesgdifferentrealsolutions}{}
+
     1) $\lambda_{1.2} \in \Real, \lambda_1 \neq \lambda_2$ - случай различных вещественных корней
 
     $C_2(x) = \int C_1 e^{(\lambda_1 - \lambda_2)x} dx = \frac{C_1 e^{(\lambda_1 - \lambda_2)x}}{\lambda_1 - \lambda_2} + C_2 =
@@ -2052,11 +2054,15 @@
 
     Тогда, $y(x) = C_2(x) e^{\lambda_2 x} = (\tilde{C_1}e^{\lambda_1 - \lambda_2}x + C_2)e^{\lambda_2 x} = $\fbox{$C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$} - решение ЛОДУ, $\lambda_1 \neq \lambda_2$
 
+    \hypertarget{ldesgequalrealsolutions}{}
+
     2) $\lambda_1 = \lambda_2 = \lambda \in \Real$ - случай вещ. кратных корней
 
     $C_2^\prime (x) = C_1 e^{0x} = C_1 \Longrightarrow C_2(x) = \int C_1 dx = C_1 x + C_2$
 
     $y(x) = (C_1 x + C_2)e^{\lambda x} = $\fbox{$C_1 x e^{\lambda x} + C_2 e^{\lambda x} = y(x)$} - решение ЛОДУ, $\lambda_1 = \lambda_2$
+
+    \hypertarget{ldesgcomplexsolutions}{}
 
     3) $\lambda = \alpha \pm i \beta \in \mathbb{C}$ - случай комплексно сопряженных корней
 
@@ -3055,17 +3061,16 @@
 
         $\forall p, q \in \Real \exists $ уравнение: $\quad \lambda^2 + p\lambda + q = 0$ и $\lambda_{1,2} \in \mathbb{C} \ | \ \lambda_1 + \lambda_2 = -p, \lambda_1 \lambda_2 = q$ - корни
 
-        1) $\lambda_{1.2} \in \Real, \lambda_1 \neq \lambda_2 \Longrightarrow y(x) = C_1 e^{\lambda_1 x} + C^2 e^{\lambda_2 x}$
+        \hyperlink{ldesgdifferentrealsolutions}{1 случай}: $\lambda_{1.2} \in \Real, \lambda_1 \neq \lambda_2 \Longrightarrow y(x) = C_1 e^{\lambda_1 x} + C^2 e^{\lambda_2 x}$
 
-        2) $\lambda_1 = \lambda_2 = \lambda \in \Real \Longrightarrow y(x) = (C_1 x + C_2)e^{\lambda x}$
-
-        3) $\lambda = \alpha \pm i \beta \in \mathbb{C} \Longrightarrow y(x) = C_1 e^{\alpha x} \sin \beta x + C_2 e^{\alpha x} \cos \beta x$
-        
         \item Решение ЛОДУ2 с постоянными коэффициентами для случая вещественных кратных корней характеристического уравнения.
 
+        \hyperlink{ldesgequalrealsolutions}{2 случай}: $\lambda_1 = \lambda_2 = \lambda \in \Real \Longrightarrow y(x) = (C_1 x + C_2)e^{\lambda x}$
 
 
         \item Решение ЛОДУ2 с постоянными коэффициентами для случая комплексных корней характеристического уравнения.
+
+        \hyperlink{ldesgcomplexsolutions}{3 случай}: $\lambda = \alpha \pm i \beta \in \mathbb{C} \Longrightarrow y(x) = C_1 e^{\alpha x} \sin \beta x + C_2 e^{\alpha x} \cos \beta x$
 
 
         \item Свойства решений ЛОДУ2: линейная независимость решений, определитель Вронского. Теоремы 1,2.
