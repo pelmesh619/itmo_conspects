@@ -25,7 +25,9 @@ for i in os.listdir(folder):
             teacher = re.search(r'\\fancyhead\[RO,RE]\{(.*)}', t).group(1)
         t = re.search(r'\\begin\{document\}(.+?)\n*\\end\{document\}', t, re.S | re.M | re.I)
 
-        text += t.group(1) + '\n\n\n'
+        text += f'    % begin {i}\n'
+
+        text += t.group(1) + '\n    % end {i}\n\n'
 
 
 text = re.sub(r'section\[.*]', 'section', text)
