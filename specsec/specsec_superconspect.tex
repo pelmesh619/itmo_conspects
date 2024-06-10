@@ -1855,6 +1855,8 @@
 
     \section{4.3. Существование и единственность решения}
 
+    \hypertarget{existenceanduniquenessofsolution}{}
+
     \Mem
     \begin{cases}
         y^{\prime} = f(x, y) \\
@@ -1862,8 +1864,8 @@
     \end{cases} \Ths Если $\exists U(M_0) \ | \
     \begin{cases}
         f(x,y) \in C_{U(M_0)} \\
-        \frac{\partial f}{\partial y}\text{ - огр. в } U(M_0)
-    \end{cases}$, то в $M_0\ \exists! y(x)$ - решение ДУ
+        \frac{\partial f}{\partial y}\text{ - огр. в } U(M_0),
+    \end{cases}$ то в $M_0\ \exists! y(x)$ - решение ДУ
 
     \vspace{5mm}
 
@@ -1890,6 +1892,8 @@
 
 
     \section{4.4. ДУ высших порядков}
+
+    \hypertarget{differentilaequationshigherdegree}{}
 
     \Nota Рассмотрим три типа интегрируемых ДУ
 
@@ -1955,6 +1959,7 @@
 
     \section{4.5. ЛДУ$_2$}
 
+    \hypertarget{lineardifferentialequationhigherdegree}{}
 
     \section{4.5.1. Определения}
 
@@ -1964,6 +1969,7 @@
 
     \Nota Если $a_i(x) = a_i \in \Real$ - ЛДУ$_n$ с постоянными коэффициентами
 
+    \hypertarget{lineardifferentialequationseconddegreewithconstants}{}
 
     \section{4.5.2. Решение ЛДУ$_2$ с постоянными коэффициентами}
 
@@ -1974,8 +1980,11 @@
     Назовем уравнение характеристическим (ХрУ) \Cat
 
     \Nota $\lambda_{1, 2}$ могут быть только
+
     1) вещественными различными;
-    2) вещественными одинаковыми ($\lmabda_1 = \lambda_2 = \lambda$ - корень 2-ой кратности);
+
+    2) вещественными одинаковыми ($\lambda_1 = \lambda_2 = \lambda$ - корень 2-ой кратности);
+
     3) $\lambda_{1,2} = \alpha \pm i \beta \in \mathbb{C}$, где $\alpha, \beta \in \Real$
 
     Запишем ЛДУ$_2$ через $\lambda_{1, 2}$:
@@ -2985,8 +2994,7 @@
 
         \hyperlink{homogeneousequation}{ОУ}: \fbox{$P(x, y)dx + Q(x, y)dy = 0$, где $P(x, y), Q(x, y)$ - однородные функции одного порядка} - однородное уравнение
 
-        Решение: $Cx = e^{\int\frac{dt}{f(t) - t}}$
-
+        Решение: $Cx = e^{\int\frac{dt}{f(t) - t}}$, где $t = \frac{y}{x}$
 
         \item Уравнение в полных дифференциалах.
 
@@ -3002,19 +3010,59 @@
         можно искать в виде $y = C(x)y_0$
 
         Решение: $y_0 = e^{-\int p(x) dx}, C(x) = \int q(x) e^{\int p(x)dx} dx$
-        
+
         $y = e^{-\int p(x) dx} \int q(x) e^{\int p(x)dx} $
 
         \item Теорема существования и единственности решения задачи Коши. Особые решения.
 
+        \hyperlink{existenceanduniquenessofsolution}{Теорема существования и единственности}: \Ths Если $\exists U(M_0) \ | \
+        \begin{cases}
+            f(x,y) \in C_{U(M_0)} \\
+            \frac{\partial f}{\partial y}\text{ - огр. в } U(M_0),
+        \end{cases}$ то в $M_0\ \exists! y(x)$ - решение ДУ
+
 
         \item Уравнения n-ого порядка, допускающие понижение порядка.
+
+        \hyperlink{differentilaequationshigherdegree}{ДУ высших порядков}:     1* Непосредственно интегрирование
+
+        $y^{(n)} = f(x)$
+
+        Решение: $y^{(n - 1)} = \int f(x) dx + C_1$
+
+        $y^{(n - 2)} = \int (\int f(x) dx + C_1) dx + C_2$
+
+        2* ДУ$_2$, не содержащие $y(x)$
+
+        $F(x, y^\prime(x), y^{\prime\prime}(x)) = 0$
+
+        Замена $y^\prime(x) = z(x)$, получаем:
+
+        $F(x, z(x), z^\prime(x)) = 0$ - ДУ$_1$
+
+        3* ДУ$_2$, не содержащие $x$
+
+        $F(y(x), y^\prime(x), y^{\prime\prime}(x)) = 0$
+
+        Замена $y^\prime(x) = z(y) \quad y^{\prime\prime}(x) = \frac{dz(y(x))}{dx} = \frac{dz}{dx} \frac{dy}{dx} = z^\prime_y y^\prime = z^\prime z$
 
 
         \item Линейные однородные дифференциальные уравнения (ЛОДУ): определения, решение ЛОДУ2 с постоянными коэффициентами для случая различных вещественных корней характеристического уравнения.
 
+        \hyperlink{lineardifferentialequationhigherdegree}{Определение}: $a_0(x) y^{(n)}(x) + a_1(x)y^{(x)} + \dots + a_{n - 1}y^\prime(x) + a^n(x)y = f(x)$, где $y = y(x)$ - неизв. функция, - это ЛДУ$_n$
 
+        \hyperlink{lineardifferentialequationseconddegreewithconstants}{Решение ЛОДУ$_2$}: $y^{\prime\prime} + p y^\prime + q y = f(x), \quad p, q \in \Real$
+
+        $\forall p, q \in \Real \exists $ уравнение: $\quad \lambda^2 + p\lambda + q = 0$ и $\lambda_{1,2} \in \mathbb{C} \ | \ \lambda_1 + \lambda_2 = -p, \lambda_1 \lambda_2 = q$ - корни
+
+        1) $\lambda_{1.2} \in \Real, \lambda_1 \neq \lambda_2 \Longrightarrow y(x) = C_1 e^{\lambda_1 x} + C^2 e^{\lambda_2 x}$
+
+        2) $\lambda_1 = \lambda_2 = \lambda \in \Real \Longrightarrow y(x) = (C_1 x + C_2)e^{\lambda x}$
+
+        3) $\lambda = \alpha \pm i \beta \in \mathbb{C} \Longrightarrow y(x) = C_1 e^{\alpha x} \sin \beta x + C_2 e^{\alpha x} \cos \beta x$
+        
         \item Решение ЛОДУ2 с постоянными коэффициентами для случая вещественных кратных корней характеристического уравнения.
+
 
 
         \item Решение ЛОДУ2 с постоянными коэффициентами для случая комплексных корней характеристического уравнения.
