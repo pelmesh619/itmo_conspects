@@ -29,7 +29,7 @@
 [**Весь курс**](conspects/specsec/specsec_superconspect.pdf)
 
 * [Лекция №1](conspects/specsec/specsec_2024_02_09.pdf)
-* Лекция №2 - [TODO](specsec/specsec_2024_02_16.tex)
+* [Лекция №2](conspects/specsec/specsec_2024_02_16.pdf)
 * Лекция №3 (был праздник)
 * [Лекция №4](conspects/specsec/specsec_2024_03_01.pdf)
 * Лекция №5 (был праздник)
