@@ -11,6 +11,8 @@
 \begin{document}
     \section{5.6. Поверхностные интегралы}
 
+    \hypertarget{surfaceintegraloffirstkind}{}
+
     \paragraph{1* Поверхностные интегралы I рода} (по участку поверхности)
 
     \underline{Задача}. Масса поверхности
@@ -29,9 +31,12 @@
 
     4) $\iint_S u(x, y, z) \Delta \sigma = \lim_{\substack{n \to \infty \\ \tau = \max \Delta \sigma_k \to 0}} \nu_n$ - поверхностный интеграл первого рода
 
+    \hypertarget{surfaceintegraloffirstkindproperties}{}
+
     Свойства: Смена обхода поверхности $S$ не меняет знака интеграла: $\iint_{S^+} u d\sigma = \iint_{S^-} u d\sigma$
 
     \mediumvspace
+
 
     \underline{Вычисление}
 
@@ -44,6 +49,8 @@
     3) $f(x, y) = \tilde{f}(t)$
 
     $\iint_L f(x, y)dl = \int_\alpha^\beta \tilde{f}(t) \sqrt{\varphi^{\prime 2}(t) + \psi^{\prime 2}(t)} |dt|$
+
+    \hypertarget{surfaceintegraloffirstkindcalculation}{}
 
     \underline{Поверхностный}
 
@@ -69,6 +76,8 @@
         d\sigma = \sqrt{1 + \frac{x^2}{x^2 + y^2} + \frac{y^2}{x^2 + y^2}} dxdy = \sqrt{2} dxdy \\
     \end{bmatrix} =
     \iint_D \sqrt{x^2 + y^2} \sqrt{2} dxdy = \sqrt{2} \int^{2\pi}_{0} d\varphi \int_{0}^{\rho} \rho \underset{|j|}{\undergroup{\rho}} d\rho = \sqrt{2} 2\pi \frac{\rho^3}{3} \Big|_0^1 = \frac{2\sqrt{2}\pi}{3}$
+
+    \hypertarget{surfaceintegralofsecondkind}{}
 
     \paragraph{2* II рода.} \\
 
@@ -113,9 +122,13 @@
 
     Тогда в $\iint_{S^{\overrightarrow{n}}} P\cos\alpha d\sigma \quad \cos\alpha d\sigma = \pm dydz$
 
+    \hypertarget{connectionbetweensurfaceintegral}{}
+
     Окончательно, поток $\Pi = \iint_{S^{\overrightarrow{n}}} \pm Pdydz \pm Qdxdz \pm Rdxdy = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma) d\sigma$ - связь интегралов I и II рода
 
     \Nota Формулу интеграла можно получить еще так: $(\overrightarrow{F}, \overrightarrow{n})d\sigma = \overrightarrow{F}\overrightarrow{n}d\sigma = \overrightarrow{F}d\overrightarrow{\sigma}$, где $d\overrightarrow{\sigma} = (\pm dydz, \pm dxdz, \pm dxdy)$
+
+    \hypertarget{surfaceintegralofsecondkindmath}{}
 
     \DefN{Математическое}
 
@@ -124,7 +137,11 @@
     $I = \lim_{\substack{n \to \infty \\ \tau = \max \Delta s_k \to 0}} \sum_{k=1}^n f(\xi_k, \eta_k, \zeta_k) \Delta s_k$ - поверхностный интеграл второго рода
     ($\Delta s_k = \Delta x\Delta y$ - любого знака, согласованного с обходом)
 
+    \hypertarget{surfaceintegralofsecondkindproperties}{}
+
     Свойства: Меняет знак при смене обхода с $\overrightarrow{n}^+$ на $\overrightarrow{n}^-$
+
+    \hypertarget{surfaceintegralofsecondkindcalculation}{}
 
     \underline{Вычисление}
 
@@ -134,9 +151,11 @@
 
     Пределы интегрирования $D_{xy} = \text{пр.}_{Oxy} S$ и т. д.
 
-    2) $dxdy \to \pm dxdy$, если обход $D_{xy}$ в направлении против часовой стрелки
+    2) $dxdy \to \pm dxdy$, если обход $D_{xy}$ в направлении против часовой стрелки ($+dxdy$, если угол между $\overrightarrow{n}$ и $Oz$ острый, иначе $-dxdy$)
 
-    3) $R(x, y, z) = \tilde{R}(x, y, z(x, y)), \dots$
+    3) $R(x, y, z) = \tilde{R}(x, y, z(x, y)), P(x, y, z) = \tilde{P}(y, z), Q(x, y, z) = \tilde{Q}(x, z)$
+
+    4) $\iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy = \iint_{D_{xy}} \pm \tilde{P}dydz \pm \tilde{Q}dxdz \pm \tilde{R}dxdy$
 
 \end{document}
 
