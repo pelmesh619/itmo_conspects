@@ -236,15 +236,32 @@
 
         \item Уравнение с разделяющимися переменными.
 
+        \hyperlink{equationwithseparablevariables}{УРП}: $m(x)N(y)dx + M(x)n(y)dy = 0$
+
+        Решение: $\int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$
 
         \item Однородное уравнение.
 
+        \hyperlink{homogeneousequation}{ОУ}: \fbox{$P(x, y)dx + Q(x, y)dy = 0$, где $P(x, y), Q(x, y)$ - однородные функции одного порядка} - однородное уравнение
+
+        Решение: $Cx = e^{\int\frac{dt}{f(t) - t}}$, где $t = \frac{y}{x}$
 
         \item Уравнение в полных дифференциалах.
 
+        \hyperlink{equationincompletedifferentials}{Уравнение в полных дифференциалах}: \fbox{$P(x, y)dx + Q(x, y)dy = 0 \quad \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$} - УПД
+
+        Решение: $\Phi(x, y) = \int^{(x,y)}_{(x_0,y_0)} Pdx + Qdy = 0$
 
         \item Линейное уравнение первого порядка. Метод Лагранжа.
 
+        \hyperlink{lineardifferentialequation}{ЛДУ}: \fbox{$y^\prime + p(x)y = q(x)$} - ЛДУ$_1$
+
+        \hyperlink{methodLagrange}{Метод Лагранжа}: Принцип: если удалось найти частное решение ДУ$_\text{однор}$ (обозначим $y_0$), то общее решение ДУ$_\text{неод}$
+        можно искать в виде $y = C(x)y_0$
+
+        Решение: $y_0 = e^{-\int p(x) dx}, C(x) = \int q(x) e^{\int p(x)dx} dx$
+
+        $y = e^{-\int p(x) dx} \int q(x) e^{\int p(x)dx} $
 
         \item Теорема существования и единственности решения задачи Коши. Особые решения.
 

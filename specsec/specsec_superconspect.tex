@@ -1637,7 +1637,11 @@
 
     Кроме этого интегрируются дифференциальные уравнения Бернулли, Лагранжа, Клеро, Рикатти и др. (см. литературу)
 
-    1* УРП
+    \mediumvspace
+
+    \hypertarget{equationwithseparablevariables}{}
+
+    \paragraph{1* УРП}\mbox{}\\
 
     \Def $m(x)N(y)dx + M(x)n(y)dy = 0$
 
@@ -1681,7 +1685,11 @@
 
     То есть $M(x) = 0$ и $N(y) = 0$ - решение
 
-    2* ОУ
+    \mediumvspace
+
+    \hypertarget{homogeneousequation}{}
+
+    \paragraph{2* ОУ}\mbox{}\\
 
     \DefN{1} Однородная функция $n$-ого порядка называется функция $f(x, y)$ такая, что
 
@@ -1745,11 +1753,15 @@
 
     $(t - 1)^2 - 2 = 0 \quad \frac{y}{x} = 1 \pm \sqrt{2} \quad y = (1 \pm \sqrt{2})x$ - асимптоты
 
-    3* Уравнение в полных дифференциалах
+    \mediumvspace
+
+    \hypertarget{equationincompletedifferentials}{}
+
+    \paragraph{3* Уравнение в полных дифференциалах}\mbox{}\\
 
     \Def \fbox{$P(x, y)dx + Q(x, y)dy = 0 \quad \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$} - УПД
 
-    \vspace{5mm}
+    \mediumvspace
 
     \underline{Решение} \Mems \Ths об интеграле НЗП $\quad \exists \Phi(x, y)\ | \ d\Phi = P(x, y)dx + Q(x, y)dy$
 
@@ -1763,11 +1775,17 @@
 
     $x^2 + 2xy - y^2 = C$
 
-    4* ЛДУ
+    \mediumvspace
+
+    \hypertarget{lineardifferentialequation}{}
+
+    \paragraph{4* ЛДУ}\mbox{}\\
 
     \Def \fbox{$y^\prime + p(x)y = q(x)$} - ЛДУ$_1$
 
     $p, q \in C_{[a, b]}$
+
+    \hypertarget{methodLagrange}{}
 
     \Nota Будем решать методом Лагранжа (метод вариации произвольной постоянной)
 
@@ -2959,15 +2977,33 @@
 
         \item Уравнение с разделяющимися переменными.
 
+        \hyperlink{equationwithseparablevariables}{УРП}: $m(x)N(y)dx + M(x)n(y)dy = 0$
+
+        Решение: $\int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$
 
         \item Однородное уравнение.
+
+        \hyperlink{homogeneousequation}{ОУ}: \fbox{$P(x, y)dx + Q(x, y)dy = 0$, где $P(x, y), Q(x, y)$ - однородные функции одного порядка} - однородное уравнение
+
+        Решение: $Cx = e^{\int\frac{dt}{f(t) - t}}$
 
 
         \item Уравнение в полных дифференциалах.
 
+        \hyperlink{equationincompletedifferentials}{Уравнение в полных дифференциалах}: \fbox{$P(x, y)dx + Q(x, y)dy = 0 \quad \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$} - УПД
+
+        Решение: $\Phi(x, y) = \int^{(x,y)}_{(x_0,y_0)} Pdx + Qdy = 0$
 
         \item Линейное уравнение первого порядка. Метод Лагранжа.
 
+        \hyperlink{lineardifferentialequation}{ЛДУ}: \fbox{$y^\prime + p(x)y = q(x)$} - ЛДУ$_1$
+
+        \hyperlink{methodLagrange}{Метод Лагранжа}: Принцип: если удалось найти частное решение ДУ$_\text{однор}$ (обозначим $y_0$), то общее решение ДУ$_\text{неод}$
+        можно искать в виде $y = C(x)y_0$
+
+        Решение: $y_0 = e^{-\int p(x) dx}, C(x) = \int q(x) e^{\int p(x)dx} dx$
+        
+        $y = e^{-\int p(x) dx} \int q(x) e^{\int p(x)dx} $
 
         \item Теорема существования и единственности решения задачи Коши. Особые решения.
 
