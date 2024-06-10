@@ -30,11 +30,13 @@
 
     \section{5.7. Связь поверхностных интегралов с другими}
 
-    \Th \hypertarget{gaussostrogradskyy}{Гаусса-Остроградского}
+    \hypertarget{theoremGaussOstrogradskyy}{}
+
+    \Th Гаусса-Остроградского
 
     $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ - кривая)
 
-    $S = \bigunion_{i = 1}^3 S_i$ - замкнута! и ограничивает тело $T$
+    $S = \bigunion_{i = 1}^3 S_i$ - замкнута! и ограничивает тело $T$ ($S_2$ - цилиндр, $S_1$ - шапочка, $S_3$ - шапочка снизу)
 
     $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ - непр. дифф., действуют в области $\Omega \supset T$
 
@@ -65,7 +67,9 @@
     \Nota С учетом связи поверхностных интегралов $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv =
     \iint_S (P\cos\alpha + Q\cos\beta + R\cos\gamma) dv$
 
-    \Th \hypertarget{stoks}{Стокса}
+    \hypertarget{theoremStokes}{}
+
+    \Th Стокса
 
     Пусть $S : z = z(x, y)$ - незамкнутая поверхность, $L$ - контур, на которую она опирается
 
@@ -115,7 +119,11 @@
 
     \section{6.1. Определения}
 
+    \hypertarget{scalarfield}{}
+
     \DefN{1} $\Omega \supset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
+
+    \hypertarget{vectorfield}{}
 
     \DefN{2} Функция $\overrightarrow{F} = (F_1(\overrightarrow{x}), \dots, F_n(\overrightarrow{x})) : \Omega \to \Real^n$ называется векторным полем
 
@@ -123,6 +131,7 @@
 
     \Nota Функции $u$ и $\overrightarrow{F}$ могут зависеть от вренмени $t$. Тогда эти поля называются нестационарными. В противном случае стационарными
 
+    \hypertarget{scalarandvectorfieldgeometric}{}
 
     \section{6.2. Геометрические характеристики полей}
 
@@ -153,6 +162,7 @@
                                         y(1) = 0 \Longrightarrow C = +1
     \end{cases} \Longleftrightarrow x^2 + y^2 = 1 $
 
+    \hypertarget{differentialcharacteristics}{}
 
     \section{6.3. Дифференциальные характеристики}
 
@@ -177,19 +187,27 @@
 
     \Nota $\triangle u = \underset{\text{часть волнового уравнения матфизики}}{\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}} = 0$ - уравнение, определяющее гармоническую функцию $u(x, y, z)$, уравнение Лапласа
 
-    \DefN{1} \hypertarget{divergencyya}{Дивергенция} поля (\textit{divergence} - расхождение)
+    \hypertarget{divergence}{}
+
+    \DefN{1} Дивергенция поля (\textit{divergence} - расхождение)
 
     $div \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \cdot \overrightarrow{F}$
 
-    \DefN{2} \hypertarget{rotor}{Вихрь (ротор)} поля
+    \hypertarget{rotor}{}
+
+    \DefN{2} Вихрь (ротор) поля
 
     $rot \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \times \overrightarrow{F}$
 
-    \DefN{3} Если $rot \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется \hypertarget{bezvihrevoepole}{безвихревым} полем
+    \hypertarget{vectorfieldtypes}{}
 
-    \DefN{4} Если $div \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется \hypertarget{solenoidalnoepole}{соленоидальным}
+    \DefN{3} Если $rot \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется безвихревым полем
+
+    \DefN{4} Если $div \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется соленоидальным
 
     \Nota Безвихревое поле имеет незамкнутые векторные линии, а вихревое - замкнутые
+
+    \hypertarget{irrotationalfieldproperty}{}
 
     \ThN{1} Свойство безвихревого поля
 
@@ -227,6 +245,8 @@
 
     Таким образом, доказано, что безвихревое поле потенциально
 
+    \hypertarget{solenoidalfieldproperty}{}
+
     \ThN{2} Свойство соленоидального поля
 
     $div (rot \overrightarrow{F}) = 0$
@@ -237,6 +257,8 @@
 
     $\Box$
 
+    \hypertarget{integralcharacteristics}{}
+
     \section{6.4. Интегральные характеристики. Теоремы теории поля}
 
     \Mems 1) Поток поля $\overrightarrow{F}: \Pi = \iint_S \overrightarrow{F}d\overrightarrow{\sigma}$
@@ -245,7 +267,9 @@
 
     \Nota Запишем \Ths на векторном языке
 
-    1* \hypertarget{gaussostrogradskyyvector}{\textbf{Гаусса-Остроградского}}
+    \hypertarget{theoremGaussOstrogradskyyinvectorform}{}
+
+    1* \textbf{Гаусса-Остроградского}
 
     $\iint_S Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
 
@@ -258,7 +282,9 @@
 
     \mediumvspace
 
-    2* \hypertarget{stoksvector}{\textbf{Стокса}}
+    \hypertarget{theoremStokesinvectorform}{}
+
+    2* \textbf{Стокса}
 
     $Pdx + Qdy + Rdz = \overrightarrow{F}d\overrightarrow{l}$
 
@@ -266,7 +292,9 @@
 
     \mediumvspace
 
-    3* \hypertarget{potentialvector}{\textbf{\Ths о потенциале}}
+    \hypertarget{theoremaboutpotentialinvectorform}{}
+
+    3* \textbf{\Ths о потенциале}
 
     $\forall L \ \oint_L \overrightarrow{F}d\overrightarrow{l} = 0 \Longleftrightarrow rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown} = \overrightarrow{F}$
 
@@ -280,6 +308,8 @@
     $\oint_L xdx + xydy = \int_{L_1} + \int_{L_2} + \int_{L_3} = \int_0^1 (x + x^2) dx + \int_{-1}^1 y dy - \int_0^1 (x + x^2) dx = \int_{-1}^1 y dy = 0$
 
     \section{6.5. Механический смысл}
+
+    \hypertarget{divergencemechanicalmeaning}{}
 
     1* Дивергенция
 
@@ -298,6 +328,8 @@
     \Nota Утверждение $rot (\overrightarrow{grad} u) = 0$ - поле потенциалов свободно от вихрей
 
     \mediumvspace
+
+    \hypertarget{rotormechanicalmeaning}{}
 
     2* Ротор
 
