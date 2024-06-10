@@ -2835,6 +2835,527 @@
 
 
 
+    \clearpage
+
+    \section{X. Программа экзамена в 2023/2024}
+
+    \begin{center}
+        \textbf{Определенный интеграл функции одной переменной.}
+    \end{center}
+
+    \begin{enumerate}
+        \item Определенный интеграл. Определение, свойства линейности и аддитивности.
+
+        \hyperlink{integraldefinition}{Определение}: $\lim_{\substack{n\to\infty \\ \tau\to0}} \sigma_n = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum^n_{i=1} \Delta x_i f(\xi_i) \stackrel{\text{def}}{=} \int_a^b f(x)dx$
+
+        \hyperlink{integralproperties}{Свойства}:
+
+        1) Линейность: $\lambda \int^b_a f(x)dx + \mu \int^b_a g(x)dx = \int^b_a (\lambda f(x) + \mu g(x)) dx \quad (\lambda, \mu \in \Real)$,
+
+        2) Аддитивность $\int^b_a f(x)dx + \int^c_b f(x)dx = \int^c_a f(x)dx$
+
+        \item Геометрический смысл определенного интеграла. Оценка определенного интеграла. Теорема о среднем.
+
+        \hyperlink{integralgeommeaning}{Геометрический смысл}: значение интеграла - площадь фигуры под графиком
+
+        \hyperlink{integralevaluation}{Оценка}: $m (b-a) \leq \int^b_a f(x)dx \leq M(b - a)$, где $m$ и $M$ - минимум и максимум функций
+
+        \hyperlink{theoremlagrangeaboutaverage}{Теорема Лагранжа о среднем}:
+
+        $f(x) \in C^\prime_{[a,b]} \Longrightarrow \exists \xi \in (a, b) \ f^\prime(\xi) = \frac{f(b) - f(a)}{b - a}$
+
+        Тогда найдется такая средняя точка, что
+
+        $f(x) \in C_{[a,b]} \Longrightarrow \exists \xi \in (a, b) \ f(\xi)(b - a) = \int^b_a f(x)dx$
+
+
+        \item Интеграл с переменным верхним пределом. Теорема Барроу.
+
+        \hyperlink{integralwithvariableupperlimit}{Интеграл с переменным верхним пределом}: $\Phi(x) = \int^x_a f(t) dt$
+
+        \hyperlink{theorembarrow}{Теорема Барроу}: $f(x) : [a;+\infty) \to \Real \quad f(x) \in C_{[a;+\infty+}$
+
+        Тогда $\Phi(x) = \int^x_a f(t) dt$ - первообразная для $f(x)$ - $\Phi(x) = F(x)$
+
+
+        \item Вычисление определенного интеграла. Формула Ньютона-Лейбница.
+
+        \hyperlink{formulanewtonleibniz}{Формула Ньютона-Лейбница}: $\int^b_a f(x)dx = F(x) \Big|^b_a = F(b) - F(a)$, где $f(x) \in C_{[a;b]}, F(x)$ - какая-либо первообразная $f(x)$
+
+        \item Замена переменной в определенном интеграле. Интегрирование по частям.
+
+        \hyperlink{integralsubstitution}{Замена переменной}: $f(x) \in C_{[a;b]} \quad x = \varphi(t) \in C^\prime_{[\alpha;\beta]}, \varphi(\alpha) = a, \varphi(\beta) = b$
+
+        Тогда $\int^b_a f(x)dx = \int^\beta_\alpha f(\varphi(t)) \varphi^\prime(t) dt$
+
+        \hyperlink{integralbyparts}{По частям}: $u, v \in C^\prime_{[a;b]} \quad uv \Big|_a^b = u(b)v(b) - u(a)v(a)$
+
+        Тогда: $\int^b_a udv = uv \Big|_a^b - \int^b_a vdu$
+
+
+        \item Приложения интеграла: вычисление площадей в декартовых координатах; площади криволинейного сектора в полярных координатах.
+
+        \hyperlink{integralapplications}{Приложения определенного интеграла}
+
+        \hyperlink{integralareadpsk}{Вычисление площади в ДПСК}: $\int_a^b f(x) dx$
+
+        \hyperlink{integralareapsk}{Вычисление площади сектора в ПСК}: $\frac{1}{2} \int_\alpha^\beta \rho^2(\varphi) d\varphi$
+
+
+        \item Вычисление длины дуги кривой (вывод формулы).
+
+        \hyperlink{lengthofarc}{Вычисление длины кривой дуги}: $\int_a^b \sqrt{1 + (y^\prime(x))^2} dx$
+
+        \item Вычисление объемов тел с известными площадями сечений и тел вращения.
+
+        \hyperlink{volumeofbodieswithknownarea}{Вычисление объемов тел}: $\int^b_a S(x)dx$
+
+        \hyperlink{volumeofbodyofrevolution}{Вычисление объема тела вращения}: $\int_a^b \pi r^2(x) dx$
+
+
+        \item Несобственные интегралы 1-го рода и 2-го рода. Определение и свойства. Вычисление.
+
+        \hyperlink{improperintegralfirstkind}{Несобственный интеграл 1-го рода} - $\int^{+\infty}_{a} f(x) dx = \lim_{b \to +\infty} \int^{b}_{a} f(x) dx$
+
+        \hyperlink{improperintegralsecondkind}{Несобственный интеграл 2-го рода} - $\int^{b}_{a} f(x) dx = \lim_{\beta \to b} \int^{\beta}_{a} f(x) dx$
+
+        \hyperlink{improperintegralproperties}{Свойства} аналогичны собственному интегралу
+
+        \item Признаки сходимости несобственных интегралов: первый и второй признаки сравнения (в неравенствах и предельный).
+
+        \hyperlink{improperintegralconvergence}{Сходимость несобственных интегралов}
+
+        \hyperlink{improperintegralconvergenceininequalities}{Признак сходимости в неравенствах}: $f(x), g(x) : [a;+\infty) \to \Real^+$, непрерывны на $[a;+\infty)$ и $\forall x \in [a;+\infty) f(x) \leq g(x)$
+
+        Тогда, если $\displaystyle \int^{+\infty}_{a} g(x) dx = I \in \Real$, то $\displaystyle \int^{+\infty}_{a} f(x) dx$ сходится,
+        причем $\displaystyle0 \leq \int^{+\infty}_{a} f(x) dx \leq \int^{+\infty}_{a} g(x) dx$
+
+        \hyperlink{improperintegralconvergenceinlimits}{Признак сходимости в пределах}: $f(x), g(x) \in C_{[a;+\infty)}$, $f(x), g(x) > 0$
+
+        $\displaystyle \exists \lim_{x\to+\infty} \frac{f(x)}{g(x)} = k \in \Real \setminus \Set{0}$.
+        Тогда $\displaystyle I = \int^{+\infty}_{a} g(x)dx$ и $\displaystyle J = \int^{+\infty}_{a} f(x)dx$ одновременно сходятся или расходятся
+
+        \item Признак сходимости несобственных интегралов: теорема об абсолютной сходимости. Понятие условной сходимости.
+
+        \hyperlink{improperintegralabsoluteconvergence}{Признак абсолютной сходимости}: $\displaystyle \int^{+\infty}_{a} |f(x)| dx \in \Real \Longrightarrow \int^{+\infty}_{a} f(x) dx \in \Real$
+
+        \hyperlink{improperintegralconditionalconvergence}{Условная сходимость}: если $\displaystyle \int^{+\infty}_{a} f(x) dx$ сходится, но $\displaystyle \int^{+\infty}_{a} |f(x)| dx$ расходится, то $I$ называют условно сходящимся
+
+
+    \end{enumerate}
+
+    \begin{center}
+        \textbf{Функции нескольких переменных.}
+    \end{center}
+
+    \begin{enumerate}
+        \item Определение функции двух переменных. Предел и непрерывность функции.
+
+        \hyperlink{functionoftwovariables}{Определение}: $\forall M(x, y) \exists! z \in \Real : z = f(x, y) \Longleftrightarrow z = f(x, y)$ - функция двух переменных
+
+        \hyperlink{limitoffunctionoftwovariables}{Определение предела}: $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ | \ \forall M \in \stackrel{o}{U}_\delta(M_0) \ \ |z(x, y) - L| < \varepsilon$
+
+        \hyperlink{continuityoffunctionoftwovariables}{Непрерывность}: $z = f(x, y)$ называется непрерывной в точке $M(x_0, y_0)$, если $z = f(x_0, y_0) = \lim_{M \to M_0} z(x, y)$
+
+        \item Частные производные функции двух переменных.
+
+        \hyperlink{partialderivativeoffunctionoftwovariables}{Частная производная} по $y$ $\displaystyle \frac{\partial z}{\partial y} \stackrel{def}{=} \lim_{\Delta y \to 0} \frac{\Delta_y z}{\Delta y}$,
+        где $\Delta_y z = z(x, y + \Delta y) - z(x, y)$
+
+        \item Производная сложной функции. Полная производная.
+
+        \hyperlink{derivativeofcomplexfunctionoftwovariables}{Производная сложной функции}: $\displaystyle z = z(u, v), \ u(x, y), v(x, y)$ непрерывно дифференцируемы по $\displaystyle x, y$
+
+        Тогда $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x}$
+
+        \hyperlink{completedifferentialoffunctionoftwovariables}{Полная производная}: пусть $\displaystyle z = z(x, u(x), v(x))$,
+        тогда $\displaystyle \frac{dz}{dx} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial x} + \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x} =
+        \frac{\partial z}{\partial x} + \frac{\partial z}{\partial u} \cdot \frac{du}{dx} + \frac{\partial z}{\partial v} \cdot \frac{dv}{dx}$
+
+        \item Полный дифференциал функции двух переменных. Инвариантность формы.
+
+        \hyperlink{completedifferentialoffunctionoftwovariables}{Полный дифференциал}: $\displaystyle dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$ - сумма частных дифференциалов
+
+        \hyperlink{invariantofdifferentialoffunctionoftwovariables}{Инвариантность формы}: $\displaystyle z = z(u, v), \quad u = u(x, y), \quad v = v(x, y)$ - дифференциалы
+
+        Тогда $\displaystyle dz = \frac{\partial z}{\partial u}du + \frac{\partial z}{\partial v} dv = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$
+
+        \item Вторые производные функции двух переменных. Равенство смешанных производных.
+
+        \hyperlink{secondderivativeoffunctionoftwovariables}{Вторые производные}:
+
+        $\displaystyle \frac{\partial^2 z}{\partial x^2} \stackrel{def}{=} \frac{\partial}{\partial x} \frac{\partial z}{\partial x}$ - чистая производная
+
+        $\displaystyle \frac{\partial^2 z}{\partial x \partial y} = \frac{\partial}{\partial y} \frac{\partial z}{\partial x}$ - смешанные производные
+
+        \hyperlink{equalityofsecondderivativesoffunctionoftwovariables}{Равенство смешанных производных}: $\displaystyle z = z(x, y)$, функции $\displaystyle z(x, y), z^\prime_x, z^\prime_y, z^{\prime\prime}_{xy}, z^{\prime\prime}_{yx}$ определены и непрерывны в $\displaystyle \stackrel{o}{U}(M(x, y))$
+
+        Тогда $\displaystyle z^{\prime\prime}_{xy} = z^{\prime\prime}_{yx}$ $\left(\frac{\partial^2 z}{\partial x \partial y} = \frac{\partial^2 z}{\partial y \partial x}\right)$
+
+        \item Второй дифференциал функции двух переменных. Неинвариантность формы.
+
+        \hyperlink{seconddifferentialoffunctionoftwovariables}{Второй дифференциал}: $\displaystyle d^2 z \stackrel{def}{=} d(dz) = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z = \frac{\partial^2 z}{\partial x^2} + 2 \frac{\partial^2 z}{\partial x \partial y} + \frac{\partial^2 z}{\partial y^2}$
+
+        \hyperlink{noninvariantofseconddifferentialoffunctionoftwovariables}{Неинвариантность формы}
+
+        \item Формула Тейлора.
+
+        \hyperlink{formulataylor}{Формула Тейлора}: $\displaystyle z(M = \stackrel{o}{U}(M_0)) = z(M_0) + \frac{dz(M_0)}{1!} + \dots + \frac{d^n z(M_0)}{n!} + o((\Delta \rho)^n)$,
+        где $\Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$
+
+        \item Производная по направлению, градиент: определения, свойства.
+
+        \hyperlink{derivativeoffunctionindirection}{Производная по направлению} - $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$,
+
+        где $\alpha, \beta, \gamma$ - направления $\overrightarrow{s}$
+
+        \hyperlink{gradientdefinition}{Градиент}: $\overrightarrow{\triangledown} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ - условный вектор
+
+        $\overrightarrow{grad} \ u \stackrel{def}{=} \overrightarrow{\triangledown} u$ - градиент функции $u(x, y, z)$
+
+        \hyperlink{gradientproperties}{Свойства градиентов}:
+
+        1) $\frac{\partial u}{\partial s} = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
+
+        2) $\overrightarrow{\triangledown} u$ - направление наибольшего значения $\frac{\partial u}{\partial s}$
+
+        3) $\overrightarrow{s} \perp \overrightarrow{\triangledown} u \Longrightarrow \frac{\partial u}{\partial s} = 0$
+
+        4) $u = u(x, y), u = c$ - линии уровня $l$. Тогда $\overrightarrow{\triangledown} u \perp l$
+
+
+        \item Касательная плоскость и нормаль к поверхности: определения, вывод уравнений.
+
+        \hyperlink{tangentandnormaltosurface}{Касательная плоскость и нормаль к поверхности}
+
+        \hyperlink{tangenttosurface}{Касательная к поверхности}: Прямая $\tau$ называется касательной прямой к поверхности $\pi$ в точке $P(x, y, z)$,
+        если эта прямая касается какой-либо кривой, лежащей на $\pi$ и проходящей через $P$
+
+        \hyperlink{tangentplanetosurface}{Касательная плоскость}: Плоскость $\kappa$ (содержащая все касательные прямые $\tau$ к $\pi$ в точке $M_0$) называется касательной плоскостью к $\pi$ в $M_0$. Плоскость $\kappa$ задается как $z - z_0 = \frac{\partial z}{\partial x}(x - x_0) + \frac{\partial z}{\partial y} (y - y_0)$
+
+        \hyperlink{normaltosurface}{Нормаль к поверхности}: Прямая в направлении $\overrightarrow{N}$, перпендикулярном касательной плоскости, через точку $M_0$ называется нормалью к $\pi$ в $M_0$
+
+        Уравнение нормали $n$: $\frac{x - x_0}{-\frac{\partial z}{\partial x}} = \frac{y - y_0}{-\frac{\partial z}{\partial y}} = \frac{z - z_0}{1}$
+
+
+        \item Экстремумы функции двух переменных. Необходимые и достаточные условия.
+
+        \hyperlink{extremumsoffunctions}{Экстремумы функции двух переменных}.
+        Экстремум - такая точка $M_0$, что $\forall M \in U_\delta(M_0) \ z_0 \leq z(M)$ или $z_0 \geq z(M)$
+
+        \hyperlink{extremumnecessarycondition}{Необходимое условие}: $z = z(x, y) : \Real^2 \rightarrow \Real$; $\quad\quad M_0$ - точка гладкого экстремума.
+
+        Тогда $\begin{cases}\frac{\partial z}{\partial x} |_{M_0} = 0 \\ \frac{\partial z}{\partial y} |_{M_0} = 0\end{cases}$
+
+        \hyperlink{extremumsufficientcondition}{Достаточное условие}: Пусть $z = z(x, y)$ непрерывна в окрестности $M_0$ (критическая точка $\frac{\partial z}{\partial x} |_{M_0} = 0, \frac{\partial z}{\partial y} |_{M_0} = 0$)
+        вместе со своими первыми и вторыми производными (можно потребовать трижды дифференцируемость)
+
+        Тогда, если $\frac{\partial^2 z}{\partial x^2} \stackrel{\text{обозн}}{=} A, \frac{\partial^2 z}{\partial x \partial y} \stackrel{\text{обозн}}{=} B, \frac{\partial^2 z}{\partial y^2} \stackrel{\text{обозн}}{=} C$, то
+
+        \begin{enumerate}
+            \item $AC - B^2 > 0, A > 0 \Longrightarrow M_0$ - точка минимума
+            \item $AC - B^2 > 0, A < 0 \Longrightarrow M_0$ - точка максимума
+            \item $AC - B^2 < 0$ в точке $M_0$ нет экстремума
+            \item $AC - B^2 = 0\Longrightarrow$ нельзя утверждать наличие или отсутствие экстремума в точке (требуются дополнительные исследования)
+        \end{enumerate}
+
+    \end{enumerate}
+
+    \begin{center}
+        \textbf{Интегрирование функции нескольких переменных.}
+    \end{center}
+
+    \begin{enumerate}
+        \item Двойной интеграл. Определение и свойства. Вычисление двойного интеграла. Кратный интеграл.
+
+        \hyperlink{doubleintegral}{Двойной интеграл}: Если $\exists \lim v_n \in \Real$, не зависящий от типа дробления и т.д. при $n \rightarrow \infty$ и
+        $\tau = \max (\Delta x_i, \Delta y_i) \to 0$, то $\lim_{\substack{n\to\infty \\ \tau \to 0}} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
+
+        \hyperlink{doubleintegralcalculation}{Вычисление}: $\iint_D z(x, y) dxdy = \int_a^b \int_{y_1}^{y_2} z(x, y) dydx = \int_\alpha^\beta \int_{x_1}^{x_2} z(x, y) dxdy$
+
+        \hyperlink{multipleintegral}{Кратный интеграл}
+
+        \item Определение и вычисление тройного интеграла.
+
+        \hyperlink{tripleintegral}{Тройной интеграл}: $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dxdydz$
+
+        Геометрический смысл. Только при $u = 1$ интеграл $\iiint_T dxdydz = V_T$ равен объему
+
+        Физический смысл. Пусть $u(x, y, z)$ - плотность в каждой точке $T$. Тогда $\iiint_T u(x, y, z) dxdydz = m_T$ - масса
+
+        \hyperlink{tripleintegralcalculation}{Вычисление}: $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
+
+
+        \item Замена переменных в двойном и тройном интегралах. Якобиан.
+
+        \hyperlink{substitutionindoubleintegral}{Замена переменных в двойном и тройном интегралах}
+
+        \begin{enumerate}
+            \item Дробление $D^\prime$ в распрямленной $Ouv$
+            \item Выбор средней точки, поиск значения $f(\xi_i, \eta_i)$
+
+            Значение величины на элементе $f(\xi_i, \eta_i) |J| du dv$
+            \item Интегральная сумма $\sigma_n = \Sigma f(\xi_i, \eta_i) |J| du dv$
+            \item В пределе интеграл $\iint_D f(x, y) dx dy = \iint_{D^\prime} f(u, v) |J| du dv$
+        \end{enumerate}
+
+        \hyperlink{determinantJaсobi}{Определитель}
+        $J = \begin{vmatrix}
+             \frac{\partial x_1}{\partial \xi_1} & \dots  & \frac{\partial x_1}{\partial \xi_n} \\
+             \vdots                              & \ddots & \vdots                              \\
+             \frac{\partial x_n}{\partial \xi_1} & \dots  & \frac{\partial x_n}{\partial \xi_n} \\
+        \end{vmatrix}$, где $\begin{cases}
+             x_1 = f_1(\xi_1, \dots, \xi_n) \\
+             \dots \\
+             x_n = f_n(\xi_1, \dots, \xi_n) \\
+        \end{cases}$ \begin{tabular}{r} - преобразование координат \\ $Ox_i \to O\xi_i (f_k \in C^1_D)$ \end{tabular}
+
+        называется определителем Якоби или якобиан
+
+        \begin{enumerate}
+            \item Якобиан в ПСК: $J = \begin{vmatrix}\cos\varphi & -\rho\sin\varphi \\ \sin\varphi & \rho\cos\varphi\end{vmatrix} =
+            \rho \begin{vmatrix}\cos\varphi & -\sin\varphi \\ \sin\varphi & \cos\varphi\end{vmatrix} = \rho$
+
+            \item в ЦСК: $\quad \begin{cases}
+                                  x = \rho\cos\varphi \\ y = \rho\sin\varphi \\ z = z
+            \end{cases} \quad J = \begin{vmatrix}\cos\varphi & -\rho\sin\varphi & 0 \\ \sin\varphi & \rho\cos\varphi & 0 \\ 0 & 0 & 1\end{vmatrix} = \rho$
+        \end{enumerate}
+
+        \item Криволинейный интеграл 1-го рода: определение, свойства, вычисление, геометрический и физический смысл.
+
+        \hyperlink{curvilinearintegraloffirstkind}{Криволинейный интеграл 1-го рода}: Дана скалярная функция $f(x, y)$ и кривая $l$, тогда суммарная величина функции на кривой равна $\int_l f(x, y) dl$
+
+        Физический смысл: пусть $f(x, y)$ - плотность, кривая - неоднородный кривой стержень. Тогда интеграл - масса стержня
+
+        \hyperlink{curvilinearintegraloffirstkindproperties}{Свойства}:
+
+        Свойства, не зависящие от прохода дуги, аналогичны свойствам определенного интеграла
+
+        Направление обхода: $\int_{AB} f(x, y)dl = \int_{BA} f(x, y)dl$
+
+        \hyperlink{curvilinearintegraloffirstkindcalculation}{Вычисление}:
+
+        1) Параметризация $\begin{cases}
+            x = \varphi(t) \\
+            y = \psi(t)
+        \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
+            A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
+            B(x_B, y_B) = (\varphi(T), \psi(T))
+        \end{matrix}$
+
+        2) $\int_{L} f(x, y) dl = \left[dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|\right] = $
+        $\int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
+
+        \item Криволинейный интеграл 2-го рода как работа силы вдоль пути. Определение, вычисление и свойства. Формула связи криволинейных интегралов 1-го и 2-го рода.
+
+        \hyperlink{curvilinearintegralofsecondkind}{Криволинейный интеграл 2-го рода}:
+        Дана векторная функция $\overrightarrow{F} = (P, Q)$ и кривая $l$, тогда суммарная величина скалярных произведений функции и координат на кривой равна $\int_{l} Pdx + Qdy$
+
+        Физический смысл: работа сила $\overrightarrow{F} = (P, Q)$ над точкой вдоль пути, обозначенной кривой
+
+        \hyperlink{curvilinearintegraloffirstkindproperties}{Свойства}:
+
+        Свойства, не зависящие от прохода дуги, аналогичны свойствам определенного интеграла
+
+        Направление обхода: $\int_{AB}Pdx + Qdy = -\int_{BA}Pdx + Qdy$
+
+        \hyperlink{curvilinearintegraloffirstkindcalculation}{Вычисление}:
+
+        1) Параметризация $\begin{cases}
+            x = \varphi(t) \\
+            y = \psi(t)
+        \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
+            A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
+            B(x_B, y_B) = (\varphi(T), \psi(T))
+        \end{matrix}$
+
+        2) $\int_{L = \overset{\smile}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = $
+        $\int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
+
+
+        \hyperlink{connectionbetweencurvilinearintegrals}{Связь между интегралами}: $\int_L Pdx + Qdy = \int_L (P, Q)(dx, dy) = \int_L (P, Q) (\cos\alpha, \cos\beta) \underset{\approx dl}{\undergroup{ds}} = \int_L (P\cos\alpha + Q\cos\beta)dl$
+
+        \item Теорема (формула) Грина.
+
+        \hyperlink{formulaGreen}{Формула Грина}: $D \subset R^2$ - прав. $\uparrow Ox, \uparrow Oy$, $K$ - гладкая замкнутая кривая (контур), которая ограничивает $D$
+
+        В области $D$ действует $\overrightarrow{F} = (P(x, y), Q(x, y))$ - непрерывные дифференциалы
+
+        Тогда $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = \oint_{K^+} Pdx + Qdy$
+
+        \item Интегралы, не зависящие от пути интегрирования. Теорема о независимости интеграла от пути.
+
+        \hyperlink{pathindependentintegrals}{Интеграл, не зависящий от пути (НЗП)}: $\int_{AB}Pdx + Qdy$ называется интегралом НЗП, если $\forall M, N \in D \quad \int_{AMB}Pdx + Qdy = \int_{ANB}Pdx + Qdy$
+
+        \hyperlink{theorempathindependentintegrals}{Теорема об интеграле НЗП}:
+
+        \begin{enumerate}[label=\Roman*.]
+
+        \item $\int_{AB} Pdx + Qdy$ - инт. НЗП
+
+        \item $\oint_K Pdx + Qdy = 0 \quad \forall K \subset D$
+
+        \item $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
+
+        \item $\exists \Phi(x, y) \ | \ d\Phi = P(x, y)dx + Q(x, y)dy$ в обл. $D$
+
+        Причем $\Phi(x, y) = \int_{(x_0,y_0)}^{(x_1,y_1)}Pdx+Qdy$, где $(x_0, y_0), (x_1,y_1) \in D$
+
+        \end{enumerate}
+
+        Тогда $I \Longleftrightarrow II \Longleftrightarrow III \Longleftrightarrow IV$
+
+        \item Следствие теоремы о независимости от пути (формула Ньютона-Лейбница).
+
+        \hyperlink{theoremNewtonLeibnizforpathindependantintegral}{Формула Ньютона-Лейбница}:
+        Выполнены условия th об интеграле НЗП
+
+        Тогда $\int_A^B Pdx + Qdy = \Phi(B) - \Phi(A)$
+
+        \item Поверхностный интеграл 1-го рода: определение, свойства, вычисление, геометрический и физический смысл.
+
+        \hyperlink{surfaceintegraloffirstkind}{Поверхностный интеграл 1-го рода}:
+        $\iint_S u(x, y, z) \Delta \sigma = \lim_{\substack{n \to \infty \\ \tau = \max \Delta \sigma_k \to 0}} \sum_{k = 1}^{n} u(\xi_k, \eta_k, \zeta_k) \Delta \sigma_k$ - поверхностный интеграл первого рода
+
+        \hyperlink{surfaceintegraloffirstkindproperties}{Свойства}: Смена обхода поверхности $S$ не меняет знака интеграла: $\iint_{S^+} u d\sigma = \iint_{S^-} u d\sigma$
+
+        \hyperlink{surfaceintegraloffirstkindcalculation}{Вычисление}: $\iint_S u(x, y, z) d\sigma$
+
+        1) Параметризация $S$: самая частая - $z = z(x, y), (x, y) \in D$ - пределы интегрирования
+
+        2) $d\sigma = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} dxdy$,
+
+        3) $u(x, y, z) = \tilde{u}(x, y, z(x, y)) = \tilde{u}(x, y)$
+
+        $\iint_S u(x, y, z) d\sigma = \iint_{D^+} \tilde{u}(x, y) \sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}} dxdy$
+
+
+        \item Поверхностный интеграл 2-го рода как поток жидкости через поверхность. Связь между поверхностными интегралами 1-го и 2-го рода.
+
+        \hyperlink{surfaceintegralofsecondkind}{Поверхностный интеграл 2-го рода} - поток жидкости через площадку, направленную по вектору $\overrightarrow{n}$
+
+        $\Pi = \iint_{S^{\overrightarrow{n}}} d\Pi = \iint_{S^{\overrightarrow{n}}} F_n d\sigma = \iint_{S^{\overrightarrow{n}}} (\overrightarrow{F}, \overrightarrow{n})d\sigma = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma)d\sigma$
+
+        \hyperlink{connectionbetweensurfaceintegral}{Связь}: поток $\Pi = \iint_{S^{\overrightarrow{n}}} \pm Pdydz \pm Qdxdz \pm Rdxdy = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma) d\sigma$ - связь интегралов I и II рода
+
+        \item Поверхностный интеграл 2-го рода: математическое определение, вычисление, свойства.
+
+        \hyperlink{surfaceintegralofsecondkindmath}{Определение}: $\iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy = \lim_{\substack{n \to \infty \\ \tau = \max \Delta s_k \to 0}} \sum_{k=1}^n f(\xi_k, \eta_k, \zeta_k) \Delta s_k$ - поверхностный интеграл второго рода
+
+        \hyperlink{surfaceintegralofsecondkindproperties}{Свойства}: Меняет знак при смене обхода с $\overrightarrow{n}^+$ на $\overrightarrow{n}^-$
+
+        \hyperlink{surfaceintegralofsecondkindcalculation}{Вычисление}:
+
+        1) Параметризация $S$ \quad для $\iint Rdxdy \quad z = z(x, y)$, для $\iint Qdxdz \quad y = y(x, z)$,
+
+        для $\iint Pdydz \quad x = x(y, z)$
+
+        Пределы интегрирования $D_{xy} = \text{пр.}_{Oxy} S$ и т. д.
+
+        2) $dxdy \to \pm dxdy$, если обход $D_{xy}$ в направлении против часовой стрелки ($+dxdy$, если угол между $\overrightarrow{n}$ и $Oz$ острый, иначе $-dxdy$)
+
+        3) $R(x, y, z) = \tilde{R}(x, y, z(x, y)), P(x, y, z) = \tilde{P}(y, z), Q(x, y, z) = \tilde{Q}(x, z)$
+
+        4) $\iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy = \iint_{D_{xy}} \pm \tilde{P}dydz \pm \tilde{Q}dxdz \pm \tilde{R}dxdy$
+
+        \item Теорема Гаусса-Остроградского.
+
+        \hyperlink{theoremGaussOstrogradskyy}{Теорема Гаусса-Остроградского}:
+        $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ - кривая)
+
+        $S = \bigunion_{i = 1}^3 S_i$ - замкнута! и ограничивает тело $T$ ($S_2$ - цилиндр, $S_1$ - шапочка, $S_3$ - шапочка снизу)
+
+        $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ - непр. дифф., действуют в области $\Omega \supset T$
+
+        Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
+
+
+        \item Теорема Стокса.
+
+        \hyperlink{theoremStokes}{Теорема Стокса}: Пусть $S : z = z(x, y)$ - незамкнутая поверхность, $L$ - контур, на которую она опирается
+
+        $\text{пр}_{Oxy} L = K_{xy}, \quad \text{пр}_{Oxy} S = D_{xy}$
+
+        В области $\Omega \supset S$ действуют функции $P, Q, R$ - непр. дифф.
+
+        Тогда $\oint_{L^+} Pdx + Qdy + Rdz = \iint_{S^+} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha +
+        \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\alpha + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma$
+
+
+        \item Скалярное и векторное поля: определения, геометрические характеристики. Дифференциальные и интегральные характеристики полей (определения).
+
+        \hyperlink{scalarfield}{Скалярное поле}: $\Omega \supset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
+
+        \hyperlink{vectorfield}{Векторное поле}: Функция $\overrightarrow{F} = (F_1(\overrightarrow{x}), \dots, F_n(\overrightarrow{x})) : \Omega \to \Real^n$ называется векторным полем
+
+        \hyperlink{scalarandvectorfieldgeometric}{Геометрические характеристики}:
+
+        $u = u(x, y, z)$: $l$ - линии уровня $u = const$
+
+        $\overrightarrow{F} = (P, Q, R)$: $w$ - векторная линия, в каждой точке $w$ вектор $\overrightarrow{F}$ - касательная к $w$
+
+        \underline{Векторная трубка} - совокупность непересекающихся векторных линий
+
+        \hyperlink{differentialcharacteristics}{Дифференциальные характеристики}:
+
+        \hyperlink{divergence}{Дивергенция} $div \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \cdot \overrightarrow{F}$
+
+        \hyperlink{rotor}{Ротор} $rot \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \times \overrightarrow{F}$
+
+        \hyperlink{integralcharacteristics}{Интегральные характеристики}:
+
+        1) Поток поля $\overrightarrow{F}: \Pi = \iint_S \overrightarrow{F}d\overrightarrow{\sigma}$
+
+        2) Циркуляция поля $\overrightarrow{F}: \Gamma = \oint_L Pdx + Qdy + Rdz$
+
+        \item Виды векторных полей и их свойства (теоремы о поле градиента и поле вихря).
+
+        \hyperlink{vectorfieldtypes}{Безвихревое поле}: $rot \overrightarrow{F} = 0$
+
+        \hyperlink{irrotationalfieldproperty}{Свойство безвихревого поля}: $rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown}u = \overrightarrow{F}$
+
+        \hyperlink{vectorfieldtypes}{Соленоидальное поле}: $div \overrightarrow{F} = 0$
+
+        \hyperlink{solenoidalfieldproperty}{Свойство соленоидального поля}: $div (rot \overrightarrow{F}) = 0$
+
+        Смысл утверждения $div (rot \overrightarrow F) = 0$ - поле вихря свободно от источников
+
+        Утверждение $rot (\overrightarrow{grad}\ u) = 0$ - поле потенциалов свободно от вихрей
+
+
+        \item Механический смысл потока и дивергенции.
+
+        \hyperlink{divergencemechanicalmeaning}{Механический смысл}:
+
+        $div \overrightarrow{F} \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ - мощность точечного источника
+
+        Поток $\Pi$ - кол-во жидкости через площадку за единицу времени
+
+
+        \item Механический смысл вихря и циркуляции.
+
+        \hyperlink{rotormechanicalmeaning}{Механический смысл}:
+
+        $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ - циркуляция по б. м. контуру (\hyperlink{rotormechanicalmeaning2}{удвоенная угловая скорость} вращающегося тела)
+
+        Циркуляция $\Gamma$ - максимальная мощность вращения водяной мельницы
+
+
+        \item Векторная запись теорем теории поля и их механический смысл.
+
+        \hyperlink{gaussostrogradskyyvector}{Теорема Гаусса-Остроградского в векторной форме}: $\iint_S \overrightarrow{F} d\overrightarrow{\sigma} = \iiint_T div \overrightarrow{F}$
+
+        \hyperlink{theoremGaussOstrogradskyyinvectorform}{Теорема Стокса в векторной форме}: $Pdx + Qdy + Rdz = \overrightarrow{F}d\overrightarrow{l}$
+
+        $\oint_L \overrightarrow{F}d\overrightarrow{l} = \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma}$
+
+        \hyperlink{theoremaboutpotentialinvectorform}{Теорема о потенциале}: $\forall L \ \oint_L \overrightarrow{F}d\overrightarrow{l} = 0 \Longleftrightarrow rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown} = \overrightarrow{F}$
+
+
+    \end{enumerate}
+
+
+
 
 \end{document}
 
