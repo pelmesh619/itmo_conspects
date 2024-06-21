@@ -282,8 +282,8 @@
 \hypersetup{
     breaklinks=true,% allow links to break over lines
     pdfstartview=,% empty value leads to using viewer's defaults
-    pdfauthor={Konstantin Chukharev},
-    pdfsubject={Discrete Math},
+    pdfauthor={},
+    pdfsubject={},
     allcolors=black,
     urlcolor=blue,
     linkcolor=red,
@@ -677,9 +677,11 @@
 
 \newcommand{\NotaN}[1]{\Nota\textit{#1.}}
 
+\newcommand{\Defs}{\textbf{Def. }}
+
 \newcommand{\Def}{ \vspace{5mm}%
 %
-\textbf{Def. }}
+\Defs}
 
 \newcommand{\DefN}[1]{\Def\textbf{#1.}}
 
@@ -709,5 +711,15 @@
 
 \newcommand{\LabN}[1]{\Lab\textbf{#1.}}
 
+% makes no indent EVERYWHERE
+\setlength{\parindent}{0pt}
+
+\onehalfspacing
+
+\newcommand{\smallvspace}{\vspace{3mm}}
+
+\newcommand{\mediumvspace}{\vspace{6mm}}
+
+\newcommand{\bigvspace}{\vspace{10mm}}
 
 

@@ -27,7 +27,7 @@ for i in os.listdir(folder):
 
         text += f'    % begin {i}\n'
 
-        text += t.group(1) + '\n    % end {i}\n\n'
+        text += t.group(1) + f'\n    % end {i}\n\n'
 
 
 text = re.sub(r'section\[.*]', 'section', text)

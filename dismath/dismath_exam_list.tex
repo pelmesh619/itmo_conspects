@@ -1,0 +1,561 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+\usepackage{perltex}
+
+\pagestyle{fancy}
+
+\begin{document}
+    \clearpage
+
+
+    \section{X. Программа экзамена в 2023/2024}
+
+
+    \begin{center}
+        \textbf{5. Теория графов.}
+    \end{center}
+
+
+    \begin{enumerate}
+        \item \textbf{Ориентированные и неориентированные графы} (\textit{Directed and undirected graphs})
+
+        Граф - множество вершин $V$ и множество ребер $E$ (в общем случае), соединяющие какие-либо две вершины: $G(V, E)$
+
+        По виду ребер различают:
+
+        \smallvspace
+
+        \begin{minipage}{0.45\textwidth}
+            \begin{center}
+                неориентированный граф
+
+                \begin{tikzpicture}
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm] (v1) {$v_1$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, above right=1cm and 1cm of v1] (v2) {$v_2$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, below right=1cm and 1cm of v2] (v3) {$v_3$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, below right=1cm and 1cm of v1] (v4) {$v_4$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, right=1cm of v3] (v5) {$v_5$};
+                    \path[-, ultra thick]
+                    (v1) edge [] node {} (v2)
+                    (v1) edge [] node {} (v3)
+                    (v2) edge [] node {} (v3)
+                    (v3) edge [] node {} (v4)
+                    (v3) edge [] node {} (v5)
+                    ;
+                \end{tikzpicture}
+
+                - ребра не имеют направлений
+            \end{center}
+
+
+        \end{minipage}%
+        \hfill
+        \begin{minipage}{0.45\textwidth}
+
+            \begin{center}
+                ориентированный граф
+
+                \begin{tikzpicture}
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm] (v1) {$v_1$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, above right=1cm and 1cm of v1] (v2) {$v_2$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, below right=1cm and 1cm of v2] (v3) {$v_3$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, below right=1cm and 1cm of v1] (v4) {$v_4$};
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm, right=1cm of v3] (v5) {$v_5$};
+                    \path[->, ultra thick]
+                    (v1) edge [] node {} (v2)
+                    (v3) edge [] node {} (v1)
+                    (v2) edge [] node {} (v3)
+                    (v3) edge [] node {} (v2)
+                    (v3) edge [] node {} (v4)
+                    (v3) edge [] node {} (v5)
+                    ;
+                \end{tikzpicture}
+
+                - ребра имеют направления
+
+            \end{center}
+        \end{minipage}
+
+        \smallvspace
+
+
+        \item \textbf{Простые графы и псевдографы} (\textit{Simple graphs and pseudographs})
+
+        \smallvspace
+
+        \begin{minipage}{\linewidth}
+            \begin{wrapfigure}{r}{0pt}
+                \begin{tikzpicture}
+                    \node[circle, draw=black!60, thick, minimum size=0.5cm] (v1) {$v_1$};
+                    \node[below=0.3cm of v1] (v2) {\textit{Петля}};
+                    \draw
+                    (v1) edge [loop above] node {} (v1)
+                    ;
+                \end{tikzpicture}
+            \end{wrapfigure}
+
+            Простой граф $G(V, E)$ - граф, в котором
+            \begin{itemize}
+                \item $V \neq \emptyset$ - граф не пустой
+                \item $E \subseteq V \times V$ - ребра представлены как множество пар вершин
+                \item $\forall v \in V \ \Pair{v, v} \notin E$ - граф не содержит петлей - ребер, соединяющих одну вершину с собой же
+
+            \end{itemize}
+
+            Псевдограф $G(V, E)$ - простой граф, в котором разрешены петли
+
+        \end{minipage}
+
+        \smallvspace
+
+        \item \textbf{Мультиребра и мультиграфы} (\textit{Multiedges and multigraphs})
+
+        \begin{minipage}{\linewidth}
+            \begin{wrapfigure}{r}{0pt}
+                \begin{tikzpicture}
+                    \node[circle, draw=black!60, thick] (v1) {};
+                    \node[circle, draw=black!60, thick, above right=0.4cm and 0.4cm of v1] (v2) {};
+                    \node[circle, draw=black!60, thick, below right=0.4cm and 0.4cm of v2] (v3) {};
+                    \node[circle, draw=black!60, thick, below right=0.4cm and 0.4cm of v1] (v4) {};
+                    \node[circle, draw=black!60, thick, right=0.4cm of v3] (v5) {};
+                    \path[-]
+                    (v1) edge [] node {} (v2)
+                    (v3) edge [] node {} (v1)
+                    (v3) edge [] node {} (v2)
+                    (v3) edge [bend right] node {} (v2)
+                    (v1) edge [bend right] node {} (v4)
+                    (v1) edge [bend left] node {} (v4)
+                    (v3) edge [] node {} (v5)
+                    (v3) edge [bend right] node {} (v5)
+                    (v3) edge [bend left] node {} (v5)
+                    ;
+                \end{tikzpicture}
+            \end{wrapfigure}
+
+            \smallvspace
+
+
+            Мультиребра - ребра, соединяющие одну и ту же пару вершин больше одного раза
+
+            Мультиграфы - графы, содержащие мультиребра. В этом случае $E$ - мультимножество
+        \end{minipage}
+
+        \begin{minipage}{\linewidth}
+            \begin{wrapfigure}{R}{-10pt}
+                \begin{tikzpicture}
+                    \node[circle, draw=black!60, thick] (v1) {};
+                    \node[circle, draw=black!60, thick, right=0.4cm of v1] (v2) {};
+                    \node[circle, draw=black!60, thick, right=0.4cm of v2] (v3) {};
+                    \node[circle, draw=black!60, thick, right=0.4cm of v3] (v4) {};
+                    \node[circle, draw=black!60, thick, below right=0.4cm and 0.2cm of v2] (v5) {};
+                    \draw[rounded corners] ([xshift=-0.2cm,yshift=-0.3cm]v1.west) rectangle ([xshift=0.2cm,yshift=0.3cm]v4.east) {};
+                    \node[above right=0.2cm and -0.15cm of v1] (vcc) {гиперребро};
+                    \path[-]
+                    (v3) edge [bend left] node {} (v5)
+                    (v1) edge [bend right] node {} (v5)
+                    ;
+                \end{tikzpicture}
+            \end{wrapfigure}
+
+            \smallvspace
+
+            \item \textbf{Гиперграфы} (\textit{Hypergraphs})
+
+            Гиперребро - ребро, соединяющее несколько вершин
+
+            Гиперграф - граф, содержащий гиперребро
+        \end{minipage}
+
+        \bigvspace
+
+        \item \textbf{Нуль-граф, пустой граф и синглтон} (\textit{Null, empty, singleton graphs})
+
+        Нуль-граф - граф, не содержащий вершин (и ребер)
+
+        Пустой граф - граф, не содержащий ребер
+
+        Синглтон - граф, содержащий из одной вершины
+
+        \smallvspace
+
+        \item \textbf{Полный граф} (\textit{Complete graph})
+
+        Полный граф $K_n$ - простой граф из $n$ вершин, в которой все вершин соединены друг с другом
+
+        \begin{center}
+            \begin{tikzpicture}
+                \node[circle, draw=black!60, thick] (v1) {};
+                \node[circle, draw=black!60, thick, right=0.5cm of v1] (v2) {};
+                \node[below right=1.2cm and -0.25cm of v1] (vcc) {$n = 2$};
+                \path[-]
+                (v1) edge [] node {} (v2)
+                ;
+                \node[circle, draw=black!60, thick, right=2.5cm of v2] (p1) {};
+                \node[circle, draw=black!60, thick, below right=0.5cm and 0.25cm of p1] (p2) {};
+                \node[circle, draw=black!60, thick, below left=0.5cm and 0.25cm of p1] (p3) {};
+                \node[below right=0.4cm and -0.25cm of p3] (pcc) {$n = 3$};
+                \path[-]
+                (p1) edge [] node {} (p2)
+                (p1) edge [] node {} (p3)
+                (p3) edge [] node {} (p2)
+                ;
+                \node[circle, draw=black!60, thick, right=2.5cm of p1] (q1) {};
+                \node[circle, draw=black!60, thick, right=0.5cm of q1] (q2) {};
+                \node[circle, draw=black!60, thick, below=0.5cm of q1] (q3) {};
+                \node[circle, draw=black!60, thick, right=0.5cm of q3] (q4) {};
+                \node[below right=0.3cm and -0.25cm of q3] (qcc) {$n = 4$};
+                \path[-]
+                (q1) edge [] node {} (q2)
+                (q1) edge [] node {} (q3)
+                (q1) edge [] node {} (q4)
+                (q2) edge [] node {} (q3)
+                (q2) edge [] node {} (q4)
+                (q3) edge [] node {} (q4)
+                ;
+            \end{tikzpicture}
+        \end{center}
+
+        \item \textbf{Взвешенный граф} (\textit{Weighted graph})
+
+        Взвешенный граф - граф, в котором ребра (и/или вершины) имеют числовой вес.
+        Иначе говоря, определена функция $w \ : \ E \to \Real$
+
+        \item \textbf{Планарный граф} (\textit{Planar graphs})
+
+        Планарный граф - граф, который можно изобразить на плоскости без пересечений рёбер
+
+        По теореме Понтрягина-Куратовского граф планарен \textit{тогда и только тогда, когда}
+        он не содержит подграфов, гомеоморфных полному графу из пяти вершин K\textsubscript{5} или графу «домики и колодцы» K\textsubscript{3,3}
+
+
+        \item \textbf{Подграф} (\textit{Subgraph})
+
+        Подграф графа $G(V, E)$ - граф $G^\prime(V^\prime, E^\prime)$
+        такой, что $V^\prime \subseteq V, E^\prime \subseteq E$
+
+        \item \textbf{Остовный подграф} (\textit{Spanning subgraph})
+
+        Остовный подграф графа $G(V, E)$ - такой подграф $G^\prime(V, E^\prime)$, содержащий все вершины исходного
+
+
+        \item \textbf{Порожденный подграф} (\textit{Induced subgraph})
+
+        Порожденный подграф $G[S]$ графа $G(V, E)$ - подграф $G^\prime(S, E^\prime)$, который содержит все ребра, соединяющие вершины из $S$ в исходном графе
+
+        \item \textbf{Отношение смежности} (\textit{Adjacency relation})
+
+        Отношение смежности - отношение $A$ между вершинами, соединенными ребром: $A = \Set{\Pair{u, v} \ | \ \Pair{u, v} \in E}$
+
+        \item \textbf{Матрица смежности} (\textit{Adjacency matrix})
+
+        Матрица смежности - матрица $A_{V\timesV}$, выражающее отношение смежности
+
+        % TODO picture
+
+        \item \textbf{Отношение инцидентности} (\textit{Incidence relation})
+
+        Отношение инцидентности - отношение $B$ между вершиной и соединяющей ее ребром: $B = \Set{\Pair{u, e} \ | \ u \in V \land e \in E \land \exists v \in V \ | \ (\Pair{u, v} \in E \lor \Pair{v, u} \in E)}$
+
+        \item \textbf{Матрица инцидентности} (\textit{Incidence matrix})
+
+        Матрица инцидентности - матрица $A_{V\timesV}$, выражающее отношение инцидентности
+
+        % TODO picture
+
+        \item \textbf{Степень вершины} (\textit{Vertex degree})
+
+        Степень $\deg(v)$ вершины $v$ - количество и ребер из этой вершины (петли считаются дважды)
+
+        \item \textbf{Регулярный граф} (\textit{Regular graph})
+
+        $r$-регулярный граф - граф, все степени вершин которого равны $r$ - $\forall v \in V \ \deg(v) = r$
+
+        \item \textbf{Лемма о рукопожатиях} (\textit{Handshaking lemma})
+
+        $\sum_{v \in V} \deg(v) = 2|E|$ - сумма степеней всех вершин равна удвоенному количеству ребер
+
+        \item \textbf{Изоморфизм графов} (\textit{Graph isomorphism})
+
+        Графы $G(V, E)$ и $H(U, F)$ называются изоморфными, если существует биекция $f \ | \ V \to U$ такая, что
+        если вершины $v$ и $u$ графа $G$ смежны, то и вершины $f(v)$ и $f(u)$ графа $H$ тоже смежны
+
+        \begin{minipage}{\linewidth}
+            \begin{wrapfigure}{r}{0.4\linewidth}
+                \begin{center}
+                    \includegraphics[width=\linewidth]{dismath/images/dismath_exam_list_graph_homomorphism}
+
+                    Гомоморфизм
+
+                    \smallvspace
+
+                    \includegraphics[width=\linewidth]{dismath/images/dismath_exam_list_graph_homeomorphism}
+
+                    Гомеоморфизм
+                \end{center}
+            \end{wrapfigure}
+
+            \smallvspace
+
+            \item \textbf{Гомоморфизм графов} (\textit{Graph homomorphism})
+
+            Гомоморфизм графов - отображение вершин графа $G$ в вершины графа $H$ такое,
+            что смежные вершины графа $G$ отображаются в смежные вершины графа $H$
+
+
+            \item \textbf{Гомеоморфизм графов} (\textit{Graph homeomorphism})
+
+            Деление (Subdivision) ребра $\Pair{u, v}$ - операция, добавляющее верщину $w$, ребра $\Pair{u, w}$ и $\Pair{w, v}$ и удаляющее ребро $\Pair{u, v}$
+
+            Исключение (Smoothing) вершины $w$ (степени 2) - операция, обратная делению - исключение вершины $w$ и ребер $\Pair{u, w}$ и $\Pair{w, v}$ и добавление ребра $\Pair{u, v}$
+
+            Графы $G$ и $H$ гомеоморфны, если граф $H$ можно получить в результате деления или исключения графа $G$
+
+        \end{minipage}
+
+        \smallvspace
+
+        \item \textbf{Пути и циклы} (\textit{Walks, paths, trails, cycles})
+
+        Путь (Walk) - последовательность из вершин и ребер, соединяющих соседние вершины: $l = (v_0, e_0, v_1, e_1, \dots, e_{n - 1}, v_n)$
+
+        Цепь (Trail) - путь (walk), все ребра которого различны
+
+        Простая цепь (Path) - путь (walk), все вершины (и соответственно ребра) которого различны
+
+        Замкнутый путь (Closed walk) - путь (walk), начальная вершина которого является конечной
+
+        Контур (Circuit) - цепь (trail), являющаяся замкнутым
+
+        Цикл (Cycle) - простая цепь (path), являющаяся замкнутым \hfill (*терминология из Википедии)
+
+
+        \item \textbf{Эйлеровы путь, цикл, граф} (\textit{Eulerian path, cycle, graph})
+
+        Эйлеров путь - путь, содержащий все ребра графа
+
+        Эйлеров цикл - замкнутый путь, содержащий все ребра графа
+
+        Граф называют эйлеровым, если в нем есть эйлеров цикл. Граф называют полуэйлеровым, если в ней есть эйлеров путь.
+
+        \item \textbf{Теорема Эйлера для графов} (\textit{Euler's theorem for graphs})
+
+        Граф эйлеров, если все степени вершин четные, а ребра принадлежат одной компоненте связности
+
+        Граф полуэйлеров, если ровно 2 вершины имеют нечетную степень, а ребра принадлежат одной компоненте связности
+
+        \item \textbf{Гамильтоновы путь, цикл, граф} (\textit{Hamiltonian path, cycle, graph})
+
+        Гамильтонов путь - путь, содержащий все вершины графа
+
+        Гамильтонов цикл - замкнутый путь, содержащий все вершины графа
+
+        Граф называют гамильтоновым, если в нем есть гамильтонов цикл. Граф называют полугамильтоновым, если в ней есть гамильтонов путь.
+
+        \item \textbf{Теорема Оре} (\textit{Ore’s theorem})
+
+        Теорема Оре - достаточное условие существования гамильтонова цикла: если в графе $G(V, E)$ для любых $u, v \in V$ $\deg u + \deg v \geq |V|$, то граф $G$ гамильтонов
+
+        \item \textbf{Теорема Дирака} (\textit{Dirac’s theorem})
+
+        Теорема Дирака - достаточное условие существования гамильтонова цикла: если в графе $G(V, E)$ для любой $u \in V$ $\deg u \geq \frac{|V|}{2}$, то граф $G$ гамильтонов
+
+
+        \item \textbf{Эксцентриситет вершины} (\textit{Eccentricity of a vertex})
+
+        Расстояние $\text{dist}(u, v)$ - длина (количество ребер) кратчайшего пути между $u$ и $v$
+
+        Эксцентриситет $\varepsilon(v)$ - наибольшая длина кратчайшего пути от этой вершины до другой в этом графе: $\varepsilon(v) = \max_{u \in V} \text{dist}(v, u)$
+
+        \item \textbf{Радиус и диаметр графа} (\textit{Radius and diameter of a graph})
+
+        Радиус графа $\text{rad}(G)$ - наименьший эксцентриситет вершины из графа: $\text{rad}(G) = \min_{v \in V} \varepsilon(v)$
+
+        Диаметр графа $\text{diam}(G)$ - наибольший эксцентриситет вершины из графа: $\text{diam}(G) = \max_{v \in V} \varepsilon(v)$
+
+        \item \textbf{Центр графа} (\textit{Center of a graph})
+
+        Центр графа - вершина (вершины), эксцентриситет которой равен радиусу графа: $\text{center}(G) = \Set{v \in V \ | \ \varepsilon(v) = \text{rad}(G)}$
+
+        \item \textbf{Центроид дерева} (\textit{Centroid of a tree})
+
+        Центроид дерева - вершина (или 2 вершины), удаление которой приведет к распаду на поддеревья, каждое из которое имеет не больше $\frac{|V|}{2}$ вершин
+
+        Очевидно, что только деревья, состоящие из четного количества вершин, могут иметь 2 центроида
+
+        % TODO picture
+
+        \item \textbf{} (\textit{Clique})
+
+        \item \textbf{} (\textit{Independent set})
+
+        \item \textbf{} (\textit{Matching})
+
+        \item \textbf{} (\textit{Perfect matching})
+
+        \item \textbf{} (\textit{Vertex cover})
+
+        \item \textbf{} (\textit{Edge cover})
+
+        \item \textbf{} (\textit{Tree})
+
+        \item \textbf{} (\textit{Forest})
+
+        \item \textbf{} (\textit{Minimum spanning tree})
+
+        \item \textbf{} (\textit{Prüfer code})
+
+        \item \textbf{} (\textit{Bipartite graph})
+
+        \item \textbf{} (\textit{Theorem on the balance of regular bipartite graphs})
+
+        \item \textbf{} (\textit{Theorem on the existence of a perfect matching in a regular bipartite graph})
+
+        \item \textbf{} (\textit{Hall's theorem (on the existence of an X-perfect matching in a bipartite graph)})
+
+        \item \textbf{} (\textit{Connectivity in undirected graphs})
+
+        \item \textbf{} (\textit{Strong and weak connectivity in directed graphs})
+
+        \item \textbf{} (\textit{Condensation of a directed graph})
+
+        \item \textbf{} (\textit{Vertex connectivity})
+
+        \item \textbf{} (\textit{Edge connectivity})
+
+        \item \textbf{} (\textit{Whitney's theorem})
+
+        \item \textbf{} (\textit{k-connected graph})
+
+        \item \textbf{} (\textit{Menger's theorem})
+
+        \item \textbf{} (\textit{Biconnectivity})
+
+        \item \textbf{} (\textit{Articulation point})
+
+        \item \textbf{} (\textit{Bridge})
+
+        \item \textbf{} (\textit{Blocks})
+
+        \item \textbf{} (\textit{Block-cut tree})
+
+    \end{enumerate}
+
+    \begin{center}
+        \textbf{6. Теория автоматов.}
+    \end{center}
+
+
+    \begin{enumerate}
+        \item \textbf{} (\textit{Deterministic Finite Automaton (DFA)})
+
+        \item \textbf{} (\textit{Non-deterministic Finite Automaton (NFA)})
+
+        \item \textbf{} (\textit{Formal languages})
+
+        \item \textbf{} (\textit{Operations on formal languages (concat, union, Kleene closure)})
+
+        \item \textbf{} (\textit{Regular languages})
+
+        \item \textbf{} (\textit{Regular expression})
+
+        \item \textbf{} (\textit{Kleene's theorem})
+
+        \item \textbf{} (\textit{Powerset construction (DFA from NFA)})
+
+        \item \textbf{} (\textit{$\varepsilon$-NFA})
+
+        \item \textbf{} (\textit{NFA construction from $\varepsilon$-NFA})
+
+        \item \textbf{} (\textit{Thompson’s construction ($\varepsilon$-NFA from regular expression)})
+
+        \item \textbf{} (\textit{Kleene’s algorithm})
+
+        \item \textbf{} (\textit{Pumping lemma for regular languages})
+
+        \item \textbf{} (\textit{Closure properties of regular languages})
+
+        \item \textbf{} (\textit{Mealy machine})
+
+        \item \textbf{} (\textit{Moore machine})
+
+        \item \textbf{} (\textit{Emptiness of finite automaton language})
+
+        \item \textbf{} (\textit{Finiteness of finite automaton language})
+
+        \item \textbf{} (\textit{Equivalence of finite automata})
+
+        \item \textbf{} (\textit{Myhill-Nerode theorem})
+
+    \end{enumerate}
+
+
+    \begin{center}
+        \textbf{7. Комбинаторика.}
+    \end{center}
+
+
+    \begin{enumerate}
+        \item \textbf{} (\textit{Ordered arrangements})
+
+        \item \textbf{} (\textit{Permutations})
+
+        \item \textbf{} (\textit{k-permutations})
+
+        \item \textbf{} (\textit{Cyclic permutations})
+
+        \item \textbf{} (\textit{Unordered arrangements})
+
+        \item \textbf{} (\textit{k-combinations})
+
+        \item \textbf{} (\textit{Multisets})
+
+        \item \textbf{} (\textit{Permutations of multisets})
+
+        \item \textbf{} (\textit{Combinations of infinite multisets})
+
+        \item \textbf{} (\textit{Compositions})
+
+        \item \textbf{} (\textit{Set partitions})
+
+        \item \textbf{} (\textit{Stirling numbers of the second kind})
+
+        \item \textbf{} (\textit{Integer partitions})
+
+        \item \textbf{} (\textit{Principle of Inclusion-Exclusion})
+
+    \end{enumerate}
+
+    \begin{center}
+        \textbf{8. Рекуррентности и производящие функции.}
+    \end{center}
+
+
+    \begin{enumerate}
+        \item \textbf{} (\textit{Recurrence relations})
+
+        \item \textbf{} (\textit{Solving recurrence relations using characteristic equations})
+
+        \item \textbf{} (\textit{Generating functions})
+
+        \item \textbf{} (\textit{Power series})
+
+        \item \textbf{} (\textit{Solving linear recurrences using generating functions})
+
+        \item \textbf{} (\textit{Solving combinatorial problems using generating functions})
+
+        \item \textbf{} (\textit{Operators and annihilators})
+
+        \item \textbf{} (\textit{Solving linear recurrences using annihilators})
+
+        \item \textbf{} (\textit{Catalan numbers})
+
+        \item \textbf{} (\textit{Divide-and-Conquer algorithms analysis using recursion trees})
+
+        \item \textbf{} (\textit{Master theorem})
+
+        \item \textbf{} (\textit{Akra-Bazzi method})
+
+    \end{enumerate}
+
+
+\end{document}

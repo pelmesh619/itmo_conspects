@@ -1,26 +1,26 @@
 # itmo_conspects
 
-### Конспекты по разным предметам первого потока ИСy27 университета ИТМО
+**Конспекты по разным предметам первого потока ИСy27 университета ИТМО**
 
-## Математический анализ II
+### Математический анализ II
 
 [**Весь курс с программой экзамена**](conspects/calculus/calculus_superconspect.pdf)
 
 
-## Специальные разделы высшей математики
+### Специальные разделы высшей математики
 
-[**Весь курс с программой экзамена**](conspects/specsec/specsec_superconspect.pdf)
+[**Весь курс с неполной программой экзамена**](conspects/specsec/specsec_superconspect.pdf)
 
 
-## Дискретная математика II
+### Дискретная математика II
 
-[**Почти весь курс**](conspects/dismath/dismath_superconspect.pdf)
+[**Почти весь курс с неполной программой экзамена**](conspects/dismath/dismath_superconspect.pdf)
 
 [**Шпаргалка по Комбинаторике**](conspects/dismath/dismath_cheatsheet_combinatorics.pdf)
 
 [**Шпаргалка по Рекуррентностям и Производящим функциям**](conspects/dismath/dismath_cheatsheet_recurrences.pdf)
 
-## Алгоритмы и Структуры Данных I-II
+### Алгоритмы и Структуры Данных I-II
 
 Почти все алгоритмы из курса и некоторые пояснения к ним есть в моем другом репозитории: [pelmesh619/algorithm_archives](https://github.com/pelmesh619/algorithm_archives)
 
