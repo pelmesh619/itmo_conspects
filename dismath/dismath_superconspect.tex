@@ -1186,31 +1186,82 @@
 
         % TODO picture
 
-        \item \textbf{} (\textit{Clique})
+        \item \textbf{Клика} (\textit{Clique})
 
-        \item \textbf{} (\textit{Independent set})
+        Клика графа - порожденный подграф, который является полный графом. $1$-клика - вершина, $2$-клика - 2 вершины и ребро, $3$-клика - треугольник, $n$-клика - граф $K_n$
 
-        \item \textbf{} (\textit{Matching})
+        \item \textbf{Независимое (стабильное множество)} (\textit{Independent set})
 
-        \item \textbf{} (\textit{Perfect matching})
+        Независимое (стабильное) множество - множество вершин, каждая из которых не соединена ребром с другой вершиной из множества
 
-        \item \textbf{} (\textit{Vertex cover})
+        \item \textbf{Паросочетание} (\textit{Matching})
 
-        \item \textbf{} (\textit{Edge cover})
+        Паросочетание (независимое множество ребер) - множество ребер, каждые из которые не соединяют одну и ту же вершину
 
-        \item \textbf{} (\textit{Tree})
+        \item \textbf{Идеальное паросочетание} (\textit{Perfect matching})
 
-        \item \textbf{} (\textit{Forest})
+        Идеальное паросочетание - паросочетание, ребра которого инцидентны ко всем вершинам графа (то есть паросочетание, являющееся реберным покрытием)
 
-        \item \textbf{} (\textit{Minimum spanning tree})
+        \item \textbf{Вершинное покрытие} (\textit{Vertex cover})
 
-        \item \textbf{} (\textit{Prüfer code})
+        Вершинное покрытие - множество вершин, к которым инцидентны все ребра графа
 
-        \item \textbf{} (\textit{Bipartite graph})
+        \item \textbf{Реберное покрытие} (\textit{Edge cover})
 
-        \item \textbf{} (\textit{Theorem on the balance of regular bipartite graphs})
+        Реберное покрытие - множество ребер, которые инцидентны ко всем вершинам
 
-        \item \textbf{} (\textit{Theorem on the existence of a perfect matching in a regular bipartite graph})
+        \item \textbf{Дерево} (\textit{Tree})
+
+        Дерево - связный ацикличный граф
+
+        \item \textbf{Лес} (\textit{Forest})
+
+        Лес - несвязный граф, каждая компонента которого не имеет циклов (граф, состоящий из деревьев)
+
+        \item \textbf{Минимальное остовное дерево} (\textit{Minimum spanning tree})
+
+        Минимальное остовное дерево взвешенного графа $G(V, E, w)$ - дерево $T(V, E^\prime)$, сумма весов ребер которого имеет наименьшее значение
+
+        \item \textbf{Код Прюфера} (\textit{Prüfer code})
+
+        Код Прюфера - алгоритм кодировки маркированного дерева размера $n$ в последовательность чисел
+
+        \textbf{Кодировка}:
+
+        1. Делаем биекцию между названиями вершин и числа из диапазона $[1;n]$ (если необходимо)
+
+        2. Берем лист с наименьшим значением, удаляем его, записываем в последовательность номер его родителя
+
+        3. Повторяем 2. до тех пор, пока не останется 2 вершины - их кодировка тривиальна и не нуждается в хранении
+
+        \textbf{Декодировка}:
+
+        1. Создаем $n$ вершин, и множество вершин $W$, которых нет в последовательности
+
+        2. Читаем номер вершины из последовательности
+
+        3. Соединяем эту вершину с вершиной из $W$ с минимальным номером, удалив ее
+
+        4. Добавляем вершину из последовательности в $W$
+
+        5. Повторяем 2.-4.
+
+        6. Соединяем 2 оставшиеся вершины из $W$
+
+
+        \item \textbf{Двудольный граф} (\textit{Bipartite graph})
+
+        Двудольный граф $K_{n,m}$ - граф, вершины которого можно разбить на две части размеров $n$ и $m$ таким образом, что вершины из одной части не смежны друг с другом
+
+        \item \textbf{Теорема баланса регулярных двудольных графов} (\textit{Theorem on the balance of regular bipartite graphs})
+
+        Если двудольный граф $K_{n,m}$ регулярный, то $n = m$
+
+        $\Box$ Граф регулярный $\Longrightarrow \forall v \in V \ \deg v = r \in \Natural \Longrightarrow $ левая доля имеет $nr$ исходящих ребер, а правая доля имеет $mr$ входящих ребер, но так как вершины в долях не соединены ребрами, $nr = mr$ $\Box$
+
+        \item \textbf{Теорема существования идеального паросочетания регулярного двудольного графа} (\textit{Theorem on the existence of a perfect matching in a regular bipartite graph})
+
+
 
         \item \textbf{} (\textit{Hall's theorem (on the existence of an X-perfect matching in a bipartite graph)})
 
