@@ -1,6 +1,6 @@
 \documentclass[12pt]{article}
 \usepackage{preamble}
-\usepackage{perltex}
+\usepackage{alphabeta}
 
 \pagestyle{fancy}
 
@@ -592,20 +592,149 @@
     \end{center}
 
 
+
+
     \begin{enumerate}
-        \item \textbf{} (\textit{Deterministic Finite Automaton (DFA)})
+        \item \textbf{Детерминированный конечный автомат} (\textit{Deterministic Finite Automaton (DFA)})
 
-        \item \textbf{} (\textit{Non-deterministic Finite Automaton (NFA)})
+        Детерминированный конечный автомат $A = (Q, \Sigma, \delta, q_0, F)$ - объект, представляющий собой множество состояний $Q$, множество входных символов $\Sigma$,
+        функция переходов $\delta \ : \ Q \times \Sigma \to Q$, начальное состояние $q_0$ и множество конечных состояний $F$
 
-        \item \textbf{} (\textit{Formal languages})
+        Автомат принимает какую-то цепочку символов из $\Sigma^*$ и решает, принадлежит ли она соответствующему автомату регулярному языку $L$
 
-        \item \textbf{} (\textit{Operations on formal languages (concat, union, Kleene closure)})
+        Для простоты обычно выбирают $\Sigma = \Set{0, 1}$
 
-        \item \textbf{} (\textit{Regular languages})
+        Автомат можно представить как орграф
 
-        \item \textbf{} (\textit{Regular expression})
+        \tikz[
+            auto, on grid,
+            >={Stealth[]},
+            shorten >=1pt,
+            semithick,
+            bend angle=15,
+            initial text={},
+            every state/.style={
+                inner sep=0pt,
+                minimum size=2em,
+            },
+        ]{
+            \node[state, initial] (s0) {$q_0$};
+            \node[below=0.75cm of s0] (s0cc) {начальное};
+            \node[state, right=3cm of s0] (s1) {$q_2$};
+            \node[state, accepting, right=3cm of s1] (s2) {$q_1$};
+            \node[below=0.75cm of s2] (s0cc) {конечное};
+            \path[->]
+            (s0) edge [above] node {$0$} (s1)
+            (s0) edge [loop above, above] node {$1$} (s0)
+            (s1) edge [above] node {$1$} (s2)
+            (s1) edge [loop above, above] node {$0$} (s1)
+            (s2) edge [loop above, above] node {$0,1$} (s2)
+            ;
+        }
 
-        \item \textbf{} (\textit{Kleene's theorem})
+        Или как таблицу функции переходов
+
+        \begin{tabular}{c|cc}
+            & $0$ & $1$ \\
+            \hline
+            $\to q_0$ & $q_2$ & $q_0$ \\
+            \hline
+            $*q_1$ & $q_1$ & $q_1$ \\
+            \hline
+            $q_2$ & $q_2$ & $q_1$
+        \end{tabular}
+
+        \item \textbf{Недетерминированный конечный автомат (НКА)} (\textit{Non-deterministic Finite Automaton (NFA)})
+
+        Недетерминированный конечный автомат $A = (Q, \Sigma, \delta, q_0, F)$ - объект, представляющий собой множество состояний $Q$, множество входных символов $\Sigma$,
+        функция переходов $\delta \ : \ Q \times \Sigma \to P(Q)$, начальное состояние $q_0$ и множество конечных состояний $F$
+
+        Главное отличие НКА от ДКА: от одного состояния в НКА можно перейти сразу к нескольким другим или к ни одному
+
+        Пример:
+
+        \begin{multicols}{2}
+            \tikz[
+                auto, on grid,
+                >={Stealth[]},
+                shorten >=1pt,
+                semithick,
+                bend angle=15,
+                initial text={},
+                every state/.style={
+                    inner sep=0pt,
+                    minimum size=2em,
+                },
+            ]{
+                \node[state, initial] (s0) {$q_0$};
+                \node[state, right=3cm of s0] (s1) {$q_1$};
+                \node[state, accepting, right=3cm of s1] (s2) {$q_2$};
+                \path[->]
+                (s0) edge [loop above, above] node {$0,1$} (s0)
+                (s0) edge [above] node {$0$} (s1)
+                (s1) edge [above] node {$1$} (s2)
+                ;
+            }
+
+            \begin{tabular}{c|cc}
+                & $0$ & $1$ \\
+                \hline
+                $\to q_0$ & $\Set{q_0, q_1}$ & $\Set{q_0}$ \\
+                \hline
+                $q_1$ & $\emptyset$ & $\Set{q_1}$ \\
+                \hline
+                $*q_2$ & $\emptyset$ & $\emptyset$
+            \end{tabular}
+
+        \end{multicols}
+
+        \item \textbf{Формальные языки} (\textit{Formal languages})
+
+        Формальный язык $L$ - множество конечных слов над конечным алфавитом символов $\Sigma$
+
+        \item \textbf{Операции над формальными языками (конкатенация, объединение, замыкание Клини)} (\textit{Operations on formal languages (concat, union, Kleene closure)})
+
+        Конкатенация $LM$ языков $L$ и $M$ - множество слов, состоящих из записанных подряд слова из $L$ и слова из $M$: $LM = \Set{uw \ | \ u \in L \land w \in M}$
+
+        Объединения $L \union M$ языков $L$ и $M$ - множество слов, которые содержатся в $L$ или/и в $M$: $L \union M = \Set{w \ | \ w \in L \lor w \in M}$
+
+        Замыкание Клини $L^*$ языка $L$ - множество слов, которые могут быть получены в результате конкатенации слов из $L$: $L^* = \Set{w_1 w_2 \dots w_n \forall n \geq 0 \ | \ w_i \in L}$ (включая пустое слово $\varepsilon$)
+
+        \item \textbf{Регулярные языки} (\textit{Regular languages})
+
+        Регулярный язык - формальный язык, который задается некоторым автоматом
+
+        Также регулярный язык задается индуктивно:
+
+        1. Пустое множество $\emptyset$ и множество из пустой строки $\Set{\varepsilon}$ являются регулярными языками
+
+        2. Множество из однобуквенного слова $\Set{a}$, где $a \in \Sigma$ является регулярным языком
+
+        3. Для регулярных языков $\alpha$ и $\beta$ объединение $\alpha \union \beta$, конкатенация $\alpha\beta$ и замыкание Клини $\alpha^*$ - тоже регулярные языки
+
+        4. Других регулярных языков нет
+
+        \item \textbf{Регулярное выражение} (\textit{Regular expression})
+
+        Регулярное выражение - способ описания регулярного языка
+
+        \begin{tabular}{c|c}
+            Регулярное выражение & Язык, который оно описывает \\
+            \hline
+            & $\emptyset$ \\
+            $\varepsilon$ & $\Set{\varepsilon}$ \\
+            $a$ & $\alpha$ \\
+            $b$ & $\beta$ \\
+            $(a)$ & $\alpha$ \\
+            $ab$ & $\alpha\beta$ \\
+            $a + b$ & $\alpha \union \beta$ \\
+            $a*$ & $\alpha^*$ \\
+
+        \end{tabular}
+
+        \item \textbf{Теорема Клини} (\textit{Kleene's theorem})
+
+        Для любого регулярного выражения существует конечный автомат, и они описывают равные регулярные языки
 
         \item \textbf{} (\textit{Powerset construction (DFA from NFA)})
 
