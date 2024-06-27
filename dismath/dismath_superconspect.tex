@@ -1394,8 +1394,6 @@
     \end{center}
 
 
-
-
     \begin{enumerate}
         \item \textbf{Детерминированный конечный автомат} (\textit{Deterministic Finite Automaton (DFA)})
 
@@ -1703,64 +1701,20 @@
             Регулярное выражение & Язык, который оно описывает & Автомат \\
             \hline
 
-            & $\emptyset$ & \smallvspace \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
-                \node[state, initial] (s0) {$q_0$};
+            & $\emptyset$ & \smallvspace \tikz[myautomatonstyle]{
+                \node[state, initial] (s0) {};
             } \\
-            $\varepsilon$ & $\Set{\varepsilon}$ & \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
-                \node[state, initial] (s0) {$q_0$};
-                \node[state, accepting, right=2cm of s0] (s1) {$q_1$};
+            $\varepsilon$ & $\Set{\varepsilon}$ & \tikz[myautomatonstyle]{
+                \node[state, initial] (s0) {};
+                \node[state, accepting, right=2cm of s0] (s1) {};
                 \path[->] (s0) edge [above] node {$\varepsilon$} (s1);
             } \\
-            $c$ (символ) & $\Set{c}$ & \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
-                \node[state, initial] (s0) {$q_0$};
-                \node[state, accepting, right=2cm of s0] (s1) {$q_1$};
+            $c$ (символ) & $\Set{c}$ & \tikz[myautomatonstyle]{
+                \node[state, initial] (s0) {};
+                \node[state, accepting, right=2cm of s0] (s1) {};
                 \path[->] (s0) edge [above] node {$c$} (s1);
             } \\
-            $ab$ & $\alpha\beta$ & \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
+            $ab$ & $\alpha\beta$ & \tikz[myautomatonstyle]{
                 \node[state, initial] (s0) {};
                 % \node[above right=2cm and 2cm of s0] (r1) [draw, rounded rectangle] {rectangle \\ oppopoopo};
                 \node[state, right=1.5cm of s0] (r1) {};
@@ -1778,18 +1732,7 @@
                 (l2) edge [bend left, above] node {$\varepsilon$} (s1)
                 ;
             } \\
-            $a + b$ & $\alpha \union \beta$ & \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
+            $a + b$ & $\alpha \union \beta$ & \tikz[myautomatonstyle]{
                 \node[state, initial] (s0) {};
                 % \node[above right=2cm and 2cm of s0] (r1) [draw, rounded rectangle] {rectangle \\ oppopoopo};
                 \node[state, above right=0.65cm and 2cm of s0] (r1) {};
@@ -1808,18 +1751,7 @@
                 (r2) edge [bend left, above] node {$\varepsilon$} (s1)
 
             } \\
-            $a*$ & $\alpha^*$ & \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
+            $a*$ & $\alpha^*$ & \tikz[myautomatonstyle]{
                 \node[state, initial] (s0) {};
                 \node[state, above right=1cm and 2cm of s0] (r1) {};
                 \node[right=1.5cm of r1] (rcap) {Автомат $\alpha$};
@@ -1888,9 +1820,76 @@
 
         9. $h^{-1}(L)$ (обратный гомоморфизм $h^{-1} \ | \ \Sigma^* \to \Sigma$, например $h^{-1}(01) = a, h^{-1}(10) = b$) - регулярный язык
 
-        \item \textbf{} (\textit{Mealy machine})
+        \smallvspace
 
-        \item \textbf{} (\textit{Moore machine})
+        \begin{minipage}{\linewidth}
+            \begin{wrapfigure}{R}{0.4\linewidth}
+                \tikz[myautomatonstyle]{
+                    \node[state, initial] (s0) {$q_0$};
+                    \node[state, right=2cm of s0] (s1) {$q_1$};
+                    \node[state, right=2cm of s1] (s2) {$q_2$};
+                    \path[->]
+                    (s0) edge [bend left, above] node {$0/0$} (s1)
+                    (s0) edge [bend right, below] node {$1/1$} (s1)
+                    (s1) edge [bend left, above] node {$0/0$} (s2)
+                    (s1) edge [bend right, below] node {$1/1$} (s2)
+                    (s2) edge [out=-130,in=-50, below] node {$0/1$} (s0)
+                    (s2) edge [out=130,in=50, above] node {$1/0$} (s0)
+                    ;
+                }
+
+                \footnotesize
+                \textit{Этот автомат Мили преобразует каждый 3-ий символ с 0 на 1 и наоборот:} $\mathtt{100101} \to \mathtt{101100}$
+
+            \end{wrapfigure}
+
+            \item \textbf{Автомат Мили} (\textit{Mealy machine})
+
+            Автомат Мили $M_{\text{Mealy}} = (Q, \Sigma, \Omega, q_0, \delta, \lambda)$ - автомат, выводящий последовательность, которая зависит от входной последовательности
+
+            Здесь $\Omega$ - алфавит выходящей последовательности, а
+            $\lambda \ : \ Q \times \Sigma \to \Omega$ - функция выходов, зависящая от состояния и входного символа
+
+            Значение функции $\lambda$ на ребре графа обозначают после переходного символа
+
+
+        \end{minipage}
+
+        \begin{minipage}{\linewidth}
+            \begin{wrapfigure}{R}{0.35\linewidth}
+                \tikz[myautomatonstyle]{
+                    \node[state, initial] (s0) {$q_0/${\Large 👍}};
+                    \node[state, right=2cm of s0] (s1) {$q_1/${\Large 💀}};
+                    \node[state, right=2cm of s1] (s2) {$q_2/${\Large 💀}};
+                    \path[->]
+                    (s0) edge [loop above, above] node {$0$} (s0)
+                    (s0) edge [bend left, above] node {$1$} (s1)
+                    (s1) edge [bend left, above] node {$0$} (s2)
+                    (s1) edge [bend left, below] node {$1$} (s0)
+                    (s2) edge [bend left, below] node {$0$} (s1)
+                    (s2) edge [loop above, above] node {$1$} (s0)
+                    ;
+                }
+
+                \footnotesize
+                \textit{Этот автомат Мура выдает {\Large 👍}, если двоичное число делится на 3, иначе {\Large 💀}}
+
+
+            \end{wrapfigure}
+
+            \item \textbf{Автомат Мура} (\textit{Moore machine})
+
+            Автомат Мура $M_{\text{Moore}} = (Q, \Sigma, \Omega, q_0, \delta, \lambda)$ - автомат, выводящий последовательность, зависящую от входной последовательности
+
+            Как и в автомате Мили, в автомате Мура $\Omega$ - алфавит выходящей последовательности, но
+            $\lambda \ : \ Q \to \Omega$ - функция выходов, зависящая от текущего состояния
+
+            Значение функции $\lambda$ на графе обозначают в вершине состояния
+
+        \end{minipage}
+
+        \smallvspace
+
 
         \item \textbf{} (\textit{Emptiness of finite automaton language})
 

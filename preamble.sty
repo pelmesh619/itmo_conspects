@@ -721,4 +721,32 @@
 
 \newcommand{\bigvspace}{\vspace{10mm}}
 
-
+\tikzset{
+    position/.style args={#1:#2 from #3}{
+        at=(#3.#1), anchor=#1+180, shift=(#1:#2)
+    },
+    dot/.style={
+        draw,
+        fill=black,
+        shape=circle,
+        minimum size=4pt,
+        inner sep=0pt,
+        outer sep=0pt,
+    },
+}
+\tikzstyle{mygraphstyle}=[
+    auto,
+    on grid,
+]
+\tikzstyle{myautomatonstyle}=[
+    auto, on grid,
+    >={Stealth[]},
+    shorten >=1pt,
+    semithick,
+    bend angle=15,
+    initial text={},
+    every state/.style={
+        inner sep=0pt,
+        minimum size=2em,
+    },
+]
