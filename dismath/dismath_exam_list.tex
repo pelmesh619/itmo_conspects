@@ -603,18 +603,7 @@
 
         Автомат можно представить как орграф
 
-        \tikz[
-            auto, on grid,
-            >={Stealth[]},
-            shorten >=1pt,
-            semithick,
-            bend angle=15,
-            initial text={},
-            every state/.style={
-                inner sep=0pt,
-                minimum size=2em,
-            },
-        ]{
+        \tikz[myautomatonstyle]{
             \node[state, initial] (s0) {$q_0$};
             \node[below=0.75cm of s0] (s0cc) {начальное};
             \node[state, right=3cm of s0] (s1) {$q_2$};
@@ -651,18 +640,7 @@
         Пример:
 
         \begin{multicols}{2}
-            \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
+            \tikz[myautomatonstyle]{
                 \node[state, initial] (s0) {$q_0$};
                 \node[state, right=3cm of s0] (s1) {$q_1$};
                 \node[state, accepting, right=3cm of s1] (s2) {$q_2$};
@@ -739,18 +717,7 @@
         Далее при помощи магии умным образом строим переходы
 
         \begin{multicols}{2}
-            \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
+            \tikz[myautomatonstyle]{
                 \node[state, initial] (s0) {$q_0$};
                 \node[state, right=2cm of s0] (s1) {$q_1$};
                 \node[state, accepting, right=2cm of s1] (s2) {$q_2$};
@@ -783,18 +750,7 @@
                 $*\Set{q_2, q_1, q_0}$ & $\Set{q_0, q_1}$ & $\Set{q_0, q_2}$ \\
             \end{tabular}
 
-            \tikz[
-                auto, on grid,
-                >={Stealth[]},
-                shorten >=1pt,
-                semithick,
-                bend angle=15,
-                initial text={},
-                every state/.style={
-                    inner sep=0pt,
-                    minimum size=2em,
-                },
-            ]{
+            \tikz[myautomatonstyle]{
                 \node[state, initial] (s0) {\scriptsize $\Set{q_0}$};
                 \node[state, right=2cm of s0] (s01) {\scriptsize $\Set{q_0, q_1}$};
                 \node[state, accepting, right=2cm of s01] (s02) {\scriptsize $\Set{q_0, q_2}$};
@@ -825,18 +781,7 @@
         Как можем видеть, 5 состояний являются недостижимыми, поэтому их мы можем удалить.
         В итоге в ДКА остается 3 состояния (зачастую количество состояний не $2^{|Q|}$, а чуть больше $|Q|$)
 
-        \tikz[
-            auto, on grid,
-            >={Stealth[]},
-            shorten >=1pt,
-            semithick,
-            bend angle=15,
-            initial text={},
-            every state/.style={
-                inner sep=0pt,
-                minimum size=2em,
-            },
-        ]{
+        \tikz[myautomatonstyle]{
             \node[state, initial] (s0) {\scriptsize $\Set{q_0}$};
             \node[state, right=2cm of s0] (s01) {\scriptsize $\Set{q_0, q_1}$};
             \node[state, accepting, right=2cm of s01] (s02) {\scriptsize $\Set{q_0, q_2}$};
@@ -857,18 +802,7 @@
 
         Пример - автомат, допускающий цепочки $(01)*$:
 
-        \tikz[
-            auto, on grid,
-            >={Stealth[]},
-            shorten >=1pt,
-            semithick,
-            bend angle=15,
-            initial text={},
-            every state/.style={
-                inner sep=0pt,
-                minimum size=2em,
-            },
-        ]{
+        \tikz[myautomatonstyle]{
             \node[state, initial] (s0) {$q_0$};
             \node[state, right=2cm of s0] (s1) {$q_1$};
             \node[state, accepting, right=2cm of s1] (s2) {$q_2$};
@@ -999,7 +933,7 @@
 
         Для регулярных языков $L$ и $M$:
 
-        1. $L*$ (замыкание Клини) - регулярный язык
+        1. $L^*$ (замыкание Клини) - регулярный язык
 
         2. $L \union M$ (объединение) - регулярный язык
 
@@ -1088,11 +1022,68 @@
         \smallvspace
 
 
-        \item \textbf{} (\textit{Emptiness of finite automaton language})
+        \item \textbf{Пустота языка конечного автомата} (\textit{Emptiness of finite automaton language})
 
-        \item \textbf{} (\textit{Finiteness of finite automaton language})
+        Язык автомата $L$ считается пустым в том случае, если язык не содержит никаких цепочек (в том числе пустых) - $L = \emptyset$
 
-        \item \textbf{} (\textit{Equivalence of finite automata})
+        По конечному автомату можно понять, является ли язык пустым: если какое-либо допускающее состояние можно достигнуть из начального,
+        то язык автомата не является пустым (это можно определить при помощи обхода графа)
+
+        \item \textbf{Конечность языка конечного автомата} (\textit{Finiteness of finite automaton language})
+
+        Язык автомата $L$ считается конечным, если он содержит конечное множество цепочек
+
+        Конечность языка можно определить так: если есть такое состояние $v$, что к нему можно прийти из начального состояния,
+        от него можно прийти к какому-либо допускающему состоянию, а из $v$ можно каким-либо образом прийти в $v$, то язык бесконечный -
+        мы можем сколь угодно раз зацикливаться по $v$ и получать бесконечное количество цепочек
+
+        \item \textbf{Эквивалентность конечных автоматов} (\textit{Equivalence of finite automata})
+
+        Автоматы эквивалентны, если они допускают одно и то же множество цепочек.
+
+        Пусть автомат $A = (Q, \Sigma, \delta, q_0, F)$. Введем функцию $\lambda \ : \ Q \to \Set{0, 1}$, возвращающую $\mathtt{1}$, если состояние допускающее, иначе $\mathtt{0}$
+
+        Введем такое отношение эквивалентности $R_0 \subset Q \times Q$ между состояниями. Определим, что $q \, R_0 \, p$ в том случае, если $\lambda(q) = \lambda(p)$
+
+        Теперь определим $R_1$ как отношение состояний $q$ и $p$, для которых $\lambda(q) = \lambda(p)$ и $\lambda(\delta(q, c)) = \lambda(\delta(p, c))$ для любого символа $c \in \Sigma$
+
+        Теперь определим $R_2$ как отношение состояний $q$ и $p$, для которых $\lambda(\hat\delta(q, w)) = \lambda(\hat\delta(p, w))$ для любой цепочки $w \in \Sigma^*$ длины не больше 2
+
+        Окончательно определим $R$ как отношение состояний $q$ и $p$, для которых $\lambda(\hat\delta(q, w)) = \lambda(\hat\delta(p, w))$ для любой цепочки $w \in \Sigma^*$
+
+
+        \begin{minipage}{\linewidth}
+            \begin{wrapfigure}{R}{0.35\linewidth}
+                \tikz[myautomatonstyle]{
+                    \node[state, initial] (m0) {$q_1$};
+                    \node[state, accepting, right=3.5cm of m0] (m1) {$F_1$};
+                    \node[right=0.1cm of m0.east] (mcap) {Автомат $M$};
+                    \draw[rounded corners] ([xshift=-0.3cm,yshift=-0.6cm]m0.west) rectangle
+                        ([xshift=0.3cm,yshift=0.6cm]m1.east) {};
+
+
+                    \node[state, below=2cm of m0] (n0) {$q_2$};
+                    \node[state, accepting, right=3.5cm of n0] (n1) {$F_2$};
+                    \node[right=0.1cm of n0.east] (ncap) {Автомат $N$};
+                    \draw[rounded corners] ([xshift=-0.3cm,yshift=-0.6cm]n0.west) rectangle
+                        ([xshift=0.3cm,yshift=0.6cm]n1.east) {};
+
+                    \node[below right=0.3cm and 0.5cm of n0.south] (acap) {Автомат $A$};
+                    \draw[rounded corners] ([xshift=-0.6cm,yshift=-1.6cm]n0.west) rectangle
+                        ([xshift=0.6cm,yshift=1.2cm]m1.east) {};
+                }
+
+            \end{wrapfigure}
+
+            Пусть даны автоматы $M = (Q_1, \Sigma, \delta_1, q_1, F_1)$ и $N = (Q_2, \Sigma, \delta_2, q_2, F_2)$.
+
+            Теперь построим такой автомат $A = (Q, \Sigma, \delta, q_1, F)$, выбрав какое-либо начальное состояние, объединив множества состояний и множества допускающих состояний и расширив функцию переходов
+
+            Автоматы $M$ и $N$ эквивалентны, если состояния $q_1$ и $q_2$ принадлежат одному классу эквивалентности, то есть $q_1 \, R \, q_2$
+
+        \end{minipage}
+
+        \smallvspace
 
         \item \textbf{} (\textit{Myhill-Nerode theorem})
 
