@@ -7,21 +7,20 @@
 
 ### Математический анализ II
 
-[**Весь курс с программой экзамена**](conspects/calculus/calculus_superconspect.pdf)
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/calculus/calculus_superconspect.pdf)
 
 
 ### Специальные разделы высшей математики
 
-[**Весь курс с неполной программой экзамена**](conspects/specsec/specsec_superconspect.pdf)
-
+[**Весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf)
 
 ### Дискретная математика II
 
-[**Почти весь курс с неполной программой экзамена**](conspects/dismath/dismath_superconspect.pdf)
+[**Почти весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_superconspect.pdf)
 
-[**Шпаргалка по Комбинаторике**](conspects/dismath/dismath_cheatsheet_combinatorics.pdf)
+[**Шпаргалка по Комбинаторике**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_cheatsheet_combinatorics.pdf)
 
-[**Шпаргалка по Рекуррентностям и Производящим функциям**](conspects/dismath/dismath_cheatsheet_recurrences.pdf)
+[**Шпаргалка по Рекуррентностям и Производящим функциям**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_cheatsheet_recurrences.pdf)
 
 ### Алгоритмы и Структуры Данных I-II
 
