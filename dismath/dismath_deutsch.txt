@@ -1,0 +1,211 @@
+Hier sind die Erklärungen zu den genannten Begriffen:
+
+1. **Directed and undirected graphs**: In einem gerichteten Graphen haben die Kanten eine Richtung (sie gehen von einem Knoten zu einem anderen). In einem ungerichteten Graphen haben die Kanten keine Richtung, sie verbinden einfach zwei Knoten.
+
+2. **Simple graphs and pseudographs**: Ein einfacher Graph hat keine Schleifen (Kanten, die einen Knoten mit sich selbst verbinden) und keine mehrfachen Kanten zwischen zwei Knoten. Ein Pseudograph kann Schleifen und mehrfach Kanten enthalten.
+
+3. **Multiedges and multigraphs**: Ein Multigraph kann mehrere Kanten (Multiedges) zwischen demselben Paar von Knoten haben.
+
+4. **Hypergraphs**: Ein Hypergraph ist eine Verallgemeinerung eines Graphen, bei dem jede Kante (Hyperkante) mehr als zwei Knoten verbinden kann.
+
+5. **Null, empty, singleton graphs**: Ein Nullgraph hat keine Knoten und keine Kanten. Ein leerer Graph hat Knoten, aber keine Kanten. Ein Singleton-Graph besteht aus genau einem Knoten und keinen Kanten.
+
+6. **Complete graph**: Ein vollständiger Graph ist ein ungerichteter Graph, in dem jedes Paar von verschiedenen Knoten durch genau eine Kante verbunden ist.
+
+7. **Weighted graph**: Ein gewichteter Graph ist ein Graph, in dem jede Kante ein Gewicht (eine Zahl) hat, das oft eine Kosten, Länge oder Kapazität repräsentiert.
+
+8. **Planar graphs**: Ein planarer Graph kann in einer Ebene gezeichnet werden, ohne dass sich die Kanten schneiden.
+
+9. **Subgraph**: Ein Teilgraph ist ein Graph, dessen Knoten und Kanten Teilmengen der Knoten und Kanten eines anderen Graphen sind.
+
+10. **Spanning subgraph**: Ein spannender Teilgraph enthält alle Knoten des Originalgraphen, aber möglicherweise nicht alle Kanten.
+
+11. **Induced subgraph**: Ein induzierter Teilgraph enthält alle Kanten des Originalgraphen, die zwischen den ausgewählten Knoten existieren.
+
+12. **Adjacency relation**: Die Adjazenzrelation beschreibt, welche Knoten in einem Graphen direkt durch eine Kante verbunden sind.
+
+13. **Adjacency matrix**: Eine Adjazenzmatrix ist eine Matrix, die die Adjazenzrelation eines Graphen darstellt, wobei die Einträge angeben, ob zwei Knoten direkt verbunden sind oder nicht.
+
+14. **Incidence relation**: Die Inzidenzrelation beschreibt die Beziehung zwischen Knoten und Kanten in einem Graphen.
+
+15. **Incidence matrix**: Eine Inzidenzmatrix stellt die Inzidenzrelation eines Graphen dar, wobei die Einträge angeben, ob ein Knoten an einer Kante beteiligt ist.
+
+16. **Vertex degree**: Der Grad eines Knotens ist die Anzahl der Kanten, die an diesen Knoten angrenzen.
+
+17. **Regular graph**: Ein regulärer Graph hat Knoten, die alle den gleichen Grad haben.
+
+18. **Handshaking lemma**: Das Handshaking-Lemma besagt, dass die Summe aller Knotengrade in einem Graphen gleich der doppelten Anzahl der Kanten ist.
+
+19. **Graph isomorphism**: Zwei Graphen sind isomorph, wenn sie durch Umbenennung der Knoten in einander übergeführt werden können, ohne dass sich die Kantenstruktur ändert.
+
+20. **Graph homomorphism**: Ein Graph-Homomorphismus ist eine Abbildung der Knoten eines Graphen in die Knoten eines anderen Graphen, die die Adjazenzrelation bewahrt.
+
+21. **Graph homeomorphism**: Zwei Graphen sind homeomorph, wenn sie durch das Hinzufügen oder Entfernen von Knoten vom Grad 2 in einander übergeführt werden können.
+
+22. **Walks, paths, trails, cycles**: Ein Walk ist eine Folge von Knoten und Kanten. Ein Pfad ist ein Walk ohne wiederholte Knoten. Ein Trail ist ein Walk ohne wiederholte Kanten. Ein Zyklus ist ein Pfad, der am selben Knoten beginnt und endet.
+
+23. **Eulerian path, cycle, graph**: Ein Eulerpfad besucht jede Kante genau einmal. Ein Eulerzyklus beginnt und endet am selben Knoten und besucht jede Kante genau einmal. Ein Graph ist eulerianisch, wenn er einen Eulerzyklus hat.
+
+24. **Euler's theorem for graphs**: Ein Graph hat einen Eulerzyklus, wenn alle Knoten geraden Grad haben und zusammenhängend sind.
+
+25. **Hamiltonian path, cycle, graph**: Ein Hamiltonpfad besucht jeden Knoten genau einmal. Ein Hamiltonzyklus beginnt und endet am selben Knoten und besucht jeden Knoten genau einmal. Ein Graph ist hamiltonianisch, wenn er einen Hamiltonzyklus hat.
+
+26. **Ore’s theorem**: Ein Graph ist hamiltonianisch, wenn für jede Knotenmenge von zwei nicht benachbarten Knoten gilt, dass die Summe ihrer Grade mindestens die Anzahl der Knoten im Graphen ist.
+
+27. **Dirac’s theorem**: Ein Graph mit \( n \) Knoten (\( n \geq 3 \)) ist hamiltonianisch, wenn der Grad jedes Knotens mindestens \( \frac{n}{2} \) beträgt.
+
+28. **Eccentricity of a vertex**: Die Exzentrizität eines Knotens ist die größte Entfernung (Anzahl der Kanten) zu einem anderen Knoten im Graphen.
+
+29. **Radius and diameter of a graph**: Der Radius eines Graphen ist das Minimum der Exzentrizität aller Knoten. Der Durchmesser ist das Maximum der Exzentrizität.
+
+30. **Center of a graph**: Das Zentrum eines Graphen ist die Menge der Knoten mit minimaler Exzentrizität.
+
+31. **Centroid of a tree**: Das Zentroid eines Baumes ist der Knoten oder die Knoten, die die Entfernung zu allen anderen Knoten minimieren.
+
+32. **Clique**: Eine Clique ist eine Menge von Knoten, in der jeder Knoten mit jedem anderen Knoten verbunden ist.
+
+33. **Independent set**: Eine unabhängige Menge ist eine Menge von Knoten, in der keine zwei Knoten durch eine Kante verbunden sind.
+
+34. **Matching**: Eine Zuordnung ist eine Menge von Kanten, bei der keine zwei Kanten denselben Knoten gemeinsam haben.
+
+35. **Perfect matching**: Eine perfekte Zuordnung ist eine Zuordnung, bei der jeder Knoten in genau einer Kante der Zuordnung liegt.
+
+36. **Vertex cover**: Eine Knotenüberdeckung ist eine Menge von Knoten, die jede Kante im Graphen überdecken (jede Kante hat mindestens einen Endknoten in der Menge).
+
+37. **Edge cover**: Eine Kantenüberdeckung ist eine Menge von Kanten, die jeden Knoten im Graphen überdecken (jeder Knoten ist Endknoten mindestens einer Kante in der Menge).
+
+38. **Tree**: Ein Baum ist ein zusammenhängender, azyklischer Graph.
+
+39. **Forest**: Ein Wald ist eine Menge von Bäumen.
+
+40. **Minimum spanning tree**: Ein minimaler Spannbaum ist ein Spannbaum eines gewichteten Graphen mit minimaler Summe der Kantengewichte.
+
+41. **Prüfer code**: Ein Prüfer-Code ist eine eindeutige Sequenz, die einen beschrifteten Baum darstellt.
+
+42. **Bipartite graph**: Ein bipartiter Graph ist ein Graph, dessen Knotenmenge in zwei disjunkte Mengen aufgeteilt werden kann, sodass jede Kante einen Knoten aus jeder Menge verbindet.
+
+43. **Theorem on the balance of regular bipartite graphs**: Ein regulärer bipartiter Graph hat die gleiche Anzahl von Knoten in beiden Teilmengen.
+
+44. **Theorem on the existence of a perfect matching in a regular bipartite graph**: Jeder reguläre bipartite Graph hat eine perfekte Zuordnung.
+
+45. **Hall's theorem (on the existence of an X-perfect matching in a bipartite graph)**: Ein bipartiter Graph hat eine perfekte Zuordnung, wenn für jede Teilmenge \( X \) der einen Knotenmenge die Größe der Nachbarschaft von \( X \) mindestens so groß ist wie \( X \) selbst.
+
+46. **Connectivity in undirected graphs**: Ein ungerichteter Graph ist zusammenhängend, wenn es zwischen jedem Paar von Knoten einen Pfad gibt.
+
+47. **Strong and weak connectivity in directed graphs**: Ein gerichteter Graph ist stark zusammenhängend, wenn es zwischen jedem Paar von Knoten in beiden Richtungen einen Pfad gibt. Er ist schwach zusammenhängend, wenn der zugrunde liegende ungerichtete Graph zusammenhängend ist.
+
+48. **Condensation of a directed graph**: Die Kondensation eines gerichteten Graphen ist ein gerichteter azyklischer Graph (DAG), der durch das Zusammenfassen stark zusammenhängender Komponenten entsteht.
+
+49. **Vertex connectivity**: Die Knotenverbindungszahl eines Graphen ist die minimale Anzahl von Knoten, deren Entfernung den Graphen unzusammenhängend macht.
+
+50. **Edge connectivity**: Die Kantenverbindungszahl eines Graphen ist die minimale Anzahl von Kanten, deren Entfernung den Graphen unzusammenhängend macht.
+
+51. **Whitney's theorem**: Zwei 2-zusammenhängende Graphen sind genau dann k-ischomorph, wenn ihre Blöcke die gleiche Anzahl von Knoten haben.
+
+52. **k-connected graph**: Ein Graph ist \( k \)-zusammenhängend,
+
+ wenn mindestens \( k \) Knoten entfernt werden müssen, um ihn unzusammenhängend zu machen.
+
+53. **Menger's theorem**: Mengers Satz besagt, dass die minimale Anzahl von Knoten, die zwei nicht-adjazente Knoten trennen, gleich der maximalen Anzahl disjunkter Pfade zwischen ihnen ist.
+
+54. **Biconnectivity**: Ein Graph ist 2-zusammenhängend (bikonnektiv), wenn er zusammenhängend ist und das Entfernen eines einzelnen Knotens ihn nicht unzusammenhängend macht.
+
+55. **Articulation point**: Ein Artikulationspunkt ist ein Knoten, dessen Entfernung den Graphen unzusammenhängend macht.
+
+56. **Bridge**: Eine Brücke ist eine Kante, deren Entfernung den Graphen unzusammenhängend macht.
+
+57. **Blocks**: Ein Block ist ein maximaler 2-zusammenhängender Teilgraph.
+
+58. **Block-cut tree**: Ein Block-Cut-Baum ist ein Baum, der die Blöcke und Artikulationspunkte eines Graphen darstellt.
+
+59. **Deterministic Finite Automaton (DFA)**: Ein deterministischer endlicher Automat ist ein rechnerisches Modell mit einer festen Anzahl von Zuständen, das eine Eingabezeichenkette akzeptiert oder ablehnt.
+
+60. **Non-deterministic Finite Automaton (NFA)**: Ein nichtdeterministischer endlicher Automat ist ein rechnerisches Modell, bei dem mehrere Übergänge für dieselbe Eingabe möglich sind.
+
+61. **Formal languages**: Formale Sprachen sind Mengen von Zeichenketten, die durch bestimmte grammatikalische Regeln erzeugt werden.
+
+62. **Operations on formal languages (concat, union, Kleene closure)**: Operationen an formalen Sprachen umfassen Verkettung (Konkatenation), Vereinigung (Union) und Kleene-Abschluss (Kleene-Stern).
+
+63. **Regular languages**: Reguläre Sprachen sind Sprachen, die durch reguläre Ausdrücke beschrieben werden können und von endlichen Automaten erkannt werden.
+
+64. **Regular expression**: Ein regulärer Ausdruck ist eine Notation zur Beschreibung regulärer Sprachen.
+
+65. **Kleene's theorem**: Kleenes Theorem besagt, dass reguläre Sprachen genau die Sprachen sind, die von endlichen Automaten erkannt werden.
+
+66. **Powerset construction (DFA from NFA)**: Die Potenzmengen-Konstruktion wandelt einen NFA in einen äquivalenten DFA um.
+
+67. **$\varepsilon$-NFA**: Ein \(\varepsilon\)-NFA ist ein NFA, das \(\varepsilon\)-Übergänge (Übergänge ohne Eingabe) erlaubt.
+
+68. **NFA construction from $\varepsilon$-NFA**: Ein \(\varepsilon\)-NFA kann in einen NFA ohne \(\varepsilon\)-Übergänge umgewandelt werden.
+
+69. **Thompson’s construction ($\varepsilon$-NFA from regular expression)**: Thompsons Konstruktion ist ein Algorithmus zur Umwandlung eines regulären Ausdrucks in einen \(\varepsilon\)-NFA.
+
+70. **Kleene’s algorithm**: Kleenes Algorithmus berechnet die transitive Hülle einer Relation, die durch eine Matrix dargestellt wird.
+
+71. **Pumping lemma for regular languages**: Das Pumping-Lemma für reguläre Sprachen beschreibt eine notwendige Bedingung, die jede reguläre Sprache erfüllen muss.
+
+72. **Closure properties of regular languages**: Reguläre Sprachen sind unter den Operationen Vereinigung, Schnitt, Komplement, Konkatenation und Kleene-Stern abgeschlossen.
+
+73. **Mealy machine**: Eine Mealy-Maschine ist ein endlicher Automat, dessen Ausgaben von den Eingaben und dem aktuellen Zustand abhängen.
+
+74. **Moore machine**: Eine Moore-Maschine ist ein endlicher Automat, dessen Ausgaben nur vom aktuellen Zustand abhängen.
+
+75. **Emptiness of finite automaton language**: Die Leere einer endlichen Automaten-Sprache prüft, ob der Automat keine Zeichenketten akzeptiert.
+
+76. **Finiteness of finite automaton language**: Die Endlichkeit einer endlichen Automaten-Sprache prüft, ob der Automat nur endlich viele Zeichenketten akzeptiert.
+
+77. **Equivalence of finite automata**: Die Äquivalenz von endlichen Automaten prüft, ob zwei Automaten dieselbe Sprache akzeptieren.
+
+78. **Myhill-Nerode theorem**: Der Satz von Myhill-Nerode liefert eine Charakterisierung regulärer Sprachen durch rechtsinvariante Äquivalenzrelationen und minimierte endliche Automaten.
+
+79. **Ordered arrangements**: Geordnete Anordnungen sind Permutationen oder Kombinationen, bei denen die Reihenfolge der Elemente berücksichtigt wird.
+
+80. **Permutations**: Permutationen sind Anordnungen aller Elemente einer Menge in einer bestimmten Reihenfolge.
+
+81. **k-permutations**: \( k \)-Permutationen sind Anordnungen von \( k \) Elementen aus einer größeren Menge in einer bestimmten Reihenfolge.
+
+82. **Cyclic permutations**: Zyklische Permutationen sind Permutationen, bei denen die Elemente in einem Kreis angeordnet sind.
+
+83. **Unordered arrangements**: Ungeordnete Anordnungen sind Kombinationen, bei denen die Reihenfolge der Elemente keine Rolle spielt.
+
+84. **k-combinations**: \( k \)-Kombinationen sind Auswahlmöglichkeiten von \( k \) Elementen aus einer größeren Menge, bei denen die Reihenfolge keine Rolle spielt.
+
+85. **Multisets**: Multimengen sind Mengen, in denen Elemente mehrfach vorkommen können.
+
+86. **Permutations of multisets**: Permutationen von Multimengen sind Anordnungen der Elemente einer Multimenge, wobei die Reihenfolge berücksichtigt wird.
+
+87. **Combinations of infinite multisets**: Kombinationen aus unendlichen Multimengen sind Auswahlmöglichkeiten von Elementen, bei denen die Reihenfolge keine Rolle spielt und unendlich viele Vorkommen eines Elements möglich sind.
+
+88. **Compositions**: Kompositionen sind geordnete Zerlegungen einer Zahl in Summanden.
+
+89. **Set partitions**: Mengenpartitionen sind Unterteilungen einer Menge in disjunkte Teilmengen.
+
+90. **Stirling numbers of the second kind**: Die Stirling-Zahlen zweiter Art zählen die Anzahl der Möglichkeiten, eine Menge von \( n \) Elementen in \( k \) nicht leere Teilmengen zu partitionieren.
+
+91. **Integer partitions**: Ganzzahlpartitionen sind Zerlegungen einer Zahl in eine Summe von positiven ganzen Zahlen.
+
+92. **Principle of Inclusion-Exclusion**: Das Inklusions-Exklusions-Prinzip berechnet die Größe der Vereinigung mehrerer Mengen, indem die Größen der einzelnen Mengen und ihrer Schnitte berücksichtigt werden.
+
+93. **Recurrence relations**: Rekursionsgleichungen beschreiben Folgen, bei denen der nächste Term als Funktion der vorherigen Terme definiert ist.
+
+94. **Solving recurrence relations using characteristic equations**: Das Lösen von Rekursionsgleichungen mittels charakteristischer Gleichungen ist eine Methode zur Bestimmung expliziter Formeln für rekursive Folgen.
+
+95. **Generating functions**: Erzeugende Funktionen sind formale Potenzreihen, die dazu verwendet werden, Folgen zu repräsentieren und rekursive Beziehungen zu lösen.
+
+96. **Power series**: Potenzreihen sind unendliche Reihen in der Form \(\sum a_n x^n\), die verwendet werden können, um Funktionen zu repräsentieren.
+
+97. **Solving linear recurrences using generating functions**: Das Lösen linearer Rekursionsgleichungen mittels erzeugender Funktionen ist eine Methode, um explizite Lösungen für rekursive Folgen zu finden.
+
+98. **Solving combinatorial problems using generating functions**: Kombinatorische Probleme können oft durch erzeugende Funktionen gelöst werden, indem die erzeugenden Funktionen für die entsprechenden Sequenzen oder Mengen verwendet werden.
+
+99. **Operators and annihilators**: Operatoren und Annihilatoren sind Werkzeuge zur Manipulation von erzeugenden Funktionen und zur Lösung von Rekursionsgleichungen.
+
+100. **Solving linear recurrences using annihilators**: Das Lösen linearer Rekursionsgleichungen mittels Annihilatoren ist eine Methode, um explizite Lösungen für rekursive Folgen zu finden.
+
+101. **Catalan numbers**: Die Katalan-Zahlen sind eine Folge natürlicher Zahlen, die in verschiedenen kombinatorischen Strukturen vorkommen, wie z.B. in der Anzahl der korrekt geklammerten Ausdrücke.
+
+102. **Divide-and-Conquer algorithms analysis using recursion trees**: Die Analyse von Divide-and-Conquer-Algorithmen mittels Rekursionsbäumen hilft dabei, die Laufzeit solcher Algorithmen zu verstehen und zu bestimmen.
+
+103. **Master theorem**: Der Master-Satz ist ein Werkzeug zur Lösung von Rekursionsgleichungen, die bei der Analyse von Divide-and-Conquer-Algorithmen auftreten.
+
+104. **Akra-Bazzi method**: Die Akra-Bazzi-Methode ist eine verallgemeinerte Technik zur Lösung von Rekursionsgleichungen, die in der Analyse von Algorithmen vorkommen.
