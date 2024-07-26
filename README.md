@@ -68,6 +68,6 @@ for contact write me: [t.me/pelmeshke](https://t.me/pelmeshke)
 
 Мой конспект, который я сделал во время моего изучения немецкого языка
 
-[Фонетика](conspects/deutsch/phonetics.pdf)
+[Фонетика](conspects/deutsch/deutsch_01_1_phonetics.pdf)
 
 [**(почти) Полный конспект**](conspects/deutsch/deutsch_superconspect.pdf)
