@@ -61,3 +61,13 @@ python compile_all.py ./directory
 ```
 
 for contact write me: [t.me/pelmeshke](https://t.me/pelmeshke)
+
+## Extra
+
+### Немецкий язык
+
+Мой конспект, который я сделал во время моего изучения немецкого языка
+
+[Фонетика](conspects/deutsch/deutsch_01_1_phonetics.pdf)
+
+[**(почти) Полный конспект**](conspects/deutsch/deutsch_superconspect.pdf)
