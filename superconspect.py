@@ -9,7 +9,7 @@ if len(sys.argv) <= 1:
 
 folder = sys.argv[1]
 
-if all(map(lambda x: x.endswith('.md'), os.listdir(folder))):
+if all(map(lambda x: x.endswith('.md') or '.' not in x, os.listdir(folder))):
     supername = folder + "_superconspect.md"
     BLACKLIST = [supername]
 
