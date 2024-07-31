@@ -44,7 +44,7 @@
 и сценариев, в которых ее можно было бы использовать?
 * **на какой вопрос я пытаюсь ответить этим прототипом?**
 
-Последний вопрос очень важен. В своем эссе "[Catastrophic Prototyping and Other Stories](https://www.levitylab.com/blog/2011/01/catastrophic-prototyping-and-other-stories/)"
+Последний вопрос очень важен. В своем эссе ["Catastrophic Prototyping and Other Stories"](https://www.levitylab.com/blog/2011/01/catastrophic-prototyping-and-other-stories/)
 Хайм Гингольд советует разрабатывать прототипы, отвечая на поставленный вопрос:
 
 > Например, вы думаете о том, как взаимодействовать с косяком рыб компьютерной мышью. Ваш вопрос таков: 
