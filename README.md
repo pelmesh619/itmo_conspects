@@ -70,5 +70,5 @@ for contact write me: [t.me/pelmeshke](https://t.me/pelmeshke)
 ("Игровая разработка без боли и кранчей. Как выжить в игровой индустрии и сохранить вдохновение" в русском издательстве)
 об игровом дизайне и продакшене от автора и гейм-дизайнера Ричарда Лемаршана.
 
-[**A Playful Production Process**](aplayfulproductionprocess/aplayfulproductionprocess_superconspect.md)
+[**A Playful Production Process**](aplayfulproductionprocess/aplayfulproductionprocess_superconspect.md) (закончен на ~25%)
 
