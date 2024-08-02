@@ -61,3 +61,14 @@ python compile_all.py ./directory
 ```
 
 for contact write me: [t.me/pelmeshke](https://t.me/pelmeshke)
+
+## Extra
+
+### A Playful Production Process
+
+Конспект книги "A Playful Production Process for Game Designers (and Everyone)"
+("Игровая разработка без боли и кранчей. Как выжить в игровой индустрии и сохранить вдохновение" в русском издательстве)
+об игровом дизайне и продакшене от автора и гейм-дизайнера Ричарда Лемаршана.
+
+[**A Playful Production Process**](aplayfulproductionprocess/aplayfulproductionprocess_superconspect.md) (закончен на ~25%)
+
