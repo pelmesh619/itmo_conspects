@@ -4,26 +4,30 @@
 
 ## III семестр (текущий)
 
-### Физические основы компьютерных и сетевых технологий
+### Физические основы компьютерных и сетевых технологий (лектор Музыченко Я. Б.)
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_02.pdf)
 
-### Теория вероятности
+### Теория вероятности (лектор Блаженов А. В.)
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_03.pdf)
 
+### Базы данных (лектор Маятин А. В.)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_04.md)
+
 ## II семестр
 
-### Математический анализ II
+### Математический анализ II (лектор Далевская О. П.)
 
 [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/calculus/calculus_superconspect.pdf)
 
 
-### Специальные разделы высшей математики
+### Специальные разделы высшей математики (лектор Далевская О. П.)
 
 [**Весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf)
 
-### Дискретная математика II
+### Дискретная математика II (лектор Чухарев К. И.)
 
 [**Почти весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_superconspect.pdf)
 
