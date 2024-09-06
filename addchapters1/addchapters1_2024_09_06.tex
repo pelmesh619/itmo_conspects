@@ -1,0 +1,199 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Дополнительные главы \\ высшей математики}
+\fancyhead[CO,CE]{06.09.2024}
+\fancyhead[RO,RE]{Лекции Далевская О. П.}
+
+\fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
+
+\begin{document}
+    \section{1. Ряды}
+
+    \subsection{1.1 Числовые ряды}
+
+    \tedxtbf{1. Определения}
+
+    \Mem Числовая последовательность: $\{u_n\} = \{u_1, u_2, \dots, u_n, \dots\}, u_n \in \Real$
+
+    \ExN{1} Бесконечно убывающая геометрическая прогрессия: $u_n = b q^n, \quad
+    \frac{1}{2^n} \stackrel{n = 0,1,\dots}{=} \{1, \frac{1}{2}, \frac{1}{4}, \dots\}$
+
+    \ExN{2} $u_n = 1, -1, 1, -1, \dots$
+
+    \Def $\{u_n\}$ - последовательность
+
+    $\sum_{n = 1}^{\infty} u_n = u_1 + u_2 + \dots + u_n + \dots$ называется числовым рядом
+
+    \Nota Начальное значение $n$ произвольно (целое)
+
+    \Ex $u_n = \frac{1}{(n - 4)^3}, \quad n = 5, 6, \dots$
+
+    $u_n = \frac{1}{n^3}, \quad n = 2024, 2025, \dots$
+
+    \Nota $u_n$ называется общим членом ряда
+
+    \Nota Существует ли сумма $\sum_{n = 1}^{\infty} u_n$ и в каком смысле?
+
+    \ExN{3} $\sum_{n = 1}^{\infty} n = 1 + 2 + 3 + \dots = \infty$ - существует, но бесконечная
+
+    \ExN{4} $\sum_{n = 0}^{\infty} (-1)^n = 1 - 1 + 1 - 1 + 1 - 1 + \dots =
+    \begin{sqcases}
+        0 + 0 + \dots = 0 \\
+        1 + 0 + 0 + \dots = 1
+    \end{sqcases}$
+
+    \ExN{5} $\sum_{n = 0}^\infty \frac{1}{2^n} = 1 + \frac{1}{2} + \frac{1}{4} + \dots = 2$
+
+    \Def Частичная сумма ряда $S_n \stackrel{def}{=} \sum_{k = 1}^{n} u_k$
+
+    \Nota Последовательность частичных сумм $S_1, S_2, S_3, S_4, \dots$
+
+    \Ex $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots$
+
+    $S_1 = u_1 = 1 \quad S_2 = \frac{3}{2} \quad S_3 = \frac{7}{4} \quad S_4 = \frac{15}{8}$
+
+    $\lim_{n \to \infty} S_n = ?$, но проблема заключается в том, что бы найти формулу для $S_n$
+
+    \Def Если $\exists \lim_{n \to\infty} S_n = S \in \Real$, то ряд $\sum_{n = 1}^\infty u_n$ называют сходящимся,
+    а $S$ называют суммой ряда $\sum_{n = 1}^\infty u_n = S$
+
+    \Nota В противном случае ряд расходится, суммы не может быть или она бесконечна
+
+    \Ex Поиск суммы по определению
+
+    $\sum_{n = 1}^\infty \frac{1}{n (n + 1)}$
+
+    $u_n = \frac{1}{n(n + 1)} = \frac{1}{n} - \frac{1}{n + 1}$
+
+    $S_n = \sum_{k = 1}^n u_k = \sum_{k = 1}^n (\frac{1}{k} - \frac{1}{k + 1}) = 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{3} + \dots + \frac{1}{n} - \frac{1}{n + 1} = 1 - \frac{1}{n + 1}$
+
+    $\lim_{n \to infty} S_n = \lim_{n \to \infty} (1 - \frac{1}{n + 1}) = 1 = S = \sum_{n = 1}^\infty \frac{1}{n(n + 1)}$
+
+    \Ex Геометрический ряд (эталонный): \ \ $\sum_{n = 0}^\infty b q^n$
+
+    $S_n = \sum_{k = 0}^n b q^k = b (1 + q + q^2 + q^3 + \dots + q^n) = b \frac{1 - q^n}{1 - q}$
+
+    Исследуем предел $\lim_{n\to\infty} S_n$:
+
+    $|q| < 1 \quad\quad \lim_{n\to\infty} S_n = \frac{b}{1 - q} \lim_{n \to\infty} (1 - q^n) = \frac{b}{1 - q}$
+
+    $|q| > 1 \quad\quad \lim_{n\to\infty} S_n = \infty (q^n \to\infty)$
+
+    $|q| = 1 \quad\quad \lim_{n\to\infty} b \frac{0}{0} ? \quad\quad \sum_{n = 0}^\infty b q^n = \sum_{n = 0}^\infty b = \infty \quad (b \neq 0)$
+
+    $q = -1 \quad\quad \sum_{n = 0}^\infty b (-1)^n$ - расходится (из четвертого примера)
+
+    \Lab Доказать при $q = -1$ по def $(S_n = ?)$
+
+    \mediumvspace
+
+    \textbf{2. Свойства числовых рядом}
+
+    \Notas Свойства рядов используются в арифметических операциях с рядами и при исследовании на сходимость
+
+    \ThN{1} Отбрасывание или добавление конечного числа членов ряда не влияет на сходимость, но влияет на сумму
+
+    $\sum_{n = 1}^\infty u_n$ и $\sum_{n = k > 1}_\infty u_n$ одновременно сходятся или расходятся
+
+    \begin{tcolorbox}
+        $\Box$
+
+        $\sum_{n = 1}^{\infty} u_n = u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n + \dots$
+
+        $S_n = \sum_{k = 1}^n u_k \quad\quad \sigma_t = \sum_{r = 1}^t v_r \quad\quad v_r = u_{k - 1 + r}$
+
+        $\lim_{n \to \infty} S_n = \lim_{n \to\infty} (u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n) = u_1 + \dots + u_{k - 1} + \lim_{t \to \infty} \sigma_t$
+
+        $\Box$
+    \end{tcolorbox}
+
+    \ThN{2} $\sum_{n = 1}^\infty u_n = S \in \Real, \quad \alpha \in \Real$
+
+    Тогда $\alpha \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty \alpha u_n = \alpha S$
+
+    \begin{tcolorbox}
+        $\Box$ По свойству пределов $\Box$
+    \end{tcolorbox}
+
+    \ThN{3} $\sum_{n = 1}^\infty u_n = S \in \Real$, $\sum_{n = 1}^\infty v_n = \sigma \in \Real$
+
+    Тогда $\sum_{n = 1}^\infty (u_n \pm v_n) = S \pm \sigma$ - сходится
+
+    \begin{tcolorbox}
+        $\Box$ По свойству пределов $\lim_{n \to\infty} (S_n \pm \sigma_n) = \lim_{n \to\infty} S_n \pm \lim_{n \to\infty} \sigma_n = S \pm \sigma$ $\Box$
+    \end{tcolorbox}
+
+    \Nota Обратное неверно!
+
+    \Exs $\sum_{n = 1}^\infty \frac{1}{n (n + 1)} = 1$, \quad но: $\frac{1}{n (n + 1)} = \frac{1}{n} - \frac{1}{n + 1}$,
+    а $\sum_{n = 1}^\infty \frac{1}{n}$ и $\sum_{n = 1}^\infty \frac{1}{n + 1}$ расходятся
+
+    \Nota Докажем расходимость $\sum_{n = 1}^\infty \frac{1}{n}$
+
+    \Exs Гармонический ряд (эталонный)
+
+    $\sum_{n = 1}^\infty u_n = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} + \frac{1}{9} + \frac{1}{10} + \frac{1}{11} + \frac{1}{12} + \frac{1}{13} + \frac{1}{14} + \frac{1}{15} + \frac{1}{16} + \dots$
+
+    $\sum_{n = 1}^\infty v_n = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{4} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \dots = \\
+    \quad 1 + \frac{1}{2} \cdot 1 + \frac{1}{4} \cdot 2 + \frac{1}{8} \cdot 4 + \frac{1}{16} \cdot 8 + \dots = 1 + \sum_{n = 1}^\infty \frac{1}{2} = \infty$
+
+    А так как нижний ряд почленно меньше верхнего, а нижний расходится, то и верхний расходится
+
+    Так как $u_n \geq v_n$, то $S_n \geq \sigma_n$, тогда $\lim_{n \to\infty} S_n \geq \lim_{n \to\infty} \sigma_n$
+
+    $\sigma_n = 1 + \frac{1}{2} \cdot n \to \infty \Longrightarrow S_n \to \infty$
+
+    \ThN{4} Если ряд сходится к числу $S$, то члены ряда можно группировать произвольным образом, не переставляя, и сумма всех рядов будет равна $S$
+
+    Группировка означает выделение различных подпоследовательностей из последовательности частичных сумм
+
+    \begin{tcolorbox}
+        $\Box$
+
+        Так как $\lim_{n \to\infty} S_n = S$, то $\lim_{k \to\infty} S_n^{(k)} = S$, где $S_n^{(k)}$ - подпоследовательность $S_n$
+
+        $\Box$
+    \end{tcolorbox}
+
+    \Exs Было $\sum (-1)^n = 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots = \begin{sqcases}0 \\ 1\end{sqcases}$, так как ряд расходится
+
+    \Nota В условиях \Ths важно, что переставлять члены ряда нельзя
+
+    \Exs $\sum_{n = 1}^\infty \frac{(-1)^{n - 1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \frac{1}{5} - \frac{1}{6} + \frac{1}{7} - \frac{1}{8} + \frac{1}{9} - \frac{1}{10} + \frac{1}{11} - \frac{1}{12} + \frac{1}{13} - \frac{1}{14} + \frac{1}{15} + \dots$
+
+    Далее будет доказано, что этот ряд сходится
+
+    Найдем сумму, переставив члены ряда
+
+    $S = \sum_{n = 1}^\infty \frac{(-1)^{n - 1}}{n} = 1 - \frac{1}{2} + (\frac{1}{3} - \frac{1}{6}) - \frac{1}{4} + (\frac{1}{5} - \frac{1}{10}) - \frac{1}{8} + (\frac{1}{7} - \frac{1}{14}) - \frac{1}{12} + (\frac{1}{9} - \frac{1}{18}) + \dots\\
+    S = 1 - \frac{1}{2} (1 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \frac{1}{6}) = 1 + \frac{1}{2} (-1 - \frac{1}{2} + \frac{1}{3} - \dots) =
+    1 + \frac{1}{2} (-2 + 1 - \frac{1}{2} + \frac{1}{3} + \dots) = \frac{1}{2} (1 - \frac{1}{2} + \frac{1}{3} - \dots) = \frac{1}{2} S$ \ ?!
+
+    \Notas Можно доказать, что в подобных рядах перестановкой членов можно получить любое наперед заданное число
+
+    \Notas Сходящиеся ряды допускают умножение, но непочленное
+
+    $\sum_{n = 1}^\infty u_n = S, \sum_{n = 1}^\infty v_n = \sigma$
+
+    Тогда $(\sum_{n = 1}^\infty u_n)(\sum_{n = 1}^\infty v_n) = S\sigma$
+
+    \mediumvspace
+
+    \textbf{3. Условия сходимости рядов}
+
+    3.1 Необходимое
+
+    \Th $\sum_{n = 1}^\infty u_n S \in \Real \Longrightarrow \lim_{n \to \infty} u_n = 0$
+
+    \begin{tcolorbox}
+        $\Box$
+
+        $\lim_{n \to \infty} S_n = S, \quad \lim_{n\to\infty} (S_n - S_{n - 1}) = 0$
+
+        $\Box$
+    \end{tcolorbox}
+
+\end{document}
+
