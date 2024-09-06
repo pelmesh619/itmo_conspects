@@ -14,7 +14,7 @@
 
 ### Базы данных (лектор Маятин А. В.)
 
-* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_04.md)
+* [Лекция №1](databases/databases_2024_09_04.md)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
