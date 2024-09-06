@@ -16,6 +16,10 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_04.md)
 
+### Дополнительные главы высшей математики (лектор Далевская О. П.)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/addchapters1/addchapters1_2024_09_06.pdf)
+
 ## II семестр
 
 ### Математический анализ II (лектор Далевская О. П.)
