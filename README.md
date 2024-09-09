@@ -6,6 +6,8 @@
 
 ### Физические основы компьютерных и сетевых технологий (лектор Музыченко Я. Б.)
 
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_superconspect.pdf)
+
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_02.pdf)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_09.pdf)
 
