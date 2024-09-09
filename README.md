@@ -19,7 +19,7 @@
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
-* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/addchapters1/addchapters1_2024_09_06.pdf)
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_09_06.pdf)
 
 ## II семестр
 
