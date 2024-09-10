@@ -23,6 +23,10 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_09_06.pdf)
 
+### Объектно-ориентированное программирование (лектор Макаревич Р. Д.)
+
+* [Лекция №1](oopcsharp/oopcsharp_2024_09_07.md)
+
 ## II семестр
 
 ### Математический анализ II (лектор Далевская О. П.)
