@@ -15,40 +15,40 @@
 
     \tedxtbf{1. Определения}
 
-    \Mem Числовая последовательность: $\{u_n\} = \{u_1, u_2, \dots, u_n, \dots\}, u_n \in \Real$
+    \Mems Числовая последовательность: $\{u_n\} = \{u_1, u_2, \dots, u_n, \dots\}, u_n \in \Real$
 
-    \ExN{1} Бесконечно убывающая геометрическая прогрессия: $u_n = b q^n, \quad
+    \ExNs{1} Бесконечно убывающая геометрическая прогрессия: $u_n = b q^n, \quad
     \frac{1}{2^n} \stackrel{n = 0,1,\dots}{=} \{1, \frac{1}{2}, \frac{1}{4}, \dots\}$
 
-    \ExN{2} $u_n = 1, -1, 1, -1, \dots$
+    \ExNs{2} $u_n = 1, -1, 1, -1, \dots$
 
     \Def $\{u_n\}$ - последовательность
 
     $\sum_{n = 1}^{\infty} u_n = u_1 + u_2 + \dots + u_n + \dots$ называется числовым рядом
 
-    \Nota Начальное значение $n$ произвольно (целое)
+    \Notas Начальное значение $n$ произвольно (целое)
 
     \Ex $u_n = \frac{1}{(n - 4)^3}, \quad n = 5, 6, \dots$
 
     $u_n = \frac{1}{n^3}, \quad n = 2024, 2025, \dots$
 
-    \Nota $u_n$ называется общим членом ряда
+    \Notas $u_n$ называется общим членом ряда
 
     \Nota Существует ли сумма $\sum_{n = 1}^{\infty} u_n$ и в каком смысле?
 
     \ExN{3} $\sum_{n = 1}^{\infty} n = 1 + 2 + 3 + \dots = \infty$ - существует, но бесконечная
 
-    \ExN{4} $\sum_{n = 0}^{\infty} (-1)^n = 1 - 1 + 1 - 1 + 1 - 1 + \dots =
+    \ExNs{4} $\sum_{n = 0}^{\infty} (-1)^n = 1 - 1 + 1 - 1 + 1 - 1 + \dots =
     \begin{sqcases}
         0 + 0 + \dots = 0 \\
         1 + 0 + 0 + \dots = 1
     \end{sqcases}$
 
-    \ExN{5} $\sum_{n = 0}^\infty \frac{1}{2^n} = 1 + \frac{1}{2} + \frac{1}{4} + \dots = 2$
+    \ExNs{5} $\sum_{n = 0}^\infty \frac{1}{2^n} = 1 + \frac{1}{2} + \frac{1}{4} + \dots = 2$
 
     \Def Частичная сумма ряда $S_n \stackrel{def}{=} \sum_{k = 1}^{n} u_k$
 
-    \Nota Последовательность частичных сумм $S_1, S_2, S_3, S_4, \dots$
+    \Notas Последовательность частичных сумм - $S_1, S_2, S_3, S_4, \dots$
 
     \Ex $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \dots$
 
@@ -59,7 +59,7 @@
     \Def Если $\exists \lim_{n \to\infty} S_n = S \in \Real$, то ряд $\sum_{n = 1}^\infty u_n$ называют сходящимся,
     а $S$ называют суммой ряда $\sum_{n = 1}^\infty u_n = S$
 
-    \Nota В противном случае ряд расходится, суммы не может быть или она бесконечна
+    \Notas В противном случае ряд расходится, суммы не может быть или она бесконечна
 
     \Ex Поиск суммы по определению
 
@@ -93,9 +93,11 @@
 
     \Notas Свойства рядов используются в арифметических операциях с рядами и при исследовании на сходимость
 
-    \ThN{1} Отбрасывание или добавление конечного числа членов ряда не влияет на сходимость, но влияет на сумму
+    \begin{MyTheorem}
+        \ThNs{1} Отбрасывание или добавление конечного числа членов ряда не влияет на сходимость, но влияет на сумму
 
-    $\sum_{n = 1}^\infty u_n$ и $\sum_{n = k > 1}_\infty u_n$ одновременно сходятся или расходятся
+        $\sum_{n = 1}^\infty u_n$ и $\sum_{n = k > 1}_\infty u_n$ одновременно сходятся или расходятся
+    \end{MyTheorem}
 
     \begin{tcolorbox}
         $\Box$
@@ -109,17 +111,21 @@
         $\Box$
     \end{tcolorbox}
 
-    \ThN{2} $\sum_{n = 1}^\infty u_n = S \in \Real, \quad \alpha \in \Real$
+    \begin{MyTheorem}
+        \ThNs{2} $\sum_{n = 1}^\infty u_n = S \in \Real, \quad \alpha \in \Real$
 
-    Тогда $\alpha \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty \alpha u_n = \alpha S$
+        Тогда $\alpha \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty \alpha u_n = \alpha S$
+    \end{MyTheorem}
 
     \begin{tcolorbox}
         $\Box$ По свойству пределов $\Box$
     \end{tcolorbox}
 
-    \ThN{3} $\sum_{n = 1}^\infty u_n = S \in \Real$, $\sum_{n = 1}^\infty v_n = \sigma \in \Real$
+    \begin{MyTheorem}
+        \ThNs{3} $\sum_{n = 1}^\infty u_n = S \in \Real$, $\sum_{n = 1}^\infty v_n = \sigma \in \Real$
 
-    Тогда $\sum_{n = 1}^\infty (u_n \pm v_n) = S \pm \sigma$ - сходится
+        Тогда $\sum_{n = 1}^\infty (u_n \pm v_n) = S \pm \sigma$ - сходится
+    \end{MyTheorem}
 
     \begin{tcolorbox}
         $\Box$ По свойству пределов $\lim_{n \to\infty} (S_n \pm \sigma_n) = \lim_{n \to\infty} S_n \pm \lim_{n \to\infty} \sigma_n = S \pm \sigma$ $\Box$
@@ -145,9 +151,11 @@
 
     $\sigma_n = 1 + \frac{1}{2} \cdot n \to \infty \Longrightarrow S_n \to \infty$
 
-    \ThN{4} Если ряд сходится к числу $S$, то члены ряда можно группировать произвольным образом, не переставляя, и сумма всех рядов будет равна $S$
+    \begin{MyTheorem}
+        \ThNs{4} Если ряд сходится к числу $S$, то члены ряда можно группировать произвольным образом, не переставляя, и сумма всех рядов будет равна $S$
 
-    Группировка означает выделение различных подпоследовательностей из последовательности частичных сумм
+        Группировка означает выделение различных подпоследовательностей из последовательности частичных сумм
+    \end{MyTheorem}
 
     \begin{tcolorbox}
         $\Box$
@@ -157,7 +165,9 @@
         $\Box$
     \end{tcolorbox}
 
-    \Exs Было $\sum (-1)^n = 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots = \begin{sqcases}0 \\ 1\end{sqcases}$, так как ряд расходится
+    \Exs Было $\sum (-1)^n = 1 - 1 + 1 - 1 + 1 - 1 + 1 - \dots = \begin{sqcases}
+                                                                     0 \\ 1
+    \end{sqcases}$, так как ряд расходится
 
     \Nota В условиях \Ths важно, что переставлять члены ряда нельзя
 
@@ -185,7 +195,9 @@
 
     3.1 Необходимое
 
-    \Th $\sum_{n = 1}^\infty u_n S \in \Real \Longrightarrow \lim_{n \to \infty} u_n = 0$
+    \begin{MyTheorem}
+        \Ths $\sum_{n = 1}^\infty u_n S \in \Real \Longrightarrow \lim_{n \to \infty} u_n = 0$
+    \end{MyTheorem}
 
     \begin{tcolorbox}
         $\Box$
