@@ -67,9 +67,9 @@
 
     $u_n = \frac{1}{n(n + 1)} = \frac{1}{n} - \frac{1}{n + 1}$
 
-    $S_n = \sum_{k = 1}^n u_k = \sum_{k = 1}^n (\frac{1}{k} - \frac{1}{k + 1}) = 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{3} + \dots + \frac{1}{n} - \frac{1}{n + 1} = 1 - \frac{1}{n + 1}$
+    $S_n = \sum_{k = 1}^n u_k = \sum_{k = 1}^n \left(\frac{1}{k} - \frac{1}{k + 1}\right) = 1 - \frac{1}{2} + \frac{1}{2} - \frac{1}{3} + \frac{1}{3} + \dots + \frac{1}{n} - \frac{1}{n + 1} = 1 - \frac{1}{n + 1}$
 
-    $\lim_{n \to infty} S_n = \lim_{n \to \infty} (1 - \frac{1}{n + 1}) = 1 = S = \sum_{n = 1}^\infty \frac{1}{n(n + 1)}$
+    $\lim_{n \to \infty} S_n = \lim_{n \to \infty} \left(1 - \frac{1}{n + 1}\right) = 1 = S = \sum_{n = 1}^\infty \frac{1}{n(n + 1)}$
 
     \Ex Геометрический ряд (эталонный): \ \ $\sum_{n = 0}^\infty b q^n$
 
@@ -96,7 +96,7 @@
     \begin{MyTheorem}
         \ThNs{1} Отбрасывание или добавление конечного числа членов ряда не влияет на сходимость, но влияет на сумму
 
-        $\sum_{n = 1}^\infty u_n$ и $\sum_{n = k > 1}_\infty u_n$ одновременно сходятся или расходятся
+        $\sum_{n = 1}^\infty u_n$ и $\sum_{n = k > 1}^\infty u_n$ одновременно сходятся или расходятся
     \end{MyTheorem}
 
     \begin{tcolorbox}
@@ -177,9 +177,9 @@
 
     Найдем сумму, переставив члены ряда
 
-    $S = \sum_{n = 1}^\infty \frac{(-1)^{n - 1}}{n} = 1 - \frac{1}{2} + (\frac{1}{3} - \frac{1}{6}) - \frac{1}{4} + (\frac{1}{5} - \frac{1}{10}) - \frac{1}{8} + (\frac{1}{7} - \frac{1}{14}) - \frac{1}{12} + (\frac{1}{9} - \frac{1}{18}) + \dots\\
-    S = 1 - \frac{1}{2} (1 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \frac{1}{6}) = 1 + \frac{1}{2} (-1 - \frac{1}{2} + \frac{1}{3} - \dots) =
-    1 + \frac{1}{2} (-2 + 1 - \frac{1}{2} + \frac{1}{3} + \dots) = \frac{1}{2} (1 - \frac{1}{2} + \frac{1}{3} - \dots) = \frac{1}{2} S$ \ ?!
+    $S = \sum_{n = 1}^\infty \frac{(-1)^{n - 1}}{n} = 1 - \frac{1}{2} + \left(\frac{1}{3} - \frac{1}{6}\right) - \frac{1}{4} + \left(\frac{1}{5} - \frac{1}{10}\right) - \frac{1}{8} + \left(\frac{1}{7} - \frac{1}{14}\right) - \frac{1}{12} + \left(\frac{1}{9} - \frac{1}{18}\right) + \dots\\
+    S = 1 - \frac{1}{2} \left(1 + \frac{1}{2} - \frac{1}{3} + \frac{1}{4} - \frac{1}{5} + \frac{1}{6}\right) = 1 + \frac{1}{2} \left(-1 - \frac{1}{2} + \frac{1}{3} - \dots\right) =
+    1 + \frac{1}{2} \left(-2 + 1 - \frac{1}{2} + \frac{1}{3} + \dots\right) = \frac{1}{2} \left(1 - \frac{1}{2} + \frac{1}{3} - \dots\right) = \frac{1}{2} S$ \ ?!
 
     \Notas Можно доказать, что в подобных рядах перестановкой членов можно получить любое наперед заданное число
 
@@ -187,7 +187,7 @@
 
     $\sum_{n = 1}^\infty u_n = S, \sum_{n = 1}^\infty v_n = \sigma$
 
-    Тогда $(\sum_{n = 1}^\infty u_n)(\sum_{n = 1}^\infty v_n) = S\sigma$
+    Тогда $\left(\sum_{n = 1}^\infty u_n\right)\left(\sum_{n = 1}^\infty v_n\right) = S\sigma$
 
     \mediumvspace
 
