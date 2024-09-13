@@ -20,6 +20,8 @@
 
 ### Базы данных (лектор Маятин А. В.)
 
+[**Весь курс**](databases/databases_superconspect.md)
+
 * [Лекция №1](databases/databases_2024_09_04.md)
 * [Лекция №2](databases/databases_2024_09_12.md)
 
