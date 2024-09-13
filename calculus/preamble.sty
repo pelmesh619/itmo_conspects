@@ -101,6 +101,8 @@
     patterns,
     positioning,
     shapes.misc,
+    automata,
+    shapes
 }
 \tikzstyle{every text node part}=[align=center]
 
@@ -282,8 +284,8 @@
 \hypersetup{
     breaklinks=true,% allow links to break over lines
     pdfstartview=,% empty value leads to using viewer's defaults
-    pdfauthor={Konstantin Chukharev},
-    pdfsubject={Discrete Math},
+    pdfauthor={},
+    pdfsubject={},
     allcolors=black,
     urlcolor=blue,
     linkcolor=red,
@@ -699,6 +701,7 @@
 \Ths}
 
 \newcommand{\ThN}[1]{\Th\textbf{#1.}}
+\newcommand{\ThNs}[1]{\Ths\textbf{#1.}}
 
 \newcommand{\Exs}{\textit{Ex. }} % s - for silent
 \newcommand{\Ex}{ \vspace{5mm}%
@@ -706,6 +709,7 @@
 \Exs%
 }
 \newcommand{\ExN}[1]{\Ex\textit{#1.}}
+\newcommand{\ExNs}[1]{\Exs\textit{#1.}}
 
 \newcommand{\Lab}{\underline{Lab. }}
 
@@ -721,5 +725,43 @@
 \newcommand{\mediumvspace}{\vspace{6mm}}
 
 \newcommand{\bigvspace}{\vspace{10mm}}
+
+\tikzset{
+    position/.style args={#1:#2 from #3}{
+        at=(#3.#1), anchor=#1+180, shift=(#1:#2)
+    },
+    dot/.style={
+        draw,
+        fill=black,
+        shape=circle,
+        minimum size=4pt,
+        inner sep=0pt,
+        outer sep=0pt,
+    },
+}
+\tikzstyle{mygraphstyle}=[
+    auto,
+    on grid,
+]
+\tikzstyle{myautomatonstyle}=[
+    auto, on grid,
+    >={Stealth[]},
+    shorten >=1pt,
+    semithick,
+    bend angle=15,
+    initial text={},
+    every state/.style={
+        inner sep=0pt,
+        minimum size=2em,
+    },
+]
+
+
+\newenvironment{MyTheorem}
+    {\begin{tcolorbox}[colframe=blue!25, colback=blue!10]
+    }
+    {
+    \end{tcolorbox}
+    }
 
 

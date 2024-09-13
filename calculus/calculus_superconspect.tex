@@ -12,7 +12,8 @@
     \tableofcontents
     \clearpage
 
-    
+        % begin calculus_2024_02_07.tex
+
     \section{1. Определенный интеграл}
 
 
@@ -351,8 +352,9 @@
     \Nota Не всякий интеграл вида $\int^b_a f(x) dx $ является определенным
 
     \Ex $\int^e_0 \ln x dx = x \ln x \Big|_0^e - x \Big|_0^e = e \ln e - \underset{0 \cdot \infty}{\undergroup{0 \ln 0}} - e$ - несобственный интеграл
+    % end calculus_2024_02_07.tex
 
-
+    % begin calculus_2024_02_14.tex
 
     \section{1.4. Приложения определенного интеграла}
     \hypertarget{integralapplications}{}
@@ -472,8 +474,9 @@
     тогда объем тела вращения будет равен $\int_a^b \pi r^2(x) dx$
 
     \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_4}
+    % end calculus_2024_02_14.tex
 
-
+    % begin calculus_2024_02_21.tex
 
     \clearpage
 
@@ -733,8 +736,9 @@
 
     Таким образом $\displaystyle J^\prime_\alpha(\alpha) = \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \alpha) dx + \lim_{\Delta \alpha \to 0} \int^{b}_{a} \varepsilon dx =
     \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \xi) dx$
+    % end calculus_2024_02_21.tex
 
-
+    % begin calculus_2024_02_28.tex
 
     Теорема: $\displaystyle J^\prime_\alpha = \left(\int^b_a f(x, \alpha)dx\right)^\prime_\alpha = \int^b_a f^\prime_\alpha(x, \alpha)dx)$
 
@@ -863,8 +867,9 @@
     Как определить функцию, дифференцируемую в точке?
 
     По аналогии $\Delta z = A \Delta x + B \Delta y + \alpha \Delta x + \beta \Delta y$, где $A, B \in \Real$, $\alpha, \beta$ - б. м.
+    % end calculus_2024_02_28.tex
 
-
+    % begin calculus_2024_03_06.tex
 
     Дифференциал
 
@@ -1150,8 +1155,9 @@
 
     \Nota  Формула выше верна, если $\displaystyle z = z(x, y)$ - непрерывна со своими частными производными до $\displaystyle n + 1$ порядка
     включительно в некоторой окрестности $\displaystyle U_\delta(M_0(x_0, y_0))$, где $\displaystyle M(x, y) \in U_\delta(M_0)$
+    % end calculus_2024_03_06.tex
 
-
+    % begin calculus_2024_03_13.tex
 
     Для линейной параметризации форма дифференциала сохраняется
 
@@ -1309,8 +1315,9 @@
         $\overrightarrow{\triangledown} u = (u_x, u_y) \quad \frac{u_y}{u_x} = k_{\text{град.}}$ - наклон вектора градиента.
         Очевидно $k_l \cdot k_{\text{град.}} = -1 \Longrightarrow \overrightarrow{\triangledown} u \perp l$
     \end{enumerate}
+    % end calculus_2024_03_13.tex
 
-
+    % begin calculus_2024_03_20.tex
 
     \Nota Итак, в теоремах сказано
 
@@ -1552,8 +1559,9 @@
     Можно доказать при $A \neq 0$, например, выбрав $tg \alpha = -\frac{A}{B}$, что знак $\Delta z$ зависит от $\alpha$
 
     $\Box$
+    % end calculus_2024_03_20.tex
 
-
+    % begin calculus_2024_03_27.tex
 
     \clearpage
 
@@ -1663,8 +1671,9 @@
 
         $n = 3$: тройной
     \end{tabular}
+    % end calculus_2024_03_27.tex
 
-
+    % begin calculus_2024_04_03.tex
 
     \section{5.3. Двойной и тройной интегралы}
 
@@ -1784,8 +1793,9 @@
     \hypertarget{tripleintegralcalculation}{}
 
     Вычисление. $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
+    % end calculus_2024_04_03.tex
 
-
+    % begin calculus_2024_04_10.tex
 
     \section{5.4. Замена переменной в двойном и тройном интегралах}
 
@@ -1932,8 +1942,9 @@
 
 
     Обозн. Получаем $\int_l f(x, y)dl = \int_{AB} f(x, y)dl$
+    % end calculus_2024_04_10.tex
 
-
+    % begin calculus_2024_04_17.tex
 
     \Nota В строгом определении интегральная сумма строится так:
 
@@ -2081,8 +2092,9 @@
     \oint_{K^+} Pdx + Qdy$
 
     $\Box$
+    % end calculus_2024_04_17.tex
 
-
+    % begin calculus_2024_04_24.tex
 
     \underline{Следствие}. $S_D = \frac{1}{2} \oint_K xdy - ydx$
 
@@ -2246,8 +2258,9 @@
     \Ex $\letsymbol \overrightarrow{F} = (P, Q) = (0, -mg)$
 
     $\Phi(x, y) = \int_O^M 0dx - mgdy = -\int_0^y mgdy = -mgy$ - потенциал гравитационного поля (или силы тяжести)
+    % end calculus_2024_04_24.tex
 
-
+    % begin calculus_2024_05_08.tex
 
     \section{5.6. Поверхностные интегралы}
 
@@ -2396,8 +2409,9 @@
     3) $R(x, y, z) = \tilde{R}(x, y, z(x, y)), P(x, y, z) = \tilde{P}(y, z), Q(x, y, z) = \tilde{Q}(x, z)$
 
     4) $\iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy = \iint_{D_{xy}} \pm \tilde{P}dydz \pm \tilde{Q}dxdz \pm \tilde{R}dxdy$
+    % end calculus_2024_05_08.tex
 
-
+    % begin calculus_2024_05_15.tex
 
 
     Разберем пример поверхностного интеграла:
@@ -2512,7 +2526,7 @@
 
     \hypertarget{scalarfield}{}
 
-    \DefN{1} $\Omega \supset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
+    \DefN{1} $\Omega \subset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
 
     \hypertarget{vectorfield}{}
 
@@ -2729,8 +2743,9 @@
     \Ths о среднем: $\exists M_1 : \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma} = rot \overrightarrow{F} \Big|_{M_1} \cdot S = \Gamma$
 
     $rot \overrightarrow{F} \Big|_{M_1} = \frac{\Gamma}{S}$, будем стягивать $S$ к точке $M_0$ \Longrightarrow $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ - циркуляция по б.м. контуру с центром $M_0$
+    % end calculus_2024_05_15.tex
 
-
+    % begin calculus_2024_05_29.tex
 
     \Mem Дифф. хар.: $div \overrightarrow{F} = \overrightarrow{\trianlgedown} \overrightarrow{F}, rot \overrightarrow{F} = \overrightarrow{\trianlgedown} \times \overrightarrow{F}$
 
@@ -2832,8 +2847,9 @@
     3) $\overrightarrow{\triangledown} \varepsilon \overrightarrow{E} = \rho$
 
     4) $\overrightarrow{\triangledown} \mu \overrightarrow{H} = 0$
+    % end calculus_2024_05_29.tex
 
-
+    % begin calculus_exam_list.tex
 
     \clearpage
 
@@ -3284,7 +3300,7 @@
 
         \item Скалярное и векторное поля: определения, геометрические характеристики. Дифференциальные и интегральные характеристики полей (определения).
 
-        \hyperlink{scalarfield}{Скалярное поле}: $\Omega \supset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
+        \hyperlink{scalarfield}{Скалярное поле}: $\Omega \subset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
 
         \hyperlink{vectorfield}{Векторное поле}: Функция $\overrightarrow{F} = (F_1(\overrightarrow{x}), \dots, F_n(\overrightarrow{x})) : \Omega \to \Real^n$ называется векторным полем
 
@@ -3353,7 +3369,7 @@
 
 
     \end{enumerate}
-
+    % end calculus_exam_list.tex
 
 
 
