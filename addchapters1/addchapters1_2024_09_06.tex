@@ -210,7 +210,7 @@
     3.1 Необходимое
 
     \begin{MyTheorem}
-        \Ths $\sum_{n = 1}^\infty u_n S \in \Real \Longrightarrow \lim_{n \to \infty} u_n = 0$
+        \Ths $\sum_{n = 1}^\infty u_n = S \in \Real \Longrightarrow \lim_{n \to \infty} u_n = 0$
     \end{MyTheorem}
 
     \begin{tcolorbox}
@@ -220,6 +220,31 @@
 
         $\Box$
     \end{tcolorbox}
+
+    \Nota Обратное неверно! (см. гармонический ряд)
+
+    \Ex $\sum_{n = 1}^\infty (2n + 3) \sin \frac{1}{n}$
+
+    $\lim_{n \to \infty} (2n + 3) \sin \frac{1}{n} = \lim_{n \to \infty} (2 + \frac{3}{n}) = 2 \neq 0$
+
+    \mediumvspace
+
+    \textbf{3.2 Критерии (Необходимое и Достаточное условия)}
+
+    \Mem Критерий Коши для последовательности
+
+    \begin{MyTheorem}
+        \Ths (без док-ва) $\quad \sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ |u_n + \dots + u_m| < \varepsilon$
+    \end{MyTheorem}
+
+    \Nota Хвост ряда попадает в $\varepsilon$-трубу
+
+    \Notas Критерий полезнее для доказательства достаточных условий
+
+    \mediumvspace
+
+    \textbf{3.3. Достаточное условие (признаки сходимости)}
+
 
 \end{document}
 
