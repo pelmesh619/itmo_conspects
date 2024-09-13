@@ -71,6 +71,8 @@
 
     $\lim_{n \to \infty} S_n = \lim_{n \to \infty} \left(1 - \frac{1}{n + 1}\right) = 1 = S = \sum_{n = 1}^\infty \frac{1}{n(n + 1)}$
 
+    \Nota При исследовании на сходимость используются эталонные ряды
+
     \Ex Геометрический ряд (эталонный): \ \ $\sum_{n = 0}^\infty b q^n$
 
     $S_n = \sum_{k = 0}^n b q^k = b (1 + q + q^2 + q^3 + \dots + q^n) = b \frac{1 - q^n}{1 - q}$
@@ -102,11 +104,23 @@
     \begin{tcolorbox}
         $\Box$
 
-        $\sum_{n = 1}^{\infty} u_n = u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n + \dots$
+        $S^u_n = \sum_{n = 1}^{\infty} u_n = u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n + \dots$
 
-        $S_n = \sum_{k = 1}^n u_k \quad\quad \sigma_t = \sum_{r = 1}^t v_r \quad\quad v_r = u_{k - 1 + r}$
+        $S^v_n = \sum_{n = k}^\infty v_n \quad\quad u_n = v_n \quad \forall n \geq k$
 
-        $\lim_{n \to \infty} S_n = \lim_{n \to\infty} (u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n) = u_1 + \dots + u_{k - 1} + \lim_{t \to \infty} \sigma_t$
+        $S_n^u = \underset{\sigma \in \Real}{\underbrace{u_1 + u_2 + \dots + u_{k - 1}}} + \underset{S^v_n}{\underbrace{u_{k} + \dots + u_n}} = \sigma + S^v_n$
+
+        $\lim_{n \to \infty} S_n^u = \lim_{n \to \infty} (\sigma + S^v_n) = \sigma + \lim_{n + \infty} S_n^v$
+
+        \smallvspace
+
+        Оба предела либо существуют (либо конечны, либо нет), либо не существуют
+
+        % old proof (basically right but to complicated):
+
+%        $S_n = \sum_{k = 1}^n u_k \quad\quad \sigma_t = \sum_{r = 1}^t v_r \quad\quad v_r = u_{k - 1 + r}$
+%
+%        $\lim_{n \to \infty} S_n = \lim_{n \to\infty} (u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n) = u_1 + \dots + u_{k - 1} + \lim_{t \to \infty} \sigma_t$
 
         $\Box$
     \end{tcolorbox}
@@ -131,7 +145,7 @@
         $\Box$ По свойству пределов $\lim_{n \to\infty} (S_n \pm \sigma_n) = \lim_{n \to\infty} S_n \pm \lim_{n \to\infty} \sigma_n = S \pm \sigma$ $\Box$
     \end{tcolorbox}
 
-    \Nota Обратное неверно!
+    \Nota Обратное неверно! Теорема разрешает складывать и вычитать сходящиеся ряды, но из сходимости суммы рядов не следует сходимость каждого из них
 
     \Exs $\sum_{n = 1}^\infty \frac{1}{n (n + 1)} = 1$, \quad но: $\frac{1}{n (n + 1)} = \frac{1}{n} - \frac{1}{n + 1}$,
     а $\sum_{n = 1}^\infty \frac{1}{n}$ и $\sum_{n = 1}^\infty \frac{1}{n + 1}$ расходятся
@@ -143,7 +157,7 @@
     $\sum_{n = 1}^\infty u_n = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \frac{1}{5} + \frac{1}{6} + \frac{1}{7} + \frac{1}{8} + \frac{1}{9} + \frac{1}{10} + \frac{1}{11} + \frac{1}{12} + \frac{1}{13} + \frac{1}{14} + \frac{1}{15} + \frac{1}{16} + \dots$
 
     $\sum_{n = 1}^\infty v_n = 1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{4} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{8} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \frac{1}{16} + \dots = \\
-    \quad 1 + \frac{1}{2} \cdot 1 + \frac{1}{4} \cdot 2 + \frac{1}{8} \cdot 4 + \frac{1}{16} \cdot 8 + \dots = 1 + \sum_{n = 1}^\infty \frac{1}{2} = \infty$
+    \quad = 1 + \frac{1}{2} \cdot 1 + \frac{1}{4} \cdot 2 + \frac{1}{8} \cdot 4 + \frac{1}{16} \cdot 8 + \dots = 1 + \sum_{n = 1}^\infty \frac{1}{2} = \infty$
 
     А так как нижний ряд почленно меньше верхнего, а нижний расходится, то и верхний расходится
 
