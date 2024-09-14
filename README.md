@@ -29,9 +29,12 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_09_06.pdf)
 
-### Объектно-ориентированное программирование (лектор Макаревич Р. Д.)
+### Объектно-ориентированное программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
+
+[**Весь курс**](oopcsharp/oopcsharp_superconspect.md)
 
 * [Лекция №1](oopcsharp/oopcsharp_2024_09_07.md)
+* [Лекция №2](oopcsharp/oopcsharp_2024_09_14.md)
 
 ## II семестр
 
