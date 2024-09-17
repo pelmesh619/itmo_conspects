@@ -701,6 +701,7 @@
 \Ths}
 
 \newcommand{\ThN}[1]{\Th\textbf{#1.}}
+\newcommand{\ThNs}[1]{\Ths\textbf{#1.}}
 
 \newcommand{\Exs}{\textit{Ex. }} % s - for silent
 \newcommand{\Ex}{ \vspace{5mm}%
@@ -754,3 +755,13 @@
         minimum size=2em,
     },
 ]
+
+
+\newenvironment{MyTheorem}
+    {\begin{tcolorbox}[colframe=blue!25, colback=blue!10]
+    }
+    {
+    \end{tcolorbox}
+    }
+
+

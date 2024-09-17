@@ -10,6 +10,7 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_02.pdf)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_09.pdf)
+* Лекция №3 - in progress
 
 ### Теория вероятности (лектор Блаженов А. В.)
 
@@ -17,6 +18,7 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_03.pdf)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_10.pdf)
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_17.pdf)
 
 ### Базы данных (лектор Маятин А. В.)
 
