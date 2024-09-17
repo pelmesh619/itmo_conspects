@@ -10,7 +10,7 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_02.pdf)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_09.pdf)
-* Лекция №3 - in progress
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_16.pdf)
 
 ### Теория вероятности (лектор Блаженов А. В.)
 
