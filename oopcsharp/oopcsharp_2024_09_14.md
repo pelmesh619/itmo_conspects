@@ -150,7 +150,8 @@ public AddStudentResult AddStudent(long studentId)
 ```csharp
 if (result is AddStudentResult.AlreadyMember) 
 { 
-    Console.WriteLine("Student is already member of specified group"); return; 
+    Console.WriteLine("Student is already member of specified group"); 
+    return; 
 } 
 if (result is AddStudentResult.StudentLimitReached err) 
 { 
