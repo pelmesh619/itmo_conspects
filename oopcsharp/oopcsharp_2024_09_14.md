@@ -88,7 +88,7 @@ public class User {
 При этом использование статического полиморфизма (перегрузки методов) вместо методов с суффиксами `By__` снижает читаемость и расширяемость:
 
 ```
-public Post?FindPost(long postId) 
+public Post? FindPost(long postId) 
 { 
     return _posts.Single(x => x.Id.Equals(postId)); 
 } 
@@ -203,7 +203,7 @@ public struct Money
     { 
         if (value < 0)         
         { 
-            throw new ArgumentException("Value cannot be negative",nameof(value));         
+            throw new ArgumentException("Value cannot be negative", nameof(value));         
         } 
         Value = value;     
     } 
