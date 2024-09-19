@@ -150,7 +150,7 @@ public class User {
 
 При этом использование статического полиморфизма (перегрузки методов) вместо методов с суффиксами `By__` снижает читаемость и расширяемость:
 
-```
+```csharp
 public Post? FindPost(long postId) 
 { 
     return _posts.Single(x => x.Id.Equals(postId)); 
