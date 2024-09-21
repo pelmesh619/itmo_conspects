@@ -89,9 +89,9 @@
 
     \Lab Доказать при $q = -1$ по def $(S_n = ?)$
 
-    \mediumvspace
+    \clearpage
 
-    \textbf{2. Свойства числовых рядом}
+    \section{2. Свойства числовых рядов}
 
     \Notas Свойства рядов используются в арифметических операциях с рядами и при исследовании на сходимость
 
@@ -116,7 +116,7 @@
 
         Оба предела либо существуют (либо конечны, либо нет), либо не существуют
 
-        % old proof (basically right but to complicated):
+        % old proof (basically right but too complicated):
 
 %        $S_n = \sum_{k = 1}^n u_k \quad\quad \sigma_t = \sum_{r = 1}^t v_r \quad\quad v_r = u_{k - 1 + r}$
 %
@@ -205,9 +205,9 @@
 
     \mediumvspace
 
-    \textbf{3. Условия сходимости рядов}
+    \section{3. Условия сходимости рядов}
 
-    3.1 Необходимое
+    \subsection{3.1. Необходимое}
 
     \begin{MyTheorem}
         \Ths $\sum_{n = 1}^\infty u_n = S \in \Real \Longrightarrow \lim_{n \to \infty} u_n = 0$
@@ -227,24 +227,17 @@
 
     $\lim_{n \to \infty} (2n + 3) \sin \frac{1}{n} = \lim_{n \to \infty} (2 + \frac{3}{n}) = 2 \neq 0$
 
-    \mediumvspace
+    \subsection{3.2. Критерии (Необходимое и Достаточное условия)}
 
-    \textbf{3.2 Критерии (Необходимое и Достаточное условия)}
-
-    \Mem Критерий Коши для последовательности
+    \Mem Критерий Коши для последовательности: $\{x_n\}$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ |x_m - x_k| < \varepsilon$
 
     \begin{MyTheorem}
-        \Ths (без док-ва) $\quad \sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ |u_n + \dots + u_m| < \varepsilon$
+        \Ths (без док-ва) $\quad \sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \underset{|S_m - S_k| < \varepsilon}{|u_n + \dots + u_m|} < \varepsilon$
     \end{MyTheorem}
 
     \Nota Хвост ряда попадает в $\varepsilon$-трубу
 
-    \Notas Критерий полезнее для доказательства достаточных условий
-
-    \mediumvspace
-
-    \textbf{3.3. Достаточное условие (признаки сходимости)}
-
+    \Notas Критерий не удобен для непосредственного исследования на сходимость, в отличии от признаков
 
 \end{document}
 
