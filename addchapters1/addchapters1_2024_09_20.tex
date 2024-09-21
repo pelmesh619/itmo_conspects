@@ -1,0 +1,240 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Дополнительные главы \\ высшей математики}
+\fancyhead[CO,CE]{20.09.2024}
+\fancyhead[RO,RE]{Лекции Далевская О. П.}
+
+\fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
+
+\begin{document}
+    \mediumvspace
+
+    \textbf{3.3. Достаточное условие (признаки сходимости)}
+
+    Здесь мы рассмотрим:
+
+    \begin{enumerate}
+        \item Признак сравнения (в неравенствах)
+        \item Предельный признак сравнения
+        \item Признак Даламбера
+        \item Признак Коши (радикальный)
+        \item Признак Коши (интегральный)
+    \end{enumerate}
+
+    Далее $\sum_{n = 1}^\infty u_n$ - исследуемый ряд, $\sum_{n = 1}^\infty v_n$ - вспомогательный (уже исследован на сходимость),
+    для простоты $v_n, u_n > 0$ (для отрицательных доказывается аналогично)
+
+    \mediumvspace
+
+    \begin{MyTheorem}
+        \ThNs{1} Признак сравнения (в неравенствах)
+
+        a) $\letsymbol 0 < u_n \leq v_n. \quad$ Тогда $\sum v_n$ сходится $\Longrightarrow \sum u_n$ сходится
+
+        б) $\letsymbol 0 \leq v_n \leq u_n. \quad$ Тогда $\sum v_n$ расходится $\Longrightarrow \sum u_n$ расходится
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\Box$
+
+        а) Строим частичные суммы:
+
+        $\sum v_n$ сходится $\Longleftrightarrow \exists \lim_{n \to \infty} \sigma_n = \sigma \in \Real$
+
+        $S_n, \sigma_n$ возрастают и обе ограничены числом $\sigma$
+
+        Следовательно $\exists \lim_{n \to \infty} S_n = S \leq \sigma$
+
+        Аналогично пункт б)
+
+        $\Box$
+    \end{MyProof}
+
+    \begin{MyTheorem}
+        \ThNs{2} Предельный признак
+
+        $\lim_{n \to \infty} \frac{u_n}{v_n} = q \in \Real \setminus \{0\} \ \Longrightarrow \
+        \begin{sqcases}
+            \sum u_n \text{ сходится, если } \sum v_n \text{ сходится} \\
+            \sum u_n \text{ расходится, если } \sum v_n \text{ расходится}
+        \end{sqcases}$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\Box$
+
+        По определению предела
+
+        $\exists \lim_{n \to \infty} \frac{u_n}{v_n} = q \in \Real \Longleftrightarrow \forall \varepsilon > 0 \ \exists n_0 \in \Natural \ | \ \forall n > n_0 \ |\frac{u_n}{v_n} - q| < \varepsilon$
+
+        $|\frac{u_n}{v_n} - q| < \varepsilon \Longleftrightarrow q - \varepsilon < \frac{u_n}{v_n} < q + \varepsilon$
+
+        $(q - \varepsilon) v_n < u_n < (q + \varepsilon) v_n$
+
+        а) Если $\sum v_n$ сходится, то из правой части неравенства: $0 < u_n < (q + \varepsilon) v_n$
+
+        По признаку сравнения $\sum u_n$ также сходится
+
+        б) Если $\sum v_n$ расходится, то из левой части неравенства: $0 < (q - \varepsilon) v_n < u_n$
+
+        Тогда по пункту б) \ThNs{1} $\sum u_n$ расходится
+
+        $\Box$
+    \end{MyProof}
+
+    \ExN{1} $\sum_{n = 1}^\infty \frac{1}{n^2} = \sum_{n = 1}^\infty u_n$
+
+    $\sum_{n = 1}^\infty \frac{1}{n(n + 1)} = \sum_{n = 1}^\infty v_n$ сходится
+
+    $\frac{1}{n(n + 1)} = \frac{1}{n^2 + n} > \frac{1}{n^2 + 2n + 1} = \frac{1}{(n + 1)^2}$
+
+    $\sum_{n = 0}^\infty \frac{1}{(n + 1)^2} = \sum_{n = 1}^\infty \frac{1}{n^2}$ сходится по признаку сравнения
+
+    \ExN{2} $\sum_{n = 1}^\infty \frac{1}{n!} = \sum_{n = 1}^\infty u_n$
+
+    $\sum_{n = 1}^\infty \frac{1}{2^n} = \sum_{n = 1}^\infty v_n$ сходится
+
+    Начиная с некоторого $n_0$ $n! > 2^n$. Тогда $u_n < v_n$ при $n > n_0$, по признаку сравнения $\sum_{n = 1}^\infty \frac{1}{n!}$ сходится
+
+
+    \ExN{3} $\sum_{n = 1}^\infty$ \asin \frac{1}{n}
+
+    \Nota Члены рядов $u_n$ и $v_n$ - бесконечно малые последовательности. Иначе ряды расходятся по необходимому условию.
+    Тогда в \ThNs{2} сравниваются порядки бесконечно малых, и ряды одновременно сходятся или расходятся, если $u_n$ и $v_n$ одного
+    порядка малости. По этому принципу подбирается вспомогательный ряд
+
+    $u_n = \arcsin \frac{1}{n} \underset{n \to \infty}{\sim} \frac{1}{n} = v_n \quad\quad \sum_{n = 1}^\infty v_n = \sum_{n = 1}^\infty \frac{1}{n}$ расходится
+
+    \begin{MyTheorem}
+        \ThNs{3} Признак Даламбера
+
+        $\sum_{n = 1}^\infty u_n$ - исследуемый, $\exists \mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n} \in \Real^+$
+
+        \begin{tabular}{ll}
+            а) $0 \leq \mathcal{D} < 1$ & $\Longrightarrow \sum u_n$ сходится                                \\
+
+            б) $\mathcal{D} > 1$        & $\Longrightarrow \sum u_n$ расходится                              \\
+
+            в) $\mathcal{D} = 1$        & $\Longrightarrow$ ничего не следует, требуется другое исследование \\
+        \end{tabular}
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\Box$
+
+        а) По определению предела $\mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n}, \ 0 \leq \mathcal{D} < 1 \Longleftrightarrow$
+
+        $\forall \varepsilon > 0 \ \exists n_0 \in \Natural \ | \ \forall n > n_0 \ |\frac{u_{n + 1}}{u_n} - \mathcal{D}| < \varepsilon \quad \Longleftrightarrow \quad \mathcal{D} - \varepsilon < \frac{u_{n + 1}}{u_n} < \mathcal{D} + \varepsilon$
+
+        Так как $0 \leq \mathcal{D} < 1$, можно втиснуть число $r$ между $\mathcal{D}$ и 1: $\mathcal{D} < r < 1$
+
+        Положим $\varepsilon = r - \mathcal{D}$, то есть $\mathcal{D} + \varepsilon = r$
+
+        Смотрим правую часть $\frac{u_{n + 1}}{u_n} < r$ для $\forall n > n_0$, где $n_0 = n_0(\varepsilon), \varepsilon = r - \mathcal{D}$
+
+        $u_{n_0 + 1} < r u_{n_0}$
+
+        $u_{n_0 + 2} < r u_{n_0 + 1} < r^2 u_{n_0}$
+
+        $u_{n_0 + l} < r^l u_{n_0}$
+
+        $\sum_{n = 1}^\infty u_n = \underset{k}{\underbrace{u_1 + u_2 + \dots + u_{n_0 - 1}}} + u_{n_0} + \dots = k + \sum_{m = 1}^\infty v_m $ % u_{n_0} + u_{n_0 + 1} + \dots
+
+        Члены $v_m < r^l u_{n_0}$; $u_{n_0}$ - фикс. число, а $\sum_{l = 1}^\infty r^l$ сходится как геометрический при $|r| < 1$
+
+        Итак ряд $\sum_{l = 1}^\infty r^l u_{n_0}$ сходится и почленно превышает $\sum v_m = \left(\sum u_n\right) - k$
+
+        То есть $\sum u_n$ сходится
+
+        б) \Lab (взять $r$ между $\mathcal{D}$ и $1$, $1 < r < \mathcal{D}$, $\mathcal{D} - r = \varepsilon$)
+
+        Сравнить $\sum u_n$ с $\sum r^l$ (расходящимся)
+
+        $\Box$
+    \end{MyProof}
+
+    \ExN{1} $\sum_{n = 1}^\infty \frac{1}{n!} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n} = \lim_{n \to \infty} \frac{n!}{(n + 1)!} = \lim_{n \to \infty} \frac{1}{n + 1} = 0$ - сходится
+
+    \ExN{2} $\sum_{n = 1}^\infty \frac{1}{n} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{n}{n + 1} = 1$ - расходится
+
+    $\sum_{n = 1}^\infty \frac{1}{n^2} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{n^2}{(n + 1)^2} = 1$ - сходится
+
+    \begin{MyTheorem}
+        \ThNs{4} Радикальный признак Коши
+
+        $\sum_{n = 1}^\infty u_n \quad\quad u_n \geq 0$ и $\exists \lim_{n \to \infty} \sqrt[n]{u_n} = K \in \Real$
+
+        а) $0 \leq K < 1 \Longrightarrow \sum u_n$ сходится
+
+        б) $K > 1 \Longrightarrow \sum u_n$ расходится
+    \end{MyTheorem}
+
+    \Notas $K = 1$ - ничего не следует
+
+    \begin{MyProof}
+        $\Box$
+
+        а) По определению предела $\forall \varepsilon > 0 \ \exists n_0 \in \Natural \ | \ \forall n > n_0 \ |\sqrt[n]{u_n} - K| < \varepsilon$
+
+        $\Longleftrightarrow k - \varepsilon < \sqrt[n]{u_n} < k + \varepsilon$ Положим $\varepsilon = r - K$, где $K < r < 1$
+
+        $\Longrightarrow 0 \leq u_n < r^n$ - геом. ряд с $|r| < 1$, то есть $\sum r^n$ сходится
+
+        б) Аналогично
+
+        $\Box$
+    \end{MyProof}
+
+    \ExN{1} $\sum_{n \to \infty} \left(\frac{n}{n + 1}\right)^n \quad\quad K = \lim_{n \to \infty} \sqrt[n]{\left(\frac{n}{n + 1}\right)^n} = \lim_{n \to \infty} \frac{n}{n + 1} = 1$
+
+    $\mathcal{D} = \lim_{n \to \infty} \frac{\left(1 - \frac{1}{n + 2}\right)^{n + 1}}{\left(1 - \frac{1}{n + 1}\right)^{n}}$
+
+    Но $\lim_{n \to \infty} u_n = e^{-1} \neq 0$ - необходимое условие не выполняется
+
+    \ExN{2} $\sum_{n = 1}^\infty \left(\frac{n}{n + 1}\right)^{n^2}, \quad\quad K = \lim_{n \to \infty} \sqrt[n]{\left(\frac{n}{n + 1}\right)^n} = e^{-1} < 1$ - сходится
+
+    \begin{MyTheorem}
+        \ThNs{5} Интегральный признак Коши
+
+        Если существует $f(x) : [1; +\infty] \to \Real^+, f(x)$ монотонно убывает, $f(n) = u_n$, то $\sum_{n = 1}^\infty u_n$ и $\int_{1}^\infty f(x) dx$ одновременно сходятся или расходятся
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\Box$
+
+        $\int_1^{+\infty} f(x) dx = \lim_{b \to \infty} \int_1^b f(x) dx$
+
+        $\sum_{n = 2}^b u_n = u_2 \cdot 1 + u_3 \cdot 1 + \dots < \int_1^b f(x) dx < u_1 \cdot 1 + u_2 \cdot 1 + \dots = \sum_{n = 1}^{b - 1} u_n$
+
+        Обозначим $\sum_{n = 1}^{b - 1} u_n = S_{b - 1}, \quad \sum_{n = 2}^{b} u_n = S_{b - 1} - u_1 + u_b$
+
+        $0 < S_{b - 1} - u_1 + u_b < \int_1^b f(x) dx < S_{b - 1}$
+
+        $0 < \sum_{n = 1}^{\infty} u_n - u_1 + u_b < \int_1^\infty f(x) dx < \sum_{n = 1}^\infty u_n$
+
+        Если $\int$ сходится, то смотрим правую часть
+
+        Если $\int$ расходится, то смотрим левую часть неравенства
+
+        $\Box$
+    \end{MyProof}
+
+    \clearpage
+
+
+    \section{4. Знакочередующиеся ряды}
+
+    \Def $\sum_{n = 0}^\infty (-1)^n u_n$ ($u_n > 0$) - знакочередующийся ряд
+
+    \begin{MyTheorem}
+        \Ths Признак Лейбница
+
+        Если для знакочередующегося ряда $\sum_{n = 0}^\infty (-1)^n u_n$ верно,
+        что \ $\underset{n \to \infty}{u_n \to 0}$ \ и \ $|u_1| > |u_2| > \dots > |u_n|$,
+        то ряд $\sum_{n = 0}^\infty (-1)^n u_n$ сходится
+    \end{MyTheorem}
+
+\end{document}
+
