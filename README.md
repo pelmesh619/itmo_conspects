@@ -11,6 +11,7 @@
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_02.pdf)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_09.pdf)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_16.pdf)
+* Лекция №4 - отменилась
 
 ### Теория вероятности (лектор Блаженов А. В.)
 
@@ -41,6 +42,7 @@
 
 * [Лекция №1](oopcsharp/oopcsharp_2024_09_07.md)
 * [Лекция №2](oopcsharp/oopcsharp_2024_09_14.md)
+* Лекция №3 - в процессе
 
 ## II семестр
 
