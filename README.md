@@ -43,7 +43,7 @@
 
 * [Лекция №1](oopcsharp/oopcsharp_2024_09_07.md)
 * [Лекция №2](oopcsharp/oopcsharp_2024_09_14.md)
-* Лекция №3 - в процессе
+* [Лекция №3](oopcsharp/oopcsharp_2024_09_21.md)
 
 ## II семестр
 
