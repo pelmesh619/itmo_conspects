@@ -4,7 +4,7 @@
 * [A Playful Production Process for Game Designers (and Everyone)](#a-playful-production-process-for-game-designers-%28and-everyone%29)
   * [Вступление](#%D0%B2%D1%81%D1%82%D1%83%D0%BF%D0%BB%D0%B5%D0%BD%D0%B8%D0%B5)
 * [Первый этап: формирование идей - идеация](#%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B9-%D1%8D%D1%82%D0%B0%D0%BF%3A-%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%B9---%D0%B8%D0%B4%D0%B5%D0%B0%D1%86%D0%B8%D1%8F)
-  * [Глава 1. Как начать.](#%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-1.-%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C.)
+  * [Глава 1. Как начать](#%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-1.-%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C)
   * [Глава 2. Полёт мыслей](#%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-2.-%D0%BF%D0%BE%D0%BB%D1%91%D1%82-%D0%BC%D1%8B%D1%81%D0%BB%D0%B5%D0%B9)
     * [Мозговой штурм](#%D0%BC%D0%BE%D0%B7%D0%B3%D0%BE%D0%B2%D0%BE%D0%B9-%D1%88%D1%82%D1%83%D1%80%D0%BC)
       * [Оценка результатов мозгового штурма](#%D0%BE%D1%86%D0%B5%D0%BD%D0%BA%D0%B0-%D1%80%D0%B5%D0%B7%D1%83%D0%BB%D1%8C%D1%82%D0%B0%D1%82%D0%BE%D0%B2-%D0%BC%D0%BE%D0%B7%D0%B3%D0%BE%D0%B2%D0%BE%D0%B3%D0%BE-%D1%88%D1%82%D1%83%D1%80%D0%BC%D0%B0)
@@ -93,7 +93,7 @@
 
 # <a name="%D0%BF%D0%B5%D1%80%D0%B2%D1%8B%D0%B9-%D1%8D%D1%82%D0%B0%D0%BF%3A-%D1%84%D0%BE%D1%80%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5-%D0%B8%D0%B4%D0%B5%D0%B9---%D0%B8%D0%B4%D0%B5%D0%B0%D1%86%D0%B8%D1%8F"></a> Первый этап: формирование идей - идеация
 
-## <a name="%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-1.-%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C."></a> Глава 1. Как начать.
+## <a name="%D0%B3%D0%BB%D0%B0%D0%B2%D0%B0-1.-%D0%BA%D0%B0%D0%BA-%D0%BD%D0%B0%D1%87%D0%B0%D1%82%D1%8C"></a> Глава 1. Как начать
 
 Трейси Фуллертон, профессор USC, в своей книге "Game Design Workshop. A Playcentric Approach to Creating Innovative Games" пишет:
 

@@ -1,6 +1,6 @@
 # Первый этап: формирование идей - идеация
 
-## Глава 1. Как начать.
+## Глава 1. Как начать
 
 Трейси Фуллертон, профессор USC, в своей книге "Game Design Workshop. A Playcentric Approach to Creating Innovative Games" пишет:
 
