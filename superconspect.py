@@ -24,18 +24,29 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, os.listdir(folder))):
             continue
 
         file_text = open(os.path.join(folder, i), 'r', encoding='utf8').read()
-        for header_match in re.finditer('(^|\n)(#+) +(.+)\n', file_text, re.U):
-            header_level = len(header_match.group(2))
-            header_name = header_match.group(3).strip()
+        for header_match in re.finditer('(^|\n)((#+) +(.+))\n', file_text, re.U):
+            header_level = len(header_match.group(3))
+            header_name = header_match.group(4).strip()
 
             header_link = quote(header_name.lower().replace(' ', '-'), safe='', encoding='utf8')
-            contents['#' + header_link] = (header_name, header_level)
+
+            temp = header_link
+            counter = 1
+            while temp in contents:
+                temp = header_link + f'-{counter}'
+                counter += 1
+
+            contents[temp] = (header_name, header_level)
+
+            file_text = file_text.replace(
+                header_match.group(2),
+                header_match.group(3) + f' <a name="{header_link}"></a> ' + header_match.group(4), 1)
 
         text += file_text + '\n\n'
 
     table_of_contents = ''
     for link, (header, header_level) in contents.items():
-        table_of_contents += '  ' * (header_level - 1) + '* ' + f'[{header}]({link})\n'
+        table_of_contents += '  ' * (header_level - 1) + '* ' + f'[{header}](#{link})\n'
 
     first_header = re.search('#+.+\n', text)
     first_header_text = None
