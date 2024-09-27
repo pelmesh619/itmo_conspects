@@ -29,6 +29,7 @@
 * [Лекция №1](databases/databases_2024_09_04.md)
 * [Лекция №2](databases/databases_2024_09_12.md)
 * [Лекция №3](databases/databases_2024_09_18.md)
+* [Лекция №4](databases/databases_2024_09_26.md)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
