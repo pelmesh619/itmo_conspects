@@ -45,6 +45,7 @@
 * [Лекция №1](oopcsharp/oopcsharp_2024_09_07.md)
 * [Лекция №2](oopcsharp/oopcsharp_2024_09_14.md)
 * [Лекция №3](oopcsharp/oopcsharp_2024_09_21.md)
+* [Лекция №4](oopcsharp/oopcsharp_2024_09_28.md)
 
 ## II семестр
 
