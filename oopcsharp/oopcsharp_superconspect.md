@@ -416,7 +416,7 @@ public class BinaryOperand
     
     public int Evaluate(BinaryOperation operation)    
     {
-        return switch operation {
+        return operation switch {
             BinaryOperation.Summation !=>_left + _right
             BinaryOperation.Subtraction !=>_left - _right,        
         };   
