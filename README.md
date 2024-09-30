@@ -2,6 +2,8 @@
 
 **Конспекты по разным предметам первого потока ИСy27 университета ИТМО**
 
+Если нашли какую-то ошибку - напишите мне ([t.me/pelmeshke](https://t.me/pelmeshke)) или пулл реквест с исправлением
+
 ## III семестр (текущий)
 
 ### Физические основы компьютерных и сетевых технологий (лектор Музыченко Я. Б.)
@@ -25,12 +27,12 @@
 
 ### Базы данных (лектор Маятин А. В.)
 
-[**Весь курс**](databases/databases_superconspect.md)
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/databases/databases_superconspect.html)
 
-* [Лекция №1](databases/databases_2024_09_04.md)
-* [Лекция №2](databases/databases_2024_09_12.md)
-* [Лекция №3](databases/databases_2024_09_18.md)
-* [Лекция №4](databases/databases_2024_09_26.md)
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_04.html)
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_12.html)
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_18.html)
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_26.html)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
@@ -41,12 +43,12 @@
 
 ### Объектно-ориентированное программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
-[**Весь курс**](oopcsharp/oopcsharp_superconspect.md)
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html)
 
-* [Лекция №1](oopcsharp/oopcsharp_2024_09_07.md)
-* [Лекция №2](oopcsharp/oopcsharp_2024_09_14.md)
-* [Лекция №3](oopcsharp/oopcsharp_2024_09_21.md)
-* [Лекция №4](oopcsharp/oopcsharp_2024_09_28.md)
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_07.html)
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_14.html)
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_21.html)
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_28.html)
 
 ## II семестр
 
@@ -103,7 +105,6 @@ compile_all.py рендерит все .tex в данной директории
 python compile_all.py ./directory
 ```
 
-for contact write me: [t.me/pelmeshke](https://t.me/pelmeshke)
 
 ## Extra
 
@@ -113,5 +114,5 @@ for contact write me: [t.me/pelmeshke](https://t.me/pelmeshke)
 ("Игровая разработка без боли и кранчей. Как выжить в игровой индустрии и сохранить вдохновение" в русском издательстве)
 об игровом дизайне и продакшене от автора и гейм-дизайнера Ричарда Лемаршана.
 
-[**A Playful Production Process**](aplayfulproductionprocess/aplayfulproductionprocess_superconspect.md) (закончен на ~25%)
+[**A Playful Production Process**](https://pelmesh619.github.io/itmo_conspects/aplayfulproductionprocess/aplayfulproductionprocess_superconspect.html) (закончен на ~25%)
 
