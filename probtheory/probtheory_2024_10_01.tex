@@ -1,0 +1,204 @@
+\documentclass[12pt]{article}
+\usepackage{preamble}
+
+\pagestyle{fancy}
+\fancyhead[LO,LE]{Теория вероятности}
+\fancyhead[CO,CE]{01.10.2024}
+\fancyhead[RO,RE]{Лекции Блаженова А. В.}
+
+\fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
+
+\begin{document}
+    \subsection{Схема испытаний и соответствующее распределение}
+
+    Введем обозначения:
+
+    $n$ - число испытаний
+
+    $p$ - вероятность успеха при одном испытании
+
+    $q = 1 - p$ - вероятность неудачи
+
+    \subsection{I. Схема Бернулли}
+
+    $\letsymbol v_n$ - число успехов в серии из $n$ испытаний
+
+    $P_n(v_n = k) = C^k_n p^k q^{n - k}, \quad\quad k = 0, 1, \dots, n$
+
+    \Def Соответствие $k \rightarrow C^k_n p^k q^{n - k}, \quad k = 0, \dots, n$ называется биномиальным распределением
+    (обозначается $B_{n,p}$ или $B(n, p)$)
+
+    \subsection{II. Схема до первого успешного испытания}
+
+    Пусть проводится бесконечная серия испытаний, которая заканчивается после первого успешного испытания
+    под номером $\tau$
+
+    \begin{MyTheorem}
+        \Ths $P(\tau = k) = q^{k - 1} p, \quad\quad k = 1, 2, \dots$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\Box$
+
+        $P(\tau = k) = P(\underset{k - 1}{\underbrace{\text{Н}\dots\text{Н}}}\text{У}) = q^{k - 1}p$
+
+        $\Box$
+    \end{MyProof}
+
+    \Def Соответствие $k \rightarrow q^{k - 1} p, k \in \Natural$ называется геометрическим
+    распределение вероятности (обозначается $G_p$ или $G(p)$)
+
+    \Nota Геометрическое распределение обладает свойством \enqoute{нестарения} или свойством отсутствия
+    последействия
+
+    \begin{MyTheorem}
+        \Ths $\letsymbol P(\tau = k) = q^{k - 1} p, k \in \Natural$. Тогда $\forall n, k \geq 0 \quad P(\tau > n + k \ | \ \tau > n) = P(\tau > k)$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\Box$
+
+        Заметим, что $P(\tau > m) = q^m$, первые $m$ - неудачи
+
+        $P(\tau > n + k | \tau > n) = \frac{P(\tau > n + k, \tau > n)}{P(\tau > n)} = \frac{P(\tau > n + k)}{P(\tau > n)} = \frac{q^{n + k}}{q^n} = q^k$
+
+        $\Box$
+    \end{MyProof}
+
+    \Nota $P(\tau = n + k \ | \ \tau > n) = p(\tau = k)$ - \Lab доказать
+
+    \subsection{III. Схема испытаний с несколькими исходами}
+
+    Пусть при $n$ независимых испытаний могут произойти $m$ исходов (несовместных)
+
+    $p_i$ - вероятность $i$-ого исхода при одном испытании
+
+    \begin{MyTheorem}
+        \Ths Вероятность того, что при $n$ испытаниях первый исход появится $n_1$ раз, второй - $n_2$ раз, $m$-ый - $n_m$ ($\sum_{i = 1}^m n_i = n$)
+        равно
+
+        $P_n(n_1, n_2, \dots, n_m) = \frac{n!}{n_1! n_2! \dots n_m!} p_1^{n_1} p_2^{n_2} \dots p_m^{n_m}$
+    \end{MyTheorem}
+
+    При $m = 2$ получаем формулу Бернулли
+
+    \begin{MyProof}
+        $\Box$
+
+        Рассмотрим следующий благоприятный исход, обозначим $A_1$
+
+        $A_1 = \underset{n_1}{\underbrace{11\dots1}}\underset{n_2}{\underbrace{22\dots2}}\dots\underset{n_m}{\underbrace{mm\dots m}}$
+
+        $p(A_1) = p_1^{n_1} p_2^{n_2} \dots p_m^{n_m}$
+
+        Все остальные благоприятные исходы имеют ту же вероятность и отличаются лишь расположением $i$-ых исходов на $n$ позициях,
+        получаем мультиномиальную теорему: $\frac{n!}{n_1! n_2! \dots n_m!}$
+
+        В итоге получаем требуемую формулу
+
+        $\Box$
+    \end{MyProof}
+
+    \Ex Два одинаковых сильных шахматиста играют шесть партий
+
+    Вероятность ничьи в партии - $0.5$. Какова вероятность того, что второй игрок выиграет две партии, а еще три сведет к ничьей
+
+    1-ый исход - выиграл 1 игрок
+
+    2-ой исход - выиграл 2 игрок
+
+    3-ий исход - ничья
+
+    $n = 6; \quad p_3 = 0.5; \quad p_1 = p_2 = \frac{1 - p_3}{2} = 0.25$
+
+    $P_6(1; 2; 3) = \frac{6!}{1!2!3!} \left(\frac{1}{4}\right)^1 \left(\frac{1}{4}\right)^2 \left(\frac{1}{2}\right)^3 = \frac{4 \cdot 5 \cdot 6}{2} \frac{1}{2^9} \approx 0.12$
+
+    \subsection{IV. Урновая схема}
+
+    В урне $N$ шаров, из которых $K$ шаров белые, $N - K$ - черные
+
+    Из урны вынимаем (без учета порядка) $n$ шаров. Найти вероятность, что из них $k$ белых
+
+    а) Схема с возвратом (после каждого раза кладем шар обратно). В этом случае вероятность вынуть белый шар одинакова и
+    равна $\frac{K}{N}$. Получаем схему Бернулли: $P_n(k) = C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k}$
+
+    б) Схема без возврата - вынутый шар мы выбрасываем
+
+    $P_{N, K} (n, k) = \frac{C^k_K C^{n - k}_{N - K}}{C^n_N}$
+
+    \Def Соответствие $k \rightarrow \frac{C^k_K C^{n - k}_{N - K}}{C^n_N}, k = 0, \dots, n$ называется гипергеометрическим
+    распределением
+
+    \Nota Если $K, N \to \infty$ так, что $\frac{K}{N} \approx p$ (не меняется), а $n$ и $k$ зафиксировать, то после выбора
+    $n$ шаров пропорции состава шаров не сильно изменятся, поэтому логично предположить, что гипергеометрическое распределение
+    будет сходиться к биномиальному
+
+    \begin{MyTheorem}
+        \Ths Если $K, N \to \infty$ таким образом, что $\frac{K}{N} \to p \in (0;1)$, а $n$ и $0 \leq k \leq n$ фиксированы, то
+        вероятность при гипергеометрическом распределении будет стремиться к биномиальному:
+
+        $P_{N,K} (n, k) = \frac{C^k_K C^{n - k}_{N - K}}{C^n_N} \rightarrow C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k}$
+    \end{MyTheorem}
+
+    Воспользуемся леммой: $C^k_n \sim \frac{n^k}{k!}$ при $n \to \infty$ и фиксированном $k$
+
+    Доказательство леммы: $C_n^k = \frac{n!}{k!(n - k)!} = \frac{n(n - 1) \dots (n - k + 1)}{n^k} \frac{n^k}{k!} = 1 \left(1 - \frac{1}{n}\right) \dots \left(1 - \frac{k - 1}{n}\right) \frac{n^k}{k!} \sim \frac{n^k}{k!}$
+
+    \begin{MyProof}
+        $\Box$
+
+        $P_{N,K} (n, k) = \frac{C^k_K C_{N - K}^{n - k}}{C^n_N} \sim \frac{K^k}{k!} \frac{(N - K)^{n - k}}{N^n} \frac{n!}{N^n} =
+        \frac{n!}{k!} \frac{(N - K)^{n - k}}{N^n} \frac{K^k}{N^n} = C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k} \to C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k} $
+
+        $\Box$
+    \end{MyProof}
+
+    \subsection{V. Схема Пуассона. Теорема Пуассона для схемы Бернулли}
+
+    \Nota Если вероятность успеха $p$ в схеме Бернулли мала или близка к 1, то предельная формула Лапласа при недостаточно большом
+    числе испытаний дает достаточно большую погрешность. В этой ситуации следует использовать формулу Пуасоона (формула редких событий)
+
+    Схема: вероятность числа успеха при одном испытании $p_n$ зависит от числа испытаний $n$, причем таким образом, что $n p_n \approx \lambda = const$
+
+    $\lambda$ - интенсивность появления редких событий в единицу времени в потоке испытаний
+
+    \begin{MyTheorem}
+        \ThNs{1} (формула Пуассона) Пусть $n \to \infty, p_n \to 0$ таким образом, что $n p_n \to \lambda = const > 0$
+
+        Тогда вероятность $k$ успехов при $n$ испытаниях: $P_n(k) = C^k_n p_n^k (1 - p_n)^{n - k} \underset{n \to \infty}{\rightarrow} = \frac{\lambda^k}{k!} e^{-\lambda}$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\Box$
+
+        Обозначим $\lambda_n = n p_n$. Тогда $p_n = \frac{\lambda_n}{n}$ и
+
+        $P_n(k) = C^k_n \left(\frac{\lambda_n}{n}\right)^k \left(1 - \frac{\lambda_n}{n}\right)^{n - k} \underset{n \to \infty}{\rightarrow} \frac{n^k}{k!} \frac{\lambda^k_n}{n^k} \left(1 - \frac{\lambda_n}{n}\right)^n \cancelto{1}{\left(1 - \frac{\lambda_n}{n}\right)^{-k}}
+        \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} \left(1 - \frac{\lambda_n}{n}\right) = \frac{\lambda_n^k}{k!} \left(\left(1 - \frac{\lambda_n}{n}\right)^{-\frac{n}{\lambda_n}}\right)^{-\frac{\lambda_n}{n}n} \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} e^{-\lambda_n} \underset{n \to \infty}{\rightarrow} \frac{\lambda^k}{k!} e^{-\lambda}$
+
+        $\Box$
+    \end{MyProof}
+
+    \begin{MyTheorem}
+        \ThNs{2} (оценка погрешности в формуле Пуассона) Пусть $v_n$ - число успехов при $n$ испытаниях в схеме Бернулли
+
+        $p$ - вероятность успеха при одном испытании, $\lambda = np$, $A \subset \{0, 1, \dots, n\}$ - произвольное подмножество чисел
+
+        Тогда $|P_n (v_n \in A) - \sum_{k \in A} \frac{\lambda^k}{k!} e^{-\lambda}| \leq \min (p, np^2) = \min (p, p\lambda)$
+
+        (без доказательства)
+    \end{MyTheorem}
+
+    \Def Соответствие $k \to \frac{\lambda^k}{k!} e^{-\lambda}, k = 0, 1, \dots$ называется распределением Пуассона
+    с параметром $\lambda > 0$ (обозначается $\Pi_\lambda$)
+
+    \Ex Прибор состоит из 1000 элементов, вероятность отказа каждого элемента равна $0.001$. Какова вероятность отказа больше двух элементов
+
+    $P_n(k) \approx \frac{\lambda^k}{k!} e^{-\lambda}$
+
+    $n = 1000, p = 0.001, \lambda = 1$
+
+    $P_n(k > 2) = 1 - P_n (k \leq 2) = 1 - P(0) - P(1) - P(2) \approx 1 - \left(\frac{1^0}{0!} e^{-1} + \frac{1^1}{1!} e^{-1} + \frac{1^2}{2!} e^{-1}\right) =
+    1 - \left(1 + 1 + \frac{1}{2}\right) e^{-1} \approx 0.0803$
+
+\end{document}
