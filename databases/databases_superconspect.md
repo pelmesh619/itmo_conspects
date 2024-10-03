@@ -544,8 +544,6 @@ why did i wrote it?
     | 2      | Pen      |
     | 3      | Notebook |
 
-    
-
 5. Пересечение
     <!-- \[R \cap S\] -->
 
@@ -569,24 +567,28 @@ why did i wrote it?
     |--------|----------|
     | 1      | Ball     |
 
-Дальше будут приводиться примеры операций на атрибуте `DepartmentID` на таблицах `Employee`:
+    <hr>
 
-| EmployeeID | FullName          | DepartmentID |
-|------------|-------------------|--------------|
-| 1          | Albert Einstein   | 4            |
-| 2          | Ernest Rutherford | 4            |
-| 3          | Marie Curie       | 10           |
-| 4          | Igor Kurchatov    | NULL         |
-| 5          | Alexander Fleming | 13           |
+    Дальше будут приводиться примеры операций на атрибуте `DepartmentID` на таблицах `Employee`:
+    
+    | EmployeeID | FullName          | DepartmentID |
+    |------------|-------------------|--------------|
+    | 1          | Albert Einstein   | 4            |
+    | 2          | Ernest Rutherford | 4            |
+    | 3          | Marie Curie       | 10           |
+    | 4          | Igor Kurchatov    | NULL         |
+    | 5          | Alexander Fleming | 13           |
+    
+    И `Department`:
+    
+    | DepartmentID | DepartmentName      | DirectorID |
+    |--------------|---------------------|------------|
+    | 4            | Theoretical Physics | 1          |
+    | 10           | Chemistry           | 3          |
+    | 11           | Nuclear Physics     | 2          |
+    | 13           | Biology             | 5          |
 
-И `Department`:
-
-| DepartmentID | DepartmentName      | DirectorID |
-|--------------|---------------------|------------|
-| 4            | Theoretical Physics | 1          |
-| 10           | Chemistry           | 3          |
-| 11           | Nuclear Physics     | 2          |
-| 13           | Biology             | 5          |
+    <hr>
 
 6. Декартовое произведение
     <!-- \[R \times S\] -->
@@ -664,7 +666,6 @@ why did i wrote it?
     | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
     | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
 
-
     ```sql
     SELECT *
     FROM Employee 
@@ -728,9 +729,6 @@ why did i wrote it?
     | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
     | NULL       | NULL              | NULL         | 11           | Nuclear Physics     | 2          | 
     | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
-
-
-    
 
 11. Полусоединение
     <!-- \[R \rhd S\] -->
