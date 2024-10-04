@@ -16,11 +16,9 @@
 
         % begin addchapters1_2024_09_06.tex
 
-    \section{1. Ряды}
+    \section{\S 1. Ряды}
 
-    \subsection{1.1 Числовые ряды}
-
-    \tedxtbf{1. Определения}
+    \subsection{1. Числовые ряды. Определения}
 
     \Mems Числовая последовательность: $\{u_n\} = \{u_1, u_2, \dots, u_n, \dots\}, u_n \in \Real$
 
@@ -94,11 +92,9 @@
 
     $q = -1 \quad\quad \sum_{n = 0}^\infty b (-1)^n$ - расходится (из четвертого примера)
 
-    \Lab Доказать при $q = -1$ по def $(S_n = ?)$
+    \Lab Доказать при $q = -1$ по def $(S_n = ?)$\
 
-    \clearpage
-
-    \section{2. Свойства числовых рядов}
+    \subsection{2. Свойства числовых рядов}
 
     \Notas Свойства рядов используются в арифметических операциях с рядами и при исследовании на сходимость
 
@@ -212,9 +208,9 @@
 
     \mediumvspace
 
-    \section{3. Условия сходимости рядов}
+    \subsection{3. Условия сходимости рядов}
 
-    \subsection{3.1. Необходимое}
+    \subsubsection{3.1. Необходимое}
 
     \begin{MyTheorem}
         \Ths $\sum_{n = 1}^\infty u_n = S \in \Real \Longrightarrow \lim_{n \to \infty} u_n = 0$
@@ -234,7 +230,7 @@
 
     $\lim_{n \to \infty} (2n + 3) \sin \frac{1}{n} = \lim_{n \to \infty} (2 + \frac{3}{n}) = 2 \neq 0$
 
-    \subsection{3.2. Критерии (Необходимое и Достаточное условия)}
+    \subsubsection{3.2. Критерии (Необходимое и Достаточное условия)}
 
     \Mem Критерий Коши для последовательности: $\{x_n\}$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ |x_m - x_k| < \varepsilon$
 
@@ -249,7 +245,7 @@
 
     % begin addchapters1_2024_09_20.tex
 
-    \subsection{3.3. Достаточное условие (признаки сходимости)}
+    \subsubsection{3.3. Достаточное условие (признаки сходимости)}
 
     Здесь мы рассмотрим:
 
@@ -462,10 +458,7 @@
         $\Box$
     \end{MyProof}
 
-    \clearpage
-
-
-    \section{4. Знакочередующиеся ряды}
+    \subsection{4. Знакочередующиеся ряды}
 
     \Def $\sum_{n = 0}^\infty (-1)^n u_n$ ($u_n > 0$) - знакочередующийся ряд
 
@@ -477,6 +470,197 @@
         то ряд $\sum_{n = 0}^\infty (-1)^n u_n$ сходится
     \end{MyTheorem}
     % end addchapters1_2024_09_20.tex
+
+    % begin addchapters1_2024_10_04.tex
+
+    \begin{MyProof}
+        $\Box$
+
+        $\sum_{n = 1}^\infty (-1)^{n + 1} u_n = u_1 - u_2 + u_3 - u_4 + \dots + u_n + \dots$
+
+        $S_{2n} = (u_1 - u_2) + (u_3 - u_4) + \dots + (u_{2n - 1} - u_{2n})$
+
+        Все слагаемые в скобках будут больше нуля, тогда частичные суммы будут возрастать
+
+        $S_{2n} = u_1 - (u_2 - u_3) - (u_4 - u_5) - \dots - (u_{2n - 2} - u_{2n - 1}) - u_{2n} < u_1$
+
+        Здесь же тоже все слагаемые больше нуля - их мы вычитаем из $u_1$ и получаем число гарантированно меньшее $u_1$
+
+        По \Ths о монотонности и ограниченности последовательность $\letsymbol \lim_{n \to \infty} S_{2n} = S \in \Real$
+
+        $S_{2n + 1} = S_{2n} + u_{2n + 1}; \qquad \lim_{n \to \infty} S_{2n + 1} = \lim_{n \to \infty} S_{2n} + \cancelto{0}{\lim_{n \to \infty} u_{2n + 1}} = S \in \Real$
+
+        $\Box$
+    \end{MyProof}
+
+    \Exs $\sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4}$
+
+    $u_n = \frac{1}{n} \underset{n \to \infty}{\longrightarrow} 0, \qquad \frac{1}{n} > \frac{1}{n + 1} \Longrightarrow$ ряд сходится
+
+    \Nota Оценка остатка ряда
+
+    Запишем ряд: $\sum_{n = 1}^\infty (-1)^{n + 1} u_n = u_1 - u_2 + u_3 - \dots \pm u_n \mp u_{n + 1} =
+    S + \sum_{k = n + 1}^\infty (-1)^{k} u_k = S_n + P_n$ - остаток ряда
+
+    В доказательстве \th было установлено, что сумма ряда не превышает своего первого члена
+
+    \[R_{n + 1} < |(-1)^{k + 1} u_k| = u_k = u_{n + 1}\]
+
+    \Ex $1 - \frac{1}{2} + \frac{1}{4} - \frac{1}{8} + \frac{1}{16} \underset{R_4}{\underbrace{ - \frac{1}{32} + \dots}} = \sum_{n = 0}^\infty (-1)^n \frac{1}{2^n}$
+
+    $|R_4| < \frac{1}{32}$
+
+    Проверка: $-(\frac{1}{32} - \frac{1}{64}) - (\frac{1}{128} - \frac{1}{256}) - \dots = -\sum_{k = 3}^\infty \frac{1}{2^{2k}}$ - \Lab досчитать и сравнить с $\frac{1}{32}$
+
+    \Nota Оценка не работает в знакоположительных рядах
+
+    $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots$
+
+    $R_3 = \frac{1}{16} + \frac{1}{32} + \frac{1}{64} + \dots = \frac{1}{16} (1 + \frac{1}{2} + \dots) = \frac{2}{16} = \frac{1}{8} > \frac{1}{16}$
+
+    \Def Знакопеременный ряд
+
+    $\sum_{n = 1}^\infty u_n$, где $u_n$ - любого знака и не все $u_n$ одного знака
+
+    \Ex $1 - \frac{1}{2} + \frac{1}{3} + \frac{1}{4} - \frac{1}{5} - \frac{1}{6} + \frac{1}{7} + \dots$
+
+    \Nota Исследование таких рядов (в том числе знакочередующихся) на сходимость можно проводить при помощи ряда из модулей
+
+    \begin{MyTheorem}
+        \Ths Абсолютная сходимость
+
+        $\sum_{n = 1}^\infty |u_n|$ сходится $\Longrightarrow \sum_{n = 1}^\infty u_n$ сходится
+    \end{MyTheorem}
+
+    \Mems См. абсолютную сходимость в \hyperlink{https://pelmesh619.github.io/itmo_conspects/conspects/calculus/calculus_superconspect.pdf}{несобственных интегралах}
+
+    \begin{MyProof}
+        $\Box$
+
+        По критерию Коши:
+
+        $\sum_{n = 1}^\infty |u_n|$ сходится $\Longleftrightarrowe$
+
+        $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \quad ||u_n| + |u_{n + 1}| + \dots + |u_m|| < \varepsilon$
+
+        По неравенству треугольника:
+
+        $|u_n| + |u_{n + 1} + \dots + u_m| < |u_n| + |u_{n + 1}| + \dots + |u_m| < \varepsilon$
+
+        $\Box$
+    \end{MyProof}
+
+    \Notas Обратное неверно!
+
+    \Ex $\sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n} = 1 - \frac{1}{2} + \frac{1}{3} + \dots $ сходится
+
+    Но $\sum_{n = 1}^\infty \frac{1}{n}$ расходится
+
+    \Def Если $\sum u_n$ сходится, при том что $\sum |u_n|$ сходится, он называется \textbf{абсолютно сходящимся}
+
+    \Defs Если $\sum u_n$ сходится, при том что $\sum |u_n|$ расходится, он называется \textbf{условно сходящимся}
+
+    \Notas Для абсолютно сходящихся рядов перестановка членов безболезнена и сохраняет сумму ряда
+
+    \Notas На абсолютно сходящиеся ряды распространяются признаки сходимости знакоположительных рядов
+
+    1) Признак сравнения: $|u_n| < |v_n|: \ \sum |v_n|$ сходится $\Longrightarrow \sum |u_n|$ сходится
+
+    2) Предельный признак: $\lim |\frac{u_n}{v_n}| = q \in \Real \setminus \{0\}$
+
+    3) $D = \lim |\frac{u_{n + 1}}{u_n}| < 1$
+
+    4) $K = \lim \sqrt[n]{|{u_n}|} < 1$
+
+    5) $\int_a^\infty f(x)dx$ сравнивается с $\sum |u_n|$
+
+    \clearpage
+
+
+    \section{\S 2. Функциональные ряды}
+
+    \subsection{1. Определения}
+
+    \Def $\sum_{n = 1}^\infty u_n(x)$, где $u_n(x) : E \subset \Real \to \Real$ называется функциональным
+
+    \Notas При фиксации переменной $x$ ряд становится числовым
+
+    \Exs $sum_{n = 0}^\infty x^n$
+
+    $x = 2 \quad \sum_{n = 0}^\infty 2^n$ расходится
+
+    $x = \frac{1}{2} \quad \sum_{n = 0}^\infty (\frac{1}{2})^n$ сходится
+
+    Таким образом для $|x| < 1$ ряд будет сходящимся, для $|x| > 1$ расходящимся
+
+    \Def Множество значений $x$, при которых $\sum_{n = 1}^\infty u_n(x)$ сходится, называется областью сходимости
+
+    \Defs Если ряд $\sum_{n = 1}^\infty u_n(x)$ сходится при всех $x$ из некоторого множества $E$, то сумма ряда -
+    функция $S(x)$
+
+    \Nota То есть $\exists \lim_{n \to \infty} S_n(x) = S(x)$
+
+    Запишем остаток: $R_n(x) = S(x) - S_n(x)$. Часто удобно исследовать $R_n(x) \to 0$. Также работает критерий Коши
+
+    \begin{MyTheorem}
+        \Ths Критерий Коши
+
+        $\sum_{n = 1}^\infty u_n(x)$ сходится в области $D \Longleftrightarrow
+        \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon, x)}{n_0 \in \Natural} \ | \
+        \forall m > n > n_0 \ |u_n(x) + u_{n + 1}(x) + \dots + u_m(x)| < \varepsilon$
+    \end{MyTheorem}
+
+    \Notas Очень неприятно, что $n_0$ зависит от $\varepsilon$ и всякого $x$
+
+    \Def Равномерная сходимость ряда
+
+    $\sum_{n = 1}^\infty u_n(x)$ равномерно сходится в области $D \overset{def}{\Longleftrightarrow}$
+
+    $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 \in \Natural} \ | \ \forall n > n_0 \ |R_n(x)| < \varepsilon$
+
+    \Nota Доказательства равномерной сходимости по определению сложно, пользуются другими способами
+
+    \begin{MyTheorem}
+        \Ths Признак Вейерштрасса
+
+        $\exists \sum_{n = 1}^\infty \alpha_n$ - числовой ряд такой, что $\alpha_n > 0$, $\sum \alpha_n$ сходится,
+        $|u_n(x)| \leq \alpha_n \ \forall n$
+
+        Тогда $\sum_{n = 1}^\infty u_n(x)$ равномерно сходящийся
+
+    \end{MyTheorem}
+
+    \Nota Ряд $\sum_{n = 1}^\infty \alpha_n$ называется мажорирующим
+
+    \begin{MyProof}
+        $\Box$
+
+        $\sum_{n = 1}^\infty \alpha_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 \in \Natural} \ | \
+        \forall n > n_0 \ |R_n^\alpha| < \varepsilon$
+
+        Заменим на условие $|\alpha_n + \dots + \alpha_m| < \varepsilon$ (кр. Коши)
+
+        $|u_n(x) + \dots + u_m(x)| \leq |u_n(x)| + \dots + |u_m(x)| \leq \alpha_n + \dots + \alpha_m \leq \varepsilon$
+
+        При этом номер $n_0$ зависит только от $\varepsilon$
+
+        $\Box$
+    \end{MyProof}
+
+    \Nota Таким образом всякий мажорирующий ряд равномерно сходится, но не всякий равномерно сходящийся ряд мажорируем
+
+    \Nota Установим свойство суммы равномерно сходящегося ряда
+
+    \Exs Рассмотрим ряд $\sum_{n = 1}^\infty (x^{\frac{1}{2n + 1}} - x^{\frac{1}{2n - 1}}) = (x^\frac{1}{3} - x^1) + (x^\frac{1}{5} - x^\frac{1}{3}) + (x^\frac{1}{7} - x^\frac{1}{5}) + \dots;$
+
+    $S_n = x^\frac{1}{2n + 1} - x$
+
+    При $x > 0 \quad \lim_{n \to \infty} S_n = \lim_{n \to \infty} (x^\frac{1}{2n + 1} - x) = 1 - x$
+
+    При $x < 0 \quad \lim_{n \to \infty} S_n = \lim_{n \to \infty} (-\sqrt[2n + 1]{|x|} - x) = -1 - x$
+
+    При $x = 0 \quad S_n = 0$
+    % end addchapters1_2024_10_04.tex
 
 
 
