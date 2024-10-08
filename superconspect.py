@@ -24,6 +24,10 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, os.listdir(folder))):
             continue
 
         file_text = open(os.path.join(folder, i), 'r', encoding='utf8').read()
+        if re.match(r'\s*#ignore', file_text):
+            print(f'File {i} ignored')
+            continue
+
         for header_match in re.finditer('(^|\n)((#+) +(.+))\n', file_text, re.U):
             header_level = len(header_match.group(3))
             header_name = header_match.group(4).strip()
