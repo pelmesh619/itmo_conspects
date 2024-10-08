@@ -15,6 +15,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_16.pdf)
 * Лекция №4 - отменилась
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_30.pdf)
+* Лекция №6 - в процессе
 
 ### Теория вероятности (лектор Блаженов А. В.)
 
@@ -25,6 +26,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_17.pdf)
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_24.pdf)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_01.pdf)
+* Лекция №6 - в процессе
 
 ### Базы данных (лектор Маятин А. В.)
 
@@ -52,6 +54,7 @@
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_14.html)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_21.html)
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_28.html)
+* Лекция №5 - в процессе
 
 ## II семестр
 
