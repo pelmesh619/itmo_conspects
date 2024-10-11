@@ -570,6 +570,12 @@ why did i wrote it?
 
     <hr>
 
+    <style>
+        table {
+            width: 50%;
+        }
+    </style>
+
     Дальше будут приводиться примеры операций на атрибуте `DepartmentID` на таблицах `Employee`:
     
     | EmployeeID | FullName          | DepartmentID |
@@ -757,6 +763,12 @@ why did i wrote it?
     | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
     | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
     | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
+
+    <style>
+        table {
+            width: 100%;
+        }
+    </style>
 
 ### <a name="%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81-%60select%60"></a> Синтаксис `SELECT`
 

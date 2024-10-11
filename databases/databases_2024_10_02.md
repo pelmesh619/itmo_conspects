@@ -124,6 +124,12 @@
 
     <hr>
 
+    <style>
+        table {
+            width: 50%;
+        }
+    </style>
+
     Дальше будут приводиться примеры операций на атрибуте `DepartmentID` на таблицах `Employee`:
     
     | EmployeeID | FullName          | DepartmentID |
@@ -311,6 +317,12 @@
     | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
     | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
     | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
+
+    <style>
+        table {
+            width: 100%;
+        }
+    </style>
 
 ### Синтаксис `SELECT`
 
