@@ -846,28 +846,28 @@ ON Condition]
 
 1. Наивная:
 
-```
-for r in R:
-    for s in S:
-        if r.a_i Θ S.b_i:
-            print(r + s)
-```
+    ```
+    for r in R:
+        for s in S:
+            if r.a_i Θ S.b_i:
+                print(r + s)
+    ```
 
 2. Слиянием:
 
-```
-R.sort(a)
-S.sort(b)
-
-while not endof(R) and not endof(S):
-    if R.a_i < S.b_i:
-        next(R)
-    if R.a_i > S.b_i:
-        next(S)
-    if R.a_i == S.b_i:
-        print(r + s)
-        next(R)
-```
+    ```
+    R.sort(a)
+    S.sort(b)
+    
+    while not endof(R) and not endof(S):
+        if R.a_i < S.b_i:
+            next(R)
+        if R.a_i > S.b_i:
+            next(S)
+        if R.a_i == S.b_i:
+            print(r + s)
+            next(R)
+    ```
 
 Обе реализации имеют свои достоинства и недостатки. Но так как SQL хранит кортежи уже отсортированными (чтобы поддерживать быстроту индексации), вторая реализация зачастую работает лучше
 
