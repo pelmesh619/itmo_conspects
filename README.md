@@ -15,7 +15,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_16.pdf)
 * Лекция №4 - отменилась
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_30.pdf)
-* Лекция №6 - в процессе
+* Лекция №6 - в процессе (ждем презентации к лекции)
 
 ### Теория вероятности (лектор Блаженов А. В.)
 
@@ -37,6 +37,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_18.html)
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_26.html)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_02.html)
+* Лекция №6 - в процессе
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
