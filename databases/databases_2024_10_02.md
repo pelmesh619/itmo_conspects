@@ -124,12 +124,6 @@
 
     <hr>
 
-    <style>
-        table {
-            width: 50%;
-        }
-    </style>
-
     Дальше будут приводиться примеры операций на атрибуте `DepartmentID` на таблицах `Employee`:
     
     | EmployeeID | FullName          | DepartmentID |
