@@ -316,13 +316,7 @@
     | 1          | Albert Einstein   | 4            | 4            | Theoretical Physics | 1          |
     | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
     | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
-    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
-
-    <style>
-        table {
-            width: 100%;
-        }
-    </style>
+    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          |
 
 ### Синтаксис `SELECT`
 

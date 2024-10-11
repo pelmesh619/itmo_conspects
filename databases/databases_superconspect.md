@@ -762,13 +762,7 @@ why did i wrote it?
     | 1          | Albert Einstein   | 4            | 4            | Theoretical Physics | 1          |
     | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
     | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
-    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
-
-    <style>
-        table {
-            width: 100%;
-        }
-    </style>
+    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          |
 
 ### <a name="%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81-%60select%60"></a> Синтаксис `SELECT`
 
