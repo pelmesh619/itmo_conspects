@@ -272,8 +272,7 @@ if (result is AddStudentResult.AlreadyMember)
 } 
 if (result is AddStudentResult.StudentLimitReached err) 
 {
-    var message = @$"Cannot add student to specified group, 
-        maximum student count of {err.Limit} already reached";
+    var message = $"Cannot add student to specified group, maximum student count of {err.Limit} already reached";
     Console.WriteLine(message); 
     return; 
 } 
