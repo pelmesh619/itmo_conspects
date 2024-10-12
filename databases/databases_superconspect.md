@@ -570,24 +570,50 @@ why did i wrote it?
 
     <hr>
 
-    Дальше будут приводиться примеры операций на атрибуте `DepartmentID` на таблицах `Employee`:
+    Дальше будут приводиться примеры операций на атрибуте `DepartmentID` (далее `DepartID`) на таблицах `Employee`[^jointablesschema]:
+
+    [^jointablesschema]: Таблицы из примера были созданы так:
+
+        ```sql
+        CREATE TABLE Employee (
+            EmployeeID BIGINT PRIMARY KEY,
+            FullName TEXT,
+            DepartmentID BIGINT
+        );
+        CREATE TABLE Department (
+            DepartmentID BIGINT PRIMARY KEY,
+            DepartmentName TEXT,
+            DirectorID BIGINT
+        );
+        INSERT INTO Employee VALUES 
+            (1, 'Albert Eistein', 4), 
+            (2, 'Ernest Rutherford', 5), 
+            (3, 'Marie Curie', 10), 
+            (5, 'Charles Darwin', 13), 
+            (4, 'Igor Kurchatov', NULL);
+        INSERT INTO Department VALUES 
+            (4, 'Theoretical Physics', 1), 
+            (10, 'Chemistry', 3), 
+            (13, 'Biology', 5),
+            (11, 'Nuclear Physics', 2);
+        ```
     
-    | EmployeeID | FullName          | DepartmentID |
-    |------------|-------------------|--------------|
-    | 1          | Albert Einstein   | 4            |
-    | 2          | Ernest Rutherford | 4            |
-    | 3          | Marie Curie       | 10           |
-    | 4          | Igor Kurchatov    | NULL         |
-    | 5          | Alexander Fleming | 13           |
+    | EmplID | FullName          | DepartID |
+    |--------|-------------------|----------|
+    | 1      | Albert Einstein   | 4        |
+    | 2      | Ernest Rutherford | 4        |
+    | 3      | Marie Curie       | 10       |
+    | 4      | Igor Kurchatov    | NULL     |
+    | 5      | Alexander Fleming | 13       |
     
     И `Department`:
     
-    | DepartmentID | DepartmentName      | DirectorID |
-    |--------------|---------------------|------------|
-    | 4            | Theoretical Physics | 1          |
-    | 10           | Chemistry           | 3          |
-    | 11           | Nuclear Physics     | 2          |
-    | 13           | Biology             | 5          |
+    | DepartID | DepartName          | DirectorID |
+    |----------|---------------------|------------|
+    | 4        | Theoretical Physics | 1          |
+    | 10       | Chemistry           | 3          |
+    | 11       | Nuclear Physics     | 2          |
+    | 13       | Biology             | 5          |
 
     <hr>
 
@@ -612,28 +638,28 @@ why did i wrote it?
 
     Семантически декартовое произведение зачастую не имеет смысла. На таблицах выше декартовым произведением будет такое отношение:
 
-    | EmployeeID | FullName          | DepartmentID | DepartmentID | DepartmentName      | DirectorID |
-    |------------|-------------------|--------------|--------------|---------------------|------------|
-    | 1          | Albert Einstein   | 4            | 4            | Theoretical Physics | 1          |
-    | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          |
-    | 3          | Marie Curie       | 10           | 4            | Theoretical Physics | 1          |
-    | 4          | Igor Kurchatov    | NULL         | 4            | Theoretical Physics | 1          |
-    | 5          | Alexander Fleming | 13           | 4            | Theoretical Physics | 1          |
-    | 1          | Albert Einstein   | 4            | 10           | Chemistry           | 3          | 
-    | 2          | Ernest Rutherford | 4            | 10           | Chemistry           | 3          | 
-    | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
-    | 4          | Igor Kurchatov    | NULL         | 10           | Chemistry           | 3          | 
-    | 5          | Alexander Fleming | 13           | 10           | Chemistry           | 3          | 
-    | 1          | Albert Einstein   | 4            | 11           | Nuclear Physics     | 2          | 
-    | 2          | Ernest Rutherford | 4            | 11           | Nuclear Physics     | 2          | 
-    | 3          | Marie Curie       | 10           | 11           | Nuclear Physics     | 2          | 
-    | 4          | Igor Kurchatov    | NULL         | 11           | Nuclear Physics     | 2          | 
-    | 5          | Alexander Fleming | 13           | 11           | Nuclear Physics     | 2          | 
-    | 1          | Albert Einstein   | 4            | 13           | Biology             | 5          | 
-    | 2          | Ernest Rutherford | 4            | 13           | Biology             | 5          | 
-    | 3          | Marie Curie       | 10           | 13           | Biology             | 5          | 
-    | 4          | Igor Kurchatov    | NULL         | 13           | Biology             | 5          | 
-    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
+    | EmplID | FullName          | DepartID | DepartID | DepartName          | DirectorID |
+    |--------|-------------------|----------|----------|---------------------|------------|
+    | 1      | Albert Einstein   | 4        | 4        | Theoretical Physics | 1          |
+    | 2      | Ernest Rutherford | 4        | 4        | Theoretical Physics | 1          |
+    | 3      | Marie Curie       | 10       | 4        | Theoretical Physics | 1          |
+    | 4      | Igor Kurchatov    | NULL     | 4        | Theoretical Physics | 1          |
+    | 5      | Alexander Fleming | 13       | 4        | Theoretical Physics | 1          |
+    | 1      | Albert Einstein   | 4        | 10       | Chemistry           | 3          | 
+    | 2      | Ernest Rutherford | 4        | 10       | Chemistry           | 3          | 
+    | 3      | Marie Curie       | 10       | 10       | Chemistry           | 3          | 
+    | 4      | Igor Kurchatov    | NULL     | 10       | Chemistry           | 3          | 
+    | 5      | Alexander Fleming | 13       | 10       | Chemistry           | 3          | 
+    | 1      | Albert Einstein   | 4        | 11       | Nuclear Physics     | 2          | 
+    | 2      | Ernest Rutherford | 4        | 11       | Nuclear Physics     | 2          | 
+    | 3      | Marie Curie       | 10       | 11       | Nuclear Physics     | 2          | 
+    | 4      | Igor Kurchatov    | NULL     | 11       | Nuclear Physics     | 2          | 
+    | 5      | Alexander Fleming | 13       | 11       | Nuclear Physics     | 2          | 
+    | 1      | Albert Einstein   | 4        | 13       | Biology             | 5          | 
+    | 2      | Ernest Rutherford | 4        | 13       | Biology             | 5          | 
+    | 3      | Marie Curie       | 10       | 13       | Biology             | 5          | 
+    | 4      | Igor Kurchatov    | NULL     | 13       | Biology             | 5          | 
+    | 5      | Alexander Fleming | 13       | 13       | Biology             | 5          | 
 
 7. Тета-соединение
     <!-- \[R \bowtie_F S\] -->
@@ -660,12 +686,12 @@ why did i wrote it?
 
     Эквисоединение двух таблиц из примера будет таким результатом:
 
-    | EmployeeID | FullName          | DepartmentID | DepartmentID | DepartmentName      | DirectorID |
-    |------------|-------------------|--------------|--------------|---------------------|------------|
-    | 1          | Albert Einstein   | 4            | 4            | Theoretical Physics | 1          |
-    | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
-    | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
-    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
+    | EmplID | FullName          | DepartID | DepartID | DepartName          | DirectorID |
+    |--------|-------------------|----------|----------|---------------------|------------|
+    | 1      | Albert Einstein   | 4        | 4        | Theoretical Physics | 1          |
+    | 2      | Ernest Rutherford | 4        | 4        | Theoretical Physics | 1          | 
+    | 3      | Marie Curie       | 10       | 10       | Chemistry           | 3          | 
+    | 5      | Alexander Fleming | 13       | 13       | Biology             | 5          | 
 
     ```sql
     SELECT *
@@ -683,12 +709,12 @@ why did i wrote it?
    
     Естественное соединение удобно, например, когда есть два таблицы с атрибутами серии и номера паспорта. В SQL естественное соединение напрямую не реализовано, но естественное соединение таблиц из примера выглядело бы так:
 
-    | EmployeeID | FullName          | DepartmentName      | DirectorID |
-    |------------|-------------------|---------------------|------------|
-    | 1          | Albert Einstein   | Theoretical Physics | 1          |
-    | 2          | Ernest Rutherford | Theoretical Physics | 1          | 
-    | 3          | Marie Curie       | Chemistry           | 3          | 
-    | 5          | Alexander Fleming | Biology             | 5          | 
+    | EmplID | FullName          | DepartName          | DirectorID |
+    |--------|-------------------|---------------------|------------|
+    | 1      | Albert Einstein   | Theoretical Physics | 1          |
+    | 2      | Ernest Rutherford | Theoretical Physics | 1          | 
+    | 3      | Marie Curie       | Chemistry           | 3          | 
+    | 5      | Alexander Fleming | Biology             | 5          | 
 
 10. Левое внешнее соединение
     <!-- \[R \supset\hspace{-0.4em}\lhd S\] -->
@@ -706,13 +732,13 @@ why did i wrote it?
     ON Employee.DepartmentID = Department.DepartmentID;
     ```
 
-    | EmployeeID | FullName          | DepartmentID | DepartmentID | DepartmentName      | DirectorID |
-    |------------|-------------------|--------------|--------------|---------------------|------------|
-    | 1          | Albert Einstein   | 4            | 4            | Theoretical Physics | 1          |
-    | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
-    | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
-    | 4          | Igor Kurchatov    | NULL         | NULL         | NULL                | NULL       | 
-    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
+    | EmplID | FullName          | DepartID | DepartID | DepartName          | DirectorID |
+    |--------|-------------------|----------|----------|---------------------|------------|
+    | 1      | Albert Einstein   | 4        | 4        | Theoretical Physics | 1          |
+    | 2      | Ernest Rutherford | 4        | 4        | Theoretical Physics | 1          | 
+    | 3      | Marie Curie       | 10       | 10       | Chemistry           | 3          | 
+    | 4      | Igor Kurchatov    | NULL     | NULL     | NULL                | NULL       | 
+    | 5      | Alexander Fleming | 13       | 13       | Biology             | 5          | 
 
     Аналогично в SQL можно сделать правое внешнее соединение:
 
@@ -723,13 +749,13 @@ why did i wrote it?
     ON Employee.DepartmentID = Department.DepartmentID;
     ```
 
-    | EmployeeID | FullName          | DepartmentID | DepartmentID | DepartmentName      | DirectorID |
-    |------------|-------------------|--------------|--------------|---------------------|------------|
-    | 1          | Albert Einstein   | 4            | 4            | Theoretical Physics | 1          |
-    | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
-    | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
-    | NULL       | NULL              | NULL         | 11           | Nuclear Physics     | 2          | 
-    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          | 
+    | EmplID | FullName          | DepartID | DepartID | DepartName          | DirectorID |
+    |--------|-------------------|----------|----------|---------------------|------------|
+    | 1      | Albert Einstein   | 4        | 4        | Theoretical Physics | 1          |
+    | 2      | Ernest Rutherford | 4        | 4        | Theoretical Physics | 1          | 
+    | 3      | Marie Curie       | 10       | 10       | Chemistry           | 3          | 
+    | NULL   | NULL              | NULL     | 11       | Nuclear Physics     | 2          | 
+    | 5      | Alexander Fleming | 13       | 13       | Biology             | 5          | 
 
 11. Полусоединение
     <!-- \[R \rhd S\] -->
@@ -751,12 +777,12 @@ why did i wrote it?
 
     На отношениях из примера получится такое полусоединение:
 
-    | EmployeeID | FullName          | DepartmentID | DepartmentID | DepartmentName      | DirectorID |
-    |------------|-------------------|--------------|--------------|---------------------|------------|
-    | 1          | Albert Einstein   | 4            | 4            | Theoretical Physics | 1          |
-    | 2          | Ernest Rutherford | 4            | 4            | Theoretical Physics | 1          | 
-    | 3          | Marie Curie       | 10           | 10           | Chemistry           | 3          | 
-    | 5          | Alexander Fleming | 13           | 13           | Biology             | 5          |
+    | EmplID | FullName          | DepartID | DepartID | DepartName          | DirectorID |
+    |--------|-------------------|----------|----------|---------------------|------------|
+    | 1      | Albert Einstein   | 4        | 4        | Theoretical Physics | 1          |
+    | 2      | Ernest Rutherford | 4        | 4        | Theoretical Physics | 1          | 
+    | 3      | Marie Curie       | 10       | 10       | Chemistry           | 3          | 
+    | 5      | Alexander Fleming | 13       | 13       | Biology             | 5          |
 
 ### <a name="%D1%81%D0%B8%D0%BD%D1%82%D0%B0%D0%BA%D1%81%D0%B8%D1%81-%60select%60"></a> Синтаксис `SELECT`
 
