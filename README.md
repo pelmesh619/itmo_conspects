@@ -55,7 +55,8 @@
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_14.html)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_21.html)
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_09_28.html)
-* Лекция №5 - в процессе
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_05.html)
+* Лекция №6 (воркшоп) - в процессе
 
 ## II семестр
 
