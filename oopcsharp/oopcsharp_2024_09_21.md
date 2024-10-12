@@ -107,7 +107,8 @@ public sealed class BinaryOperand
     private readonly int _left;
     private readonly int _right;
     
-    public int Evaluate(IBinaryOperation operation) => operation.Evaluate(_left, _right);
+    public int Evaluate(IBinaryOperation operation) 
+        => operation.Evaluate(_left, _right);
 }
 ```
 

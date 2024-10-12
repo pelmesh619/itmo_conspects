@@ -271,8 +271,9 @@ if (result is AddStudentResult.AlreadyMember)
     return; 
 } 
 if (result is AddStudentResult.StudentLimitReached err) 
-{ 
-    var message = $"Cannot add student to specified group, maximum student count of {err.Limit} already reached"; 
+{
+    var message = @$"Cannot add student to specified group, 
+        maximum student count of {err.Limit} already reached";
     Console.WriteLine(message); 
     return; 
 } 
@@ -465,7 +466,8 @@ public sealed class BinaryOperand
     private readonly int _left;
     private readonly int _right;
     
-    public int Evaluate(IBinaryOperation operation) => operation.Evaluate(_left, _right);
+    public int Evaluate(IBinaryOperation operation) 
+        => operation.Evaluate(_left, _right);
 }
 ```
 
