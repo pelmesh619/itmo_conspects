@@ -65,7 +65,8 @@ public abstract class PaymentCalculator
 
 public class CashPaymentCalculator : PaymentCalculator
 {
-    protected override IPayment CreatePayment(decimal amount) => new CashPayment(amount);
+    protected override IPayment CreatePayment(decimal amount) 
+        => new CashPayment(amount);
 }
 
 public class BankPaymentCalculator : PaymentCalculator
@@ -542,7 +543,8 @@ public class Singleton
     private static readonly Lazy<Singleton> _instance;
     static Singleton()
     {
-        _instance = new Lazy<Singleton>(() => new Singleton(), LazyThreadSafetyMode.ExecutionAndPublication);
+        _instance = new Lazy<Singleton>(() 
+            => new Singleton(), LazyThreadSafetyMode.ExecutionAndPublication);
     }
     private Singleton() { }
     public static Singleton Instance => _instance.Value;
