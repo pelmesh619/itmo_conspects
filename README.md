@@ -2,7 +2,7 @@
 
 **Конспекты по разным предметам первого потока ИСy27 университета ИТМО**
 
-Если нашли какую-то ошибку - напишите мне ([t.me/pelmeshke](https://t.me/pelmeshke)) или сделайте [форк](https://github.com/pelmesh619/itmo_conspects/fork) с пулл реквестом с исправлением
+Если нашли какую-то ошибку - напишите мне ([t.me/pelmeshke](https://t.me/pelmeshke)) или сделайте [форк](https://github.com/pelmesh619/itmo_conspects/fork) с исправлением и пулл реквест
 
 ## III семестр (текущий)
 
