@@ -351,7 +351,7 @@ public interface IEmailBuilder
 } 
 public class Email 
 { 
-    public static IAdressBuilder Builder => new EmailBuilder(); 
+    public static IAddressBuilder Builder => new EmailBuilder(); 
     private class EmailBuilder : IAddressBuilder, ISubjectBuilder, IEmailBuilder { } 
 }
 
