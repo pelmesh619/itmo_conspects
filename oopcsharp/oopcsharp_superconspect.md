@@ -1133,7 +1133,7 @@ public class ConcreteBuilderB : IModelBuilder
 
 Заметим, что билдер - инфраструктурный код, неприоритетный при проектировании.
 
-Здесь же можем к билдер внедрить директора:
+Здесь же можем к билдеру внедрить директора:
 
 ```csharp
 public static class BuilderDirector 
@@ -1167,6 +1167,35 @@ public class InstanceDirector : IBuilderDirector
 
 <!-- не понял, че тут происходит -->
 
+Или же сделать цепочку из интерфейсов для получения данных:
+
+```csharp
+public interface IAddressBuilder 
+{ 
+    ISubjectBuilder WithAddress(string address); 
+} 
+public interface ISubjectBuilder 
+{ 
+    IEmailBuilder WithSubject(string subject); 
+} 
+public interface IEmailBuilder 
+{ 
+    IEmailBuilder WithBody(string body); 
+    Email Build(); 
+} 
+public class Email 
+{ 
+    public static IAdressBuilder Builder => new EmailBuilder(); 
+    private class EmailBuilder : IAddressBuilder, ISubjectBuilder, IEmailBuilder { } 
+}
+
+var email = Email.Builder 
+ .WithAddress("aboba@email.com") 
+ .WithSubject("subject") 
+ .Build();
+```
+
+Здесь мы принуждаем к порядку сбора данных: адрес -> тема -> тело письма (опционально)
 
 Примером работы билдера может явялется процесс создания пиццы из моей любимой франшизы пиццерий Додо Пицца: в билдере мы можем принять такие типы, как соус, начинка, топпинги, чтобы билдер сам сбилдил нам пиццу
 
