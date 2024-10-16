@@ -40,6 +40,7 @@
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_26.html)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_02.html)
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_10.html)
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_16.html)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
