@@ -1139,27 +1139,35 @@
 
     \subsection{Свойства матожидания и дисперсии}
 
-    \ThNs{1} Случайная величина $\xi$ имеет вырожденное распределение, если $\xi(\omega) = \mathrm{const} \ \ \forall \omega \in \Omega$
+    \begin{MyTheorem}
+        \ThNs{1} Случайная величина $\xi$ имеет вырожденное распределение, если $\xi(\omega) = \mathrm{const} \ \ \forall \omega \in \Omega$
 
-    \begin{tabular}{c|c}
-        $\xi$ & $C$ \\
-        \hline
-        $p$   & $1$
-    \end{tabular}
+        \begin{tabular}{c|c}
+            $\xi$ & $C$ \\
+            \hline
+            $p$   & $1$
+        \end{tabular}
 
-    $E\xi = C \qquad D\xi = 0$
+        $E\xi = C \qquad D\xi = 0$
+    \end{MyTheorem}
 
-    \ThNs{2} Свойство сдвига: $E(\xi + C) = E\xi + C; D (\xi + C) = D\xi$
+    \begin{MyTheorem}
+        \ThNs{2} Свойство сдвига: $E(\xi + C) = E\xi + C; D (\xi + C) = D\xi$
+    \end{MyTheorem}
 
-    \ThNs{3} Свойство растяжения:
+    \begin{MyTheorem}
+        \ThNs{3} Свойство растяжения:
 
-    $E(C\xi) = CE\xi$
+        $E(C\xi) = CE\xi$
 
-    $D(C\xi) = C^2 D\xi$
+        $D(C\xi) = C^2 D\xi$
+    \end{MyTheorem}
 
     \Lab 2-3 доказать
 
-    \ThNs{4} $E(\xi + \eta) = E\xi + E\eta$ (из третьего свойства матожидание - линейная функция)
+    \begin{MyTheorem}
+        \ThNs{4} $E(\xi + \eta) = E\xi + E\eta$ (из третьего свойства матожидание - линейная функция)
+    \end{MyTheorem}
 
     \begin{MyProof}
         $\Box$
@@ -1176,7 +1184,9 @@
 
     То есть случайные величины принимают свои величины независимо друг от друга
 
-    \ThNs{5} Если случайные свойства $\xi$ и $\eta$ независимы, то $E(\xi \eta) = E\xi \cdot E\eta$; обратное неверно
+    \begin{MyTheorem}
+        \ThNs{5} Если случайные свойства $\xi$ и $\eta$ независимы, то $E(\xi \eta) = E\xi \cdot E\eta$; обратное неверно
+    \end{MyTheorem}
 
     \begin{MyProof}
         $\Box$
@@ -1187,7 +1197,9 @@
         $\Box$
     \end{MyProof}
 
-    \ThNs{6} $D\xi = E\xi^2 - (E\xi)^2$
+    \begin{MyTheorem}
+        \ThNs{6} $D\xi = E\xi^2 - (E\xi)^2$
+    \end{MyTheorem}
 
     \begin{MyProof}
         $\Box$
@@ -1198,7 +1210,7 @@
         $\Box$
     \end{MyProof}
 
-    \DefN{7} $D(\xi + \eta) = D\xi + D\eta = 2\mathrm{cov} (\xi, \eta)$,
+    \Def $D(\xi + \eta) = D\xi + D\eta + 2\mathrm{cov} (\xi, \eta)$,
     где $\mathrm{cov}(\xi, \eta) = E(\xi\eta) - E\xi E\eta$ - ковариация случайных величин (равна 0 при независимых величинах) - индикатор наличия связи между случайными величинами
 
     \begin{MyProof}
@@ -1211,7 +1223,9 @@
     \end{MyProof}
 
 
-    \ThNs{8} Если случайные величины $\xi$ и $\eta$ независимы, то $D(\xi + \eta) = D\xi + D\eta$
+    \begin{MyTheorem}
+        \ThNs{7} Если случайные величины $\xi$ и $\eta$ независимы, то $D(\xi + \eta) = D\xi + D\eta$
+    \end{MyTheorem}
 
     \begin{MyProof}
         $\Box$
@@ -1221,7 +1235,9 @@
         $\Box$
     \end{MyProof}
 
-    \ThNs{9} Общая формула дисперсии суммы: $D(\xi_1 + \xi_2 + \dots + \xi_n) = \sum_{i = 1}^n D \xi_i + 2\sum_{i, j (i \neq j)} \mathrm{cov} (\xi_i, \xi_j)$
+    \begin{MyTheorem}
+        \ThNs{8} Общая формула дисперсии суммы: $D(\xi_1 + \xi_2 + \dots + \xi_n) = \sum_{i = 1}^n D \xi_i + 2\sum_{i, j (i \neq j)} \mathrm{cov} (\xi_i, \xi_j)$
+    \end{MyTheorem}
 
     \subsection{Другие числовые характеристики}
 
