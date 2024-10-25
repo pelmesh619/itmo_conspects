@@ -36,14 +36,14 @@
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/databases/databases_superconspect.html)
 
-* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_04.html)
-* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_12.html)
-* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_18.html)
-* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_26.html)
-* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_02.html)
-* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_10.html)
-* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_16.html)
-* [Лекция №8](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_24.html)
+* [Лекция №1. Что такое данные?](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_04.html)
+* [Лекция №2. Абстрагирование данных](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_12.html)
+* [Лекция №3. Модели данных](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_18.html)
+* [Лекция №4. Отношение](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_09_26.html)
+* [Лекция №5. Реляционная алгебра](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_02.html)
+* [Лекция №6. Нормализация](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_10.html)
+* [Лекция №7. Производительность](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_16.html)
+* [Лекция №8. Надежность](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_24.html)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
