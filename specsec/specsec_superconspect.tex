@@ -5,6 +5,8 @@
 \fancyhead[LO,LE]{Специальные разделы \\ высшей математики}
 \fancyhead[RO,RE]{Лекции Далевской О. П.}
 
+\fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
+
 \renewcommand{\thesection}{}
 
 \begin{document}
@@ -148,7 +150,7 @@
 
     $(e_k, \sum_{i=1}^n \lambda_i e_i) = \sum_{i=1}^n \lambda_i (e_k, e_i) \stackrel{k \neq i \Rightarrow (e_k, e_i) = 0}{=\joinrel=\joinrel=}
     \lambda_k \|e_k\|^2 = \lambda_k = 0 \quad \forall k$
-    % end {i}
+    % end specsec_2024_02_09.tex
 
     % begin specsec_2024_02_16.tex
 
@@ -226,7 +228,7 @@
 
     Тогда функция, определенная и непрерывная на $[0, 2\pi]$ может быть разложена по базису $\Phi_{\|\cdot\|}$
     и ее координат (как вектора): $f_i = \int_0^{2\pi} f \cdot e_i dx$, где $e_i \in \Phi_{\|\cdot\|}$
-    % end {i}
+    % end specsec_2024_02_16.tex
 
     % begin specsec_2024_03_01.tex
 
@@ -422,7 +424,7 @@
     \end{enumerate}
 
     \textit{Def:} $\mathcal{I}$ - тождественный - $\forall x \in V \ \ \mathcal{I}x = x$
-    % end {i}
+    % end specsec_2024_03_01.tex
 
     % begin specsec_2024_03_15.tex
 
@@ -596,7 +598,7 @@
     \Def Образ оператора - $Im \mathcal{A} \stackrel{def}{=} \Set{y \in W \ | \ \mathcal{A}x = y}$
 
     \Nota $Ker \mathcal{A}$ и $Im \mathcal{A}$ - подпространства
-    % end {i}
+    % end specsec_2024_03_15.tex
 
     % begin specsec_2024_03_22.tex
 
@@ -757,7 +759,7 @@
     $Ax = y = (T^{-1}A^\prime T)x$
 
     $A = T^{-1}A^\prime T \Longrightarrow A^\prime = TA T^{-1}$
-    % end {i}
+    % end specsec_2024_03_22.tex
 
     % begin specsec_2024_03_29.tex
 
@@ -895,7 +897,7 @@
     Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
 
     \Nota Приняв доказательство за базу индукции, можно доказать линейную независимость для $k$-ой системы собственных векторов для попарно различных $k$ чисел $\lambda$
-    % end {i}
+    % end specsec_2024_03_29.tex
 
     % begin specsec_2024_04_03.tex
 
@@ -1029,7 +1031,7 @@
     3) $(x, x) \geq 0, \quad (x, x) = 0 \Longrightarrow x = 0$
 
     4) $(x, y) = (y, x)$ в $\Real$. Но в комплексном множестве: $(x, y) = \overline{(y, x)}$. Тогда $(x, \lambda y) = \overline{(\lambda y, x)}$
-    % end {i}
+    % end specsec_2024_04_03.tex
 
     % begin specsec_2024_04_05.tex
 
@@ -1162,7 +1164,7 @@
     \left(\frac{1}{\sqrt{2}} - \lambda\right)^2 + \frac{1}{2} = 0$ - вещественных корней нет
 
     $\Box \sqsupset e_1$ - какой-либо собственный вектор $\mathcal{A}$ ...
-    % end {i}
+    % end specsec_2024_04_05.tex
 
     % begin specsec_2024_04_12.tex
 
@@ -1322,7 +1324,7 @@
     \Ex $\begin{matrix}u(t) = 1 + 3t \\ v(t) = 2 - t\end{matrix}$, $\Set{e_i} = (1, t)$, $\mathcal{B}(u, v) = (u, v) = \int_{-1}^1 uv dt$
 
     Тогда, $B = \begin{pmatrix}\int_{-1}^1 dt & \int_{-1}^1 t dt \\ \int_{-1}^1 t dt & \int_{-1}^1 t^2 dt\end{pmatrix} = \begin{pmatrix}2 & 0 \\ 0 & \frac{2}{3}\end{pmatrix}$
-    % end {i}
+    % end specsec_2024_04_12.tex
 
     % begin specsec_2024_04_17.tex
 
@@ -1460,7 +1462,7 @@
 
     Но можно доказать, что количества $\lambda_i > 0, \lambda_j < 0, \lambda_k = 0$ постоянны по отношению к способу приведения
     к каноническому виду (т. н. закон инерции квадратичной формы)
-    % end {i}
+    % end specsec_2024_04_17.tex
 
     % begin specsec_2024_04_19.tex
 
@@ -1619,7 +1621,7 @@
     Сведем к виду: $\frac{dy}{dx} = \frac{P(x, y)}{-Q(x, y)} \Longrightarrow -Q(x, y)dy = P(x, y)dx \Longrightarrow $
 
     \fbox{$P(x, y)dx + Q(x, y)dy = 0$} - форма в дифференциалах
-    % end {i}
+    % end specsec_2024_04_19.tex
 
     % begin specsec_2024_04_26.tex
 
@@ -1823,7 +1825,7 @@
     $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
 
     $C(x) = \int q(x) e^{\int p(x)dx} dx$
-    % end {i}
+    % end specsec_2024_04_26.tex
 
     % begin specsec_2024_05_03.tex
 
@@ -2033,7 +2035,7 @@
     \end{tabular}
 
     Далее все зависит от $\lambda_{1,2}$
-    % end {i}
+    % end specsec_2024_05_03.tex
 
     % begin specsec_2024_05_10.tex
 
@@ -2220,7 +2222,7 @@
     Тогда $y(x) = \overline{y} + y^*$ - общее решение ЛНДУ
 
     $\Box$ \Lab $\Box$
-    % end {i}
+    % end specsec_2024_05_10.tex
 
     % begin specsec_2024_05_17.tex
 
@@ -2430,7 +2432,7 @@
     $\begin{pmatrix}y_1 & \dots & y_n \\ \vdots & \ddots & \vdots \\ y^{(n - 2)}_1 & \dots & y^{(n - 2)}_n \\ y^{(n - 1)}_1 & \dots & y^{(n - 1)}_n\end{pmatrix}\begin{pmatrix}C^\prime_1(x) \\ \vdots \\ C^\prime_{n - 1}(x) \\ C^\prime_n(x)\end{pmatrix} = \begin{pmatrix}0 \\ \vdots \\ 0 \\ f(x)\end{pmatrix}$
 
     ? Доказать, что $\overline{y} + y^*$ - общее решение ЛНДУ
-    % end {i}
+    % end specsec_2024_05_17.tex
 
     % begin specsec_2024_05_22.tex
 
@@ -2670,7 +2672,7 @@
     \begin{cases}y = Ce^{-t} + 1 \\ \tilde{y}(0) = \tilde{y}_0\end{cases} \to C = \tilde{y} - 1$
 
     $\tilde{y} - y = (\tilde{y}_0 - y) e^{-t} + 1 - 1 = (\tilde{y}_0 - 1)e^{-t} \stackrel{t \to +\infty}{\longrightarrow} 0$ - устойчива{\huge 🥳}
-    % end {i}
+    % end specsec_2024_05_22.tex
 
     % begin specsec_2024_05_29.tex
 
@@ -2756,7 +2758,7 @@
     3. \begin{cases}\dot x = y \\ \dot y = -0\end{cases}
 
     \underline{Обобщим}. Если хотя бы один $\lambda \neq 0$ и лежит слева от $Im \lambda$, то решение устойчивое
-    % end {i}
+    % end specsec_2024_05_29.tex
 
     % begin specsec_exam_list.tex
 
@@ -3104,7 +3106,7 @@
 
 
     \end{enumerate}
-    % end {i}
+    % end specsec_exam_list.tex
 
 
 
