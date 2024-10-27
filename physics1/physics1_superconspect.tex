@@ -806,23 +806,22 @@
                 $I_{\text{м.т.}} = mr^2$
 
                 $dI = r^2 \dm$
-                
-                \begin{wrapfigure}{r}{0pt}
-                    \includegraphics[width=0.2\textwidth]{physics1/images/physics1_2024_10_07_8}
-                \end{wrapfigure}
 
                 $I = \sum_{i} d I_i = \int_0^l dI = \int_0^l r^2 dm = \int_0^l r^2 \tau dl = \int_0^l r^2 \tau dr = \tau \frac{r^3}{3} \Big|_0^l = \tau \frac{l^3}{3} = \frac{ml^2}{3}$
 
                 \fbox{$I_\text{стерж} = \frac{ml^2}{3}$}
 
+            \end{minipage}
+
+            \begin{minipage}{0.95\textwidth}
+                \begin{wrapfigure}{r}{0pt}
+                    \includegraphics[width=0.2\textwidth]{physics1/images/physics1_2024_10_07_8}
+                \end{wrapfigure}
+
                 \item \textbf{Кольцо}
 
                 Для кольца тривиально: \fbox{$I_\text{кольц} = r^2 m$}
                 
-                \begin{wrapfigure}{r}{0pt}
-                    \includegraphics[width=0.2\textwidth]{physics1/images/physics1_2024_10_07_9}
-                \end{wrapfigure}
-
                 \item \textbf{Диск}
 
                 Разбиваем диск на кольца с радиусом $r$ толщиной $dr$
@@ -832,6 +831,13 @@
                 $I = \int \sigma 2\pi r^3 dr = \sigma 2\pi \frac{R^4}{4} = \frac{mR^2}{2}$
 
                 \fbox{$I_\text{диск} = \frac{mR^2}{2}$}
+
+            \end{minipage}
+
+            \begin{minipage}{0.95\textwidth}
+                \begin{wrapfigure}{r}{0pt}
+                    \includegraphics[width=0.2\textwidth]{physics1/images/physics1_2024_10_07_9}
+                \end{wrapfigure}
 
                 \item \textbf{Теорема Штейнера}
 
@@ -855,6 +861,8 @@
 
     Повторим то, что было на прошлой лекции. Рассмотрим два типа движения:
 
+    \mediumvspace
+
     \begin{multicols}{2}
         \begin{tcolorbox}[title=Поступательное движение]
             $d\vec{r}; x, y, z$
@@ -873,7 +881,7 @@
 
             $\vec{F} = \frac{d\vec{p}}{dt}$
         \end{tcolorbox}
-
+        
         \begin{tcolorbox}[title=Вращательное движение]
             $d\vec{\varphi}$
 
@@ -908,14 +916,18 @@
 
         Также мы рассмотрели моменты инерции для разных тел
 
-        \begin{wrapfigure}{r}{0pt}
-            \includegraphics[width=6cm]{physics1/images/physics1_2024_10_14_2}
-        \end{wrapfigure}
-
         \subsection{Гироскоп}
 
         Рассмотрим вращающийся волчок: вращаясь, он постепенно теряет энергию из-за трения и сопротивления воздуха, из-за чего
-        его вращение замедляется, и его ось начинает вращаться по другой оси. Обозначим за $\vec{L}_\omega$ момент инерции 
+        его вращение замедляется, и его ось начинает вращаться по другой оси. 
+    \end{minipage}
+        
+    \begin{minipage}{\textwidth}
+        \begin{wrapfigure}{r}{0pt}
+            \includegraphics[width=6cm]{physics1/images/physics1_2024_10_14_2}
+        \end{wrapfigure}
+        
+        Обозначим за $\vec{L}_\omega$ момент инерции 
         волчка и за $\vec{L}^\prime$ момент инерции оси. Тогда:
         
         $\vec{L} = \vec{L}_\omega + \vec{L}^\prime$
