@@ -17,7 +17,7 @@
 \usepackage[libertine,smallerops]{newtxmath}
 \usepackage{microtype}
 \usepackage[margin=2cm]{geometry}
-\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[usenames,dvipsnames,svgnames]{xcolor}
 \usepackage{graphicx}
 \usepackage{wrapfig}
 \usepackage{pdfpages}
@@ -107,6 +107,7 @@
 \tikzstyle{every text node part}=[align=center]
 
 \usepackage{tcolorbox}
+\usepackage{varwidth}
 \tcbuselibrary{most}
 % \tcbuselibrary{minted}
 
@@ -288,7 +289,7 @@
     pdfsubject={},
     allcolors=black,
     urlcolor=blue,
-    linkcolor=red,
+    linkcolor=DodgerBlue,
     colorlinks=true,
 }
 
@@ -759,6 +760,13 @@
 
 \newenvironment{MyTheorem}
     {\begin{tcolorbox}[colframe=blue!25, colback=blue!10]
+    }
+    {
+    \end{tcolorbox}
+    }
+
+\newenvironment{MyProof}
+    {\begin{tcolorbox}[breakable]
     }
     {
     \end{tcolorbox}
