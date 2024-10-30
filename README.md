@@ -32,7 +32,7 @@
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_08.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_15.pdf)
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_22.pdf)
-* Лекция №9 - в производстве
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_29.pdf)
 
 ### Базы данных (лектор Маятин А. В.)
 
