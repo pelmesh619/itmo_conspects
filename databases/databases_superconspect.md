@@ -548,8 +548,7 @@ why did i wrote it?
 
     | ItemID | ItemName |
     |--------|----------|
-    | 2      | Pen      |
-    | 3      | Notebook |
+    | 1      | Ball     |
 
 5. Пересечение
     <!-- \[R \cap S\] -->
@@ -572,7 +571,8 @@ why did i wrote it?
 
     | ItemID | ItemName |
     |--------|----------|
-    | 1      | Ball     |
+    | 2      | Pen      |
+    | 3      | Notebook |
 
     <hr>
 
