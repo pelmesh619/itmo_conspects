@@ -13,12 +13,21 @@
 
     \Def Функция распределения $F_\xi(x)$ случайной величины $\xi$ называется функция $F_\xi(x) = P(\xi < x)$
 
-    $F(x)$ - вероятность попадания в этот интервал
+    \includegraphics[height=4cm]{probtheory/images/probtheory_2024_10_22_2}
 
-    \Ex $\xi \in B_p$ \qquad \begin{tabular}{c|c|c}
-        $\xi$ & 0 & 1 \\ \hline
-        $p$ & $1 - p$ & $p$ \\
-    \end{tabular} \qquad $F_\xi(x) = \begin{cases}0 \quad x \leq 0, \\ 1 - p \quad 0 < x \leq 1, \\ 1 \quad x > 1\end{cases}$
+    \begin{minipage}{\textwidth}
+        \begin{wrapfigure}{r}{0pt}
+            \includegraphics[height=4.5cm]{probtheory/images/probtheory_2024_10_22_3}
+        \end{wrapfigure}
+
+        \Ex $\xi \in B_p$ \qquad \begin{tabular}{c|c|c}
+            $\xi$ & 0 & 1 \\ \hline
+            $p$ & $1 - p$ & $p$ \\
+        \end{tabular}
+        
+        $F_\xi(x) = \begin{cases}0 \quad x \leq 0, \\ 1 - p \quad 0 < x \leq 1, \\ 1 \quad x > 1\end{cases}$
+
+    \end{minipage}
 
     \subsubsection{Свойства функции распределения}
 
@@ -31,6 +40,8 @@
     \end{MyProof}
 
     3) $p(\alpha \leq \xi < \beta) = F(\beta) - F(\alpha)$
+
+    \includegraphics[height=6cm]{probtheory/images/probtheory_2024_10_22_4}
 
     \begin{MyProof}
         $p(\xi < \beta) = p(\xi < \alpha) + p(\alpha \leq \xi < \beta) \Longrightarrow F(\beta) = F(\alpha) + p(\alpha \leq \xi < \beta)$
@@ -162,8 +173,12 @@
     $\mu_k = E(\xi - E\xi)^k = \int_{-\infty}^\infty (x - E\xi)^k f_\xi(x)dx$ - центральный момент $k$-ого порядка
 
     \Def Медианой $Me$ абсолютно непрерывной случайной величины $\xi$ называется значение случайной величины $\xi$, такое что $p(\xi < Me) = p(\xi > Me) = \frac{1}{2}$
+    
+    \includegraphics[height=4cm]{probtheory/images/probtheory_2024_10_22_5}
 
     \Def Модой $Mo$ случайной величины $\xi$ называется точка локального максимума плотности
+
+    \includegraphics[height=4cm]{probtheory/images/probtheory_2024_10_22_6}
 
     \subsection{Сингулярное распределение}
 
