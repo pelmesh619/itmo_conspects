@@ -355,45 +355,45 @@ SELECT [ DISTINCT | ALL ] { * | [ColumnExpression [AS NewName] ] [, ...]}
 
 2. **Выбор исходного отношения**:[^fromfootnote]
 
-```sql
-FROM TableName [AS NewTableName] 
-[{INNER | LEFT OUTER | FULL} JOIN OuterTable [AS NewOuterTableName] 
-ON Condition]
-```
-
-Здесь же можно определить соединение и его тип на основе условия `Condition` 
-
-[^fromfootnote]: На самом деле синтаксис инструкции `FROM` немного шире:
-
     ```sql
     FROM TableName [AS NewTableName] 
-    [{INNER | { LEFT | RIGHT | FULL } [OUTER]} JOIN OuterTable [AS NewOuterTableName] 
+    [{INNER | LEFT OUTER | FULL} JOIN OuterTable [AS NewOuterTableName] 
     ON Condition]
     ```
+    
+    Здесь же можно определить соединение и его тип на основе условия `Condition` 
+    
+    [^fromfootnote]: На самом деле синтаксис инструкции `FROM` немного шире:
+    
+        ```sql
+        FROM TableName [AS NewTableName] 
+        [{INNER | { LEFT | RIGHT | FULL } [OUTER]} JOIN OuterTable [AS NewOuterTableName] 
+        ON Condition]
+        ```
 
 3. **Фильтрация кортежей**:
 
-```sql
-[WHERE Condition]
-```
-
-В инструкции `WHERE` определяются условия для фильтрации кортежей
+    ```sql
+    [WHERE Condition]
+    ```
+    
+    В инструкции `WHERE` определяются условия для фильтрации кортежей
 
 4. **Группировка**:
 
-```sql
-[GROUP BY ColumnList [, ...] [HAVING Condition]]
-```
-
-В инструкции `GROUP BY` производится группировка по указанному набору атрибутов и фильтрации через условие в `HAVING`
+    ```sql
+    [GROUP BY ColumnList [, ...] [HAVING Condition]]
+    ```
+    
+    В инструкции `GROUP BY` производится группировка по указанному набору атрибутов и фильтрации через условие в `HAVING`
 
 5. **Сортировка**:
 
-```sql
-[ORDER BY ColumnList [, ...] [{ASC | DESC}]]
-```
-
-И, наконец, в инструкции `ORDER BY` происходит сортировка конечного отношения по указанному набору атрибутов
+    ```sql
+    [ORDER BY ColumnList [, ...] [{ASC | DESC}]]
+    ```
+    
+    И, наконец, в инструкции `ORDER BY` происходит сортировка конечного отношения по указанному набору атрибутов
 
 В конечном счете, получаем:
 
