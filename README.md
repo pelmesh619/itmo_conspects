@@ -70,6 +70,10 @@
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_19.html)
 * Лекция №8 - в производстве
 
+### История российской науки и техники (лектор Васильев А. В.)
+
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_10_31.html)
+
 ## II семестр
 
 ### Математический анализ II (лектор Далевская О. П.)
