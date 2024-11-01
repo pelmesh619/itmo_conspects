@@ -859,6 +859,167 @@
     Чтобы $f(x)$ в пределе равнялось $\sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$, нужно, чтобы $r_n(x) \to 0$
     % end addchapters1_2024_10_18.tex
 
+    % begin addchapters1_2024_11_01.tex
+
+    Формула: $f(x) \in C^\infty_{U_0(x_0)}$ и $R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!} (x - x_0)^{n + 1}$, $\xi$ между $x$ и $x_0$
+
+    \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
+
+    \Nota Если $x_0 = 0$, то ряд Маклорена 
+
+    \smallvspace
+
+    \subsubsection{Стандартные разложения элементарных функций}
+
+    \smallvspace
+
+    1$^\circ$ $e^x = \sum_{n = 0}^\infty \frac{x^n}{n!} = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \dots$
+
+    \Notas $e^x - 1 = x + \frac{x^2}{2} + \dots \qquad e^x - 1 \underset{x \to 0}{\sim} x$
+
+    \mediumvspace
+
+    2$^\circ$ $\sin x = \sum_{n = 0}^\infty \frac{(-1)^n}{(2n + 1)!}x^{2n + 1} = x - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots$
+
+    \Notas $\sin x \underset{x \to 0}{\sim} x$
+
+    \mediumvspace
+
+    3$^\circ$ $\cos x = \sum_{n = 0}^\infty \frac{(-1)^n}{(2n)!}x^{2n} = 1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \dots$
+
+    \Notas $1 - \cos x \underset{x \to 0}{\sim} \frac{x^2}{2}$
+
+    \mediumvspace
+
+    4$^\circ$ $\mathrm{sh} x, \mathrm{ch} x$ \hfill \Defs $\mathrm{sh} x = \frac{e^x - e^{-x}}{2}, \mathrm{ch} x = \frac{e^x + e^{-x}}{2}$
+    
+    Сложим и вычтем ряды для $e^x$ и $e^{-x}$
+
+    Причем $e^{-x} \underset{x, t \in u(0)}{\overset{t = -x}{=\joinrel=\joinrel=}} e^t = \sum_{n = 0}^\infty \frac{t^n}{n!} = \sum_{n = 0}^\infty \frac{(-1)^n x^n}{n!} = 1 - x + \frac{x^2}{2!} - \frac{x^3}{3!} + \dots$
+
+    Из этого получаем:
+
+    $\mathrm{sh} x = x + \frac{x^3}{3!} + \frac{x^5}{5!} + \dots = \sum_{n = 0}^\infty \frac{x^{(2n + 1)}}{(2n + 1)!}$
+
+    $\mathrm{ch} x = 1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \dots = \sum_{n = 0}^\infty \frac{x^{(2n)}}{(2n)!}$
+
+    \underline{Формула Эйлера}
+
+    $e^{ix} = \sum_{n = 0}^\infty \frac{(ix)^n}{n!} = 1 + ix - \frac{x^2}{2!} - \frac{ix^3}{3!} + \dots = (1 - \frac{x^2}{2!} + \dots) + i(x - \frac{x^3}{3!} + \dots) = \cos x + i\sin x$
+
+    \fbox{$e^{ix} = \cos x + i\sin x$}
+
+    \mediumvspace
+
+    5$^\circ$ Биномиальный ряд
+
+    $f(x) = (1 + x)^m, n \in \mathrm{Q}$
+
+    Заметим, что $f^\prime(x) = m(1 + x)^{m - 1}$
+
+    $(1 + x)f^\prime(x) = m (1 + x)^m = m f(x)$
+
+    Получаем дифференциальное уравнение: $(1 + x)f^\prime(x) = mf(x)$
+
+    \Notas Если дополнить ДУ начальными условиями, то задача Коши будет решаться единственным образом, 
+    то есть, найдя ряд $S(x) = \sum_{k = 0}^{\infty} a_k x^k$ как единственное решение,
+    получим, что $S(x) = f(x)$ и не надо исследовать остаток $R_n$ на убывание к нулю
+
+    Задача Коши:
+
+    \begin{cases}
+        (1 + x) f^\prime(x) = m f(x) \\
+        f(0) = 1
+    \end{cases}
+
+    Будем искать решение в виде ряда $S(x) = a_0 + a_1 x + a_2 x^2 + \dots + a_k x^k + \dots$
+
+    $S^\prime(x) = a_1 + 2a_2 x + 3a_3 x^2 + \dots + k a_k x^{k - 1} + \dots$
+
+    $(1 + x) S^\prime(x) = a_1 + (a_1 + 2a_2)x + (2a_2 + 3a_3) x^3 + \dots + (k a_k + (k + 1) a_{k + 1})x^k + \dots$
+
+    $mS(x) = ma_0 + ma_1 x + ma_2 x^2 + \dots + m a_k x^k + \dots$
+
+    Начальные условия: $a_0 = 1$. Тогда приравниваем коэффициенты: $a_1 = m, a_2 = \frac{m(m - 1)}{2}, a_3 = \frac{m(m - 1)(m - 2)}{2 \cdot 3}$
+
+    Выявили закономерность: $a_k = \frac{m(m - 1)(m - 2)\dots(m - k + 1)}{k!}$
+
+    Таким образом: $(1 + x)^m = \sum_{k = 0}^\infty C_m^k x^k$
+
+    При $m \in \Natural$ ряд - конечная сумма, при остальных - бесконечная
+
+    \Lab $\frac{1}{\sqrt{1 - x^2}} = (1 + (-x^2))^{-\frac{1}{2}} = (\mathrm{arcsin} x)^\prime \qquad \int_0^t \frac{dx}{\sqrt{1 - x^2}} = \mathrm{arcsin} t$
+
+    \mediumvspace
+
+    6$^\circ$ $\ln(1 + x)$
+
+    $(\ln(1 + x))^\prime = \frac{1}{1 + x} = \frac{1}{1 - (-x)} = \frac{1}{1 - x} = \sum_{n = 0}^\infty t^n = 
+    \sum_{n = 0}^\infty (-1)^n x^n$
+
+    $\ln(1 + x) = \int_0^x (\sum_{n = 0}^\infty (-1)^n y^n) dy = \sum_{n = 0}^\infty (-1)^n \int_0^x y^n dy = 
+    \sum_{n = 0}^\infty (-1)^n \frac{x^{n + 1}}{n + 1} = x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \dots$
+    
+    Интервал сходимости: $\lim_{n \to \infty} \left|\frac{u_{n + 1}}{u_n}\right| = 
+    \lim_{n \to \infty} \left|\frac{x^{n + 1} n}{(n + 1) x^n}\right| = |x| < 1 \quad D = (-1, 1)$
+
+    При $x = 1 \quad \ln(1 + x) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots$ - сходится $\quad D = (-1, 1]$
+
+    \Notas Сходимость остатка требует исследования
+
+    \Nota Заметим, если $x = \frac{1}{k}$, где $k \in \Natural$, то $\ln(1 + \frac{1}{k}) = \ln\frac{k + 1}{k} = \ln (k + 1) - \ln k$ - рекуррентная формула
+    логарифмов натуральных чисел
+
+    \mediumvspace
+
+    7$^\circ$ $\mathrm{arctg} x$ - \Lab ($(\mathrm{arctg} x)^\prime = \frac{1}{1 + x^2}$)
+
+    \subsubsection{Приложения}
+
+    \ExNs{1} $I = \int_0^{\frac{1}{2}} \frac{\sin x}{x} dx \hfill x = \frac{1}{2} \in u(0)$
+
+    $\frac{\sin x}{x} = 1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \dots$
+
+    $I = \int_0^{\frac{1}{2}} (1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \dots) dx = x - \frac{x^3}{3 \cdot 3!} + \frac{x^5}{5 \cdot 5!} + \dots \Big|_{0}^{\frac{1}{2}} = 
+    \frac{1}{2} - \frac{1}{8 \cdot 3 \cdot 6} + \frac{1}{32 \cdot 5 \cdot 120} - \cdot$
+
+    Ряд знакопеременный - можем найти такой $u_n$, который будет меньше заданной точности вычисления $\varepsilon$
+
+    \ExN{2} $\int_0^{a} e^{-x^2} dx = \int_0^a (1 + (-x^2) + \frac{x^4}{2!} + \dots) dx = x - \frac{x^3}{2} + \frac{x^5}{10} + \dots \Big|_0^a = a - \frac{a^3}{5} + \frac{a^5}{10} - \dots$
+
+    Отсюда были вычислены таблицы для функции Лапласа $\Phi(a) = \frac{1}{\sqrt{2\pi}} \int_0^a e^{-\frac{x^2}{2}} dx$
+
+    \ExN{3} Вычисление пределов
+
+    $\lim_{x \to 0} \frac{\sin x - \mathrm{arctg} x}{x^3} = \lim_{x \to 0} \frac{(x - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots) - (x - \frac{x^3}{3} + \frac{x^5}{5} - \frac{x^7}{7} + \dots)}{x^3} = 
+    \lim_{x \to 0} \frac{-x^3 (\frac{1}{3!} - \frac{1}{3}) + o(x^3)}{x^3} = \frac{1}{6}$
+
+    \subsection{4. Ряды Фурье}
+
+    \Mem Линейное функциональное пространство со скалярным произведением
+
+    $f(x) \in C_{[a,b]}$
+
+    Скалярное произведение $(f, g) = \int_a^b f(x)g(x) dx$
+
+    Из этого норма $\|f\| = \sqrt{(f,f)} = \left(\int_a^b f^2(x) dx\right)^\frac{1}{2}$
+
+    Главное приложение евклидовых пространств - задача о перпендикуляре: найти перпендикуляр $h$ из конца вектора $f$ на подпространство $L^\prime$.
+    Иначе: ищем расстояние $\|f - h\|$ (метрика) или ортогональную проекция $f_0$ вектора $f$ на $L^\prime$, такую, что $f_0 + h = f$
+
+    Будем искать $f_0$, задав подпространство $L^\prime$ множеством функций $\{\sin mx, \cos mx\}$
+
+    Тригонометрические функции полезны для описания периодических явлений
+
+    Раньше рассматривали тригонометрический многочлен
+
+    $T_m(x) = \frac{a_0}{2} + b_1 \sin x + a_1 \cos x + \dots + b_m \sin mx + a_m \cos mx$
+
+    Дальше стоит задача: при каких $a_i, b_i$ многочлен $T_m(x)$ будет наименее отстоящим от данной $f(x)$
+
+    % задача о трех перпендикулярах
+    % end addchapters1_2024_11_01.tex
+
 
 
 \end{document}
