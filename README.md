@@ -56,6 +56,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_09_20.pdf)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_10_04.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_10_18.pdf)
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_11_01.pdf)
 
 ### Объектно-ориентированное программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
@@ -69,6 +70,7 @@
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_12.html)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_19.html)
 * Лекция №8 - в производстве
+* Лекция №9 - была отменена
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
