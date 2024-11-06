@@ -13,7 +13,7 @@
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_02.pdf)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_09.pdf)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_16.pdf)
-* Лекция №4 - отменилась
+* Лекция №4 - была отменена
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_09_30.pdf)
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_10_07.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_10_14.pdf)
@@ -34,6 +34,7 @@
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_15.pdf)
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_22.pdf)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_29.pdf)
+* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_11_06.pdf)
 
 ### Базы данных (лектор Маятин А. В.)
 
@@ -48,6 +49,7 @@
 * [Лекция №7. Производительность](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_16.html)
 * [Лекция №8. Надежность](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_24.html)
 * Лекция №9 - была рубежка
+* Лекция №10 - была отменена
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
