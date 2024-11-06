@@ -18,7 +18,7 @@
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_10_07.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_10_14.pdf)
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_10_21.pdf)
-* Лекция №9 - в производстве
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_10_28.pdf)
 * Лекция №10 - календарный праздник
 
 ### Теория вероятности (лектор Блаженов А. В.)
