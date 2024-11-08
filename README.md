@@ -34,7 +34,7 @@
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_15.pdf)
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_22.pdf)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_10_29.pdf)
-* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_11_06.pdf)
+* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_11_05.pdf)
 
 ### Базы данных (лектор Маятин А. В.)
 
