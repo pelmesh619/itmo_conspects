@@ -74,6 +74,7 @@
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_19.html)
 * Лекция №8 - в производстве
 * Лекция №9 - была отменена
+* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_11_09.html)
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
