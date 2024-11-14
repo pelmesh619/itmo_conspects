@@ -2175,6 +2175,216 @@
     $f_\eta(x) = \begin{cases}0, & x < 0 \\ \frac{4}{3}\left(\frac{1}{(x + 2)^2} + \frac{1}{(2 - x)^2}\right), & 0 \leq x \leq 1 \\ \frac{4}{3}\frac{1}{(x + 2)^2}, & 1 < x \leq 2 \\ 0 & x > 2\end{cases}$
     % end probtheory_2024_11_05.tex
 
+    % begin probtheory_2024_11_12.tex
+
+    \subsection{Сходимость случайных величин}
+
+    Рассмотрим 3 вида сходимости:
+
+    \begin{itemize}
+        \item Сходимость \enquote{почти наверное}
+
+        \Defs Случайная величина $\xi$ имеет свойство $\mathrm{Cond}$ \enquote{почти наверное}, если вероятность $p(\xi \text{ имеет свойство } \mathrm{Cond}) = 1$
+    
+        \Nota То есть $p(\xi \text{ не имеет свойство } \mathrm{Cond}) = 0$
+
+        $p(\omega \in \Omega \ | \ \xi(\omega) \text{ не имеет св-во } \mathrm{Cond})$
+
+        \Def Последовательность случайных величин $\{\xi_n\}$ сходится \enquote{почти наверное} к случайной величине $\xi$ при $n \to \infty$ ($\xi_n \overset{\text{п. н.}}{\longrightarrow} \xi$), 
+        если $p(\omega \in \Omega \ | \ \xi_n(\omega) \underset{n \to \infty}{\longrightarrow} \xi(\omega)) = 1$
+
+        \item Сходимость по вероятности
+
+        \Defs Последовательность случайных величин $\{\xi_n\}$ сходится по вероятности к случайной величине $\xi$ при $n \to \infty$
+        ($\xi_n \overset{p}{\longrightarrow} \xi$), если $\forall \varepsilon > 0 \quad p(|\xi_n - \xi| < \varepsilon) \underset{n \to \infty}{\longrightarrow} 1$
+        
+        \Nota Не надо думать, что из сходимости по вероятности следует сходимости математического ожидания $\xi_n \overset{p}{\longrightarrow} \xi \centernot{\Longrightarrow} E\xi_n \longrightarrow E\xi$
+
+        \begin{MyTheorem}
+            \Ths Пусть $|\xi_n| \leq C = \mathrm{const} \quad \forall n$
+
+            Тогда $\xi_n \overset{p}{\longrightarrow} \xi \Longrightarrow E\xi_n \longrightarrow E\xi$
+        \end{MyTheorem}
+
+        \item Слабая сходимость
+
+        \Defs Последовательность случайных величин $\xi_n$ слабо сходится к случайной величине $\xi$ при $n \to \infty$
+        ($\xi_n \rightrightarrows \xi$), если $F_{\xi_n}(x) \longrightarrow F_\xi(x) \forall x$, где $F_\xi(x)$ - непрерывна
+    
+    \end{itemize}
+
+    \subsubsection{Связь между видами сходимости}
+
+    \begin{MyTheorem}
+        \Ths $\xi_n \overset{\text{п. н.}}{\longrightarrow} \xi \Longrightarrow \xi_n \overset{p}{\longrightarrow} \xi \Longrightarrow \xi_n \rightrightarrows \xi$
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \Ths Если $\xi_n C = \mathrm{const}$, то $\xi_n \overset{p}{\longrightarrow} C$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        Если $\xi_n \rightrightarrows C$, то по определению $F_{\xi_n}(x) \longrightarrow F_C(x) = \begin{cases}0, & x \leq C \\ 1, & x > C\end{cases} \quad \forall x \neq C$
+
+        $\forall \varepsilon > 0 \quad p(|\xi_n - C| < \varepsilon) = p(-\varepsilon < \xi_n - C < \varepsilon) = 
+        p(C - \varepsilon < \xi_n < C + \varepsilon) \geq p\left(C - \frac{\varepsilon}{2} < \xi_n < C + \varepsilon\right) =
+        F_{\xi_n}(C + \varepsilon) - F_{\xi_n}\left(C - \frac{\varepsilon}{2}\right) = 1 - 0 = 1$
+
+        Так как $p(|\xi_n - C| < \varepsilon) \leq 1$, то по теореме о 2 милиционерах $p(|\xi_n - C| < \varepsilon) \underset{n \to \infty}{\longrightarrow} 1$
+        то есть по определению $\xi_n \overset{p}{\longrightarrow} C$
+    \end{MyProof}
+
+    \Nota В общем случае не только из слабой сходимости не следует сходимость по вероятности, но и бессмысленно говорить
+    об этом, так как слабая сходимость - это сходимость не случайных величин, а их распределений
+
+    \Ex $\letsymbol \xi_n \rightrightarrows \xi \in N(0, 1)$, тогда $\eta = -\xi \in N(0, 1)$, но ясно, что $\xi_n \overset{p}{\longrightarrow} \eta = -\xi$ - неверно 
+    
+    \subsection{Ключевые неравенства}
+
+    В дальнейшем будем считать, что у случайных величин первый момент существует
+
+    \subsubsection{I Неравенство Маркова}
+
+    \begin{MyTheorem}
+        \Ths $p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon} \quad \forall \varepsilon > 0$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $I_A(\omega) = \begin{cases}0, & \omega \notin A \quad - A\text{ нет} \\ 1, & \omega \in A \quad - A\text{ есть}\end{cases}$
+
+        $EI_A = p(A)$
+
+        $|\xi| \geq |\xi| \cdot I(|\xi| \geq \varepsilon) \geq \varepsilon I(|\xi| \geq \varepsilon)$
+
+        $E|\xi| \geq E(\varepsilon \cdot I(|\xi| \geq \varepsilon))$
+
+        $E|\xi| \geq \varepsilon \cdot E(\varepsilon I(|\xi| \geq \varepsilon)) = \varepsilon \cdot p(|\xi| \geq \varepsilon) 
+        \Longrightarrow p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon}$
+    \end{MyProof}
+
+    \subsubsection{II Неравенство Чебышева}
+
+    \begin{MyTheorem}
+        \Ths $P(|\xi - E\xi| \geq \varepsilon) \leq \frac{D\xi}{\varepsilon^2}$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $p(|\xi - E\xi| \geq \varepsilon) = p((\xi - E\xi)^2 \geq \varepsilon^2) \leq \frac{E(\xi - E\xi)^2}{\varepsilon^2} = \frac{D\xi}{\varepsilon}$
+    \end{MyProof}
+
+    \subsubsection{III Правило \enquote{трех сигм}}
+    
+    \begin{MyTheorem}
+        \Ths $P(|\xi - E\xi| \geq 3\sigma) \leq \frac{1}{9}$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        По неравенству Чебышева $P(|\xi - E\xi| \geq 3\sigma) \leq \frac{D\xi}{(3\sigma)^2} = \frac{D\xi}{9\sigma^2} = \frac{1}{9}$
+    \end{MyProof}
+
+    \subsection{Среднее арифмитическое независимых одинаково распределенных случайных величин}
+
+    Пусть $\xi_1, \xi_2, \dots, \xi_n$ - независимые одинаково распределенные случайные величины с конечным вторым моментом
+
+    Обозначим $a = E\xi_i, d = D\xi_i, \sigma = \sigma_{\xi_i}, \quad 1 \leq i \leq n$
+
+    $S_n = \xi_1 + \dots + \xi_n$ - их сумма
+
+    $\frac{S_n}{n} = \frac{\xi_1 + \dots + \xi_n}{n}$ - среднее арифмитическое
+
+    $E\left(\frac{S_n}{n}\right) = \frac{1}{n} (E\xi_1 + \dots + E\xi_n) = \frac{1}{n} na = a = E\xi_1$ - математическое ожидание не меняется
+
+    $D\left(\frac{S_n}{n}\right) = \frac{1}{n^2} (D\xi_1 + \dots + D\xi_n) = \frac{1}{n^2} nd = \frac{d}{n} = \frac{D\xi_1}{n}$ - дисперсия уменьшилась в $n$ раз
+
+    $\sigma\left(\frac{S_n}{n}\right) = \frac{\sigma}{\sqrt{n}}$ - СКО уменьшилось в $\sqrt{n}$ раз
+
+    \subsection{Законы больших чисел}
+
+    \subsubsection{I. Закон больших чисел Чебышева}
+
+    \begin{MyTheorem}
+        \Ths Пусть $\xi_1, \dots, \xi_n, \dots$ - последовательность независимых одинаково распределенных с конечным вторым моментом,
+        тогда $\frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\underset{n \to \infty}{\longrightarrow}} E\xi_1$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        Обозначим $a = E\xi_i, d = D\xi_i, \sigma = \sigma_{\xi_i}, \quad 1 \leq i \leq n$
+
+        $S_n = \sum_{i = 1}^n \xi_i$
+
+        Тогда по неравенству Чебышева $p\left(\left|\frac{S_n}{n} - a\right| \geq \varepsilon\right) = p\left(\left|\frac{S_n}{n} - E\left(\frac{S_n}{n}\right)\right| \geq \varepsilon\right) \leq
+        \frac{D\left(\frac{S_n}{n}\right)}{\varepsilon^2} = \frac{d}{n\varepsilon^2} \underset{n \to \infty}{\longrightarrow} 0 \Longrightarrow p\left(|\frac{S_n}{n} - a| < \varepsilon\right) \underset{n \to \infty}{\longrightarrow} 1$,
+        то есть $\frac{S_n}{n} \overset{p}{\longrightarrow} a$
+    \end{MyProof}
+
+    Среднее арифмитическое большое числа независимых одинаковых случайных величин \enquote{стабилизируется} около математического ожидания,
+    \enquote{при $n \to \infty$ случайность переходит в закономерность}
+
+    \underline{Статистический смысл}: при большом объеме $n$ статистических данных среднее арифмитическое данных
+    дает достаточно точную оценку теоретического математического ожидания
+
+    \Nota При доказательстве получили полезную, хотя и грубую оценку: $p\left(\left|\frac{S_n}{n} - a\right| \geq \varepsilon\right) \leq \frac{D\xi_i}{n\varepsilon^2}$
+
+    \subsubsection{II. Закон больших чисел Бернулли}
+
+    \begin{MyTheorem}
+        \Ths Пусть $v_n$ - число успехов из $n$ независимых испытаний, $p = P(A)$ - вероятность успеха при одном испытании.
+        Тогда $\frac{v_n}{n} \overset{p}{\longrightarrow} P(A)$
+    \end{MyTheorem}
+
+    При этом $P\left(\left|\frac{v_n}{n} - p\right| \leq \varepsilon\right) \leq \frac{p(1 - p)}{n\varepsilon^2}$
+
+    \begin{MyProof}
+        $v_n = \xi_1 + \dots + \xi_n$, где $\xi_i \in B_p$ - число успехов при $i$-ом испытании
+
+        $E\xi_i = p; D\xi_i = pq$
+
+        $\frac{v_n}{n} \overset{p}{\longrightarrow} E\xi_1 = p$
+
+        $p\left(\left|\frac{v_n}{n} - p\right| \geq \varepsilon\right) \leq \frac{D\xi_1}{n\varepsilon^2} = \frac{pq}{n\varepsilon^2}$
+    \end{MyProof}
+
+    \subsubsection{III. Закон больших чисел Хинчина}
+
+    \begin{MyTheorem}
+        \Ths $v_n = \xi_1 + \dots + \xi_n$ последовательность независимых одинаково распределенных случайных величин с конечным первым моментом, тогда
+        $\frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\longrightarrow} E\xi_i$
+    \end{MyTheorem}
+
+    \subsubsection{IV. Усиленный закон больших чисел Холмогорова}
+
+    В условиях теоремы Хинчина $\frac{\xi_1 + \dots + \xi_n}{n} \overset{\text{п.н.}}{\longrightarrow} E\xi_1$
+
+    \subsubsection{V. Закон больших чисел Маркова}
+
+    \begin{MyTheorem}
+        \Ths Пусть имеется последовательность случайных величин $\xi_1, \dots, \xi_n, \dots$ с конечными вторыми моментами, таких 
+        что $D(S_n) = o(n^2)$. Тогда $\frac{S_n}{n} \overset{p}{\longrightarrow} E\left(\frac{S_n}{n}\right)$ или $\frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\longrightarrow} \frac{1}{n} (E\xi_1 + \dots + E\xi_n)$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        По неравенству Чебышева $p\left(\left|\frac{S_n}{n} - E\left(\frac{S_n}{n}\right)\right| \geq \varepsilon\right) \leq \frac{D\left(\frac{S_n}{n}\right)}{\varepsilon^2} = \frac{D(S_n)}{n^2 \varepsilon^2} =
+        \frac{1}{\varepsilon^2} \frac{o(n^2)}{n^2} \longrightarrow 0 \Longrightarrow p\left(\left|\frac{S_n}{n} - E\left(\frac{S_n}{n}\right)\right| \leq \varepsilon\right) \longrightarrow 1$
+    \end{MyProof}
+
+    \subsection{Центральная предельная теорема}
+
+    \begin{MyTheorem}
+        \Ths Центральная предельная теорема (ЦПТ Маркова, $\approx$1901 год)
+
+        Пусть $\xi_1, \dots, \xi_n, \dots$ - последовательность независимых одинаково распределенных случайных величин
+        с конечной дисперсией ($D\xi_1 < \infty$) и $S_n = \sum_{i = 1}^n \xi_i$. Тогда имеет место слабая сходимость:
+
+        \[\frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} \rightrightarrows N(0, 1)\]
+    \end{MyTheorem}
+
+    Теорема показывает, что стандартизованная сумма слабо сходится к стандартному нормальному распределению
+
+    \Nota Можно представить в ином виде: $\letsymbol a = E\xi_i, \sigma = \sigma_{\xi_i}$, тогда $E\left(\frac{S_n}{n}\right) = a, \sigma\left(\frac{S_n}{n}\right) = \frac{\sigma}{\sqrt{n}}$, а $\frac{\frac{S_n}{n} - a}{\sigma \sqrt{n}} \rightrightarrows N(0, 1)$
+
+    \Nota Другая, грубая, формулировка: $\frac{S_n}{n} \rightrightarrows N\left(a, \frac{\sigma^2}{n}\right)$
+    % end probtheory_2024_11_12.tex
+
 
 
 \end{document}
