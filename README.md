@@ -50,6 +50,7 @@
 * [Лекция №8. Надежность](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_10_24.html)
 * Лекция №9 - была рубежка
 * Лекция №10 - была отменена
+* [Лекция №11. Безопасность](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_11_13.html)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
