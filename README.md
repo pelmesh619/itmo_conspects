@@ -81,6 +81,7 @@
 ### История российской науки и техники (лектор Васильев А. В.)
 
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_10_31.html)
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_11_14.html)
 
 ## II семестр
 
