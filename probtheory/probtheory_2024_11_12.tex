@@ -9,6 +9,8 @@
 \fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
 
 \begin{document}
+    \section{Лекция 11}
+
     \subsection{Сходимость случайных величин}
 
     Рассмотрим 3 вида сходимости:
@@ -75,7 +77,7 @@
 
     В дальнейшем будем считать, что у случайных величин первый момент существует
 
-    \subsubsection{I Неравенство Маркова}
+    \subsubsection{I. Неравенство Маркова}
 
     \begin{MyTheorem}
         \Ths $p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon} \quad \forall \varepsilon > 0$
@@ -94,7 +96,7 @@
         \Longrightarrow p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon}$
     \end{MyProof}
 
-    \subsubsection{II Неравенство Чебышева}
+    \subsubsection{II. Неравенство Чебышева}
 
     \begin{MyTheorem}
         \Ths $P(|\xi - E\xi| \geq \varepsilon) \leq \frac{D\xi}{\varepsilon^2}$
@@ -104,7 +106,7 @@
         $p(|\xi - E\xi| \geq \varepsilon) = p((\xi - E\xi)^2 \geq \varepsilon^2) \leq \frac{E(\xi - E\xi)^2}{\varepsilon^2} = \frac{D\xi}{\varepsilon}$
     \end{MyProof}
 
-    \subsubsection{III Правило \enquote{трех сигм}}
+    \subsubsection{III. Правило \enquote{трех сигм}}
     
     \begin{MyTheorem}
         \Ths $P(|\xi - E\xi| \geq 3\sigma) \leq \frac{1}{9}$
