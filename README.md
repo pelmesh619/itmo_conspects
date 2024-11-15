@@ -62,6 +62,7 @@
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_10_04.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_10_18.pdf)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_11_01.pdf)
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_11_15.pdf)
 
 ### Объектно-ориентированное проектирование и программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
