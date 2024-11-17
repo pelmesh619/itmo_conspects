@@ -4,20 +4,22 @@
 \pagestyle{fancy}
 \fancyhead[LO,LE]{Дополнительные главы \\ высшей математики}
 \fancyhead[CO,CE]{01.11.2024}
-\fancyhead[RO,RE]{Лекции Далевская О. П.}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
 
 \fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
 
 \begin{document}
     Формула: $f(x) \in C^\infty_{U_0(x_0)}$ и $R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!} (x - x_0)^{n + 1}$, $\xi$ между $x$ и $x_0$
 
-    \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
+    \begin{MyTheorem}
+        \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
+    \end{MyTheorem}
 
     \Nota Если $x_0 = 0$, то ряд Маклорена 
 
     \smallvspace
 
-    \subsubsection{Стандартные разложения элементарных функций}
+    \subsubsection{3.1. Стандартные разложения элементарных функций}
 
     \smallvspace
 
@@ -122,7 +124,7 @@
 
     7$^\circ$ $\mathrm{arctg} x$ - \Lab ($(\mathrm{arctg} x)^\prime = \frac{1}{1 + x^2}$)
 
-    \subsubsection{Приложения}
+    \subsubsection{3.2. Приложения}
 
     \ExNs{1} $I = \int_0^{\frac{1}{2}} \frac{\sin x}{x} dx \hfill x = \frac{1}{2} \in u(0)$
 

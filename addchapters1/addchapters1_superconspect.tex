@@ -3,7 +3,7 @@
 
 \pagestyle{fancy}
 \fancyhead[LO,LE]{Дополнительные главы \\ высшей математики}
-\fancyhead[RO,RE]{Лекции Далевская О. П.}
+\fancyhead[RO,RE]{Лекции Далевской О. П.}
 
 \fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
 
@@ -14,7 +14,7 @@
     \tableofcontents
     \clearpage
 
-        % begin addchapters1_2024_09_06.tex
+    % begin addchapters1_2024_09_06.tex
 
     \section{\S 1. Ряды}
 
@@ -121,9 +121,9 @@
 
         % old proof (basically right but too complicated):
 
-%        $S_n = \sum_{k = 1}^n u_k \quad\quad \sigma_t = \sum_{r = 1}^t v_r \quad\quad v_r = u_{k - 1 + r}$
-%
-%        $\lim_{n \to \infty} S_n = \lim_{n \to\infty} (u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n) = u_1 + \dots + u_{k - 1} + \lim_{t \to \infty} \sigma_t$
+        % $S_n = \sum_{k = 1}^n u_k \quad\quad \sigma_t = \sum_{r = 1}^t v_r \quad\quad v_r = u_{k - 1 + r}$
+        %
+        % $\lim_{n \to \infty} S_n = \lim_{n \to\infty} (u_1 + u_2 + u_3 + \dots + u_k + u_{k + 1} + \dots + u_n) = u_1 + \dots + u_{k - 1} + \lim_{t \to \infty} \sigma_t$
 
         $\Box$
     \end{tcolorbox}
@@ -241,9 +241,9 @@
     \Nota Хвост ряда попадает в $\varepsilon$-трубу
 
     \Notas Критерий не удобен для непосредственного исследования на сходимость, в отличии от признаков
-    % end addchapters1_2024_09_06.tex
+% end addchapters1_2024_09_06.tex
 
-    % begin addchapters1_2024_09_20.tex
+% begin addchapters1_2024_09_20.tex
 
     \subsubsection{3.3. Достаточное условие (признаки сходимости)}
 
@@ -336,7 +336,7 @@
     Начиная с некоторого $n_0$ $n! > 2^n$. Тогда $u_n < v_n$ при $n > n_0$, по признаку сравнения $\sum_{n = 1}^\infty \frac{1}{n!}$ сходится
 
 
-    \ExN{3} $\sum_{n = 1}^\infty$ \asin \frac{1}{n}
+    \ExN{3} $\sum_{n = 1}^\infty \arcsin \frac{1}{n}$
 
     \Nota Члены рядов $u_n$ и $v_n$ - бесконечно малые последовательности. Иначе ряды расходятся по необходимому условию.
     Тогда в \ThNs{2} сравниваются порядки бесконечно малых, и ряды одновременно сходятся или расходятся, если $u_n$ и $v_n$ одного
@@ -469,9 +469,9 @@
         что \ $\underset{n \to \infty}{u_n \to 0}$ \ и \ $|u_1| > |u_2| > \dots > |u_n|$,
         то ряд $\sum_{n = 0}^\infty (-1)^n u_n$ сходится
     \end{MyTheorem}
-    % end addchapters1_2024_09_20.tex
+% end addchapters1_2024_09_20.tex
 
-    % begin addchapters1_2024_10_04.tex
+% begin addchapters1_2024_10_04.tex
 
     \begin{MyProof}
         $\Box$
@@ -502,7 +502,7 @@
     Запишем ряд: $\sum_{n = 1}^\infty (-1)^{n + 1} u_n = u_1 - u_2 + u_3 - \dots \pm u_n \mp u_{n + 1} =
     S + \sum_{k = n + 1}^\infty (-1)^{k} u_k = S_n + P_n$ - остаток ряда
 
-    В доказательстве \th было установлено, что сумма ряда не превышает своего первого члена
+    В доказательстве \Ths было установлено, что сумма ряда не превышает своего первого члена
 
     \[R_{n + 1} < |(-1)^{k + 1} u_k| = u_k = u_{n + 1}\]
 
@@ -539,7 +539,7 @@
 
         По критерию Коши:
 
-        $\sum_{n = 1}^\infty |u_n|$ сходится $\Longleftrightarrowe$
+        $\sum_{n = 1}^\infty |u_n|$ сходится $\Longleftrightarrow$
 
         $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \quad ||u_n| + |u_{n + 1}| + \dots + |u_m|| < \varepsilon$
 
@@ -660,9 +660,9 @@
     При $x < 0 \quad \lim_{n \to \infty} S_n = \lim_{n \to \infty} (-\sqrt[2n + 1]{|x|} - x) = -1 - x$
 
     При $x = 0 \quad S_n = 0$
-    % end addchapters1_2024_10_04.tex
+% end addchapters1_2024_10_04.tex
 
-    % begin addchapters1_2024_10_18.tex
+% begin addchapters1_2024_10_18.tex
 
     \begin{MyTheorem}
         \Ths Если ряд $\sum_{n = 1}^\infty u_n(x) \ (u_n(x) \in C_{[a, b]})$ мажорируем в $D = [a, b]$, то 
@@ -857,19 +857,21 @@
     \frac{f^\prime (x_0)}{1!} (x - x_0) + \frac{f^{\prime\prime} (x_0)}{2!} (x - x_0)^2 + \dots + \frac{f^{(n)} (x_0)}{n!} (x - x_0)^n + \frac{f^{(n + 1)} (\xi)}{(n + 1)!} (x - x_0)^{n + 1}$
 
     Чтобы $f(x)$ в пределе равнялось $\sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$, нужно, чтобы $r_n(x) \to 0$
-    % end addchapters1_2024_10_18.tex
+% end addchapters1_2024_10_18.tex
 
-    % begin addchapters1_2024_11_01.tex
+% begin addchapters1_2024_11_01.tex
 
     Формула: $f(x) \in C^\infty_{U_0(x_0)}$ и $R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!} (x - x_0)^{n + 1}$, $\xi$ между $x$ и $x_0$
 
-    \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
+    \begin{MyTheorem}
+        \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
+    \end{MyTheorem}
 
     \Nota Если $x_0 = 0$, то ряд Маклорена 
 
     \smallvspace
 
-    \subsubsection{Стандартные разложения элементарных функций}
+    \subsubsection{3.1. Стандартные разложения элементарных функций}
 
     \smallvspace
 
@@ -974,7 +976,7 @@
 
     7$^\circ$ $\mathrm{arctg} x$ - \Lab ($(\mathrm{arctg} x)^\prime = \frac{1}{1 + x^2}$)
 
-    \subsubsection{Приложения}
+    \subsubsection{3.2. Приложения}
 
     \ExNs{1} $I = \int_0^{\frac{1}{2}} \frac{\sin x}{x} dx \hfill x = \frac{1}{2} \in u(0)$
 
@@ -1018,9 +1020,9 @@
     Дальше стоит задача: при каких $a_i, b_i$ многочлен $T_m(x)$ будет наименее отстоящим от данной $f(x)$
 
     % задача о трех перпендикулярах
-    % end addchapters1_2024_11_01.tex
+% end addchapters1_2024_11_01.tex
 
-    % begin addchapters1_2024_11_15.tex
+% begin addchapters1_2024_11_15.tex
 
     \Mem Решаем задачу о перпендикуляре, ищем $f_0$ - наименьшую из проекций и минимально отстоящую от $f$
 
@@ -1152,7 +1154,7 @@
 
         $b_n = \frac{1}{l} \int_{-l}^l f(x) \sin \frac{\pi n}{l} x dx$
     \end{MyTheorem}
-    % end addchapters1_2024_11_15.tex
+% end addchapters1_2024_11_15.tex
 
 
 
