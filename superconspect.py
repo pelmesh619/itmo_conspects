@@ -76,17 +76,23 @@ else:
     text = ''
 
     for i in os.listdir(folder):
-        if i.endswith('.tex') and not any([j in i for j in BLACKLIST]):
-            t = open(os.path.join(folder, i), 'r', encoding='utf8').read()
-            if subject is None:
-                subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t).group(1)
-            if teacher is None:
-                teacher = re.search(r'\\fancyhead\[RO,RE]\{(.*)}', t).group(1)
-            t = re.search(r'\\begin\{document\}(.+?)\n*\\end\{document\}', t, re.S | re.M | re.I)
+        if not i.endswith('.tex') or any([j in i for j in BLACKLIST]):
+            continue
 
-            text += f'    % begin {i}\n'
+        t = open(os.path.join(folder, i), 'r', encoding='utf8').read()
+        if subject is None:
+            subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t).group(1)
+        if teacher is None:
+            teacher = re.search(r'\\fancyhead\[RO,RE]\{(.*)}', t).group(1)
+        t = re.search(r'\\begin\{document\}(.+?)\n*\\end\{document\}', t, re.S | re.M | re.I)
 
-            text += t.group(1) + f'\n    % end {i}\n\n'
+        if not t:
+            print(f"Skipping {i} - there is no content")
+            continue
+
+        text += f'% begin {i}\n'
+
+        text += t.group(1) + f'\n% end {i}\n\n'
 
 
     text = re.sub(r'section\[.*]', 'section', text)
