@@ -1,4 +1,5 @@
 import re
+import time
 import shutil
 import sys, os
 
@@ -10,6 +11,10 @@ if len(sys.argv) <= 1:
     print('Enter source filename as command argument')
     exit(1)
 
+show_warnings = False
+if '--warning' in sys.argv or '-w' in sys.argv:
+    show_warnings = True
+ 
 filename = sys.argv[1]
 folder = os.path.join(*os.path.split(filename)[:-1])
 
@@ -44,6 +49,16 @@ if not os.path.exists('linted'):
 new_filename = os.path.join('linted', os.path.split(filename)[-1])
 open(new_filename, 'w', encoding='utf8').write(file)
 
-os.system(f"pdflatex -file-line-error -interaction=nonstopmode -synctex=1 -output-format=pdf "
+interaction = 'nonstopmode' if show_warnings else 'batchmode'
+
+print(f'\n\nRendering {filename}...\n')
+
+start_time = time.time()
+
+os.system(f"pdflatex -file-line-error -interaction={interaction} -synctex=1 -output-format=pdf "
           f"-output-directory=./{OUT_FOLDER}/{folder} "
-          f"-aux-directory=./auxil/ {new_filename}")
+          f"-aux-directory=./auxil/ {new_filename} "
+          "-file-line-error")
+
+print(f'\nRender of {filename} completed in {round(time.time() - start_time, 2)} s!')
+
