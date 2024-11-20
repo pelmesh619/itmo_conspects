@@ -8,24 +8,24 @@ if len(sys.argv) <= 1:
     print('Enter source folder name as command argument')
     exit(1)
 
-
 folder = sys.argv[1]
+BLACKLIST_WORDS = ['cheatsheet', folder + "_superconspect.tex", folder + "_superconspect.md", ]
+
 
 if all(map(lambda x: x.endswith('.md') or '.' not in x, os.listdir(folder))):
     supername = folder + "_superconspect.md"
-    BLACKLIST = [supername]
 
     contents = {}
 
     text = ''
 
     for i in os.listdir(folder):
-        if not i.endswith('.md') or any([j in i for j in BLACKLIST]):
+        if not i.endswith('.md') or any([j in i for j in BLACKLIST_WORDS]):
             continue
 
         file_text = open(os.path.join(folder, i), 'r', encoding='utf8').read()
         if re.match(r'\s*#ignore', file_text):
-            print(f'File {i} ignored')
+            print(f'File {i} is ignored')
             continue
 
         for header_match in re.finditer('(^|\n)((#+) +(.+))\n', file_text, re.U):
@@ -68,7 +68,6 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, os.listdir(folder))):
 
 else:
     supername = folder + "_superconspect.tex"
-    BLACKLIST = ['cheatsheet', supername]
 
     subject = None
     teacher = None
@@ -76,10 +75,14 @@ else:
     text = ''
 
     for i in os.listdir(folder):
-        if not i.endswith('.tex') or any([j in i for j in BLACKLIST]):
+        if not i.endswith('.tex') or any([j in i for j in BLACKLIST_WORDS]):
             continue
 
         t = open(os.path.join(folder, i), 'r', encoding='utf8').read()
+        if t.startswith('%ignore'):
+            print(f'File {i} is ignored')
+            continue
+
         if subject is None:
             subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t).group(1)
         if teacher is None:
