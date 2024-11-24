@@ -87,15 +87,18 @@ else:
             subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t).group(1)
         if teacher is None:
             teacher = re.search(r'\\fancyhead\[RO,RE]\{(.*)}', t).group(1)
-        t = re.search(r'\\begin\{document\}(.+?)\n*\\end\{document\}', t, re.S | re.M | re.I)
+        match = re.search(r'\\begin\{document\}(.+?)\n*\\end\{document\}', t, re.S | re.M | re.I)
 
-        if not t:
-            print(f"Skipping {i} - there is no content")
-            continue
+        if not match:
+            match_text = t
+            for i in re.finditer(r'((\n)|(^))(\$\w+\$)\=(.*)', match_text):
+                match_text = match_text.replace(i.group(0), '\n', 1)
+        else:
+            match_text = match.group(1)
 
         text += f'% begin {i}\n'
 
-        text += t.group(1) + f'\n% end {i}\n\n'
+        text += match_text + f'\n% end {i}\n\n'
 
 
     text = re.sub(r'section\[.*]', 'section', text)
