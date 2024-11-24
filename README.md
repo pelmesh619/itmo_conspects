@@ -23,6 +23,10 @@
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_11_15.pdf)
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_11_18.pdf)
 
+Решение задач:
+
+* [Решение задач №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_6.pdf)
+
 ### Теория вероятности (лектор Блаженов А. В.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_superconspect.pdf)
@@ -84,6 +88,7 @@
 * Лекция №9 - была отменена
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_11_09.html)
 * Лекция №11 - в производстве
+* Лекция №12 - в производстве
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
