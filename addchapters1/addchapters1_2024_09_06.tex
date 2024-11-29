@@ -225,10 +225,14 @@
 
     \subsubsection{3.2. Критерии (Необходимое и Достаточное условия)}
 
-    \Mem Критерий Коши для последовательности: $\{x_n\}$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ |x_m - x_k| < \varepsilon$
+    \Mem Критерий Коши для последовательности: 
+    
+    $\{x_n\}$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \ |x_m - x_n| < \varepsilon$
 
     \begin{MyTheorem}
-        \Ths (без док-ва) $\quad \sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \underset{|S_m - S_k| < \varepsilon}{|u_n + \dots + u_m|} < \varepsilon$
+        \Ths (без док-ва) 
+        
+        $\quad \sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \ \underset{|S_m - S_n| < \varepsilon}{|u_{n + 1} + \dots + u_m|} < \varepsilon$
     \end{MyTheorem}
 
     \Nota Хвост ряда попадает в $\varepsilon$-трубу
