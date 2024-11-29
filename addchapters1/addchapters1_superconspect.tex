@@ -232,10 +232,14 @@
 
     \subsubsection{3.2. Критерии (Необходимое и Достаточное условия)}
 
-    \Mem Критерий Коши для последовательности: $\{x_n\}$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ |x_m - x_k| < \varepsilon$
+    \Mem Критерий Коши для последовательности: 
+    
+    $\{x_n\}$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \ |x_m - x_n| < \varepsilon$
 
     \begin{MyTheorem}
-        \Ths (без док-ва) $\quad \sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \underset{|S_m - S_k| < \varepsilon}{|u_n + \dots + u_m|} < \varepsilon$
+        \Ths (без док-ва) 
+        
+        $\quad \sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \ \underset{|S_m - S_n| < \varepsilon}{|u_{n + 1} + \dots + u_m|} < \varepsilon$
     \end{MyTheorem}
 
     \Nota Хвост ряда попадает в $\varepsilon$-трубу
@@ -424,7 +428,7 @@
         $\Box$
     \end{MyProof}
 
-    \ExN{1} $\sum_{n \to \infty} \left(\frac{n}{n + 1}\right)^n \quad\quad K = \lim_{n \to \infty} \sqrt[n]{\left(\frac{n}{n + 1}\right)^n} = \lim_{n \to \infty} \frac{n}{n + 1} = 1$
+    \ExN{1} $\sum_{n \to \infty} \left(\frac{n}{n + 1}\right)^n \quad\quad K = \lim_{n \to \infty} \left(\frac{n}{n + 1}\right)^n = \lim_{n \to \infty} \frac{n}{n + 1} = 1$
 
     $\mathcal{D} = \lim_{n \to \infty} \frac{\left(1 - \frac{1}{n + 2}\right)^{n + 1}}{\left(1 - \frac{1}{n + 1}\right)^{n}}$
 
@@ -451,9 +455,9 @@
 
         $0 < \sum_{n = 1}^{\infty} u_n - u_1 + u_b < \int_1^\infty f(x) dx < \sum_{n = 1}^\infty u_n$
 
-        Если $\int$ сходится, то смотрим правую часть
+        Если $\int$ сходится, то смотрим левую часть
 
-        Если $\int$ расходится, то смотрим левую часть неравенства
+        Если $\int$ расходится, то смотрим правую часть неравенства
 
         $\Box$
     \end{MyProof}
@@ -500,7 +504,7 @@
     \Nota Оценка остатка ряда
 
     Запишем ряд: $\sum_{n = 1}^\infty (-1)^{n + 1} u_n = u_1 - u_2 + u_3 - \dots \pm u_n \mp u_{n + 1} =
-    S + \sum_{k = n + 1}^\infty (-1)^{k} u_k = S_n + P_n$ - остаток ряда
+    S + \sum_{k = n + 1}^\infty (-1)^{k} u_k = S_n + \underset{\uparrow \text{\LARGE остаток ряда}}{R_n\phantom{ikkkkkkkk}}$
 
     В доказательстве \Ths было установлено, что сумма ряда не превышает своего первого члена
 
@@ -691,7 +695,7 @@
 
         и $\forall \varepsilon > 0 \ \exists N = N(\varepsilon) \ | \ |r_n(x + \Delta x)| < \frac{\varepsilon}{3}$ (так как $N$ не зависит от $x$; $x + \Delta x \in [a, b]$) 
     
-        $\Delta S_n = S_n(x + \Delta x) - S(x) = u_n(x + \Delta x) - u(x) + \dots + u_n(x + \Delta x) - u_n(x)$ - конечная сумма непрерывна
+        $\Delta S_n = S_n(x + \Delta x) - S(x) = u_1(x + \Delta x) - u_1(x) + \dots + u_n(x + \Delta x) - u_n(x)$ - конечная сумма непрерывна
 
         Сама $S_n(x)$ непрерывна, тогда $\forall \varepsilon > 0 \ $ (при фиксированном $N$) $\exists \delta > 0 \ | \ |\Delta S_n(x)| < \frac{\varepsilon}{3}$ при $|\Delta x| < \delta$
 
