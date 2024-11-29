@@ -1,0 +1,160 @@
+$subject$=Дополнительные главы \\ высшей математики
+$date$=29.11.2024
+$teacher$=Лекции Далевской О. П.
+
+\begin{MyTheorem}
+    \ThNs{1} о сдвиге:
+
+    Ряд Фурье не изменится, если $[-\pi, \pi]$ заменить на $[a; a + 2\pi]$
+\end{MyTheorem}
+
+\begin{MyProof}
+    Докажем, что если $\varphi(t)$ - $2\pi$-периодична, то $\int_{-\pi}^\pi \varphi(t) dt = \int_a^{a + 2\pi} \varphi(t) dt$
+
+    У нас $f(x)$ с периодом $[-\pi, \pi]$, обозначим $x = t - 2\pi \ (t = x + 2\pi)$.
+
+    Рассмотрим $\int_b^a f(x)dx = \int_{b + 2\pi}^{a + 2\pi} f(t - 2\pi) dt = \int_{b + 2\pi}^{c + 2\pi} f(t)dt = \int_{b + 2\pi}^{c + 2\pi} f(x)dx$
+
+    Пусть $b = -\pi, c = a$, тогда $\int_b^c f(x)dx = \int_{-\pi}^a f(x)dx = \int_{-\pi + 2\pi}^{a + 2\pi} f(x)dx = \int_a^{\pi} f(x)dx$
+
+    $\int_a^{a + 2\pi} f(x)dx = \int_a^{-\pi} + \int_{-\pi}^\pi + \int_\pi^{a + 2\pi} = \int_{-\pi}^{\pi} f(x)dx$
+
+\end{MyProof}
+
+
+\begin{MyTheorem}
+    \ThNs{2} о растяжении:
+
+    $f(x)$ - $2l$-периодична: $(T \ : \ [-l, l])$
+
+    $a_0 = \frac{1}{l} \int_{-l}^l f(x) dx$
+
+    $a_n = \frac{1}{l} \int_{-l}^l f(x) \cos \frac{\pi n}{l} x dx$
+
+    $b_n = \frac{1}{l} \int_{-l}^l f(x) \sin \frac{\pi n}{l} x dx$
+
+    Тогда $f(x) = \frac{a_0}{2} + \sum_{k = 1}^\infty a_k \cos \frac{k\pi x}{l} + b_k \sin \frac{k\pi x}{l}$
+\end{MyTheorem}
+
+\begin{MyProof}
+    $f(x)$ - $2l$-периодична: $(T \ : \ [-l, l])$
+
+    Обозначим $x = \frac{lt}{\pi} \quad t\Big\uparrow^\pi_{-\pi} \quad x\Big\uparrow^l_{-l}$
+
+    $f(\frac{lt}{\pi}) = \varphi(t)$ - $2\pi$-периодична
+
+    Ряд Фурье для $\varphi(t) = \frac{a_0}{2} + \sum_{k = 1}^\infty a_k \cos kt + b_k \sin kt$, где 
+
+    \begin{flalign*}
+        a_k & = \frac{1}{\pi} \int_{-\pi}^{\pi} \varphi(t)\cos kt dt = 
+                \frac{1}{\pi} \int_{-\pi}^\pi f\left(\frac{lt}{\pi}\right)\cos kt dt = & \\
+            & = \frac{1}{l} \int_{-\pi}^\pi f\left(\frac{lt}{\pi}\right) \cos kt d\left(\frac{lt}{\pi}\right) = 
+                \frac{1}{l} \int_{-l}^l f(x)\cos \frac{k\pi}{l}x dx
+    \end{flalign*}
+
+    Аналогично $b_k$. 
+\end{MyProof}
+
+\ExN{1} $f(x) = x \quad\quad x \in [-1, 1]$
+
+$a_k = \frac{1}{l} \int_{-l}^l x\cos \frac{k\pi x} dx = \int_{-1}^1 x\cos k\pi x dx = \frac{1}{k\pi} \left(x\sin k\pi x \Big|_{-1}^1 - \int_{-1}^1 \sin k\pi x dx\right) = 
+-\frac{1}{k\pi} \cdot 0 = 0$
+
+$b_k = \int_{-1}^1 x\sin k\pi x dx = -\frac{1}{k\pi} \left(x\cos k\pi x \Big|_{-1}^1 - \int_0^1 \cos k\pi x dx\right) = 
+-\frac{2}{k\pi}\left((-1)^k - \frac{1}{k\pi} \sin k\pi x \Big|_0^1\right) = \frac{(-1)^{k + 1} \cdot 2}{k\pi}$
+
+$x = \sum_{k = 1}^\infty \frac{(-1)^{k + 1} \cdot 2}{k\pi} \sin k\pi x$
+
+\subsection{Оценка коэффициентов Фурье}
+
+\Notas Вернемся к приближению $f(x)$ тригонометрическим многочленом $T_n(x)$. Ранее говорилось,
+что их всех многчленов типа $\sum_{m = 0}^n a_m \cos mx + b_m \sin mx$ минимально отстоящим
+будет многочлен Фурье, то есть c $a_m$ и $b_m$, равными коэффициентам Фурье.
+
+Зададим расстояние $\delta_n$ между $f(x)$ и многочленом $T_n(x)$ формулой 
+
+$\delta_n^2 = \|f - T_n\|^2 = (f - T_n, f - T_n) = \frac{1}{b - a} \int_a^b \left(f(x) - T_n(x)\right)^2 dx = \left[\begin{matrix}[a, b] = [-\pi, \pi]\end{matrix}\right] = \\ 
+\frac{1}{2\pi} \int_{-\pi}^\pi \left(f(x) - \frac{a_0}{2} - \sum_{m = 1}^n a_m \cos mx + b_m \sin mx\right)^2 dx$
+
+Далее, честно интегрируя, можно убедиться, что $\delta$ будет наименьшим, если $a_m$ и $b_m$ - коэффициенты Фурье
+
+Преобразуем $\|f - f_0\|^2$:
+
+$\delta_n^2 = \|f - \sum_{m = 0}^n (f, e_m) e_m\|^2 = \|f\|^2 - 2\left(f, \sum_{m = 0}^n (f, e_m) e_m\right) + \left\|\sum_{m = 0}^n (f, e_m) e_m\right\|^2 = 
+\|f\|^2 - 2\sum_{m = 0}^n (f, e_m)^2 + \sum_{m = 0}^n (f, e_m)^2 = \|f\|^2 - \sum_{m = 0}^n (f, e_m)^2$ - квадраты коэффициентов разложения
+
+Тогда $\delta^2_n = \frac{1}{2\pi} \int_{-\pi}^\pi f^2(x) dx - \frac{a_0^2}{4} - \frac{1}{2} \sum_{m = 1}^n (a_m^2 + b_m^2)$
+
+Так как $\delta^2_n \geq 0$, то $\frac{1}{\pi} \int_{-\pi}^\pi f^2(x)dx \geq \frac{a_0^2}{2} + \sum_{m = 1}^k (a_m^2 + b_m^2)$
+
+Так как $\sum_{m = 1}^n$ растет и ограничена, то ряд $\sum_{m = 1}^\infty$ сходитсяя
+
+Можем записать: \fbox{$\frac{1}{\pi} \int_{-\pi}^\pi f(x) dx \geq \frac{a_0^2}{2} + \sum_{m = 1}^\infty (a_m^2 + b_m^2)$} - неравенство Бесселя
+
+Можем усилить неравенство, если доказать, что при $n \to \infty \ \delta_n^2 \to 0$. В этом случае $f(x)$ 
+раскладывается по полной системе функций $\{\cos mx, \sin mx\}$
+
+\Def Система $\{\varphi_m(x)\}_{m = 1}^\infty$ называется полной, если $\forall f(x) \not\in \{\varphi_m\}_{m = 1}^\infty \quad \int_a^b f(x)\varphi(x) dx = 0 \Longrightarrow f(x) = 0$
+
+\fbox{$\frac{1}{\pi} \int_{-\pi}^\pi f^2(x) dx = \frac{a_0^2}{2} + \sum_{m = 1}^\infty (a_m^2 + b_m^2)$} - равенство Парсеваля
+
+Заметим, что из оценки ранее $\|f\|^2 = \sum_{m = 1}^n (f, e_m)^2 = \sum_{m = 1}^n f_m^2$
+
+В $\infty$-мерном пространстве $\|f\|^2 = \sum_{m = 1}^\infty f_m^2$ - \enquote{теорема Пифагора}
+
+\Nota Эти утверждения верны для любых ортогональных систем функций, а не только для тригонометрических
+
+\subsection{Интеграл Фурье}
+
+$f \ : \ \Real \to \Real$, $\exists \int_\Real |f(x)| dx = I \in \Real$
+
+$\exists $ ряд Фурье для $f(x)$ на $[-l, l] \ \forall l > 0$, то есть
+
+\begin{flalign*}
+    f(x) & = \frac{a_0}{2} + \sum_{m = 1}^\infty a_m \cos \frac{m\pi x}{l} + b_m \sin\frac{m\pi x}{l} = & \\
+         & = \frac{1}{2l} \int_{-l}^l f(t) dt + \sum_{m = 1}^\infty \left[ \left(\frac{1}{l} \int_{-l}^l f(t) \cos \frac{m\pi t}{l} dt\right) \cos \frac{m\pi x}{l} + \left(\frac{1}{l} \int_{-l}^l f(t) \sin \frac{m\pi t}{l} dt\right) \sin \frac{m\pi x}{l} + \right] = &\\
+         & = \frac{1}{2l} \int_{-l}^l f(t) dt + \sum_{m = 1}^\infty \frac{1}{l} \int_{-l}^l f(t) \cox \frac{m\pi}{l}(t - x) dt
+\end{flalign*}
+
+Исследуем при $l \to \infty$:
+
+$\frac{1}{2l} \int_{-l}^l f(t)dt \leq \frac{1}{2l} \int_{-l}^l |f(t)| dt \leq \frac{I}{2l} \underset{l \to \infty}{\longrightarrow} 0$
+
+Обозначим $\alpha_1 = \frac{\pi}{l}, \alpha_2 = \frac{2\pi}{l}, \dots, \alpha_m = \frac{m\pi}{l}, \quad \Delta a_m = \frac{\pi}{l}$
+
+Рассмотрим $\sum_{m = 1}^\infty \underset{\text{функция переменной }l}{\underbrace{\frac{1}{l} \int_{-l}^l f(t) \cos \frac{m\pi(t - x)}{l} dt}} = 
+\sum_{m = 1}^\infty \frac{1}{\pi} \left(\int_{-l}^l f(t) \cos \alpha_m (t - x) dt\right) \Delta \alpha_m$
+
+Рассмотрим переменную $\alpha \in \Real, \ \alpha_m = \alpha(m), \Delta \alpha_m = \Delta \alpha$ - дифференциальное
+
+Имеем аналог интегральной суммы $\sum_{m = 1}^n \varphi(\alpha_m) \Delta \alpha_m, n \to \infty$
+
+Тогда \fbox{$f(x) = \frac{1}{\pi} \int_0^{+\infty} \left(\int_{-\infty}^{+\infty} f(t) \cos \alpha (t - x) dt\right) d\alpha$} - интеграл Фурье
+
+\Nota От дискретного спектра частот $\alpha_1, \alpha_2, \dots, \alpha_m$ перешли к непрерывному спектру $\alpha$
+
+\Notas В точках разрыва $\frac{f(x + 0) + f(x - 0)}{2} = \frac{1}{\pi} \int_0^\infty \left(\int_{-\infty}^{+\infty} f(t) \cos \alpha (t - x) dt\right) d\alpha$
+
+\mediumvspace
+
+Преобразуем интеграл: 
+
+\begin{flalign*}
+    f(x) & = \frac{1}{\pi} \int_0^\infty \left(\int_{-\infty}^{+\infty} f(t) (\cos \alpha t \cos \alpha x + \sin\alpha t \sin \alpha x) dt\right) d\alpha = &\\
+         & = \int_0^\infty \left(\int_{-\infty}^{+\infty} \cos \alpha t \cos \alpha x dt + \int_{-\infty}^{+\infty} \sin \alpha t \sin \alpha x dt\right) d\alpha
+\end{flalign*}
+
+Если $f(x)$ - четная, то $\int_{-\infty}^{+\infty} f(t) \cos \alpha t dt = 2\int_0^{+\infty} \dots; \quad \int_{-\infty}^{\infty} \sin\alpha t dt = 0$
+
+Если $f(x)$ - нечетная, то $\int_{-\infty}^{+\infty} f(t) \sin \alpha t dt = 2\int_0^{+\infty} \dots; \quad \int_{-\infty}^{\infty} \cos\alpha t dt = 0$
+
+\mediumvspace
+
+Обозначим $F(\alpha) = \sqrt{\frac{2}{\pi}} \int_0^\infty f(t)\cos\alpha t dt$ \qquad $\Phi(\alpha) = \sqrt{\frac{2}{\pi}} \int_0^\infty f(t)\sin\alpha t dt$
+
+Тогда $f(x) = \underset{\text{косинус-преобразование Фурье}}{\underbrace{\sqrt{\frac{2}{\pi}} \int_0^\infty F(\alpha) \cos\alpha x d\alpha}}$, \quad
+$f(x) = \underset{\text{синус-преобразование Фурье}}{\underbrace{\sqrt{\frac{2}{\pi}} \int_0^\infty \Phi(\alpha) \sin\alpha x d\alpha}}$
+
+\Ex $f(x) = e^{-\beta x}, \quad (\beta > 0, x \geq 0)$ \Lab
+
+$F(\alpha) = ? \ \Phi(\alpha) = ? \qquad\qquad e^{-\beta x} = \frac{2\beta}{\pi} \int_0^\infty \frac{\cos \alpha x}{\beta^2 + \alpha^2} d\alpha$
