@@ -87,11 +87,12 @@
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_05.html)
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_12.html)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_19.html)
-* Лекция №8 - в производстве
+* [Лекция №8](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_10_26.html)
 * Лекция №9 - была отменена
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_11_09.html)
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_11_16.html)
 * Лекция №12 - в производстве
+* Лекция №13 - была отменена
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
