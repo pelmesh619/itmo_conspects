@@ -23,6 +23,7 @@
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_11_15.pdf)
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_11_18.pdf)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_11_25.pdf)
+* [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_12_02.pdf)
 
 Решение задач:
 
