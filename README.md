@@ -94,7 +94,6 @@
 * [Лекция №10. Поведенческие паттерны. Воркшоп 4](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_11_09.html)
 * [Лекция №11. Многослойная архитектура](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_2024_11_16.html)
 * Лекция №12. Воркшоп 5 - в производстве
-* Лекция №13 - была отменена
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
