@@ -1,3 +1,5 @@
+\clearpage
+
 \section{X. Программа экзамена в 2024/2025}
 
 \begin{center}
@@ -6,8 +8,39 @@
 
 \begin{enumerate}
     \item Определение числового ряда, понятие суммы ряда.
+
+    \hyperlink{numberseriesdefinition}{Определение числового ряда}: $\{u_1, u_2, \dots, u_n, \dots\} = \{u_n\}$ называется числовым рядом
+
+    $u_n$ называется общим членом ряда
+    
+    \hyperlink{sumofseriesdefinition}{Понятие суммы ряда}: Частичная сумма ряда $S_n \stackrel{def}{=} \sum_{k = 1}^{n} u_k$
+
+    Если $\exists \lim_{n \to\infty} S_n = S \in \Real$, то ряд $\sum_{n = 1}^\infty u_n$ называют сходящимся,
+    а $S$ называют суммой ряда $\sum_{n = 1}^\infty u_n = S$
+
     \item Сходимость числового ряда. Эталонные ряды: геометрический, гармонический.
+
+    \hyperlink{seriesconvergence}{Сходимость числового ряда}: Если $\exists \lim_{n \to\infty} S_n = S \in \Real$, то ряд $\sum_{n = 1}^\infty u_n$ называют сходящимся
+
+    \hyperlink{geometricseries}{Геометрический ряд}: $\sum_{n = 0}^\infty b q^n$ - сходится при $|q| < 1$, тогда $S = \frac{b}{1 - q}$
+    
+    \hyperlink{harmonicseries}{Гармонический ряд}: $\sum_{n = 1}^\infty \frac{1}{n}$ - расходится
+
     \item Условия сходимости рядов: необходимое условие, критерий Коши.
+
+    \hyperlink{necessarycondition}{Необходимое условие}: 
+
+    \begin{MyTheorem}
+        \Ths Если $\sum_{n = 1}^\infty u_n$ сходится, то верно, что $\lim_{n \to \infty} u_n = 0$
+    \end{MyTheorem}
+
+    \hyperlink{cauchycriteria}{Критерий Коши}:
+
+    \begin{MyTheorem}
+        $\sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \ \underset{|S_m - S_n| < \varepsilon}{|u_{n + 1} + \dots + u_m|} < \varepsilon$
+    \end{MyTheorem}
+
+
     \item Знакоположительные числовые ряды, свойства.
     \item Признаки сходимости знакоположительных числовых рядов: признаки сравнения.
     \item Признак Даламбера, радикальный признак Коши.
