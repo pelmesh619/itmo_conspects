@@ -66,6 +66,7 @@
 * [Лекция №11. Безопасность](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_11_13.html)
 * [Лекция №12. Распределенные хранилища](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_11_21.html)
 * Лекция №13 - была отменена
+* [Лекция №14. NoSQL](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_12_05.html)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
