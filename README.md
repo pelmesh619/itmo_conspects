@@ -24,6 +24,7 @@
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_11_18.pdf)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_11_25.pdf)
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_12_02.pdf)
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_2024_12_09.pdf)
 
 Решение задач:
 
