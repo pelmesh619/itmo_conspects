@@ -3044,6 +3044,266 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 
 % end <re.Match object; span=(46, 79), match='\nЛекции Блаженова А. В.=Лекции Блаженова А. В.'>
 
+% begin <re.Match object; span=(46, 79), match='\nЛекции Блаженова А. В.=Лекции Блаженова А. В.'>
+
+
+
+
+
+\section{Лекция 15}
+
+\subsection{Характеристические функции}
+
+\Mem $i$ - комплексная единица
+
+\Mems $e^{it} = \cos t + i \sin t$
+
+Пусть $\xi + i\eta$ - комплексная случайная величина, где $\xi$ - вещественная часть, а $\eta$ - мнимая часть
+
+\Def $E(\xi + i\eta) = E\xi + iE\eta$
+
+\Def Характеристической функций случайной величины $\xi$ называется функция 
+
+\[\varphi_\xi(t) = Ee^{it\xi}, t \in \Real\]
+
+\underline{Свойства}:
+
+\begin{enumerate}
+    \item Любая случайная величина $\xi$ имеет характеристическую функцию, причем $|\varphi_\xi(t)| \leq 1$
+
+    \begin{MyProof}
+        Характеристическая функция существует по теореме об абсолютной сходимости интеграла от произведения ограниченной и 
+        нормированной функций
+
+        Докажем неравенство:
+
+        $|\varphi_\xi(t)|^2 = |Ee^{it\xi}|^2 = |E\cos t\xi + iE\sin t\xi|^2 = (E\cos\xi t)^2 + (E \sin\xi t)^2 \leq [\text{по неравенству Йенсена}] \leq
+        E\cos^2 \xi t + E\sin^2 \xi t = E(\cos^2 \xi t + \sin^2 \xi t) = E 1 = 1$
+    \end{MyProof}
+
+    \item Пусть $\varphi_\xi(t)$ - характеристическая функция случайной величины $\xi$. Тогда характеристическая функция
+    случайной величины $a + b\xi$ равна $\varphi_{a + b\xi}(t) = e^{ita} \varphi_{\xi}(bt)$
+
+    \begin{MyProof}
+        $\varphi_{a + b\xi}(t) = Ee^{it(a + b\xi)} = E(e^{ita} \cdot e^{itb\xi}) = e^{ita}Ee^{itb\xi} = e^{ita} \varphi_{\xi}(bt)$
+    \end{MyProof}
+
+    \item Характеристическая функция суммы независимых случайных величин равна произведению их характеристических функций
+
+    \begin{MyProof}
+        Пусть случайные величины $\xi$ и $\eta$ - независимы. Тогда 
+
+        $\varphi_{\xi + \eta}(t) = E(e^{it\xi} \cdot e^{it\eta}) = [\text{так как они независимы}] = Ee^{it\xi} \cdot Ee^{it\eta} = \varphi_\xi(t) \cdot \varphi_\eta(t)$
+
+        Аналогично для большего числа величин
+    \end{MyProof}
+
+    \item Пусть $E\xi^k < \infty$. Тогда 
+
+    \[\varphi_\xi(t) = 1 + it E\xi - \frac{t^2}{2}E\xi^2 + \dots + \frac{(it)^k}{k!} E\xi^k + o(|t|^k)\]
+
+    \begin{MyProof}
+        $\varphi_\xi(t) = Ee^{it\xi} = E(1 + it\xi + \frac{(it\xi)^2}{2!} + \dots + \frac{(it\xi)^k}{k!} + o(|t|^k)) = 
+        1 + it E\xi \frac{i^2 t^2}{2}E\xi^2 + \dots + \frac{(it)^k}{k!} E\xi^k + o(|t|^k)$
+    \end{MyProof}
+
+    \item Пусть $E\xi^k < \infty$. Тогда $\varphi_\xi^{(k)}(0) = i^k E\xi^k$
+
+    \begin{MyProof}
+        $E\xi^k < \infty \Longrightarrow$ существует $k$ членов разложения в ряд Маклорена: 
+        $\frac{\varphi_\xi^{(k)}(0)}{k!}t^k = \frac{i^k E\xi^k}{k!} t^k$; $\frac{\varphi_\xi^{(k)}(0)}{k!}t^k = i^k E\xi^k$
+    \end{MyProof}
+
+    \item Существует взаимно-однозначное соответствие между распределениями и характеристическими функциями.
+    Зная характеристическую функцию можно восстановить распределение.
+
+    \Ex Если распределение абсолютно непрерывное, то его можно восстановить по преобразованию Фурье
+
+    $f_\xi(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-itx} \varphi_\xi(t) dt$
+
+    \item Теорема о непрерывном соответствии
+    
+    \begin{MyTheorem}
+        \Ths Последовательность случайных величин $\{\xi_n\}$ слабо сходится к $\xi$ тогда и только тогда, когда
+        соответствующая последовательность характеристических функций сходится поточечно к $\varphi_\xi(t)$
+
+        $\{\xi_n\} \rightrightarrows \xi \Longleftrightarrow \varphi_{\xi_n}(t) \longrightarrow \varphi_\xi(t) \forall t \in \Real$
+    \end{MyTheorem}
+
+\end{enumerate}
+
+\subsection{Характеристические функции стандартных распределений}
+
+\begin{itemize}
+    \item Распределение Бернулли
+
+    \smallvspace
+
+    \begin{tabular}{c|c|c}
+        $\xi$ & $0$     & $1$    \\
+        \hline
+        $p$   & $1 - p$ & $p$
+    \end{tabular}
+
+    \smallvspace
+
+    $\varphi_\xi(t) = Ee^{i\xi t} = e^{i \cdot 0 \cdot t} p(\xi = 0) + e^{i \cdot 1 \cdot t} p(\xi = 1) = 1 - p + p e^{it}$
+
+    \item Биномиальное распределение
+
+    $P(\xi = k) = C_n^k p^k q^{n - k}, \quad k = 0, 1, \dots, n$
+
+    Если $t \in B_{n,p}$, то $\xi = \xi_1 + \xi_2 + \xi_3 + \dots + \xi_n$, где $\xi_i \in B_p$ - независимы
+
+    $\varphi_\xi(t) = (\varphi_{\xi_n}(t))^n = (1 - p + p e^{it})^n$
+
+    \item Распределение Пуассона
+
+    $P(\xi = k) = \frac{\lambda^k}{k!} e^{-\lambda}, \quad k = 0, 1, \dots, n$
+
+    $\varphi_\xi(t) = Ee^{it\xi} = \sum_{k = 0}^\infty e^{itk} p(\xi = k) = \sum_{k = 0}^\infty e^{itk} \frac{\lambda^k}{k!} e^{-\lambda} = 
+    e^{-\lambda} \sum_{k = 0}^\infty \frac{(\lambda e^{it})^k}{k!} = e^{-\lambda} e^{\lambda e^{it}} = e^{\lambda (e^{it} - 1)}$
+
+    \underline{Следствие}: распределение Пуассона устойчиво относительно суммирования
+
+    \begin{MyTheorem}
+        $\letsymbol \xi \in \Pi_\lambda, \eta \in \Pi_\mu$, они независимы. Тогда $\xi + \eta \in \Pi_{\lambda + \mu}$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        По третьему свойству $\varphi_{\xi + \eta}(t) = \varphi_\xi(t) \cdot \varphi_\eta(t) = e^{\lambda(e^{it} - 1)} e^{\mu(e^{it} - 1)} = e^{(\lambda + \mu)(e^{it} - 1)}$ - характеристическая функция распределения Пуассона $\Pi_{\lambda + \mu}$
+    \end{MyProof}
+
+    \item Стандартное нормальное распределение
+
+    $f_\xi(x) = \frac{1}{2\pi} e^{-\frac{x^2}{2}}$
+
+    $\varphi_\xi(t) = Ee^{it\xi} = \int_{-\infty}^{\infty} e^{itx} f_\xi(x) dx = \int_{-\infty}^\infty e^{itx} \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}} dx = 
+    \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty e^{-\frac{1}{2}(x^2 - 2itx)} dx = \\
+    \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{1}{2}(x^2 - 2itx - t^2) e^{-\frac{t^2}{2}}} dx = 
+    \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{(x - it)^2}{2}} d(x - it) = \frac{1}{\sqrt{2\pi}} e^{-\frac{t^2}{2}} \sqrt{2\pi} = e^{-\frac{t^2}{2}}$
+
+    \item Нормальное распределение
+
+    $\xi \in N(a, \sigma^2)$
+
+    Если $\eta \in N(0, 1)$, то $\xi = a + \sigma \eta \in N(a, \sigma^2)$
+
+    По второму свойству $\varphi_\xi(t) = e^{ita} \varphi_\eta(\sigma t) = e^{ita - \frac{\sigma^2t^2}{2}}$
+
+    \underline{Следствие}: нормальное распределение устойчиво относительно суммирования
+
+    \begin{MyTheorem}
+        Если $\xi \in N(a_1, \sigma_1^2), \eta \in N(a_2, \sigma^2_2)$ и они независимы, то $\xi + \eta \in N(a_1 + a_2, \sigma_1^2 + \sigma_2^2)$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $\varphi_{\xi + \eta}(t) = \varphi_\xi(t) \varphi_\eta(t) = e^{ita_1 - \frac{\sigma_1^2t^2}{2}} e^{ita_2 - \frac{\sigma_2^2t^2}{2}} = e^{it(a_1 + a_2) - \frac{(\sigma_1^2 + \sigma_2^2)t^2}{2}}$ - 
+        характеристическая функция $N(a_1 + a_2, \sigma_1^2 + \sigma_2^2)$
+    \end{MyProof}
+\end{itemize}
+
+\mediumvspace
+
+\subsection{Доказательства теорем через свойства характеристических функций}
+
+Докажем некоторые теоремы с помощью характеристических функций
+
+\subsubsection{Закон больших чисел Хинчина}
+
+Для доказательства закона больших чисел Хинчина докажем такую лемму: 
+
+$\left(1 + \frac{x}{n} + o\left(\frac{1}{n}\right)\right)^n \underset{n \to \infty}{\longrightarrow} e^x$
+
+\begin{MyProof}
+    $\left(1 + \frac{x}{n} + o\left(\frac{1}{n}\right)\right)^n = e^{n \ln\left(1 + \frac{x}{n} + o\left(\frac{1}{n}\right)\right)} = 
+    e^{n \left(\frac{x}{n} + o\left(\frac{1}{n}\right) + o\left(\frac{x}{n} + o\left(\frac{1}{n}\right)\right)\right)} = e^{n\left(\frac{x}{n} + o\left(\frac{1}{n}\right) + o\left(\frac{1}{n}\right)\right)} = e^{x + n o\left(\frac{1}{n}\right)} \underset{n \to \infty}{\longrightarrow} e^x$
+\end{MyProof}
+
+\begin{MyTheorem}
+    \Ths Закон больших чисел Хинчина
+
+    Пусть $\xi_1, \xi_2, \dots, \xi_n$ - последовательность независимых одинаково распределенных случайных величин с конечным матожиданием.
+    Тогда $\frac{S_n}{n} = \frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\longrightarrow} E\xi_1$
+\end{MyTheorem}
+
+\begin{MyProof}
+    Обозначим $a = E\xi_1$
+
+    Ранее было доказано, что сходимость по вероятности к константе эквивалентно к слабой сходимости. Поэтому достаточно доказать, что $\frac{S_n}{n} \rightrightarrows a$
+
+    По теореме о непрерывном соответствии остается доказать, что $\varphi_{\frac{S_n}{n}}(t) \longrightarrow \varphi_a(t) = e^{ita}$
+
+    По четвертому свойству $\varphi_{\xi_1}(t) = 1 + itE\xi_1 + o(|t|) = 1 + ita + o(|t|)$
+
+    $\varphi_{\frac{S_n}{n}}(t) = [\text{по второму свойству}] = \varphi_{S_n}\left(\frac{t}{n}\right) = \left(\varphi_{\xi_1}\left(\frac{t}{n}\right)\right)^n = \left(1 + ia\frac{t}{n} + o\left(\left|\frac{t}{n}\right|\right)\right)^n \underset{\text{по лемме}}{\longrightarrow}
+    e^{ita} = \varphi_a(t)$
+\end{MyProof}
+
+\subsubsection{Центральная предельная теорема}
+
+\begin{MyTheorem}
+    \Ths Центральная предельная теорема Ляпунова, 1901 г.
+
+    Пусть $\xi_1, \xi_2, \dots, \xi_n$ - последовательность независимых одинаково распределенных случайных величин с конечным вторым моментом ($D\xi_1 < \infty$)
+
+    Обозначим $a = E\xi_1, \sigma^2 = D\xi_1$. Тогда 
+
+    \[\frac{S_n - na}{\sigma\sqrt{n}} \rightrightarrows N(0, 1)\]
+\end{MyTheorem}
+
+\begin{MyProof}
+    Пусть $\eta_i = \frac{\xi_i - a}{\sigma}$ - стандартизованная случайная величина
+
+    $E\eta_i = 0, D\eta_i = 1$
+
+    Обозначим $Z_n = \eta_1 + \dots + \eta_n = \frac{(\xi_1 + \dots + \xi_n) - na}{\sigma} = \frac{S_n - na}{\sigma}$
+
+    Надо доказать, что если $\frac{Z_n}{\sqrt{n}} \rightrightarrows N(0, 1)$
+
+    По четвертому свойству $\varphi_{\eta_1}(t) = 1 + itE\eta_1 - \frac{t^2}{2} E\eta_1^2 + o(t^2) = 1 - \frac{t^2}{2} + o(t^2)$
+
+    $\varphi_{\frac{Z_n}{\sqrt{n}}} = \varphi_{Z_n}\left(\frac{t}{\sqrt{n}}\right) = \left(\varphi_{\eta_1}\left(\frac{t}{\sqrt{n}}\right)\right)^n = 
+    \left(1 - \frac{\left(\frac{t}{\sqrt{n}}\right)^2}{2} + o\left(\left(\frac{t}{\sqrt{n}}\right)^2\right)\right)^n =
+    \left(1 - \frac{t^2}{2n} + o\left(\left(\frac{t}{\sqrt{n}}\right)^2\right)\right)^n \underset{n \to \infty}{\longrightarrow} e^{-\frac{t^2}{2}}$ - 
+    характеристическая функция $N(0, 1)$
+\end{MyProof}
+
+\subsubsection{Предельная теорема Муавра-Лапласа}
+
+\begin{MyTheorem}
+    \Ths Пусть $v_n(A)$ - число появления события $A$ при $n$ независимых испытаний, $p$ - вероятность успеха при одном испытании, $q = 1 - p$.
+    Тогда $\frac{v_n(A) - np}{\sqrt{npq}} \rightrightarrows N(0, 1)$
+\end{MyTheorem}
+
+\begin{MyProof}
+    $v_n(A) = \xi_1 + \xi_2 + \dots + \xi_n = S_n$, где $\xi_i \in B_p$ и независимы, $E\xi_1 = p, D\xi_1 = pq$
+
+    По ЦПТ $\frac{v_n(A) - np}{\sqrt{npq}} = \frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} \rightrightarrows N(0, 1)$
+\end{MyProof}
+
+\underline{Следствие}. Интегральная формула Лапласа:
+
+$p(k_1 \leq v_n \leq k_2) = p\left(\frac{k_1 - np}{\sqrt{npq}} \leq \frac{v_n - np}{\sqrt{npq}} \leq \frac{k_2 - np}{\sqrt{npq}}\right)$. Обозначим $\eta = \frac{v_n - np}{\sqrt{npq}}$
+
+$p\left(\frac{k_1 - np}{\sqrt{npq}} \leq \frac{v_n - np}{\sqrt{npq}} \leq \frac{k_2 - np}{\sqrt{npq}}\right) = F_\eta\left(\frac{k_2 - np}{\sqrt{npq}}\right) - F_\eta\left(\frac{k_1 - np}{\sqrt{npq}}\right) \underset{n \to \infty}{\longrightarrow} F_0\left(\frac{k_2 - np}{\sqrt{npq}}\right) - F_0\left(\frac{k_1 - np}{\sqrt{npq}}\right)$,
+где $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{t^2}{2}} dt$
+
+\Nota Аналогичным образом ЦПТ применяется для приближенного вычисления вероятностей, связанных с суммами большого числа независимых одинаковых случайных величин, заменяя стандартизованную сумму на стандартное нормальное распределение.
+Возникает вопрос: какова погрешность данного вычисления?
+
+\begin{MyTheorem}
+    \Ths Неравенство Берри-Эссеена
+
+    В условиях ЦПТ для $\xi_1$ с конечным третьим моментом можно оценить так:
+
+    $\left|p\left(\frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} < x\right) - F_0(x)\right| \leq C\frac{E|\xi_1 - E\xi_1|^3}{\sqrt{n(D\xi_1)^3}} \forall x \in \Real$
+\end{MyTheorem}
+
+\Nota На практике берут $C = 0.4$, точная оценка сверху $C < 0.77$
+
+% end <re.Match object; span=(46, 79), match='\nЛекции Блаженова А. В.=Лекции Блаженова А. В.'>
+
 
 
 \end{document}
