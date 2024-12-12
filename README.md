@@ -107,6 +107,7 @@
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_10_31.html)
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_11_14.html)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_11_28.html)
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_12_12.html)
 
 ## II семестр
 
