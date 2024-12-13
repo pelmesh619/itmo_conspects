@@ -29,21 +29,76 @@
 
     \hyperlink{necessarycondition}{Необходимое условие}: 
 
-    \begin{MyTheorem}
-        \Ths Если $\sum_{n = 1}^\infty u_n$ сходится, то верно, что $\lim_{n \to \infty} u_n = 0$
-    \end{MyTheorem}
+    \Ths Если $\sum_{n = 1}^\infty u_n$ сходится, то верно, что $\lim_{n \to \infty} u_n = 0$
 
     \hyperlink{cauchycriteria}{Критерий Коши}:
 
-    \begin{MyTheorem}
-        \Ths $\sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \ \underset{|S_m - S_n| < \varepsilon}{|u_{n + 1} + \dots + u_m|} < \varepsilon$
-    \end{MyTheorem}
-
+    \Ths $\sum_{n = 1}^\infty u_n$ сходится $\Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{n_0 = n_0 (\varepsilon)}{n_0 \in \Natural} \ | \ \forall m > n > n_0 \ \ \underset{|S_m - S_n| < \varepsilon}{|u_{n + 1} + \dots + u_m|} < \varepsilon$
 
     \item Знакоположительные числовые ряды, свойства.
+
+    Знакоположительный ряд - ряд $\sum_{n = 1}^\infty u_n$ такой, что $u_n > 0$
+
+    \hyperlink{seriesproperties}{Свойства рядов}:
+
+    \begin{enumerate}
+        \item Отбрасывание или добавление конечного числа членов ряда не влияет на сходимость, но влияет на сумму
+
+        \item $\sum_{n = 1}^\infty u_n = S \in \Real, \quad \alpha \in \Real$
+
+        Тогда $\alpha \sum_{n = 1}^\infty u_n = \sum_{n = 1}^\infty \alpha u_n = \alpha S$
+
+        \item $\sum_{n = 1}^\infty u_n = S \in \Real$, $\sum_{n = 1}^\infty v_n = \sigma \in \Real$
+
+        Тогда $\sum_{n = 1}^\infty (u_n \pm v_n) = S \pm \sigma$ - сходится
+    \end{enumerate}
+
     \item Признаки сходимости знакоположительных числовых рядов: признаки сравнения.
+
+    \hyperlink{comparisonsign}{Признак сравнения в неравенствах}:
+
+    a) $\letsymbol 0 < u_n \leq v_n. \quad$ Тогда $\sum v_n$ сходится $\Longrightarrow \sum u_n$ сходится
+
+    б) $\letsymbol 0 \leq v_n \leq u_n. \quad$ Тогда $\sum v_n$ расходится $\Longrightarrow \sum u_n$ расходится
+
+    \hyperlink{limitcomparisonsign}{Предельный признак сравнения}:
+
+    $\lim_{n \to \infty} \frac{u_n}{v_n} = q \in \Real \setminus \{0\} \ \Longrightarrow \
+    \begin{sqcases}
+        \sum u_n \text{ сходится, если } \sum v_n \text{ сходится} \\
+        \sum u_n \text{ расходится, если } \sum v_n \text{ расходится}
+    \end{sqcases}$
+    
     \item Признак Даламбера, радикальный признак Коши.
+
+    \hyperlink{dalambersign}{Признак Даламбера}:
+
+    $\sum_{n = 1}^\infty u_n$ - исследуемый, $\exists \mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n} \in \Real^+$
+
+    \begin{tabular}{ll}
+        а) $0 \leq \mathcal{D} < 1$ & $\Longrightarrow \sum u_n$ сходится                                \\
+
+        б) $\mathcal{D} > 1$        & $\Longrightarrow \sum u_n$ расходится                              \\
+
+        в) $\mathcal{D} = 1$        & $\Longrightarrow$ ничего не следует, требуется другое исследование \\
+    \end{tabular}
+
+    \hyperlink{cauchyradicalsign}{Радикальный признак Коши}:
+
+    $\sum_{n = 1}^\infty u_n \quad\quad u_n \geq 0$ и $\exists \lim_{n \to \infty} \sqrt[n]{u_n} = K \in \Real$
+
+    а) $0 \leq K < 1 \Longrightarrow \sum u_n$ сходится
+
+    б) $K > 1 \Longrightarrow \sum u_n$ расходится
+
+    в) $K = 1 \Longrightarrow$ требуется другое исследование
+
     \item Интегральный признак сходимости.
+
+    \hyperlink{cauchyintegralsign}{Интегральный признак Коши}:
+
+    Если существует $f(x) : [1; +\infty] \to \Real^+, f(x)$ монотонно убывает, $f(n) = u_n$, то $\sum_{n = 1}^\infty u_n$ и $\int_{1}^\infty f(x) dx$ одновременно сходятся или расходятся
+
     \item Знакочередующиеся ряды. Теорема Лейбница. Оценка остатка ряда.
     \item Знакопеременные ряды. Абсолютная и условная сходимость.
 
