@@ -100,13 +100,51 @@
     Если существует $f(x) : [1; +\infty] \to \Real^+, f(x)$ монотонно убывает, $f(n) = u_n$, то $\sum_{n = 1}^\infty u_n$ и $\int_{1}^\infty f(x) dx$ одновременно сходятся или расходятся
 
     \item Знакочередующиеся ряды. Теорема Лейбница. Оценка остатка ряда.
+
+    \hyperlink{alternatingsignseries}{Знакочередующиеся ряды}: $\sum_{n = 0}^\infty (-1)^n u_n$ ($u_n > 0$) - знакочередующийся ряд
+
+    \hyperlink{leibniztheorem}{Признак Лейбница}: Если для знакочередующегося ряда $\sum_{n = 0}^\infty (-1)^n u_n$ верно,
+    что \ $\underset{n \to \infty}{u_n \to 0}$ \ и \ $|u_1| > |u_2| > \dots > |u_n|$,
+    то ряд $\sum_{n = 0}^\infty (-1)^n u_n$ сходится
+
+    \hyperlink{seriesremainderevaluation}{Оценка остатка ряда}: для знакочередующегося ряда $R_{n + 1} < u_{n + 1}$
+
     \item Знакопеременные ряды. Абсолютная и условная сходимость.
+
+    \hyperlink{changingsignseries}{Знакопеременные ряды}: $\sum_{n = 1}^\infty u_n$, где $u_n$ - любого знака и не все $u_n$ одного знака
+
+    \hyperlink{absoluteconvergence}{Абсолютная сходимость}: $\sum_{n = 1}^\infty |u_n|$ сходится $\Longrightarrow \sum_{n = 1}^\infty u_n$ сходится абсолютно
+
+    \hyperlink{conditionalconvergence}{Условная сходимость}: $\sum_{n = 1}^\infty u_n$ сходится условно, если $\sum_{n = 1}^\infty |u_n|$ расходится
 
 \subsection{X.2. Функциональные ряды.}
 
     \item Функциональные ряды. Сходимость. Поточечная и равномерная сходимость ряда.
     Мажорирующий ряд.
+
+    \hyperlink{functionalseries}{Функциональные ряды}: $\sum_{n = 1}^\infty u_n(x)$, где $u_n(x) : E \subset \Real \to \Real$ называется функциональным
+
+    \hyperlink{functionalseriesconvergence}{Сходимость}: Если ряд $\sum_{n = 1}^\infty u_n(x)$ сходится при всех $x$ из некоторого множества $E$, то сумма ряда -
+    функция $S(x)$
+
+    Поточечная сходимость: Ряд сходится поточечно, если $\forall x \in D \ \exists \lim_{n \to \infty} S_n(x)$
+
+    \hyperlink{uniformconvergence}{Равномерная сходимость}:  $\sum_{n = 1}^\infty u_n(x)$ равномерно сходится в области $D \overset{def}{\Longleftrightarrow}$
+
+    $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 \in \Natural} \ | \ \forall n > n_0 \ |R_n(x)| < \varepsilon$
+
+    Пример: $\sum_{n = 1}^\infty x^n$ на $[0,1)$ сходится поточечно, но не сходится равномерно
+
+    \hyperlink{majorseries}{Мажорирующий ряд}: ряд $\sum_{n = 1}^\infty \alpha_n$ называется мажорирующим, если по 
+    признаку Вейерштрасса с помощью него можно сказать, что $\sum_{n = 1}^\infty u_n(x)$ сходится
+
     \item Признак Вейерштрасса.
+
+    \hyperlink{weierstrassign}{Признак Вейерштрасса}: $\exists \sum_{n = 1}^\infty \alpha_n$ - числовой ряд такой, что $\alpha_n > 0$, $\sum \alpha_n$ сходится,
+    $|u_n(x)| \leq \alpha_n \ \forall n$
+
+    Тогда $\sum_{n = 1}^\infty u_n(x)$ равномерно сходящийся, а $\sum_{n = 1}^\infty \alpha_n$ называют мажорирующим
+
     \item Непрерывность суммы ряда.
     \item Свойства равномерно сходящихся рядов (дифференцирование и интегрирование суммы
     ряда).
