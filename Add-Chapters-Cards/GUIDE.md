@@ -17,7 +17,11 @@ Anki — это программа для запоминания, использ
 Для вас задача ещё проще: скачиваете мой готовый csv-шник, импортируете его в Анки и наслаждаетесь
 
 1. Нажать импорт любым способом
+   
 ![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step11.png)
+
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step12.png)
+
 3. Выбрать csv-файл
 4. Соглашаемся с настройками как на скринах и нажимаем на синюю кнопочку import
 5. Появившееся окошко просто закрываем
