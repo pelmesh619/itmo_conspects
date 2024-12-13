@@ -444,7 +444,7 @@
 
         а) По определению предела $\forall \varepsilon > 0 \ \exists n_0 \in \Natural \ | \ \forall n > n_0 \ |\sqrt[n]{u_n} - K| < \varepsilon$
 
-        $\Longleftrightarrow k - \varepsilon < \sqrt[n]{u_n} < k + \varepsilon$ Положим $\varepsilon = r - K$, где $K < r < 1$
+        $\Longleftrightarrow K - \varepsilon < \sqrt[n]{u_n} < K + \varepsilon$ Положим $\varepsilon = r - K$, где $K < r < 1$
 
         $\Longrightarrow 0 \leq u_n < r^n$ - геом. ряд с $|r| < 1$, то есть $\sum r^n$ сходится
 
@@ -720,7 +720,7 @@
 
     \begin{MyTheorem}
         \Ths Если ряд $\sum_{n = 1}^\infty u_n(x) \ (u_n(x) \in C_{[a, b]})$ мажорируем в $D = [a, b]$, то 
-        его сумма $S_x$ непрерывна на $[a, b]$
+        его сумма $S(x)$ непрерывна на $[a, b]$
     \end{MyTheorem}
 
     \begin{MyProof}
@@ -734,9 +734,9 @@
 
         $\Delta S = S(x + \Delta x) - S(x) = S_n(x + \Delta x) + r_n(x +  \Delta x) - S_n(x) - r_n(x)$
 
-        $\Delta S(x) = \Delta S_n + r_n(x + \Delta x) - r_n(x)$
+        $\Delta S(x) = \Delta S_n(x) + r_n(x + \Delta x) - r_n(x)$
 
-        $|\Delta S(x)| \leq |\Delta S_n| + |r_n(x + \Delta x)| + |r_n(x)|$
+        $|\Delta S(x)| \leq |\Delta S_n(x)| + |r_n(x + \Delta x)| + |r_n(x)|$
 
         Ряд $\sum_{n = 1}^\infty u_n(x)$ мажорируем $\Longleftrightarrow \exists$ сходящийся $\sum_{n = 1}^\infty \alpha_n \ \Big| \ |u_n(x) \leq \alpha_n|$
     
@@ -746,7 +746,7 @@
     
         $\Delta S_n = S_n(x + \Delta x) - S(x) = u_1(x + \Delta x) - u_1(x) + \dots + u_n(x + \Delta x) - u_n(x)$ - конечная сумма непрерывна
 
-        Сама $S_n(x)$ непрерывна, тогда $\forall \varepsilon > 0 \ $ (при фиксированном $N$) $\exists \delta > 0 \ | \ |\Delta S_n(x)| < \frac{\varepsilon}{3}$ при $|\Delta x| < \delta$
+        Сама $\Delta S_n(x)$ непрерывна, тогда $\forall \varepsilon > 0 \ $ (при фиксированном $N$) $\exists \delta > 0 \ | \ |\Delta S_n(x)| < \frac{\varepsilon}{3}$ при $|\Delta x| < \delta$
 
         \bgroup
         \setlength\tabcolsep{1.5pt}
@@ -1284,7 +1284,7 @@ $x = \sum_{k = 1}^\infty \frac{(-1)^{k + 1} \cdot 2}{k\pi} \sin k\pi x$
 \subsubsection{4.2. Оценка коэффициентов Фурье}
 
 \Notas Вернемся к приближению $f(x)$ тригонометрическим многочленом $T_n(x)$. Ранее говорилось,
-что их всех многчленов типа $\sum_{m = 0}^n a_m \cos mx + b_m \sin mx$ минимально отстоящим
+что из всех многчленов типа $\sum_{m = 0}^n a_m \cos mx + b_m \sin mx$ минимально отстоящим
 будет многочлен Фурье, то есть c $a_m$ и $b_m$, равными коэффициентам Фурье.
 
 Зададим расстояние $\delta_n$ между $f(x)$ и многочленом $T_n(x)$ формулой 
