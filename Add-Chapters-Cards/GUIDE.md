@@ -22,12 +22,32 @@ Anki — это программа для запоминания, использ
 
 ![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step12.png)
 
-3. Выбрать csv-файл
-4. Соглашаемся с настройками как на скринах и нажимаем на синюю кнопочку import
-5. Появившееся окошко просто закрываем
-6. Заходим на главную страницу и выбираем деску
-7. Нажимаем кнопочку study now
-8. Проверяем, что всё корректно выводится
-9. Работаем!!!!!!!!!!!!!!!!!!
+2. Выбрать csv-файл
+
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step2.png)
+
+3. Соглашаемся с настройками как на скринах и нажимаем на синюю кнопочку import
+
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step31.png)
+
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step32.png)
+
+4. Появившееся окошко просто закрываем
+
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step4.png)
+
+5. Заходим на главную страницу и выбираем деску
+    
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step5.png)
+
+6. Нажимаем кнопочку study now
+
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step6.png)
+
+7. Проверяем, что всё корректно выводится
+ 
+![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step7.png)
+
+8. Работаем!!!!!!!!!!!!!!!!!!
 
 *У меня такая версия: anki-24.11-linux-qt6*
