@@ -33,6 +33,8 @@
 
     $u_n = \frac{1}{n} \underset{n \to \infty}{\longrightarrow} 0, \qquad \frac{1}{n} > \frac{1}{n + 1} \Longrightarrow$ ряд сходится
 
+    \hypertarget{seriesremainderevaluation}{}
+
     \Nota Оценка остатка ряда
 
     Запишем ряд: $\sum_{n = 1}^\infty (-1)^{n + 1} u_n = u_1 - u_2 + u_3 - \dots \pm u_n \mp u_{n + 1} =
@@ -46,13 +48,15 @@
 
     $|R_4| < \frac{1}{32}$
 
-    Проверка: $-(\frac{1}{32} - \frac{1}{64}) - (\frac{1}{128} - \frac{1}{256}) - \dots = -\sum_{k = 3}^\infty \frac{1}{2^{2k}}$ - \Lab досчитать и сравнить с $\frac{1}{32}$
+    Проверка: $-\left(\frac{1}{32} - \frac{1}{64}\right) - \left(\frac{1}{128} - \frac{1}{256}\right) - \dots = -\sum_{k = 3}^\infty \frac{1}{2^{2k}}$ - \Lab досчитать и сравнить с $\frac{1}{32}$
 
     \Nota Оценка не работает в знакоположительных рядах
 
     $1 + \frac{1}{2} + \frac{1}{4} + \frac{1}{8} + \frac{1}{16} + \dots$
 
-    $R_3 = \frac{1}{16} + \frac{1}{32} + \frac{1}{64} + \dots = \frac{1}{16} (1 + \frac{1}{2} + \dots) = \frac{2}{16} = \frac{1}{8} > \frac{1}{16}$
+    $R_3 = \frac{1}{16} + \frac{1}{32} + \frac{1}{64} + \dots = \frac{1}{16} \left(1 + \frac{1}{2} + \dots\right) = \frac{2}{16} = \frac{1}{8} > \frac{1}{16}$
+
+    \hypertarget{changingsignseries}{}
 
     \Def Знакопеременный ряд
 
@@ -61,6 +65,8 @@
     \Ex $1 - \frac{1}{2} + \frac{1}{3} + \frac{1}{4} - \frac{1}{5} - \frac{1}{6} + \frac{1}{7} + \dots$
 
     \Nota Исследование таких рядов (в том числе знакочередующихся) на сходимость можно проводить при помощи ряда из модулей
+
+    \hypertarget{absoluteconvergence}{}
 
     \begin{MyTheorem}
         \Ths Абсолютная сходимость
@@ -94,6 +100,8 @@
 
     \Def Если $\sum u_n$ сходится, при том что $\sum |u_n|$ сходится, он называется \textbf{абсолютно сходящимся}
 
+    \hypertarget{conditionalconvergence}{}
+
     \Defs Если $\sum u_n$ сходится, при том что $\sum |u_n|$ расходится, он называется \textbf{условно сходящимся}
 
     \Notas Для абсолютно сходящихся рядов перестановка членов безболезнена и сохраняет сумму ряда
@@ -102,9 +110,9 @@
 
     1) Признак сравнения: $|u_n| < |v_n|: \ \sum |v_n|$ сходится $\Longrightarrow \sum |u_n|$ сходится
 
-    2) Предельный признак: $\lim |\frac{u_n}{v_n}| = q \in \Real \setminus \{0\}$
+    2) Предельный признак: $\lim \left|\frac{u_n}{v_n}\right| = q \in \Real \setminus \{0\}$
 
-    3) $D = \lim |\frac{u_{n + 1}}{u_n}| < 1$
+    3) $D = \lim \left|\frac{u_{n + 1}}{u_n}\right| < 1$
 
     4) $K = \lim \sqrt[n]{|{u_n}|} < 1$
 
@@ -114,6 +122,8 @@
 
 
     \section{\S 2. Функциональные ряды}
+
+    \hypertarget{functionalseries}{}
 
     \subsection{1. Определения}
 
@@ -125,11 +135,13 @@
 
     $x = 2 \quad \sum_{n = 0}^\infty 2^n$ расходится
 
-    $x = \frac{1}{2} \quad \sum_{n = 0}^\infty (\frac{1}{2})^n$ сходится
+    $x = \frac{1}{2} \quad \sum_{n = 0}^\infty \left(\frac{1}{2}\right)^n$ сходится
 
     Таким образом для $|x| < 1$ ряд будет сходящимся, для $|x| > 1$ расходящимся
 
     \Def Множество значений $x$, при которых $\sum_{n = 1}^\infty u_n(x)$ сходится, называется областью сходимости
+
+    \hypertarget{functionalseriesconvergence}{}
 
     \Defs Если ряд $\sum_{n = 1}^\infty u_n(x)$ сходится при всех $x$ из некоторого множества $E$, то сумма ряда -
     функция $S(x)$
@@ -148,6 +160,8 @@
 
     \Notas Очень неприятно, что $n_0$ зависит от $\varepsilon$ и всякого $x$
 
+    \hypertarget{uniformconvergence}{}
+
     \Def Равномерная сходимость ряда
 
     $\sum_{n = 1}^\infty u_n(x)$ равномерно сходится в области $D \overset{def}{\Longleftrightarrow}$
@@ -155,6 +169,8 @@
     $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 \in \Natural} \ | \ \forall n > n_0 \ |R_n(x)| < \varepsilon$
 
     \Nota Доказательства равномерной сходимости по определению сложно, пользуются другими способами
+
+    \hypertarget{weierstrassign}{}
 
     \begin{MyTheorem}
         \Ths Признак Вейерштрасса
@@ -165,6 +181,8 @@
         Тогда $\sum_{n = 1}^\infty u_n(x)$ равномерно сходящийся
 
     \end{MyTheorem}
+
+    \hypertarget{majorseries}{}
 
     \Nota Ряд $\sum_{n = 1}^\infty \alpha_n$ называется мажорирующим (то есть преобладающий), 
     а ряд $\sum_{n = 1}^\infty u_n(x)$ - мажорируемым
