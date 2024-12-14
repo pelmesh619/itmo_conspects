@@ -83,6 +83,8 @@
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_11_29.pdf)
 * Лекция №15 - был тест
 
+Карточки для Anki - [https://github.com/pelmesh619/itmo_conspects/tree/main/Add-Chapters-Cards](https://github.com/pelmesh619/itmo_conspects/tree/main/Add-Chapters-Cards)
+
 ### Объектно-ориентированное проектирование и программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html)
@@ -166,6 +168,12 @@ python compile_all.py ./directory
 
 
 ## Extra
+
+### Anki
+
+Anki - приложение для запоминания материала с помощью карточек. Гайд установки - [*тык*](https://pelmesh619.github.io\itmo_conspects\Add-Chapters-Cards\GUIDE.html)
+
+Пока что доступны карточки по [дополнительным главам высшей математики](https://github.com/pelmesh619/itmo_conspects/tree/main/Add-Chapters-Cards) (числовые, функциональные ряды, ряды Фурье, интеграл Фурье)
 
 ### A Playful Production Process
 
