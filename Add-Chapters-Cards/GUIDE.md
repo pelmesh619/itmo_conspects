@@ -18,35 +18,35 @@ Anki — это программа для запоминания, использ
 
 1. Нажать импорт любым способом
    
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step11.png)
+![image](pictures/step11.png)
 
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step12.png)
+![image](pictures/step12.png)
 
 2. Выбрать csv-файл
 
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step2.png)
+![image](pictures/step2.png)
 
 3. Соглашаемся с настройками как на скринах и нажимаем на синюю кнопочку import
 
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step31.png)
+![image](pictures/step31.png)
 
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step32.png)
+![image](pictures/step32.png)
 
 4. Появившееся окошко просто закрываем
 
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step4.png)
+![image](/pictures/step4.png)
 
 5. Заходим на главную страницу и выбираем деску
     
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step5.png)
+![image](pictures/step5.png)
 
 6. Нажимаем кнопочку study now
 
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step6.png)
+![image](pictures/step6.png)
 
 7. Проверяем, что всё корректно выводится
  
-![image](https://github.com/Aksinya-Bykova/itmo_conspects/blob/main/Add-Chapters-Cards/pictures/step7.png)
+![image](pictures/step7.png)
 
 8. Работаем!!!!!!!!!!!!!!!!!!
 
