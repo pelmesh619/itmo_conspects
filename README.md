@@ -31,6 +31,7 @@
 
 * [Решение задач №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_6.pdf)
 * [Решение задач №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_7.pdf)
+* [Решение задач №8](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_8.pdf)
 
 ### Теория вероятности (лектор Блаженов А. В.)
 
