@@ -91,8 +91,8 @@ else:
 
         if not match:
             match_text = t
-            for i in re.finditer(r'((\n)|(^))(\$\w+\$)\=(.*)', match_text):
-                match_text = match_text.replace(i.group(0), '\n', 1)
+            for j in re.finditer(r'((\n)|(^))(\$\w+\$)\=(.*)', match_text):
+                match_text = match_text.replace(j.group(0), '\n', 1)
         else:
             match_text = match.group(1)
 
