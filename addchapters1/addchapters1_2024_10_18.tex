@@ -9,6 +9,8 @@
 \fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
 
 \begin{document}
+    \hypertarget{functionalsumcontinuity}{}
+
     \begin{MyTheorem}
         \Ths Если ряд $\sum_{n = 1}^\infty u_n(x) \ (u_n(x) \in C_{[a, b]})$ мажорируем в $D = [a, b]$, то 
         его сумма $S(x)$ непрерывна на $[a, b]$
@@ -61,6 +63,8 @@
 
     Это позволяет определить $\int_{x_0}^y S(x) dx$, а если $S(x) \in C^\prime_{[a, b]}$, то и $\frac{dS(x)}{dx}$
 
+    \hypertarget{functionalsumintegral}{}
+
     \begin{MyTheorem}
         \Ths Если ряд мажорируется на $[a, b]$ и $u_n(x)$ непрерывна на $[a, b]$, то определен $\int_{x_0}^y S(x)dx$ и 
         $\int_{x_0}^x S(x)dx  = \sum_{n = 1}^\infty \int_{x_0}^x u_n(x) dx$
@@ -90,6 +94,8 @@
 
     \Nota Почленно интегрируются не просто равномерно сходящиеся, а мажорируемые, иначе остаток необязательно стремится к 0
 
+    \hypertarget{functionalsumderivative}{}
+
     \begin{MyTheorem}
         \Ths $\sum_{n = 1}^\infty u_n(x)$ мажорируем на $[a, b]$ и $u_n(x) \in C^\prime_{[a, b]}$
 
@@ -114,11 +120,15 @@
 
     \subsection{2. Степенные ряды}
 
+    \hypertarget{powerseries}{}
+
     \Def $\sum_{n = 0}^\infty c_n(x - x_0)^n, \ c_n \in \Real, x_0 \in \Real$ - степенной ряд с центром $x_0$ (в точке $x_0$, по степеням $(x - x_0)$)
 
     \Nota В частности $\sum_{n = 1}^\infty c_n x^n$ - степенной с центром в $x_0 = 0$
 
     $\sum_{n = 0}^\infty c_n(x - x_0)^n$ легко сводится заменой $x - x_0 = t$ к $\sum_{n = 0}^\infty c_n t^n$
+
+    \hypertarget{abelstheorem}{}
 
     \begin{MyTheorem}
         \ThNs{Абеля} 
@@ -166,6 +176,8 @@
         \Nota Заметим, что должно существовать такое $R$, для которого для всех $x$ меньше $R$ ряд сходится
 
         Зафиксируем между $x_0$ и $R$ число $x_0 < r < R$ - тогда $\sum c_n r^n$ - мажорирует $c_n x^n$, то есть ряд сходится равномерно
+
+        \hypertarget{convergenceradius}{}
 
         \Def $R \in \Real^+ \ \Big| \ \forall |x| < R $ ряд сходится, а $\forall |x| > R$ ряд расходится, тогда $R$ называют радиусом сходимости
         

@@ -718,6 +718,8 @@
 
 % begin addchapters1_2024_10_18.tex
 
+    \hypertarget{functionalsumcontinuity}{}
+
     \begin{MyTheorem}
         \Ths Если ряд $\sum_{n = 1}^\infty u_n(x) \ (u_n(x) \in C_{[a, b]})$ мажорируем в $D = [a, b]$, то 
         его сумма $S(x)$ непрерывна на $[a, b]$
@@ -770,6 +772,8 @@
 
     Это позволяет определить $\int_{x_0}^y S(x) dx$, а если $S(x) \in C^\prime_{[a, b]}$, то и $\frac{dS(x)}{dx}$
 
+    \hypertarget{functionalsumintegral}{}
+
     \begin{MyTheorem}
         \Ths Если ряд мажорируется на $[a, b]$ и $u_n(x)$ непрерывна на $[a, b]$, то определен $\int_{x_0}^y S(x)dx$ и 
         $\int_{x_0}^x S(x)dx  = \sum_{n = 1}^\infty \int_{x_0}^x u_n(x) dx$
@@ -799,6 +803,8 @@
 
     \Nota Почленно интегрируются не просто равномерно сходящиеся, а мажорируемые, иначе остаток необязательно стремится к 0
 
+    \hypertarget{functionalsumderivative}{}
+
     \begin{MyTheorem}
         \Ths $\sum_{n = 1}^\infty u_n(x)$ мажорируем на $[a, b]$ и $u_n(x) \in C^\prime_{[a, b]}$
 
@@ -823,11 +829,15 @@
 
     \subsection{2. Степенные ряды}
 
+    \hypertarget{powerseries}{}
+
     \Def $\sum_{n = 0}^\infty c_n(x - x_0)^n, \ c_n \in \Real, x_0 \in \Real$ - степенной ряд с центром $x_0$ (в точке $x_0$, по степеням $(x - x_0)$)
 
     \Nota В частности $\sum_{n = 1}^\infty c_n x^n$ - степенной с центром в $x_0 = 0$
 
     $\sum_{n = 0}^\infty c_n(x - x_0)^n$ легко сводится заменой $x - x_0 = t$ к $\sum_{n = 0}^\infty c_n t^n$
+
+    \hypertarget{abelstheorem}{}
 
     \begin{MyTheorem}
         \ThNs{Абеля} 
@@ -875,6 +885,8 @@
         \Nota Заметим, что должно существовать такое $R$, для которого для всех $x$ меньше $R$ ряд сходится
 
         Зафиксируем между $x_0$ и $R$ число $x_0 < r < R$ - тогда $\sum c_n r^n$ - мажорирует $c_n x^n$, то есть ряд сходится равномерно
+
+        \hypertarget{convergenceradius}{}
 
         \Def $R \in \Real^+ \ \Big| \ \forall |x| < R $ ряд сходится, а $\forall |x| > R$ ряд расходится, тогда $R$ называют радиусом сходимости
         
@@ -1212,7 +1224,7 @@
     \end{MyTheorem}
 % end addchapters1_2024_11_15.tex
 
-% begin <re.Match object; span=(69, 102), match='\nЛекции Далевской О. П.=Лекции Далевской О. П.'>
+% begin addchapters1_2024_11_29.tex
 
 
 
@@ -1375,7 +1387,7 @@ $f(x) = \underset{\text{синус-преобразование Фурье}}{\un
 
 $F(\alpha) = ? \ \Phi(\alpha) = ? \qquad\qquad e^{-\beta x} = \frac{2\beta}{\pi} \int_0^\infty \frac{\cos \alpha x}{\beta^2 + \alpha^2} d\alpha$
 
-% end <re.Match object; span=(69, 102), match='\nЛекции Далевской О. П.=Лекции Далевской О. П.'>
+% end addchapters1_2024_11_29.tex
 
 % begin addchapters1_exam_list.tex
 \clearpage
@@ -1526,9 +1538,31 @@ $F(\alpha) = ? \ \Phi(\alpha) = ? \qquad\qquad e^{-\beta x} = \frac{2\beta}{\pi}
     Тогда $\sum_{n = 1}^\infty u_n(x)$ равномерно сходящийся, а $\sum_{n = 1}^\infty \alpha_n$ называют мажорирующим
 
     \item Непрерывность суммы ряда.
+
+    \hyperlink{functionalsumcontinuity}{Непрерывность суммы ряда}: \Ths Если ряд $\sum_{n = 1}^\infty u_n(x) \ (u_n(x) \in C_{[a, b]})$ мажорируем в $D = [a, b]$, то 
+    его сумма $S(x)$ непрерывна на $[a, b]$
+
     \item Свойства равномерно сходящихся рядов (дифференцирование и интегрирование суммы
     ряда).
+
+    \hyperlink{functionalsumintegral}{Интегрирование}: \Ths $\sum_{n = 1}^\infty u_n(x)$ мажорируем на $[a, b]$ и $u_n(x) \in C^\prime_{[a, b]}$.
+    Тогда $S^\prime(x) = \sum_{n = 1}^\infty u^\prime_n(x)$
+
+    \hyperlink{functionalsumderivative}{Дифференцирование}: \Ths $\sum_{n = 1}^\infty u_n(x)$ мажорируем на $[a, b]$ и $u_n(x) \in C^\prime_{[a, b]}$.
+    Тогда $S^\prime(x) = \sum_{n = 1}^\infty u^\prime_n(x)$
+
     \item Степенные ряды. Теорема Абеля. Радиус сходимости.
+
+    \hyperlink{powerseries}{Степенной ряд}: $\sum_{n = 0}^\infty c_n(x - x_0)^n, \ c_n \in \Real, x_0 \in \Real$ - степенной ряд с центром $x_0$ (в точке $x_0$, по степеням $(x - x_0)$)
+
+    \hyperlink{abelstheorem}{Теорема Абеля}: \ThNs{Абеля} 
+
+    1) $\sum_{n = 0}^\infty c_n x^n$ сходится в точке $x_1$. Тогда ряд сходится для любого $x$, который $|x| < |x_1|$
+
+    2) $\sum_{n = 0}^\infty c_n x^n$ расходится в точке $x_2$. Тогда ряд расходится $\forall x \ |x| > |x_2|$
+
+    \hyperlink{convergenceradius}{Радиус сходимости}: $R \in \Real^+ \ \Big| \ \forall |x| < R $ ряд сходится, а $\forall |x| > R$ ряд расходится, тогда $R$ называют радиусом сходимости
+
     \item Ряд Тейлора. Стандартные разложения элементарных функций.
     \item Ортогональные системы функций и ряды Фурье. Определение тригонометрического ряда
     Фурье для функции на отрезке $[-\pi, \pi]$. Теорема Дирихле.
