@@ -929,6 +929,8 @@
 
     Формула: $f(x) \in C^\infty_{U_0(x_0)}$ и $R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!} (x - x_0)^{n + 1}$, $\xi$ между $x$ и $x_0$
 
+    \hypertarget{taylorsseries}{}
+
     \begin{MyTheorem}
         \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
     \end{MyTheorem}
@@ -936,6 +938,8 @@
     \Nota Если $x_0 = 0$, то ряд Маклорена 
 
     \smallvspace
+
+    \hypertarget{taylorsseriesoffunctions}{}
 
     \subsubsection{3.1. Стандартные разложения элементарных функций}
 
@@ -1564,6 +1568,31 @@ $F(\alpha) = ? \ \Phi(\alpha) = ? \qquad\qquad e^{-\beta x} = \frac{2\beta}{\pi}
     \hyperlink{convergenceradius}{Радиус сходимости}: $R \in \Real^+ \ \Big| \ \forall |x| < R $ ряд сходится, а $\forall |x| > R$ ряд расходится, тогда $R$ называют радиусом сходимости
 
     \item Ряд Тейлора. Стандартные разложения элементарных функций.
+
+    \hyperlink{taylorsseries}{Ряд Тейлора}: $f(x) \in C^\infty_{U_0(x_0)}$ и $R_n(x) = \frac{f^{(n + 1)}(\xi)}{(n + 1)!} (x - x_0)^{n + 1}$, $\xi$ между $x$ и $x_0$
+    
+    \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
+
+    \hyperlink{taylorsseriesoffunctions}{Разложения функций}:
+
+    \begin{tabular}{rclcl}
+        Функция & & \multicolumn{3}{c}{Ряд Тейлора} \\
+        \hline
+        $e^x$ & $=$ & $\sum_{n = 0}^\infty \frac{x^n}{n!}$ & $=$ & $1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \dots$ \\
+        \hline
+        $\sin x$ & $=$ & $\sum_{n = 0}^\infty \frac{(-1)^n}{(2n + 1)!}x^{2n + 1}$ & $=$ & $x - \frac{x^3}{3!} + \frac{x^5}{5!} + \dots$ \\
+        \hline
+        $\cos x$ & $=$ & $\sum_{n = 0}^\infty \frac{(-1)^n}{(2n)!}x^{2n}$ & $=$ & $1 - \frac{x^2}{2!} + \frac{x^4}{4!} + \dots$ \\
+        \hline
+        $\mathrm{sh} x$ & $=$ & $\sum_{n = 0}^\infty \frac{x^{(2n + 1)}}{(2n + 1)!}$ & $=$ & $x + \frac{x^3}{3!} + \frac{x^5}{5!} + \dots$\\
+        \hline
+        $\mathrm{ch} x$ & $=$ & $\sum_{n = 0}^\infty \frac{x^{(2n)}}{(2n)!}$  & $=$ & $1 + \frac{x^2}{2!} + \frac{x^4}{4!} + \dots$\\
+        \hline 
+        $(1 + x)^m$ & $=$ & $\sum_{k = 0}^\infty C_m^k x^k$ & $=$ & $1 + mx + m(m - 1)x^2 + \dots$\\
+        \hline
+        $\ln(1 + x)$ & $=$ & $\sum_{n = 0}^\infty (-1)^n \frac{x^{n + 1}}{n + 1}$ & $=$ & $x - \frac{x^2}{2} + \frac{x^3}{3} - \frac{x^4}{4} + \dots$ \\
+    \end{tabular}
+
     \item Ортогональные системы функций и ряды Фурье. Определение тригонометрического ряда
     Фурье для функции на отрезке $[-\pi, \pi]$. Теорема Дирихле.
     \item Тригонометрический ряд Фурье на произвольном отрезке (сдвиг, растяжение)
