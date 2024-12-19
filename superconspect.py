@@ -11,6 +11,7 @@ if len(sys.argv) <= 1:
 folder = sys.argv[1]
 BLACKLIST_WORDS = ['cheatsheet', folder + "_superconspect.tex", folder + "_superconspect.md", ]
 
+warning_all = '-w' in sys.argv or '--wall' in sys.argv
 
 if all(map(lambda x: x.endswith('.md') or '.' not in x, os.listdir(folder))):
     supername = folder + "_superconspect.md"
@@ -108,5 +109,6 @@ else:
             replace('$teacher$', teacher))
     open(os.path.join(folder, supername), 'w', encoding='utf8').write(text)
 
-    os.system("python linter.py " + os.path.join(".", folder, supername))
+    os.system("python linter.py " + os.path.join(".", folder, supername) + 
+        (' -w' if warning_all else ''))
 
