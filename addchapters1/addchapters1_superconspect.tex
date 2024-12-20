@@ -1125,11 +1125,15 @@
         \end{tabular}
     }
 
+    \hypertarget{fouriersseries}{}
+
     \Nota Если увеличивать степень $n$, то получим ряд Фурье. Запишем формально:
 
     $\frac{a_0}{2} + \sum_{n = 1}^\infty (a_n \cos nx + b_n \sin nx)$ - сходится ли этот ряд и сходится ли к $f(x)$?
 
     Ответ дает теорема (доказательство будет приведено позже)
+
+    \hypertarget{dirichletstheorem}{}
 
     \begin{MyTheorem}
         \Ths $f(x)$ - $2\pi$-периодична, на $[-\pi, \pi]$ $f(x)$ - кусочно монотонна и ограничена (то есть имеет конечное число конечных разрывов). 
@@ -1211,9 +1215,13 @@
     Заметим, что $\tilde{f}$ на $[0, 2\pi]$ имеет одно аналитическое задание (удобно интегрировать). Изменится ли 
     ряд Фурье, если сдвинуть отрезок?
 
+    \hypertarget{shifttheorem}{}
+    
     \begin{MyTheorem}
         \ThNs{о сдвиге} Сдвиг промежутка длиной $2\pi$ не меняет ряда Фурье
     \end{MyTheorem}
+
+    \hypertarget{stretchingtheorem}{}
 
     \begin{MyTheorem}
         \ThNs{о растяжении} Для $f : [a, b] \to \Real$ растяжение промежутка приводит к разложению:
@@ -1595,7 +1603,41 @@ $F(\alpha) = ? \ \Phi(\alpha) = ? \qquad\qquad e^{-\beta x} = \frac{2\beta}{\pi}
 
     \item Ортогональные системы функций и ряды Фурье. Определение тригонометрического ряда
     Фурье для функции на отрезке $[-\pi, \pi]$. Теорема Дирихле.
+
+    Оргогональные системы функций: 
+    Система функций $\{e_n\} \ (e_n \in C_{[a, b]})$ называется ортогональной, 
+    если $\forall i \neq j \ (e_i, e_i) = 0$, $(e_i, e_j) \neq 0$, где
+    $(f(x), g(x)) = \int_{a}^{b} f(x) g(x) dx$
+
+    \hyperlink{fouriersseries}{Ряд Фурье}: Пусть $f(x)$ $2\pi$-периодична на интервале $[-\pi;\pi]$, тогда ее ряд Фурье - $f(x) = \frac{a_0}{2} + \sum_{n = 1}^\infty (a_n \cos nx + b_n \sin nx)$, где 
+    
+    $\frac{a_0}{2} = \frac{1}{2\pi} \int_{-\pi}^\pi f(x) dx$ 
+    
+    $a_k = \frac{1}{\pi} \int_{-\pi}^\pi f(x) \cos kx dx$
+    
+    $b_k = \frac{1}{\pi} \int_{-\pi}^\pi f(x) \sin kx dx$
+
+    \hyperlink{dirichletstheorem}{Теорема Дирихле}:
+
+    \Ths $f(x)$ - $2\pi$-периодична, на $[-\pi, \pi]$ $f(x)$ - кусочно монотонна и ограничена (то есть имеет конечное число конечных разрывов). 
+    Тогда в точках непрерывности $f(x)$ представляется рядом Фурье $S(x) = \frac{a_0}{2} + \sum_{n = 1}^\infty (a_n \cos nx + b_n \sin nx)$,
+    а в точках разрыва $x_0$ $S(x_0) = \frac{1}{2} (f(x_0 + 0) + f(x_0 - 0))$
+
     \item Тригонометрический ряд Фурье на произвольном отрезке (сдвиг, растяжение)
+
+    \hyperlink{shifttheorem}{Теорема о сдвиге}: \ThNs{о сдвиге} Ряд Фурье не изменится, если $[-\pi, \pi]$ заменить на $[a; a + 2\pi]$
+
+    \hyperlink{stretchingtheorem}{Теорема о растяжении}: \ThNs{о растяжении} Для $f : [a, b] \to \Real$ ($2l$-периодична, где $l = \frac{b - a}{2}$) растяжение промежутка приводит к разложению
+    $\varphi(t) = \frac{a_0}{2} + \sum_{k = 1}^\infty a_k \cos kt + b_k \sin kt$, где
+
+    $a_0 = \frac{1}{l} \int_{-l}^l f(x) dx$
+
+    $a_n = \frac{1}{l} \int_{-l}^l f(x) \cos \frac{\pi n}{l} x dx$
+
+    $b_n = \frac{1}{l} \int_{-l}^l f(x) \sin \frac{\pi n}{l} x dx$
+
+    
+
 \end{enumerate}
 % end addchapters1_exam_list.tex
 
