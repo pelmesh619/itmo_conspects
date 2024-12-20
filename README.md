@@ -75,7 +75,7 @@
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_superconspect.pdf)
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_superconspect.pdf)
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_09_06.pdf)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_2024_09_20.pdf)
