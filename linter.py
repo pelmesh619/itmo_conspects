@@ -35,12 +35,6 @@ folder = os.path.join(*os.path.split(filename)[:-1])
 file = open(filename, encoding='utf8').read()
 file = "%% THIS FILE IS GENERATED AUTOMATICALLY BY linter.py, ALL CHANGES WILL BE LOST\n\n\n" + file
 
-preamble_path = os.path.join(folder, 'preamble.sty')
-
-preamble_text = open('preamble.sty', 'r', encoding='utf8').read()
-preamble_text = "%% THIS FILE IS GENERATED AUTOMATICALLY BY linter.py, ALL CHANGES WILL BE LOST\n\n\n" + preamble_text
-open(preamble_path, 'w', encoding='utf8').write(preamble_text)
-
 to_display = True
 
 for i in list(re.finditer(r'(\$.+?\$)|(%nodisplay)|(%yesdisplay)', file, re.MULTILINE | re.DOTALL)):
