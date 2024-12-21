@@ -74,6 +74,7 @@
 * Лекция №13 - была отменена
 * [Лекция №14. NoSQL](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_12_05.html)
 * [Лекция №15. Теорема CAP](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_12_11.html)
+* [Лекция №16. Базы знаний](https://pelmesh619.github.io/itmo_conspects/databases/databases_2024_12_19.html)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
