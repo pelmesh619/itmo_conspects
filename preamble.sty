@@ -771,4 +771,14 @@
     \end{tcolorbox}
     }
 
-
+\usepackage{environ}
+\NewEnviron{UpsideDown}
+{%
+\noindent
+\rotatebox[origin=c]{180}{%
+\noindent
+\begin{minipage}[t]{\linewidth}
+\BODY
+\end{minipage}%
+}%
+}%
