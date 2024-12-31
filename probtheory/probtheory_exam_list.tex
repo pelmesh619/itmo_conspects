@@ -148,10 +148,42 @@
 
     Тогда $P(H_k | A) = \frac{P(H_k) P(A | H_k)}{\sum_{i = 1}^\infty P(H_i) P(A | H_i)}$
 
-
     \item Последовательность независимых испытаний. Формула Бернулли. Наиболее вероятное число успехов в схеме Бернулли.
+
+    \hyperlink{bernoullischema}{Схемой Бернулли} называется серия одинаковых независимых экспериментов, каждый из которых имеет 2 исхода: произошло интересующее нас событие или нет
+
+    \hyperlink{bernoulliformula}{Формула Бернулли}: Вероятность того, что при $n$ испытаниях произойдет ровно $k$ успехов, равна
+    $p_n(k) = C_n^k p^k q^{n - k}$
+
+    \hyperlink{themostprobablenumberofsuccesses}{Наиболее вероятное число успехов}: 
+
+    \begin{enumerate}
+        \item $np$ - целое, тогда $np + p$ - нецелое, и $k = np$ - наиболее вероятное
+
+        \item $np + p$ - нецелое, тогда $k = \lfloor np + p \rfloor$
+
+        \item $np + p$ - целое, тогда $np + p - 1$ - целое, тогда $k \in \{np + p - 1, np + p\}$
+    \end{enumerate}
+
     \item Локальная и интегральная формулы Муавра-Лапласа (без док-ва).
-    \item Вероятность отклонения относительной частоты от вероятности события.                            Закон больших чисел Бернулли.
+
+    \hyperlink{localformulademoivrelaplace}{Локальная формула}: $p_n(k) \underset{n \to \infty}{\longrightarrow} \frac{1}{\sqrt{npq}} \varphi(x)$, где $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ - функция Гаусса, 
+    $x = \frac{k - np}{\sqrt{npq}}$
+
+    \hyperlink{integralformulademoivrelaplace}{Интегральная формула}: $p_n(k_1 \leq k \leq k_2) \underset{n \to \infty}{\longrightarrow} \Phi(x_2) - \Phi(x_1)$, где $\Phi(x) = \frac{1}{\sqrt{2\pi}} \int_0^x e^{-\frac{z^2}{2}} dz$ - функция Лапласа,
+    $x_1 = \frac{k_1 - np}{\sqrt{npq}}$ - отклонение от левой границы, $x_2 = \frac{k_2 - np}{\sqrt{npq}}$ - отклонение от правой
+
+    \item Вероятность отклонения относительной частоты от вероятности события. Закон больших чисел Бернулли.
+
+    \hyperlink{probabilityofdeviation}{Вероятность отклонения относительной частоты} от вероятности события
+
+    $n$ - число испытаний, $p = p(A), \frac{n_A}{n}$ - экспериментальная частота
+
+    $p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) = p\left(-\varepsilon \leq \frac{n_A}{n} - p \leq \varepsilon\right) \underset{n \to \infty}{\longrightarrow} 2\Phi\left(\frac{\sqrt{n}\varepsilon}{\sqrt{pq}}\right)$
+
+    \hyperlink{lawofbignumbersbernoulli}{Закон больших чисел Бернулли}: $p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \underset{n \to \infty}{\longrightarrow} 2 \Phi\left(\frac{\varepsilon}{\sqrt{pq}}\sqrt{n}\right) \to 1$ - 
+    закон больших чисел показывает, что вероятность попадания относительной частоты в $\varepsilon$-трубу приближается к 1
+
     \item Схемы испытаний: Бернулли, до первого успеха. Биномиальное и геометрическое распределения. Свойство отсутствия последействия.
     \item Урновая схема с возвратом и без возврата. Гипергеометрическое распределение. Теорема об его асимптотическом приближении к биномиальному.
     \item Схема Пуассона. Формула Пуассона. Оценка погрешности в формуле Пуассона.

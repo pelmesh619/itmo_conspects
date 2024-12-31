@@ -13,6 +13,8 @@
 
     \subsection{Серия испытаний Бернулли}
 
+    \hypertarget{bernoullischema}{}
+
     Схемой Бернулли - называется серия одинаковых независимых экспериментов, каждый из которых имеет 2 исхода: произошло интересующее нас событие или нет
 
     $p = p(A)$ - вероятность успеха при одном испытании
@@ -22,6 +24,8 @@
     $v_n$ - число успехов в серии из $n$ испытаний
 
     $p(v_n = k) = p_n(k)$
+
+    \hypertarget{bernoulliformula}{}
 
     Из этого получаем формулу Бернулли:
 
@@ -52,6 +56,8 @@
     $n = 5 \quad p = 0.8 \quad q = 1 - p = 0.2 \quad k = 3$
 
     $p_5(3) = C^3_5 p^3 q^2 = 0.2048$
+
+    \hypertarget{themostprobablenumberofsuccesses}{}
 
     \subsection{Наиболее вероятное число успехов}
 
@@ -93,11 +99,13 @@
         \includegraphics[width=6cm]{probtheory/images/probtheory_2024_09_24_2}
     \end{center}
 
+    \hypertarget{localformulademoivrelaplace}{}
+
     При увеличении числа испытаний $n$ формула Бернулли вырождается в следующие асимптотические формы (применяем, если требуется найти вероятность точного числа успеха)
 
-    1) локальная формула Муавра-Лапласа
+    1) Локальная формула Муавра-Лапласа
 
-    $p_n(k) \underset{n \to \infty}{\longrightarrow} \frac{1}{\sqrt{npq}} \varphi(x)$, где $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ - функция гаусса
+    $p_n(k) \underset{n \to \infty}{\longrightarrow} \frac{1}{\sqrt{npq}} \varphi(x)$, где $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ - функция Гаусса
 
     $x = \frac{k - np}{\sqrt{npq}}$
 
@@ -106,6 +114,8 @@
     1. $\varphi(x) = \varphi(-x)$ - функция четная
 
     2. при $x > 5 \quad \varphi(x) \approx 0$
+
+    \hypertarget{integralformulademoivrelaplace}{}
 
     2) Интегральная формула Муавра-Лапласа (если требуется найти вероятность того, что число успехов в данном диапазоне)
 
@@ -146,6 +156,8 @@
 
     Эксперименты с монетой показали, что при больших $n$, $\frac{n_A}{n} \approx p(A)$ - явление стабилизации
 
+    \hypertarget{probabilityofdeviation}{}
+
     Вероятность отклонения относительной частоты от вероятности события
 
     $n$ - число испытаний, $p = p(A), \frac{n_A}{n}$ - экспериментальная частота
@@ -158,11 +170,14 @@
 
     Итак, получили, что нужная нам вероятность $p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \approx 2\Phi\left(\frac{\sqrt{n}\varepsilon}{\sqrt{pq}}\right)$
 
+    \hypertarget{lawofbignumbersbernoulli}{}
+
     \subsection{Закон больших чисел Бернулли}
 
     Итак, $p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \underset{n \to \infty}{\longrightarrow} 2 \Phi\left(\frac{\varepsilon}{\sqrt{pq}}\sqrt{n}\right)$
 
-    при $n \to \infty, \sqrt{n} \to \infty, \frac{\varepsilon}{\sqrt{pq}} \sqrt{n} \to \infty, \Phi\left(\frac{\varepsilon}{\sqrt{pq}}\sqrt{n}\right) \to 0.5, p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \to 2 \cdot 0.5 = 1$ - закон больших чисел показывает, что вероятность попадания относительной частоты в $\varepsilon$-трубу вероятность события приближается к 1
+    при $n \to \infty, \sqrt{n} \to \infty, \frac{\varepsilon}{\sqrt{pq}} \sqrt{n} \to \infty, \Phi\left(\frac{\varepsilon}{\sqrt{pq}}\sqrt{n}\right) \to 0.5, p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \to 2 \cdot 0.5 = 1$ - 
+    закон больших чисел показывает, что вероятность попадания относительной частоты в $\varepsilon$-трубу приближается к 1
 
     $\lim_{n \to \infty} p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) = 1$ или $\frac{n_A}{n} \underset{n \to \infty}{\longrightarrow} p$ - сходимость по вероятности
 
