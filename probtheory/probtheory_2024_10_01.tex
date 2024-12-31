@@ -21,14 +21,20 @@
 
     $q = 1 - p$ - вероятность неудачи
 
+    \hypertarget{bernoullischema2}{}
+
     \subsubsection{I. Схема Бернулли}
 
     $\letsymbol v_n$ - число успехов в серии из $n$ испытаний
 
     $P_n(v_n = k) = C^k_n p^k q^{n - k}, \quad\quad k = 0, 1, \dots, n$
 
+    \hypertarget{binomialdistribution}{}
+
     \Def Соответствие $k \rightarrow C^k_n p^k q^{n - k}, \quad k = 0, \dots, n$ называется биномиальным распределением
     (обозначается $B_{n,p}$ или $B(n, p)$)
+
+    \hypertarget{untilfirstsuccessschema}{}
 
     \subsubsection{II. Схема до первого успешного испытания}
 
@@ -46,6 +52,8 @@
 
         $\Box$
     \end{MyProof}
+
+    \hypertarget{geometricdistribution}{}
 
     \Def Соответствие $k \rightarrow q^{k - 1} p, k \in \Natural$ называется геометрическим
     распределение вероятности (обозначается $G_p$ или $G(p)$)
@@ -115,6 +123,8 @@
 
     $P_6(1; 2; 3) = \frac{6!}{1!2!3!} \left(\frac{1}{4}\right)^1 \left(\frac{1}{4}\right)^2 \left(\frac{1}{2}\right)^3 = \frac{4 \cdot 5 \cdot 6}{2} \frac{1}{2^9} \approx 0.12$
 
+    \hypertarget{urnschema}{}
+
     \subsubsection{IV. Урновая схема}
 
     В урне $N$ шаров, из которых $K$ шаров белые, $N - K$ - черные
@@ -124,9 +134,10 @@
     а) Схема с возвратом (после каждого раза кладем шар обратно). В этом случае вероятность вынуть белый шар одинакова и
     равна $\frac{K}{N}$. Получаем схему Бернулли: $P_n(k) = C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k}$
 
-    б) Схема без возврата - вынутый шар мы выбрасываем
-
+    б) Схема без возврата - вынутый шар мы выбрасываем, тогда
     $P_{N, K} (n, k) = \frac{C^k_K C^{n - k}_{N - K}}{C^n_N}$
+
+    \hypertarget{hypergeometricdistribution}{}
 
     \Def Соответствие $k \rightarrow \frac{C^k_K C^{n - k}_{N - K}}{C^n_N}, k = 0, \dots, n$ называется гипергеометрическим
     распределением
@@ -134,6 +145,8 @@
     \Nota Если $K, N \to \infty$ так, что $\frac{K}{N} \approx p$ (не меняется), а $n$ и $k$ зафиксировать, то после выбора
     $n$ шаров пропорции состава шаров не сильно изменятся, поэтому логично предположить, что гипергеометрическое распределение
     будет сходиться к биномиальному
+
+    \hypertarget{hypergeometricasimptotic}{}
 
     \begin{MyTheorem}
         \Ths Если $K, N \to \infty$ таким образом, что $\frac{K}{N} \to p \in (0;1)$, а $n$ и $0 \leq k \leq n$ фиксированы, то
@@ -154,6 +167,8 @@
 
         $\Box$
     \end{MyProof}
+
+    \hypertarget{poissonschema}{}
 
     \subsubsection{V. Схема Пуассона. Теорема Пуассона для схемы Бернулли}
 
@@ -180,6 +195,8 @@
 
         $\Box$
     \end{MyProof}
+
+    \hypertarget{errorinpoissonformula}{}
 
     \begin{MyTheorem}
         \ThNs{2} (оценка погрешности в формуле Пуассона) Пусть $v_n$ - число успехов при $n$ испытаниях в схеме Бернулли
