@@ -1382,6 +1382,8 @@
 
     \subsubsection{I. Распределение Бернулли}
 
+    \hypertarget{bernoullidistribution}{}
+
     Распределение Бернулли $B_p$ (с параметром $0 < p < 1$)
 
     $\xi$ - число успехов при одном испытании, $p$ - вероятность успеха при одном испытании
@@ -1404,6 +1406,8 @@
 
     \subsubsection{II. Биномиальное распределение}
 
+    \hypertarget{binomialdistributionproperties}{}
+
     Биномиальное распределение $B_{n,p}$ (с параметрами $n, p$)
 
     $\xi$ - число успехов в серии из $n$ испытаний, $p$ - вероятность успеха при одном испытании
@@ -1422,7 +1426,7 @@
 
     Заметим, что $\xi = \xi_1 + \xi_2 + \dots + \xi_n$, где $\xi_i \in B_p$ - число успехов при $i$-ой испытании
 
-    $E\xi_i = p; \quad D\xi = pq$
+    $E\xi_i = p; \quad D\xi_i = pq$
 
     $E\xi = E\xi_1 + \dots + E\xi_n = p + \dots + p = $ \fbox{$np$}
 
@@ -1430,6 +1434,8 @@
 
     
     \subsubsection{III. Геометрическое распределение}
+
+    \hypertarget{geometricdistributionproperties}{}
 
     Геометрическое распределение $G_p$ (с параметром $p$)
 
@@ -1459,6 +1465,8 @@
 
     
     \subsubsection{IV. Распределение Пуассона}
+
+    \hypertarget{poissondistribution}{}
 
     Распределение Пуассона $\Pi_\lambda$ (с параметром $\lambda > 0$)
 
@@ -1637,12 +1645,6 @@
     То есть $\xi_i\xi_j \in B_p$ и $E\xi_i \xi_j = P(\text{оба письма в своих}) = \frac{1}{n(n - 1)}$
 
     Получаем: $D\xi = n \frac{n - 1}{n^2} + 2\frac{n(n - 1)}{2}\frac{1}{n^2(n - 1)} = \frac{n - 1}{n} + \frac{1}{n} = 1$
-
-    
-
-
-
-    
 % end probtheory_2024_10_15.tex
 
 % begin probtheory_2024_10_22.tex
@@ -3869,6 +3871,44 @@ $\gamma_\infty \approx 0.17$ для делового языка
     \ThNs{8} Общая формула дисперсии суммы: $D(\xi_1 + \xi_2 + \dots + \xi_n) = \sum_{i = 1}^n D \xi_i + 2\sum_{i, j (i \neq j)} \mathrm{cov} (\xi_i, \xi_j)$
 
     \item Стандартные дискретные распределения и их числовые характеристики (Бернулли, биномиальное, геометрическое, Пуассона).
+    
+    \hyperlink{bernoullidistribution}{Распределение Бернулли}: $B_p$ (с параметром $0 < p < 1$), $\xi$ - число успехов при одном испытании, $p$ - вероятность успеха при одном испытании
+
+    \begin{tabular}{c|c|c}
+        $\xi$ & $0$        & $1$    \\
+        \hline
+        $p$   & $1 - P(A)$ & $P(A)$
+    \end{tabular}
+
+    Матожидание: $E\xi = p$
+
+    Дисперсия: $D\xi = p(1 - p) = pq$
+
+    \hyperlink{binomialdistributionproperties}{Биномиальное распределение} $B_{n,p}$ (с параметрами $n, p$),
+    $\xi$ - число успехов в серии из $n$ испытаний, $p$ - вероятность успеха при одном испытании
+
+    $p(\xi = k) = C^k_n p^k q^{n - k}, \ k = 0, 1, \dots, n \Longleftrightarrow \xi \in B_{n,p}$
+
+    $E\xi_i = p; \quad D\xi_i = pq$
+
+    $E\xi = E\xi_1 + \dots + E\xi_n = p + \dots + p = np$
+
+    $D\xi = D\xi_1 + \dots + D\xi_n = pq + \dots + pq = npq$
+
+    \hyperlink{geometricdistributionproperties}{Геометрическое распределение} $G_p$ (с параметром $p$),
+    $\xi$ - номер 1-ого успешного испытания в бесконечной серии
+
+    $p(\xi = k) = q^{k - 1}p, \ k = 1, 2, 3, \dots \Longleftrightarrow \xi \in G_p$
+
+    $E\xi = \frac{1}{p}, D\xi  = \frac{q}{p^2}$
+
+    \hyperlink{poissondistribution}{Распределение Пуассона} $\Pi_\lambda$ (с параметром $\lambda > 0$)
+
+    Случайная величина $\xi$ имеет распределение Пуассона с параметром $\lambda > 0$, если $p(\xi = k) = \frac{\lambda^k}{k!}e^{-\lambda}, \ k = 0, 1, 2, \dots$
+
+    $E\xi = \lambda = np, D\xi = \lambda$
+
+
     \item Функция распределения и ее свойства (в свойствах 4, 5, 6 достаточно привести одно из доказательств).
     \item Абсолютно непрерывные случайные величины. Плотность и ее свойства.
     \item Числовые характеристики абсолютно непрерывной случайной величины, их свойства.

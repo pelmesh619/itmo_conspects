@@ -15,6 +15,8 @@
 
     \subsubsection{I. Распределение Бернулли}
 
+    \hypertarget{bernoullidistribution}{}
+
     Распределение Бернулли $B_p$ (с параметром $0 < p < 1$)
 
     $\xi$ - число успехов при одном испытании, $p$ - вероятность успеха при одном испытании
@@ -37,6 +39,8 @@
 
     \subsubsection{II. Биномиальное распределение}
 
+    \hypertarget{binomialdistributionproperties}{}
+
     Биномиальное распределение $B_{n,p}$ (с параметрами $n, p$)
 
     $\xi$ - число успехов в серии из $n$ испытаний, $p$ - вероятность успеха при одном испытании
@@ -55,7 +59,7 @@
 
     Заметим, что $\xi = \xi_1 + \xi_2 + \dots + \xi_n$, где $\xi_i \in B_p$ - число успехов при $i$-ой испытании
 
-    $E\xi_i = p; \quad D\xi = pq$
+    $E\xi_i = p; \quad D\xi_i = pq$
 
     $E\xi = E\xi_1 + \dots + E\xi_n = p + \dots + p = $ \fbox{$np$}
 
@@ -63,6 +67,8 @@
 
     
     \subsubsection{III. Геометрическое распределение}
+
+    \hypertarget{geometricdistributionproperties}{}
 
     Геометрическое распределение $G_p$ (с параметром $p$)
 
@@ -92,6 +98,8 @@
 
     
     \subsubsection{IV. Распределение Пуассона}
+
+    \hypertarget{poissondistribution}{}
 
     Распределение Пуассона $\Pi_\lambda$ (с параметром $\lambda > 0$)
 
@@ -270,11 +278,5 @@
     То есть $\xi_i\xi_j \in B_p$ и $E\xi_i \xi_j = P(\text{оба письма в своих}) = \frac{1}{n(n - 1)}$
 
     Получаем: $D\xi = n \frac{n - 1}{n^2} + 2\frac{n(n - 1)}{2}\frac{1}{n^2(n - 1)} = \frac{n - 1}{n} + \frac{1}{n} = 1$
-
-    
-
-
-
-    
 
 \end{document}
