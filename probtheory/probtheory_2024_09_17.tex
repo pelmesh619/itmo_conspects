@@ -11,6 +11,8 @@
 \begin{document}
     \section{Лекция 3}
 
+    \hypertarget{conditionalprobability}{}
+
     \subsection{Условная вероятность}
 
     Условная вероятность $P(A|B)$ (или $P_B(A)$) - вероятность события $A$, вычисленная в предположении, что событие $B$ уже произошло
@@ -50,6 +52,8 @@
 
     $P(A|B) = \frac{P(AB)}{P(B)} = \frac{P(AB)}{1 - P(\overline{B})} = \frac{P(A)}{1 - 0.99^{10}} = \frac{0.01}{1 - 0.99^{10}} = 0.105$
 
+    \hypertarget{eventsmultiplicationformula}{}
+
     Формула умножения:
 
     В качестве следствия условной вероятности получаем:
@@ -84,6 +88,8 @@
 
     $P(A) = P(\overline{A_1} \cdot \overline{A_2} \cdot \dots \cdot \overline{A_{i - 1}} \cdot A_i) = \frac{n - 1}{n} \cdot \frac{n - 2}{n - 1} \cdot \dots \cdot \frac{n - (i - 1)}{n - (i - 2)} \cdot \frac{1}{n - (i - 1)} = \frac{1}{n}$
 
+    \hypertarget{completegroupofevents}{}
+
     \subsection{Полная группа событий}
 
     \Def События $H_1, H_2, \dots, H_n, \dots$ образуют полную группу событий, если они попарно несовместны и содержат все возможные элементарные исходы
@@ -92,7 +98,11 @@
 
     Следствие: $\sum_{i = 1}^\infty P(H_i) = 1$
 
-    \ThN{Формула полной вероятности} $\letsymbol H_1, H_2, \dots, H_n, \dots$ - полная группа событий. Тогда $P(A) = \sum_{i = 1}^\infty P(H_i) P(A | H_i)$
+    \hypertarget{formulaofcompleteprobability}{}
+
+    \begin{MyTheorem}
+        \ThNs{Формула полной вероятности} $\letsymbol H_1, H_2, \dots, H_n, \dots$ - полная группа событий. Тогда $P(A) = \sum_{i = 1}^\infty P(H_i) P(A | H_i)$
+    \end{MyTheorem}
 
     \begin{tcolorbox}
         $\Box$
@@ -103,9 +113,13 @@
         $\Box$
     \end{tcolorbox}
 
-    \ThN{Формула Байеса} $\letsymbol H_1, H_2, \dots, H_n$ - полная группа событий, и известно, что событие $A$ уже произошло
+    \hypertarget{bayesformula}{}
 
-    Тогда $P(H_k | A) = \frac{P(H_k) P(A | H_k)}{\sum_{i = 1}^\infty P(H_i) P(A | H_i)}$
+    \begin{MyTheorem}
+        \ThNs{Формула Байеса} $\letsymbol H_1, H_2, \dots, H_n$ - полная группа событий, и известно, что событие $A$ уже произошло
+
+        Тогда $P(H_k | A) = \frac{P(H_k) P(A | H_k)}{\sum_{i = 1}^\infty P(H_i) P(A | H_i)}$
+    \end{MyTheorem}
 
     \begin{tcolorbox}
         $\Box$
