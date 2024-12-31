@@ -54,9 +54,81 @@
     $P(A) = \frac{S(A)}{S(\Omega)} = \frac{\int_0^\pi l \sin \varphi d \varphi}{\pi l} = \frac{2l}{\pi l} = \frac{2}{\pi}$
 
     \item Аксиоматическое определение вероятности. Вероятностное пространство. Свойства вероятности.
+
+    \hyperlink{axiomaticdefinitionofprobability}{Аксиоматическое определение вероятности}: $\letsymbol\ \Omega$ - пространство элементарных исходов, $\mathcal{F}$ - его $\sigma$-алгебра событий.
+    \textit{Вероятностью} на $(\Omega, \mathcal{F})$ называется функция $P: \mathcal{F} \to \Real$ со свойствами:
+
+    \begin{enumerate}
+        \item $P(A) \geq 0 \quad \forall A \in \mathcal{F}$ (неотрицательность)
+
+        \item Если $A_1, A_2, \dots, A_n, \dots \in \mathcal{F}$ - несовместное, то $P(\sum_{i = 1}^\infty A_i) = \sum_{i = 1}^\infty P(A_i)$ (свойство счетной аддитивности)
+
+        \item $P(\Omega) = 1$ (условие нормированности)
+    \end{enumerate}
+
+    \hyperlink{probabilityspace}{Вероятностное пространство}: Вероятностное пространство - тройка $(\Omega, \mathcal{F}, P)$
+
+    \hyperlink{probabilityproperties}{Свойства вероятности}: 
+
+    \begin{enumerate}
+        \item Так как $\emptyset$ и $\Omega$ - несовместные, то $1 = P(\Omega) = P(\Omega + \emptyset) = 1 + P(\emptyset) \Longrightarrow P(\emptyset) = 0$
+
+        \item Формула обратной вероятности: $P(A) = 1 - P(\overline{A})$
+
+        \item $P(A) = 1 - P(\overline{A}) \leq 1$
+    \end{enumerate}
+
     \item Аксиома непрерывности. Ее смысл и вывод.
+
+    \hyperlink{continuityaxiom}{Аксиома непрерывности}: \Ths Пусть имеется убывающая цепочка событий $A_1 \supset A_2 \supset A_3 \supset \dots \supset A_n \supset \dots$ и $\bigcap_{i = 1}^\infty A_n = \emptyset$
+
+    Тогда $P(A_n) \underset{n \to \infty}{\to} 0$
+
+    При непрерывном изменении области $A \subset \Omega \subset \Real^n$ соответствующая вероятность $P(A)$ также должна изменятся непрерывно
+
+    \begin{MyProof}
+        Ясно, что $A_n = \sum_{i = n}^\infty A_i \overline{A}_{i + 1} + \prod_{i = n}^\infty A_i$
+
+        $\prod_{i = n}^\infty A_i = A_n \cdot \prod_{i = n + 1}^\infty A_i = \prod_{i = 1}^n
+        \cdot \prod_{i = n + 1}^\infty A_i = \prod_{i = 1}^\infty = \emptyset \Longrightarrow
+        A_n = \sum_{i = n}^\infty A_n \overline{A_{n + 1}}$ и так как эти события несовместны,
+        то по свойству счетной аддитивности $P(A_n) = \sum_{i = n}^\infty P(A_i \overline{A_{i + 1}})$ - это остаток (хвост) сходящегося ряда
+
+        $P(A_1) = \sum_{i = 1}^\infty P(A_i \overline{A_{i + 1}}) = \sum_{i = 1}^{n - 1} P(A_i \overline{A_{i + 1}}) + P(A_n)$ и $P(A_n) \underset{n \to \infty}{\to} 0$ по необходимому признаку сходимости
+    \end{MyProof}
+
     \item Свойства операций сложения и умножения. Формула сложения вероятностей.
-    \item Независимость событий. Независимые события в совокупности и попарно.                   Пример Бернштейна. 
+
+    \hyperlink{probabilityoperationsproperties}{Свойства операций сложения и умножения}:
+
+    \begin{enumerate}
+        \item Свойство дистрибутивности: $A \cdot (B + C) = AB + AC$
+
+        \item Формула сложения: если $A$ и $B$ несовместны, то $P(A + B) = P(A) + P(B)$
+
+        \item Формула сложения вероятностей: $P(A + B) = P(A) + P(B) - P(AB)$
+    \end{enumerate}
+
+    \item Независимость событий. Независимые события в совокупности и попарно. Пример Бернштейна. 
+
+    \hyperlink{independantevents}{Независимые события}: События $A$ и $B$ называются независимыми, если $P(A \cdot B) = P(A) \cdot P(B)$
+
+    События $A_1, A_2, \dots A_n$ - независимы в совокупности, если для любого набора $i_1, i_2, \dots, i_k \ (2 \leq k \leq n)$
+    $P(A_{i_1} \cdot A_{i_2} \cdot \dots \cdot A_{i_k}) = P(A_{i_1}) \cdot P(A_{i_2}) \cdot \dots \cdot P(A_{i_k})$
+
+    \hyperlink{bernshteinsexample}{Пример Бернштейна}: Пусть имеется правильный тетраэдр, одна грань окрашена в красный, вторая в синий, третья в зеленый, а четвертая во все эти три цвета.
+
+    Подбросили тетраэдр, $\letsymbol A$ - грань, которая содержит красный цвет, $B$ - синий, $C$ - зеленый.
+
+    $P(A) = P(B) = P(C) = \frac{2}{4} = \frac{1}{2}$
+
+    Так как $P(AB) = P(AC) = P(BC) = \frac{1}{4}$
+
+    $P(AB) = \frac{1}{4} = \frac{1}{2} \cdot \frac{1}{2} = P(A) P(B)$ - попарная независимость
+
+    $P(ABC) = \frac{1}{4} \neq P(A) P(B) P(C)$ - но вот независимость в совокупности не соблюдается
+
+
     \item Условная вероятность. Формула умножения событий.
     \item Полная группа событий. Формула полной вероятности. Формула Байеса.
     \item Последовательность независимых испытаний. Формула Бернулли. Наиболее вероятное число успехов в схеме Бернулли.
