@@ -13,6 +13,8 @@
 
     \subsection{Функция распределения}
 
+    \hypertarget{distributionfunction}{}
+
     \Def Функция распределения $F_\xi(x)$ случайной величины $\xi$ называется функция $F_\xi(x) = P(\xi < x)$
 
     \includegraphics[height=4cm]{probtheory/images/probtheory_2024_10_22_2}
@@ -30,6 +32,8 @@
         $F_\xi(x) = \begin{cases}0 \quad x \leq 0, \\ 1 - p \quad 0 < x \leq 1, \\ 1 \quad x > 1\end{cases}$
 
     \end{minipage}
+
+    \hypertarget{distributionfunctionproperties}{}
 
     \subsubsection{Свойства функции распределения}
 
@@ -109,14 +113,20 @@
         \Ths Случайная величина $\xi$ имеет дискретное распределение тогда и только тогда, когда ее функция распределения имеет ступенчатый вид
     \end{MyTheorem}
 
+    \hypertarget{continuousdistributionproperties}{}
+
     \subsection{Абсолютно непрерывное распределение}
 
     \Def Случайная величина $\xi$ имеет абсолютно непрерывное распределение, если существует $f_\xi(x)$ такая, что $\forall B \in \mathcal{B}(\Real)
     \ p(\xi \in B) = \int_B f_\xi(x)dx$
 
+    \hypertarget{densityfunctiondefinition}{}
+
     Функция $f_\xi$ называется плотностью распределения случайной величины
 
     (в определении использует интеграл Лебега, так как $B$ может быть не просто интервалом на $\Real$)
+
+    \hypertarget{densityfunctionproperties}{}
 
     \subsubsection{Свойства плотности и функции распределения абсолютно непрерывного распределения}
 
@@ -154,6 +164,8 @@
 
     9) \Ths Если $f(x) \leq 0$ и $\int_{-\infty}^{\infty} f(x)dx$ (выполнены свойства 2 и 6), то $f(x)$ - плотность некоторого распределения
 
+    \hypertarget{attributesofcontinuousrandomvariable}{}
+
     \subsubsection{Числовые характеристики}
 
     \Def Математическим ожиданием $E\xi$ случайной абсолютно непрерывной величины $\xi$ называется величина $E\xi = \int_{-\infty}^{\infty} xf_\xi(x) dx$ 
@@ -181,6 +193,8 @@
     \Def Модой $Mo$ случайной величины $\xi$ называется точка локального максимума плотности
 
     \includegraphics[height=4cm]{probtheory/images/probtheory_2024_10_22_6}
+
+    \hypertarget{singulardistribution}{}
 
     \subsection{Сингулярное распределение}
 
@@ -227,6 +241,8 @@
     
         $F_\xi(x) = \begin{cases}0 \quad x \leq 0, \\ \frac{1}{2}F(3x) \quad 0 < x \leq \frac{1}{3}, \\ \frac{1}{2} \quad \frac{1}{3} < x \leq \frac{2}{3}, \\ \frac{1}{2} + \frac{1}{2}F(3x - 2) \quad \frac{2}{3} < x \leq 1, \\ 1 \quad x > 1\end{cases}$
     \end{minipage}
+
+    \hypertarget{lebesguetheorem}{}
 
     \begin{MyTheorem}
         \ThNs{Лебега}
