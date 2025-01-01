@@ -424,9 +424,67 @@
     Модой $Mo$ случайной величины $\xi$ называется точка локального максимума плотности
 
     \item Равномерное распределение. 
+
+    \hyperlink{uniformdistribution}{Равномерное распределение}: Случайная величина $\xi$ имеет равномерное распределение $\xi \in U(a, b)$, если ее плотность
+    на этом отрезке постоянна. Получаем функцию плотности $f_\xi(x) = \begin{cases}0, \quad x < a \\ \frac{1}{b - a}, \quad a \leq x < b \\ 0 \quad x \geq b\end{cases}$ \hfill {\scriptsize $\frac{1}{b - a}$ из усл. нормировки}
+
+    $F(x) = \int_{-\infty}^\infty f(x)dx = \begin{cases}0, \quad x < a \\ \frac{x - a}{b - a}, \quad a \leq x < b \\ 1 \quad x \geq b\end{cases}$
+
+    $E\xi = \frac{a + b}{2}, \quad D\xi = \frac{(b - a)^2}{12}, \quad \sigma = \frac{b - a}{2\sqrt{3}}$
+
+    $p(\alpha < \xi < \beta) = \frac{\beta - \alpha}{b - a}$ при условии, что $\alpha, \beta \in [a, b]$
+
     \item Показательное распределение. Свойство нестарения.
+
+    \hyperlink{exponentialdistribution}{Показательное распределение}: Случайная величина $\xi$ имеет показательное (или экспоненциальное) распределение с параметром $\alpha > 0$ (обозн. $\xi \in E_\alpha$),
+    если ее плотность имеет вид: $f_\xi(x) = \begin{cases}0, \quad x < 0 \\ \alpha e^{-\alpha x}, \quad x \geq 0\end{cases}$
+
+    $F_\xi(x) = \begin{cases}0, \quad x < 0 \\ \int_0^x \alpha e^{-\alpha x} = 1 - e^{-\alpha x}, \quad x \geq 0\end{cases}$
+
+    $E\xi = \frac{1}{\alpha}, \quad D\xi = \frac{1}{\alpha^2}, \quad \sigma = \frac{1}{\alpha}$
+
+    $p(\alpha < \xi < \beta) = F(b) - F(a) = e^{-a\alpha} - e^{-b\alpha} \quad\quad\quad a, b \geq 0$
+
+    Из непрерывных случайных величин только показательная обладает свойством нестарения:
+    \Ths $\letsymbol \xi \in E_\alpha$. Тогда $p(\xi < x + y \ | \ \xi > x) = p(\xi > y) \quad\quad \forall x, y > 0$
+
     \item Нормальное распределение. Стандартное нормальное распределение, его числовые характеристики.
+
+    \hyperlink{normaldistribution}{Нормальное распределение}: Случайная величина $\xi$ имеет нормальное распределение с параметрами $a$ и $\sigma^2$ (обозн. $\xi \in N(a, \sigma^2)$), если
+    ее плотность имеет вид: $f(x) = \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}}$
+
+    $F(x) = \frac{1}{\sigma \sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{(t - a)^2}{2\sigma^2}} dt$
+
+    $E\xi = a, \quad D\xi = \sigma^2, \quad \sigma = \sigma$
+
+    \hyperlink{standardnormaldistribution}{Стандартным нормальным распределением} называется нормальное распределение с параметрами $a = 0, \sigma^2 = 1$: $\xi \in N(0, 1)$
+
+    Плотность: $\phi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ - функция Гаусса
+
+    Распределение: $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{z^2}{2}} dz$ - функция стандартного нормального распределения
+
+    $E\xi = 0; \ D\xi = 1$
+
     \item Связь между стандартным нормальным и нормальным распределениями. Следствия.
+
+    \hyperlink{connectionbetweennormalandstandard}{Связь}: 
+
+    1) $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $F_\xi(x) = F_0\left(\frac{x - a}{\sigma}\right)$
+
+    2) Если $\xi \in N(a, \sigma^2)$, то $\eta = \frac{\xi - a}{\sigma} \in N(0, 1)$ (процесс $\xi \to \eta$ называется стандартизацией)
+
+    3) $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $p(\alpha < \xi < \beta) = \Phi\left(\frac{\beta - a}{\sigma}\right) - \Phi\left(\frac{\alpha - a}{\sigma}\right)$
+
+    4) Вероятность попадания в симметричный интервал (вероятность отклонения случайной величины от матожидания) 
+    $p(|\xi - a| < t) = 2\Phi\left(\frac{t}{\sigma}\right)$
+
+    5) Правило 3 \enquote{сигм}: $p(|\xi - a| < 3\sigma) \approx 0.9973$ - попадание случайной величины нормального распределения в интервал $(a - 3\sigma, a + 3\sigma)$ близко к 1
+
+    6) Свойство линейности: если случайная величина $\xi \in N(a, \sigma^2)$, то $\eta = \gamma \xi + b \in N(a \gamma + b, \gamma^2 \sigma^2)$ 
+    
+    7) Устойчивость относительно суммирования: если случайные величины $\xi_1 \in N(a_1, \sigma_1^2), \xi_2 \in N(a_2, \sigma_2^2)$, и они независимы, то $\xi_1 + \xi_2 \in N(a_1 + a_2, \sigma^2_1 + \sigma^2_2)$
+
+    
     \item Сингулярные распределения. Теорема Лебега (без док-ва).
 
     \hyperlink{singulardistribution}{Сингулярное распределение}: Случайная величина $\xi$ имеет сингулярное распределение, если $\exists B$ - Борелевское множество с нулевой мерой Лебега $\lambda(B) = 0$, такое что $p(\xi \in B) \in 1$, но $P(\xi = x) = 0 \ \, \forall x \in B$

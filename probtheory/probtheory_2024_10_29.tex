@@ -13,9 +13,11 @@
 
     \subsection{Стандартное абсолютно непрерывное распределение}
 
+    \hypertarget{uniformdistribution}{}
+
     \subsubsection{I. Равномерное распределение}
 
-    \Defs Случайная величина $\xi$ имеет равномерное распределение $\xi \in u(a, b)$, если ее плотность
+    \Defs Случайная величина $\xi$ имеет равномерное распределение $\xi \in U(a, b)$, если ее плотность
     на этом отрезке постоянна
 
     Получаем функцию плотности $f_\xi(x) = \begin{cases}0, \quad x < a \\ \frac{1}{b - a}, \quad a \leq x < b \\ 0 \quad x \geq b\end{cases}$ \hfill {\scriptsize $\frac{1}{b - a}$ из усл. нормировки}
@@ -38,7 +40,9 @@
 
     $p(\alpha < \xi < \beta) = \frac{\beta - \alpha}{b - a}$ при условии, что $\alpha, \beta \in [a, b]$
 
-    \Nota Примеры равномерного распределения: задача со временем, датчики случайных чисел имеют стандартное равномерное распределение $u(0, 1)$
+    \Nota Примеры равномерного распределения: задача со временем, датчики случайных чисел имеют стандартное равномерное распределение $U(0, 1)$
+
+    \hypertarget{exponentialdistribution}{}
 
     \subsubsection{II. Показательное распределение}
 
@@ -77,7 +81,7 @@
     \begin{MyProof}
         $\Box$
 
-        $p(\xi < x + y \ | \ \xi > x) = p(\xi > y) = \frac{p(\xi > x + y, \xi > x)}{p(\xi > x)} = \frac{1 - p(\xi < x + y)}{1 - p(\xi < x)} = 
+        $p(\xi < x + y \ | \ \xi > x) = \frac{p(\xi > x + y, \xi > x)}{p(\xi > x)} = \frac{1 - p(\xi < x + y)}{1 - p(\xi < x)} = 
         \frac{1 - F(x + y)}{1 - F(x)} = \frac{e^{-\alpha(x + y)}}{e^{-\alpha x}} = e^{-\alpha y} = 1 - (1 - e^{-\alpha y}) = 1 - p(\xi < y) = p(\xi > y)$
 
         $\Box$
@@ -89,6 +93,7 @@
 
     \Notas Применется в системах массового обслуживания, теория надежности
 
+    \hypertarget{normaldistribution}{}
 
     \subsubsection{III. Нормальное распределение (Гауссовское)}
 
@@ -126,6 +131,8 @@
 
     \mediumvspace
 
+    \hypertarget{standardnormaldistribution}{}
+
     \textbf{Стандартное нормальное распределение}
 
     \Def Стандартным нормальным распределением называется нормальное распределение с параметрами $a = 0, \sigma^2 = 1$: $\xi \in N(0, 1)$
@@ -140,6 +147,8 @@
 
     Функция Лапласа нечетная и из соображения симметрии легко вычисляется для отрицательных $x$, однако большинство ПО используют $F_0(x)$
     
+    \hypertarget{connectionbetweennormalandstandard}{}
+
     \subsubsection{Связь между нормальным и стандартным нормальным распределениями}
 
     1) $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $F_\xi(x) = F_0\left(\frac{x - a}{\sigma}\right)$
@@ -176,7 +185,7 @@
         $p(|\xi - a| < t) = p(-t < \xi - a < t) = p(a - t < \xi < a + t) = \Phi\left(\frac{a + t - a}{\sigma}\right) - \Phi\left(\frac{a - t - a}{\sigma}\right) = \Phi\left(\frac{t}{\sigma}\right) - \Phi\left(-\frac{t}{\sigma}\right) = 2\Phi\left(\frac{t}{\sigma}\right)$
     \end{MyProof}
 
-    \Notas Если через $F_0(x)$, то $p(|\xi - a| < t) = 2\F_0\left(\frac{t}{\sigma}\right) - 1$
+    \Notas Если через $F_0(x)$, то $p(|\xi - a| < t) = 2F_0\left(\frac{t}{\sigma}\right) - 1$
 
     5) Правило 3 \enquote{сигм}: $p(|\xi - a| < 3\sigma) \approx 0.9973$ - попадание случайной величины нормального распределения в интервал $(a - 3\sigma, a + 3\sigma)$ близко к 1
 
