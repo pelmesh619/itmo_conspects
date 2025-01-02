@@ -11,6 +11,8 @@
 \begin{document}
     \section{Лекция 12}
 
+    \hypertarget{jointdistribution}{}
+
     \subsection{Совместное распределение случайных величин}
 
     Пусть $\xi_1, \xi_2, \dots, \xi_n$ заданы на одном и том же вероятностном пространстве $(\Omega, \mathcal{F}, p)$
@@ -30,6 +32,8 @@
 
     $(\Real^n, \mathcal{B}(\Real^n), P(B))$
 
+    \hypertarget{jointdistributionfunction}{}
+
     \subsubsection{Функция распределения}
 
     \Def Функцией совместного распределения случайных величин $\xi_1, \xi_2, \dots, \xi_n$ называется функция 
@@ -43,6 +47,7 @@
         \includegraphics[width=0.55\textwidth]{probtheory/images/probtheory_2024_11_19_1}
     \end{center}
 
+    \hypertarget{jointdistributionfunctionproperties}{}
 
     \subsubsection{Свойства функции распределения}
 
@@ -59,6 +64,8 @@
 
         \item $P(x_1 \leq \xi < x_2, y_1 \leq \eta < y_2) = F_{\xi, \eta}(x_2, y_2) - F_{\xi, \eta}(x_2, y_1) - F_{\xi, \eta}(x_1, y_2) + F_{\xi, \eta}(x_1, y_1)$
     \end{enumerate}
+
+    \hypertarget{randomvariablesindependence}{}
 
     \subsection{Независимость случайных величин}
 
@@ -80,6 +87,8 @@
     \Nota Из попарной независимости не следует независимость в совокупности, как видно из примера Берншейна
 
     Под независимыми величинами будем понимать независимые в совокупности
+
+    \hypertarget{discretesystemoftwovariables}{}
 
     \subsection{Дискретная система двух случайных величин}
 
@@ -141,6 +150,8 @@
 
     $p_{11} = 0.1 \neq 0.12 = p_1 \cdot q_1 \qquad \Longrightarrow \xi, \eta$ - зависимы
 
+    \hypertarget{continuoussystemoftwovariables}{}
+
     \subsection{Абсолютно непрерывная система двух случайных величин}
 
     \Def Случайные величины $\xi$ и $\eta$ имеют абсолютно непрерывное совместное распределение, если
@@ -154,6 +165,7 @@
         \includegraphics[width=0.55\textwidth]{probtheory/images/probtheory_2024_11_19_2}
     \end{center}
 
+    \hypertarget{densityfunctionpropertiesincontinuoussystem}{}
 
     \underline{Свойства} плотности:
 
