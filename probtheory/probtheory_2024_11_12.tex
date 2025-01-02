@@ -13,6 +13,8 @@
 
     \subsection{Сходимость случайных величин}
 
+    \hypertarget{convergencetypes}{}
+
     Рассмотрим 3 вида сходимости:
 
     \begin{itemize}
@@ -47,6 +49,8 @@
     
     \end{itemize}
 
+    \hypertarget{connectionbetweenconvergencetypes}{}
+
     \subsubsection{Связь между видами сходимости}
 
     \begin{MyTheorem}
@@ -54,7 +58,7 @@
     \end{MyTheorem}
 
     \begin{MyTheorem}
-        \Ths Если $\xi_n C = \mathrm{const}$, то $\xi_n \overset{p}{\longrightarrow} C$
+        \Ths Если $\xi_n \rightrightarrows C = \mathrm{const}$, то $\xi_n \overset{p}{\longrightarrow} C$
     \end{MyTheorem}
 
     \begin{MyProof}
@@ -79,6 +83,8 @@
 
     \subsubsection{I. Неравенство Маркова}
 
+    \hypertarget{markovsinequality}{}
+
     \begin{MyTheorem}
         \Ths $p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon} \quad \forall \varepsilon > 0$
     \end{MyTheorem}
@@ -96,6 +102,8 @@
         \Longrightarrow p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon}$
     \end{MyProof}
 
+    \hypertarget{chebyshevsinequality}{}
+
     \subsubsection{II. Неравенство Чебышева}
 
     \begin{MyTheorem}
@@ -108,6 +116,8 @@
 
     \subsubsection{III. Правило \enquote{трех сигм}}
     
+    \hypertarget{ruleofthreesigmas}{}
+
     \begin{MyTheorem}
         \Ths $P(|\xi - E\xi| \geq 3\sigma) \leq \frac{1}{9}$
     \end{MyTheorem}
@@ -115,6 +125,8 @@
     \begin{MyProof}
         По неравенству Чебышева $P(|\xi - E\xi| \geq 3\sigma) \leq \frac{D\xi}{(3\sigma)^2} = \frac{D\xi}{9\sigma^2} = \frac{1}{9}$
     \end{MyProof}
+
+    \hypertarget{averagevalueofrandomvariables}{}
 
     \subsection{Среднее арифмитическое независимых одинаково распределенных случайных величин}
 
@@ -133,6 +145,8 @@
     $\sigma\left(\frac{S_n}{n}\right) = \frac{\sigma}{\sqrt{n}}$ - СКО уменьшилось в $\sqrt{n}$ раз
 
     \subsection{Законы больших чисел}
+
+    \hypertarget{lawofbignumberschebyshev}{}
 
     \subsubsection{I. Закон больших чисел Чебышева}
 
@@ -161,6 +175,8 @@
 
     \subsubsection{II. Закон больших чисел Бернулли}
 
+    \hypertarget{lawofbignumbersbernoulli2}{}
+
     \begin{MyTheorem}
         \Ths Пусть $v_n$ - число успехов из $n$ независимых испытаний, $p = P(A)$ - вероятность успеха при одном испытании.
         Тогда $\frac{v_n}{n} \overset{p}{\longrightarrow} P(A)$
@@ -180,10 +196,14 @@
 
     \subsubsection{III. Закон больших чисел Хинчина}
 
+    \hypertarget{lawofbignumberskhinchin}{}
+
     \begin{MyTheorem}
         \Ths $v_n = \xi_1 + \dots + \xi_n$ последовательность независимых одинаково распределенных случайных величин с конечным первым моментом, тогда
         $\frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\longrightarrow} E\xi_i$
     \end{MyTheorem}
+
+    \hypertarget{lawofbignumberskolmogorov}{}
 
     \subsubsection{IV. Усиленный закон больших чисел Колмогорова}
 
@@ -202,6 +222,8 @@
     \end{MyProof}
 
     \subsection{Центральная предельная теорема}
+
+    \hypertarget{centrallimittheorem}{}
 
     \begin{MyTheorem}
         \Ths Центральная предельная теорема (ЦПТ Ляпунова, $\approx$1901 год)

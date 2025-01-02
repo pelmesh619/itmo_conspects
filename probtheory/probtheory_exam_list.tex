@@ -536,6 +536,35 @@
 
 
     \item Виды сходимостей случайных величин, связь между ними. Теорема об эквивалентности сходимостей к константе (все без док-ва).
+
+    \hyperlink{convergencetypes}{Виды сходимостей}:
+
+    \begin{itemize}
+        \item Сходимость \enquote{почти наверное}
+
+        \Defs Последовательность случайных величин $\{\xi_n\}$ сходится \enquote{почти наверное} к случайной величине $\xi$ при $n \to \infty$ ($\xi_n \overset{\text{п. н.}}{\longrightarrow} \xi$), 
+        если $p(\omega \in \Omega \ | \ \xi_n(\omega) \underset{n \to \infty}{\longrightarrow} \xi(\omega)) = 1$
+
+        \item Сходимость по вероятности
+
+        \Defs Последовательность случайных величин $\{\xi_n\}$ сходится по вероятности к случайной величине $\xi$ при $n \to \infty$
+        ($\xi_n \overset{p}{\longrightarrow} \xi$), если $\forall \varepsilon > 0 \quad p(|\xi_n - \xi| < \varepsilon) \underset{n \to \infty}{\longrightarrow} 1$
+        
+        \item Слабая сходимость
+
+        \Defs Последовательность случайных величин $\xi_n$ слабо сходится к случайной величине $\xi$ при $n \to \infty$
+        ($\xi_n \rightrightarrows \xi$), если $F_{\xi_n}(x) \longrightarrow F_\xi(x) \forall x$, где $F_\xi(x)$ - непрерывна
+    \end{itemize}
+
+    \hyperlink{connectionbetweenconvergencetypes}{Связь}: 
+
+    \Ths $\xi_n \overset{\text{п. н.}}{\longrightarrow} \xi \Longrightarrow \xi_n \overset{p}{\longrightarrow} \xi \Longrightarrow \xi_n \rightrightarrows \xi$
+
+    \Ths Если $\xi_n \rightrightarrows C = \mathrm{const}$, то $\xi_n \overset{p}{\longrightarrow} C$
+
+    \Nota В общем случае не только из слабой сходимости не следует сходимость по вероятности, но и бессмысленно говорить
+    об этом, так как слабая сходимость - это сходимость не случайных величин, а их распределений
+
     \item Математическое ожидание преобразованной случайной величины. Свойства моментов.
     
     \hyperlink{expectedvalueoftransformedvariable}{Матожидание}: \Ths Если $\xi$ - дискретная случайная величина, то $Eg(\xi) = \sum_{i = 1}^\infty g(x_i) \cdot p(\xi = x_i)$
@@ -559,11 +588,49 @@
 
     Следствие: $Ee^\xi \geq e^{E\xi}, \quad E\xi^2 \geq (E\xi)^2, \quad E|\xi| \geq |E\xi|, \quad E\ln(\xi) \leq \ln(E\xi), \quad E\frac{1}{\xi} \geq \frac{1}{E\xi}$ при $\xi > 0$
 
-
-
     \item Неравенства Маркова, Чебышева, правило трех сигм.
+
+    Для $\xi$, у которой существует матожидание, верно: 
+
+    \hyperlink{markovsinequality}{Неравенство Маркова}: \Ths $p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon} \quad \forall \varepsilon > 0$
+    
+    \hyperlink{chebyshevsinequality}{Неравенство Чебышева}: \Ths $P(|\xi - E\xi| \geq \varepsilon) \leq \frac{D\xi}{\varepsilon^2}$
+    
+    \hyperlink{ruleofthreesigmas}{Правило \enquote{трех сигм}}: \Ths $P(|\xi - E\xi| \geq 3\sigma) \leq \frac{1}{9}$
+
     \item Среднее арифметическое одинаковых независимых случайных величин. Закон больших чисел Чебышева.
+
+    \hyperlink{averagevalueofrandomvariables}{Среднее арифметическое}: $\frac{S_n}{n} = \frac{\xi_1 + \dots + \xi_n}{n}$
+
+    $E\left(\frac{S_n}{n}\right) = \frac{1}{n} (E\xi_1 + \dots + E\xi_n) = \frac{1}{n} na = a = E\xi_1$ - математическое ожидание не меняется
+
+    $D\left(\frac{S_n}{n}\right) = \frac{1}{n^2} (D\xi_1 + \dots + D\xi_n) = \frac{1}{n^2} nd = \frac{d}{n} = \frac{D\xi_1}{n}$ - дисперсия уменьшилась в $n$ раз
+
+    $\sigma\left(\frac{S_n}{n}\right) = \frac{\sigma}{\sqrt{n}}$ - СКО уменьшилось в $\sqrt{n}$ раз
+
+    \hyperlink{lawofbignumberschebyshev}{Закон больших чисел Чебышев}: \Ths Пусть $\xi_1, \dots, \xi_n, \dots$ - последовательность независимых одинаково распределенных с конечным вторым моментом,
+    тогда $\frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\underset{n \to \infty}{\longrightarrow}} E\xi_1$
+
     \item Вывод закона больших чисел Бернулли из закона больших чисел Чебышева. Законы больших чисел Хинчина и Колмогорова (только формулировки).
+
+    \hyperlink{lawofbignumbersbernoulli2}{ЗБЧ Бернулли}: \Ths Пусть $v_n$ - число успехов из $n$ независимых испытаний, $p = P(A)$ - вероятность успеха при одном испытании.
+    Тогда $\frac{v_n}{n} \overset{p}{\longrightarrow} P(A)$
+
+    \begin{MyProof}
+        $v_n = \xi_1 + \dots + \xi_n$, где $\xi_i \in B_p$ - число успехов при $i$-ом испытании
+
+        $E\xi_i = p; D\xi_i = pq$
+
+        $\frac{v_n}{n} \overset{p}{\longrightarrow} E\xi_1 = p$
+
+        $p\left(\left|\frac{v_n}{n} - p\right| \geq \varepsilon\right) \leq \frac{D\xi_1}{n\varepsilon^2} = \frac{pq}{n\varepsilon^2}$
+    \end{MyProof}
+
+    \hyperlink{lawofbignumberskhinchin}{ЗБЧ Хинчина}: \Ths $v_n = \xi_1 + \dots + \xi_n$ последовательность независимых одинаково распределенных случайных величин с конечным первым моментом, тогда
+    $\frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\longrightarrow} E\xi_i$
+
+    \hyperlink{lawofbignumberskolmogorov}{ЗБЧ Колмогорова}: В условиях теоремы Хинчина $\frac{\xi_1 + \dots + \xi_n}{n} \overset{\text{п.н.}}{\longrightarrow} E\xi_1$
+
     \item Совместные распределения случайных величин. Функция совместного распределения, ее свойства. Независимость случайных величин.
     \item Дискретная система двух случайных величин. Закон совместного распределения. Маргинальные распределения.
     \item Абсолютно непрерывная система двух случайных величин. Плотность совместного распределения, ее свойства.
@@ -578,4 +645,11 @@
     \item Характеристические функции стандартных распределений (Бернулли, биномиальное, Пуассона, нормальное). Следствия.
     \item Доказательство закона больших чисел Хинчина.
     \item Центральная предельная теорема. Вывод из нее предельной теоремы Муавра-Лапласа. Неравенство Берри-Ессеена (формулировка). 
+
+    \hyperlink{centrallimittheorem}{ЦПТ Ляпунова} \Ths Пусть $\xi_1, \dots, \xi_n, \dots$ - последовательность независимых одинаково распределенных случайных величин
+    с конечной дисперсией ($D\xi_1 < \infty$) и $S_n = \sum_{i = 1}^n \xi_i$. Тогда имеет место слабая сходимость:
+
+    \[\frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} \rightrightarrows N(0, 1)\]
+
+
 \end{enumerate}
