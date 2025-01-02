@@ -11,7 +11,11 @@
 \begin{document}
     \section{Лекция 10}
 
+    \hypertarget{randomvaluetransformation}{}
+
     \subsection{Преобразование случайных величин}
+
+    \hypertarget{standardizationofrandomvalue}{}
 
     \subsubsection{Стандартизация случайной величины}
 
@@ -41,8 +45,10 @@
 
     \subsubsection{Линейное преобразование}
 
+    \hypertarget{lineartransformation}{}
+
     \begin{MyTheorem}
-        \Ths Пусть $\xi$ имеет плотность $f_\xi(x)$, тогда $\eta = a\xi + b$, где $a \neq 0$, имеет плотность $f_\eta(x) = \frac{1}{|a|}f_\xi(\frac{x - b}{a})$
+        \Ths Пусть $\xi$ имеет плотность $f_\xi(x)$, тогда $\eta = a\xi + b$, где $a \neq 0$, имеет плотность $f_\eta(x) = \frac{1}{|a|}f_\xi\left(\frac{x - b}{a}\right)$
     \end{MyTheorem}
 
     \begin{MyProof}
@@ -73,6 +79,8 @@
 
     \subsubsection{Монотонное преобразование}
 
+    \hypertarget{monotonoustransformationtheorem}{}
+
     \begin{MyTheorem}
         \Ths Пусть $f_\xi(x)$ - плотность случайной величины $\xi$, $g(x)$ - строго монотонная функция. Тогда 
         случайная величина $\eta = g(\xi)$ имеет плотность
@@ -80,10 +88,12 @@
         \[f_\eta(x) = |h^\prime(x)| f_\xi(h(x)), \qquad\qquad \text{где } h(g(x)) = x\]
     \end{MyTheorem}
 
-    Если $g(x)$ не является монотонное функцией, то поступаем следующим образом: разбиваем $g(x)$ на интервалы монотонности, 
-    для каждого $i$-ого интервала находимся $h_i(x)$ и плотность случайной величины ищем по \textit{формуле Смирнова}: 
+    Если $g(x)$ не является монотонной функцией, то поступаем следующим образом: разбиваем $g(x)$ на интервалы монотонности, 
+    для каждого $i$-ого интервала находим $h_i(x)$ и плотность случайной величины ищем по \textit{формуле Смирнова}: 
     $f_\eta(x) = \sum_{i = 0}^n |h_i^\prime(x)| f_\xi(h_i(x))$
     
+    \hypertarget{quantiletransformation}{}
+
     \subsubsection{Квантильное преобразование}
 
     \begin{MyTheorem}
@@ -127,7 +137,7 @@
 
     Если $\eta \in U(0, 1)$, то $\xi = -\frac{1}{\alpha} \ln(1 - \eta) \in E_\alpha$
 
-    \ExN{2} $\xi \in N(0, 1), \ F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-z^2}{2} dz$
+    \ExN{2} $\xi \in N(0, 1), \ F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{z^2}{2}} dz$
 
     Пусть $F_0^{-1}(x)$ - функция обратная к $F_0(x)$
 
@@ -135,11 +145,15 @@
 
     \subsection{Характеристики преобразованной случайной величины}
 
+    \hypertarget{expectedvalueoftransformedvariable}{}
+
     \begin{MyTheorem}
         \Ths Если $\xi$ - дискретная случайная величина, то $Eg(\xi) = \sum_{i = 1}^\infty g(x_i) \cdot p_i = \sum_{i = 1}^\infty g(x_i) \cdot p(\xi = x_i)$
 
         Для непрерывной случайной величины $Eg(\xi) = \int_{-\infty}^{\infty} g(x) f_\xi(x) dx$
     \end{MyTheorem}
+
+    \hypertarget{momentsproperties}{}
 
     \subsubsection{Свойства моментов}
 
@@ -161,6 +175,8 @@
         $E|\xi|^s \leq E|\xi|^t + 1$ и если $E|\xi|^t$ существует (конечно), то $\exists E|\xi|^s$
     
     \end{MyProof}
+
+    \hypertarget{jensensinequality}{}
 
     \begin{MyTheorem}
         \ThNs{Неравенство Йенсена} Пусть функция $g(x)$ выпукла вниз, тогда для любой случайной величины $\xi$
@@ -185,7 +201,7 @@
 
     Следствие:
 
-    $Ee^\xi \geq e^{E\xi}, \quad E\xi^2 \geq (E\xi)^2, \quad E|q| \geq |Eq|, \quad E\ln(\xi) \leq \ln(E\xi), \quad E\frac{1}{\xi} \geq \frac{1}{E\xi}$ при $\xi > 0$
+    $Ee^\xi \geq e^{E\xi}, \quad E\xi^2 \geq (E\xi)^2, \quad E|\xi| \geq |E\xi|, \quad E\ln(\xi) \leq \ln(E\xi), \quad E\frac{1}{\xi} \geq \frac{1}{E\xi}$ при $\xi > 0$
 
 
     \begin{minipage}{\textwidth}
