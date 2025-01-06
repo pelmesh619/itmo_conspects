@@ -3254,6 +3254,8 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 
 \Def $E(\xi + i\eta) = E\xi + iE\eta$
 
+\hypertarget{characteristicfunction}{}
+
 \Def Характеристической функций случайной величины $\xi$ называется функция 
 
 \[\varphi_\xi(t) = Ee^{it\xi}, t \in \Real\]
@@ -3325,6 +3327,8 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 \end{enumerate}
 
 \subsection{Характеристические функции стандартных распределений}
+
+\hypertarget{characteristicfunctionofstandarddistributions}{}
 
 \begin{itemize}
     \item Распределение Бернулли
@@ -3412,6 +3416,8 @@ $\left(1 + \frac{x}{n} + o\left(\frac{1}{n}\right)\right)^n \underset{n \to \inf
     e^{n \left(\frac{x}{n} + o\left(\frac{1}{n}\right) + o\left(\frac{x}{n} + o\left(\frac{1}{n}\right)\right)\right)} = e^{n\left(\frac{x}{n} + o\left(\frac{1}{n}\right) + o\left(\frac{1}{n}\right)\right)} = e^{x + n o\left(\frac{1}{n}\right)} \underset{n \to \infty}{\longrightarrow} e^x$
 \end{MyProof}
 
+\hypertarget{lawofbignumberskhinchin2}{}
+
 \begin{MyTheorem}
     \Ths Закон больших чисел Хинчина
 
@@ -3461,6 +3467,8 @@ $\left(1 + \frac{x}{n} + o\left(\frac{1}{n}\right)\right)^n \underset{n \to \inf
     характеристическая функция $N(0, 1)$
 \end{MyProof}
 
+\hypertarget{limittheoremdemoivrelaplace}{}
+
 \subsubsection{Предельная теорема Муавра-Лапласа}
 
 \begin{MyTheorem}
@@ -3483,6 +3491,8 @@ $p\left(\frac{k_1 - np}{\sqrt{npq}} \leq \frac{v_n - np}{\sqrt{npq}} \leq \frac{
 
 \Nota Аналогичным образом ЦПТ применяется для приближенного вычисления вероятностей, связанных с суммами большого числа независимых одинаковых случайных величин, заменяя стандартизованную сумму на стандартное нормальное распределение.
 Возникает вопрос: какова погрешность данного вычисления?
+
+\hypertarget{berryesseentheorem}{}
 
 \begin{MyTheorem}
     \Ths Неравенство Берри-Эссеена
@@ -4549,16 +4559,125 @@ $\gamma_\infty \approx 0.17$ для делового языка
     Если $r_{\xi,\eta} \neq 0$, то говорят, что случайные величины коррелированы друг с другом. Если $r_{\xi,\eta} > 0$, 
     то имеет прямая корреляция, если $r_{\xi,\eta} < 0$ - обратная
 
-
     \item Характеристическая функция случайной величины, ее свойства. Теорема о непрерывном соответствии (формулировка).
+
+    \hyperlink{characteristicfunction}{Характеристической функций} случайной величины $\xi$ называется функция $\varphi_\xi(t) = Ee^{it\xi}, t \in \Real$
+    
+    Свойства:
+
+    \begin{enumerate}
+        \item Любая случайная величина $\xi$ имеет характеристическую функцию, причем $|\varphi_\xi(t)| \leq 1$
+
+        \item Пусть $\varphi_\xi(t)$ - характеристическая функция случайной величины $\xi$. Тогда характеристическая функция
+        случайной величины $a + b\xi$ равна $\varphi_{a + b\xi}(t) = e^{ita} \varphi_{\xi}(bt)$
+
+        \item Характеристическая функция суммы независимых случайных величин равна произведению их характеристических функций
+
+        \item Пусть $E\xi^k < \infty$. Тогда $\varphi_\xi(t) = 1 + it E\xi - \frac{t^2}{2}E\xi^2 + \dots + \frac{(it)^k}{k!} E\xi^k + o(|t|^k)$
+
+        \item Пусть $E\xi^k < \infty$. Тогда $\varphi_\xi^{(k)}(0) = i^k E\xi^k$
+
+        \item Существует взаимно-однозначное соответствие между распределениями и характеристическими функциями.
+        Зная характеристическую функцию можно восстановить распределение.
+
+        \item Теорема о непрерывном соответствии
+        
+        \Ths Последовательность случайных величин $\{\xi_n\}$ слабо сходится к $\xi$ тогда и только тогда, когда
+            соответствующая последовательность характеристических функций сходится поточечно к $\varphi_\xi(t)$
+
+        $\{\xi_n\} \rightrightarrows \xi \Longleftrightarrow \varphi_{\xi_n}(t) \longrightarrow \varphi_\xi(t) \forall t \in \Real$
+    \end{enumerate}
+
     \item Характеристические функции стандартных распределений (Бернулли, биномиальное, Пуассона, нормальное). Следствия.
+
+    \hyperlink{characteristicfunctionofstandarddistributions}{Характеристические функции}: 
+
+    \begin{itemize}
+        \item Распределение Бернулли
+
+        \smallvspace
+
+        \begin{tabular}{c|c|c}
+            $\xi$ & $0$     & $1$    \\
+            \hline
+            $p$   & $1 - p$ & $p$
+        \end{tabular}
+
+        \smallvspace
+
+        $\varphi_\xi(t) = Ee^{i\xi t} = e^{i \cdot 0 \cdot t} p(\xi = 0) + e^{i \cdot 1 \cdot t} p(\xi = 1) = 1 - p + p e^{it}$
+
+        \item Биномиальное распределение
+
+        $P(\xi = k) = C_n^k p^k q^{n - k}, \quad k = 0, 1, \dots, n$
+
+        Если $t \in B_{n,p}$, то $\xi = \xi_1 + \xi_2 + \xi_3 + \dots + \xi_n$, где $\xi_i \in B_p$ - независимы
+
+        $\varphi_\xi(t) = (\varphi_{\xi_n}(t))^n = (1 - p + p e^{it})^n$
+
+        \item Распределение Пуассона
+
+        $P(\xi = k) = \frac{\lambda^k}{k!} e^{-\lambda}, \quad k = 0, 1, \dots, n$
+
+        $\varphi_\xi(t) = e^{\lambda (e^{it} - 1)}$
+
+        \underline{Следствие}: распределение Пуассона устойчиво относительно суммирования: $\letsymbol \xi \in \Pi_\lambda, \eta \in \Pi_\mu$, они независимы. Тогда $\xi + \eta \in \Pi_{\lambda + \mu}$
+
+        \item Стандартное нормальное распределение
+
+        $f_\xi(x) = \frac{1}{2\pi} e^{-\frac{x^2}{2}}$
+
+        $\varphi_\xi(t) = e^{-\frac{t^2}{2}}$
+
+        \item Нормальное распределение
+
+        $\xi \in N(a, \sigma^2)$
+
+        $\varphi_\xi(t) = e^{ita} \varphi_\eta(\sigma t) = e^{ita - \frac{\sigma^2t^2}{2}}$
+
+        \underline{Следствие}: нормальное распределение устойчиво относительно суммирования: если $\xi \in N(a_1, \sigma_1^2), \eta \in N(a_2, \sigma^2_2)$ и они независимы, то $\xi + \eta \in N(a_1 + a_2, \sigma_1^2 + \sigma_2^2)$
+
+    \end{itemize}
+
     \item Доказательство закона больших чисел Хинчина.
+
+    \hyperlink{lawofbignumberskhinchin2}{Закон больших чисел Хинчина}
+    
+    Пусть $\xi_1, \xi_2, \dots, \xi_n$ - последовательность независимых одинаково распределенных случайных величин с конечным матожиданием.
+    Тогда $\frac{S_n}{n} = \frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\longrightarrow} E\xi_1$
+    
+    \begin{MyProof}
+        Обозначим $a = E\xi_1$
+    
+        Ранее было доказано, что сходимость по вероятности к константе эквивалентно к слабой сходимости. Поэтому достаточно доказать, что $\frac{S_n}{n} \rightrightarrows a$
+    
+        По теореме о непрерывном соответствии остается доказать, что $\varphi_{\frac{S_n}{n}}(t) \longrightarrow \varphi_a(t) = e^{ita}$
+    
+        По четвертому свойству $\varphi_{\xi_1}(t) = 1 + itE\xi_1 + o(|t|) = 1 + ita + o(|t|)$
+    
+        $\varphi_{\frac{S_n}{n}}(t) = [\text{по второму свойству}] = \varphi_{S_n}\left(\frac{t}{n}\right) = \left(\varphi_{\xi_1}\left(\frac{t}{n}\right)\right)^n = \left(1 + ia\frac{t}{n} + o\left(\left|\frac{t}{n}\right|\right)\right)^n \underset{\text{по лемме}}{\longrightarrow}
+        e^{ita} = \varphi_a(t)$
+    \end{MyProof}
+
     \item Центральная предельная теорема. Вывод из нее предельной теоремы Муавра-Лапласа. Неравенство Берри-Ессеена (формулировка). 
 
     \hyperlink{centrallimittheorem}{ЦПТ Ляпунова} \Ths Пусть $\xi_1, \dots, \xi_n, \dots$ - последовательность независимых одинаково распределенных случайных величин
     с конечной дисперсией ($D\xi_1 < \infty$) и $S_n = \sum_{i = 1}^n \xi_i$. Тогда имеет место слабая сходимость:
 
     \[\frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} \rightrightarrows N(0, 1)\]
+
+    \hyperlink{limittheoremdemoivrelaplace}{Предельная теорема Муавра-Лапласа}: Пусть $v_n(A)$ - число появления события $A$ при $n$ независимых испытаний, $p$ - вероятность успеха при одном испытании, $q = 1 - p$.
+    Тогда $\frac{v_n(A) - np}{\sqrt{npq}} \rightrightarrows N(0, 1)$
+
+    \begin{MyProof}
+        $v_n(A) = \xi_1 + \xi_2 + \dots + \xi_n = S_n$, где $\xi_i \in B_p$ и независимы, $E\xi_1 = p, D\xi_1 = pq$
+
+        По ЦПТ $\frac{v_n(A) - np}{\sqrt{npq}} = \frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} \rightrightarrows N(0, 1)$
+    \end{MyProof}
+
+    \hyperlink{berryesseentheorem}{Неравенство Берри-Эссеена}: В условиях ЦПТ для $\xi_1$ с конечным третьим моментом можно оценить так:
+
+    $\left|p\left(\frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} < x\right) - F_0(x)\right| \leq C\frac{E|\xi_1 - E\xi_1|^3}{\sqrt{n(D\xi_1)^3}} \forall x \in \Real$
 
 
 \end{enumerate}
