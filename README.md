@@ -118,7 +118,7 @@
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_11_28.html)
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2024_12_12.html)
 
-## II семестр
+## [II семестр](meta/II.md)
 
 ### Математический анализ II (лектор Далевская О. П.)
 
