@@ -13,12 +13,16 @@ $teacher$=Лекции Блаженова А. В.
 
     \Nota Если две случайных величин $\xi \overset{\text{п.н.}}{=} \eta$, то считаем, что $\xi = \eta$
 
+    \hypertarget{spaceofrandomvariables}{}
+
     Пусть имеется вероятностное пространство $(\Omega, \mathcal{F}, P)$
 
     Введем пространство $L_2 (\Omega, \mathcal{F}, P) = \{\xi \ | \ D\xi < \infty\}$ - множество случайных величин 
     на данном пространстве с конечной дисперсией
 
     Ясно, что $L_2$ - линейное пространство. Введем на нем скалярное произведение
+
+    \hypertarget{scalarproductoftwovariables}{}
 
     \Def Скалярным произведением случайных величин $\xi$ и $\eta$ из $L_2(\Omega, \mathcal{F}, P)$ 
     называется число $(\xi, \eta) = E(\xi\eta)$
@@ -52,6 +56,8 @@ $teacher$=Лекции Блаженова А. В.
 
 \Def Метрикой (расстоянием) между случайными величинами называют число $d(\xi, \eta) = \|\xi - \eta\|$
 
+\hypertarget{cauchybunyakovskyschwarzinequality}{}
+
 \begin{MyTheorem}
     \Ths Неравенство Коши-Буняковского-Шварца
 
@@ -71,12 +77,17 @@ $teacher$=Лекции Блаженова А. В.
 
 \subsection{Условное математическое ожидание}
 
+\hypertarget{conditionalexpectedvalue}{}
+
 В $L_2(\Omega, \mathcal{F}, P)$ возьмем линейное подпространство $L(\eta) = \{g(\eta) \ | \ Dg(\eta) < \infty\}$
 
-\DefN{B} Условное математическое ожидание (УМО, обозначается $E(\xi|\eta) = \hat{\xi}$) случайной величины $\xi$
-относительно случайной величины $\eta$ называется ортогональная проекция случайной величины $\xi$ на $L(\eta)$ 
+\DefN{B} Условным математическим ожиданием (УМО, обозначается $E(\xi|\eta) = \hat{\xi}$) случайной величины $\xi$
+относительно случайной величины $\eta$ называется ортогональная проекция случай
+ной величины $\xi$ на $L(\eta)$ 
 
 \mediumvspace
+
+\hypertarget{conditionalexpectedvalueproperties}{}
 
 \textbf{Свойства}:
 
@@ -110,7 +121,7 @@ $teacher$=Лекции Блаженова А. В.
     \end{MyProof}
 
     \item Если $\xi$ и $\eta$ независимы, то $(\xi - E\xi) \perp g(\eta) \ \forall g(\eta) \in L(\eta)$, 
-в частности $(\xi - E\xi) \perp \eta$
+    в частности $(\xi - E\xi) \perp \eta$
 
 \end{enumerate}
 
@@ -132,6 +143,8 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 \Mem Если случайные величины $\xi$ и $\eta$, то $E(\xi\eta) = E\xi E\eta \Longrightarrow E(\xi\eta) - E\xi E\eta = 0$
 
 Поэтому в качестве индикатора наличия связи берем величину $E(\xi\eta) - E\xi E\eta = \mathrm{cov}(\xi, \eta)$
+
+\hypertarget{covariance}{}
 
 \Def Ковариацией $\mathrm{\cov}(\xi, \eta)$ называется величина $\mathrm{cov}(\xi, \eta) = E((\xi - E\xi)(\eta - E\eta))$
 
@@ -174,6 +187,8 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 \Nota Ковариация зависит от единиц измерения случайных величин, поэтому по ее величине нельзя судить о силе зависимости
 
 \subsection{Коэффициент линейной корреляции}
+
+\hypertarget{correlation}{}
 
 \Def Коэффициентом корреляции случайных величин $\xi$ и $\eta$ с конечными вторыми моментами,
 называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xiE\eta}{\sigma_\xi \sigma_\eta}$

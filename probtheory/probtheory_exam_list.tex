@@ -793,9 +793,104 @@
     \Defs Условное математические ожидание вычисляется по формуле $E(\xi | \eta = y) = \int_{-\infty}^\infty xf(x | y)dx$
 
     \item Пространство случайных величин. Скалярное произведение, неравенство Коши-Буняковского-Шварца. 
+
+    \hyperlink{spaceofrandomvariables}{Пространство} $L_2 (\Omega, \mathcal{F}, P) = \{\xi \ | \ D\xi < \infty\}$ - множество случайных величин 
+    на данном пространстве с конечной дисперсией
+
+    \hyperlink{scalarproductoftwovariables}{Скалярным произведением} случайных величин $\xi$ и $\eta$ из $L_2(\Omega, \mathcal{F}, P)$ 
+    называется число $(\xi, \eta) = E(\xi\eta)$
+
+    \hyperlink{cauchybunyakovskyschwarzinequality}{Неравенство Коши-Буняковского-Шварца}: \Ths Пусть случайные величины $\xi$ и $\eta$ имеют конечный второй момент, тогда 
+    $|E(\xi, \eta)| \leq \sqrt{E\xi^2 \cdot E\eta^2}$ (или $|(\xi, \eta)| \leq \|\xi\|\cdot\|\eta\|$)
+
+    Причем $|E(\xi, \eta)| = \sqrt{E\xi^2 \cdot E\eta^2} \Longleftrightarrow \eta = C\xi$, где $C = \mathrm{const}$
+
     \item Условное математическое ожидание как случайная величина, его свойства. Формула полного математического ожидания.
+
+    \hyperlink{conditionalexpectedvalue}{Условным математическим ожиданием} (УМО, обозначается $E(\xi|\eta) = \hat{\xi}$) случайной величины $\xi$
+    относительно случайной величины $\eta$ называется ортогональная проекция случайной величины $\xi$ на $L(\eta)$ 
+    
+    \hyperlink{conditionalexpectedvalueproperties}{Свойства}:
+
+    \begin{enumerate}
+        \item Тождество ортопроекций: $\letsymbol \hat{\xi} \in L(\eta)$, тогда $\hat{\xi} = E(\xi|\eta) \Longleftrightarrow E(\xi\cdot g(\eta)) = E(\hat{\xi}\cdot g(\eta)) \ \forall g(\eta) \in L(\eta)$
+
+        \item Формула полного математического ожидания
+
+        $E\xi = E(E(\xi|\eta))$ или $E\xi = E\hat{\xi}$
+
+        \Nota При распределении Бернулли получаем обычную формулу полной вероятности
+
+        \item Линейность: $E(C_1\xi_1 + C_2\xi_2 \ | \ \eta) = C_1 E(\xi_1|\eta) + C_2 E(\xi_2|\eta)$
+
+        \item Если $\xi$ и $\eta$ независимы, то $E(\xi|\eta) = E\xi$
+
+        \item Если $\xi$ и $\eta$ независимы, то $(\xi - E\xi) \perp g(\eta) \ \forall g(\eta) \in L(\eta)$, 
+        в частности $(\xi - E\xi) \perp \eta$
+    \end{enumerate}
+
     \item Условная дисперсия. Закон полной дисперсии. Смысл второго слагаемого в разложении дисперсии.
     \item Числовые характеристики зависимости случайных величин. Ковариация, ее свойства. Коэффициент корреляции, его свойства. Корреляция случайных величин.
+
+    \hyperlink{covariance}{Ковариацией} $\mathrm{\cov}(\xi, \eta)$ называется величина $\mathrm{cov}(\xi, \eta) = E((\xi - E\xi)(\eta - E\eta))$
+
+    Свойства:
+
+    \begin{enumerate}
+        \item $\mathrm{cov} (\xi, \eta) = E(\xi\eta) - E\xi E\eta$
+
+        \item $\mathrm{cov} (\xi, \xi) = D\xi$
+
+        \item $\mathrm{cov}(\xi, \eta) = \mathrm{cov}(\eta, \xi)$
+
+        \item $\mathrm{cov}(C_1 \xi_1 + C_2 \xi_2, \eta) = C_1 \mathrm{cov}(\xi_1, \eta) + C_2 \mathrm{cov}(\xi_2, \eta)$
+
+        \item $D(\xi + \eta) = D\xi + D\eta + 2\mathrm{cov}(\xi, \eta)$
+
+        \item $D(\xi_1 + \dots + \xi_n) = \sum_{i = 1}^n D\xi_i + 2\sum_{i < j} \mathrm{cov}(\xi_i, \xi_j) = \sum_{i, j = 1}^{n} \mathrm{cov}(\xi_i, \xi_j)$
+
+        \item \begin{enumerate}
+            \item Если $\xi$ и $\eta$ - независимы, то $\mathrm{cov}(\xi, \eta) = 0$
+
+            \item Если $\mathrm{cov}(\xi, \eta) \neq 0$, то $\xi$ и $\eta$ - зависимы
+
+            \item Если $\mathrm{cov}(\xi, \eta) = 0$, то неясно
+        \end{enumerate}
+
+        \item Если $\mathrm{cov}(\xi, \eta) > 0$, то зависимость прямая, если $\mathrm{cov}(\xi, \eta) < 0$, то обратная
+    \end{enumerate}
+
+    \hyperlink{correlation}{Коэффициентом корреляции} случайных величин $\xi$ и $\eta$ с конечными вторыми моментами,
+    называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xiE\eta}{\sigma_\xi \sigma_\eta}$
+    
+    Свойства:
+
+    \begin{enumerate}
+        \item $r_{\xi, \eta} = r_{\eta, \xi}$
+
+        \item \begin{enumerate}
+            \item Если $\xi$ и $\eta$ - независимы, то $r_{\xi,\eta} = 0$
+
+            \item Если $r_{\xi,\eta} \neq 0$, то $\xi$ и $\eta$ - зависимы
+
+            \item Если $r_{\xi,\eta} = 0$, то неясно
+        \end{enumerate}
+
+        \item $|r_{\xi,\eta}| \leq 1$
+
+        \item $|r_{\xi,\eta}| = 1 \Longleftrightarrow \eta = a \xi + b$ п.н.
+
+        \item \begin{enumerate} 
+            \item Если $r_{\xi,\eta} = 1$, то $\eta = a\xi + b$ и $a > 0$ (прямая линейная зависимость)
+
+            \item Если $r_{\xi,\eta} = -1$, то $\eta = a\xi + b$ и $a < 0$ (обратная линейная зависимость)
+        \end{enumerate}
+    \end{enumerate}
+
+    Если $r_{\xi,\eta} \neq 0$, то говорят, что случайные величины коррелированы друг с другом. Если $r_{\xi,\eta} > 0$, 
+    то имеет прямая корреляция, если $r_{\xi,\eta} < 0$ - обратная
+
+
     \item Характеристическая функция случайной величины, ее свойства. Теорема о непрерывном соответствии (формулировка).
     \item Характеристические функции стандартных распределений (Бернулли, биномиальное, Пуассона, нормальное). Следствия.
     \item Доказательство закона больших чисел Хинчина.
