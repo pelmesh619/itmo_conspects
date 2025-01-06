@@ -37,7 +37,7 @@
 
 ### Теория вероятности (лектор Блаженов А. В.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_superconspect.pdf)
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_superconspect.pdf)
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_03.pdf)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_2024_09_10.pdf)
