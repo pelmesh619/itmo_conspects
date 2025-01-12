@@ -101,9 +101,9 @@
     \DefN{4} Дополнение (разность) $A \setminus B$ называется событие $A \cdot \overline{B}$
 
     \DefN{5} События $A$ и $B$ называются несовместными, если их произведение - пустое множество
-    (не могут произойти одновременно при одной эксперименте)
+    (не могут произойти одновременно при одном эксперименте)
 
-    \DefN{6} События $A$ влечет события $B$, если $A \subset B$ (если наступает $A$, то наступит $B$)
+    \DefN{6} События $A$ влекут события $B$, если $A \subset B$ (если наступает $A$, то наступит $B$)
 
     \subsection{Вероятность}
 
@@ -317,7 +317,7 @@
         $\Box$
 
         $A + B = A\overline{B} + AB + \overline{A}B$ - несовместные события $\Longrightarrow P(A + B) = P(A\overline{B}) + P(AB) + P(\overline{A}B) =
-        (P(A\overline{B}) + P(\overline{A}B)) - P(AB) = P(A) + P(B) - P(AB)$
+        (P(A\overline{B}) + P(AB)) + (P(AB) + P(\overline{A}B)) - P(AB) = P(A) + P(B) - P(AB)$
 
         $\Box$
     \end{tcolorbox}
@@ -471,10 +471,10 @@
 
         Шаг индукции: пусть верно при $n - 1$:
 
-        $P(A_1 A_2 A_3 \dots A_{n - 1}) = P(A_1) P(A_2 | A_1) P(P_3 | A_1 A_2) \dots P(A_n | A_1 A_2 \dots A_{n - 2})$
+        $P(A_1 A_2 A_3 \dots A_{n - 1}) = P(A_1) P(A_2 | A_1) P(A_3 | A_1 A_2) \dots P(A_n | A_1 A_2 \dots A_{n - 2})$
 
         $P(A_1 A_2 A_3 \dots A_n) = P(A_1 A_2 A_3 \dots A_{n - 1}) \cdot P(A_n | A_1 A_2 \dots A_{n - 1}) = \\
-        P(A_1) P(A_2 | A_1) P(P_3 | A_1 A_2) \dots P(A_n | A_1 A_2 \dots A_{n - 1})$
+        P(A_1) P(A_2 | A_1) P(A_3 | A_1 A_2) \dots P(A_n | A_1 A_2 \dots A_{n - 1})$
 
         $\Box$
     \end{tcolorbox}
@@ -560,7 +560,7 @@
 
     $P(A|H_1) = 0.9 \quad\quad P(A|H_2) = 0.3$
 
-    $P(H_1 | A) = \frac{P(H_1) P(A|H_1)}{P(H_1) P(A|H_1) + P(H_2) | P(A | H_2)} = \frac{\frac{1}{2} 0.9}{\frac{1}{2} 0.9 + \frac{1}{2} 0.3} = \frac{9}{9 + 3} = 0.75$
+    $P(H_1 | A) = \frac{P(H_1) P(A|H_1)}{P(H_1) P(A|H_1) + P(H_2) P(A | H_2)} = \frac{\frac{1}{2} 0.9}{\frac{1}{2} 0.9 + \frac{1}{2} 0.3} = \frac{9}{9 + 3} = 0.75$
 
     \ExN{3} По статистике раком болеет 1\% населения. Тест дает правильный результат в 99\% случаев. Тест оказался положительный. Найти вероятность того, что человек болен.
 
@@ -983,8 +983,8 @@
     \begin{MyProof}
         $\Box$
 
-        $P_{N,K} (n, k) = \frac{C^k_K C_{N - K}^{n - k}}{C^n_N} \sim \frac{K^k}{k!} \frac{(N - K)^{n - k}}{N^n} \frac{n!}{N^n} =
-        \frac{n!}{k!} \frac{(N - K)^{n - k}}{N^n} \frac{K^k}{N^n} = C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k} \to C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k} $
+        $P_{N,K} (n, k) = \frac{C^k_K C_{N - K}^{n - k}}{C^n_N} \sim \frac{K^k}{k!} \frac{(N - K)^{n - k}}{(n - k)!} \frac{n!}{N^n} =
+        \frac{n!}{k!} \frac{(N - K)^{n - k}}{(n - k)!} \frac{K^k}{N^n} = C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k} \to C^k_n \left(\frac{K}{N}\right)^k \left(1 - \frac{K}{N}\right)^{n - k} $
 
         $\Box$
     \end{MyProof}
