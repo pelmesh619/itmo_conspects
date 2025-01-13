@@ -117,7 +117,7 @@
 
     Ясно, что $m_k = \int_{-\infty}^\infty x^k f(x) dx = \int_{-\infty}^\infty x^k \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}} dx$ - интеграл сходится абсолютно для любого $k$ (степень $e$ задавит полином)
 
-    $E\xi = m_1 = \int_{-\infty}^\infty x^k \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}} dx = a$ в силу симметрии
+    $E\xi = m_1 = \int_{-\infty}^\infty x \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}} dx = a$ в силу симметрии
 
     Найдем дисперсию при помощи дифференцирования интеграла по параметру: 
     
@@ -125,9 +125,9 @@
 
     $\frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty e^{-\frac{(x - a)^2}{2\sigma^2}} dx = \sigma$
     
-    $\frac{1}{\sqrt{2\pi}} \int_{\infty}^\infty e^{-\frac{(x - a)^2}{2\sigma^2}} \left(-\frac{(x - a)^2}{2} (-\sigma^{-3})\right) dx = 1$
+    $\frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty e^{-\frac{(x - a)^2}{2\sigma^2}} \left(-\frac{(x - a)^2}{2} (-2\sigma^{-3})\right) dx = 1$
     
-    $\frac{1}{\sigma\sqrt{2\pi}} \int_{\infty}^\infty (x - a)^2 e^{-\frac{(x - a)^2}{2\sigma^2}} dx = \sigma^2 = D\xi$, получаем, что $\sigma$ - СКО
+    $\frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^\infty (x - a)^2 e^{-\frac{(x - a)^2}{2\sigma^2}} dx = \sigma^2 = D\xi$, получаем, что $\sigma$ - СКО
 
     \mediumvspace
 

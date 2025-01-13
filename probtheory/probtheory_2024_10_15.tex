@@ -52,7 +52,7 @@
     \begin{tabular}{c|c|c|c|c|c|c}
         $\xi$ & $0$        & $1$ & \dots & $k$ & \dots & $n$    \\
         \hline
-        $p$   & $q^n$ & $n q^{n - 1} p$ & \dots & $C^k_n p^k q^{n - k}$ & \dots & $p_n$
+        $p$   & $q^n$ & $n q^{n - 1} p$ & \dots & $C^k_n p^k q^{n - k}$ & \dots & $p^n$
     \end{tabular}
 
     \smallvspace
@@ -79,9 +79,9 @@
     \smallvspace
     
     \begin{tabular}{c|c|c|c|c|c|c}
-        $\xi$ & $1$ & $2$ & \dots & $k$ & \dots & $n$    \\
+        $\xi$ & $1$ & $2$ & \dots & $k$ & \dots   \\
         \hline
-        $p$   & $p$ & $qp$ & \dots & $q^{k - 1}p$ & \dots & $p_n$
+        $p$   & $p$ & $qp$ & \dots & $q^{k - 1}p$ & \dots
     \end{tabular}
 
     \smallvspace
@@ -90,7 +90,7 @@
     p \sum_{k = 1}^\infty (q^k)^\prime = p \left(\sum_{k = 1}^\infty (q^k)\right)^\prime = p \left(\frac{1}{1 - q}\right)^\prime = 
     \frac{p}{p^2} = \frac{1}{p}$
 
-    $E\xi^2 = \sum_{k = 1}^\infty k^2 q_{k - 1} p = p \sum_{k = 1}^\infty k(k - 1)q^{k - 1} = pq \sum_{k = 1}^\infty k(k - 1)q^{k - 2} + E\xi = 
+    $E\xi^2 = \sum_{k = 1}^\infty k^2 q^{k - 1} p = p \sum_{k = 1}^\infty k(k - 1)q^{k - 1} + \sum_{k = 1}^\infty k q^{k - 1} p = pq \sum_{k = 1}^\infty k(k - 1)q^{k - 2} + E\xi = 
     pq (\sum_{k = 1}^\infty q^k)^{\prime\prime} + \frac{1}{p} = pq \left(\frac{1}{1 - q}\right)^{\prime\prime} + \frac{1}{p} = 
     2pq \frac{1}{(1 - q)^3} + \frac{1}{p} = 2pq \frac{1}{p^3} + \frac{1}{p} = \frac{2q}{p^2} + \frac{1}{p}$
     
@@ -108,16 +108,16 @@
     \smallvspace
 
     \begin{tabular}{c|c|c|c|c|c|c}
-        $\xi$ & $0$ & $1$ & \dots & $k$ & \dots & $n$    \\
+        $\xi$ & $0$ & $1$ & \dots & $k$ & \dots   \\
         \hline
-        $p$   & $e^{-\lambda}$ & $\lambda e^{-\lambda}$ & \dots & $\frac{\lambda^k}{k!}e^{-\lambda}$ & \dots & $p_n$
+        $p$   & $e^{-\lambda}$ & $\lambda e^{-\lambda}$ & \dots & $\frac{\lambda^k}{k!}e^{-\lambda}$ & \dots 
     \end{tabular}
 
     \smallvspace
 
     Покажем корректность определения - докажем, что сумма нижней строки равна 1:
 
-    $\sum_{k = 0}^\infty p_k = \sum_{k = 0}^\infty \frac{\lambda^k}{k!} e^{-\lambda} = e^{-\lambda} \underset{\substack{\text{ряд Тейлора}\\ \text{для } e^x}}{\underbrace{\sum_{k = 0}^\infty \frac{\lambda_k}{k!}}} = e^{-\lambda} e^\lambda = 1$
+    $\sum_{k = 0}^\infty p_k = \sum_{k = 0}^\infty \frac{\lambda^k}{k!} e^{-\lambda} = e^{-\lambda} \underset{\substack{\text{ряд Тейлора}\\ \text{для } e^x}}{\underbrace{\sum_{k = 0}^\infty \frac{\lambda^k}{k!}}} = e^{-\lambda} e^\lambda = 1$
 
     $E\xi = \sum_{k = 0}^\infty k \cdot \frac{\lambda^k}{k!}e^{-\lambda} = e^{-\lambda} \sum_{k = 0}^\infty \frac{\lambda^k}{(k - 1)!} = 
     \lambda e^{-\lambda} \sum_{k = 0}^\infty \frac{\lambda^{k - 1}}{(k - 1)!} = \lambda e^{-\lambda} e^\lambda = \lambda = np$
@@ -265,7 +265,7 @@
 
     $D\xi_i = pq = \frac{1}{n} (1 - \frac{1}{n}) = \frac{n - 1}{n^2}$
 
-    $E\xi = \sum_{i = 1}^n E\xi_i = 1 \frac{1}{n} = 1$ - в среднем будет одно письмо в своем конверте
+    $E\xi = \sum_{i = 1}^n E\xi_i = n \frac{1}{n} = 1$ - в среднем будет одно письмо в своем конверте
 
     $D\xi = D(\xi_1 + \dots + \xi_n) = \sum_{i = 1}^n D\xi_i + 2\sum_{i < j} \mathrm{cov} (\xi_i, \xi_j)$
 

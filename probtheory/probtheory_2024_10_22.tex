@@ -47,8 +47,6 @@
 
     3) $p(\alpha \leq \xi < \beta) = F(\beta) - F(\alpha)$
 
-    \includegraphics[height=6cm]{probtheory/images/probtheory_2024_10_22_4}
-
     \begin{MyProof}
         $p(\xi < \beta) = p(\xi < \alpha) + p(\alpha \leq \xi < \beta) \Longrightarrow F(\beta) = F(\alpha) + p(\alpha \leq \xi < \beta)$
     \end{MyProof}
@@ -61,7 +59,7 @@
     \begin{MyProof}
         Так как $F(x)$ монотонна и ограничена, то эти пределы существуют. Поэтому достаточно доказать эти пределы для некоторой последовательности $x_n \to \pm \infty$
 
-        $\letsymbol A_n = \{n - 1 \leq \xi < n, n \in v\}$ - несовместные события, так как $\Real = \bigunion_{n = -\infty}^\infty A_n$, то
+        $\letsymbol A_n = \{n - 1 \leq \xi < n, n \in Z\}$ - несовместные события, так как $\Real = \bigunion_{n = -\infty}^\infty A_n$, то
         по аксиоме счетной аддитивности, вероятность $p(\xi \in \Real) = 1 = \sum_{n = -\infty}^\infty P(A_n) = \lim_{N \to \infty} \sum_{n = -N}^N p(n - 1 \leq \xi < n) = 
         \lim_{N \to \infty} \sum_{n = -N}^N (F(n) - F(n - 1)) = \lim_{N \to \infty} (F(N) - F(-N - 1)) = \lim_{N \to \infty} F(N) - \lim_{N \to -\infty} F(N) = 1$
 
@@ -128,9 +126,11 @@
 
     \hypertarget{densityfunctionproperties}{}
 
-    \subsubsection{Свойства плотности и функции распределения абсолютно непрерывного распределения}
+    \subsubsection{Свойства плотности абсолютно непрерывного распределения}
 
     1) Вероятносто-геометрический смысл плотности: $p(\alpha \leq \xi < \beta) = \int_{\alpha}^\beta f_\xi(x) dx$
+
+    \includegraphics[height=6cm]{probtheory/images/probtheory_2024_10_22_4}
 
     2) Условие нормировки: $\int_{-\infty}^{+\infty} f_\xi(x)dx = 1$
 
@@ -138,7 +138,7 @@
         Из определения, если $B = \Real$
     \end{MyProof}
 
-    3) $F_\xi(x) = \int_B f_\xi(x)dx$
+    3) $F_\xi(x) = \int_{-\infty}^x f_\xi(x)dx$
 
     \begin{MyProof}
         Если $B = (-\infty; x)$, то $F_\xi(x) = p(\xi \in (-\infty; x)) = \int_{-\infty}^x f_\xi(x)dx$
