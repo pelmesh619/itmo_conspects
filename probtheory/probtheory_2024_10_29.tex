@@ -75,13 +75,13 @@
     \Nota Из непрерывных случайных величин только показательная обладает свойством нестарения
 
     \begin{MyTheorem}
-        \Ths $\letsymbol \xi \in E_\alpha$. Тогда $p(\xi < x + y \ | \ \xi > x) = p(\xi > y) \quad\quad \forall x, y > 0$
+        \Ths $\letsymbol \xi \in E_\alpha$. Тогда $p(\xi > x + y \ | \ \xi > x) = p(\xi > y) \quad\quad \forall x, y > 0$
     \end{MyTheorem}
 
     \begin{MyProof}
         $\Box$
 
-        $p(\xi < x + y \ | \ \xi > x) = \frac{p(\xi > x + y, \xi > x)}{p(\xi > x)} = \frac{1 - p(\xi < x + y)}{1 - p(\xi < x)} = 
+        $p(\xi > x + y \ | \ \xi > x) = \frac{p(\xi > x + y, \xi > x)}{p(\xi > x)} = \frac{1 - p(\xi < x + y)}{1 - p(\xi < x)} = 
         \frac{1 - F(x + y)}{1 - F(x)} = \frac{e^{-\alpha(x + y)}}{e^{-\alpha x}} = e^{-\alpha y} = 1 - (1 - e^{-\alpha y}) = 1 - p(\xi < y) = p(\xi > y)$
 
         $\Box$
