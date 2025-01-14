@@ -1699,7 +1699,7 @@
     \begin{MyProof}
         Так как $F(x)$ монотонна и ограничена, то эти пределы существуют. Поэтому достаточно доказать эти пределы для некоторой последовательности $x_n \to \pm \infty$
 
-        $\letsymbol A_n = \{n - 1 \leq \xi < n, n \in Z\}$ - несовместные события, так как $\Real = \bigunion_{n = -\infty}^\infty A_n$, то
+        $\letsymbol A_n = \{n - 1 \leq \xi < n, n \in \mathbb{Z}\}$ - несовместные события, так как $\Real = \bigunion_{n = -\infty}^\infty A_n$, то
         по аксиоме счетной аддитивности, вероятность $p(\xi \in \Real) = 1 = \sum_{n = -\infty}^\infty P(A_n) = \lim_{N \to \infty} \sum_{n = -N}^N p(n - 1 \leq \xi < n) = 
         \lim_{N \to \infty} \sum_{n = -N}^N (F(n) - F(n - 1)) = \lim_{N \to \infty} (F(N) - F(-N - 1)) = \lim_{N \to \infty} F(N) - \lim_{N \to -\infty} F(N) = 1$
 
@@ -1711,7 +1711,7 @@
     5) $F(x)$ непрерывна слева: $F(x_0 - 0) = F(x_0)$
 
     \begin{MyProof}
-        Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $B_n = \{x_0 - \frac{1}{n} \leq \xi < x_0, n \in \mathrm{Z}\}$
+        Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $B_n = \{x_0 - \frac{1}{n} \leq \xi < x_0, n \in \mathbb{Z}\}$
 
         Так как $B_1 \supset B_2 \supset \dots \supset B_n \supset \dots$ и $\bigcap_{n = 1}^\infty B_n = \emptyset$
 
@@ -1728,7 +1728,7 @@
 
     
     \begin{MyProof}
-        Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $C_n = \{x_0 \leq \xi < x_0 + \frac{1}{n}, n \in \mathrm{Z}\}$
+        Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $C_n = \{x_0 \leq \xi < x_0 + \frac{1}{n}, n \in \mathbb{Z}\}$
 
         Так как $C_1 \supset C_2 \supset \dots \supset C_n \supset \dots$ и $\bigcap_{n = 1}^\infty C_n = \emptyset$
 
