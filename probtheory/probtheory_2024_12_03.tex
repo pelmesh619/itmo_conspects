@@ -69,7 +69,7 @@ $teacher$=Лекции Блаженова А. В.
 
 \begin{MyProof}
     $P_2(x) = E(x\xi - \eta)^2 = x^2 E\xi^2 - 2xE(\xi\eta) + E\eta^2 \geq 0 \Longrightarrow D = 4(E(\xi\eta))^2 - 
-    4 E\xi^2 - E\eta^2 \leq 0 \Longrightarrow |E(\xi\eta)| \leq \sqrt{E\xi^2 \cdot E\eta^2}$
+    4 E\xi^2 \cdot E\eta^2 \leq 0 \Longrightarrow |E(\xi\eta)| \leq \sqrt{E\xi^2 \cdot E\eta^2}$
     
     $|E(\xi, \eta)| = \sqrt{E\xi^2 - E\eta^2} \Longrightarrow D = 0 \Longrightarrow \exists$ какая-либо точка касания $C$, 
     из этого $E(C\xi - \eta)^2 = 0 \Longrightarrow C\xi - \eta = 0 \Longleftrightarrow \eta = C\xi \text{ п.н. }$
@@ -191,7 +191,7 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 \hypertarget{correlation}{}
 
 \Def Коэффициентом корреляции случайных величин $\xi$ и $\eta$ с конечными вторыми моментами,
-называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xiE\eta}{\sigma_\xi \sigma_\eta}$
+называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xi E\eta}{\sigma_\xi \sigma_\eta}$
 
 Можно записать в другой форме: $r_{\xi,\eta} = \frac{E((\xi - E\xi)(\eta - E\eta))}{\sqrt{E(\xi - E\xi)^2}\sqrt{E(\eta - E\eta)^2}} = 
 \frac{(\xi - E\xi, \eta - E\eta)}{\|\xi - E\xi\|\|\eta - E\eta\|} = \cos(\widehat{\xi - E\xi, \eta - E\eta})$ - косинус угла между величинами (грубая интерпретация)

@@ -190,8 +190,9 @@
 
         Обозначим $\lambda_n = n p_n$. Тогда $p_n = \frac{\lambda_n}{n}$ и
 
-        $P_n(k) = C^k_n \left(\frac{\lambda_n}{n}\right)^k \left(1 - \frac{\lambda_n}{n}\right)^{n - k} \underset{n \to \infty}{\rightarrow} \frac{n^k}{k!} \frac{\lambda^k_n}{n^k} \left(1 - \frac{\lambda_n}{n}\right)^n \cancelto{1}{\left(1 - \frac{\lambda_n}{n}\right)^{-k}}
-        \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} \left(1 - \frac{\lambda_n}{n}\right) = \frac{\lambda_n^k}{k!} \left(\left(1 - \frac{\lambda_n}{n}\right)^{-\frac{n}{\lambda_n}}\right)^{-\frac{\lambda_n}{n}n} \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} e^{-\lambda_n} \underset{n \to \infty}{\rightarrow} \frac{\lambda^k}{k!} e^{-\lambda}$
+        $P_n(k) = C^k_n \left(\frac{\lambda_n}{n}\right)^k \left(1 - \frac{\lambda_n}{n}\right)^{n - k} \underset{n \to \infty}{\rightarrow} 
+        \frac{n^k}{k!} \frac{\lambda^k_n}{n^k} \left(1 - \frac{\lambda_n}{n}\right)^n \cancelto{1}{\left(1 - \frac{\lambda_n}{n}\right)^{-k}}
+        \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} \left(1 - \frac{\lambda_n}{n}\right)^n = \frac{\lambda_n^k}{k!} \left(\left(1 - \frac{\lambda_n}{n}\right)^{-\frac{n}{\lambda_n}}\right)^{-\frac{\lambda_n}{n}n} \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} e^{-\lambda_n} \underset{n \to \infty}{\rightarrow} \frac{\lambda^k}{k!} e^{-\lambda}$
 
         $\Box$
     \end{MyProof}

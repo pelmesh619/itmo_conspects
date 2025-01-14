@@ -1011,8 +1011,9 @@
 
         Обозначим $\lambda_n = n p_n$. Тогда $p_n = \frac{\lambda_n}{n}$ и
 
-        $P_n(k) = C^k_n \left(\frac{\lambda_n}{n}\right)^k \left(1 - \frac{\lambda_n}{n}\right)^{n - k} \underset{n \to \infty}{\rightarrow} \frac{n^k}{k!} \frac{\lambda^k_n}{n^k} \left(1 - \frac{\lambda_n}{n}\right)^n \cancelto{1}{\left(1 - \frac{\lambda_n}{n}\right)^{-k}}
-        \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} \left(1 - \frac{\lambda_n}{n}\right) = \frac{\lambda_n^k}{k!} \left(\left(1 - \frac{\lambda_n}{n}\right)^{-\frac{n}{\lambda_n}}\right)^{-\frac{\lambda_n}{n}n} \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} e^{-\lambda_n} \underset{n \to \infty}{\rightarrow} \frac{\lambda^k}{k!} e^{-\lambda}$
+        $P_n(k) = C^k_n \left(\frac{\lambda_n}{n}\right)^k \left(1 - \frac{\lambda_n}{n}\right)^{n - k} \underset{n \to \infty}{\rightarrow} 
+        \frac{n^k}{k!} \frac{\lambda^k_n}{n^k} \left(1 - \frac{\lambda_n}{n}\right)^n \cancelto{1}{\left(1 - \frac{\lambda_n}{n}\right)^{-k}}
+        \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} \left(1 - \frac{\lambda_n}{n}\right)^n = \frac{\lambda_n^k}{k!} \left(\left(1 - \frac{\lambda_n}{n}\right)^{-\frac{n}{\lambda_n}}\right)^{-\frac{\lambda_n}{n}n} \underset{n \to \infty}{\rightarrow} \frac{\lambda_n^k}{k!} e^{-\lambda_n} \underset{n \to \infty}{\rightarrow} \frac{\lambda^k}{k!} e^{-\lambda}$
 
         $\Box$
     \end{MyProof}
@@ -2146,11 +2147,11 @@
     \begin{MyProof}
         Пусть $a > 0$, тогда $F_\eta(x) = p(\eta < x) = p(a\xi + b < x) = p(\xi < \frac{x - b}{a}) = \int_{-\infty}^{\frac{x - b}{a}} f_\xi(t) dt = 
         \left[\begin{matrix}t = \frac{y - b}{a} & dt = \frac{1}{a} dy & y = at + b \\ y(-\infty) = -\infty & y(\frac{x - b}{a}) = x\end{matrix}\right] = 
-        \int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow \eta = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
+        \int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow f_\eta(x) = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
 
         Пусть $a < 0$, тогда $F_\eta(x) = p(\eta < x) = p(a\xi + b < x) = p(\xi > \frac{x - b}{a}) = \int_{\frac{x - b}{a}}^{\infty} f_\xi(t) dt = 
         \left[\begin{matrix}t = \frac{y - b}{a} & dt = \frac{1}{a} dy & y = at + b \\ y(\infty) = -\infty & y(\frac{x - b}{a}) = x\end{matrix}\right] = 
-        -\int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow \eta = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
+        -\int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow f_\eta(x) = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
     \end{MyProof}
 
     \underline{Следствие}
@@ -2262,7 +2263,7 @@
     4) Если существует момент $m_t$ случайной величины $\xi$, то существует $m_s$ при $s < t$ (при условии, что интеграл/сумма сходятся)
 
     \begin{MyProof}
-        Пусть $s < t$. Тогда $|x|^s \leq \min(1, |x|^t) \leq 1 + |x|^t$, так как при $|x| < 1, \ |x|^s \leq 1$ и при $|x| \geq 1, \ |x|^s \leq |x|^t$
+        Пусть $s < t$. Тогда $|x|^s \leq \max(1, |x|^t) \leq 1 + |x|^t$, так как при $|x| < 1, \ |x|^s \leq 1$ и при $|x| \geq 1, \ |x|^s \leq |x|^t$
     
         $E|\xi|^s \leq E|\xi|^t + 1$ и если $E|\xi|^t$ существует (конечно), то $\exists E|\xi|^s$
     
@@ -2341,7 +2342,7 @@
     
         \Nota То есть $p(\xi \text{ не имеет свойство } \mathrm{Cond}) = 0$
 
-        $p(\omega \in \Omega \ | \ \xi(\omega) \text{ не имеет св-во } \mathrm{Cond})$
+        $p(\omega \in \Omega \ | \ \xi(\omega) \text{ не имеет св-во } \mathrm{Cond}) = 0$
 
         \Def Последовательность случайных величин $\{\xi_n\}$ сходится \enquote{почти наверное} к случайной величине $\xi$ при $n \to \infty$ ($\xi_n \overset{\text{п. н.}}{\longrightarrow} \xi$), 
         если $p(\omega \in \Omega \ | \ \xi_n(\omega) \underset{n \to \infty}{\longrightarrow} \xi(\omega)) = 1$
@@ -2415,7 +2416,7 @@
 
         $E|\xi| \geq E(\varepsilon \cdot I(|\xi| \geq \varepsilon))$
 
-        $E|\xi| \geq \varepsilon \cdot E(\varepsilon I(|\xi| \geq \varepsilon)) = \varepsilon \cdot p(|\xi| \geq \varepsilon) 
+        $E|\xi| \geq \varepsilon \cdot E(I(|\xi| \geq \varepsilon)) = \varepsilon \cdot p(|\xi| \geq \varepsilon) 
         \Longrightarrow p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon}$
     \end{MyProof}
 
@@ -2428,7 +2429,7 @@
     \end{MyTheorem}
 
     \begin{MyProof}
-        $p(|\xi - E\xi| \geq \varepsilon) = p((\xi - E\xi)^2 \geq \varepsilon^2) \leq \frac{E(\xi - E\xi)^2}{\varepsilon^2} = \frac{D\xi}{\varepsilon}$
+        $p(|\xi - E\xi| \geq \varepsilon) = p((\xi - E\xi)^2 \geq \varepsilon^2) \leq \frac{E(\xi - E\xi)^2}{\varepsilon^2} = \frac{D\xi}{\varepsilon^2}$
     \end{MyProof}
 
     \subsubsection{III. Правило \enquote{трех сигм}}
@@ -2734,7 +2735,7 @@
         \begin{MyProof}
             $F_{\xi}(x) = \lim_{y \to \infty} F_{\xi, \eta}(x, y) = \int_{-\infty}^x \int_{-\infty}^\infty f(x, y) dydx$
 
-            Из этого $\int_{-\infty}^\infty f(x, y) = f_\xi(x)$
+            Из этого $\int_{-\infty}^\infty f(x, y) dy = f_\xi(x)$
         \end{MyProof}
 
         \item Так как вероятность попадания в Борелевские множества полностью задается функцией распределения, 
@@ -3061,7 +3062,7 @@
 
 \begin{MyProof}
     $P_2(x) = E(x\xi - \eta)^2 = x^2 E\xi^2 - 2xE(\xi\eta) + E\eta^2 \geq 0 \Longrightarrow D = 4(E(\xi\eta))^2 - 
-    4 E\xi^2 - E\eta^2 \leq 0 \Longrightarrow |E(\xi\eta)| \leq \sqrt{E\xi^2 \cdot E\eta^2}$
+    4 E\xi^2 \cdot E\eta^2 \leq 0 \Longrightarrow |E(\xi\eta)| \leq \sqrt{E\xi^2 \cdot E\eta^2}$
     
     $|E(\xi, \eta)| = \sqrt{E\xi^2 - E\eta^2} \Longrightarrow D = 0 \Longrightarrow \exists$ какая-либо точка касания $C$, 
     из этого $E(C\xi - \eta)^2 = 0 \Longrightarrow C\xi - \eta = 0 \Longleftrightarrow \eta = C\xi \text{ п.н. }$
@@ -3183,7 +3184,7 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 \hypertarget{correlation}{}
 
 \Def Коэффициентом корреляции случайных величин $\xi$ и $\eta$ с конечными вторыми моментами,
-называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xiE\eta}{\sigma_\xi \sigma_\eta}$
+называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xi E\eta}{\sigma_\xi \sigma_\eta}$
 
 Можно записать в другой форме: $r_{\xi,\eta} = \frac{E((\xi - E\xi)(\eta - E\eta))}{\sqrt{E(\xi - E\xi)^2}\sqrt{E(\eta - E\eta)^2}} = 
 \frac{(\xi - E\xi, \eta - E\eta)}{\|\xi - E\xi\|\|\eta - E\eta\|} = \cos(\widehat{\xi - E\xi, \eta - E\eta})$ - косинус угла между величинами (грубая интерпретация)
@@ -3298,7 +3299,7 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 
     \begin{MyProof}
         $\varphi_\xi(t) = Ee^{it\xi} = E(1 + it\xi + \frac{(it\xi)^2}{2!} + \dots + \frac{(it\xi)^k}{k!} + o(|t|^k)) = 
-        1 + it E\xi \frac{i^2 t^2}{2}E\xi^2 + \dots + \frac{(it)^k}{k!} E\xi^k + o(|t|^k)$
+        1 + it E\xi + \frac{i^2 t^2}{2}E\xi^2 + \dots + \frac{(it)^k}{k!} E\xi^k + o(|t|^k)$
     \end{MyProof}
 
     \item Пусть $E\xi^k < \infty$. Тогда $\varphi_\xi^{(k)}(0) = i^k E\xi^k$
@@ -3457,7 +3458,7 @@ $\left(1 + \frac{x}{n} + o\left(\frac{1}{n}\right)\right)^n \underset{n \to \inf
 
     Обозначим $Z_n = \eta_1 + \dots + \eta_n = \frac{(\xi_1 + \dots + \xi_n) - na}{\sigma} = \frac{S_n - na}{\sigma}$
 
-    Надо доказать, что если $\frac{Z_n}{\sqrt{n}} \rightrightarrows N(0, 1)$
+    Надо доказать, что $\frac{Z_n}{\sqrt{n}} \rightrightarrows N(0, 1)$
 
     По четвертому свойству $\varphi_{\eta_1}(t) = 1 + itE\eta_1 - \frac{t^2}{2} E\eta_1^2 + o(t^2) = 1 - \frac{t^2}{2} + o(t^2)$
 

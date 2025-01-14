@@ -58,7 +58,7 @@ $teacher$=Лекции Блаженова А. В.
 
     \begin{MyProof}
         $\varphi_\xi(t) = Ee^{it\xi} = E(1 + it\xi + \frac{(it\xi)^2}{2!} + \dots + \frac{(it\xi)^k}{k!} + o(|t|^k)) = 
-        1 + it E\xi \frac{i^2 t^2}{2}E\xi^2 + \dots + \frac{(it)^k}{k!} E\xi^k + o(|t|^k)$
+        1 + it E\xi + \frac{i^2 t^2}{2}E\xi^2 + \dots + \frac{(it)^k}{k!} E\xi^k + o(|t|^k)$
     \end{MyProof}
 
     \item Пусть $E\xi^k < \infty$. Тогда $\varphi_\xi^{(k)}(0) = i^k E\xi^k$
@@ -217,7 +217,7 @@ $\left(1 + \frac{x}{n} + o\left(\frac{1}{n}\right)\right)^n \underset{n \to \inf
 
     Обозначим $Z_n = \eta_1 + \dots + \eta_n = \frac{(\xi_1 + \dots + \xi_n) - na}{\sigma} = \frac{S_n - na}{\sigma}$
 
-    Надо доказать, что если $\frac{Z_n}{\sqrt{n}} \rightrightarrows N(0, 1)$
+    Надо доказать, что $\frac{Z_n}{\sqrt{n}} \rightrightarrows N(0, 1)$
 
     По четвертому свойству $\varphi_{\eta_1}(t) = 1 + itE\eta_1 - \frac{t^2}{2} E\eta_1^2 + o(t^2) = 1 - \frac{t^2}{2} + o(t^2)$
 

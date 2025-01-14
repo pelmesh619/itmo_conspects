@@ -24,7 +24,7 @@
     
         \Nota То есть $p(\xi \text{ не имеет свойство } \mathrm{Cond}) = 0$
 
-        $p(\omega \in \Omega \ | \ \xi(\omega) \text{ не имеет св-во } \mathrm{Cond})$
+        $p(\omega \in \Omega \ | \ \xi(\omega) \text{ не имеет св-во } \mathrm{Cond}) = 0$
 
         \Def Последовательность случайных величин $\{\xi_n\}$ сходится \enquote{почти наверное} к случайной величине $\xi$ при $n \to \infty$ ($\xi_n \overset{\text{п. н.}}{\longrightarrow} \xi$), 
         если $p(\omega \in \Omega \ | \ \xi_n(\omega) \underset{n \to \infty}{\longrightarrow} \xi(\omega)) = 1$
@@ -98,7 +98,7 @@
 
         $E|\xi| \geq E(\varepsilon \cdot I(|\xi| \geq \varepsilon))$
 
-        $E|\xi| \geq \varepsilon \cdot E(\varepsilon I(|\xi| \geq \varepsilon)) = \varepsilon \cdot p(|\xi| \geq \varepsilon) 
+        $E|\xi| \geq \varepsilon \cdot E(I(|\xi| \geq \varepsilon)) = \varepsilon \cdot p(|\xi| \geq \varepsilon) 
         \Longrightarrow p(|\xi| \geq \varepsilon) \leq \frac{E|\xi|}{\varepsilon}$
     \end{MyProof}
 
@@ -111,7 +111,7 @@
     \end{MyTheorem}
 
     \begin{MyProof}
-        $p(|\xi - E\xi| \geq \varepsilon) = p((\xi - E\xi)^2 \geq \varepsilon^2) \leq \frac{E(\xi - E\xi)^2}{\varepsilon^2} = \frac{D\xi}{\varepsilon}$
+        $p(|\xi - E\xi| \geq \varepsilon) = p((\xi - E\xi)^2 \geq \varepsilon^2) \leq \frac{E(\xi - E\xi)^2}{\varepsilon^2} = \frac{D\xi}{\varepsilon^2}$
     \end{MyProof}
 
     \subsubsection{III. Правило \enquote{трех сигм}}

@@ -54,11 +54,11 @@
     \begin{MyProof}
         Пусть $a > 0$, тогда $F_\eta(x) = p(\eta < x) = p(a\xi + b < x) = p(\xi < \frac{x - b}{a}) = \int_{-\infty}^{\frac{x - b}{a}} f_\xi(t) dt = 
         \left[\begin{matrix}t = \frac{y - b}{a} & dt = \frac{1}{a} dy & y = at + b \\ y(-\infty) = -\infty & y(\frac{x - b}{a}) = x\end{matrix}\right] = 
-        \int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow \eta = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
+        \int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow f_\eta(x) = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
 
         Пусть $a < 0$, тогда $F_\eta(x) = p(\eta < x) = p(a\xi + b < x) = p(\xi > \frac{x - b}{a}) = \int_{\frac{x - b}{a}}^{\infty} f_\xi(t) dt = 
         \left[\begin{matrix}t = \frac{y - b}{a} & dt = \frac{1}{a} dy & y = at + b \\ y(\infty) = -\infty & y(\frac{x - b}{a}) = x\end{matrix}\right] = 
-        -\int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow \eta = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
+        -\int_{-\infty}^x \frac{1}{a} f_\xi(\frac{y - b}{a}) dy \Longrightarrow f_\eta(x) = \frac{1}{|a|} f_\xi (\frac{x - b}{a})$
     \end{MyProof}
 
     \underline{Следствие}
@@ -170,7 +170,7 @@
     4) Если существует момент $m_t$ случайной величины $\xi$, то существует $m_s$ при $s < t$ (при условии, что интеграл/сумма сходятся)
 
     \begin{MyProof}
-        Пусть $s < t$. Тогда $|x|^s \leq \min(1, |x|^t) \leq 1 + |x|^t$, так как при $|x| < 1, \ |x|^s \leq 1$ и при $|x| \geq 1, \ |x|^s \leq |x|^t$
+        Пусть $s < t$. Тогда $|x|^s \leq \max(1, |x|^t) \leq 1 + |x|^t$, так как при $|x| < 1, \ |x|^s \leq 1$ и при $|x| \geq 1, \ |x|^s \leq |x|^t$
     
         $E|\xi|^s \leq E|\xi|^t + 1$ и если $E|\xi|^t$ существует (конечно), то $\exists E|\xi|^s$
     
