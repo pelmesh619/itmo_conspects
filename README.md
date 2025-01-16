@@ -18,7 +18,7 @@
 
 ### Базы данных (лектор Маятин А. В.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/databases/databases_superconspect.html)
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/databases/databases_superconspect.html)
 
 ### Дополнительные главы высшей математики (лектор Далевская О. П.)
 
