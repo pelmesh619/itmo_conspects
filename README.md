@@ -4,6 +4,12 @@
 
 Если нашли какую-то ошибку - напишите мне ([t.me/pelmeshke](https://t.me/pelmeshke)) или сделайте [форк](https://github.com/pelmesh619/itmo_conspects/fork) с исправлением и пулл реквест
 
+## IV семестр
+
+### Проектирование баз данных (лектор Мацнев Н. И.)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_05.html) <!-- Мацнев -->
+
 ## [III семестр](meta/III.md)
 
 ### Физические основы компьютерных и сетевых технологий (лектор Музыченко Я. Б.)
