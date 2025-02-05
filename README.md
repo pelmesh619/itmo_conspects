@@ -24,7 +24,7 @@
 
 [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_superconspect.pdf)
 
-Карточки для Anki - [https://github.com/pelmesh619/itmo_conspects/tree/main/Add-Chapters-Cards](https://github.com/pelmesh619/itmo_conspects/tree/main/Add-Chapters-Cards)
+Карточки для Anki - [https://github.com/pelmesh619/itmo_conspects/releases/tag/anki.addchapters1.v1.1](https://github.com/pelmesh619/itmo_conspects/releases/tag/anki.addchapters1.v1.1)
 
 ### Объектно-ориентированное проектирование и программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
