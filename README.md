@@ -10,6 +10,13 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_05.html) <!-- Мацнев -->
 
+### История российской науки и техники (лектор Васильев А. В.)
+
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_superconspect.html)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_02_06.html)
+
+
 ## [III семестр](meta/III.md)
 
 ### Физические основы компьютерных и сетевых технологий (лектор Музыченко Я. Б.)
@@ -35,10 +42,6 @@
 ### Объектно-ориентированное проектирование и программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html)
-
-### История российской науки и техники (лектор Васильев А. В.)
-
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_superconspect.html)
 
 ## [II семестр](meta/II.md)
 
