@@ -16,6 +16,10 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_02_06.html)
 
+### Технологии программирования на Java (лектор Макаревич Р. Д.)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_07.html)
+
 
 ## [III семестр](meta/III.md)
 
