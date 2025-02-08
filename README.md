@@ -20,7 +20,7 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_07.html)
 
-### Дополнительные главы высшей математики (лектор Далевская О. П.)
+### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/addchapters2/addchapters2_2025_02_07.pdf)
 
