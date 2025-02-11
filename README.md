@@ -24,6 +24,17 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_07.pdf)
 
+### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
+
+* Лекция №2 - в производстве
+
+### Математическая статистика (лектор Блаженов А. В.)
+
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_11.pdf)
+
+### Операционные системы (лектор Маятин А. В.)
+
+* Лекция №2 - в производстве
 
 ## [III семестр](meta/III.md)
 
