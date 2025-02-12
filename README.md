@@ -8,8 +8,10 @@
 
 ### Проектирование баз данных (лектор Мацнев Н. И.)
 
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_superconspect.html)
+
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_05.html) <!-- Мацнев -->
-* Лекция №2 - в производстве <!-- Мацнев -->
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_12.html) <!-- Мацнев -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
