@@ -37,7 +37,7 @@
 
 ### Операционные системы (лектор Маятин А. В.)
 
-* Лекция №2 - в производстве
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_02_11.html)
 
 ## [III семестр](meta/III.md)
 
