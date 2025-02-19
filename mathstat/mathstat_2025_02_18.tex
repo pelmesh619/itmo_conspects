@@ -1,0 +1,185 @@
+$subject$=Математическая статистика
+$teacher$=Лекции Блаженова А. В.
+$date$=18.02.2025
+
+\section{Лекция 2.}
+
+\subsection{Точечная оценка}
+
+Пусть имеется выборка $\vec{X} = (X_1, X_2, \dots, X_n)$ объемом $n$
+
+Пусть требуется найти приближенную оценку $\theta^*$ неизвестного параметра $\theta$
+
+Находим ее при помощи некоторой функции обработки данных $\theta^* = \theta^*(X_1, \dots, X_n)$
+
+\Def Такая функция называется статистикой
+
+\Defs А оценка $\theta^*$ называется точечной оценкой
+
+\subsubsection{Свойство точечных оценок}
+
+\begin{enumerate}
+    \item Состоятельность
+
+    \Def Статистика $\theta^* = \theta^*(X_1, \dots, X_n)$ неизвестного параметра называется
+    состоятельной, если $\theta^* \overset{p}{\longrightarrow} \theta$ при $n \to \infty$
+
+    \item Несмещенность
+
+    \Def Оценка $\theta^*$ параметра $\theta$ называется несмещенной, если 
+    математическое ожидание $E \theta^* = \theta$
+    
+    \Notas Оценка $\theta^*$ называется асимптотически несмещенной, если 
+    $E \theta^* \overset{p}{\longrightarrow} \theta$ при $n \to \infty$
+
+    \item Эффективность 
+
+    \Def Оценка $\theta^*_1$ не хуже $\theta^*_2$, если $E (\theta^*_1 - \theta)^2 \leq E (\theta^*_2 - \theta)^2$.
+    Или, если $\theta^*_1$ и $\theta^*_2$ несмещенные, то $D \theta^*_1 \leq D \theta^*_2$
+
+    \Defs Оценка $\theta^*$ называется эффективной, если она не хуже всех остальных оценок
+
+    \Notas Не существует эффективной оценки в классе всех возможных оценок
+
+    \begin{MyTheorem}
+        \Th В классе несмещенных оценок существует эффективная оценка
+    \end{MyTheorem}
+
+    \item Асимптотическая нормальность
+
+    \Def Оценка $\theta^*$ параметра $\theta$ называется асимптотически нормальной, если 
+    $\sqrt{n} (\theta^* - \theta) \rightrightarrows N(0, \sigma^2 (\theta))$ при $n \to \infty$
+    
+\end{enumerate}
+
+\subsection{Точечные оценки моментов}
+
+\Def Выборочным средним $\overline{x}$ называется величина $\overline{x} = \frac{1}{n} \sum_{i = 1}^n X_i$
+
+\Defs Выборочной дисперсией $D^*$ называется величина $D^* = \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{x})^2$
+
+\Defs Исправленной дисперсией $S^2$ называется величина $S^2 = \frac{n}{n - 1} D^* = \frac{1}{n - 1} \sum_{i = 1}^n (X_i - \overline{x})^2$
+
+\Defs Выборочным средним квадратическим отклонением называется величина $\sigma^* = \sqrt{D^*}$
+
+\Defs Исправленным средним квадратическим отклонением называется величина $S = \sqrt{S^2}$
+
+\Defs Выборочным $k$-ым моментом называется величина $\overline{x^k} = \frac{1}{n} \sum_{i = 1}^n X_i^k$
+
+\Defs Модой $\mathrm{Mo}^*$ называется варианта $x_k$ с наибольшей частотой $n_k = \max_i (n_1, n_2, \dots, n_m)$
+
+\Defs Выборочной медианой $\mathrm{Me}^*$ называется варианта $x_i$ в середине вариационного ряда $\begin{cases}\mathrm{Me}^* = 
+X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \text{если } n = 2k\end{cases}$
+
+\begin{MyTheorem}
+    \Ths $\overline{x}$ - состоятельная месмещенная оценка теоретического матожидания $ЕX = a$
+
+    1) $E \overline{x} = a$
+
+    2) $\overline{x} \overset{p}{\longrightarrow} a$ при $n \to \infty$
+\end{MyTheorem}
+
+\begin{MyProof}
+    1) $E \overline{x} = E\left(\frac{X_1 + \dots + X_n}{n}\right) = \frac{1}{n} \sum_{i = 1}^n E X_i = 
+    \frac{1}{n} n E X_1 = E X_1 = a$
+
+    2) $\overline{x} = \frac{\overline{x}_1 + \dots + \overline{x}_n}{n} \overset{p}{\longrightarrow} a$ 
+    согласно Закону Больших Чисел
+\end{MyProof}
+
+\Nota Если второй момент конечен, то $\overline{x}$ - асимптотически нормальная оценка. По ЦПТ $\frac{S_n - n E X_1}{\sqrt{n} \sqrt{D X_1}} = \sqrt{n} \frac{\overline{x} - E X_1}{\sqrt{D X_1}} \rightrightarrows N(0, 1)$
+или $\sqrt{n} (\overline{x} - E X_1) \rightrightarrows N(0; D X_1)$
+
+\begin{MyTheorem}
+    \Ths Выборочный $k$-ый момент является состоятельной несмещенной оценкой теоретического $k$-ого момента
+
+    1) $\overline{E X^k} = E X^k$
+
+    2) $\overline{X^k} \overset{p}{\longrightarrow} X^k$
+\end{MyTheorem}
+
+Это следует из предыдущей теоремы, если взять $X^k$ вместо $X$
+
+\begin{MyTheorem}
+    \Ths Выборочной дисперсией $D^*$ и $S^2$ являются состоятельными оценками теоретического дисперсией, при этом $D^*$ - смещенная оценка, а
+    $S^2$ - несмещенная оценка
+\end{MyTheorem}
+
+\begin{MyProof}
+    Заметим, что $D^* = \overline{X^2} - \overline{X}^2$
+
+    $E D^* = E(\overline{X^2} - \overline{X}^2) = E\overline{X^2} - E (\overline{X}^2) = 
+    E X^2 - E (\overline{X}^2)$
+
+    Так как $D \overline{X} = E(\overline{X^2}) - (E \overline{X})^2$, то $E X^2 - E (\overline{X}^2) = 
+    E X^2 - ((E\overline{X})^2 + D\overline{X}) = (E X^2 - EX) - D\overline{X} = D X - D \overline{X} = D X - D \left(\frac{X_1 + \dots + X_n}{n}\right) = 
+    DX - \frac{1}{n^2} \sum_{i = 1}^n D X_i = DX - \frac{1}{n^2} n D X_1 = DX - \frac{1}{n} DX = \frac{n - 1}{n} DX$, то есть $D^*$ - смещенная вниз оценка
+
+    $E S^2 = E(\frac{n}{n - 1} D^*) = \frac{n}{n - 1} \frac{n - 1}{n} DX = DX \Longrightarrow S^2$ - несмещенная вниз оценка 
+
+    2. $D^* = \overline{X^2} - \overline{X}^2 \overset{p}{\longrightarrow} E X^2 - (E X)^2 = DX$ - состоятельная оценка
+
+    $S^2 = \frac{n}{n - 1} D^* \overset{p}{\longrightarrow} DX$
+\end{MyProof}
+
+\Nota Отсюда видим, что выборочная дисперсия - асимптотически несмещенная оценка. Поэтому при большом (обычно не меньше 100) объеме выборке можно
+считать обычную выборочную дисперсию
+
+\subsection{Метод моментов (Пирсона)}
+
+Постановка задачи: пусть имеется выборка объема $n$ неизвестного распределения, но известного типа,
+которое задается $k$ параметрами: $\theta = (\theta_1, \theta_2, \dots, \theta_k)$. Требуется дать оценки данным
+неизвестным параметрам
+
+Идея метода состоит в том, что сначала находим оценки $k$ моментов, а затем с помощью теоретических формул
+из теории вероятности даем оценки этих параметров
+
+Пусть $\vec{X}$ - выборка из абсолютно непрерывного распределения $F_\theta$ с плотностью известного типа, 
+которая задается $k$ параметрами $f_\theta (x, \theta_1, \dots, \theta_k)$
+
+Тогда теоретические моменты находим по формуле $m_i = \int_{-\infty}^{\infty} x^i f_\theta (x, \theta_1, \dots, \theta_k) dx = h_i(\theta_1, \dots, \theta_n)$
+
+Получаем систему из $k$ уравнений с $k$ неизвестными. В эти уравнения подставляем найденные оценки
+моментов и, решая получившуюся систему уравнений, находим нужные оценки параметров
+
+$\begin{cases}
+    \overline{x} = h_1(\theta_1^*, \dots, \theta_n^*) \\ 
+    \overline{x^2} = h_2(\theta_1^*, \dots, \theta_n^*) \\ 
+    \dots \\
+    \overline{x^k} = h_k(\theta_1^*, \dots, \theta_n^*) \\ 
+\end{cases}$
+
+\Nota Оценки по методу моментов как правило состоятельные, но часто смещенные
+
+\Ex Пусть $X \in U(a, b)$. Обработав статданные, нашли оценки первого и второго моментов:
+
+$\overline{x} = 2.25; \overline{x^2} = 6.75$
+
+Найти оценки параметров $a^*, b^*$
+
+Плотность равномерного распределения $f_{(a, b)} (x) = \begin{cases}0, & x < a \\ \frac{1}{b - a} & a \leq x \leq b, \\ 0, x > b\end{cases}$
+
+$EX = \int_a^b x \frac{1}{b - a} dx = \frac{a + b}{2}$
+
+$EX = \int_a^b x^2 \frac{1}{b - a} dx = \frac{a^2 + ab + b^2}{3}$
+
+\mediumvspace
+
+Получаем:
+
+$\begin{cases}
+    \overline{x} = \frac{a^* + b^*}{2} \\ 
+    \overline{x^2} = \frac{a^*^2 + a^* b^* + b^*^2}{3} \\ 
+\end{cases} \Longleftrightarrow \begin{cases}
+    \frac{a^* + b^*} = 4.5 \\ 
+    a^*^2 + a^* b^* + b^*^2 = 20.25 \\ 
+\end{cases} \Longleftrightarrow \begin{cases}
+    \frac{a^* + b^*} = 4.5 \\ 
+    a^* b^* = 0 \\ 
+\end{cases} \Longleftrightarrow \begin{cases}
+    a^* = 0 \\ 
+    b^* = 4.5 \\ 
+\end{cases}$
+
+
+
