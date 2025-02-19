@@ -36,7 +36,10 @@
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_superconspect.pdf)
+
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_11.pdf)
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_18.pdf)
 
 ### Операционные системы (лектор Маятин А. В.)
 
