@@ -85,9 +85,17 @@ else:
             continue
 
         if subject is None:
-            subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t).group(1)
+            subject = re.search(r'\\fancyhead\[LO,LE]\{(.*)}', t)
+            if subject is None:
+                subject = re.search(r'\$subject\$=(.*)\n', t).group(1)
+            else:
+                subject = subject.group(1)
         if teacher is None:
-            teacher = re.search(r'\\fancyhead\[RO,RE]\{(.*)}', t).group(1)
+            teacher = re.search(r'\\fancyhead\[RO,RE]\{(.*)}', t)
+            if teacher is None:
+                teacher = re.search(r'\$teacher\$=(.*)\n', t).group(1)
+            else:
+                teacher = teacher.group(1)
         match = re.search(r'\\begin\{document\}(.+?)\n*\\end\{document\}', t, re.S | re.M | re.I)
 
         if not match:
