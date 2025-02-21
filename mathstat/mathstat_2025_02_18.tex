@@ -21,20 +21,24 @@ $date$=18.02.2025
 \begin{enumerate}
     \item Состоятельность
 
-    \Def Статистика $\theta^* = \theta^*(X_1, \dots, X_n)$ неизвестного параметра называется
+    \Defs Статистика $\theta^* = \theta^*(X_1, \dots, X_n)$ неизвестного параметра называется
     состоятельной, если $\theta^* \overset{p}{\longrightarrow} \theta$ при $n \to \infty$
+
+    \mediumvspace
 
     \item Несмещенность
 
-    \Def Оценка $\theta^*$ параметра $\theta$ называется несмещенной, если 
+    \Defs Оценка $\theta^*$ параметра $\theta$ называется несмещенной, если 
     математическое ожидание $E \theta^* = \theta$
     
     \Notas Оценка $\theta^*$ называется асимптотически несмещенной, если 
     $E \theta^* \overset{p}{\longrightarrow} \theta$ при $n \to \infty$
 
+    \mediumvspace
+
     \item Эффективность 
 
-    \Def Оценка $\theta^*_1$ не хуже $\theta^*_2$, если $E (\theta^*_1 - \theta)^2 \leq E (\theta^*_2 - \theta)^2$.
+    \Defs Оценка $\theta^*_1$ не хуже $\theta^*_2$, если $E (\theta^*_1 - \theta)^2 \leq E (\theta^*_2 - \theta)^2$.
     Или, если $\theta^*_1$ и $\theta^*_2$ несмещенные, то $D \theta^*_1 \leq D \theta^*_2$
 
     \Defs Оценка $\theta^*$ называется эффективной, если она не хуже всех остальных оценок
@@ -42,12 +46,14 @@ $date$=18.02.2025
     \Notas Не существует эффективной оценки в классе всех возможных оценок
 
     \begin{MyTheorem}
-        \Th В классе несмещенных оценок существует эффективная оценка
+        \Ths В классе несмещенных оценок существует эффективная оценка
     \end{MyTheorem}
+
+    \mediumvspace
 
     \item Асимптотическая нормальность
 
-    \Def Оценка $\theta^*$ параметра $\theta$ называется асимптотически нормальной, если 
+    \Defs Оценка $\theta^*$ параметра $\theta$ называется асимптотически нормальной, если 
     $\sqrt{n} (\theta^* - \theta) \rightrightarrows N(0, \sigma^2 (\theta))$ при $n \to \infty$
     
 \end{enumerate}
