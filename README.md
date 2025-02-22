@@ -27,15 +27,19 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_07.html)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_14.html)
+* Лекция №3 - в производстве
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_07.pdf)
+* Лекция №3 - в производстве
 
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_superconspect.pdf)
+
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_10.pdf)
-* Лекция №3 - в производстве
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_17.pdf)
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
