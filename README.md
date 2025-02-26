@@ -53,9 +53,11 @@
 
 ### Операционные системы (лектор Маятин А. В.)
 
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_superconspect.html)
+
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_02_11.html)
 * Лекция №3 - отменена
-* Лекция №4 - в производстве
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_02_25.html)
 
 ## [III семестр](meta/III.md)
 
