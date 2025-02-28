@@ -12,11 +12,11 @@ $\theta = (\theta_1, \dots, \theta_n)$
 Идея метода состоит в следующем: подбираем параметры таким образом, чтобы вероятность получения
 данной выборки при случайном эксперименте была наибольшей.
 
-Если распределение дискретное, то $P_{\theta} (X_1 = x_1, X_2 = x_2, \dots, X_n = x_n) = P(X_1 = x_1) \cdot \dots \cdot P(X_n = x_n)$
+Если распределение дискретное, то $P_{\theta} (X_1 = x_1, X_2 = x_2, \dots, X_n = x_n) = P(X_1 = x_1) \dots P(X_n = x_n)$
 
-\Def Функцией правдоподобия $L(\vec{X}, \theta)$ называется функция $L(\vec{X}, \theta) = P(X_1 = x_1) \cdot \dots \cdot P(X_n = x_n) = \prod_{i = 1}^n P(X_i = x_i)$ при дискретном распределении
+\Def Функцией правдоподобия $L(\vec{X}, \theta)$ называется функция $L(\vec{X}, \theta) = P(X_1 = x_1) \dots P(X_n = x_n) = \prod_{i = 1}^n P(X_i = x_i)$ при дискретном распределении
 
-и $L(\vec{X}, \theta) = f_\theta(x_1) \cdot \dots \cdot f_\theta(x_n) = \prod_{i = 1}^n f_\theta(x_i)$ в абсолютно непрерывном распределении
+и $L(\vec{X}, \theta) = f_\theta(x_1) \dots f_\theta(x_n) = \prod_{i = 1}^n f_\theta(x_i)$ в абсолютно непрерывном распределении
 
 \Def Логарифмической функцией правдоподобия называется функция $\ln L(\vec{X}, \theta)$
 
@@ -49,7 +49,7 @@ $\ln L(\vec{X}, a, \sigma^2) = -n\ln \sigma - \frac{n}{2} \ln 2\pi - \frac{1}{2\
 
 $\frac{\partial \ln L}{\partial a} = -\frac{1}{2\sigma^2} \sum_{i = 1}^n -2(x_i - a) = \frac{1}{\sigma^2} \sum_{i = 1}^n (x_i - a) = \frac{n\overline{x} - na}{\sigma^2}$
 
-$\frac{\partial \ln L}{\partial \sigma} = -\frac{n}{\sigma} - \sum_{i = 1}^n (x_i - a)^2 \frac{1}{2} \cdot (-2) \cdot \sigma^{-3} = \frac{1}{\sigma^3} \sum_{i = 1}^n (x_i - a)$
+$\frac{\partial \ln L}{\partial \sigma} = -\frac{n}{\sigma} - \sum_{i = 1}^n (x_i - a)^2 \frac{1}{2} \cdot (-2) \cdot \sigma^{-3} = \frac{1}{\sigma^3} \sum_{i = 1}^n (x_i - a)^2 - \frac{n}{\sigma}$
 
 $\begin{cases}
     \frac{n\overline{x} - na}{\sigma^2} = 0 \\
@@ -86,7 +86,7 @@ $\theta^* = 2 \overline{x}$ - несмещенная оценка, так как
 $E(\theta^* - \theta)^2 = D\theta^* = D2\overline{x} = 4D\overline{x} = 4\frac{D\overline{x}}{n} = \frac{4}{n}\frac{\theta^2}{12} = \frac{\theta^2}{3n}$
 
 Изучим распределение $X_{(n)}$: $F_{X_{(n)}}(x) = P(X_{(n)} < x) = P(X_1 < x, X_2 < x, \dots, X_n < x) = 
-P(X_1 < x) \cdot \dots \cdot P(X_n < x) = F_{X_1}(x) \cdot \dots \cdot F_{X_n}(x) = F^n_{(x_1)}(x)$
+P(X_1 < x) \dots P(X_n < x) = F_{X_1}(x) \dots F_{X_n}(x) = F^n_{(x_1)}(x)$
 
 $F_{X_1} (x) = \begin{cases}
     0, & x < 0 \\
@@ -178,7 +178,7 @@ $I(a) = E\left(\frac{\partial}{\partial a} \ln f_a(X)\right)^2 = E\left(\frac{X 
 $Da^* = D\overline{x} = \frac{DX}{n} = \frac{\sigma^2}{n}$ - ограничена по параметру $a$
 
 По неравенству Рао-Крамера $Da^* = \frac{\sigma^2}{n} =\joinrel= \frac{1}{nI(a)} = \frac{1}{n} \sigma^2$; из 
-этого следует, что $a^*$ - параметра $a$
+этого следует, что $a^*$ - эффективная оценка параметра $a$
 
 \Nota Аналогично можно показать, что $S^2$ - несмещенная эффективная оценка для параметра $\sigma^2$
 
