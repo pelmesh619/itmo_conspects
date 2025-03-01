@@ -29,6 +29,7 @@
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_07.html)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_14.html)
 * Лекция №3 - в производстве
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_28.html)
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
