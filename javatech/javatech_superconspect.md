@@ -4,6 +4,10 @@
 * [Технологии программирования на Java](#%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D0%B8-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F-%D0%BD%D0%B0-java)
   * [Лекция 1](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-1)
   * [Лекция 2](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-2)
+  * [Лекция 3](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-3)
+    * [Apache Ant + Apache Ivy](#apache-ant-%2B-apache-ivy)
+    * [Apache Maven](#apache-maven)
+    * [Google Gradle](#google-gradle)
   * [Лекция 4](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-4)
     * [Обнаружение мусора](#%D0%BE%D0%B1%D0%BD%D0%B0%D1%80%D1%83%D0%B6%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BC%D1%83%D1%81%D0%BE%D1%80%D0%B0)
     * [Очистка мусора](#%D0%BE%D1%87%D0%B8%D1%81%D1%82%D0%BA%D0%B0-%D0%BC%D1%83%D1%81%D0%BE%D1%80%D0%B0)
@@ -193,6 +197,191 @@ list
 list.stream().forEach(x -> System.out.println(x));
 ```
 
+
+
+## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-3"></a> Лекция 3
+
+По мере роста количества кода появилась потребность в системах сборки, которые связывают необходимые библиотеки с проектом. Впоследствии понадобилась автоматизация сборки, чтобы система сама находила зависимости, скачивала их, прогоняла тесты и деплоила на удаленный сервер
+
+В начале единственным приличным инструментом для сборки был Make, позднее потребовались более функциональные инструменты для сборки. Сейчас можно выделить 3 популярные системы сборки для Java:
+
+* Apache Ant и Apache Ivy
+* Apache Maven
+* Google Gradle
+
+### <a name="apache-ant-%2B-apache-ivy"></a> Apache Ant + Apache Ivy
+
+Ant вышел в 2000 и был первым среди "современных" инструментов сборки. Для описания сборки Ant использует информацию, написанную в `build.xml`:
+
+```xml
+<project>
+    <target name="clean">
+        <delete dir="classes"/>
+    </target>
+
+    <target name="compile" depends="clean">
+        <mkdir dir="classes"/>
+        <javac srcdir="src" destdir="classes"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="jar"/>
+        <jar destfile-"jar/HelloWorld.jar" basedir="classes">
+            <manifest>
+                <attribute name="Main-Class"
+                  value="antExample.HelloWorld"/>
+            </manifest>
+        </jar>
+    </target>
+
+    <target name="run" depends="jar">
+        <java jar="jar/HelloWorld.jar" fork.="true">
+    </target>
+</project>
+```
+
+Позднее для управления зависимостями появился Apache Ivy. Ivy автоматически ищет в указанном репозитории указанные зависимости и скачивает их.
+
+Во время сборки Ant делает 4 вещи (фазы, цели):
+
+* clean - очистка предыдущих файлов сборки
+* compile - компиляция 
+* jar - упаковка в jar архив
+* run - запуск JVM
+
+### <a name="apache-maven"></a> Apache Maven
+
+Maven вышел в 2004 и стал преемником Ant и Ivy, сочетая в себе функционал этих инструментов. Maven умеет управлять зависимостям, которые загружены на репозиторий [Maven Central](https://mvnrepository.com/)
+
+В отличии от Apache Ant, Maven требует строгой файловой структуры проекта:
+
+```
+project
+ |_ src
+ |   |_ main
+ |   |   |_ java
+ |   |   |_ resources
+ |   |_ test
+ |       |_ java
+ |       |_ resources
+ |_ target
+ |_ pom.xml
+```
+
+Управлять сборкой в Maven можно с помощью `pom.xml` файла (Project Object Model). В ней
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.O"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.O.O
+    http://maven.apache.org/xsd/maven-4.O.O.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>example.com</groupId>
+    <artifactId>example</artifactId>
+
+    <version>1.0-SNAPSHOT</version>
+
+    <dependencies>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.6</version>
+        </dependency>
+    </dependencies>
+</project>
+```
+
+Тег `modelVersion` указывает на версию Maven, теги `groupld`, `artifactId`, `version` указывают название и версию нашего артифакта (артифактом будем называть приложение, модуль, библиотему, jar-файл и прочее). В теге `dependencies` в том же формате указаны зависимости нашего проекта, которые будут загружаться из Maven Central
+
+Чтобы изменить структуру проекта, в Maven придумали архетипы - шаблоны проектов. С помощью архетипов можно создать готовые шаблоны проектов для библиотек, для веб-приложений, для плагина и т.д.. Чтобы посмотреть доступные архетипы, можно выполнить команду `mvn archetype:generate`
+
+Так же как и Ant, Maven обладает своим жизненным циклом
+
+| Фаза | Описание                                                                         |
+| -------- | ---------------------------------------------------------------------------------------- |
+| validate | Проверка корректность метаинформации о проекте |
+| compile  | Компиляция файлов                                                        |
+| test     | Проверка тестов на скомпилированных файлах         |
+| package  | Упаковка в артефакт вида jar, zip и т.д.                         |
+| verify   | Проверка артефактов                                                    |
+| install  | Коммит артефакта в локальный репозиторий             |
+| deploy   | Деплой на продакшен или удаленный репозиторий    |
+
+Жизненный цикл можно расширять при помощи плагинов. Плагины устанавливают при помощи изменения `pom.xml`:
+
+```xml
+<plugins>
+    <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>2.6</version>
+    </plugin>
+</plugins>
+```
+
+### <a name="google-gradle"></a> Google Gradle
+
+Google Gradle был выпущен в 2008 году для облегчения разработки Java-приложений на Android. Вместо громоздкого XML система сборки Gradle поддерживает два языка для описания сборки: предметно-ориентированный языки **Groovy** и **Kotlin**.
+
+В качестве репозитория зависимостей Gradle поддерживает репозитории Ivy, Maven Central и другие.
+
+Так как Gradle постоянно меняется и не имеет совместимость между собой, существует Gradle Wrapper: скрипт `grablew` автоматически скачивает нужную версию Gradle, которая указана в `build.gradle`. Сам `build.gradle`, информация о проекте, выглядит так:
+
+```groovy
+plugins {
+    id 'application'
+}
+
+repositories {
+    mavenCentral ( )
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
+
+    implementation 'com.google.guava:guava:31.1-jre'
+}
+
+application {
+    mainClass = 'demo.Арр'
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
+```
+
+Или же можно создать `build.gradle.kts`, где указать то же самое, только на Kotlin:
+
+
+```kts
+plugins {
+    application
+}
+
+repositories {
+    mavenCentral ( )
+}
+
+dependencies {
+    testImplementation("org.junit.jupiter:junit-jupiter:5.9.1")
+
+    implementation("com.google.guava:guava:31.1-jre")
+}
+
+application {
+    mainClass.set("demo.Арр")
+}
+
+tasks.named<Test>("test") {
+    useJUnitPlatform()
+}
+```
+
+Как и Maven, Gradle поддерживает плагины и имеет похожийй цикл сборки
 
 
 ## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-4"></a> Лекция 4
