@@ -355,7 +355,7 @@ tasks.named('test') {
 Или же можно создать `build.gradle.kts`, где указать то же самое, только на Kotlin:
 
 
-```kts
+```kt
 plugins {
     application
 }
