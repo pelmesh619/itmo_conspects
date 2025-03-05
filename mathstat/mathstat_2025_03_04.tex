@@ -1,0 +1,231 @@
+$subject$=Математическая статистика
+$teacher$=Лекции Блаженова А. В.
+$date$=04.03.2025
+
+\section{Лекция 4.}
+
+\subsection{Основные распределения математической статистики}
+
+\Def Случайная величина имеет нормальное распределение $\xi \in N(a, \sigma^2)$ с параметрами $a$ и $\sigma^2$, если
+ее плотность имеет вид $f_\xi(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}}$
+
+На практике нормальное распределение встречается чаще всего в силу ЦПТ
+
+\Def Распределение $N(0, 1)$ с параметрами $a = 0, \sigma^2 = 1$ называется стандартным нормальным распределением. 
+Его плотность равна $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$. 
+В дальнейшем такую случайную величину будем называть стандартной нормалью
+
+\underline{Свойства}
+
+\begin{enumerate}
+    \item $a = E\xi \qquad \sigma^2 = D\xi$
+
+    \item Линейность: $\xi \in N(a, \sigma^2)$, то $\eta = b \xi + \gamma \in N(ab + \gamma, b^2 \sigma^2)$
+
+    \item Стандартизация: Если $\xi \in N(a, \sigma^2)$, то $\eta = \frac{\xi - a}{\sigma} \in N(0, 1)$
+
+    \item Устойчивость относительно суммирования: если $\xi_1 \in N(a_1, \sigma^2_1)$, $\xi_2 \in N(a_2, \sigma^2_2)$, независимы
+    то $\xi_1 + \xi_2 \in N(a_1 + a_2, \sigma^2_1 + \sigma^2_2)$
+\end{enumerate}
+
+\subsubsection{Распределение \enquote{хи-квадрат}}
+
+\Def Распределение \enquote{хи-квадрат} $H_n$ со степенями свободы $n$ называется распределение
+суммы квадратов независимых стандартных нормальных величин: $\xi^2_n = X_1^2 + X_2^2 + \dots + X_n^2$, 
+где $X \in N(0, 1)$ и независимы
+
+\underline{Свойства}
+
+\begin{enumerate}
+    \item $E\xi^2_n = n$
+
+    \begin{MyProof}
+        Так как $\forall i \ X_i \in N(0, 1)$, то $E X_i^2 = D X_i^2 + (EX_i)^2 = 1 \Longrightarrow E(X_i^2 + \dots X_n^2) = \sum_{i = 1}^n X_i^2 = n$
+    \end{MyProof}
+
+    \item Устойчивость относительно суммирования: если $X \in H_n$, $Y \in H_m$, независимы, то $X + Y \in H_{n + m}$ (по определению) 
+
+
+    \item $\frac{\xi_k^2}{k} \overset{p}{\underset{k \to \infty}{\longrightarrow}} 1$ (по Закону Больших Чисел)
+\end{enumerate}
+
+\subsubsection{Распределение Стьюдента}
+
+\Def Пусть $X_0, X_1, \dots, X_k$ - независимые стандартные нормальные величины. 
+Распределением Стьюдента $T_k$ с $k$ степенями свободы называется распределение случайной величины 
+$t_k = \frac{X_0}{\sqrt{\frac{1}{k}} (X_0^2 + \dots + X_k^2)} = \frac{X_0}{\sqrt{\frac{\xi_k^2}{k}}}$
+
+\underline{Свойства}
+
+\begin{enumerate}
+    \item $Et_k = 0$ - в силу симметрии
+
+    \item $t_k \rightrightarrows N(0, 1)$ (на практике при $k \geq 100$ распределение Стьюдента можно считать стандартным нормальным)
+\end{enumerate}
+
+\subsubsection{Распределение Фишера-Снедекера}
+
+\Def Распределением Фишера-Снедекера $F_{n,m}$ (другое название - F-распределение) со степенями свободы $n$ и $m$ называется распределение случайной величины 
+$f_{n,m} = \frac{\frac{\xi^2_n}{n}}{\frac{\xi^2_m}{m}}$, где $\xi_n^2$ и $\xi_m^2$ - независимые случайные величины с распределением \enquote{хи-квадрат}
+
+\underline{Свойства}
+
+\begin{enumerate}
+    \item $E f_{n,m} = \frac{n}{n - 2}$
+
+    \item $f_{n,m} \overset{p}{\underset{n, m \to \infty}{\longrightarrow}} 1$
+\end{enumerate}
+
+
+\subsection{Математическое ожидание и дисперсия случайного вектора}
+
+Пусть $\vec X = \begin{pmatrix}X_1 \\ \vdots \\ X_n\end{pmatrix}$ - случайный вектор, 
+где случайная величина $X_i$ - компонента (координата) случайного вектора
+
+\Def Математическим ожидание случайного вектора называется вектор с координатами из математических ожиданий компонент: 
+$E \vec X = \begin{pmatrix}E X_1 \\ \vdots \\ E X_n\end{pmatrix}$
+
+\Def Дисперсией случайного вектора (или матрицей ковариаций) случайного вектора $\vec X$ называется
+матрица $D \vec X = E (\vec X - E \vec X) (\vec X - E \vec X)^T$, состоящая из элементов $d_{ij} = \cov (X_i, X_j)$
+
+\Notas На главной диагонали стоят дисперсии компонент: $d_{ii} = D X_i$
+
+\Notas $D \vec X$ - симметричная положительно определенная матрица
+
+\underline{Свойства}
+
+\begin{enumerate}
+    \item $E (A \vec X) = A E \vec X$
+
+    \item $E (\vec X + \vec B) = E \vec X + \vec B$, где $\vec B$ - вектор чисел
+
+    \item $D (A \vec X) = A \cdot D \vec X \cdot A^T$
+
+    \item $D (\vec X + \vec B) = D \vec X$
+\end{enumerate}
+
+\subsection{Многомерное нормальное распределение}
+
+\Def Пусть случайный вектор $\vec \xi = \begin{pmatrix}\xi_1 \\ \vdots \\ \xi_n\end{pmatrix}$ имеет вектор средних 
+$\vec a = E \vec \xi$, $K$ - симметричная положительно определенная матрица. Вектор $\vec \xi$ 
+имеет нормальное распределение в $\Real^n$ с параметрами $\vec a$ и $K$, если его плотность 
+$f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-\frac{1}{2} (\vec X - \vec a)^T K^{-1} (\vec X - \vec a)}$
+
+
+\underline{Свойства}
+
+\begin{enumerate}
+    \item Матрица $K = D \vec \xi = \left(\cov (\xi_i, \xi_j)\right)$ - матрица ковариаций
+
+    \item При $\vec a = \vec 0$ и $K = E$ имеем вектор из независимых стандартных нормальных величин
+
+    \begin{MyProof}
+        При $\vec a = \vec 0$ и $K = E$: $f_{\vec \xi} (X_1, \dots, X_n) = \frac{1}{\left(\sqrt{2\pi}\right)^n} 
+        e^{-\frac{1}{2} \begin{pmatrix}X_1 & \dots & X_n\end{pmatrix} E \begin{pmatrix}X_1 & \dots & X_n\end{pmatrix}^T} = 
+        \frac{1}{\left(\sqrt{2\pi}\right)^n} e^{-\frac{1}{2} (X_1^2 + \dots + X_n^2)} = 
+        \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} X_1^2} + \dots + \frac{1}{\sqrt{2\pi}} e^{-\frac{1}{2} X_n^2}$
+
+        Так как плотность распалась на произведение плотностей стандартного нормального распределение, то все компоненты имеют стандартное нормальное распределение
+    \end{MyProof}
+\end{enumerate}
+
+Далее вектором из независимых стандартных нормальных величин для краткости будем называть стандартным нормальным вектором
+
+\begin{enumerate}
+    \setcounter{enumi}{2}
+
+    \item $\letsymbol \vec X$ - стандартный нормальный вектор, $B$ - невырожденная матрица, 
+    тогда вектор $\vec Y = B \vec X + \vec a$ имеет многомерное нормальное распределение с параметрами $\vec a$ и $K = B B^T$
+
+    \item $\letsymbol \vec Y \in N(\vec a, K)$. Тогда вектор $\vec X = B^{-1} (\vec Y - \vec a)$ - стандартный нормальный вектор, где $\sqrt{K}$
+
+    \underline{Следствие}. Эквивалентное определение: Многомерное нормальное распределение - это то, которое получается из
+    стандартного нормального вектора при помощи невырожденного преобразования и сдвиг
+
+    \item $\letsymbol \vec X$ - стандартный нормальный вектор, $C$ - ортогональная матрица. Тогда $\vec Y = C \vec X$ - стандартный нормальный вектор
+
+    \begin{MyProof}
+        Так как $C$ - ортогональная, то $C^T = C^{-1}$. Тогда по третьему свойству $K = C C^T = E$, а по второму свойству $\vec Y$ - стандартный нормальный вектор
+    \end{MyProof}
+
+    \item $\letsymbol$ случайный вектор $\xi \in N(\vec a, K)$.
+    Тогда его координаты независимы тогда и только тогда, когда они не коррелированы (то есть матрица ковариаций $K$ диагональная)
+
+    % какого распределения величины
+    \underline{Следствие}. Если плотность совместного распределения случайных величин $\xi$ и $\eta$ ненулевая, то они независимы тогда и только тогда, 
+    когда их коэффициент корреляции равен нулю
+\end{enumerate}
+
+\subsection{Многомерная центральная предельная теорема}
+
+\begin{MyTheorem} 
+    \Ths Среднее арифметическое независимых одинаково распределенных случайных векторов слабо сходится к многомерному нормальному распределению
+\end{MyTheorem}
+
+\subsection{Лемма Фишера}
+
+\begin{MyTheorem}
+    Пусть вектор $\vec X$ - стандартный нормальный вектор, $C$ - ортогональная матрица, $\vec Y = C \vec X$.
+    Тогда $\forall 1 \leq k \leq n - 1 \ $ случайная величина $T(\vec X) = \sum_{i = 1}^n X_i^2 - Y_1^2 - Y_2^2 - \dots Y_k^2$ 
+    не зависит от $Y_1, Y_2, \dots, Y_k$ и имеет распределение \enquote{хи-квадрат} со степенями свободы $n - k$
+\end{MyTheorem}
+
+\begin{MyProof}
+    Так как $C$ - ортогональное преобразование, то $\|\vec X\| = \|\vec Y\|$, то есть $\sum_{i = 1}^n X^2_i = \sum_{i = 1}^n Y^2_i \Longrightarrow
+    T(\vec X) = \sum_{i = 1}^n X_i^2 - Y_1^2 - Y_2^2 - \dots Y_k^2 = Y^2_{k + 1} + \dots + Y^2_{n}$
+
+    Согласно свойству 5 $Y_i \in N(0, 1)$ и независимы, то по определению \enquote{хи-квадрат} $T(\vec X) \in H_{n - k}$ и не зависит от $Y_1, \dots, Y_k$
+\end{MyProof}
+
+\subsection{Основная теорема}
+
+\begin{MyTheorem}
+    \Ths Пусть $(X_1, \dots, X_n)$ - выборка из нормального распределения $N(a, \sigma^2)$, $\overline{x}$ - выборочное среднее, $S^2$ - исправленная дисперсия.
+
+    Тогда имеет место следующее распределение 
+
+    \begin{enumerate}
+        \item $\sqrt{n} \frac{\overline{x} - a}{\sigma} \in N(0, 1)$
+        
+        \item $\sum_{i = 1}^n \frac{(X_i - a)^2}{\sigma^2} \in H_n$
+        
+        \item $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \frac{n D^*}{\sigma^2} = \frac{(n - 1) S^2}{\sigma^2} \in H_{n - 1}$
+
+        \item $\sqrt{n} \frac{\overline{x} - a}{S} \in T_{n - 1}$
+        
+        \item $\overline{x}$ и $S^2$ независимы
+    \end{enumerate}
+\end{MyTheorem}
+
+\begin{MyProof}
+    \begin{enumerate}
+        \item Так как $X_i \in N(a, \sigma^2)$, то $\sum_{i = 1}^n X_i \in N(na, n\sigma^2) \Longrightarrow \overline{x} \in N\left(a, \frac{\sigma^2}{n}\right) \Longrightarrow
+        \overline{x} - a \in N\left(0, \frac{\sigma^2}{n}\right) \Longrightarrow \frac{\sqrt{n}}{\sigma} (\overline{x} - a) \in N(0, 1)$
+
+        \item Так как $X_i \in N(a, \sigma^2)$, то $\frac{x_i - a}{\sigma} \in N(0, 1)$ и $\sum_{i = 1}^n \left(\frac{(x_i - a)^2}{\sigma^2}\right)^2 \in H_n$ по определению
+        
+        \item $\sum_{i = 1}^n \left(\frac{(x_i - \overline{x})^2}{\sigma^2}\right)^2 = \sum_{i = 1}^n \left(\frac{x_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
+        \sum_{i = 1}^n (z_i - \overline{z})$, где $z_i = \frac{x_i - a}{\sigma} \in N(0, 1)$, $\overline{z} = \frac{1}{n} \sum_{i = 1}^n z_i = \frac{\sum_{i = 1}^n x_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
+
+        Поэтому можно считать, что изначально $X_i \in N(0, 1)$
+
+        $T(\vec X) = \sum_{i = 1}^n \left(X_i - \overline{x}\right)^2 = n D^* = n (\overline{x^2} - \overline{x}^2) = \sum_{i = 1}^n X_i^2 - n\overline{x}^2 = \sum_{i = 1}^n X_i^2 - Y_1^2$, где $Y_1 = \sqrt{n} \overline{x} = \frac{X_1}{\sqrt{n}} + \dots + \frac{X_n}{\sqrt{n}}$
+
+        Строчка $(\frac{1}{\sqrt{n}}, \dots, \frac{1}{\sqrt{n}})$ имеет длину 1, поэтому ее можно дополнить до ортогональной матрицы $C$, тогда $Y_1$ - первая компонента $\vec Y = C \vec X$, 
+        и согласно лемме Фишера $T(\vec X) = \sum_{i = 1}^n (X_i - \overline{X})^2 \in H_{n - 1}$
+
+        
+        \setcounter{enumi}{4}
+        \item Согласно лемме Фишера $T(\vec X) = (n - 1) S^2$ не зависит от $Y_1 = \sqrt{n} \overline{x} \Longrightarrow S^2 $ и $\overline{x}$ - независимы
+          
+        \setcounter{enumi}{3}
+        \item $\sqrt{n} \frac{\overline{x} - a}{S} = \sqrt{n} \frac{\overline{x} - a}{\sigma} \cdot \frac{1}{\sqrt{\frac{S^2 (n - 1)}{\sigma^2}} \cdot \frac{1}{n - 1}} = \frac{\sqrt{n} \frac{\overline{x} - a}{\sigma}}{\frac{\xi^2_{n - 1}}{n - 1}}$
+
+        Так как по пятому пункту числитель и знаменатель независимы, по определению получаем распределение Стьюдента
+    \end{enumerate}
+\end{MyProof}
+
+
+
+
+
