@@ -759,7 +759,7 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
 \begin{MyTheorem}
     \Ths Пусть $(X_1, \dots, X_n)$ - выборка из нормального распределения $N(a, \sigma^2)$, $\overline{x}$ - выборочное среднее, $S^2$ - исправленная дисперсия.
 
-    Тогда имеет место следующее распределение 
+    Тогда справедливы следующие высказывания:
 
     \begin{enumerate}
         \item $\sqrt{n} \frac{\overline{x} - a}{\sigma} \in N(0, 1)$
@@ -779,16 +779,16 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
         \item Так как $X_i \in N(a, \sigma^2)$, то $\sum_{i = 1}^n X_i \in N(na, n\sigma^2) \Longrightarrow \overline{x} \in N\left(a, \frac{\sigma^2}{n}\right) \Longrightarrow
         \overline{x} - a \in N\left(0, \frac{\sigma^2}{n}\right) \Longrightarrow \frac{\sqrt{n}}{\sigma} (\overline{x} - a) \in N(0, 1)$
 
-        \item Так как $X_i \in N(a, \sigma^2)$, то $\frac{x_i - a}{\sigma} \in N(0, 1)$ и $\sum_{i = 1}^n \left(\frac{(x_i - a)^2}{\sigma^2}\right)^2 \in H_n$ по определению
+        \item Так как $X_i \in N(a, \sigma^2)$, то $\frac{X_i - a}{\sigma} \in N(0, 1)$ и $\sum_{i = 1}^n \frac{(X_i - a)^2}{\sigma^2} \in H_n$ по определению
         
-        \item $\sum_{i = 1}^n \left(\frac{(x_i - \overline{x})^2}{\sigma^2}\right)^2 = \sum_{i = 1}^n \left(\frac{x_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
-        \sum_{i = 1}^n (z_i - \overline{z})$, где $z_i = \frac{x_i - a}{\sigma} \in N(0, 1)$, $\overline{z} = \frac{1}{n} \sum_{i = 1}^n z_i = \frac{\sum_{i = 1}^n x_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
+        \item $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i = 1}^n \left(\frac{X_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
+        \sum_{i = 1}^n (z_i - \overline{z})$, где $z_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{z} = \frac{1}{n} \sum_{i = 1}^n z_i = \frac{\sum_{i = 1}^n X_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
 
         Поэтому можно считать, что изначально $X_i \in N(0, 1)$
 
         $T(\vec X) = \sum_{i = 1}^n \left(X_i - \overline{x}\right)^2 = n D^* = n (\overline{x^2} - \overline{x}^2) = \sum_{i = 1}^n X_i^2 - n\overline{x}^2 = \sum_{i = 1}^n X_i^2 - Y_1^2$, где $Y_1 = \sqrt{n} \overline{x} = \frac{X_1}{\sqrt{n}} + \dots + \frac{X_n}{\sqrt{n}}$
 
-        Строчка $(\frac{1}{\sqrt{n}}, \dots, \frac{1}{\sqrt{n}})$ имеет длину 1, поэтому ее можно дополнить до ортогональной матрицы $C$, тогда $Y_1$ - первая компонента $\vec Y = C \vec X$, 
+        Строчка $\left(\frac{1}{\sqrt{n}}, \dots, \frac{1}{\sqrt{n}}\right)$ имеет длину 1, поэтому ее можно дополнить до ортогональной матрицы $C$, тогда $Y_1$ - первая компонента $\vec Y = C \vec X$, 
         и согласно лемме Фишера $T(\vec X) = \sum_{i = 1}^n (X_i - \overline{X})^2 \in H_{n - 1}$
 
         
