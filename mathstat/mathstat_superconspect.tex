@@ -628,7 +628,7 @@ $Da^* = D\overline{x} = \frac{DX}{n} = \frac{\sigma^2}{n}$ - ограничен�
 
 \Def Пусть $X_0, X_1, \dots, X_k$ - независимые стандартные нормальные величины. 
 Распределением Стьюдента $T_k$ с $k$ степенями свободы называется распределение случайной величины 
-$t_k = \frac{X_0}{\sqrt{\frac{1}{k}} (X_0^2 + \dots + X_k^2)} = \frac{X_0}{\sqrt{\frac{\xi_k^2}{k}}}$
+$t_k = \frac{X_0}{\sqrt{\frac{1}{k} (X_1^2 + \dots + X_k^2)}} = \frac{X_0}{\sqrt{\frac{\xi_k^2}{k}}}$
 
 \underline{Свойства}
 
@@ -782,7 +782,7 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
         \item Так как $X_i \in N(a, \sigma^2)$, то $\frac{X_i - a}{\sigma} \in N(0, 1)$ и $\sum_{i = 1}^n \frac{(X_i - a)^2}{\sigma^2} \in H_n$ по определению
         
         \item $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i = 1}^n \left(\frac{X_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
-        \sum_{i = 1}^n (z_i - \overline{z})$, где $z_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{z} = \frac{1}{n} \sum_{i = 1}^n z_i = \frac{\sum_{i = 1}^n X_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
+        \sum_{i = 1}^n (z_i - \overline{z})^2$, где $z_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{z} = \frac{1}{n} \sum_{i = 1}^n z_i = \frac{\sum_{i = 1}^n X_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
 
         Поэтому можно считать, что изначально $X_i \in N(0, 1)$
 
