@@ -32,8 +32,20 @@ if '--output-directory' in sys.argv or '-o' in sys.argv:
 filename = sys.argv[1]
 folder = os.path.join(*os.path.split(filename)[:-1])
 
-file = open(filename, encoding='utf8').read()
-file = "%% THIS FILE IS GENERATED AUTOMATICALLY BY linter.py, ALL CHANGES WILL BE LOST\n\n\n" + file
+file_text = open(filename, encoding='utf8').read()
+file = "%% THIS FILE IS GENERATED AUTOMATICALLY BY linter.py, ALL CHANGES WILL BE LOST\n\n\n"
+
+if os.path.exists(os.path.join(folder, '__preamble.sty')):
+    specific_preamble = open(os.path.join(folder, '__preamble.sty'), encoding='utf8').read()
+    print(re.search(r'\\begin\{document\}', file_text))
+    if re.search(r'\\begin\{document\}', file_text):
+        file_text = file_text.replace('\\begin{document}', specific_preamble + '\n' + '\\begin{document}', 1)
+    else:
+        file += specific_preamble
+
+file += file_text
+
+
 
 to_display = True
 

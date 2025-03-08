@@ -11,6 +11,8 @@ template = r"""
 \documentclass[12pt]{article}
 \usepackage{preamble}
 
+$topic_preamble$
+
 \pagestyle{fancy}
 \fancyhead[LO,LE]{$subject$}
 \fancyhead[CO,CE]{$date$}
@@ -23,10 +25,16 @@ template = r"""
 \end{document}
 """
 
-def make_full_doc(content):
+def make_full_doc(folder, content):
     global template
-
     t = template
+
+    if os.path.exists(os.path.join(folder, '__preamble.sty')):
+        specific_preamble = open(os.path.join(folder, '__preamble.sty'), encoding='utf8').read()
+        t = t.replace('$topic_preamble$', specific_preamble, 1)
+    else:
+        t = t.replace('$topic_preamble$', '', 1)
+
     new_content = content
     for i in re.finditer(r'((\n)|(^))(\$\w+\$)\=(.*)', content):
         if i.group(4) in t:
@@ -52,7 +60,7 @@ if __name__ == "__main__":
     filename = sys.argv[1]
     folder = os.path.join(*os.path.split(filename)[:-1])
 
-    new_text = make_full_doc(open(filename, encoding='utf8').read())
+    new_text = make_full_doc(folder, open(filename, encoding='utf8').read())
 
     if not os.path.exists('linted'):
         os.mkdir('linted')
