@@ -6,20 +6,20 @@ $teacher$=Лекции Далевской О. П.
 
 \subsection{1.1. Комплексное число}
 
-\Mem $\mathbb{C} = \{ (a, b) \ | \ a, b \in \Real\}$
+\Mem $\Complex = \{ (a, b) \ | \ a, b \in \Real\}$
 
 Обозначение: $z = (a, b) = a + bi$, где $i = (0, -1) = \sqrt{-1}$
 
 \underline{Основные операции}:
 
 \begin{enumerate}
-    \item $\mathrm{Re} z = a$ - вещественная часть, $\mathrm{Im} z = b$ - мнимая часть
+    \item $\Re z = a$ - вещественная часть, $\Im z = b$ - мнимая часть
     \item $z_1 + z_2 = (a_1, b_1) + (a_2, b_2) = (a_1 + a_2, b_1 + b_2) = (a_1 + a_2) + i(b_1 + b_2)$
     \item $z_1 \cdot z_2 = (a_1 + b_1 i) * (a_2 + b_2 i) = (a_1 a_2 - b_1 b_2) + i (a_1 b_2 + a_2 b_1)$
     \item $z^n = \rho^n (\cos n\varphi + i \sin n\varphi)$ - \textbf{формула Муавра}, где $\rho = |z|, \varphi = \arg z$
-    \item $\sqrt[n]{z} = \sqrt[n]{\rho} \left(\cos \frac{\varphi + 2\pi k}{n} + i \sin \frac{\varphi + 2\pi k}{n}\right)$, где $\rho = |z|, \varphi = \arg z, k \in \mathbb{Z}$
+    \item $\sqrt[n]{z} = \sqrt[n]{\rho} \left(\cos \frac{\varphi + 2\pi k}{n} + i \sin \frac{\varphi + 2\pi k}{n}\right)$, где $\rho = |z|, \varphi = \arg z, k \in \Integer$
     \item При $n = 2$ $\sqrt{z} = \sqrt{a + bi} = \pm (c + di)$, 
-        где $c = \sqrt{\frac{a + \sqrt{a^2 + b^2}}{2}}, d = \mathrm{sign}(b) \sqrt{\frac{-a + \sqrt{a^2 + b^2}}{2}}$
+        где $c = \sqrt{\frac{a + \sqrt{a^2 + b^2}}{2}}, d = \operatorname{sign}(b) \sqrt{\frac{-a + \sqrt{a^2 + b^2}}{2}}$
 \end{enumerate}
 
 \begin{minipage}{\textwidth}
@@ -33,14 +33,14 @@ $teacher$=Лекции Далевской О. П.
 
     $z = a + bi = \rho (\cos \varphi + i \sin \varphi)$, где $\rho = |z| = \sqrt{a^2 + b^2}, \varphi = \arg z \in [0; 2\pi)$
 
-    $\mathrm{Arg} z = \arg z + 2\pi k, k \in \mathbb{Z}$
+    $\Arg z = \arg z + 2\pi k, k \in \Integer$
 
     По формуле Эйлера $z = \rho (\cos \varphi + i \sin \varphi) = \rho e^{i \varphi}$
 \end{minipage}
 
 \subsection{1.2. Комплексная плоскость}
 
-\Def Окрестность точки $z_0 \in \mathbb{C}$ определяется как $U_\delta (z_0) = \{z \in \mathbb{C} \ \Big| \ |z - z_0| < \delta\}$
+\Def Окрестность точки $z_0 \in \Complex$ определяется как $U_\delta (z_0) = \{z \in \Complex \ \Big| \ |z - z_0| < \delta\}$
 
 Тогда $\overset{\circ}{U}_\delta (z_0) = U_\delta (z_0) \setminus \{ z_0 \}$ - выколотая окрестность
 
@@ -59,9 +59,9 @@ $teacher$=Лекции Далевской О. П.
 
 \Defs Если любые две точки множества можно соединить ломаной линией конечной длины, то множество считается связным
 
-\Defs Множество $D \subset \mathbb{C}$ называется областью, если $D$ - открытая и связная
+\Defs Множество $D \subset \Complex$ называется областью, если $D$ - открытая и связная
 
-\Defs Кривая $l \subset \mathbb{C}$ считается непрерывной, если $l = \{z \in \mathbb{C} \ | \ z = \varphi(t) + i \psi(t), t \in \Real\}$, где $\varphi(t), \psi(t)$ - непрерывные функции
+\Defs Кривая $l \subset \Complex$ считается непрерывной, если $l = \{z \in \Complex \ | \ z = \varphi(t) + i \psi(t), t \in \Real\}$, где $\varphi(t), \psi(t)$ - непрерывные функции
 
 \Notas Если $\varphi(t)$ и $\psi(t)$ дифференцируемы и их производные непрерывные, то кривая $l$ гладкая
 
@@ -74,25 +74,25 @@ $teacher$=Лекции Далевской О. П.
 \begin{multicols}{2}
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_1}
 
-    \ExNs{1} $D = \{z \in \mathbb{C} \ \Big| \ 0 < |z| < \delta\}$ - область связаная, но не односвязная, ее нельзя стянуть из-за дырки
+    \ExNs{1} $D = \{z \in \Complex \ \Big| \ 0 < |z| < \delta\}$ - область связаная, но не односвязная, ее нельзя стянуть из-за дырки
 
     \mediumvspace
 
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_2}
 
-    \ExN{2} $D = \{z \in \mathbb{C} \ \Big| \ 0 < |z| < \delta, \arg z \neq 0\}$ - область связная и односвязная
+    \ExN{2} $D = \{z \in \Complex \ \Big| \ 0 < |z| < \delta, \arg z \neq 0\}$ - область связная и односвязная
 \end{multicols}
 
 \begin{multicols}{2}
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_3}
 
-    \ExN{3} $D = \{z \in \mathbb{C} \ \Big| \ |\mathrm{Re} z| < \delta\}$ - несвязная область
+    \ExN{3} $D = \{z \in \Complex \ \Big| \ |\Re z| < \delta\}$ - несвязная область
 
     \mediumvspace
 
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_4}
 
-    \ExN{4} $D = \{z \in \mathbb{C} \ \Big| \ \mathrm{Im} z \geq 0, z \notin [0, i]\}$ - здесь под $[0, i]$ подразумевается линейный отрезок на оси
+    \ExN{4} $D = \{z \in \Complex \ \Big| \ \Im z \geq 0, z \notin [0, i]\}$ - здесь под $[0, i]$ подразумевается линейный отрезок на оси
 \end{multicols}
 
 \Nota Дальше все рассматриваемые $\Gamma_D$ будут состоять из кусочногладких и изолированных кривых
@@ -111,7 +111,7 @@ $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 = \Natu
 
 \begin{MyTheorem}
     \Ths $\exists \lim_{n \to \infty} z_n = \underset{x, y \in \Real}{x + i y} \Longleftrightarrow $
-    \begin{tabular}{l} $\exists \lim_{n \to \infty} x_n = \lim_{n \to \infty} \mathrm{Re} z_n = x$ \\ $\exists \lim_{n \to \infty} y_n = \lim_{n \to \infty} \mathrm{Im} z_n = y$ \end{tabular}
+    \begin{tabular}{l} $\exists \lim_{n \to \infty} x_n = \lim_{n \to \infty} \Re z_n = x$ \\ $\exists \lim_{n \to \infty} y_n = \lim_{n \to \infty} \Im z_n = y$ \end{tabular}
 \end{MyTheorem}
 
 \begin{MyProof}
@@ -146,7 +146,7 @@ $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 = \Natu
 Поместим сферу на комплексную плоскость и сделаем биекцию точек плоскости на точки сферы: проведем из верхней точки сферы лучи вниз на плоскость, и точка, где луч пересекает сфера,
 будет считаться отображением для данной точки. Заметим, что в этом случае бесконечно удаленные точки будут отображаться в верхнюю точку сферы
 
-\Def $\mathbb{C} \cup \{\infty\} = \overline{\mathbb{C}}$ - расширенная комплексная плоскость
+\Def $\Complex \cup \{\infty\} = \overline{\Complex}$ - расширенная комплексная плоскость
 
 Однако $z + \infty$ не определена, $\infty + \infty$ не определена. 
 Но $\infty = \lim_{n \to \infty} \frac{1}{z_n}$ при $z_n \underset{n \to \infty}{\longrightarrow} 0$; $\infty = \infty \cdot \lim_{n \to \infty} z_n$ при $z_n \longrightarrow z$

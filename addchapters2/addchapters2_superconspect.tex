@@ -24,20 +24,20 @@
 
 \subsection{1.1. Комплексное число}
 
-\Mem $\mathbb{C} = \{ (a, b) \ | \ a, b \in \Real\}$
+\Mem $\Complex = \{ (a, b) \ | \ a, b \in \Real\}$
 
 Обозначение: $z = (a, b) = a + bi$, где $i = (0, -1) = \sqrt{-1}$
 
 \underline{Основные операции}:
 
 \begin{enumerate}
-    \item $\mathrm{Re} z = a$ - вещественная часть, $\mathrm{Im} z = b$ - мнимая часть
+    \item $\Re z = a$ - вещественная часть, $\Im z = b$ - мнимая часть
     \item $z_1 + z_2 = (a_1, b_1) + (a_2, b_2) = (a_1 + a_2, b_1 + b_2) = (a_1 + a_2) + i(b_1 + b_2)$
     \item $z_1 \cdot z_2 = (a_1 + b_1 i) * (a_2 + b_2 i) = (a_1 a_2 - b_1 b_2) + i (a_1 b_2 + a_2 b_1)$
     \item $z^n = \rho^n (\cos n\varphi + i \sin n\varphi)$ - \textbf{формула Муавра}, где $\rho = |z|, \varphi = \arg z$
-    \item $\sqrt[n]{z} = \sqrt[n]{\rho} \left(\cos \frac{\varphi + 2\pi k}{n} + i \sin \frac{\varphi + 2\pi k}{n}\right)$, где $\rho = |z|, \varphi = \arg z, k \in \mathbb{Z}$
+    \item $\sqrt[n]{z} = \sqrt[n]{\rho} \left(\cos \frac{\varphi + 2\pi k}{n} + i \sin \frac{\varphi + 2\pi k}{n}\right)$, где $\rho = |z|, \varphi = \arg z, k \in \Integer$
     \item При $n = 2$ $\sqrt{z} = \sqrt{a + bi} = \pm (c + di)$, 
-        где $c = \sqrt{\frac{a + \sqrt{a^2 + b^2}}{2}}, d = \mathrm{sign}(b) \sqrt{\frac{-a + \sqrt{a^2 + b^2}}{2}}$
+        где $c = \sqrt{\frac{a + \sqrt{a^2 + b^2}}{2}}, d = \operatorname{sign}(b) \sqrt{\frac{-a + \sqrt{a^2 + b^2}}{2}}$
 \end{enumerate}
 
 \begin{minipage}{\textwidth}
@@ -51,14 +51,14 @@
 
     $z = a + bi = \rho (\cos \varphi + i \sin \varphi)$, где $\rho = |z| = \sqrt{a^2 + b^2}, \varphi = \arg z \in [0; 2\pi)$
 
-    $\mathrm{Arg} z = \arg z + 2\pi k, k \in \mathbb{Z}$
+    $\Arg z = \arg z + 2\pi k, k \in \Integer$
 
     По формуле Эйлера $z = \rho (\cos \varphi + i \sin \varphi) = \rho e^{i \varphi}$
 \end{minipage}
 
 \subsection{1.2. Комплексная плоскость}
 
-\Def Окрестность точки $z_0 \in \mathbb{C}$ определяется как $U_\delta (z_0) = \{z \in \mathbb{C} \ \Big| \ |z - z_0| < \delta\}$
+\Def Окрестность точки $z_0 \in \Complex$ определяется как $U_\delta (z_0) = \{z \in \Complex \ \Big| \ |z - z_0| < \delta\}$
 
 Тогда $\overset{\circ}{U}_\delta (z_0) = U_\delta (z_0) \setminus \{ z_0 \}$ - выколотая окрестность
 
@@ -77,9 +77,9 @@
 
 \Defs Если любые две точки множества можно соединить ломаной линией конечной длины, то множество считается связным
 
-\Defs Множество $D \subset \mathbb{C}$ называется областью, если $D$ - открытая и связная
+\Defs Множество $D \subset \Complex$ называется областью, если $D$ - открытая и связная
 
-\Defs Кривая $l \subset \mathbb{C}$ считается непрерывной, если $l = \{z \in \mathbb{C} \ | \ z = \varphi(t) + i \psi(t), t \in \Real\}$, где $\varphi(t), \psi(t)$ - непрерывные функции
+\Defs Кривая $l \subset \Complex$ считается непрерывной, если $l = \{z \in \Complex \ | \ z = \varphi(t) + i \psi(t), t \in \Real\}$, где $\varphi(t), \psi(t)$ - непрерывные функции
 
 \Notas Если $\varphi(t)$ и $\psi(t)$ дифференцируемы и их производные непрерывные, то кривая $l$ гладкая
 
@@ -92,25 +92,25 @@
 \begin{multicols}{2}
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_1}
 
-    \ExNs{1} $D = \{z \in \mathbb{C} \ \Big| \ 0 < |z| < \delta\}$ - область связаная, но не односвязная, ее нельзя стянуть из-за дырки
+    \ExNs{1} $D = \{z \in \Complex \ \Big| \ 0 < |z| < \delta\}$ - область связаная, но не односвязная, ее нельзя стянуть из-за дырки
 
     \mediumvspace
 
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_2}
 
-    \ExN{2} $D = \{z \in \mathbb{C} \ \Big| \ 0 < |z| < \delta, \arg z \neq 0\}$ - область связная и односвязная
+    \ExN{2} $D = \{z \in \Complex \ \Big| \ 0 < |z| < \delta, \arg z \neq 0\}$ - область связная и односвязная
 \end{multicols}
 
 \begin{multicols}{2}
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_3}
 
-    \ExN{3} $D = \{z \in \mathbb{C} \ \Big| \ |\mathrm{Re} z| < \delta\}$ - несвязная область
+    \ExN{3} $D = \{z \in \Complex \ \Big| \ |\Re z| < \delta\}$ - несвязная область
 
     \mediumvspace
 
     \includegraphics[width=0.4\textwidth]{addchapters2/images/addchapters2_2025_02_07_4}
 
-    \ExN{4} $D = \{z \in \mathbb{C} \ \Big| \ \mathrm{Im} z \geq 0, z \notin [0, i]\}$ - здесь под $[0, i]$ подразумевается линейный отрезок на оси
+    \ExN{4} $D = \{z \in \Complex \ \Big| \ \Im z \geq 0, z \notin [0, i]\}$ - здесь под $[0, i]$ подразумевается линейный отрезок на оси
 \end{multicols}
 
 \Nota Дальше все рассматриваемые $\Gamma_D$ будут состоять из кусочногладких и изолированных кривых
@@ -129,7 +129,7 @@ $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 = \Natu
 
 \begin{MyTheorem}
     \Ths $\exists \lim_{n \to \infty} z_n = \underset{x, y \in \Real}{x + i y} \Longleftrightarrow $
-    \begin{tabular}{l} $\exists \lim_{n \to \infty} x_n = \lim_{n \to \infty} \mathrm{Re} z_n = x$ \\ $\exists \lim_{n \to \infty} y_n = \lim_{n \to \infty} \mathrm{Im} z_n = y$ \end{tabular}
+    \begin{tabular}{l} $\exists \lim_{n \to \infty} x_n = \lim_{n \to \infty} \Re z_n = x$ \\ $\exists \lim_{n \to \infty} y_n = \lim_{n \to \infty} \Im z_n = y$ \end{tabular}
 \end{MyTheorem}
 
 \begin{MyProof}
@@ -164,7 +164,7 @@ $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 = \Natu
 Поместим сферу на комплексную плоскость и сделаем биекцию точек плоскости на точки сферы: проведем из верхней точки сферы лучи вниз на плоскость, и точка, где луч пересекает сфера,
 будет считаться отображением для данной точки. Заметим, что в этом случае бесконечно удаленные точки будут отображаться в верхнюю точку сферы
 
-\Def $\mathbb{C} \cup \{\infty\} = \overline{\mathbb{C}}$ - расширенная комплексная плоскость
+\Def $\Complex \cup \{\infty\} = \overline{\Complex}$ - расширенная комплексная плоскость
 
 Однако $z + \infty$ не определена, $\infty + \infty$ не определена. 
 Но $\infty = \lim_{n \to \infty} \frac{1}{z_n}$ при $z_n \underset{n \to \infty}{\longrightarrow} 0$; $\infty = \infty \cdot \lim_{n \to \infty} z_n$ при $z_n \longrightarrow z$
@@ -196,7 +196,7 @@ $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 = \Natu
 \Mem $f : E \subset \Real \longrightarrow D \subset \Real \ \overset{def}{\Longleftrightarrow} \ $ отображение такое, 
 что $\forall x \in E \ \exists! y \in D \ | \ y = f(x)$
 
-\Def $f : D \subset \mathbb{C} \longrightarrow G \subset \mathbb{C} \ \overset{def}{\Longleftrightarrow} \ $ отображение такое, 
+\Def $f : D \subset \Complex \longrightarrow G \subset \Complex \ \overset{def}{\Longleftrightarrow} \ $ отображение такое, 
 что $\forall z \in D \ \exists w \in G \ | \ f(z) = w$
 
 \Defs Если $\forall z \in D \ \exists! w \in G$, то $f$ называется однозначной функцией
@@ -226,8 +226,8 @@ $u(x, y) = (x^2 - y^2), \qquad\qquad v(x, y) = 2xy$
 
 \subsubsection{2$^\circ$ Предел}
 
-\Def $L \in \mathbb{C}, f : D \longrightarrow G, \quad L \overset{def}{=} \lim_{z \to z_0} f(z) \Longrightarrow
-\forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ \Big| \ z \in D, z \in U^\circ_\delta(z_0) \ f(x) \in U_\varepsilon(L)$
+\Def $L \in \Complex, f : D \longrightarrow G, \quad L \overset{def}{=} \lim_{z \to z_0} f(z) \Longrightarrow
+\forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ \Big| \ z \in D, z \in \overset{\circ}{U}_\delta(z_0) \ f(x) \in U_\varepsilon(L)$
 
 В определении существование и значение $L$ не должно зависеть от пути, по которому $z$ приближается к точке сгущения $z_0$.
 Может быть так, что для любого направления стремления предел есть, но в общем смысле не существует
@@ -250,7 +250,7 @@ $\lim_{z \to 0} f(z) = \lim_{\substack{\rho \to 0 \\ \varphi = \varphi^*}} f(z) 
 
 Значения предела занимает отрезок $[-1; 1] \Longrightarrow \not\exists \lim_{z \to 0} f(z)$
 
-На рисунке изображена $\sin 2\varphi$, на оси $Oz$ изображена $\mathrm{Re} w$. Черные линии - это возможные пути приближения $z$ к $0$
+На рисунке изображена $\sin 2\varphi$, на оси $Oz$ изображена $\Re w$. Черные линии - это возможные пути приближения $z$ к $0$
 
 \Nota Путь следования предела аналогичен левостороннему и правостороннему пределами $\Real$-функций
 
@@ -266,16 +266,16 @@ $\Delta z = z - z_0 = \Delta x + i \Delta y \to 0 \Longrightarrow
 
 \subsubsection{3$^\circ$ Элементарные комплексные функции}
 
-\ExN{1} Линейная $f(z) = az + b, \qquad\qquad a, b \in \mathbb{C} \quad a \neq 0$
+\ExN{1} Линейная $f(z) = az + b, \qquad\qquad a, b \in \Complex \quad a \neq 0$
 
 Эта функция однозначная, однолистная $\Longrightarrow \exists f^{-1}(z) = g(z) = \frac{z - b}{a}$
 
 \underline{Геометрический смысл}:
 
-$a \in \mathbb{C}, z \in \mathbb{C}$
+$a \in \Complex, z \in \Complex$
 
 $az = |a| |z| (\cos (\varphi_a + \varphi_z) + i \sin (\varphi_a + \varphi_z))$ - поворот и растяжение 
-($\varphi_a = \mathrm{arg} a$, $\varphi_z = \mathrm{arg} z$)
+($\varphi_a = \arg a$, $\varphi_z = \arg z$)
 
 $az + b = (x_{az} + x_b) + i (y_{az} + y_b)$ - сдвиг
 
@@ -283,17 +283,17 @@ $az + b = (x_{az} + x_b) + i (y_{az} + y_b)$ - сдвиг
 
 \ExN{2} Степенная $w = z^n, \quad n \in \Natural$ - однозначная, может быть неоднолистной
 
-Для $n \in \mathbb{Q}$ функция становится неоднозначной
+Для $n \in \Rational$ функция становится неоднозначной
 
 \Exs $w = z^2 \qquad\qquad z = \rho e^{i\varphi}, w = \rho^2 e^{2i\varphi}$
 
-Пусть $z_1 \neq z_2$ и $w(z_1) = w(z_2)$, тогда $\mathrm{arg} z_1 = \mathrm{arg} z_2 \pm \pi$ 
+Пусть $z_1 \neq z_2$ и $w(z_1) = w(z_2)$, тогда $\arg z_1 = \arg z_2 \pm \pi$ 
 
-$w(z_1) = \rho^2 e^{2i\mathrm{arg} z_1} = \rho^2 e^{2i (\mathrm{arg} z_1 + 2\pi k)}$
+$w(z_1) = \rho^2 e^{2i\arg z_1} = \rho^2 e^{2i (\arg z_1 + 2\pi k)}$
 
-$w(z_2) = \rho^2 e^{2i\mathrm{arg} z_2} = \rho^2 e^{2i (\mathrm{arg} z_1 + \pi)} = \rho^2 e^{i (2\mathrm{arg} z_1 + 2\pi)} = w(z_1)$
+$w(z_2) = \rho^2 e^{2i\arg z_2} = \rho^2 e^{2i (\arg z_1 + \pi)} = \rho^2 e^{i (2\arg z_1 + 2\pi)} = w(z_1)$
 
-Область однолистности $z^2$ - множество точек, для которых $\mathrm{arg} z \in [0; \pi)$
+Область однолистности $z^2$ - множество точек, для которых $\arg z \in [0; \pi)$
 
 Точку $w = 0$ называют точкой разветвления
 
@@ -305,11 +305,11 @@ $w(z_2) = \rho^2 e^{2i\mathrm{arg} z_2} = \rho^2 e^{2i (\mathrm{arg} z_1 + \pi)}
 
 \Exs $w = z^{-1} = \frac{1}{z} \qquad\qquad w(0) = \infty, w(\infty) = 0$
 
-$z \in \mathbb{C} \setminus \{0\}$ - функция обратима
+$z \in \Complex \setminus \{0\}$ - функция обратима
 
-$w = re^{i\psi} = \frac{1}{\rho e^{i\phi}} = \frac{1}{\rho} e^{-i\varphi} \Longrightarrow |w| = \frac{1}{|z|}, \mathrm{arg} w = -\mathrm{arg} z$
+$w = re^{i\psi} = \frac{1}{\rho e^{i\phi}} = \frac{1}{\rho} e^{-i\varphi} \Longrightarrow |w| = \frac{1}{|z|}, \arg w = -\arg z$
 
-Преобразование $|w| = \frac{1}{|z|}$ называется инверсией, а $\mathrm{arg} w = -\mathrm{arg} z$ дает симметрию относительно $\mathrm{Re} z$
+Преобразование $|w| = \frac{1}{|z|}$ называется инверсией, а $\arg w = -\arg z$ дает симметрию относительно $\Re z$
 
 \ExN{3} Рациональная $f(z) = \frac{P_n(z)}{Q_m(z)}, \qquad\qquad n, m \in \Natural$
 
@@ -323,13 +323,13 @@ $w = re^{i\psi} = \frac{1}{\rho e^{i\phi}} = \frac{1}{\rho} e^{-i\varphi} \Longr
     \item $e^{z + 2\pi i} = e^{z} \cdot e^{2\pi i} = e^z$ - показательная функция периодична с периодом $2\pi i$
 \end{enumerate}
 
-\ExN{5} Логарифмическая $w = \mathrm{Ln} z$
+\ExN{5} Логарифмическая $w = \Ln z$
 
-Если $e^w = e^{u + vi} = e^u (\cos v + i \sin v) = z = |z| e^{i\mathrm{arg} z}$, то $u = \ln |z|$, $v = \mathrm{arg} z + 2\pi k$
+Если $e^w = e^{u + vi} = e^u (\cos v + i \sin v) = z = |z| e^{i\arg z}$, то $u = \ln |z|$, $v = \arg z + 2\pi k$
 
-Тогда \fbox{$\mathrm{Ln} z = \ln |z| + i (\mathrm{arg} z + 2\pi k)$}
+Тогда \fbox{$\Ln z = \ln |z| + i (\arg z + 2\pi k)$}
 
-$\ln z = \mathrm{Ln} z$ при $k = 0$ - т. н. главное значение
+$\ln z = \Ln z$ при $k = 0$ - т. н. главное значение
 
 
 
