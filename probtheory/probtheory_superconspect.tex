@@ -879,7 +879,7 @@
     \Def Соответствие $k \rightarrow q^{k - 1} p, k \in \Natural$ называется геометрическим
     распределение вероятности (обозначается $G_p$ или $G(p)$)
 
-    \Nota Геометрическое распределение обладает свойством \enqoute{нестарения} или свойством отсутствия
+    \Nota Геометрическое распределение обладает свойством \enquote{нестарения} или свойством отсутствия
     последействия
 
     \begin{MyTheorem}
@@ -2772,7 +2772,7 @@
     случайный вектор $(\xi_1, \dots, \xi_n)$ имеет равномерное распределение, если плотность совместного распределения 
     постоянна в данной области и равна нулю вне данной области
 
-    $f_{\xi_1, \dots, \xi_n}(x_1, \dots, \x_n) = \begin{cases}\frac{1}{\lambda(D)}, & \text{если } (x_1, \dots, x_n) \in D \\ 0, & \text{если } (x_1, \dots, x_n) \not\in D\end{cases}$
+    $f_{\xi_1, \dots, \xi_n}(x_1, \dots, x_n) = \begin{cases}\frac{1}{\lambda(D)}, & \text{если } (x_1, \dots, x_n) \in D \\ 0, & \text{если } (x_1, \dots, x_n) \not\in D\end{cases}$
 % end probtheory_2024_11_19.tex
 
 % begin probtheory_2024_11_26.tex
@@ -2789,7 +2789,7 @@
 
     \Def Дисперсией (или матрицей ковариаций) случайного вектора называется матрица
     $D\vec{\xi} = E(\vec{\xi} - E\vec{\xi})^T \cdot (\vec{\xi} - E\vec{\xi})$, состоящая
-    из элементов $d_{i, j} = \cov (\xi_i, \xi_j)$. В частности $d_{i, i} = \cov (\xi_i, \xi_i) = D\xi_i$
+    из элементов $d_{i, j} = \operatorname{cov} (\xi_i, \xi_j)$. В частности $d_{i, i} = \operatorname{cov} (\xi_i, \xi_i) = D\xi_i$
 
     \subsection{Функции от двух случайных величин}
 
@@ -3139,7 +3139,7 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 
 \hypertarget{covariance}{}
 
-\Def Ковариацией $\mathrm{\cov}(\xi, \eta)$ называется величина $\mathrm{cov}(\xi, \eta) = E((\xi - E\xi)(\eta - E\eta))$
+\Def Ковариацией $\mathrm{cov}(\xi, \eta)$ называется величина $\mathrm{cov}(\xi, \eta) = E((\xi - E\xi)(\eta - E\eta))$
 
 \mediumvspace
 
@@ -3540,7 +3540,7 @@ $D(\xi | \eta) = E((\xi - E(\xi | \eta))^2 | \eta)$
     \begin{MyProof}
         Из первого свойства $E(\xi^2 | \eta) = D(\xi | \eta) + E^2(\xi | \eta)$
 
-        $D\xi = E\xi^2 - (E\xi)^2 = E(E\xi^2 | \eta) - E^2(E(\xi | \eta)) = E(D(\xi | \eta) + E^2(\xi | \eta)) - E^2(E(\xo | \eta)) = E(D(\xi | \eta)) + E(E^2(\xi | \eta)) - E^2(E(\xi | \eta)) = E(D(\xi | \eta)) + D(E(\xi | \eta))$
+        $D\xi = E\xi^2 - (E\xi)^2 = E(E\xi^2 | \eta) - E^2(E(\xi | \eta)) = E(D(\xi | \eta) + E^2(\xi | \eta)) - E^2(E(\xi | \eta)) = E(D(\xi | \eta)) + E(E^2(\xi | \eta)) - E^2(E(\xi | \eta)) = E(D(\xi | \eta)) + D(E(\xi | \eta))$
     \end{MyProof}
 
     \underline{Следствие и смысл}: 
@@ -3872,7 +3872,7 @@ $\gamma_\infty \approx 0.17$ для делового языка
     \hyperlink{geometricdistribution}{Геометрическое распределение}: Соответствие $k \rightarrow q^{k - 1} p, k \in \Natural$ называется геометрическим
     распределение вероятности (обозначается $G_p$ или $G(p)$)
 
-    Геометрическое распределение обладает свойством \enqoute{нестарения} или свойством отсутствия
+    Геометрическое распределение обладает свойством \enquote{нестарения} или свойством отсутствия
     последействия: \Ths $\letsymbol P(\tau = k) = q^{k - 1} p, k \in \Natural$. Тогда $\forall n, k \geq 0 \quad P(\tau > n + k \ | \ \tau > n) = P(\tau > k)$
 
     \item \textit{Урновая схема с возвратом и без возврата. Гипергеометрическое распределение. Теорема об его асимптотическом приближении к биномиальному.}
@@ -4517,7 +4517,7 @@ $\gamma_\infty \approx 0.17$ для делового языка
 
     \item \textit{Числовые характеристики зависимости случайных величин. Ковариация, ее свойства. Коэффициент корреляции, его свойства. Корреляция случайных величин.}
 
-    \hyperlink{covariance}{Ковариацией} $\mathrm{\cov}(\xi, \eta)$ называется величина $\mathrm{cov}(\xi, \eta) = E((\xi - E\xi)(\eta - E\eta))$
+    \hyperlink{covariance}{Ковариацией} $\mathrm{cov}(\xi, \eta)$ называется величина $\mathrm{cov}(\xi, \eta) = E((\xi - E\xi)(\eta - E\eta))$
 
     Свойства:
 
@@ -4546,7 +4546,7 @@ $\gamma_\infty \approx 0.17$ для делового языка
     \end{enumerate}
 
     \hyperlink{correlation}{Коэффициентом корреляции} случайных величин $\xi$ и $\eta$ с конечными вторыми моментами,
-    называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xiE\eta}{\sigma_\xi \sigma_\eta}$
+    называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xi E\eta}{\sigma_\xi \sigma_\eta}$
     
     Свойства:
 
