@@ -14,7 +14,7 @@
     \tableofcontents
     \clearpage
 
-        % begin specsec_2024_02_09.tex
+    % begin specsec_2024_02_09.tex
 
     \section{1. Евклидовы пространства}
 
@@ -150,9 +150,9 @@
 
     $(e_k, \sum_{i=1}^n \lambda_i e_i) = \sum_{i=1}^n \lambda_i (e_k, e_i) \stackrel{k \neq i \Rightarrow (e_k, e_i) = 0}{=\joinrel=\joinrel=}
     \lambda_k \|e_k\|^2 = \lambda_k = 0 \quad \forall k$
-    % end specsec_2024_02_09.tex
+% end specsec_2024_02_09.tex
 
-    % begin specsec_2024_02_16.tex
+% begin specsec_2024_02_16.tex
 
     \hypertarget{orthogonalbasisinspace}{}
 
@@ -228,9 +228,9 @@
 
     Тогда функция, определенная и непрерывная на $[0, 2\pi]$ может быть разложена по базису $\Phi_{\|\cdot\|}$
     и ее координат (как вектора): $f_i = \int_0^{2\pi} f \cdot e_i dx$, где $e_i \in \Phi_{\|\cdot\|}$
-    % end specsec_2024_02_16.tex
+% end specsec_2024_02_16.tex
 
-    % begin specsec_2024_03_01.tex
+% begin specsec_2024_03_01.tex
 
     \Nota Изоморфизм $E^n \rightarrow E^{\prime n}$ позволяет переносить свойства скалярного произведения
     из одного в другое пространство
@@ -424,9 +424,9 @@
     \end{enumerate}
 
     \textit{Def:} $\mathcal{I}$ - тождественный - $\forall x \in V \ \ \mathcal{I}x = x$
-    % end specsec_2024_03_01.tex
+% end specsec_2024_03_01.tex
 
-    % begin specsec_2024_03_15.tex
+% begin specsec_2024_03_15.tex
 
     \Def Произведение операторов (композиция)
 
@@ -598,9 +598,9 @@
     \Def Образ оператора - $Im \mathcal{A} \stackrel{def}{=} \Set{y \in W \ | \ \mathcal{A}x = y}$
 
     \Nota $Ker \mathcal{A}$ и $Im \mathcal{A}$ - подпространства
-    % end specsec_2024_03_15.tex
+% end specsec_2024_03_15.tex
 
-    % begin specsec_2024_03_22.tex
+% begin specsec_2024_03_22.tex
 
     \Nota $Ker\ \mathcal{A}$ и $Im\ \mathcal{A}$ - подпространства $V$ ($\mathcal{A} : V \rightarrow V$)
 
@@ -712,7 +712,7 @@
 
     \Nota Поиск матрицы $\mathcal{A}$ можно осуществить, найдя ее в \enquote{домашнем} базисе $\Set{e_i}$, то есть $A (e_1, \dots e_n) = (e_1^\prime, \dots, e_m^\prime)$
 
-    Затем, можно найти матрицу в другом (нужном) базисе, используя формулы преобразований (см. \th позже)
+    Затем, можно найти матрицу в другом (нужном) базисе, используя формулы преобразований (см. \Ths позже)
 
     Тогда $Ker \mathcal{A} = K$ - множество векторов, которые решают систему
 
@@ -759,9 +759,9 @@
     $Ax = y = (T^{-1}A^\prime T)x$
 
     $A = T^{-1}A^\prime T \Longrightarrow A^\prime = TA T^{-1}$
-    % end specsec_2024_03_22.tex
+% end specsec_2024_03_22.tex
 
-    % begin specsec_2024_03_29.tex
+% begin specsec_2024_03_29.tex
 
     \Th $A^\prime = T_{e\to e^\prime} A T^{-1}_{e\to e^\prime}$
 
@@ -897,9 +897,9 @@
     Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
 
     \Nota Приняв доказательство за базу индукции, можно доказать линейную независимость для $k$-ой системы собственных векторов для попарно различных $k$ чисел $\lambda$
-    % end specsec_2024_03_29.tex
+% end specsec_2024_03_29.tex
 
-    % begin specsec_2024_04_03.tex
+% begin specsec_2024_04_03.tex
 
     \Th $\lambda_1, \dots \lambda_p$ - различные собственные значения $\mathcal{A} : V \rightarrow V$,
     им соответствуют $U_{\lambda_i}$ - собственные подпространства $V$ для $\lambda_i$
@@ -944,7 +944,7 @@
 
     \Nota Условие Th равносильно: $V^n = \sum_{i=1}^p \xor U_{\lambda_i} (\lambda_i \neq \lambda_j)$
 
-    Действительно: $\dim V^n = \sum_{i=1}^p \dim U_{\lambda_i}$ и $\forall i, j \ U_{\lambda_i} \intersect U_{\lambda_j} = 0$
+    Действительно: $\dim V^n = \sum_{i=1}^p \dim U_{\lambda_i}$ и $\forall i, j \ U_{\lambda_i} \cap U_{\lambda_j} = 0$
 
     \Ex Если $\exists n$ различных собственных чисел $\lambda_1, \dots, \lambda_n$, то $\dim U_{\lambda_i} = 1 \forall i$
 
@@ -969,7 +969,7 @@
                                         0         & 0         & \dots  & \lambda_n
     \end{pmatrix}_e \cdots e_i = \mathcal{A} e_i$
 
-    $\Longrightarrow \exists f$ - базис, в котором $A_f$ - диагональная (по \def $\mathcal{A}$ - диаг.-ем)
+    $\Longrightarrow \exists f$ - базис, в котором $A_f$ - диагональная (по \Defs $\mathcal{A}$ - диаг.-ем)
 
     $A_f = \begin{pmatrix}
                \alpha_1 & 0        & \dots  & 0        \\
@@ -1031,9 +1031,9 @@
     3) $(x, x) \geq 0, \quad (x, x) = 0 \Longrightarrow x = 0$
 
     4) $(x, y) = (y, x)$ в $\Real$. Но в комплексном множестве: $(x, y) = \overline{(y, x)}$. Тогда $(x, \lambda y) = \overline{(\lambda y, x)}$
-    % end specsec_2024_04_03.tex
+% end specsec_2024_04_03.tex
 
-    % begin specsec_2024_04_05.tex
+% begin specsec_2024_04_05.tex
 
 
     \Mem $(x, y)$ в $\Real$
@@ -1116,7 +1116,7 @@
 
     $\Box$ Хотим доказать, что $(x_1, x_2) = 0$, при том, что $x_{1,2} \neq 0$
 
-    $\lambda_1 (x_1, x_2) = (\lamdba_1 x_1, x_2) = (\mathcal{A} x_1, x_2) = (x_1, \mathcal{A} x_2) = (x_1, \lambda_2 x_2) = (x_1, x_2) \lambda_2$
+    $\lambda_1 (x_1, x_2) = (\lambda_1 x_1, x_2) = (\mathcal{A} x_1, x_2) = (x_1, \mathcal{A} x_2) = (x_1, \lambda_2 x_2) = (x_1, x_2) \lambda_2$
 
     Так как $\lambda_1 \neq \lambda_2$, то $(\lambda_1 - \lambda_2) (x_1, x_2) = 0 \Longrightarrow (x_1, x_2) = 0 \qed$
 
@@ -1164,9 +1164,9 @@
     \left(\frac{1}{\sqrt{2}} - \lambda\right)^2 + \frac{1}{2} = 0$ - вещественных корней нет
 
     $\Box \sqsupset e_1$ - какой-либо собственный вектор $\mathcal{A}$ ...
-    % end specsec_2024_04_05.tex
+% end specsec_2024_04_05.tex
 
-    % begin specsec_2024_04_12.tex
+% begin specsec_2024_04_12.tex
 
     \Th $\mathcal{A}: V^n \to V^n, \mathcal{A} = \mathcal{A}^* \ \Longrightarrow \ \exists \Set{e_i}^n_{i=1}, e_1$ -
     собственные вектора $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
@@ -1324,9 +1324,9 @@
     \Ex $\begin{matrix}u(t) = 1 + 3t \\ v(t) = 2 - t\end{matrix}$, $\Set{e_i} = (1, t)$, $\mathcal{B}(u, v) = (u, v) = \int_{-1}^1 uv dt$
 
     Тогда, $B = \begin{pmatrix}\int_{-1}^1 dt & \int_{-1}^1 t dt \\ \int_{-1}^1 t dt & \int_{-1}^1 t^2 dt\end{pmatrix} = \begin{pmatrix}2 & 0 \\ 0 & \frac{2}{3}\end{pmatrix}$
-    % end specsec_2024_04_12.tex
+% end specsec_2024_04_12.tex
 
-    % begin specsec_2024_04_17.tex
+% begin specsec_2024_04_17.tex
 
     \Nota Особое значение имеют симметричные билинейные формы
 
@@ -1462,9 +1462,9 @@
 
     Но можно доказать, что количества $\lambda_i > 0, \lambda_j < 0, \lambda_k = 0$ постоянны по отношению к способу приведения
     к каноническому виду (т. н. закон инерции квадратичной формы)
-    % end specsec_2024_04_17.tex
+% end specsec_2024_04_17.tex
 
-    % begin specsec_2024_04_19.tex
+% begin specsec_2024_04_19.tex
 
     \section{4. Дифференциальные уравнения}
 
@@ -1621,9 +1621,9 @@
     Сведем к виду: $\frac{dy}{dx} = \frac{P(x, y)}{-Q(x, y)} \Longrightarrow -Q(x, y)dy = P(x, y)dx \Longrightarrow $
 
     \fbox{$P(x, y)dx + Q(x, y)dy = 0$} - форма в дифференциалах
-    % end specsec_2024_04_19.tex
+% end specsec_2024_04_19.tex
 
-    % begin specsec_2024_04_26.tex
+% begin specsec_2024_04_26.tex
 
     \section{4.2 ДУ первого порядка (ДУ$_1$)}
 
@@ -1825,9 +1825,9 @@
     $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
 
     $C(x) = \int q(x) e^{\int p(x)dx} dx$
-    % end specsec_2024_04_26.tex
+% end specsec_2024_04_26.tex
 
-    % begin specsec_2024_05_03.tex
+% begin specsec_2024_05_03.tex
 
     \Mem $y^\prime + p(x)y = q(x)$
 
@@ -2035,9 +2035,9 @@
     \end{tabular}
 
     Далее все зависит от $\lambda_{1,2}$
-    % end specsec_2024_05_03.tex
+% end specsec_2024_05_03.tex
 
-    % begin specsec_2024_05_10.tex
+% begin specsec_2024_05_10.tex
 
     \Mem $y^{\prime\prime} + py^\prime + qy = f(x), \quad p, q \in \Real$
 
@@ -2222,9 +2222,9 @@
     Тогда $y(x) = \overline{y} + y^*$ - общее решение ЛНДУ
 
     $\Box$ \Lab $\Box$
-    % end specsec_2024_05_10.tex
+% end specsec_2024_05_10.tex
 
-    % begin specsec_2024_05_17.tex
+% begin specsec_2024_05_17.tex
 
     \Mem ЛДУ$_2$
 
@@ -2432,9 +2432,9 @@
     $\begin{pmatrix}y_1 & \dots & y_n \\ \vdots & \ddots & \vdots \\ y^{(n - 2)}_1 & \dots & y^{(n - 2)}_n \\ y^{(n - 1)}_1 & \dots & y^{(n - 1)}_n\end{pmatrix}\begin{pmatrix}C^\prime_1(x) \\ \vdots \\ C^\prime_{n - 1}(x) \\ C^\prime_n(x)\end{pmatrix} = \begin{pmatrix}0 \\ \vdots \\ 0 \\ f(x)\end{pmatrix}$
 
     ? Доказать, что $\overline{y} + y^*$ - общее решение ЛНДУ
-    % end specsec_2024_05_17.tex
+% end specsec_2024_05_17.tex
 
-    % begin specsec_2024_05_22.tex
+% begin specsec_2024_05_22.tex
 
     \Th $Ly = f(x), y = \overline{y} + y^*$ - решение $Ly = f(x)$.
 
@@ -2672,9 +2672,9 @@
     \begin{cases}y = Ce^{-t} + 1 \\ \tilde{y}(0) = \tilde{y}_0\end{cases} \to C = \tilde{y} - 1$
 
     $\tilde{y} - y = (\tilde{y}_0 - y) e^{-t} + 1 - 1 = (\tilde{y}_0 - 1)e^{-t} \stackrel{t \to +\infty}{\longrightarrow} 0$ - устойчива{\huge 🥳}
-    % end specsec_2024_05_22.tex
+% end specsec_2024_05_22.tex
 
-    % begin specsec_2024_05_29.tex
+% begin specsec_2024_05_29.tex
 
     \underline{Классификация точек покоя}. Будем рассматривать СДУ (автономную)
 
@@ -2758,9 +2758,9 @@
     3. \begin{cases}\dot x = y \\ \dot y = -0\end{cases}
 
     \underline{Обобщим}. Если хотя бы один $\lambda \neq 0$ и лежит слева от $Im \lambda$, то решение устойчивое
-    % end specsec_2024_05_29.tex
+% end specsec_2024_05_29.tex
 
-    % begin specsec_exam_list.tex
+% begin specsec_exam_list.tex
 
     \clearpage
 
@@ -3106,7 +3106,7 @@
 
 
     \end{enumerate}
-    % end specsec_exam_list.tex
+% end specsec_exam_list.tex
 
 
 
