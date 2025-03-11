@@ -40,7 +40,7 @@
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_07.pdf)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_21.pdf)
-* Лекция №5 - в производстве
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_07.pdf)
 
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
