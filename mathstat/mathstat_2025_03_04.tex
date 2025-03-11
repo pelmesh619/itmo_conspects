@@ -31,13 +31,13 @@ $date$=04.03.2025
 \subsubsection{Распределение \enquote{хи-квадрат}}
 
 \Def Распределение \enquote{хи-квадрат} $H_n$ со степенями свободы $n$ называется распределение
-суммы квадратов независимых стандартных нормальных величин: $\xi^2_n = X_1^2 + X_2^2 + \dots + X_n^2$, 
+суммы квадратов независимых стандартных нормальных величин: $\chi^2_n = X_1^2 + X_2^2 + \dots + X_n^2$, 
 где $X \in N(0, 1)$ и независимы
 
 \underline{Свойства}
 
 \begin{enumerate}
-    \item $E\xi^2_n = n$
+    \item $E\chi^2_n = n$
 
     \begin{MyProof}
         Так как $\forall i \ X_i \in N(0, 1)$, то $E X_i^2 = D X_i^2 + (EX_i)^2 = 1 \Longrightarrow E(X_i^2 + \dots X_n^2) = \sum_{i = 1}^n X_i^2 = n$
@@ -46,14 +46,14 @@ $date$=04.03.2025
     \item Устойчивость относительно суммирования: если $X \in H_n$, $Y \in H_m$, независимы, то $X + Y \in H_{n + m}$ (по определению) 
 
 
-    \item $\frac{\xi_k^2}{k} \overset{p}{\underset{k \to \infty}{\longrightarrow}} 1$ (по Закону Больших Чисел)
+    \item $\frac{\chi_k^2}{k} \overset{p}{\underset{k \to \infty}{\longrightarrow}} 1$ (по Закону Больших Чисел)
 \end{enumerate}
 
 \subsubsection{Распределение Стьюдента}
 
 \Def Пусть $X_0, X_1, \dots, X_k$ - независимые стандартные нормальные величины. 
 Распределением Стьюдента $T_k$ с $k$ степенями свободы называется распределение случайной величины 
-$t_k = \frac{X_0}{\sqrt{\frac{1}{k} (X_1^2 + \dots + X_k^2)}} = \frac{X_0}{\sqrt{\frac{\xi_k^2}{k}}}$
+$t_k = \frac{X_0}{\sqrt{\frac{1}{k} (X_1^2 + \dots + X_k^2)}} = \frac{X_0}{\sqrt{\frac{\chi_k^2}{k}}}$
 
 \underline{Свойства}
 
@@ -66,7 +66,7 @@ $t_k = \frac{X_0}{\sqrt{\frac{1}{k} (X_1^2 + \dots + X_k^2)}} = \frac{X_0}{\sqrt
 \subsubsection{Распределение Фишера-Снедекера}
 
 \Def Распределением Фишера-Снедекера $F_{n,m}$ (другое название - F-распределение) со степенями свободы $n$ и $m$ называется распределение случайной величины 
-$f_{n,m} = \frac{\frac{\xi^2_n}{n}}{\frac{\xi^2_m}{m}}$, где $\xi_n^2$ и $\xi_m^2$ - независимые случайные величины с распределением \enquote{хи-квадрат}
+$f_{n,m} = \frac{\frac{\chi^2_n}{n}}{\frac{\chi^2_m}{m}}$, где $\chi_n^2$ и $\chi_m^2$ - независимые случайные величины с распределением \enquote{хи-квадрат}
 
 \underline{Свойства}
 
@@ -221,7 +221,7 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
         \item Согласно лемме Фишера $T(\vec X) = (n - 1) S^2$ не зависит от $Y_1 = \sqrt{n} \overline{x} \Longrightarrow S^2 $ и $\overline{x}$ - независимы
           
         \setcounter{enumi}{3}
-        \item $\sqrt{n} \frac{\overline{x} - a}{S} = \sqrt{n} \frac{\overline{x} - a}{\sigma} \cdot \frac{1}{\sqrt{\frac{S^2 (n - 1)}{\sigma^2}} \cdot \frac{1}{n - 1}} = \frac{\sqrt{n} \frac{\overline{x} - a}{\sigma}}{\frac{\xi^2_{n - 1}}{n - 1}}$
+        \item $\sqrt{n} \frac{\overline{x} - a}{S} = \sqrt{n} \frac{\overline{x} - a}{\sigma} \cdot \frac{1}{\sqrt{\frac{S^2 (n - 1)}{\sigma^2}} \cdot \frac{1}{n - 1}} = \frac{\sqrt{n} \frac{\overline{x} - a}{\sigma}}{\frac{\chi^2_{n - 1}}{n - 1}}$
 
         Так как по пятому пункту числитель и знаменатель независимы, по определению получаем распределение Стьюдента
     \end{enumerate}
