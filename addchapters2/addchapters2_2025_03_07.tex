@@ -1,0 +1,154 @@
+$subject$=Дополнительные главы \\ высшей математики
+$date$=07.03.2025
+$teacher$=Лекции Далевской О. П.
+
+Заметим, что $w = e^z = e^x (\cos y + i \sin y)$ - многолистная функция, а $w = \Ln z = \ln \rho + i (\arg z + 2\pi k)$ - многозначная
+
+\ExN{6} Тригонометрические и гиперболические
+
+\begin{multicols}{2}
+    \begin{center}
+        $\sin z = \frac{e^{iz} - e^{-iz}}{2i}$
+
+        $\cos z = \frac{e^{iz} + e^{-iz}}{2}$
+
+        $\sh z = \frac{e^{z} - e^{-z}}{2}$
+
+        $\ch z = \frac{e^{z} + e^{-z}}{2}$
+    \end{center}
+\end{multicols}
+
+\Nota Рассмотрим уравнение $\sin z = A \in \Complex$
+
+$\frac{e^{iz} - e^{-iz}}{2i} = A \Longrightarrow e^{2iz} - 2iAe^{iz} - 1 = 0$
+
+При $t = e^{iz}$ получаем квадратное уравнение, у которого в $\Complex$ всегда будет два корня. 
+Это значит, что в $\Complex$ $\sin$ и $\cos$ принимают любые значения (то есть $|\sin z| > 1$)
+
+\subsubsection{4$^\circ$ Дифференцирование ФКП}
+
+\Def $w = f(z), w : D \subset \Complex \longrightarrow \Complex, z_0 \in D$. \textbf{Производная} функции
+$w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} = \lim_{\Delta z \to 0} \frac{\Delta f}{\Delta z}$, 
+если он существует и не зависит от пути $z \to z_0$
+
+\Mem Дифференцирование $y = f(x)$:
+
+\begin{tabular}{ll}
+    В Ф$_1$П: & $\Delta y = f(x_0 + \Delta x) - f(x_0) \underset{A \in \Real}{=} A\Delta x + o(\Delta x)$ \\
+    В Ф$_2$П: & $\Delta f = f(x_0 + \Delta x, y_0 + \Delta y) - f(x_0, y_0) = A\Delta x + B \Delta y + \alpha_1 + \alpha_2 = 
+    \frac{\partial f}{\partial x} \Delta x + \frac{\partial f}{\partial y} \Delta y + o(\Delta x) + o(\Delta y)$
+\end{tabular}
+
+\Def $f(z)$ называется дифференцируемой в точке $z_0$, если $\exists f^\prime(z_0) \in \Complex$
+
+\Defs Дифференцируемая в точке $z_0$ функция $w = f(z)$, производная $f^\prime(z_0)$ которой непрерывна в $z_0$,
+называется аналитической (или аналитичной) функцией в $z_0$
+
+\begin{MyTheorem}
+    \Ths Критерий аналитичности (или Условие Коши-Римана)
+
+    \begin{center}
+        $f(x) = u(x, y) + i v(x, y)$ аналитична в точке $z_0 = x + iy$ 
+        
+        \rotatebox{90}{$\Longleftrightarrow$}
+    
+        $\exists \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}$ непрерывны в $z$ и
+        $\begin{cases}\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \\ \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}\end{cases}$
+    \end{center}
+
+    Причем, $f^\prime(z) = u_x + i v_x = v_y - i u_y = u_x - i u_y = v_y + i v_x$
+\end{MyTheorem}
+
+\begin{MyProof}
+    \fbox{\Longrightarrow} \ $f$ аналитическая в $z$ $\Longleftrightarrow \exists$ непрерывная 
+    $f^\prime(z) = \\ = \lim_{\Delta z \to 0} \frac{\Delta f}{\Delta z} = [\text{предел не зависит от пути}] = 
+    \lim_{\Delta x \to 0} \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x} = \\
+    = \lim_{\Delta x \to 0} \frac{u(x + \Delta x, y) + i v(x + \Delta x, y) - u(x, y) - v(x, y)}{\Delta x} = \\
+    = \lim_{\Delta x \to 0} \left(\frac{u(x + \Delta x, y) - u(x, y)}{\Delta x} + i \frac{v(x + \Delta x, y) - v(x, y)}{\Delta x}\right) = \\
+    = \lim_{\Delta x \to 0} \left(\frac{\Delta_x u}{\Delta x} + i \frac{\Delta_x v}{\Delta x}\right) = 
+    \lim_{\Delta x \to 0} \frac{\Delta_x u}{\Delta x} + i \lim_{\Delta x \to 0} \frac{\Delta_x v}{\Delta x} = 
+    \frac{\partial u}{\partial x} + i \frac{\partial v}{\partial x} = u_x + i v_x$
+
+    Аналогично при $i \Delta y \to 0$ получаем $\lim_{\Delta y \to 0} \frac{f(x, y + \Delta y) - f(x, y)}{i \Delta y} = \\
+    = \lim_{\Delta y \to 0} \left(\frac{u(x, y + \Delta y) - u(x, y)}{i \Delta y} + \frac{v(x, y + \Delta y) - v(x, y)}{\Delta y}\right) = 
+    \lim_{\Delta y \to 0} \frac{\Delta_x v}{\Delta y} - i \lim_{\Delta y \to 0} \frac{\Delta_x u}{\Delta x} = 
+    v_y - i u_y$
+
+    Итак, $f^\prime(z) = u_x + i v_x = v_y + i u_y$
+
+    Отсюда $u_x = v_y$ и $u_y = -v_x$
+
+    \mediumvspace 
+
+    \fbox{\Longleftarrow} \ $\exists$ непрерывные $u_x, u_y, v_x, v_y \Longleftrightarrow u(x, y), v(x, y)$ 
+    дифференцируемы в $(x, y)$, тогда $\Delta u = u_x \Delta x + u_y \Delta y + \alpha_1 (x, y, \Delta x, \Delta y) + 
+    \alpha_2 (x, y, \Delta x, \Delta y)$
+
+    $\alpha_1 = o(\Delta \rho), \quad \Delta \rho = (\Delta x)^2 + (\Delta y)^2$
+
+    $\Delta v = v_x \Delta x + v_y \Delta_y + \beta_1 + \beta_2$
+
+    $\Delta f = u(x + \Delta x, y + \Delta y) + iv(x + \Delta x, y + \Delta y) - (u(x, y) + i v(x, y)) = 
+    u_x \Delta x + u_y \Delta y + \alpha + i(v_x \Delta x + v_y \Delta y + \beta)$
+
+    $\frac{\Delta f}{\Delta z} = \frac{u_x \Delta x + u_y \Delta y + i v_x \Delta x + i v_y \Delta y}{\Delta x + i \Delta y} + 
+    \frac{\alpha + i \beta}{\Delta x + i \Delta y} = \frac{u_x(\Delta x + i \Delta y)}{\Delta x + i \Delta y} + 
+    \frac{v_x(i \Delta x - \Delta y)}{\Delta x + i \Delta y} + \frac{\alpha + i\beta}{\Delta x + i \Delta y} = 
+    u_x + v_x i + \frac{\alpha + i \beta}{\Delta x + i \Delta y}$
+
+    Тогда $\lim_{\Delta z \to 0} \frac{\Delta f}{\Delta z} = 
+    u_x + i v_x + \lim_{\substack{\Delta x \to 0 \\ \Delta y \to 0}} \frac{\alpha + i \beta}{\Delta x + i \Delta y} = 
+    u_x + i v_x \Longleftrightarrow f^\prime = u_x + i v_y$, существует и непрерывна в $(x, y)$
+\end{MyProof}
+
+\Nota Используя Условие Коши-Римана, получим равенство $u_x + i v_x = v_y - i u_y = u_x - i u_y = v_y + i v_x$
+
+\Notas Коши-Риман в ПСК:
+
+\begin{cases}
+    \frac{\partial u}{\partial \rho} = \frac{1}{\rho} \frac{\partial v}{\partial \varphi} \\
+    \frac{\partial u}{\partial \varphi} = -\frac{1}{\rho} \frac{\partial v}{\partial \rho}
+\end{cases}
+
+Тогда $f^\prime(z) = \frac{1}{z} \left(\frac{\partial v}{\partial \varphi} - i \frac{\partial u}{\partial \varphi}\right) = \frac{\rho}{z} \left(\frac{\partial u}{\partial \rho} + i \frac{\partial v}{\partial \rho}\right)$
+
+\begin{MyProof}
+    $u_\rho = u_x \frac{\partial x}{\partial \rho} + u_y \frac{\partial y}{\partial \rho} = u_x \cos \varphi + u_y \sin \varphi$
+
+    $v_\varphi = v_x \frac{\partial x}{\partial \varphi} + v_y \frac{\partial y}{\partial \varphi} = 
+    -\rho v_x \sin \varphi + \rho v_y \cos \varphi = \rho u_y \sin \varphi + \rho u_x \cos \varphi = \rho u_\rho$
+
+    \Lab $\frac{\partial u}{\partial \varphi} = -\frac{1}{\rho} \frac{\partial v}{\partial \rho}$
+\end{MyProof}
+
+\mediumvspace
+
+\underline{Свойства аналитических функций}
+
+Пусть $f, g$ - аналитические функции, тогда:
+
+\begin{enumerate}[label=\arabic*$^\circ$]
+    \item Линейность: $af + bg$ - аналитическая
+    \item Композиция: $f(g(z))$ - аналитическая
+    \item Произведение: $f \cdot g$ - аналитическая
+\end{enumerate}
+
+\Nota Доказательства свойств элементарные, все сводится к сведению к $u$ и $v$
+
+\Ex $w = \frac{1}{z} = \frac{1}{x + iy} = \frac{x}{x^2 + y^2} - i \frac{y}{x^2 + y^2} = u(x, y) + i v(x, y)$
+
+$u_x = \frac{x^2 + y^2 - 2x^2}{(x^2 + y^2)^2} = \frac{y^2 - x^2}{(x^2 + y^2)^2}$
+
+$v_y = \frac{-x^2 - y^2 + 2y^2}{(x^2 + y^2)^2} = \frac{y^2 - x^2}{(x^2 + y^2)^2} = u_x$
+
+$u_y = \frac{-2xy}{(x^2 + y^2)^2}$
+
+$v_x = \frac{2xy}{(x^2 + y^2)^2} = -u_y$
+
+Таким образом, $\frac{1}{z}$ - аналитическая функция
+
+\Ex $w = \overline{z} = x - iy$
+
+$u_x = 1$, $v_y = -1 \neq u_x$ - не аналитическая функция
+
+
