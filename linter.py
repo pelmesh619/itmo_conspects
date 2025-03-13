@@ -37,7 +37,6 @@ file = "%% THIS FILE IS GENERATED AUTOMATICALLY BY linter.py, ALL CHANGES WILL B
 
 if os.path.exists(os.path.join(folder, '__preamble.sty')):
     specific_preamble = open(os.path.join(folder, '__preamble.sty'), encoding='utf8').read()
-    print(re.search(r'\\begin\{document\}', file_text))
     if re.search(r'\\begin\{document\}', file_text):
         file_text = file_text.replace('\\begin{document}', specific_preamble + '\n' + '\\begin{document}', 1)
     else:
