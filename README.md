@@ -6,7 +6,7 @@
 
 ## IV семестр
 
-### Проектирование баз данных (лектор Мацнев Н. И.)
+### Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_superconspect.html)
 
@@ -15,6 +15,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_19.html)  <!-- Мацнев -->
 * Лекция №4 - отменена
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_05.html) <!-- Самигуллин -->
+* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_12.html) <!-- Бартунов -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
@@ -33,6 +34,7 @@
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_21.html)
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_28.html)
 * Лекция №5 - в производстве
+* Лекция №6 - в производстве
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
@@ -49,7 +51,7 @@
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_10.pdf)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_17.pdf)
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_24.pdf)
-* Лекция №5 - в производстве
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_03.pdf)
 * Лекция №6 - в производстве
 
 ### Математическая статистика (лектор Блаженов А. В.)
