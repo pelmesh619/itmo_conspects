@@ -15,7 +15,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_19.html)  <!-- Мацнев -->
 * Лекция №4 - отменена
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_05.html) <!-- Самигуллин -->
-* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_12.html) <!-- Бартунов -->
+* [Лекция №6](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_12.md) <!-- Бартунов -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
