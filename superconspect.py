@@ -13,14 +13,16 @@ BLACKLIST_WORDS = ['cheatsheet', folder + "_superconspect.tex", folder + "_super
 
 warning_all = '-w' in sys.argv or '--wall' in sys.argv
 
-if all(map(lambda x: x.endswith('.md') or '.' not in x, os.listdir(folder))):
+folder_files = [i for i in os.listdir(folder) if not i.startswith('__')]
+
+if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
     supername = folder + "_superconspect.md"
 
     contents = {}
 
     text = ''
 
-    for i in os.listdir(folder):
+    for i in folder_files:
         if not i.endswith('.md') or any([j in i for j in BLACKLIST_WORDS]):
             continue
 
@@ -75,7 +77,7 @@ else:
 
     text = ''
 
-    for i in os.listdir(folder):
+    for i in folder_files:
         if not i.endswith('.tex') or any([j in i for j in BLACKLIST_WORDS]):
             continue
 
