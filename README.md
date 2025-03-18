@@ -75,7 +75,7 @@
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_02_25.html)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_04.html)
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_11.html)
-* Лекция №7 - в производстве
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_18.html)
 
 ## [III семестр](meta/III.md)
 
