@@ -26,12 +26,16 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
         if not i.endswith('.md') or any([j in i for j in BLACKLIST_WORDS]):
             continue
 
-        file_text = open(os.path.join(folder, i), 'r', encoding='utf8').read()
+        file_text_origin = open(os.path.join(folder, i), 'r', encoding='utf8').read()
+        file_text = file_text_origin
         if re.match(r'\s*#ignore', file_text):
             print(f'File {i} is ignored')
             continue
 
         for header_match in re.finditer('(^|\n)((#+) +(.+))\n', file_text, re.U):
+            # for cases when '\n# ...' is a comment in code block
+            if file_text_origin[:header_match.start(2)].count('```') % 2 == 1:
+                continue
             header_level = len(header_match.group(3))
             header_name = header_match.group(4).strip()
 
