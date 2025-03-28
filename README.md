@@ -39,6 +39,7 @@
 * Лекция №5 - в производстве
 * Лекция №6 - в производстве
 * Лекция №7 - в производстве
+* Лекция №8 - отменена
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
@@ -47,7 +48,7 @@
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_07.pdf)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_21.pdf)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_07.pdf)
-* Лекция №7 - в производстве
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_21.pdf)
 
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
@@ -84,6 +85,7 @@
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_11.html)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_18.html)
 * Лекция №8 - в производстве
+* Лекция №9 - отменена
 
 ## [III семестр](meta/III.md)
 
