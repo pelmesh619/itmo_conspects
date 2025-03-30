@@ -1,0 +1,94 @@
+$subject$=Физические основы компьютерных \\ и сетевых технологий
+$teacher$=Лекции Герта А. В.
+$date$=24.03.2025
+
+\section{Лекция 7. Электромагнитные волны}
+
+Вспомним знаменитые уравнения Максвелла
+
+\begin{itemize}
+    \item $[\vec \nabla \vec E] = -\frac{\partial \vec B}{\partial t}$ - закон Фарадея
+
+    \item $[\vec \nabla \vec D] = \rho$ - теорема Гаусса
+
+    \item $[\vec \nabla \vec H] = \vec j + \frac{\partial \vec D}{\partial t}$ - закон Ампера
+
+    \item $\vec \nabla \vec B = 0$ - теорема Гаусса для магнитного поля
+\end{itemize}
+
+А также $\vec \nabla \vec j = -\frac{\partial \rho}{\partial t}$ - уравнение непрерывности, $\vec B = \mu \mu_0 \vec H$, $\vec D = \varepsilon \varepsilon_0 \vec E$
+
+В среде однородной, нейтральной ($\rho = 0$) и непроводящей ($j = 0$) получаем:
+
+\begin{multicols}{2}
+    \begin{center}
+        $[\vec \nabla \vec E] = -\frac{\partial \vec B}{\partial t}$
+
+        $[\vec \nabla \vec D] = 0$
+
+        $[\vec \nabla \vec H] = \frac{\partial \vec D}{\partial t}$
+
+        $\vec \nabla \vec B = 0$
+    \end{center}
+\end{multicols}
+
+\mediumvspace
+
+Из этого:
+
+$\underset{\|}{\frac{\partial}{\partial t} \left(\frac{\partial \vec D}{\partial t}\right)} = \varepsilon \varepsilon_0 \frac{\partial^2 \vec E}{\partial t^2}$
+
+$\frac{\partial}{\partial t} [\vec \nabla \vec H] = \left[\vec \nabla \frac{\partial \vec H}{\partial t}\right] = 
+- \frac{1}{\mu \mu_0} [\vec \nabla [\vec \nabla \vec E]] = \vec \nabla (\vec \nabla \vec E) - (\vec \nabla \vec \nabla) \vec E 
+\underset{\vec \nabla \vec D = \vec \nabla \varepsilon \varepsilon_0 \vec E = 0}{=\joinrel=\joinrel=} -\vec \nabla^2 \vec E$
+
+Далее получаем $-\vec \nabla^2 \vec E = \varepsilon \varepsilon_0 \frac{\partial^2 \vec E}{\partial t^2}$. 
+Приходим к волновым уравнениям: 
+
+\begin{center}
+    $\nabla^2 \vec E - \varepsilon \varepsilon_0 \mu \mu_0 \frac{\partial^2 \vec E}{\partial t^2} = 0$
+
+    $\nabla^2 \vec H - \varepsilon \varepsilon_0 \mu \mu_0 \frac{\partial^2 \vec H}{\partial t^2} = 0$
+\end{center}
+
+Коэффициент перед вторым членом определяет скорость волны $v = \frac{1}{\sqrt{\varepsilon \varepsilon_0 \mu \mu_0}} = \frac{c}{\sqrt{\varepsilon \mu}}$, где $c$ - скорость света в вакууме
+
+Главное отличие волны от колебания - это то, что волна переносит энергию
+
+В простейшем случае решением уравнения может быть такая функция (так называемая гармоническая расходящася сферическая волна):
+
+$E(\ver r, t) = E_0 \cos (\omega t \pm \vec k \vec r + \varphi_0)$, где $\vec k$ - волновой вектор, а $\vec r$ - расстояние от наблюдаемой нами точки до источника волн
+
+В таком случае поток по сферам разных радиусов в центре источника будет одинаков
+
+Если волна зависит только от одной координаты, то волна будет называться плоской: $E(x, t) = E_0 \cos (\omega t \pm k x + \varphi_0)$
+
+Анализ электромагнитных волн (ЭМВ) показывает, что они обладают свойствами:
+
+\begin{itemize}
+    \item Вектора $\vec E$, $\vec B$ и $\vec k$ взаимно ортогональны и образуют правовинтовую тройку векторов
+    \item Между напряженностью электрического поля и индукцией магнитного поля волны в вакууме существует прямая связь:
+    $|\vec E| = c |\vec B|$ (не в вакууме $\sqrt{\varepsilon \varepsilon_0} |\vec E| = \sqrt{\mu \mu_0} |\vec B|$)
+\end{itemize}
+
+При этом начальная фаза и частота у колебаний $B$ и $E$ равны
+
+Объемная плотность ЭМ-энергии равна: $w = \frac{\varepsilon \varepsilon_0 E^2}{2} + \frac{\mu \mu_0 H^2}{2}$. 
+Из этого $w = \varepsilon \varepsilon_0 E^2 = \mu \mu_0 H^2 = \frac{EH}{v}$, где $v$ - скорость волны
+
+Вектор $\vec S = [\vec E \vec H]$ называют вектором Умова-Пойнтинга и отображает плотность потока энергии 
+
+Интенсивность волны (мощность, переносимая через площадку за время) равна усредненному модулю вектора Умова-Пойнтинга за данный промежуток времени $I = \Pair{|\vec S|} = \frac{1}{2} \sqrt{\frac{\varepsilon \varepsilon_0}{\mu \mu_0}} E^2_m$
+
+Для ЭМВ также справедлив эффект Доплера:
+
+\begin{itemize}
+    \item Продольный: $f = f_0 \cdot \sqrt{\frac{1 - \frac{v}{c}}{1 + \frac{v}{c}}}$
+
+    \item Поперечный: $f = f_0 \cdot \sqrt{1 - \frac{v^2}{c^2}}$
+\end{itemize}
+
+Здесь $f_0$ - частота волн, испускаемых источником, $f$ - частота волн, воспринимаемых приемников, $v$ - скорость источника относительно приемника
+
+Из граничных условий при переходе между средами и из знания того, что свет - ЭМВ, выводится закон Снелла 
+
