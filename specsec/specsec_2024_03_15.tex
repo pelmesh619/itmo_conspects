@@ -8,118 +8,136 @@
 
 
 \begin{document}
-    \Def Произведение операторов (композиция)
-
-    $\mathcal{A}\mathcal{B}$ - произведение, $\mathcal{A} : V \rightarrow W; \ \mathcal{B} : U \rightarrow V$
-
+    \Def Пусть $\mathcal{A} : V \rightarrow W; \ \mathcal{B} : U \rightarrow V$, тогда 
+    $\mathcal{A}\mathcal{B}$ - произведение операторов (композиция), причем
     $(\mathcal{A}\mathcal{B}) x = \mathcal{A}(\mathcal{B}x); \quad x \in U$
 
     \hypertarget{linearoperatorproperties}{}
 
-    Свойства: \underline{Lab} доказать
+    \underline{Свойства}: 
 
-    1* $\lambda (\mathcal{A}\mathcal{B}) = (\lambda \mathcal{A})\mathcal{B}$
+    \begin{enumerate}[label*=\arabic*$^\circ$]
+        \item $\lambda (\mathcal{A}\mathcal{B}) = (\lambda \mathcal{A})\mathcal{B}$
 
-    2* $(\mathcal{A} + \mathcal{B}) \mathcal{C} = \mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C}$
+        \item $(\mathcal{A} + \mathcal{B}) \mathcal{C} = \mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C}$
 
-    3* $\mathcal{A} (\mathcal{B} + \mathcal{C}) = \mathcal{A}\mathcal{B} + \mathcal{A}\mathcal{C}$
+        \item $\mathcal{A} (\mathcal{B} + \mathcal{C}) = \mathcal{A}\mathcal{B} + \mathcal{A}\mathcal{C}$
 
-    4* $\mathcal{A} (\mathcal{B}\mathcal{C}) = (\mathcal{A}\mathcal{B}) \mathcal{C}$
+        \item $\mathcal{A} (\mathcal{B}\mathcal{C}) = (\mathcal{A}\mathcal{B}) \mathcal{C}$
+    \end{enumerate}
 
+    \Lab доказать
 
-    \Nota Можно обобщить 4* на $n$ равных $\mathcal{A}$
+    \Nota Можно обобщить $4^\circ$ на $n$ равных $\mathcal{A}$
 
-    \Def $\mathcal{A}^n = \mathcal{A} \cdot \mathcal{A} \dots \mathcal{A}$ - $n$ раз, степень оператора
+    \Defs $\mathcal{A}^n = \underset{n \text{ раз}}{\underbrace{\mathcal{A} \cdot \mathcal{A} \cdot \dots \cdot \mathcal{A}}}$ - степень оператора
 
     Свойства: $\mathcal{A}^{m + n} = \mathcal{A}^n \cdot \mathcal{A}^m$
 
-    \section[p2\_3]{2.3. Обратимость оператора}
+    \subsection[p2\_3]{2.3. Обратимость оператора}
 
     \hypertarget{onetoonelinearoperator}{}
 
-    Def: $\mathcal{A} : V \rightarrow W$ так, что $\mathcal{A}V = W$ и $\forall x_1 \neq x_2 (x_1, x_2 \in V) \quad
+    \Def $\mathcal{A} : V \rightarrow W$ так, что $\mathcal{A}V = W$ и $\forall x_1 \neq x_2 (x_1, x_2 \in V) \quad
     \begin{cases}y_1 = \mathcal{A}x_1 \\ y_2 = \mathcal{A}x_2\end{cases} \Longrightarrow y_1 \neq y_2$
 
     Тогда $\mathcal{A}$ называется взаимно-однозначно действующим
 
     Nota: Проще сказать \enquote{линейный изоморфизм}
 
-    \Th $\Set{x_i}$ - линейно независима $\stackrel{\mathcal{A}x = y}{\longrightarrow} \Set{y_i}$ - линейно независима
+    \begin{MyTheorem}
+        \Ths $\Set{x_i}$ - линейно независима $\stackrel{\mathcal{A}x = y}{\Longrightarrow} \{y_i\}$ - линейно независима
 
-    В обратную сторону, если $\mathcal{A}$ - взаимно-однозначен
+        В обратную сторону верно, если $\mathcal{A}$ - взаимно-однозначен
+    \end{MyTheorem}
 
-    $\Box \sqsupset \mathcal{A} : V \rightarrow W$ и $\texttt{0}_V, \texttt{0}_W$ - нули $V$ и $W$ соответственно
-    \begin{enumerate}
-        \item $\mathcal{A}(\texttt{0}_V) = \mathcal{A}(\sum^k_{i=1} 0 \cdot e_i) = \sum^k_{i=1} 0 \cdot \mathcal{A}e_i = \texttt{0}_W$
+    \begin{MyProof}
+        Пусть $\mathcal{A} : V \rightarrow W$ и $\texttt{0}_V, \texttt{0}_W$ - нули $V$ и $W$ соответственно
 
-        \item Докажем, что если ${x_i} \subset V$ - лин. нез., то ${y_i} \subset W$ - лин. нез.
+        \begin{enumerate}
+            \item $\mathcal{A}(\texttt{0}_V) = \mathcal{A}\left(\sum^k_{i=1} 0 \cdot e_i\right) = \sum^k_{i=1} 0 \cdot \mathcal{A}e_i = \texttt{0}_W$
 
-        Составим $\sum^m_{j=1} \lambda_j y_j = \texttt{0}_W$ (От противного) $\sqsupset \Set{y_i}$ - лин. зав., тогда $\exists \lambda_k \neq 0$
+            \item Докажем, что если ${x_i} \subset V$ - линейно независима, то ${y_i} \subset W$ - линейно независима
 
-        При этом $\forall j \ \ y_j = \mathcal{A}x_j$ (т. к. $\mathcal{A}$ - вз.-однозн., то $n^\prime = m^\prime$: кол-во $x_i$ и $y_i$ равно)
+            Составим $\sum^m_{j=1} \lambda_j y_j = \texttt{0}_W$ 
+            
+            От противного пусть $\{y_i\}$ - линейно зависима, тогда $\exists \lambda_k \neq 0$
 
-        $\sum^{m^\prime}_{j=1} \lambda_j \mathcal{A}x_j \stackrel{\text{линейность}}{=} \mathcal{A} (\sum^{m^\prime}_{j=1} \lambda_j x_j) = \texttt{0}_W$
+            При этом $\forall j \ \ y_j = \mathcal{A}x_j$ (т. к. $\mathcal{A}$ - взаимно-однозначен, 
+            то $n^\prime = m^\prime$: кол-во $x_i$ и $y_i$ равно)
 
-        Так как $\mathcal{A}\texttt{0}_V = \texttt{0}_W$, то $\texttt{0}_W$ - образ $x = \texttt{0}_V$, но так как $\mathcal{A}$ - вз.-однозн., то
-        $\nexists x^\prime \neq x \ | \ \mathcal{A}(x^\prime) = \texttt{0}_W$
+            $\sum^{m^\prime}_{j=1} \lambda_j \mathcal{A}x_j \stackrel{\text{линейность}}{=} \mathcal{A} (\sum^{m^\prime}_{j=1} \lambda_j x_j) = \texttt{0}_W$
 
-        Значит $\sum^{m^\prime}_{j=1} \lambda_j x_j = \texttt{0}_V$, но $\exists \lambda_k \neq 0 \Longrightarrow \Set{x_j}$ - лин. зав. - \underline{противоречие}
+            Так как $\mathcal{A}\texttt{0}_V = \texttt{0}_W$, то $\texttt{0}_W$ - образ $x = \texttt{0}_V$, 
+            но так как $\mathcal{A}$ - взаимно-однозначен, то
+            $\nexists x^\prime \neq x \ | \ \mathcal{A}(x^\prime) = \texttt{0}_W$
 
-        \item $\sqsupset$ теперь $\Set{y_i}$ - л. нез., а $\Set{x_i}$ (по предположению от противного) - лин. зав.
+            Значит $\sum^{m^\prime}_{j=1} \lambda_j x_j = \texttt{0}_V$, но 
+            $\exists \lambda_k \neq 0 \Longrightarrow \{x_j\}$ - линейно зависима - \underline{противоречие}
 
-        $\sum^{n^\prime}_{i = 1} \lambda_i x_i \stackrel{\exists \lambda_k \neq 0}{=} \texttt{0}_V \quad \Big| \mathcal{A}$
+            \item Пусть теперь $\{y_i\}$ - линейно независима, а $\{x_i\}$ (по предположению от противного) - линейно зависима
 
-        $\sum^{n^\prime}_{i = 1} \lambda_i \mathcal{A}x_i = \texttt{0}_W$
+            $\sum^{n^\prime}_{i = 1} \lambda_i x_i \stackrel{\exists \lambda_k \neq 0}{=} \texttt{0}_V \quad \Big| \mathcal{A}$
 
-        При этом $\exists \lambda_k \neq 0 \Longrightarrow \Set{y_i}$ - лин. зав. - \underline{противоречие}
+            $\sum^{n^\prime}_{i = 1} \lambda_i \mathcal{A}x_i = \texttt{0}_W$
 
-    \end{enumerate}
+            При этом $\exists \lambda_k \neq 0 \Longrightarrow \{y_i\}$ - линейно зависима - \underline{противоречие}
 
-    Следствие: $\dim V = \dim W \Longleftarrow \mathcal{A}$ - лин. изоморфизм
+        \end{enumerate}
+    \end{MyProof}
+
+    Следствие: $\dim V = \dim W \Longrightarrow \mathcal{A}$ - линейный изоморфизм
 
     \hypertarget{reverselinearoperator}{}
 
-    Def: $\mathcal{B} : W \rightarrow V$ называется обратным оператором для $\mathcal{A} : V \rightarrow W$
-
+    \Def $\mathcal{B} : W \rightarrow V$ называется обратным оператором для $\mathcal{A} : V \rightarrow W$,
     если $\mathcal{B}\mathcal{A} = \mathcal{A}\mathcal{B} = \mathcal{I}$ (обозначается $\mathcal{B} = \mathcal{A}^{-1}$)
 
     Следствие: $\mathcal{A}\mathcal{A}^{-1} x = x$
 
-    \Th $\mathcal{A}x = \texttt{0}$ и $\exists \mathcal{A}^{-1}$, тогда $x = \texttt{0}$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A}x = \texttt{0}$ и $\exists \mathcal{A}^{-1}$, тогда $x = \texttt{0}$
+    \end{MyTheorem}
 
-    $\Box \mathcal{A}^{-1}\mathcal{A} x = \mathcal{A}^{-1}(\mathcal{A} x) = \mathcal{A}^{-1} \texttt{0}_W = \texttt{0}_V \Longrightarrow x = \texttt{0}$
+    \begin{MyProof}
+        $\mathcal{A}^{-1}\mathcal{A} x = \mathcal{A}^{-1}(\mathcal{A} x) = \mathcal{A}^{-1} \texttt{0}_W = \texttt{0}_V \Longrightarrow x = \texttt{0}$
+    \end{MyProof}
 
-    \Th Необходимые и Достаточные условия существования $\mathcal{A}^{-1}$
+    \begin{MyTheorem}
+        \Ths Необходимые и Достаточные условия существования $\mathcal{A}^{-1}$
 
-    $\exists \mathcal{A}^{-1} \Longleftrightarrow \mathcal{A}$ - вз.-однозн.
+        $\exists \mathcal{A}^{-1} \Longleftrightarrow \mathcal{A}$ - взаимно-однозначный
+    \end{MyTheorem}
 
-    $\Box \Longrightarrow \exists \mathcal{A}^{-1}$, но $\sqsupset \mathcal{A}$ - не вз.-однозн., то есть
-    $\exists x_1, x_2 \in V (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A}x_1 - \mathcal{A}x_2 = \texttt{0} \Longleftrightarrow
-    \mathcal{A}(x_1 - x_2) = \texttt{0}_W \stackrel{\exists \mathcal{A}^{-1}}{\Longrightarrow} x = \texttt{0}_V \Longleftrightarrow x_1 = x_2$ - противоречие
+    \begin{MyProof}
+        \fbox{$\Longrightarrow$} $\exists \mathcal{A}^{-1}$, но $\sqsupset \mathcal{A}$ - не взаимно-однозначен, то есть
+        $\exists x_1, x_2 \in V (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A}x_1 - \mathcal{A}x_2 = \texttt{0} \Longleftrightarrow
+        \mathcal{A}(x_1 - x_2) = \texttt{0}_W \stackrel{\exists \mathcal{A}^{-1}}{\Longrightarrow} x = \texttt{0}_V \Longleftrightarrow x_1 = x_2$ - противоречие
 
-    $\Longleftarrow$ Так как $\mathcal{A}$ - изоморфизм (не учитывая линейность), то $\exists \mathcal{A}^\prime$ - обратное отображение (не обязат. линейное)
 
-    Докажем, что $\mathcal{A}^\prime : W \rightarrow V$ - линейный оператор
+        \fbox{$\Longleftarrow$} Так как $\mathcal{A}$ - изоморфизм (не учитывая линейность), 
+        то $\exists \mathcal{A}^\prime$ - обратное отображение (не обязательно линейное)
 
-    ? $\mathcal{A}^\prime (\sum \lambda_i y_i) = \sum \lambda_i \mathcal{A}^\prime y_i = \sum \lambda_i x_i$
+        Докажем, что $\mathcal{A}^\prime : W \rightarrow V$ - линейный оператор
 
-    $\mathcal{A}$ - вз.-однозн. $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \sum$
+        $\mathcal{A}$ - взаимно-однозначен $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \sum$
 
-    $\mathcal{A}(\sum \lambda_i x_i) = \mathcal{A} x = y = \sum \lambda_i y_i \quad$ и $y$ имеет только один прообраз $x$
+        $\mathcal{A}\left(\sum \lambda_i x_i\right) = \mathcal{A} x = y = \sum \lambda_i y_i \quad$ и $y$ имеет только один прообраз $x$
 
-    Применим $\mathcal{A}^\prime$ к $y = \sum \lambda_i y_i \quad \mathcal{A}^\prime y = x = \sum \lambda_i x_i$ - единственный прообраз $y$
+        Применим $\mathcal{A}^\prime$ к $y = \sum \lambda_i y_i$, получим $\mathcal{A}^\prime y = x = \sum \lambda_i x_i$ - единственный прообраз $y$
 
-    Таким образом, $\mathcal{A}^\prime$ переводит лин. комбинацию в такую же лин. комбинацию прообразов, то есть $\mathcal{A}^\prime$ - линейный: $\mathcal{A}^\prime = \mathcal{A}^{-1}$
+        Таким образом, $\mathcal{A}^\prime$ переводит линейную комбинацию в такую же линейную комбинацию прообразов, то есть $\mathcal{A}^\prime$ - линейный: $\mathcal{A}^\prime = \mathcal{A}^{-1}$
+    \end{MyProof}
 
-    \section[p2\_4]{2.4. Матрица ЛО}
+    \subsection[p2\_4]{2.4. Матрица линейного оператора}
 
-    $\mathcal{A} : V^n \rightarrow W^m$
+    Пусть $\mathcal{A} : V^n \rightarrow W^m$
 
-    Возьмем вектор $x \in V^n$ и разложим по какому-либо базису $\Set{e_j}^n_{j=1}$
+    Возьмем вектор $x \in V^n$ и разложим по какому-либо базису $\{e_j\}^n_{j=1}$
 
-    $\mathcal{A}x = \mathcal{A} (\sum^n_{j=1} c_j e_j) = \sum^n_{j=1} c_j \mathcal{A}e_j$
+    $\mathcal{A}x = \mathcal{A} \left(\sum^n_{j=1} c_j e_j\right) = \sum^n_{j=1} c_j \mathcal{A}e_j$
 
-    $\mathcal{A} e_j \stackrel{\text{образ базисного вектора}}{=} y_j \stackrel{\Set{f_i} - \text{ базис } W^m}{=} \sum^m_{i=1} a_{ij}f_i$
+    $\mathcal{A} e_j \stackrel{\text{образ базисного вектора}}{=} y_j \stackrel{\{f_i\} - \text{ базис } W^m}{=} \sum^m_{i=1} a_{ij}f_i$
 
     $\mathcal{A}x = \sum^n_{j=1} c_j \mathcal{A}e_j = \sum^n_{j=1} c_j \sum^m_{i=1} a_{ij}f_i = \sum^n_{j=1} \sum^m_{i=1} c_j a_{ij} f_i = \sum^m_{i=1} \sum^n_{j=1} c_j a_{ij} f_i$
 
@@ -141,43 +159,43 @@
 
     \hypertarget{operatorsmatrix}{}
 
-    Def: Матрица $A = {a_{ij}}_{i=1..m, j=1..n}$ называется матрицей оператора $\mathcal{A} : V^n \rightarrow W^m$ в базисе $\Set{e_j}^n_{j=1}$ пространства $V^n$
+    \Def Матрица $A = \{a_{ij}\}_{i=1..m, j=1..n}$ называется матрицей оператора $\mathcal{A} : V^n \rightarrow W^m$ в базисе $\{e_j\}^n_{j=1}$ пространства $V^n$
 
-    Вопросы:
+    \begin{enumerate}
+        \item Для каждого ли оператора $\mathcal{A}$ существует матрица $A$?
 
-    1) $\forall ? \mathcal{A} \ \exists A$
+        При выбранном базисе $\{e_j\} \ \forall \mathcal{A} \ \exists A$ (алгоритм выше)
 
-    2) $\forall ? A \ \exists \mathcal{A}$
+        \item Для каждой ли матрицы $A$ существует оператор $\mathcal{A}$?
 
-    3) если $\exists A$ для $\mathcal{A}$, то единственная?
+        $\forall A_{m\times n}$ можно взять пару ЛП $V^n, W^m$ и определить $\mathcal{A} : V^n \rightarrow W^m$ по правилу $\mathcal{A}e_V = e^\prime_W$
 
-    4) если $\exists \mathcal{A}$ для $A$, то единственная?
+        \item Если существует матрица $A$ для оператора $\mathcal{A}$, то она единственная?
 
-    Ответы:
+        Такая $A$ единственная $\Longrightarrow$ в разных базисах матрицы ЛО $\mathcal{A} \quad A_e \neq A_{e^\prime}$
 
-    1) При выбранном базисе $\Set{e_j} \ \forall \mathcal{A} \ \exists A$ (алгоритм выше)
+        \item Если существует оператор $\mathcal{A}$ для матрицы $A$, то он единственный?
 
-    3) такая $A$ единственная $\Longrightarrow$ в разных базисах матрицы ЛО $\mathcal{A} \quad A_e \neq A_{e^\prime}$
+        \Lab
+    \end{enumerate}
 
-    2) $\forall A_{m\times n}$ можно взять пару ЛП $V^n, W^m$ и определить $\mathcal{A} : V^n \rightarrow W_n$ по правилу $\mathcal{A}e_V = e_W^\prime$
+    \Nota Далее будем решать две задачи:
 
-    4) \Lab
+    \begin{enumerate}
+        \item преобразование координат как действие оператора
 
-    Nota: Далее будем решать две задачи
+        \item поиск наиболее простой матрицы в некотором базисе
+    \end{enumerate}
 
-    1) преобразование координат как действие оператора
-
-    2) поиск наиболее простой матрицы в некотором базисе
-
-    \section[p2\_5]{2.5. Ядро и образ оператора}
+    \subsection[p2\_5]{2.5. Ядро и образ оператора}
 
     \hypertarget{kernalandimageofoperator}{}
 
-    \Def Ядро оператора - $Ker \mathcal{A} \stackrel{def}{=} \Set{x \in V \ | \ \mathcal{A}x = \texttt{0}_W}$
+    \Defs Ядро оператора $\Ker \mathcal{A} \stackrel{def}{=} \{x \in V \ | \ \mathcal{A}x = \texttt{0}_W\}$
 
-    \Def Образ оператора - $Im \mathcal{A} \stackrel{def}{=} \Set{y \in W \ | \ \mathcal{A}x = y}$
+    \Defs Образ оператора $\IM \mathcal{A} \stackrel{def}{=} \{y \in W \ | \ \mathcal{A}x = y\}$
 
-    \Nota $Ker \mathcal{A}$ и $Im \mathcal{A}$ - подпространства
+    \Notas $\Ker \mathcal{A}$ и $\IM \mathcal{A}$ - подпространства
 
 
 \end{document}
