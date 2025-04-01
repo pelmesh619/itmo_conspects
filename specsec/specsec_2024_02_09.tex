@@ -10,10 +10,11 @@
 \begin{document}
     \section{1. Евклидовы пространства}
 
+    \subsection{1.1. Скалярное произведение}
 
-    \section{1.1. Скалярное произведение}
+    Пусть $L$ - линейное пространство (ЛП). Тогда $\forall x, y \in L$ величину $\underset{x, y \to c \in \Real}{c = (x, y)}$
+    будем называть скалярным произведением
 
-    $L$ - линейное пространство $\quad \forall x, y \in L \quad \underset{x, y \to c \in \Real}{c = (x, y) - \text{ск. произв.}}$
 
     \hypertarget{scalarproductdefinition}{}
 
@@ -24,7 +25,7 @@
         \item $\forall x \in L\ (x, x) \geq 0$ и $(x, x) = 0 \Longrightarrow x = 0$
     \end{enumerate}
 
-    Если векторы и коэффициенты комплексно-значные, то определения будут другими!
+    \Notas Если векторы и коэффициенты комплексно-значные, то определения будут другими
 
     \Def Скалярная функция $c = (x, y)$ со свойствами 1-4 называется скалярным произведением элементов $x$ и $y$
 
@@ -34,17 +35,17 @@
 
     \ExN{1} ЛП - пространство геометрических векторов
 
-    $(\overrightarrow{a}, \overrightarrow{b}) =
-    \begin{sqcases}
-        |\overrightarrow{a}||\overrightarrow{b}|\cos\varphi, \quad \overrightarrow{a}, \overrightarrow{b} \neq 0 \\
-        0, \quad \overrightarrow{a} = 0 \lor \overrightarrow{b} = 0
-    \end{sqcases}$
+    $(\vec{a}, \vec{b}) \stackrel{def}{=}
+    \begin{cases}
+        |\vec{a}||\vec{b}|\cos\varphi, \quad \vec{a}, \vec{b} \neq 0 \\
+        0, \quad \vec{a} = 0 \lor \vec{b} = 0
+    \end{cases}$
 
-    \ExN{2} ЛП $= C_{[a;b]}$
+    \ExN{2} $L = C_{[a;b]}$
 
     $(f(x), g(x)) \stackrel{def}{=} \int^b_a f(x)g(x) dx$
 
-    Очевидно, что 1-3 выполняются, проверим 4:
+    Очевидно, что свойства 1-3 выполняются, проверим 4:
 
     $\int^b_a f^2(x) dx = 0 \stackrel{?}{\Longrightarrow} f(x) = 0$
 
@@ -52,33 +53,31 @@
 
     $(x, y) = x_1 y_1 + \dots x_n y_n = \sum_{i=1}^n x_i y_i$ - сумма произведений компонент
 
-    \section{1.2. Свойства евклидова пространства - $E$}
+    \subsection{1.2. Свойства евклидова пространства - $E$}
 
     \hypertarget{inequalityofCauchyBunyakovsky}{}
 
-    \Th Неравенство Коши-Буняковского
+    \begin{MyTheorem}
+        \Ths Неравенство Коши-Буняковского
 
-    $(x, y)^2 \leq (x, x)(y, y)$
+        $(x, y)^2 \leq (x, x)(y, y)$
+    \end{MyTheorem}
 
-    $\Box$
+    \begin{MyProof}
+        Нетрудно заметить, что:
 
-    Нетрудно заметить, что:
+        $(\lambda x - y, \lambda x - y) = (\lambda x - y, \lambda x) - (\lambda x - y, y) =
+        (\lambda x, \lambda x) - (y, \lambda x) - (\lambda x, y) + (y, y) = \lambda^2 (x, x) - 2\lambda (x, y) + (y, y)$
 
-    $\sphericalangle (\lambda x - y, \lambda x - y) = (\lambda x - y, \lambda x) - (\lambda x - y, y) =
-    (\lambda x, \lambda x) - (y, \lambda x) - (\lambda x, y) + (y, y) = \lambda^2 (x, x) - 2\lambda (x, y) + (y, y) \stackrel{\text{пусть}}{=} 0$
+        Приравняем полученное выражение к 0, получаем квадратное уравнение. Решим относительно $\lambda$:
 
-    Решим относительно $\lambda$
+        $D = 4(x, y)^2 - 4(x, x)(y, y) \Longrightarrow \frac{D}{4} = (x, y)^2 - (x, x)(y, y)$
 
-    $D = 4(x, y)^2 - 4(x, x)(y, y)$
+        Так как $(\lambda x - y, \lambda x - y) \geq 0$ (4-ое свойство скалярного произведения), то уравнение имеет $\leq 1$ корня, значит
+        $\frac{D}{4} = (x, y)^2 - (x, x)(y, y) \leq 0$
+    \end{MyProof}
 
-    $\frac{D}{4} = (x, y)^2 - (x, x)(y, y)$
-
-    Так как $(\lambda x - y) \geq 0$ (4-ое свойство ск. произв.), то уравнение имеет $\leq 1$ корня, значит
-    $\frac{D}{4} = (x, y)^2 - (x, x)(y, y) \leq 0$
-
-    $\Box$
-
-    \section{1.3. Норма}
+    \subsection{1.3. Норма}
 
     \hypertarget{normdefinition}{}
 
@@ -94,23 +93,23 @@
 
     Евклидово пространство с нормой называется нормированным
 
-    \Th $E^n$ является нормированным, если $\|x\| = \sqrt{(x, x)}$
+    \begin{MyTheorem}
+        \Ths $E^n$ является нормированным, если $\|x\| = \sqrt{(x, x)}$
+    \end{MyTheorem}
 
-    $\Box$
+    \begin{MyProof}
+        Свойства 1-2 очевидны, докажем 3 свойство:
 
-    Свойства 1-2 очевидны, докажем 3 свойство:
+        $\|x + y\| = \sqrt{(x + y, x + y)} \leq \sqrt{(x, x)} + \sqrt{(y, y)} = \|x\| + \|y\|$
 
-    $\|x + y\| = \sqrt{(x + y, x + y)} \leq \sqrt{(x, x)} + \sqrt{(y, y)} = \|x\| + \|y\|$
+        $\sqrt{(x, x) + 2(x, y) + (y, y)} \leq \sqrt{(x, x)} + \sqrt{(y, y)}$
 
-    $\sqrt{(x, x) + 2(x, y) + (y, y)} \leq \sqrt{(x, x)} + \sqrt{(y, y)}$
+        $(x, x) + 2(x, y) + (y, y) \leq (x, x) + (y, y) + 2\sqrt{(x, x)(y, y)}$
 
-    $(x, x) + 2(x, y) + (y, y) \leq (x, x) + (y, y) + 2\sqrt{(x, x)(y, y)}$
+        $(x, y) \leq \sqrt{(x, x)(y, y)}$
 
-    $(x, y) \leq \sqrt{(x, x)(y, y)}$
-
-    $(x, y)^2 \leq (x, x)(y, y)$ - верно по неравенству Коши-Буняковского
-
-    $\Box$
+        $(x, y)^2 \leq (x, x)(y, y)$ - верно по неравенству Коши-Буняковского
+    \end{MyProof}
 
     Обобщим геометрические понятия ортогональности и косинуса угла на случай произвольных векторов
 
@@ -118,15 +117,15 @@
 
     \Def $\cos(\widehat{x, y}) = \frac{(x, y)}{\|x\|\cdot\|y\|}$ - косинус угла между векторами
 
-    \Def $x, y \in E^n \quad x \perp y \quad z = x + y$ - гипотенуза
+    \Def $x, y \in E^n, x \perp y$, тогда $z = x + y$ - гипотенуза
 
-    \Th $x \perp y$, тогда $\|x + y\|^2 = \|x\|^2 + \|y\|^2$
+    \begin{MyTheorem}
+        \Ths $x \perp y$, тогда $\|x + y\|^2 = \|x\|^2 + \|y\|^2$
+    \end{MyTheorem}
 
-    $\Box$
-
-    $\|x + y\|^2 = (x + y, x + y) = (x, x)^2 + \underset{= 0, x \perp y}{\undergroup{2(x, y)}} + (y, y)^2 = (x, x)^2 + (y, y)^2$
-
-    $\Box$
+    \begin{MyProof}
+        $\|x + y\|^2 = (x + y, x + y) = (x, x)^2 + \underset{= 0, x \perp y}{\undergroup{2(x, y)}} + (y, y)^2 = (x, x)^2 + (y, y)^2$
+    \end{MyProof}
 
     \Def $B = \Set{e_i}_{i=1}^n$ - базис $L^n$
 
@@ -140,7 +139,7 @@
 
     $\sum_{i=1}^n \lambda_i e_i = 0 \stackrel{?}{\Longrightarrow} \forall \lambda_i = 0$
 
-    $(e_k, \sum_{i=1}^n \lambda_i e_i) = \sum_{i=1}^n \lambda_i (e_k, e_i) \stackrel{k \neq i \Rightarrow (e_k, e_i) = 0}{=\joinrel=\joinrel=}
+    $\left(e_k, \sum_{i=1}^n \lambda_i e_i\right) = \sum_{i=1}^n \lambda_i (e_k, e_i) \stackrel{k \neq i \Rightarrow (e_k, e_i) = 0}{=\joinrel=\joinrel=}
     \lambda_k \|e_k\|^2 = \lambda_k = 0 \quad \forall k$
 
 
