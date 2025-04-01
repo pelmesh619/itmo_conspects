@@ -74,6 +74,7 @@
 * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_03_11.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_03_18.pdf)
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_03_25.pdf)
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_01.pdf)
 
 ### Операционные системы (лектор Маятин А. В.)
 
