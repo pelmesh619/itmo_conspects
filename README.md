@@ -18,6 +18,7 @@
 * [Лекция №6](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_12.md) <!-- Бартунов -->
 * [Лекция №7](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_19.md) <!-- Самигуллин -->
 * [Лекция №8](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_26.md) <!-- Мацнев -->
+* Лекция №9 - производстве <!-- Мацнев -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
@@ -27,6 +28,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_02_20.html)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_03_06.html)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_03_20.html)
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_04_03.html)
 
 ### Технологии программирования на Java (лектор Макаревич Р. Д.)
 
