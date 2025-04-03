@@ -38,7 +38,7 @@
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_14.html)
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_21.html)
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_28.html)
-* Лекция №5 - в производстве
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_07.html)
 * Лекция №6 - в производстве
 * Лекция №7 - в производстве
 * Лекция №8 - отменена
