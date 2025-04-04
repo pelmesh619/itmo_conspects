@@ -176,7 +176,7 @@ python linter.py ./directory/tex_file.tex
 python superconspect.py ./directory
 ```
 
-Для md-конспектов он соединяет все md-файлы, добавляет содержание и сохраняет в `directory_superconspect.tex`
+Для md-конспектов он соединяет все md-файлы, добавляет содержание и сохраняет в `directory_superconspect.md`
 
 `compile_all.py` рендерит все .tex в данной директории, а также вызывает `superconspect.py` для директории 
 
