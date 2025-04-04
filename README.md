@@ -18,7 +18,7 @@
 * [Лекция №6](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_12.md) <!-- Бартунов -->
 * [Лекция №7](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_19.md) <!-- Самигуллин -->
 * [Лекция №8](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_26.md) <!-- Мацнев -->
-* Лекция №9 - производстве <!-- Мацнев -->
+* Лекция №9 - в производстве <!-- Мацнев -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
@@ -30,18 +30,19 @@
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_03_20.html)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_04_03.html)
 
-### Технологии программирования на Java (лектор Макаревич Р. Д.)
+### Технологии программирования на Java (лекторы Макаревич Р. Д., Сомов А. В.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_superconspect.html)
 
-* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_07.html)
-* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_14.html)
-* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_21.html)
-* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_28.html)
-* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_07.html)
-* Лекция №6 - в производстве
-* Лекция №7 - в производстве
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_07.html) <!-- Макаревич -->
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_14.html) <!-- Макаревич -->
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_21.html) <!-- Макаревич -->
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_28.html) <!-- Макаревич -->
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_07.html) <!-- Макаревич -->
+* Лекция №6 - в производстве <!-- Макаревич -->
+* Лекция №7 - в производстве <!-- Макаревич -->
 * Лекция №8 - отменена
+* Лекция №9 - в производстве <!-- Сомов -->
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
@@ -51,6 +52,7 @@
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_21.pdf)
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_07.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_21.pdf)
+* Лекция №9 - в производстве
 
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
