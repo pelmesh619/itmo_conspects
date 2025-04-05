@@ -39,7 +39,7 @@
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_21.html) <!-- Макаревич -->
 * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_28.html) <!-- Макаревич -->
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_07.html) <!-- Макаревич -->
-* Лекция №6 - в производстве <!-- Макаревич -->
+* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_14.html) <!-- Макаревич -->
 * Лекция №7 - в производстве <!-- Макаревич -->
 * Лекция №8 - отменена
 * Лекция №9 - в производстве <!-- Сомов -->
