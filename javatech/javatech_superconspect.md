@@ -16,6 +16,8 @@
     * [Java Database Connectivity](#java-database-connectivity)
     * [Java Persistence API](#java-persistence-api)
   * [Лекция 6](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-6)
+  * [Лекция 7](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-7)
+    * [Spring MVC](#spring-mvc)
   * [X. Программа экзамена 2024/2025](#x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-2024%2F2025)
 
 
@@ -1141,6 +1143,241 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
 Когда контекст закрывается, у всех бинов вызывается метод, помеченный `@PreDestroy` или `destroy-method="..."` в xml
 
 ![Spring Beans](images/spring_beans.png)
+
+
+## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-7"></a> Лекция 7
+
+### <a name="spring-mvc"></a> Spring MVC
+
+Spring MVC – модуль, который обеспечивает архитектуру паттерна Model - View - Controller (Модель - Отображение (или Вид) - Контроллер) при помощи слабо связанных готовых компонентов. Паттерн MVC разделяет аспекты приложения (логику ввода, бизнес-логику и логику UI), обеспечивая при этом свободную связь между ними.
+
+* **Model** (Модель) инкапсулирует (объединяет) данные приложения, в целом они будут состоять из POJO (Plain Old Java Object - "Старый добрый Java-объект", или бинов).
+* **View** (Отображение, Вид) отвечает за отображение данных Модели, - как правило, генерируя HTML, которые мы видим в своём браузере.
+* **Controller** (Контроллер) обрабатывает запрос пользователя, создаёт соответствующую Модель и передаёт её для отображения в Вид.
+
+
+Spring MVC построен вокруг сервлета (объекта, который принимает запросы) `DispatcherServlet`, который распределяет запросы по контроллерам, а также предоставляет другие широкие возможности при разработке веб приложений. 
+
+`DispatcherServlet` уже интегрирован в Spring IoC, поэтому имеет доступ к встроенным в контекст бинам
+
+`DispatcherServlet`, исходя из полученного HTTP-запроса, вызывает нужный контроллер, отмеченный аннотацией `@Controller`. Чтобы установить нужное действие по определенному эндпоинт, воспользуемся аннотацией `@RequestMapping`. В ней можно обозначить эндпоинт (и не только просто строка, а параметризированную ([\*тык\*](https://docs.spring.io/spring-framework/reference/web/webmvc/mvc-controller/ann-requestmapping.html#mvc-ann-requestmapping-uri-templates))), а также метод запроса
+
+```java
+@Controller
+@RequestMapping("/hello")
+public class HelloControtter {
+    @RequestMapping(method = RequestMethod.GET)
+    public String printHetto(ModelMap model) {
+        model.addAttribute("message", "Hello Spring MVC Framework!");
+        return "hello";
+    }
+}
+```
+
+Здесь вместо `@RequestMapping(method = RequestMethod.GET)` можно указать `@GetMapping`. Также есть другие специальные аннотации для типов запросов: `@PostMapping`, `@PutMapping`, `@DeleteMapping`, `@PatchMapping`
+
+Еще пример:
+
+```java
+@Controller
+public class HelloController {
+    // Обработка GET-запроса на /hello
+    @GetMapping("/hello")
+    public String helloForm() {
+        return "hello-form"; // Вернет содержимое файла hello-form.html
+    }
+
+    // Обработка POST-запроса на /hello
+    @PostMapping("/hello")
+    public String sayHello(
+        @RequestParam("name") String name, 
+        Model model
+    ) {
+        // Здесь мы достаем имя из тела запроса и передаем его модели, 
+        // контейнером, который передается слою с отображением
+        model.addAttribute("name", name.toUpperCase());
+        return "hello-response"; // Шаблон ответа
+    }
+}
+```
+
+Готовые реализации интерфейса `HandlerMapping` могут в ответ на запрос дать нужный метод. По умолчанию есть:
+
+* `RequestMappingHandlerMapping` ищет методы по аннотациям `@RequestMapping` и другим
+
+* `BeanNameUrlHandlerMapping` использует параметры в аннотации `@Bean` ([\*тык\*](https://www.baeldung.com/spring-handler-mappings)):
+
+    ```java
+    @Configuration
+    public class BeanNameUrlHandlerMappingConfig {
+        @Bean
+        BeanNameUrlHandlerMapping beanNameUrlHandlerMapping() {
+            return new BeanNameUrlHandlerMapping();
+        }
+
+        @Bean("/beanNameUrl")
+        public WelcomeController welcome() {
+            return new WelcomeController();
+        }
+    }
+    ```
+
+    Или в xml-конфиге:
+
+    ```xml
+    <bean class="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping" />
+    <bean name="/beanNameUrl" class="org.example.WelcomeController" />
+    ```
+
+Можно еще указать через `SimpleUrlHandlerMapping` - он использует явно добавленные методы:
+
+```java
+@Configuration
+public class WebConfig implements WebMvcConfigurer {
+
+    @Bean
+    public SimpleUrlHandlerMapping urlHandlerMapping() {
+        SimpleUrlHandlerMapping mapping = new SimpleUrlHandlerMapping();
+
+        // Создаем мапу
+        Map<String, Object> urlMap = new HashMap<>();
+        urlMap.put("/manual", manualHandler());
+
+        // Указываем, в какой мапе смотреть эндпоинты
+        mapping.setUrlMap(urlMap);
+
+        // Указываем порядок обработки
+        mapping.setOrder(1);
+
+        return mapping;
+    }
+
+    // Обработчик контроллера
+    @Bean
+    public HttpRequestHandler manualHandler() {
+        return (request, response) -> {
+            response.getWriter().write("Handled manually!");
+        };
+    }
+}
+```
+
+Контроллер чаще всего пишем мы сами, поэтому у него нет привязки к интерфейсу из библиотеки Spring. Поэтому существует `HandlerAdapter`. Выглядит он так:
+
+```java
+public interface HandlerAdapter {
+    boolean supports(Object handler);
+    
+    ModelAndView handle(
+        HttpServletRequest request,
+        HttpServletResponse response, 
+        Object handler) throws Exception;
+    
+    long getLastModified(HttpServletRequest request, Object handler);
+}
+```
+
+Перед непосредственной обработкой запроса вызывается `supports`, который возвращает, доступен ли обработчик `handler` к работе. Далее вызывается `handle`, который его обрабатывает и возвращает отображение
+
+Помимо этого Spring MVC кладет в контейнер с бинами:
+
+* `HandlerExceptionResolver` решает, что нужно выдавать, если контроллер бросил исключение (например, показывать дефолтную 404 страницу)
+
+* `ViewResolver` преобразовывает имена представления, возвращенное контроллером, в фактическое представление (ну еще рендеринг делает)
+
+* `LocaleResolver` и `LocaleContextResolver` определяют локаль и часовой пояс
+
+* `ThemeResolver` достает из куков, сессии, параметров запроса тему, а затем по ней судит, какие давать стили CSS, картинки и прочее
+
+* `MultipartResolver` обрабатывает составные запросы (с `Content-Type: multipart/form-data`), сохраняет файлы в память/временную папку и передает их контроллеру вместе с другими текстовыми полями
+
+* `FlashMapManager` хранит данные одного запроса для использования в другом (например, между редиректами)
+
+---
+
+Разберем, как работает DispatcherServlet:
+
+1. При получении HTTP-запроса `DispatcherServlet` должен определить при помощи доступных ему `HandlerMapping` какому обработчику (методу контроллера) переправить запрос в виде `HttpServletRequest`.
+
+2. После определения контроллера внутри `HandlerMapping` список `HandlerExecutionChain` (по сути цепочка обязанностей) из реализаций `HandlerInterceptor` возвращается вместе с именем контроллера. Интерцепторы используются для пред- и постобработки запроса, а также после отсылки отображения клиенту
+
+3. Для обработчика создается обертка в виде `HandlerAdapter`, реализации которых были найдены в контексте. По умолчанию, это:
+
+    * `HttpRequestHandlerAdapter` для классов, реализующих `HttpRequestHandler`
+
+    * `SimpleControllerHandlerAdapter` для классов, реализующих интерфейс `Controller` 
+
+    * `RequestMappingHandlerAdapter` для классов/методов, аннотированных `@RequestMapping`
+
+4. Цепочка `HandlerExecutionChain` вызывается, исполняя методы `preHandle` у интерцепторов. Если какой-либо интерцептор вернет `false`, то запрос не дойдет до самого контроллера. Тогда считается, что запрос обработан интерцептором
+
+5. Когда все интерцепторы сказали `true`, вызывается `handle` у `HandlerAdapter`
+
+6. Контроллер принимает запрос, обрабатывает его и:
+
+    * сохраняет атрибуты отображения в `Model` (например, через `model.addAttribute`) и возращает имя отображения. 
+    * либо возвращает `ModelAndView` с именем отображения и атрибутами
+    
+    Если контроллер хочет имплементировать REST API, то он сохранит все нужное в `Model` и вернет `null`. Чтобы определить REST-методы, можно воспользоваться аннотациями `@ResponseBody` для методов или `@RestController` для классов
+
+7. Теперь у интерцепторов цепочки `HandlerExecutionChain` вызываются `postHandle` для постобработки
+
+8. При помощи интерфейса `ViewResolver` `DispatcherServlet` определяет, какое отображение нужно использовать на основании полученного от контроллера имени
+
+9. После того, как отображение создано, `DispatcherServlet` отправляет данные `Model` в виде атрибутов в отображение в метод `render()`, далее отображение в конечном итоге сохраняется в `HttpServletResponse`, а ответ далее идет отображаться в браузере
+
+10. В конце вызываются `afterCompletion` у интерцепторов цепочки (например, для логгирования)
+
+![a](images/spring_dispatcherservlet.jpg)
+
+Если на каком-то этапе произошла ошибка, то реализации `HandlerExceptionResolver` возвращают какую-нибудь страничку с "что-то пошло не так". По умолчанию в контексте есть:
+
+* `ExceptionHandlerExceptionResolver` обрабатывает исключения, передавая их аннотированным `@ExceptionHandler` методам:
+
+    ```java
+    @ExceptionHandler(UserNotFoundException.class)  
+    public ResponseEntity<String> handleUserNotFound(UserNotFoundException ex) {  
+        return ResponseEntity  
+                .status(HttpStatus.NOT_FOUND)  
+                .body(ex.getMessage());  
+    }  
+    ```
+
+* `ResponseStatusExceptionResolver` может отлавливать аннотированные `@ResponseStatus` исключения:
+
+    ```java
+    @ResponseStatus(code = HttpStatus.NOT_FOUND, reason = "This user is not found")  
+    public class UserNotFoundException extends RuntimeException {}  
+    ```
+
+    Здесь сообщение жестко зафиксировано, такое не получиться со стандартными исключениями, а также не вернуть какой-нибудь JSON
+
+    Также альтернативно можно кидать такие исключения в метода обработчика:
+
+    ```java
+    throw new ResponseStatusException(  
+        HttpStatus.NOT_FOUND,  
+        "User " + id + " not found!"  
+    );  
+    ```
+
+* `DefaultHandlerExceptionResolver` работает для стандартных Spring-исключений, возвращая подходящие для них HTTP коды статусов. Например, если вызвать GET для `/user?id=abc` при имеющемся обработчике
+
+    ```java
+    @GetMapping("/user")  
+    public User getUser(@RequestParam int id) { ... } 
+    ``` 
+
+    `DispatcherServlet` выбросит ошибку `TypeMismatchException`, а `DefaultHandlerExceptionResolver` вернет 
+
+    ```
+    HTTP 400 Bad Request  
+    Body: "Failed to convert value of type 'java.lang.String' to required type 'int'"  
+    ```
+
+Если HTTP-запрос пришел с заголовком `Accept: <MIME_type>/<MIME_subtype>`, то `HttpMessageConverter` будет искать доступные POJO доменной модели, пока не найдет соответствие с указанным в запросе типом. Далее `HttpMessageConverter` конвертирует тела входящих запросов в POJO, а в конце обработки запроса POJO в тела HTTP-ответов. По умолчанию, Spring Boot определяет набор дефолтных `HttpMessageConverter`
+
+![a](../images/catmeme.jpg)
 
 
 ## <a name="x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-2024%2F2025"></a> X. Программа экзамена 2024/2025
