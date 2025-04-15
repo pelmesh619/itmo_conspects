@@ -189,9 +189,9 @@ $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 = \Natu
 
 
 
-\subsection{1.4. Комплексная функция}
+\section{2. Комплексная функция}
 
-\subsubsection{1$^\circ$ Определение}
+\subsection{2.1. Определение}
 
 \Mem $f : E \subset \Real \longrightarrow D \subset \Real \ \overset{def}{\Longleftrightarrow} \ $ отображение такое, 
 что $\forall x \in E \ \exists! y \in D \ | \ y = f(x)$
@@ -224,7 +224,7 @@ $z_1 = 1, z_2 = -1 \qquad\qquad w(z_1) = w(z_2) = 1$
 
 $u(x, y) = (x^2 - y^2), \qquad\qquad v(x, y) = 2xy$
 
-\subsubsection{2$^\circ$ Предел}
+\subsection{2.2. Предел функции}
 
 \Def $L \in \Complex, f : D \longrightarrow G, \quad L \overset{def}{=} \lim_{z \to z_0} f(z) \Longrightarrow
 \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ \Big| \ z \in D, z \in \overset{\circ}{U}_\delta(z_0) \ f(x) \in U_\varepsilon(L)$
@@ -264,7 +264,7 @@ $\Delta z = z - z_0 = \Delta x + i \Delta y \to 0 \Longrightarrow
 \begin{cases}\Delta x \to 0 \\ \Delta y \to 0\end{cases} \Longrightarrow 
 \Delta \rho \to 0$
 
-\subsubsection{3$^\circ$ Элементарные комплексные функции}
+\subsection{2.3. Элементарные комплексные функции}
 
 \ExN{1} Линейная $f(z) = az + b, \qquad\qquad a, b \in \Complex \quad a \neq 0$
 
@@ -365,7 +365,7 @@ $\frac{e^{iz} - e^{-iz}}{2i} = A \Longrightarrow e^{2iz} - 2iAe^{iz} - 1 = 0$
 При $t = e^{iz}$ получаем квадратное уравнение, у которого в $\Complex$ всегда будет два корня. 
 Это значит, что в $\Complex$ $\sin$ и $\cos$ принимают любые значения (то есть $|\sin z| > 1$)
 
-\subsubsection{4$^\circ$ Дифференцирование ФКП}
+\subsection{2.4. Дифференцирование ФКП}
 
 \Def $w = f(z), w : D \subset \Complex \longrightarrow \Complex, z_0 \in D$. \textbf{Производная} функции
 $w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - f(z_0)}{\Delta z} = \lim_{\Delta z \to 0} \frac{\Delta f}{\Delta z}$, 
@@ -557,7 +557,7 @@ $u_x = 1$, $v_y = -1 \neq u_x$ - не аналитическая функция
 \end{enumerate}
 
 
-\subsubsection{5$^\circ$ Конформные отображения}
+\subsection{2.5. Конформные отображения}
 
 Найдем геометрический смысл производной. Рассмотрим отображение $w = f(z) \ (w : D \longrightarrow G)$ -- дифференцируема в точке $z_0 \in D$ и $f^\prime(z_0) \neq 0$
 
@@ -614,9 +614,9 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 
 \Lab Проверить, что $w = z^2$ не конформное отображение, найдя $w^\prime(z_0)$
 
-\subsubsection{6$^\circ$ Интеграл по комплексной переменной}
+\section{3. Интеграл по комплексной переменной}
 
-\textbf{6.1 Определения}
+\subsection{3.1. Определения}
 
 \smallvspace
 
@@ -680,7 +680,7 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 Интеграл $I$ не зависит от радиуса и центра окружности (то есть контура интегрирования), то есть
 интеграл функции $\frac{1}{z - z_0}$ будет равен $2\pi i$ для любой окружности в качестве контура 
 
-\subsubsection{6.2. Теорема Коши}
+\subsection{3.2. Теорема Коши}
 
 \begin{MyTheorem}
     \ThNs{1} $f(z)$ аналитическая и однозначная в односвязной области $D$
@@ -760,7 +760,7 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 Тогда $\int_{|z| = 2 \CounterClockwiseArrow} f(z) dz = \int_{|z - 1| = \rho_1 \CounterClockwiseArrow} f(z) dz + \int_{|z + 1| = \rho_2 \CounterClockwiseArrow} f(z) dz$,
 где $\rho_1$, $\rho_2$ - радиусы бесконечно малой длины 
 
-\subsubsection{6.3. Неопределенный интеграл}
+\subsection{3.3. Неопределенный интеграл}
 
 \Mem По теореме Барроу $\Phi(x) = \int_{x_0}^x f(t) dt$ - интеграл с переменным верхним пределом
 
@@ -797,7 +797,7 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 
 Следствие - формула Ньютона-Лейбница: \fbox{$\int_{z_1}^{z_2} f(\zeta) d\zeta = \Phi(z_2) - \Phi(z_1)$}
 
-\subsubsection{6.4. Интеграл Коши}
+\subsection{3.4. Интеграл Коши}
 
 % https://www.geogebra.org/calculator/vzfpbwz9
 
