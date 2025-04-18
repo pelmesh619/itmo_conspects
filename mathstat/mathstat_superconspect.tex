@@ -1879,7 +1879,7 @@ $E(\text{Р}_\text{дочери} | Z_\text{отца} = Z_1, Z_\text{матери
 
 Пусть построили с помощью метода наименьших квадратов выборочное уравнение линейной регрессии $\hat X = a + b Z$
 
-Обозначим $\hat \varepsilon_i = X_i - \hat X+i$ - экспериментальная ошибка, разница между наблюдаемыми значениями и 
+Обозначим $\hat \varepsilon_i = X_i - \hat X_i$ - экспериментальная ошибка, разница между наблюдаемыми значениями и 
 вычисляемыми по модели
 
 Тогда $X_i = \hat X_i + \hat \varepsilon_i$ или $X_i = a + b Z_i + \hat \varepsilon_i$, где $a$ и $b$ - точечные оценки параметров $\alpha$ и $\beta$
@@ -2050,6 +2050,8 @@ $\hat X = a + b Z$ - модель МНК, построенная по выбор
     \item При $n \to \infty$ $D(\Delta_p) \ConvergesInProbability \sigma^2$ - качество модели тем лучше, чем больше объем выборки
 
     \item Чем больше $Z_p$ отклоняется от $\overline{z}$, тем хуже качество прогноза. Наилучшее качество в точке $Z_p = \overline{z}: \ D(\Delta_p) = \left(1 + \frac{1}{n}\right) \sigma^2$
+
+    % https://www.geogebra.org/calculator/brxkjkqc
 
     \begin{center}
         \includegraphics[width=10cm]{mathstat/images/mathstat_2025_04_15_1}
