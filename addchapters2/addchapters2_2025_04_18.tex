@@ -1,0 +1,139 @@
+$subject$=Дополнительные главы \\ высшей математики
+$date$=18.04.2025
+$teacher$=Лекции Далевской О. П.
+
+
+\section{4. Ряды}
+
+\subsection{4.1. Числовой ряд в комплексной плоскости}
+
+\DefN{1} $z_1 + z_2 + \dots + z_n + \dots = \sum_{n = 1}^\infty z_n$, где $z_n \in \Complex$ - числовой ряд
+
+\DefNs{2} Сумма ряда - $S = \lim_{n \to \infty} S_n = \lim_{n \to \infty} \sum_{k = 1}^n z_k$
+
+Если сумма существует и конечна, то ряд называют сходящимся. 
+
+\Def $f(z)$ называется регулярной в точке $z_0$, если $f(z_0) = \sum_{n = 1}^\infty c_n$, где $c_n \in \Complex$
+
+\Nota Для комплексных числовых рядов остаются справедливыми:
+
+\begin{enumerate}
+    \item Необходимое условие сходимости
+    \item Признак Даламбера
+    \item Радикальный признак Коши
+    \item Критерий Коши
+    \item Абсолютная сходимость
+\end{enumerate}
+
+\subsection{4.2. Функциональный ряд в комплексной плоскости}
+
+\Def $\sum_{n = 1}^\infty u_n(z)$, где $u_n(z) : \ D \subset \Complex \longrightarrow \Complex$ - функциональный ряд
+
+\begin{MyTheorem}
+    \ThNs{Признак Вейерштрасса}
+
+    $\exists \sum_{n = 1}^\infty \alpha_n$, $\alpha_n \in \Real_0^+$, $\sum_{n = 1}^\infty \alpha_n \in \Real$,
+    $|u_n(z)| \leq \alpha_n \ \forall z \in D \Longrightarrow \sum_{n = 1}^\infty u_n(z)$ сходится равномерно в $D$
+\end{MyTheorem}
+
+\Lab Сверить формулировку и доказательства для $\Complex$ и $\Real$-случая 
+
+\Nota Сумма равномерно сходящегося ряда непрерывна
+
+\begin{MyTheorem}
+    \Ths $u_n(z)$ непрерывна в $D$ и $f(z) = \sum_{n = 1}^\infty u_n(z)$ сходится равномерно в $D$
+
+    Тогда $\int_K f(\zeta) d\zeta = \sum_{n = 1}^\infty \int_K u_n(\zeta) d\zeta$, где $K \subset D$ - кусочно гладкая кривая
+\end{MyTheorem}
+
+\begin{MyProof}
+    Докажем, что $\left|\int_K f(\zeta) d\zeta - \sum_{k = 1}^n \int_K u_k(\zeta) d\zeta\right| \underset{n \to \infty}{\longrightarrow} 0$
+
+    $\left|\int_K \left(f(\zeta) - \sum_{k = 1}^n u_k(\zeta)\right) d\zeta\right| =
+    \left|\int_K \left(\sum_{k = 1}^\infty u_k(\zeta) - \sum_{k = 1}^n u_k(\zeta)\right) d\zeta\right| = 
+    \left|\int_K \sum_{k = n + 1}^\infty u_k(\zeta) d\zeta\right| = \left|\int_K r_n(\zeta) d\zeta \right| \leq
+    \int_K |r_n(\zeta)| |d\zeta| \underset{\text{по кр. Коши}}{\leq \varepsilon}$
+\end{MyProof}
+
+
+\subsection{4.3. Степенной ряд}
+
+\Def Степенной ряд - $\sum_{n = 0}^\infty c_n (z - a)^n \qquad \left(a = 0: \sum_{n = 0}^\infty c_n z^n\right)$, $c_n \in \Complex$
+
+\Nota Область сходимости - круг с центром $a$, $|z - a| \leq R$ - радиус сходимости 
+
+$\lim_{n \to \infty} \left|\frac{c_{n + 1} (z - a)^{n + 1}}{c_n (z - a)^n}\right| = \lim_{n \to \infty} \left|\frac{c_{n + 1}}{c_n}\right| |z - a| < 1 \Longrightarrow |z - a| < \left|\frac{c_n}{c_{n + 1}}\right|$
+
+\Nota Также справедлива теорема Абеля
+
+\begin{MyTheorem}
+    \ThNs{Абеля} 
+    
+    Если степенной ряд сходится в точке $z_1$, то он сходится абсолютно и равномерно 
+    в любой точке $z_2$ такой, что $|z - z_1| > |z - z_2|$
+
+    Если степенной ряд расходится в точке $z_1$, то он расходится
+    в любой точке $z_2$ такой, что $|z - z_1| < |z - z_2|$
+\end{MyTheorem}
+
+
+Следствие: Если $f(z) = \sum_{n = 0}^\infty c_n z^n$, то $f(z)$ - непрерывна в круге сходимости ряда
+
+\begin{MyTheorem}
+    \ThNs{Почленное дифференцирование суммы ряда}
+
+    $\sum_{n = 0}^\infty c_n z^n = f(z)$ - сходящийся в круге радиуса $R \neq 0$. Тогда $f(z)$ дифференцируема и 
+    $f^\prime(z) = \sum_{n = 0}^\infty n c_n z^{n - 1}$
+\end{MyTheorem}
+
+\begin{MyProof}
+    Рассмотрим ряд (и его сумму) $\sum_{n = 0}^\infty n c_n z^{n - 1}$ - он сходится в круге радиуса $\rho$ таком, что $0 \leq |z| \leq \rho < R$
+    (см. сходимость по Даламберу) (Обозначим круг $K_1 : |z| = \rho$)
+
+    Докажем, что $\sum_{n = 0}^\infty n c_n z^{n - 1} = S(z) = f^\prime(z)$
+
+    В круге $K_1$ выберем кривую $\gamma$, соединяющую $z_0 = 0$ и $z$
+
+    Рассмотрим $\int_\gamma \zeta^k d \zeta$, функция $\zeta^k$ аналитическая, тогда $\int_\gamma \zeta^k d\zeta$ не зависит от пути 
+
+    $\int_\gamma \zeta^k d\zeta = \int_0^z \zeta^k d\zeta = \frac{\zeta^{k + 1}}{k + 1} \Big|^z_0 = \frac{z^{k + 1}}{k + 1}$
+
+    Тогда $\int_0^z n c_n \zeta^{n - 1} d\zeta = \frac{n c_n \zeta^n}{n} \Big|_0^z = c_n z^n$
+
+    Возьмем интеграл от суммы $\int_0^z S(\zeta) d\zeta = \int_0^z \left(\sum_{n = 0}^\infty n c_n \zeta^{n - 1}\right) d\zeta = 
+    \sum_{n = 0}^\infty \int_0^z n c_n \zeta^{n - 1} d\zeta = \sum_{n = 0}^\infty c_n z^n = f(z)$
+
+    Таким образом, $f(z)$ является первообразной для $S(z)$, то есть $S(z) = f^\prime(z)$
+
+    При этом $f^\prime (z) = \sum_{n = 0}^\infty n c_n z^{n - 1} = \sum_{m}^\infty c_m z^m$ - этот ряд
+    можно дифференцировать дальше, и область, в которой функция дифференцируется, - круг $K_1$, где $\rho$ вплотную подходит к $R$
+
+    Таким образом, доказали, что если $f(z)$ регулярна $\forall z$ в круге $|z| < R$, то $f(z)$ сколько угодно раз дифференцируема в этом круге и $f^\prime(z) = \left(\sum_{n = 0}^\infty c_n z^n\right)^\prime$
+\end{MyProof}
+
+Следствие: $f^\prime(z) = (c_0 + c_1 z + c_2 z^2 + \dots + c_n z^n + \dots)^\prime$ или 
+$f^\prime(z) = (c_0 + c_1 (z - a) + c_2 (z - a)^2 + \dots + c_n (z - a)^n + \dots)^\prime \Longrightarrow c_0 = f(a), c_1 = f^\prime(a), c_2 = \frac{f^\prime^\prime(z)}{2!}$ и так далее 
+
+Получили ряд Тейлора $f(z) \underset{|z - a| < \rho}{=} \sum_{n = 0}^\infty \frac{f^{(n)} (a)}{n!} (z - a)^n$
+
+\begin{MyTheorem}
+    \Ths $f(z)$ аналитическая в области $D$ $\Longrightarrow f(z)$ регулярна в области $D$
+\end{MyTheorem}
+
+\begin{MyProof}
+    По формуле Коши $f(z) = \frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta)}{\zeta - z} d\zeta \ \forall z \in K$, где $K = \{z \ | \ |z - a| , \rho\}$, $\gamma_\rho = \{ \zeta \ | \ |\zeta - a| = \rho\}$ и $K \subset D$
+
+    Разложим в ряд $\frac{1}{\zeta - z}$:
+
+    $\frac{1}{\zeta - z} = \frac{1}{\zeta - (z - a) - a} = \frac{1}{\zeta - a} \cdot \frac{1}{1 - \frac{z - a}{\zeta - a}} = \frac{1}{\zeta - a} \sum_{n = 0}^\infty \left(\frac{z - a}{\zeta - a}\right)^n$, где $\left|\frac{z - a}{\zeta - a}\right| < 1$
+
+    То есть $\sum_{n = 0}^\infty \frac{(z - a)^n}{(\zeta - a)^{n + 1}}$ - равномерно сходящийся
+
+    Тогда $\frac{f(\zeta)}{\zeta - z} = \sum_{n = 0}^\infty \frac{f(\zeta) (z - a)^n}{(\zeta - a)^{n + 1}}$ - равномерно сходящийся 
+
+    $\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta)}{\zeta - z} = \frac{1}{2\pi i} \sum_{n = 0}^\infty \int_{\gamma_\rho} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} d\zeta (z - a)^n$
+
+    $f(z) = \sum_{n = 0}^\infty b_n (z - a)^n$ - едиственное разложение по Тейлору
+
+    Итак $\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta) d\zeta}{(\zeta - a)^{n + 1}} = \frac{f^{(n)}(a)}{n!}$
+\end{MyProof}
