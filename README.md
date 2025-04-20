@@ -20,6 +20,7 @@
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_26.html) <!-- Мацнев -->
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_02.html) <!-- Мацнев и Самигуллин -->
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_09.html) <!-- Мацнев и Самигуллин -->
+* Лекция №11 - в производстве <!-- Мацнев -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
@@ -46,6 +47,7 @@
 * Лекция №8 - отменена
 * Лекция №9 - в производстве <!-- Сомов -->
 * Лекция №10 - в производстве <!-- Макаревич -->
+* Лекция №11 - в производстве <!-- Макаревич -->
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
@@ -56,6 +58,7 @@
 * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_07.pdf)
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_21.pdf)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_04.pdf)
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_18.pdf)
 
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
