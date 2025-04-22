@@ -2043,7 +2043,7 @@ $\hat X = a + b Z$ - модель МНК, построенная по выбор
     \item $E \Delta_p = 0$
     \item $D (\Delta_p) = \left(1 + \frac{1}{n} + \frac{(Z_p - \overline{z})^2}{n DZ}\right) \sigma^2$
 
-    Заменив $\sigma^2$ на $S^2$, получим стандартную ошибку прогноза: $S_{\Delta_p} = S \sqrt{1 + \frac{1}{n} \frac{(Z_p - \overline{z})^2}{n DZ}}$
+    Заменив $\sigma^2$ на $S^2$, получим стандартную ошибку прогноза: $S_{\Delta_p} = S \sqrt{1 + \frac{1}{n} + \frac{(Z_p - \overline{z})^2}{n DZ}}$
 
     \item $D(\Delta_p) > \sigma^2$ - то есть точность прогноза ограничена случайным членом $\varepsilon$
 
@@ -2072,6 +2072,146 @@ $\qquad \beta: (b - t_\gamma S_b; b + t_\gamma S_b)$
 
 
 % end mathstat_2025_04_15.tex
+
+% begin mathstat_2025_04_22.tex
+
+
+
+
+
+\section{Лекция 11.}
+
+\subsection{Математическое ожидание и дисперсия случайного вектора}
+
+\Def $E \vec X = \begin{pmatrix}E X_1 \\ \vdots \\ E X_n \end{pmatrix}$ - математическое ожидание случайного вектора
+
+\Def Дисперсией или матрицей ковариаций называется $D \vec X = E ((\vec X - E \vec X) (\vec X - E \vec X)^T )$, 
+элементами которой $d_{ij} = \cov (X_i, X_j), d_{ii} = D(X_i)$
+
+\underline{Свойства}:
+
+\begin{enumerate}
+    \item $E(A \vec X) = A E \vec X$
+    \item $E(\vec X + \vec B) = E \vec X + \vec B$
+    \item $D(A \vec X) = A D \vec X A^T$
+    \item $D(\vec X + \vec B) = D \vec X$
+\end{enumerate}
+
+\subsection{Уравнение общей регрессии}
+
+Пусть результат $X$ зависит от $k$ факторов $Z_1, \dots, Z_k$. Рассматриваем теоретическую модель линейной регрессии:
+
+$X = \beta_1 Z_1 + \beta_2 Z_2 + \dots + \beta_k Z_k + \varepsilon$, где $\vec Z = \begin{pmatrix}Z_1 \\ \vdots \\ Z_k \end{pmatrix}$ - вектор факторов, $\vec \beta = \begin{pmatrix}\beta_1 \\ \vdots \\ \beta_k \end{pmatrix}$ - вектор коэффициентов регрессии
+
+Пусть проведено $n \geq k$ экспериментов, $\vec Z^{(i)} = \begin{pmatrix}Z_1^{(i)} \\ \vdots \\ Z_k^{(i)} \end{pmatrix}$ - значения факторов при $i$-ом эксперименте,
+$\vec X = \begin{pmatrix}X_1 \\ \vdots \\ X_n \end{pmatrix}$ - соответствующие значения результатов
+
+Согласно модели:
+
+\begin{cases}
+    $X_1 = \beta_1 Z_1^{(1)} + \beta_2 Z_2^{(2)} + \dots + \beta_k Z_k^{(1)} + \varepsilon_1$ \\
+    $X_1 = \beta_1 Z_1^{(1)} + \beta_2 Z_2^{(2)} + \dots + \beta_k Z_k^{(1)} + \varepsilon_1$ \\
+    \dots \\
+    $X_n = \beta_1 Z_1^{(n)} + \beta_2 Z_2^{(n)} + \dots + \beta_k Z_k^{(n)} + \varepsilon_n$
+\end{cases}
+
+Или в матричной форме: $\vec X = Z^T \vec \beta + \vec \varepsilon$, 
+где $Z = \begin{pmatrix}
+    Z_1^{(1)} & Z_1^{(2)} & \dots & Z_1^{(n)} \\ 
+    Z_2^{(1)} & Z_2^{(2)} & \dots & Z_2^{(n)} \\ 
+    \vdots & \vdots & \ddots & \vdots \\
+    Z_k^{(1)} & Z_k^{(2)} & \dots & Z_k^{(n)} \\ 
+\end{pmatrix}$ - матрица плана, $\vec \varepsilon$ - вектор теоретических ошибок
+
+Наша цель такова: по данной матрице плана $Z$ и вектора результатов $\vec X$ дать оценки неизвестных параметров регрессии $\beta_i$ 
+и параметров распределения ошибки $\varepsilon$
+
+\Nota Заметим, что у данной модели мы не теряем свободный член $b_0$, так как при необходимости можно считать, что первый фактор тождественен единицы. 
+То есть первая строка матрица плана будет состоять из единиц
+
+\subsection{Метод наименьших квадратов и нормальные уравнения}
+
+Будем считать, что выполнено условие $\mathrm{Cond. 1}$, что ранг матрицы $\operatorname{rang} Z = k$, то есть все строки матрицы плана независимы
+
+Введем матрицу $A = Z Z^T$. Ее свойства:
+
+\begin{enumerate}
+    \item $A$ - квадратная и симметричная
+    \item $A$ - положительно определенная
+    \item $\exists B = \sqrt{A}$, то есть $B^2 = A$
+\end{enumerate}
+
+Пусть $\vec B = \begin{pmatrix}b_1 \\ \vdots \\ b_k\end{pmatrix}$ - вектор оценок $\vec \beta = \begin{pmatrix}\beta_1 \\ \vdots \\ \beta_k\end{pmatrix}$
+
+Тогда эмпирическая модель регрессии $\vec{\hat X} = Z^T \vec B$, 
+$\vec \varepsilon_i = X_i - \hat X_i$ - экспериментальная ошибка, или $\vec {\hat \varepsilon} = \begin{pmatrix}\hat \varepsilon_1 \\ \vdots \\ \hat \varepsilon_n\end{pmatrix} = \vec X - Z^T \vec B$ - вектор экспериментальных ошибок
+
+По методу наименьших квадратов подбираем $\vec B$ таким образом, чтобы $L(\vec B) = \sum_{i = 1}^n \hat \varepsilon_i^2 \longrightarrow \min$
+
+$\sum_{i = 1}^n \hat \varepsilon_i^2 = \|\vec{\hat \varepsilon}\|^2 = \| \vec X - Z^T \vec B\|^2$ - квадрат расстояния от точки $\vec X$ до $Z^T \vec B$ в $\Real^n$
+
+$Z^T \vec B$ - точка линейного подпространства, порожденного векторами $Z^T \vec t$, где $\vec t \in \Real^k$
+
+\Nota Согласно $\mathrm{Cond. 1}$ размерность линейной оболочки, порожденной вектором $Z^T \vec t$,  $\dim \langle Z^T \vec t \rangle = k$
+
+Наименьшее расстояние получаем, когда квадрат расстояния от точки $\vec X$ до данного подпространства, а вектор $\vec B$ - проекция вектора $\vec X$ на него
+
+Таким образом, вектор $\vec X - Z^T \vec B$ должен быть ортогонален данному подпространству, то есть скалярное произведение вектора $\vec X$ и всех векторов подпространства равно 0
+
+$(Z^T \vec t, \vec X - Z^T \vec B) = (Z^T \vec t)^T (\vec X - Z^T \vec B) = {\vec t}^T (Z^T)^T (\vec X - Z^T \vec B) = {\vec t}^T Z (\vec X - Z^T \vec B) = 
+{\vec t}^T (Z \vec X - Z Z ^T \vec B) = 0 \ \forall \vec t \in \Real^k$
+
+Так как всем векторами подпространства ортогонален только нулевой вектор, то получаем, что $Z \vec X - Z Z^T \vec B = 0$ или $A \vec B = Z \vec X$ - нормальное уравнение (или система нормальных уравнений)
+
+Так как по свойству 2 матрица $A$ невырожденная, то существует обратная, получаем решение системы: $\vec B = A^{-1} Z \vec X$
+
+\subsection{Свойства оценок метода наименьших квадратов}
+
+Добавим еще одно важное условие $\mathrm{Cond. 2}$: теоретические ошибки $\varepsilon_i$ - независимы и имеют одинаковое нормальное распределение $N(0, \sigma^2)$.
+То есть $E \vec \varepsilon = \vec 0$, $D \vec \varepsilon = \sigma^2 E_n$ (ковариации равны нулю в силу независимости)
+
+\underline{Свойства}:
+
+\begin{enumerate}
+    \item $\vec B - \vec \beta = A^{-1} Z \vec \varepsilon$
+
+    \begin{MyProof}
+        $\vec B - \vec \beta = A^{-1} Z \vec X - \vec \beta = A^{-1} Z (Z^T \vec \beta + \vec \varepsilon) - \vec \beta = A^{-1} Z \vec \varepsilon$
+    \end{MyProof}
+
+    \item $\vec B$ - несмещенная оценка для вектора $\vec \beta$
+
+    \begin{MyProof}
+        $E(\vec B - \vec \beta) = E(A^{-1} Z \vec \varepsilon) = A^{-1} Z E \vec \varepsilon = 0 \Longrightarrow E \vec B = \vec \beta$
+    \end{MyProof}
+
+    \item Матрица ковариаций $D \vec B = \sigma^2 A^{-1}$
+
+    \begin{MyProof}
+        $D \vec B = D (\vec B - \vec \beta) = D (A^{-1} Z \vec \varepsilon) = A^{-1} Z D \vec \varepsilon A^{-1}^T Z^T = A^{-1} Z \sigma^2 E_n A^{-1}^T Z^T = \sigma^2 A^{-1} (Z Z^T) A^{-1} = \sigma^2 A^{-1}$
+    \end{MyProof}
+
+    Следствие: дисперсии оценок $b_i$ можно выразить через $\sigma^2$ и коэффициенты матрицы $A^{-1}$: $D b_i = \sigma^2 (A^{-1})_{ii}$
+
+\end{enumerate}
+
+\subsection{Оценка дисперсии случайного члена}
+
+Обозначим $\hat \sigma^2 = \frac{1}{n} \sum_{i = 1}^n \hat \varepsilon^2_i$. Ясно, что $\hat \sigma^2$ - точечная оценка 
+неизвестной дисперсии $\sigma^2$, однако она является смещенной оценкой
+
+\begin{MyTheorem}
+    Пусть выполнены $\mathrm{Cond. 1}$ и $\mathrm{Cond. 2}$, тогда $\frac{n \hat \sigma^2}{\sigma^2} \in H_{n - k}$ и не зависит от $\vec B$
+\end{MyTheorem}
+
+Так как $\frac{n \hat \sigma^2}{\sigma^2} \in H_{n - k}$, то $E \hat \sigma^2 = \frac{\sigma^2}{n} E \frac{n \hat \sigma^2}{\sigma^2} = \frac{\sigma^2}{n} (n - k) = \frac{n - k}{n} \sigma^2 < \sigma^2$ - смещенная вниз оценка
+
+Тогда несмещенной оценкой будет $S^2 = \frac{n}{n - k} \hat \sigma^2 = \frac{1}{n - k} \sum_{i = 1}^n \hat \varepsilon_i^2$
+
+
+
+
+% end mathstat_2025_04_22.tex
 
 
 
