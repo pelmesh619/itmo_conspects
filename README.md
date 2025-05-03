@@ -22,6 +22,7 @@
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_09.html) <!-- Мацнев и Самигуллин -->
 * Лекция №11 - в производстве <!-- Мацнев -->
 * Лекция №12 - в производстве <!-- Мацнев -->
+* Лекция №13 - в производстве <!-- Мацнев и Самигуллин -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
@@ -33,6 +34,7 @@
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_03_20.html)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_04_03.html)
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_04_17.html)
+* Лекция №13 - календарный праздник
 
 ### Технологии программирования на Java (лекторы Макаревич Р. Д., Сомов А. В.)
 
@@ -50,6 +52,7 @@
 * Лекция №10 - в производстве <!-- Макаревич -->
 * Лекция №11 - в производстве <!-- Макаревич -->
 * Лекция №12 - в производстве <!-- Макаревич -->
+* Лекция №13 - в производстве <!-- Макаревич -->
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
@@ -61,6 +64,7 @@
 * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_21.pdf)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_04.pdf)
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_18.pdf)
+* Лекция №13 - в производстве
 
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
@@ -77,6 +81,7 @@
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_07.pdf)
 * Лекция №11 - в производстве
 * Лекция №12 - в производстве
+* Лекция №13 - в производстве
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
@@ -93,6 +98,7 @@
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_08.pdf)
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_15.pdf)
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_22.pdf)
+* Лекция №13 - в производстве
 
 ### Операционные системы (лектор Маятин А. В.)
 
@@ -111,6 +117,7 @@
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_15.html)
 * [Лекция №12.1](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_22.html)
 * [Лекция №12.2](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_23.html)
+* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_29.html)
 
 ## [III семестр](meta/III.md)
 
