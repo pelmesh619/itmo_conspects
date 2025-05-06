@@ -83,6 +83,7 @@
 * Лекция №11 - в производстве
 * Лекция №12 - в производстве
 * Лекция №13 - в производстве
+* Лекция №14 - в производстве
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
@@ -100,6 +101,7 @@
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_15.pdf)
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_22.pdf)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_29.pdf)
+* [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_06.pdf)
 
 ### Операционные системы (лектор Маятин А. В.)
 
