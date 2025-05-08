@@ -22,7 +22,7 @@
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_26.html) <!-- Мацнев -->
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_02.html) <!-- Мацнев и Самигуллин -->
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_09.html) <!-- Мацнев и Самигуллин -->
-* Лекция №11 - в производстве <!-- Мацнев -->
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_16.html) <!-- Мацнев -->
 * Лекция №12 - в производстве <!-- Мацнев -->
 * Лекция №13 - в производстве <!-- Мацнев и Самигуллин -->
 * Лекция №14 - в производстве <!-- Карчевский -->
