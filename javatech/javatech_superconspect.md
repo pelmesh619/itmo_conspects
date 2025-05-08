@@ -19,6 +19,15 @@
     * [Spring IoC](#spring-ioc)
   * [Лекция 7](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-7)
     * [Spring MVC](#spring-mvc)
+  * [Лекция 8](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-8)
+    * [Spring Boot](#spring-boot)
+      * [Стартер](#%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B5%D1%80)
+      * [Автоконфигурация](#%D0%B0%D0%B2%D1%82%D0%BE%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F)
+      * [Initializr](#initializr)
+      * [Инструменты разработчика](#%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0)
+      * [События при запуске](#%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B5)
+      * [Тестирование](#%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5)
+    * [Spring Data JPA](#spring-data-jpa)
   * [X. Программа экзамена 2024/2025](#x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-2024%2F2025)
 
 
@@ -1381,6 +1390,328 @@ public interface HandlerAdapter {
 Если HTTP-запрос пришел с заголовком `Accept: <MIME_type>/<MIME_subtype>`, то `HttpMessageConverter` будет искать доступные POJO доменной модели, пока не найдет соответствие с указанным в запросе типом. Далее `HttpMessageConverter` конвертирует тела входящих запросов в POJO, а в конце обработки запроса POJO в тела HTTP-ответов. По умолчанию, Spring Boot определяет набор дефолтных `HttpMessageConverter`
 
 ![a](../images/catmeme.jpg)
+
+
+## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-8"></a> Лекция 8
+
+### <a name="spring-boot"></a> Spring Boot 
+
+Spring Boot - набор утилит внутри Spring, автоматизирующих настройки фреймворка
+
+Что должен сделать разработчик, чтобы запустить свое приложение без Spring Boot:
+
+* В зависимости от характера приложения импортировать необходимые Spring-модули
+* Импортировать библиотеку веб-контейнеров
+* Импортировать необходимые сторонние библиотеки (например, Hibernate), при этом совместимые с выбранной версией Spring
+* Конфигурировать компоненты DAO
+* Определить класс, который загрузит необходимые конфигурации
+
+Spring Boot же:
+
+* Обеспечивает быстрый и широко доступный опыт начальной работы на Spring
+* Делает возможным кастомизировать стандартное поведение
+* Предоставляет ряд нефункциональных возможностей, таких как, тестирование, конфигурация, метрики и так далее
+* Уходит от конфигом на XML
+
+
+Все это работает благодаря:
+
+* стартерам - готовым конфигурациям c бинами
+* автоматической конфигурации библиотек
+* преднастроенному Application Server для обеспечения серверного взаимодействия (в Spring используется Apache Tomcat)
+* готовым рецептам для широко используемых подходов (метрики, внешняя конфигурация и т.д.)
+
+#### <a name="%D1%81%D1%82%D0%B0%D1%80%D1%82%D0%B5%D1%80"></a> Стартер
+
+Стартер - это пакет зависимостей, собранных под одну задачу и оформленных как один артефакт для Maven или Gradle. Это ключевая особенность Spring Boot, упрощающая подключение библиотек и избавляющая от ручного выбора всех нужных зависимостей
+
+Стартеры избавляют от ручного поиска всех зависимостей и обеспечивают совместимость библиотек между собой. Несколько популярных стартеров:
+
+| Стартер                         | Назначение                                                           |
+| ------------------------------- | -------------------------------------------------------------------- |
+| `spring-boot-starter-web`       | Для создания REST API и веб-приложений (включает Spring MVC, Tomcat) |
+| `spring-boot-starter-data-jpa`  | Для работы с базами данных через JPA/Hibernate                       |
+| `spring-boot-starter-security`  | Для добавления механизмов безопасности                               |
+| `spring-boot-starter-test`      | Для подключения JUnit, Mockito и других библиотек тестирования       |
+| `spring-boot-starter-thymeleaf` | Для серверной генерации HTML через шаблоны Thymeleaf                 |
+| `spring-boot-starter-actuator`  | Для мониторинга и управления приложением                             |
+
+В `spring-boot-starter-web` входит Apache Tomcat. Apache Tomcat - комплект серверных программ, предназначенный для тестирования,отладки и исполнения веб-приложений на основе Java. Его обычно называют контейнером сервлетов - дополнительных компонентов, которые расширяют функциональность веб-сервера и позволяют ему выполнять приложения на языке Java.
+
+#### <a name="%D0%B0%D0%B2%D1%82%D0%BE%D0%BA%D0%BE%D0%BD%D1%84%D0%B8%D0%B3%D1%83%D1%80%D0%B0%D1%86%D0%B8%D1%8F"></a> Автоконфигурация
+
+Второй превосходной возможностью Spring Boot является автоматическая конфигурация приложения.  
+После выбора подходящего starter-пакета, Spring Boot попытается автоматически настроить Spring-приложение на основе добавленных вами jar-зависимостей. Например:
+
+```java
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.context.annotation.Configuration;
+
+@Configuration
+@EnableAutoConfiguration
+@RestController
+public class Main {
+
+    public static void main(String[] args) {
+        SpringApplication.run(Main.class, args);
+    }
+
+    @GetMapping("/")
+    public String hello() {
+        return "Hello world!";
+    }
+}
+```
+
+С помощью аннотации `@EnableAutoConfiguration` Spring Boot может на основе добавленных зависимостей (например, `spring-boot-starter-web`) угадать, что и как именно нужно сконфигурировать
+
+Другая аннотация, `@SpringBootApplication`, включает в себя аннотации `@EnableAutoConfiguration` и `@ComponentScan` (то есть включает автоконфигурацию и сканирование бинов)
+
+Если сторонняя база данных не используется, а никаких сведений о подключении не предоставлено, Spring Boot автоматически настроит базу в памяти, без какой-либо дополнительной ручной конфигурации (при наличии H2 или HSQL драйверов)
+
+В любой момент можно определить свою собственную конфигурацию, чтобы заменить определенные части автоконфигурации. Например, если добавить свой собственный бин `DataSource`, то средства поддержки встроенной базы данных по умолчанию отключатся.
+
+Если необходимо узнать, какая автоконфигурация применяется в данный момент, можно запустить приложение с параметром `--debug`. Это позволит активировать отладочные журналы для выбранных основных диспетчеров журналирования и вывести отчет об условиях на консоль.
+
+Можно указать, какие части автоконфигурации нужно исключить, например:
+
+```java
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+
+@SpringBootApplication(exclude = { DataSourceAutoConfiguration })
+public class Main {
+}
+```
+
+#### <a name="initializr"></a> Initializr
+
+Чтобы не тыкаться в xml или gradle файлике, гуглить самому зависимости и так далее, можно воспользоваться Spring Initializr ([start.spring.io](https://start.spring.io/)) - сайт, в котором можно выбрать нужную версию Spring, Java, подобрать нужные зависимости. Далее Spring Initializr сам генерирует шаблон проекта, автоматически делает конфиг с зависимостями и так далее
+
+#### <a name="%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D1%80%D0%B0%D0%B7%D1%80%D0%B0%D0%B1%D0%BE%D1%82%D1%87%D0%B8%D0%BA%D0%B0"></a> Инструменты разработчика
+
+Модуль `spring-boot-devtools` включает в себя инструменты разработки, такие как:
+
+* Автоматическая перезагрузка (auto-restart) - при изменении классов или ресурсов приложение автоматически перезапускается (без полной перезагрузки JVM).
+
+    Это обеспечивает быструю обратную связь при разработке. Такой подход также известен как Hot Module Reload ("горячая" перезагрузка)
+
+    Перезагрузка работает при помощи основного и перезапускающего загрузчика: 
+    
+    * Классы, которые не будут изменяться (например, классы из сторонних jar-файлов), загружаются в основной загрузчик классов
+    * Классы, которые активно разрабатываются, загружаются в перезапускающий загрузчик классов
+    * Если приложение перезапускается, перезапускающий загрузчик классов единовременно используется, после чего создается новый, который подменяет старый. Такой подход означает, что перезапуск приложения обычно происходит гораздо быстрее, чем "холодный запуск"
+    
+* Отключение кеширования - кеш шаблонов (Thymeleaf, Freemarker), статики и т.п. отключается
+* Улучшенные сообщения об ошибках - в stack trace отображаются более понятные причины ошибок
+
+Модуль `spring-boot-devtools` выключается при свойстве `spring.profiles.active=prod` или при запуске приложения из jar-файла, чтобы не показывать пользователю подробности разработки
+
+
+#### <a name="%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D1%8F-%D0%BF%D1%80%D0%B8-%D0%B7%D0%B0%D0%BF%D1%83%D1%81%D0%BA%D0%B5"></a> События при запуске
+
+Spring Boot генерирует специальные события во время жизненного цикла запуска приложения. Эти события позволяют подключаться к нужным этапам старта и выполнять свою логику
+
+1. `ApplicationStartingEvent`
+   - Отправляется в самом начале, до инициализации контекста
+   - На этом этапе возможна только регистрация слушателей и инициализаторов
+
+2. `ApplicationEnvironmentPreparedEvent`
+   - Отправляется, когда доступна переменная `Environment`
+
+3. `ApplicationContextInitializedEvent`
+   - Контекст уже создан, но бины ещё не загружены
+   - Выполнены `ApplicationContextInitializers`
+
+4. `ApplicationPreparedEvent`
+   - Все определения бинов загружены
+   - Отправляется перед обновлением контекста
+
+5. `ApplicationStartedEvent`
+   - Контекст обновлён и запущен
+   - Но ещё не вызваны `ApplicationRunner` и `CommandLineRunner` (средства выполнения приложения и командной строки)
+
+6. `AvailabilityChangeEvent(LivenessState.CORRECT)`
+   - Обозначает, что приложение живое
+   - Следует сразу после `ApplicationStartedEvent`
+
+7. `ApplicationReadyEvent`
+   - Приложение полностью готово
+   - Все раннеры (`ApplicationRunner`, `CommandLineRunner`) вызваны
+
+8. `AvailabilityChangeEvent(ReadinessState.ACCEPTING_TRAFFIC)`
+   - Приложение готово принимать трафик
+
+9. `ApplicationFailedEvent`
+   - Отправляется, если во время старта возникло исключение
+
+После `ApplicationPreparedEvent` и до `ApplicationStartedEvent` могут быть отправлены:
+
+- `WebServerInitializedEvent`
+  - Отправляется, когда встроенный веб-сервер готов.
+  - Бывает двух видов:
+    - `ServletWebServerInitializedEvent` — для обычного сервлета (Tomcat, Jetty и т.д.)
+    - `ReactiveWebServerInitializedEvent` — для реактивных приложений (Netty)
+
+- `ContextRefreshedEvent`
+  - Отправляется, когда `ApplicationContext` обновляется вручную или при запуске
+
+
+Этот список касается только событий, относящихся к `SpringApplicationEvent`. Они особенно полезны для расширения поведения приложения на разных этапах запуска
+
+
+#### <a name="%D1%82%D0%B5%D1%81%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5"></a> Тестирование
+
+Пакет `spring-boot-starter-test` включает в себя сразу библиотеки для работы с тестирование, а именно:
+
+* JUnit 5 - стандартная библиотека для тестирования
+* Spring Test и Spring Boot Test - средства поддержки утилит и интеграционных тестов для приложений Spring Boot. Модуль `spring-boot-test` содержит основные элементы, а модуль `spring-boot-test-autoconfigure` поддерживает автоконфигурацию для тестов
+* AssertJ - для создания продвинутых ассертов
+* Hamcrest - для создания объектов-сопоставителей (матчеров) 
+* Mockito - для мокирования объектов
+* JSONassert - для проверки JSON-объектов
+* JsonPath - XPath для JSON
+
+Приложение Spring Boot – это `ApplicationContext` для Spring, поэтому для его тестирования не требуется ничего особенного, кроме тех операций, которые выполняются для ванильного контекста Spring
+
+Spring Boot предусматривает аннотацию `@SpringBootTest`, которую по сути используется в качестве альтернативы стандартной аннотации `@ContextConfiguration`. Если Spring MVC доступен, конфигурируется обычный контекст приложения на основе MVC.
+
+При тестировании приложений Spring Boot это обычно не требуется. Аннотации `@*Test` в Spring Boot осуществляют поиск вашей первичной конфигурации автоматически, если она не была определена вами явно. Алгоритм поиска начинает работу с пакета, содержащего тест, пока не найдет класс, аннотированный `@SpringBootApplication` или `@SpringBootConfiguration`
+
+
+```java
+@SpringBootTest
+@AutoConfigureMockMvc
+public class HelloControllerTest {
+
+    @Autowired
+    private MockMvc mockMvc;
+
+    @Test
+    public void testHelloEndpoint() throws Exception {
+        mockMvc.perform(get("/hello"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("Hello world!"));
+    }
+}
+```
+
+По умолчанию аннотация @SpringBootTest не запускает сервер, а вместо этого создает имитационное окружение для тестирования конечных веб-точек (так называемых эндпоинтов).
+
+### <a name="spring-data-jpa"></a> Spring Data JPA
+
+Spring Data JPA реализует готовые репозитории для доступа к сущностям через JPA. Конфиг для подключения к базе данных указывается в `application.properties` (или `application.yml`). По умолчанию Spring Boot подключает H2:
+
+```
+spring.datasource.url=jdbc:h2:mem:db
+DB_CLOSE_DELAY=-1
+spring.datasource.username=sa
+spring.datasource.password=sa
+```
+
+С ними вместо написания своих DAO, использующих EntityManager, можно объявить класс репозитория, реализующий шаблонный интерфейс, а Spring Data JPA сам сделает реализации
+
+```java
+public interface UserRepository extends CrudRepository<User, Long> {
+}
+```
+
+Здесь `User` - класс, помеченный `@Entity`
+
+Интерфейс `CrudRepository` задает базовые операции (создание, чтение, обновление, удаление). Интерфейс `PagingAndSortingRepository` предоставляет операции для пагинации и сортировки сущностей. Другой интерфейс, `JpaRepository`, является их объединением.
+
+Класс, реализующие эти интерфейс, автоматически попадают в контейнер внедрения зависимостей
+
+Традиционно сущности для JPA задаются в `persistence.xml`, но, используя Spring, так можно не делать - Spring сам их найдет по умолчанию с автоконфигурацией
+
+Можно расширить функционал репозитория, при этом не писать своей собственной реализации. Работает это так: Spring по названию метода и аргумента может понять, какой ему нужно сгенерировать SQL-запрос, чтобы все заработало
+
+Метод определяется по ключевым словам в его названии:
+
+| Ключевое слово                | Описание / Поведение                   | Пример метода                             | SQL-аналог                         |
+| ----------------------------- | -------------------------------------- | ----------------------------------------- | ---------------------------------- |
+| `And`                         | И                                      | `findByUsernameAndEmail`                  | `WHERE username = ? AND email = ?` |
+| `Or`                          | ИЛИ                                    | `findByUsernameOrEmail`                   | `WHERE username = ? OR email = ?`  |
+| `Is`, `Equals`                | Проверка на равенство (можно опустить) | `findByUsername`, `findByUsernameIs`      | `WHERE username = ?`               |
+| `Between`                     | Между двумя значениями                 | `findByAgeBetween(18, 30)`                | `WHERE age BETWEEN 18 AND 30`      |
+| `LessThan`, `Before`          | Меньше                                 | `findByAgeLessThan(18)`                   | `WHERE age < 18`                   |
+| `GreaterThan`, `After`        | Больше                                 | `findByAgeGreaterThan(30)`                | `WHERE age > 30`                   |
+| `LessThanEqual`               | Меньше или равно                       | `findByAgeLessThanEqual(18)`              | `WHERE age <= 18`                  |
+| `GreaterThanEqual`            | Больше или равно                       | `findByAgeGreaterThanEqual(30)`           | `WHERE age >= 30`                  |
+| `IsNull`                      | Значение = NULL                        | `findByEmailIsNull()`                     | `WHERE email IS NULL`              |
+| `IsNotNull`, `NotNull`        | Значение ≠ NULL                        | `findByEmailIsNotNull()`                  | `WHERE email IS NOT NULL`          |
+| `Like`                        | SQL LIKE выражение (с %, \_)           | `findByEmailLike("%@gmail.com")`          | `WHERE email LIKE '%@gmail.com'`   |
+| `NotLike`                     | LIKE NOT                               | `findByEmailNotLike("%test%")`            | `WHERE email NOT LIKE '%test%'`    |
+| `StartingWith` / `StartsWith` | Начинается с                           | `findByUsernameStartingWith("A")`         | `WHERE username LIKE 'A%'`         |
+| `EndingWith` / `EndsWith`     | Заканчивается на                       | `findByUsernameEndingWith("ov")`          | `WHERE username LIKE '%ov'`        |
+| `Containing` / `Contains`     | Содержит (эквивалент `%...%`)          | `findByUsernameContaining("adm")`         | `WHERE username LIKE '%adm%'`      |
+| `In`                          | В списке                               | `findByIdIn(List<Long> ids)`              | `WHERE id IN (...)`                |
+| `NotIn`                       | Не в списке                            | `findByUsernameNotIn(List<String> names)` | `WHERE username NOT IN (...)`      |
+| `True`, `False`               | Для булевых полей                      | `findByActiveTrue()`                      | `WHERE active = true`              |
+| `OrderBy`                     | Сортировка                             | `findByAgeOrderByUsernameAsc()`           | `ORDER BY username ASC`            |
+| `Top`, `First`                | Лимит количества результатов           | `findTop3ByOrderByAgeDesc()`              | `LIMIT 3`                          |
+| `ExistsBy`                    | Проверка на существование              | `existsByUsername(String username)`       | `SELECT COUNT ... > 0`             |
+| `CountBy`                     | Подсчёт                                | `countByEmail(String email)`              | `SELECT COUNT(*) WHERE email = ?`  |
+
+```java
+// Поиск по одному полю
+Optional<User> findByUsername(String username);
+
+// Поиск по нескольким полям (и)
+Optional<User> findByUsernameAndEmail(String username, String email);
+
+// Поиск с сортировкой
+List<User> findByAgeGreaterThanOrderByUsernameAsc(int age);
+
+// Проверка на существование
+boolean existsByEmail(String email);
+
+// Подсчёт
+long countByAgeLessThan(int age);
+```
+
+Вместо `findBy`, возвращающего `Optional<T>`, может быть:
+
+* `readBy` делает то же самое
+* `getBy` то же самое, но семантически подразумевает, что сущность точно существует
+* `queryBy` делает то же самое
+* `countBy` возвращает количество сущностей
+* `existsBy` возвращает true, если сущность есть
+
+Если очень хочется указывать свои шаблоны SQL-запросов, то это можно делать с помощью аннотации `@Query`
+
+```java
+@Query("SELECT u.username, u.email FROM User u WHERE u.age >= :minAge")
+List<Object[]> findUsernamesAndEmailsByAge(@Param("minAge") int minAge);
+```
+
+Если прям ОЧЕНЬ хочется, то можно реализовать свои методы:
+
+```java
+public interface UserRepositoryCustom {
+    List<User> findUsersWithLongUsername(int minLength);
+}
+
+@Repository
+public class UserRepositoryCustomImpl implements UserRepositoryCustom {
+
+    @PersistenceContext
+    private EntityManager entityManager;
+
+    @Override
+    public List<User> findUsersWithLongUsername(int minLength) {
+        return entityManager.createQuery(
+                "SELECT u FROM User u WHERE LENGTH(u.username) > :minLength", User.class)
+                .setParameter("minLength", minLength)
+                .getResultList();
+    }
+}
+```
+
+
 
 
 ## <a name="x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-2024%2F2025"></a> X. Программа экзамена 2024/2025
