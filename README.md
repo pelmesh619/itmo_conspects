@@ -83,7 +83,7 @@
 * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_24.pdf)
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_31.pdf)
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_07.pdf)
-* Лекция №11 - в производстве
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_14.pdf)
 * Лекция №12 - в производстве
 * Лекция №13 - в производстве
 * Лекция №14 - в производстве
