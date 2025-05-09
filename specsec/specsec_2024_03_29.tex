@@ -8,17 +8,21 @@
 
 
 \begin{document}
-    \Th $A^\prime = T_{e\to e^\prime} A T^{-1}_{e\to e^\prime}$
+    \begin{MyTheorem}
+        \Ths $A^\prime = T_{e\to e^\prime} A T^{-1}_{e\to e^\prime}$
+    \end{MyTheorem}
 
     \Nota $C = A + \lambda B$
 
-    Следствия:
+    \underline{Следствия}:
 
-    1) $TCT^{-1} = T (A + \lambda B) T^{-1} = T A T^{-1} + \lambda T B T^{-1}$
+    \begin{enumerate}
+        \item $TCT^{-1} = T (A + \lambda B) T^{-1} = T A T^{-1} + \lambda T B T^{-1}$
 
-    2) $B = I \quad T B T^{-1} = T I T^{-1} = I$, т. к. $TI = T, T T^{-1} = I$
+        \item $B = I \quad T B T^{-1} = T I T^{-1} = I$, т. к. $TI = T, T T^{-1} = I$
 
-    3) $\det A^{-1} = \det (T A T^{-1}) = \det T \det A \det T^{-1} = \det A \cdot 1$
+        \item $\det A^{-1} = \det (T A T^{-1}) = \det T \det A \det T^{-1} = \det A \cdot 1$
+    \end{enumerate}
 
     \Nota То есть характеристика нашего объекта - инвариант при преобразовании $T$
 
@@ -33,7 +37,7 @@
          a_{21} & a_{22} & \dots & a_{2n} \\
          \vdots & \vdots & \ddots & \vdots \\
          a_{n1} & a_{n2} & \dots & a_{nn} \\
-    \end{pmatrix} \cdots \begin{pmatrix}
+    \end{pmatrix} \cdot \begin{pmatrix}
          a_{11} & a_{21} & \dots & a_{n1} \\
          a_{12} & a_{22} & \dots & a_{n2} \\
          \vdots & \vdots & \ddots & \vdots \\
@@ -45,101 +49,111 @@
          0 & 0 & \dots & 1 \\
     \end{pmatrix}$
 
+    Для элементов матрицы:
+
     $\forall i \sum^n_{j=1} a_{ij} a_{ij} = (A_i, A_i) = 1$
+
     $\forall i, j (i \neq j) \sum^n_{kk=1} a_{ik} a_{jk} = (A_i, A_j) = 0$
 
-    В общем $(A_i, A_j) = \begin{sqcases}1, i = j \\ 0, i \neq j \end{sqcases}$
+    В общем, $(A_i, A_j) = \begin{sqcases}1, & i = j \\ 0, & i \neq j \end{sqcases}$
 
     \Def Оператор $\mathcal{A}$ называется ортогональным, если его матрица ортогональна
 
-    ? $A$ ортогональна в каком-либо базисе или во всех?
+    Возникает вопрос: $A$ ортогональна в каком-либо базисе или во всех сразу?
 
-    Свойство. $\mathcal{A}$ - ортогонален, то $\det A = \pm 1$ (следует из определения $\det(AA^T) = \det^2(A) = \det(I)$)
+    Свойство: если $\mathcal{A}$ - ортогонален, то $\det A = \pm 1$ (следует из определения $\det(AA^T) = \det(A) \cdot \det(A^T) = \det(A) \cdot \det(A) = \det(I) = 1 \Longrightarrow \det(A) = \pm \sqrt{1}$)
 
-    \Th $T_{e\to e^\prime}$ - преобразование координат в $V^n$. Тогда $T$ - ортогональный оператор
+    \begin{MyTheorem}
+        \Ths $T_{e\to e^\prime}$ - преобразование координат в $V^n$. Тогда $T$ - ортогональный оператор
+    \end{MyTheorem}
 
-    Базис $e$ - ортонормированный базис
+    Здесь базис $e$ - ортонормированный базис
 
-    $\Box \quad \sqsupset $ в базисе $e$ матрица $T = \begin{pmatrix}
-          \tau_{11} & \dots & \tau_{1n} \\
-          \vdots & \ddots & \vdots \\
-          \tau_{n1} & \dots & \tau_{nn} \\
-    \end{pmatrix}$ - неортогональна
+    \begin{MyProof}
+        Пусть в базисе $e$ матрица $T = \begin{pmatrix}
+            \tau_{11} & \dots & \tau_{1n} \\
+            \vdots & \ddots & \vdots \\
+            \tau_{n1} & \dots & \tau_{nn} \\
+        \end{pmatrix}$ - неортогональна
 
-    Тогда $e_1^\prime = \sum_{i=1}^n \tau_{1i} e_i \quad \Big| \cdot e_1^\prime$
+        Тогда $e_1^\prime = \sum_{i=1}^n \tau_{1i} e_i \quad \Big| \cdot e_1^\prime$
 
-    $1 = (e_1^\prime, e_1^\prime) = (\sum_{i=1}^n \tau_{1i} e_i)^2 =
-    \tau^2_{11} e^2_1 + \tau_{11} e_1 \tau_{12} e_2 + \dots = \tau_{11}^2 + \dots + \tau_{1n}^2 = 1$ - то есть строка - единичный вектор
+        $1 = (e_1^\prime, e_1^\prime) = \left(\sum_{i=1}^n \tau_{1i} e_i\right)^2 =
+        \tau^2_{11} e^2_1 + \tau_{11} e_1 \tau_{12} e_2 + \dots = \tau_{11}^2 + \dots + \tau_{1n}^2 = 1$, то есть строка - это единичный вектор
 
-    $0 = (e_1^\prime, e_2^\prime) = (\tau_{11} e_1 + \tau_{12}e_1 + \dots) \cdot
-    (\tau_{21}e_1 + \tau_{22}e_2 + \dots) = $ произведение 1-ой строки на 2-ую, то есть строки ортогональны
+        $0 = (e_1^\prime, e_2^\prime) = (\tau_{11} e_1 + \tau_{12}e_1 + \dots) \cdot
+        (\tau_{21}e_1 + \tau_{22}e_2 + \dots) = $ произведение 1-ой строки на 2-ую, то есть строки ортогональны
 
-    Таким образом, матрица $T$ - ортогональна
+        Таким образом, матрица $T$ - ортогональна
+    \end{MyProof}
 
     \Nota Тогда $A^\prime = T A T^{-1} = T A T^T$
+
 
     \section[p2\_7]{2.7. Собственные векторы и значения оператора}
 
     \Def Инвариантное подпространство оператора $\mathcal{A} : V \rightarrow V$ -
-    это $U = \Set{x \in V_1 \in V | \mathcal{A}x \in V_1}$
+    это $U = \{x \in V_1 \in V \ | \ \mathcal{A}x \in V_1\}$
 
     \Ex $V = \mathcal{P}_n(t)$ - пространство многочленов степени $\leq n$ на $[a; b]$, $\mathcal{D} = \frac{d}{dt}$
 
-    \Nota $Ker \mathcal{A}, Im \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
+    \Nota $\Ker \mathcal{A}, \IM \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
 
     \hypertarget{eigenvalue}{}
 
-    \Def Характеристический многочлен оператора $\mathcal{A} : V \rightarrow V$
-    ($\mathcal{A}x = Ax, A$ - матрица в неком базисе)
+    \Def Характеристическим многочленом оператора $\mathcal{A} : V \rightarrow V$
+    ($\mathcal{A}x = Ax, A$ - матрица в неком базисе) называют $\xi(\lambda) = \det(A - \lambda I)$
 
-    $\xi(\lambda) = \det(A - \lambda I)$
-
-    \Nota Матрица $A - \lambda I$:
-
-    $\begin{vmatrix}a_{11} - \lambda & \dots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \dots & a_{nn} - \lambda \end{vmatrix}$
+    \Nota Определитель $|A - \lambda I|$ представляет собой $\begin{vmatrix}a_{11} - \lambda & \dots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \dots & a_{nn} - \lambda \end{vmatrix}$
 
     \Nota Уравнение $\xi(\lambda) = 0$ называется вековым
 
     \hypertarget{eigenvector}{}
 
     \Def Собственным вектором оператора $\mathcal{A}$, отвечающим собственному значению $\lambda$,
-    называется $x \neq 0 \ | \ \mathcal{A}x = \lambda x$
+    называется вектор $x \neq 0$ такой, что $\mathcal{A}x = \lambda x$
 
-    \Def Собственное подпространство оператора $\mathcal{A}$, отвечающее числу $\lambda_i$,
+    \Defs Собственное подпространство оператора $\mathcal{A}$, отвечающее числу $\lambda_i$, определяется как $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
 
-    $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
+    \Defs $\dim U_{\lambda_i} = \beta$ - геометрическая кратность числа $\lambda_i$
 
-    \Def $\dim U_{\lambda_i} = \beta$ - геометрическая кратность числа $\lambda_i$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
+    \end{MyTheorem}
 
-    \Th $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
+    \begin{MyProof}
+        $|A - \lambda I| = 0 \Longleftrightarrow rang (A - \lambda I) < n \Longleftrightarrow
+        \dim \IM (A - \lambda I) < n \Longleftrightarrow \dim \Ker (A - \lambda I) \geq 1$
 
-    $\Box \Longleftrightarrow |A - \lambda I| = 0 \Longleftrightarrow rang (A - \lambda I) < n \Longleftrightarrow
-    \dim Im(A - \lambda I) < n \Longleftrightarrow \dim Ker(A - \lambda I) \geq 1$
-
-    $\exists x \in Ker(A - \lambda I), x \neq 0 \ | \ (A - \lambda I) x = 0 \Longleftrightarrow Ax - \lambda I x = 0 \Longleftrightarrow Ax = \lambda x$
+        $\exists x \in \Ker (A - \lambda I), x \neq 0 \ | \ (A - \lambda I) x = 0 \Longleftrightarrow Ax - \lambda I x = 0 \Longleftrightarrow Ax = \lambda x$
+    \end{MyProof}
 
     \Nota По основной теореме алгебры вековое уравнение имеет $n$ корней (не всех из них вещественные).
     В конкретном множестве $\mathcal{K} \ni \lambda$ их может не быть
 
     \Def Кратность корня $\lambda_i$ называется алгебраической кратностью
 
-    \Th $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ - линейно независимы
+    \begin{MyTheorem}
+        \Ths $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ - линейно независимы
+    \end{MyTheorem}
 
-    $\Box$ Составим комбинацию: $c_1 x_1 + c_2 x_2 = 0 \quad \Big| \cdot \mathcal{A}$
+    \begin{MyProof}
+        Составим комбинацию: $c_1 x_1 + c_2 x_2 = 0 \quad \Big| \cdot \mathcal{A}$
 
-    $\lambda_1 \neq \lambda_2 \Longrightarrow \lambda_1^2 + \lambda_2^2 \neq 0, \sqsupset \lambda_2 \neq 0$
+        $\lambda_1 \neq \lambda_2 \Longrightarrow \lambda_1^2 + \lambda_2^2 \neq 0, \sqsupset \lambda_2 \neq 0$
 
-    $c_1 \mathcal{A} x_1 + c_2 \mathcal{A} x_2 = 0 \Longleftrightarrow c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 = 0$
+        $c_1 \mathcal{A} x_1 + c_2 \mathcal{A} x_2 = 0 \Longleftrightarrow c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 = 0$
 
-    Умножим $c_1 x_1 + c_2 x_2 = 0$ на $\lambda_2$: $c_1 \lambda_2 x_1 + c_2 \lambda_2 x_2 = 0$
+        Умножим $c_1 x_1 + c_2 x_2 = 0$ на $\lambda_2$: $c_1 \lambda_2 x_1 + c_2 \lambda_2 x_2 = 0$
 
-    $c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 - c_1 \lambda_2 x_1 - c_2 \lambda_2 x_2 = 0$
+        $c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 - c_1 \lambda_2 x_1 - c_2 \lambda_2 x_2 = 0$
 
-    $c_1 x_1(\lambda_1 - \lambda_2) = 0$
+        $c_1 x_1(\lambda_1 - \lambda_2) = 0$
 
-    Так как $\lambda_1 \neq \lambda_2$ по условию, $x_1 \neq 0$ - собственный вектор, поэтому $c_1 = 0$, а комбинация линейно независима
+        Так как $\lambda_1 \neq \lambda_2$ по условию, $x_1 \neq 0$ - собственный вектор, поэтому $c_1 = 0$, а комбинация линейно независима
 
-    Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
+        Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
+    \end{MyProof}
 
     \Nota Приняв доказательство за базу индукции, можно доказать линейную независимость для $k$-ой системы собственных векторов для попарно различных $k$ чисел $\lambda$
 
