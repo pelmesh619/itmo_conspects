@@ -87,6 +87,7 @@
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_21.pdf)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_28.pdf)
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_05.pdf)
+* Лекция №15 - в производстве
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
@@ -105,6 +106,7 @@
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_22.pdf)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_29.pdf)
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_06.pdf)
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_13.pdf)
 
 ### Операционные системы (лектор Маятин А. В.)
 
@@ -125,6 +127,7 @@
 * [Лекция №12.2](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_23.html)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_29.html)
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_06.html)
+* Лекция №15 - в производстве
 
 ## [III семестр](meta/III.md)
 
