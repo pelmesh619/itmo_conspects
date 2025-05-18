@@ -59,6 +59,7 @@
 * Лекция №12 - в производстве <!-- Макаревич -->
 * Лекция №13 - в производстве <!-- Макаревич -->
 * Лекция №14 - календарный праздник
+* Лекция №15 - в производстве <!-- Макаревич -->
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
@@ -71,6 +72,7 @@
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_04.pdf)
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_18.pdf)
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_05_02.pdf)
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_05_16.pdf)
 
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
