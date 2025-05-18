@@ -1,0 +1,139 @@
+$subject$=Дополнительные главы \\ высшей математики
+$date$=16.05.2025
+$teacher$=Лекции Далевской О. П.
+
+Из определения ясно, что для конечной точки $\residuum(f(z), z_0) = C_{-1} = \frac{1}{2\pi i} \int_\gamma \frac{f(\zeta)}{(\zeta - z_0)^0} d\zeta = \frac{1}{2\pi i} \int_\gamma f(\zeta) d\zeta$
+
+Для бесконечной $\residuum(f(z), z_0) = -C_{-1} = -\frac{1}{2\pi i} \int_{\gamma^+} f(\zeta) d\zeta = \frac{1}{2\pi i} \int_{\gamma^-} f(\zeta) d\zeta$
+
+Здесь вместо $\gamma$ берут для простоты окружность
+
+\Nota Для вычисления вычетов используют более простые формулы, которые зависят от типа особых точек
+
+\begin{MyTheorem}
+    \ThNs{2} $z_0$ -- устранимая особая точка ($z_0 \in \Complex$) функции $f(z) \Longleftrightarrow$ главная часть ряда Лорана равна 0
+    
+    То есть $f(z)$ в $z_0$ представима как $\sum_{n = 0}^\infty C_n (z - z_0)$ тогда и только тогда, когда $\lim_{z \to z_0} f(z) \in \Complex$
+\end{MyTheorem}
+
+\begin{MyProof}
+    \fbox{$\Longrightarrow$} $z_0$ -- устранимая $\Longleftrightarrow \lim_{z \to \z_0} f(z) = A \in \Complex$
+
+    Тогда в некоторой окрестности $\overset{\circ}{U}_\delta (z_0)$ функция ограничена -- $|f(z)| \leq M, M \in \Real$
+
+    $C_{-n} = \frac{1}{2\pi i} \int_{\gamma_\delta} \frac{f(\zeta)d\zeta}{(\zeta - z)^{-n + 1}} = \left[\gamma_\delta: \zeta = z_0 + \delta e^{i\phi}\right] = \frac{1}{2\pi i} \int_{0}^{2\pi} \frac{f(\zeta) \delta i e^{i\varphi} d\varphi}{(\delta e^{i\varphi})^{-n + 1}} = \frac{1}{2\pi} \int_0^{2\pi} f(\zeta) \delta^{n} e^{ni\varphi} d\varphi$
+
+    $|C_{-n}| \leq \frac{1}{2\pi} \int_0^{2\pi} M \delta^n d\varphi = M \delta^n \underset{\delta \to 0}{\longrightarrow} 0$
+
+    \mediumvspace
+
+    \fbox{$\Longleftarrow$} $C_{-n} = 0 \Longrightarrow f(z) = \sum_{n = 0}^\infty C_n (z - z_0)^n = C_0 + C_1 (z - z_0) + \dots$
+
+    $\lim_{z \to z_0} f(z) = C_0 \in \Complex$ -- устранимая
+\end{MyProof}
+
+\underline{Следствие}: вычет в устранимой точке равен 0
+
+\begin{MyTheorem}
+    \ThNs{2} $z_0$ -- полюс $m$-ого порядка $\Longleftrightarrow$ главная часть ряда Лорана содержит не более $m$ ненулевых членов подряд (то есть для $i > m \ C_{-i} = 0$) 
+\end{MyTheorem}
+
+\begin{MyProof}
+    Полюс $m$-ого порядка функции $f(z)$ -- точка $z_0$, для которой $\lim_{z \to z_0} f(z) = \infty \Longrightarrow \lim_{z \to z_0} \frac{1}{f(z)} = \lim_{z \to z_0} g(z) = 0$ и $z_0$ -- ноль функции $g(z)$ порядка $m$
+    
+    То есть $g(z)$ представима как $g(z) = (z - z_0)^m h(z)$, где $h(z)$ -- аналитическая в $z_0$ и $h(z_0) \neq 0$
+
+    \fbox{$\Longrightarrow$} Рассмотрим $\frac{1}{h(z)} = \sum_{n = 0}^\infty b_n (z - z_0)^n$, при этом $\frac{1}{h(z_0)} = b_0 \neq 0$ ($h(z)$ -- аналитическая $\Longrightarrow \frac{1}{h(z)}$ -- аналитическая $\Longrightarrow \frac{1}{h(z)}$ -- регулярная)
+
+    $f(z) = \frac{1}{g(z)} = \frac{1}{(z - z_0)^m h(z)} = \frac{1}{(z - z_0)^m} \sum_{n = 0}^\infty b_n (z - z_0)^n = \frac{1}{(z - z_0)^m} (b_0 + b_1 (z - z_0) + \dots) = \underset{\frac{C_{-m}}{(z - z_0)^m} \neq 0}{\underbrace{\frac{b_0}{(z - z_0)^m}}} + \frac{b_1}{(z - z_0)^{m - 1}} + \dots + \frac{b_n}{(z - z_0)^{m - n}} + \dots = \sum_{n = -m}^\infty C_n (z - z_0)^n$
+
+    При этом $C_{-n} = 0$ при $n \geq m + 1$
+
+    \mediumvspace
+
+    \fbox{$\Longleftarrow$} $f(z) = \sum_{n = -m}^\infty C_n (z - z_0)^n = \frac{C_{-m}}{z - z_0}^m + \dots + \frac{C_{-1}}{z - z_0} + C_0 + C_1 (z - z_0) + \dots = \frac{1}{(z - z_0)^m} \underset{\text{аналитическая } \frac{1}{h(z)} \text{ в } z_0}{\underbrace{(C_{-n} + \dots + C_{-1} (z - z_0)^{m - 1} + C_0 (z - z_0)^m + \dots)}} = \frac{1}{(z - z_0)^m h(z)} \Longrightarrow z_0$ -- ноль функции $g(z) = (z - z_0)^m h(z)$
+
+    Тогда $f(z) \underset{z \to z_0}{\longrightarrow} \infty \Longrightarrow z_0$ -- полюс (порядок бесконечно большой равен $m$)
+\end{MyProof}
+
+\begin{MyTheorem}
+    \ThNs{3} $z_0$ -- существенно особая точка $\Longleftrightarrow$ главная часть содержит бесконечное число члено
+\end{MyTheorem}
+
+\begin{MyProof}
+    Очевидно, так как в другом случае, точка была бы полюсом или устранимой
+\end{MyProof}
+
+\Nota Для особой точки $z_0 = \infty$ \ThNs{1}, \ThNs{2}, \ThNs{3} справедливы и доказываются аналогично:
+
+\begin{enumerate}
+    \item $z_0$ -- устранимая $\Longleftrightarrow$ главная часть равна 0
+    \item $z_0$ -- $m$-полюс $\Longleftrightarrow$ главная часть содержит не более $m$ членов и $C_m \neq 0$
+    \item $z_0$ -- существенно особая $\Longleftrightarrow$ главная часть содержит бесконечное число членов
+\end{enumerate}
+
+\ExN{1} $f(z) = \frac{(e^z - 1)^2}{1 - \cos z}, \ z_0 = 0$
+
+$f(z) = \frac{(e^z - 1)^2}{1 - \cos z} \underset{z \to 0}{\sim} \frac{z^2}{\frac{z^2}{2}} = 2$ -- устранимая
+
+\ExN{2} $f(z) = \operatorname{ctg} z - \frac{1}{z}, \ z_0 = 0$
+
+$f(z) = \frac{\cos z}{\sin z} - \frac{1}{z} = \frac{1 - \frac{z^2}{2} + \frac{z^4}{4!} - \dots}{z - \frac{z^3}{3!} + \frac{z^5}{5!} - \dots} - \frac{1}{z} = \frac{1}{z} \left(\frac{1 - \frac{z^2}{2} + \frac{z^4}{4!} - \dots}{z - \frac{z^3}{3!} + \frac{z^5}{5!} - \dots} - 1\right) \sim \frac{1}{z} \cdot k \frac{z^2}{1} \underset{z \to 0}{\longrightarrow} 0$ -- устранимая
+
+\ExN{3} $f(z) = \frac{1}{z(z - 1)}, \ z_0 = \infty$
+
+$z = \frac{1}{w} \quad f(z) = \tilde f(w) = w \frac{1}{\frac{1}{w} - 1} = w^2 \frac{1}{1 - w} = w^2 \sum_{n = 0}^\infty w^n = \sum_{n = 0}^\infty w^{n + 2} = \sum_{n = 0}^\infty \frac{1}{z^{n + 2}}$ -- устранимая (главной части нет)
+
+\mediumvspace
+
+\underline{Вычисления вычетов}
+
+\Nota $z_0$ -- устранимая $\Longrightarrow \residuum(f(z), z_0) = 0$
+
+$z_0$ -- существенно особая $\Longrightarrow \residuum(f(z), z_0) = \pm C_{-1}$
+
+\begin{MyTheorem}
+    \Ths $z_0$ -- простой полюс ($m = 1$). Тогда $\residuum(f(z), z_0) = \lim_{z \to z_0} f(z) (z - z_0)$, где $z_0 \in \Complex$
+\end{MyTheorem}
+
+\begin{MyProof}
+    $f(z) = \frac{C_{-1}}{z - z_0} + C_0 + C_1 (z - z_0) + \dots$
+
+    $(z - z_0) f(z) = C_{-1} + \sum_{n = 0}^\infty c_n (z - z_0)^{n + 1} \Longrightarrow \lim_{z \to z_0} f(z) (z - z_0) = C_{-1}$
+\end{MyProof}
+
+\begin{MyTheorem}
+    \Ths $z_0$ -- $m$-полюс. Тогда $\residuum(f(z), z_0) = \lim_{z \to z_0} \frac{1}{(m - 1)!} \frac{d^{m - 1}}{dz^{m - 1}} (f(z) (z - z_0)^m)$
+\end{MyTheorem}
+
+\begin{MyProof}
+    $f(z) = \frac{C_{-m}}{(z - z_0)^m} + \dots + C_0 + C_1 (z - z_0) + \dots \quad \Big| \cdot (z - z_0)^m$
+
+    $f(z) (z - z_0)^m = C_{-m} + C_{-m+1} (z - z_0) + \dots  \quad \Big| \frac{d^{m - 1}}{dz^{m - 1}}$
+
+    $\frac{d^{m - 1}}{dz^{m - 1}} (f(z) (z - z_0)^m) = C_{-1} (m - 1)! + C_0 (z - z_0) (m - 1)! + C_1 (z - z_0)^2 \frac{(m - 1)!}{2!} + \dots$
+
+    $\frac{1}{(m - 1)!} \frac{d^{m - 1}}{dz^{m - 1}} (f(z) (z - z_0)^m) = C_{-1} + C_0 (z - z_0) + C_1 (z - z_0)^2 \frac{1}{2!} + \dots$
+
+    Далее переход к пределу, аналогичному доказательству выше
+\end{MyProof}
+
+\begin{MyTheorem}
+    \ThNs{Теорема о вычетах}
+
+    \begin{enumerate}
+        \item $f(z)$ аналитична в $D$ кроме особых точек $z_1, \dots, z_n$. Тогда $\int_{\Gamma_0} f(\zeta) d\zeta = 2\pi i \sum_{k = 1}^n \residuum(f(z), z_k)$
+
+        \item $f(z)$ аналитична в $\Complex$ кроме особых точек $z_1, \dots, z_n \in \overline{\Complex}$. Тогда $\sum_{k = 1}^n \residuum(f(z), z_k) = 0$
+    \end{enumerate}
+\end{MyTheorem}
+
+\begin{MyProof}
+    \begin{enumerate}
+        \item По теореме Коши (о многосвязной области)
+
+        $\int_{\Gamma_0} f(\zeta) d\zeta = \sum_{k = 1}^n \int_{\Gamma_k} f(\zeta) d\zeta = \sum_{k = 1}^n 2 \pi i C^{(k)}_{-1} = 2 \pi i \sum_{k = 1}^n \residuum(f(z), z_k)$, где $C^{(k)}_{-1}$ -- коэффициент для ряда Лорана в точке $z_k$
+
+        \item Очевидно по теореме Коши
+    \end{enumerate}
+\end{MyProof}
