@@ -121,7 +121,7 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
     E X^2 - ((E\overline{X})^2 + D\overline{X}) = (E X^2 - EX) - D\overline{X} = D X - D \overline{X} = D X - D \left(\frac{X_1 + \dots + X_n}{n}\right) = 
     DX - \frac{1}{n^2} \sum_{i = 1}^n D X_i = DX - \frac{1}{n^2} n D X_1 = DX - \frac{1}{n} DX = \frac{n - 1}{n} DX$, то есть $D^*$ - смещенная вниз оценка
 
-    $E S^2 = E(\frac{n}{n - 1} D^*) = \frac{n}{n - 1} \frac{n - 1}{n} DX = DX \Longrightarrow S^2$ - несмещенная вниз оценка 
+    $E S^2 = E(\frac{n}{n - 1} D^*) = \frac{n}{n - 1} \frac{n - 1}{n} DX = DX \Longrightarrow S^2$ - несмещенная оценка 
 
     2. $D^* = \overline{X^2} - \overline{X}^2 \overset{p}{\longrightarrow} E X^2 - (E X)^2 = DX$ - состоятельная оценка
 
@@ -177,10 +177,10 @@ $\begin{cases}
     \overline{x} = \frac{a^* + b^*}{2} \\ 
     \overline{x^2} = \frac{a^*^2 + a^* b^* + b^*^2}{3} \\ 
 \end{cases} \Longleftrightarrow \begin{cases}
-    \frac{a^* + b^*}{2} = 4.5 \\ 
+    a^* + b^* = 4.5 \\ 
     a^*^2 + a^* b^* + b^*^2 = 20.25 \\ 
 \end{cases} \Longleftrightarrow \begin{cases}
-    \frac{a^* + b^*}{2} = 4.5 \\ 
+    a^* + b^* = 4.5 \\ 
     a^* b^* = 0 \\ 
 \end{cases} \Longleftrightarrow \begin{cases}
     a^* = 0 \\ 

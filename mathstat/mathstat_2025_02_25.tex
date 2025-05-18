@@ -83,7 +83,7 @@ $L(\vec{X}, \theta)$ достигает наибольшего значения 
 
 $\theta^* = 2 \overline{x}$ - несмещенная оценка, так как $E\theta^* = 2E\overline{x} = 2E X = \theta$
 
-$E(\theta^* - \theta)^2 = D\theta^* = D2\overline{x} = 4D\overline{x} = 4\frac{D\overline{x}}{n} = \frac{4}{n}\frac{\theta^2}{12} = \frac{\theta^2}{3n}$
+$E(\theta^* - \theta)^2 = D\theta^* = D2\overline{x} = 4D\overline{x} = 4\frac{Dx}{n} = \frac{4}{n}\frac{\theta^2}{12} = \frac{\theta^2}{3n}$
 
 Изучим распределение $X_{(n)}$: $F_{X_{(n)}}(x) = P(X_{(n)} < x) = P(X_1 < x, X_2 < x, \dots, X_n < x) = 
 P(X_1 < x) \dots P(X_n < x) = F_{X_1}(x) \dots F_{X_n}(x) = F^n_{(x_1)}(x)$
@@ -92,17 +92,17 @@ $F_{X_1} (x) = \begin{cases}
     0, & x < 0 \\
     \frac{x}{\theta}, & 0 \leq x \leq \theta \\
     1, & x > \theta
-\end{cases} \Longrightarrow F_{X_(n)}(x) = \begin{cases}
+\end{cases} \Longrightarrow F_{X_{(n)}}(x) = \begin{cases}
     0, & x < 0 \\
     \frac{x^n}{\theta^n}, & 0 \leq x \leq \theta \\
     1, & x > \theta
-\end{cases} \Longrightarrow f_{X_(n)}(x) = \begin{cases}
+\end{cases} \Longrightarrow f_{X_{(n)}}(x) = \begin{cases}
     0, & x < 0 \\
     n\frac{x^{n - 1}}{\theta^n}, & 0 \leq x \leq \theta \\
     1, & x > \theta
 \end{cases}$
 
-$EX_{(n)} = \int_0^\theta x \cdot \frac{nx^{n - 1}}{\theta^n} dx = \frac{n}{\theta^n} \int_0^\theta x^n dx = \frac{n x^{x + 1}}{\theta^n (n + 1)} \Big|_0^\theta = 
+$EX_{(n)} = \int_0^\theta x \cdot \frac{nx^{n - 1}}{\theta^n} dx = \frac{n}{\theta^n} \int_0^\theta x^n dx = \frac{n x^{n + 1}}{\theta^n (n + 1)} \Big|_0^\theta = 
 \frac{n\theta}{n + 1}$ - смещенная вниз оценка
 
 $\tilde{\theta} = \frac{n + 1}{n} X_{(n)}$ - несмещенная оценка (будем считать, что эффективность не изменилась)
