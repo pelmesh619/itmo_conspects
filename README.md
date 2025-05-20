@@ -92,6 +92,7 @@
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_28.pdf)
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_05.pdf)
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_12.pdf)
+* [Лекция №16](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_19.pdf)
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
