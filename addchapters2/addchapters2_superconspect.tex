@@ -411,10 +411,10 @@ $w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - 
 
     Аналогично при $i \Delta y \to 0$ получаем $\lim_{\Delta y \to 0} \frac{f(x, y + \Delta y) - f(x, y)}{i \Delta y} = \\
     = \lim_{\Delta y \to 0} \left(\frac{u(x, y + \Delta y) - u(x, y)}{i \Delta y} + \frac{v(x, y + \Delta y) - v(x, y)}{\Delta y}\right) = 
-    \lim_{\Delta y \to 0} \frac{\Delta_x v}{\Delta y} - i \lim_{\Delta y \to 0} \frac{\Delta_x u}{\Delta x} = 
+    \lim_{\Delta y \to 0} \frac{\Delta_y v}{\Delta y} - i \lim_{\Delta y \to 0} \frac{\Delta_y u}{\Delta y} = 
     v_y - i u_y$
 
-    Итак, $f^\prime(z) = u_x + i v_x = v_y + i u_y$
+    Итак, $f^\prime(z) = u_x + i v_x = v_y - i u_y$
 
     Отсюда $u_x = v_y$ и $u_y = -v_x$
 
@@ -567,7 +567,7 @@ $\gamma(t)$ в окрестности некоторой точки $z_0$ гла
 
 $\sigma(t)$ в окрестности $w_0 = w(z_0)$ гладкая, $\exists$ касательная с углом $\theta^\prime = \arg \sigma^\prime(t)$
 
-А $\sigma^\prime(t_0) = w^\prime (t_0) = =f^\prime(z_0) \cdot \underset{z^\prime(t_0)}{\underbrace{\gamma^\prime(t_0)}}$
+А $\sigma^\prime(t_0) = w^\prime (t_0) = f^\prime(z_0) \cdot \underset{z^\prime(t_0)}{\underbrace{\gamma^\prime(t_0)}}$
 
 $\arg w^\prime(t_0) = \arg f^\prime (z_0) + \arg \gamma^\prime(t_0)$
 
@@ -1106,7 +1106,7 @@ $f_2 = \sum_{n = -1}^{-\infty} C_n (z - z_0)^n \overset{m = -n}{\Longrightarrow}
 \Nota Для вычисления вычетов используют более простые формулы, которые зависят от типа особых точек
 
 \begin{MyTheorem}
-    \ThNs{2} $z_0$ -- устранимая особая точка ($z_0 \in \Complex$) функции $f(z) \Longleftrightarrow$ главная часть ряда Лорана равна 0
+    \ThNs{1} $z_0$ -- устранимая особая точка ($z_0 \in \Complex$) функции $f(z) \Longleftrightarrow$ главная часть ряда Лорана равна 0
     
     То есть $f(z)$ в $z_0$ представима как $\sum_{n = 0}^\infty C_n (z - z_0)$ тогда и только тогда, когда $\lim_{z \to z_0} f(z) \in \Complex$
 \end{MyTheorem}
@@ -1257,6 +1257,165 @@ $z_0$ -- существенно особая $\Longrightarrow \residuum(f(z), z_
     \item Вычисление определенных интегралов с помощью вычетов.
 \end{enumerate}
 % end addchapters2_exam_list.tex
+
+% begin addchapters2_theorems.tex
+
+
+    \tableofcontents
+    \clearpage
+
+    \begin{MyTheorem}
+    \Ths $\exists \lim_{n \to \infty} z_n = \underset{x, y \in \Real}{x + i y} \Longleftrightarrow $
+    \begin{tabular}{l} $\exists \lim_{n \to \infty} x_n = \lim_{n \to \infty} \RE z_n = x$ \\ $\exists \lim_{n \to \infty} y_n = \lim_{n \to \infty} \IM z_n = y$ \end{tabular}
+\end{MyTheorem}
+% end <re.Match object; span=(4646, 4956), match='\\begin{MyTheorem}\n    \\Ths $\\exists \\lim_{n >
+
+\begin{MyTheorem}
+    \Ths Критерий аналитичности (или Условие Коши-Римана)
+
+    \begin{center}
+        $f(x) = u(x, y) + i v(x, y)$ аналитична в точке $z_0 = x + iy$ 
+        
+        \rotatebox{90}{$\Longleftrightarrow$}
+    
+        $\exists \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}$ непрерывны в $z$ и
+        $\begin{cases}\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \\ \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}\end{cases}$
+    \end{center}
+
+    Причем, $f^\prime(z) = u_x + i v_x = v_y - i u_y = u_x - i u_y = v_y + i v_x$
+\end{MyTheorem}
+% end <re.Match object; span=(1901, 2566), match='\\begin{MyTheorem}\n    \\Ths Критерий аналитично>
+
+\begin{MyTheorem}
+    \Ths Условия конформности: \begin{cases}\text{дифференцируемость} \\ \text{однолистность} \\ f^\prime(z) \neq 0 \text{ в } D\end{cases} $\Longleftrightarrow$ конформно
+\end{MyTheorem}
+% end <re.Match object; span=(5522, 5727), match='\\begin{MyTheorem}\n    \\Ths Условия конформност>
+
+\begin{MyTheorem}
+    \ThNs{1} $f(z)$ аналитическая и однозначная в односвязной области $D$
+
+    Если $f(z)$ непрерывна на $\Gamma_D$, то $\oint_{\Gamma_D} f(z) dz = 0$
+\end{MyTheorem}
+% end <re.Match object; span=(1007, 1191), match='\\begin{MyTheorem}\n    \\ThNs{1} $f(z)$ аналитич>
+
+\begin{MyTheorem}
+    % https://www.geogebra.org/calculator/ujuysjcp
+    
+    \begin{center}
+        \includegraphics[width=10cm]{addchapters2/images/addchapters2_2025_04_04_2}
+    \end{center}
+    
+    \ThNs{2} Дана многосвязная область $D$, $f(z)$ - аналитична в $D$ и непрерывна на $\Gamma_D$
+
+
+    Граница $\Gamma_D = \Gamma_0 \cup \Gamma_1 \cup \Gamma_2 \cup \dots \cup \Gamma_n$, где положительным обходом области
+    считается тот, при котором область обхода слева
+
+    Тогда $\int_{\Gamma_D^+} f(z) dz = 0$ или $\int_{\Gamma_0 \CounterClockwiseArrow} f(z) dz = \sum_{i = 1}^n \int_{\Gamma_i \CounterClockwiseArrow} f(z) dz$ 
+\end{MyTheorem}
+% end <re.Match object; span=(2791, 3439), match='\\begin{MyTheorem}\n    % https://www.geogebra.or>
+
+\begin{MyTheorem}
+    \Ths $f(z)$ непрерывна в односвязной области $D$ и $\forall \Gamma \subset D \ \int_\Gamma f(z) dz = 0$
+
+    Тогда при фиксированном $z_0 \in D \ \Phi(z) = \int_{z_0}^z f(\zeta) d\zeta$ аналитична в $D$ и $\Phi^\prime(z) = f(z)$
+\end{MyTheorem}
+% end <re.Match object; span=(5066, 5332), match='\\begin{MyTheorem}\n    \\Ths $f(z)$ непрерывна в>
+
+\begin{MyTheorem}
+    \ThNs{Признак Вейерштрасса}
+
+    $\exists \sum_{n = 1}^\infty \alpha_n$, $\alpha_n \in \Real_0^+$, $\sum_{n = 1}^\infty \alpha_n \in \Real$,
+    $|u_n(z)| \leq \alpha_n \ \forall z \in D \Longrightarrow \sum_{n = 1}^\infty u_n(z)$ сходится равномерно в $D$
+\end{MyTheorem}
+% end <re.Match object; span=(998, 1292), match='\\begin{MyTheorem}\n    \\ThNs{Признак Вейерштрас>
+
+\begin{MyTheorem}
+    \Ths $u_n(z)$ непрерывна в $D$ и $f(z) = \sum_{n = 1}^\infty u_n(z)$ сходится равномерно в $D$
+
+    Тогда $\int_K f(\zeta) d\zeta = \sum_{n = 1}^\infty \int_K u_n(\zeta) d\zeta$, где $K \subset D$ - кусочно гладкая кривая
+\end{MyTheorem}
+% end <re.Match object; span=(1423, 1682), match='\\begin{MyTheorem}\n    \\Ths $u_n(z)$ непрерывна>
+
+\begin{MyTheorem}
+    \ThNs{Абеля} 
+    
+    Если степенной ряд сходится в точке $z_1$, то он сходится абсолютно и равномерно 
+    в любой точке $z_2$ такой, что $|z - z_1| > |z - z_2|$
+
+    Если степенной ряд расходится в точке $z_1$, то он расходится
+    в любой точке $z_2$ такой, что $|z - z_1| < |z - z_2|$
+\end{MyTheorem}
+% end <re.Match object; span=(2746, 3073), match='\\begin{MyTheorem}\n    \\ThNs{Абеля} \n    \n   >
+
+\begin{MyTheorem}
+    \ThNs{Почленное дифференцирование суммы ряда}
+
+    $\sum_{n = 0}^\infty c_n z^n = f(z)$ - сходящийся в круге радиуса $R \neq 0$. Тогда $f(z)$ дифференцируема и 
+    $f^\prime(z) = \sum_{n = 0}^\infty n c_n z^{n - 1}$
+\end{MyTheorem}
+% end <re.Match object; span=(3178, 3432), match='\\begin{MyTheorem}\n    \\ThNs{Почленное дифферен>
+
+\begin{MyTheorem}
+    \Ths $f(z)$ аналитическая в области $D$ $\Longrightarrow f(z)$ регулярна в области $D$
+\end{MyTheorem}
+% end <re.Match object; span=(5340, 5464), match='\\begin{MyTheorem}\n    \\Ths $f(z)$ аналитическа>
+
+\begin{MyTheorem}
+    \ThNs{Морера} $f(z)$ непрерывна в $D$ и $\forall \gamma \subset D \ \int_\gamma f(z) dz = 0 \Longrightarrow f(z)$ аналитична в $D$
+\end{MyTheorem}
+% end <re.Match object; span=(104, 272), match='\\begin{MyTheorem}\n    \\ThNs{Морера} $f(z)$ неп>
+
+\begin{MyTheorem}
+    \ThNs{Лиувилля} $f(z)$ аналитична в $\Complex$ и $\exists M \in \Real^+ \ | \ |f(z)| \leq M \ \forall z \in \Complex$
+
+    Тогда $f(z) \equiv \const$
+\end{MyTheorem}
+% end <re.Match object; span=(633, 820), match='\\begin{MyTheorem}\n    \\ThNs{Лиувилля} $f(z)$ а>
+
+\begin{MyTheorem}
+    $f(z)$, аналитичная в кольце $K = (z_0, R_2, R_1)$, однозначно представима рядом Лорана в кольце $K$
+\end{MyTheorem}
+% end <re.Match object; span=(2957, 3095), match='\\begin{MyTheorem}\n    $f(z)$, аналитичная в кол>
+
+\begin{MyTheorem}
+    \ThNs{2} $z_0$ -- устранимая особая точка ($z_0 \in \Complex$) функции $f(z) \Longleftrightarrow$ главная часть ряда Лорана равна 0
+    
+    То есть $f(z)$ в $z_0$ представима как $\sum_{n = 0}^\infty C_n (z - z_0)$ тогда и только тогда, когда $\lim_{z \to z_0} f(z) \in \Complex$
+\end{MyTheorem}
+% end <re.Match object; span=(606, 924), match='\\begin{MyTheorem}\n    \\ThNs{2} $z_0$ -- устран>
+
+\begin{MyTheorem}
+    \ThNs{2} $z_0$ -- полюс $m$-ого порядка $\Longleftrightarrow$ главная часть ряда Лорана содержит не более $m$ ненулевых членов подряд (то есть для $i > m \ C_{-i} = 0$) 
+\end{MyTheorem}
+% end <re.Match object; span=(1930, 2137), match='\\begin{MyTheorem}\n    \\ThNs{2} $z_0$ -- полюс >
+
+\begin{MyTheorem}
+    \ThNs{3} $z_0$ -- существенно особая точка $\Longleftrightarrow$ главная часть содержит бесконечное число члено
+\end{MyTheorem}
+% end <re.Match object; span=(3772, 3921), match='\\begin{MyTheorem}\n    \\ThNs{3} $z_0$ -- сущест>
+
+\begin{MyTheorem}
+    \Ths $z_0$ -- простой полюс ($m = 1$). Тогда $\residuum(f(z), z_0) = \lim_{z \to z_0} f(z) (z - z_0)$, где $z_0 \in \Complex$
+\end{MyTheorem}
+% end <re.Match object; span=(5556, 5719), match='\\begin{MyTheorem}\n    \\Ths $z_0$ -- простой по>
+
+\begin{MyTheorem}
+    \Ths $z_0$ -- $m$-полюс. Тогда $\residuum(f(z), z_0) = \lim_{z \to z_0} \frac{1}{(m - 1)!} \frac{d^{m - 1}}{dz^{m - 1}} (f(z) (z - z_0)^m)$
+\end{MyTheorem}
+% end <re.Match object; span=(5950, 6127), match='\\begin{MyTheorem}\n    \\Ths $z_0$ -- $m$-полюс.>
+
+\begin{MyTheorem}
+    \ThNs{Теорема о вычетах}
+
+    \begin{enumerate}
+        \item $f(z)$ аналитична в $D$ кроме особых точек $z_1, \dots, z_n$. Тогда $\int_{\Gamma_0} f(\zeta) d\zeta = 2\pi i \sum_{k = 1}^n \residuum(f(z), z_k)$
+
+        \item $f(z)$ аналитична в $\Complex$ кроме особых точек $z_1, \dots, z_n \in \overline{\Complex}$. Тогда $\sum_{k = 1}^n \residuum(f(z), z_k) = 0$
+    \end{enumerate}
+\end{MyTheorem}
+% end <re.Match object; span=(6717, 7139), match='\\begin{MyTheorem}\n    \\ThNs{Теорема о вычетах}>
+% end addchapters2_theorems.tex
 
 
 
