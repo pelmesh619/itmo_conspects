@@ -56,7 +56,7 @@
 * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_04.html)  <!-- Сомов -->
 * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_11.html) <!-- Макаревич -->
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_18.html) <!-- Макаревич -->
-* Лекция №12 - в производстве <!-- Макаревич -->
+* [Лекция №12](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_25.html) <!-- Макаревич -->
 * Лекция №13 - в производстве <!-- Макаревич -->
 * Лекция №14 - календарный праздник
 * Лекция №15 - в производстве <!-- Макаревич -->
