@@ -27,6 +27,8 @@
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_30.html) <!-- Мацнев и Самигуллин -->
 * Лекция №14 - в производстве <!-- Карчевский -->
 * Лекция №15 - в производстве <!-- Самигуллин -->
+* Лекция №16 - отменена
+* Лекция №17 - в производстве <!-- Мацнев -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
@@ -40,6 +42,7 @@
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_04_17.html)
 * Лекция №13 - календарный праздник
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_05_15.html)
+* Лекция №17 - в производстве
 
 ### Технологии программирования на Java (лекторы Макаревич Р. Д., Сомов А. В.)
 
@@ -60,6 +63,7 @@
 * Лекция №13 - в производстве <!-- Макаревич -->
 * Лекция №14 - календарный праздник
 * Лекция №15 - в производстве <!-- Макаревич -->
+* Лекция №16 - в производстве <!-- Макаревич -->
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
@@ -93,6 +97,7 @@
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_05.pdf)
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_12.pdf)
 * [Лекция №16](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_19.pdf)
+* Лекция №17 - в производстве
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
@@ -134,6 +139,7 @@
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_29.html)
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_06.html)
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_13.html)
+* Лекция №16 - в производстве
 
 ## [III семестр](meta/III.md)
 
