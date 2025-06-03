@@ -32,7 +32,7 @@
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_superconspect.html)
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_superconspect.html)
 
 * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_02_06.html)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_02_20.html)
