@@ -42,7 +42,7 @@
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_04_17.html)
 * Лекция №13 - календарный праздник
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_05_15.html)
-* Лекция №17 - в производстве
+* [Лекция №17](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_05_29.html)
 
 ### Технологии программирования на Java (лекторы Макаревич Р. Д., Сомов А. В.)
 
