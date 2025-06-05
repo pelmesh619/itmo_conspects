@@ -190,8 +190,6 @@
 
     Следствие - формула Ньютона-Лейбница: \fbox{$\int_{z_1}^{z_2} f(\zeta) d\zeta = \Phi(z_2) - \Phi(z_1)$}
 
-    
-
 \end{enumerate}
 
     
@@ -202,8 +200,55 @@
     \setcounter{enumi}{6}
 
     \item Числовые ряды. Регулярная функция. Функциональные ряды. Признаки сходимости.
+
+    \DefNs{1} $z_1 + z_2 + \dots + z_n + \dots = \sum_{n = 1}^\infty z_n$, где $z_n \in \Complex$ - \hyperlink{complex_series}{числовой ряд}
+
+    \DefNs{2} Сумма ряда - $S = \lim_{n \to \infty} S_n = \lim_{n \to \infty} \sum_{k = 1}^n z_k$. Если сумма существует и конечна, то ряд называют сходящимся. 
+
+    \Defs $f(z)$ называется регулярной в точке $z_0$, если $f(z_0) = \sum_{n = 1}^\infty c_n$, где $c_n \in \Complex$
+
+    \Def $\sum_{n = 1}^\infty u_n(z)$, где $u_n(z) : \ D \subset \Complex \longrightarrow \Complex$ - функциональный ряд
+
+    \begin{MyTheorem}
+        \ThNs{Признак Вейерштрасса}
+    
+        $\exists \sum_{n = 1}^\infty \alpha_n$, $\alpha_n \in \Real_0^+$, $\sum_{n = 1}^\infty \alpha_n \in \Real$,
+        $|u_n(z)| \leq \alpha_n \ \forall z \in D \Longrightarrow \sum_{n = 1}^\infty u_n(z)$ сходится равномерно в $D$
+    \end{MyTheorem}
+
     \item Степенные ряды. Теорема Абеля. Ряд Тейлора.
+
+    \Def \hyperlink{complex_power_series}{Степенной ряд} - $\sum_{n = 0}^\infty c_n (z - a)^n \qquad \left(a = 0: \sum_{n = 0}^\infty c_n z^n\right)$, $c_n \in \Complex$. Область сходимости - круг с центром $a$, $|z - a| \leq R$ - радиус сходимости 
+
+    $\lim_{n \to \infty} \left|\frac{c_{n + 1} (z - a)^{n + 1}}{c_n (z - a)^n}\right| = \lim_{n \to \infty} \left|\frac{c_{n + 1}}{c_n}\right| |z - a| < 1 \Longrightarrow |z - a| < \left|\frac{c_n}{c_{n + 1}}\right|$
+
+    \begin{MyTheorem}
+        \ThNs{\hyperlink{abels_theorem}{Абеля}} 
+        
+        Если степенной ряд сходится в точке $z_1$, то он сходится абсолютно и равномерно 
+        в любой точке $z_2$ такой, что $|z - z_1| > |z - z_2|$
+
+        Если степенной ряд расходится в точке $z_1$, то он расходится
+        в любой точке $z_2$ такой, что $|z - z_1| < |z - z_2|$
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{Почленное дифференцирование суммы ряда}
+
+        $\sum_{n = 0}^\infty c_n z^n = f(z)$ - сходящийся в круге радиуса $R \neq 0$. Тогда $f(z)$ дифференцируема и 
+        $f^\prime(z) = \sum_{n = 0}^\infty n c_n z^{n - 1}$
+    \end{MyTheorem}
+
+    Ряд Тейлора $f(z) \underset{|z - a| < \rho}{=} \sum_{n = 0}^\infty \frac{f^{(n)} (a)}{n!} (z - a)^n$
+
     \item Бесконечная дифференцируемость регулярной функции. Формула n-ой производной.
+
+    \begin{MyTheorem}
+        \Ths $f(z)$ аналитическая в области $D$ $\Longrightarrow f(z)$ регулярна в области $D$
+    \end{MyTheorem}
+
+    Для функции $f(z)$ в точке $a \ $ $\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta) d\zeta}{(\zeta - a)^{n + 1}} = \frac{f^{(n)}(a)}{n!}$
+
     \item Ряды Лорана в конечной и бесконечно удаленной точке. Главная и правильная части.
     \item Классификация изолированных особых точек однозначной аналитической функции.
     \item Вычет аналитической функции в изолированной особой точке. Определение и формулы вычисления вычета. Основные теоремы теории вычетов.
