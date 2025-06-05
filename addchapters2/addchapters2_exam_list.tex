@@ -280,5 +280,38 @@
 
     \Defs \hyperlink{residuum}{Вычетом} $\residuum(f(z), z_0)$ функции $f(z)$ в точке $z_0$ называется $C_{-1}$ коэффициент ряда Лорана, если $z_0 \in \Complex$, и $-C_{-1}$, если $z_0 = \infty$
 
+    \begin{MyTheorem}
+        \ThNs{1} $z_0$ -- устранимая особая точка ($z_0 \in \Complex$) функции $f(z) \Longleftrightarrow$ главная часть ряда Лорана равна 0
+    \end{MyTheorem}
+    
+    \begin{MyTheorem}
+        \ThNs{2} $z_0$ -- полюс $m$-ого порядка $\Longleftrightarrow$ главная часть ряда Лорана содержит не более $m$ ненулевых членов подряд (то есть для $i > m \ C_{-i} = 0$) 
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{3} $z_0$ -- существенно особая точка $\Longleftrightarrow$ главная часть содержит бесконечное число члено
+    \end{MyTheorem}
+
+    \Notas $z_0$ -- устранимая $\Longrightarrow \residuum(f(z), z_0) = 0$
+    
+    $z_0$ -- существенно особая $\Longrightarrow \residuum(f(z), z_0) = \pm C_{-1}$
+    
+    \begin{MyTheorem}
+        \Ths $z_0$ -- простой полюс ($m = 1$). Тогда $\residuum(f(z), z_0) = \lim_{z \to z_0} f(z) (z - z_0)$, где $z_0 \in \Complex$
+    \end{MyTheorem}
+    
+    \begin{MyTheorem}
+        \Ths $z_0$ -- $m$-полюс. Тогда $\residuum(f(z), z_0) = \lim_{z \to z_0} \frac{1}{(m - 1)!} \frac{d^{m - 1}}{dz^{m - 1}} (f(z) (z - z_0)^m)$
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{Теорема о вычетах}
+    
+        \begin{enumerate}
+            \item $f(z)$ аналитична в $D$ кроме особых точек $z_1, \dots, z_n$. Тогда $\int_{\Gamma_0} f(\zeta) d\zeta = 2\pi i \sum_{k = 1}^n \residuum(f(z), z_k)$
+    
+            \item $f(z)$ аналитична в $\Complex$ кроме особых точек $z_1, \dots, z_n \in \overline{\Complex}$. Тогда $\sum_{k = 1}^n \residuum(f(z), z_k) = 0$
+        \end{enumerate}
+    \end{MyTheorem}
 
 \end{enumerate}
