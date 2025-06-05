@@ -191,6 +191,8 @@ $\forall \varepsilon > 0 \ \exists \underset{n_0 = n_0(\varepsilon)}{n_0 = \Natu
 
 \section{2. Комплексная функция}
 
+\hypertarget{complex_function}{}
+
 \subsection{2.1. Определение}
 
 \Mem $f : E \subset \Real \longrightarrow D \subset \Real \ \overset{def}{\Longleftrightarrow} \ $ отображение такое, 
@@ -226,6 +228,8 @@ $u(x, y) = (x^2 - y^2), \qquad\qquad v(x, y) = 2xy$
 
 \subsection{2.2. Предел функции}
 
+\hypertarget{complex_limit}{}
+
 \Def $L \in \Complex, f : D \longrightarrow G, \quad L \overset{def}{=} \lim_{z \to z_0} f(z) \Longrightarrow
 \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ \Big| \ z \in D, z \in \overset{\circ}{U}_\delta(z_0) \ f(x) \in U_\varepsilon(L)$
 
@@ -254,6 +258,8 @@ $\lim_{z \to 0} f(z) = \lim_{\substack{\rho \to 0 \\ \varphi = \varphi^*}} f(z) 
 
 \Nota Путь следования предела аналогичен левостороннему и правостороннему пределами $\Real$-функций
 
+\hypertarget{continuity}{}
+
 \DefN{Непрерывность функций в точке $z_0$}
 
 $f : D \longrightarrow G, z_0 \in D$, $f(z)$ называется непрерывной в $z_0$, если $\lim_{z \to z_0} f(z) = f(z_0)$
@@ -265,6 +271,8 @@ $\Delta z = z - z_0 = \Delta x + i \Delta y \to 0 \Longrightarrow
 \Delta \rho \to 0$
 
 \subsection{2.3. Элементарные комплексные функции}
+
+\hypertarget{elementary_functions}{}
 
 \ExN{1} Линейная $f(z) = az + b, \qquad\qquad a, b \in \Complex \quad a \neq 0$
 
@@ -379,10 +387,14 @@ $w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - 
     \frac{\partial f}{\partial x} \Delta x + \frac{\partial f}{\partial y} \Delta y + o(\Delta x) + o(\Delta y)$
 \end{tabular}
 
+\hypertarget{derivative}{}
+
 \Def $f(z)$ называется дифференцируемой в точке $z_0$, если $\exists f^\prime(z_0) \in \Complex$
 
 \Defs Дифференцируемая в точке $z_0$ функция $w = f(z)$, производная $f^\prime(z_0)$ которой непрерывна в $z_0$,
 называется аналитической (или аналитичной) функцией в $z_0$
+
+\hypertarget{cauchy_riemann}{}
 
 \begin{MyTheorem}
     \Ths Критерий аналитичности (или Условие Коши-Римана)
@@ -462,6 +474,8 @@ $w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - 
 \end{MyProof}
 
 \mediumvspace
+
+\hypertarget{analytic_function_properties}{}
 
 \underline{Свойства аналитических функций}
 
@@ -597,7 +611,11 @@ $\theta^\prime - \theta = \arg f^\prime (z_0)$ -- поворот кривой $\
 
 \mediumvspace
 
+\hypertarget{geometrical_meaning_of_derivative}{}
+
 Итак, $w = f(z)$ в точке $z_0$ поворачивает точку у окрестности на угол $\alpha = \arg f^\prime(z_0)$ и растягивает отрезки $[z_0, z]$ в $k = |f^\prime(z_0)|$ раз
+
+\hypertarget{conformal_map}{}
 
 \Def Конформное отображение -- отображение $w(z)$, сохраняющее углы (между образами и прообразами) и постоянство растяжений
 
@@ -620,6 +638,8 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 
 \smallvspace
 
+\hypertarget{complex_integral}{}
+
 В $\Complex$ задана кусочно-гладкая кривая $K$ (с концами в точках $M$ и $N$) параметрическими уравнениями: 
 
 \begin{cases}
@@ -632,15 +652,15 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 Определим интегральные суммы:
 
 \begin{enumerate}
-    \item дробление отрезка $MN$ на частичные дуги: $M = z_0, z_1, \dots, z_{n - 1}, z_n = N$
+    \item Дробление отрезка $MN$ на частичные дуги: $M = z_0, z_1, \dots, z_{n - 1}, z_n = N$
 
     Тогда $\alpha = t_0, t_1, \dots, t_{n - 1}, t_n = \beta$
 
-    \item Выбор средных точек в отрезках кривой $\zeta_i = (\xi_i, \eta_i)$
+    \item Выбор средних точек в отрезках кривой $\zeta_i = (\xi_i, \eta_i)$
 
     \item Сопоставим интегральную сумму $\sigma_n = \sum_{i = 1}^n f(\zeta_i) \Delta z_i$
 
-    \item Интегралом от $w = f(z)$ по кривой $K$ называется $\lim_{\substack{n \to \infty \\ \tau = \max \Delta z_i \to 0}} = 
+    \item Интегралом от $w = f(z)$ по кривой $K$ называется $\lim_{\substack{n \to \infty \\ \tau = \max \Delta z_i \to 0}} \sigma_n = 
     \int_K f(z) dz$, если он существует, конечен и не зависит от способа разбиения, выбора средних точек и т. д.
 \end{enumerate}
 
@@ -682,6 +702,8 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 
 \subsection{3.2. Теорема Коши}
 
+\hypertarget{cauchy_for_simply_connected_space}{}
+
 \begin{MyTheorem}
     \ThNs{1} $f(z)$ аналитическая и однозначная в односвязной области $D$
 
@@ -716,6 +738,8 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 То есть $\int_{AB} f(z) dz$ в условиях \ThNs{1} не зависит от пути, и его можно решать как $\int_{AB} = \int_A^B$
 
 \Nota Обобщим \ThNs{1} на многосвязную область. Выколотые области тоже имеют границы, которые включены в границу всей области
+
+\hypertarget{cauchy_for_connected_space}{}
 
 \begin{MyTheorem}
     % https://www.geogebra.org/calculator/ujuysjcp
@@ -761,6 +785,8 @@ $|a|$ - коэффициент растяжения, $\varphi$ - угол пов
 где $\rho_1$, $\rho_2$ - радиусы бесконечно малой длины 
 
 \subsection{3.3. Неопределенный интеграл}
+
+\hypertarget{antiderivative}{}
 
 \Mem По теореме Барроу $\Phi(x) = \int_{x_0}^x f(t) dt$ - интеграл с переменным верхним пределом
 
@@ -1244,11 +1270,192 @@ $z_0$ -- существенно особая $\Longrightarrow \residuum(f(z), z_
 
 \begin{enumerate}
     \item Функции комплексного переменного (ФКП). Геометрия ФКП.
+
+    \Defs \hyperlink{complex_function}{Функция} $f : D \subset \Complex \longrightarrow G \subset \Complex \ \overset{def}{\Longleftrightarrow} \ $ отображение такое, 
+    что $\forall z \in D \ \exists w \in G \ | \ f(z) = w$
+
+    \Defs Если $\forall z \in D \ \exists! w \in G$, то $f$ называется однозначной функцией
+
+    \Defs Если $\forall z_1, z_2 \in D (z_1 \neq z_2) \Longrightarrow f(z_1) \neq f(z_2)$, 
+    то $f$ называется однолистной функцией
+    
+    \Exs $w = \sqrt{z}$ - неоднозначная функция, $w = z^2$ - неоднолистная функция
+
+    \Notas Если $f(z)$ однозначна и однолистна, то $f(z)$ - взаимно однозначное соответствие (биекция). Тогда $\exists g(x) \ | \ g(f(x)) = x$
+    
+    Комплексную функцию $f(z)$ можно представить как $u(x, y) + i v(x, y)$, где $x + iy = z$
+
     \item Предел, непрерывность функции комплексного переменного.
+
+    \DefNs{\hyperlink{complex_limit}{Предел}} $L \in \Complex, f : D \longrightarrow G, \quad L \overset{def}{=} \lim_{z \to z_0} f(z) \Longrightarrow
+    \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ \Big| \ z \in D, z \in \overset{\circ}{U}_\delta(z_0) \ f(x) \in U_\varepsilon(L)$
+
+    В определении существование и значение $L$ не должно зависеть от пути, по которому $z$ приближается к точке сгущения $z_0$.
+    Может быть так, что для любого направления стремления предел есть, но в общем смысле не существует
+
+    \DefNs{\hyperlink{continuity}{Непрерывность} функций в точке $z_0$} $f : D \longrightarrow G, z_0 \in D$, $f(z)$ называется непрерывной в $z_0$, если $\lim_{z \to z_0} f(z) = f(z_0)$
+
+    На языке приращений: $\Delta f = f(z_0 + \Delta z) - f(z_0) \underset{\Delta z \to 0}{\longrightarrow} 0$
+
     \item Элементарные функции. Степень и корень. Показательная функция и логарифм. Тригонометрические и гиперболические функции.
+
+    \hyperlink{elementary_functions}{Элементарные функции}:
+
+    \ExN{1} Линейная $f(z) = az + b, \qquad\qquad a, b \in \Complex \quad a \neq 0$
+
+    Эта функция однозначная, однолистная $\Longrightarrow \exists f^{-1}(z) = g(z) = \frac{z - b}{a}$. 
+    Линейная функция - композиция из поворота, растяжения и сдвига
+    
+    \ExN{2} Степенная $w = z^n, \quad n \in \Natural$ - однозначная, может быть неоднолистной
+    
+    Для $n \in \Rational$ функция становится неоднозначной
+    
+    \Exs $w = z^2 \qquad\qquad z = \rho e^{i\varphi}, w = \rho^2 e^{2i\varphi}$. Область однолистности $z^2$ - множество точек, для которых $\arg z \in [0; \pi)$.
+    Точку $w = 0$ называют точкой разветвления
+    
+    \Exs $w = z^{-1} = \frac{1}{z}$, при этом $w(0) = \infty, w(\infty) = 0$.    
+    Для $z \in \Complex \setminus \{0\}$ функция обратима
+    
+    Преобразование $|w| = \frac{1}{|z|}$ называется инверсией, а $\arg w = -\arg z$ дает симметрию относительно $\RE z$
+    
+    \ExN{3} Рациональная $f(z) = \frac{P_n(z)}{Q_m(z)}, \qquad\qquad n, m \in \Natural$
+    
+    \ExN{4} Показательная $w = e^z = e^x \cdot e^{iy} = e^x (\cos y + i \sin y)$ - многолистная функция. \underline{Свойства}: 
+    
+    \begin{enumerate}
+        \item $e^{z_1 + z_2} = e^{z_1} \cdot e^{z_2}$
+        \item $\left(e^{z_1}\right)^{z_2} = e^{z_1 z_2}$
+        \item $e^{z + 2\pi i} = e^{z} \cdot e^{2\pi i} = e^z$ - показательная функция периодична с периодом $2\pi i$
+    \end{enumerate}
+    
+    \ExN{5} Логарифмическая $w = \Ln z$ - многозначная функция
+    
+    Если $e^w = e^{u + vi} = e^u (\cos v + i \sin v) = z = |z| e^{i\arg z}$, то $u = \ln |z|$, $v = \arg z + 2\pi k$. Тогда \fbox{$\Ln z = \ln |z| + i (\arg z + 2\pi k)$}
+    
+    $\ln z = \Ln z$ при $k = 0$ - т. н. главное значение
+    
+    \ExN{6} Тригонометрические и гиперболические
+
+    \begin{multicols}{2}
+        \begin{center}
+            $\sin z = \frac{e^{iz} - e^{-iz}}{2i}$
+
+            $\cos z = \frac{e^{iz} + e^{-iz}}{2}$
+
+            $\sh z = \frac{e^{z} - e^{-z}}{2}$
+
+            $\ch z = \frac{e^{z} + e^{-z}}{2}$
+        \end{center}
+    \end{multicols}
+
+    В $\Complex$ область значений этих функций является $\Complex$ - эти функции не ограничены
+
+
     \item Дифференцирование и аналитичность функции комплексной переменной. Условия Коши-Римана. Свойства аналитических функций.
+
+    \Def $f(z)$ называется \hyperlink{derivative}{дифференцируемой} в точке $z_0$, если $\exists f^\prime(z_0) \in \Complex$
+
+    \Defs Дифференцируемая в точке $z_0$ функция $w = f(z)$, производная $f^\prime(z_0)$ которой непрерывна в $z_0$, называется аналитической (или аналитичной) функцией в $z_0$
+
+    \begin{MyTheorem}
+        \Ths \hyperlink{cauchy_riemann}{Критерий аналитичности (или Условие Коши-Римана)}
+    
+        \begin{center}
+            $f(x) = u(x, y) + i v(x, y)$ аналитична в точке $z_0 = x + iy$ 
+            
+            \rotatebox{90}{$\Longleftrightarrow$}
+        
+            $\exists \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}$ непрерывны в $z$ и
+            $\begin{cases}\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \\ \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}\end{cases}$
+        \end{center}
+    
+        Причем, $f^\prime(z) = u_x + i v_x = v_y - i u_y = u_x - i u_y = v_y + i v_x$
+    \end{MyTheorem}
+    
+    \underline{\hyperlink{analytic_function_properties}{Свойства аналитических функций}}: пусть $f, g$ - аналитические функции, тогда:
+
+    \begin{enumerate}[label=\arabic*$^\circ$]
+        \item Линейность: $af + bg$ - аналитическая
+        \item Композиция: $f(g(z))$ - аналитическая
+        \item Произведение: $f \cdot g$ - аналитическая
+        \item $f(z)$ аналитична в $D \ (f : D \longrightarrow D^\prime)$, $f^\prime(z) \neq 0 \ \forall z \in D$. 
+        Тогда $\exists g(w) = f^{-1}(z) \ (g : D^\prime \longrightarrow D)$ и $\forall z_0 \in D \ f^\prime_z (z_0) = \frac{1}{g^\prime_w (w_0)}$, где $w_0 = w(z)$
+        
+        \item $f(z) = u(x, y) + i v(x, y)$ аналитична в $D$. Тогда $u(x, y), v(x, y)$ -- гармонические функции в $D$
+
+        \item Если $f(z) = u(x, y) + i v(x, y)$ аналитична в $D$ и известна $u(x, y)$ или $v(x, y)$, то $f(z)$ определяется однозначно с точностью до $\operatorname{const}$
+    \end{enumerate}
+
     \item Понятие конформного отображения. Геометрический смысл производной.
+
+    \Def \hyperlink{conformal_map}{Конформное отображение} -- отображение $w(z)$, сохраняющее углы (между образами и прообразами) и постоянство растяжений
+
+    \begin{MyTheorem}
+        \Ths Условия конформности: \begin{cases}\text{дифференцируемость} \\ \text{однолистность} \\ f^\prime(z) \neq 0 \text{ в } D\end{cases} $\Longleftrightarrow$ конформно
+    \end{MyTheorem}
+
+    \hyperlink{geometrical_meaning_of_derivative}{Геометрический смысл}: Функция $w = f(z)$ в точке $z_0$ поворачивает точку у окрестности на угол $\alpha = \arg f^\prime(z_0)$ и растягивает отрезки $[z_0, z]$ в $k = |f^\prime(z_0)|$ раз
+
+
     \item Интеграл по комплексной переменной. Теорема Коши. Первообразная.
+    
+    В $\Complex$ задана кусочно-гладкая кривая $K$ (с концами в точках $M$ и $N$) параметрическими уравнениями: 
+    \begin{cases}
+        x = \varphi(t) & \qquad t \in [\alpha, \beta] \subset \Real \\
+        y = \psi(t) & \qquad \varphi, \psi \text{ -- } \Real \text{-функции} \\
+    \end{cases}
+
+    Тогда $z(t) = \varphi(t) + i \psi(t)$ - задание $K$ в $\Complex$. Введем отображение $w = f(z)$, действующее на $K$
+
+    Определим интегральные суммы:
+
+    \begin{enumerate}
+        \item Дробление отрезка $MN$ на частичные дуги: $M = z_0, z_1, \dots, z_{n - 1}, z_n = N$
+
+        Тогда $\alpha = t_0, t_1, \dots, t_{n - 1}, t_n = \beta$
+
+        \item Выбор средних точек в отрезках кривой $\zeta_i = (\xi_i, \eta_i)$
+
+        \item Сопоставим интегральную сумму $\sigma_n = \sum_{i = 1}^n f(\zeta_i) \Delta z_i$
+
+        \item \hyperlink{complex_integral}{Интегралом} от $w = f(z)$ по кривой $K$ называется $\lim_{\substack{n \to \infty \\ \tau = \max \Delta z_i \to 0}} \sigma_n = 
+        \int_K f(z) dz$, если он существует, конечен и не зависит от способа разбиения, выбора средних точек и т. д.
+    \end{enumerate}
+
+    При этом интеграл можно представить как $\lim_{n \to \infty} \sigma_n = \int_K f(z) dz = \int_K udx - vdy + i \int_K udy + vdx$
+
+    \begin{MyTheorem}
+        \ThNs{\hyperlink{cauchy_for_simply_connected_space}{Теорема Коши для односвязной области}} $f(z)$ аналитическая и однозначная в односвязной области $D$
+    
+        Если $f(z)$ непрерывна на $\Gamma_D$, то $\oint_{\Gamma_D} f(z) dz = 0$
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{\hyperlink{cauchy_for_connected_space}{Теорема Коши для многосвязной области}} Дана многосвязная область $D$, $f(z)$ - аналитична в $D$ и непрерывна на $\Gamma_D$
+    
+    
+        Граница $\Gamma_D = \Gamma_0 \cup \Gamma_1 \cup \Gamma_2 \cup \dots \cup \Gamma_n$, где положительным обходом области
+        считается тот, при котором область обхода слева
+    
+        Тогда $\int_{\Gamma_D^+} f(z) dz = 0$ или $\int_{\Gamma_0 \CounterClockwiseArrow} f(z) dz = \sum_{i = 1}^n \int_{\Gamma_i \CounterClockwiseArrow} f(z) dz$ 
+    \end{MyTheorem}
+
+    По теореме Барроу $\Phi(x) = \int_{x_0}^x f(t) dt$ - интеграл с переменным верхним пределом
+
+    Тогда $\Phi(x)$ - дифференцируема, и $\Phi^\prime(x) = f(x)$, то есть $\Phi(x)$ - \hyperlink{antiderivative}{первообразная} $f(x)$
+
+    \begin{MyTheorem}
+        \Ths $f(z)$ непрерывна в односвязной области $D$ и $\forall \Gamma \subset D \ \int_\Gamma f(z) dz = 0$
+
+        Тогда при фиксированном $z_0 \in D \ \Phi(z) = \int_{z_0}^z f(\zeta) d\zeta$ аналитична в $D$ и $\Phi^\prime(z) = f(z)$
+    \end{MyTheorem}
+
+    $\Phi(z) = \int_{z_0}^z f(\zeta) d\zeta$ называют первообразной для $f(z)$
+
+    Следствие - формула Ньютона-Лейбница: \fbox{$\int_{z_1}^{z_2} f(\zeta) d\zeta = \Phi(z_2) - \Phi(z_1)$}
+
+    
+
 \end{enumerate}
 
     
