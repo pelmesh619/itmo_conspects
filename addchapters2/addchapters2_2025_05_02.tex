@@ -31,6 +31,8 @@ $teacher$=Лекции Далевской О. П.
 
 \subsection{4.4. Ряд Лорана}
 
+\hypertarget{laurent_series}{}
+
 \Def Ряд вида $\sum_{n = -\infty}^\infty C_n (z - z_0)^n$, где $C_n, z_0 \in \Complex$, называется рядом Лорана в точке $z_0$
 
 % https://www.geogebra.org/calculator/mxctddsq
@@ -88,6 +90,8 @@ $f_2 = \sum_{n = -1}^{-\infty} C_n (z - z_0)^n \overset{m = -n}{\Longrightarrow}
 
 \Nota Таким образом, коэффициенты ряда Лорана $C_n = \frac{1}{2\pi i} \int_{\Gamma_i} \frac{f(\zeta)}{(\zeta - z_0)^{n + 1}} d\zeta$
 
+\hypertarget{isolated_special_point}{}
+
 \Def Изолированной особой точкой однозначного характера называется точка $a \in \Complex \ | \ f(z)$ аналитична в кольце $0 < |z - a| < \rho$, но не определена в $z = a$
 
 \Defs Точка $a = \infty$ называется изолированной особой, если $f(z)$ аналитична в кольце $\rho < |z| < \infty$
@@ -107,6 +111,8 @@ $f_2 = \sum_{n = -1}^{-\infty} C_n (z - z_0)^n \overset{m = -n}{\Longrightarrow}
 \Def Для ряда Лорана функции $f(z)$ в окрестности особой точки $z = a \in \Complex \quad f(z) = \underset{\text{это правильная часть}}{\underbrace{\sum_{n = 0}^\infty C_n (z - a)^n}} + \underset{\text{это главная часть}}{\underbrace{\sum_{n = 1}^\infty \frac{C_{-n}}{(z - a)^n}}}$
 
 \Def Для ряда Лорана в $a = \infty$: $f(z) = \sum_{n = -\infty}^\infty C_n z^n = \underset{\text{это главная часть}}{\underbrace{\sum_{n = 1}^\infty C_n z^n}} + \underset{\text{это правильная часть}}{\underbrace{\sum_{n = 0}^\infty \frac{C_{-n}}{z^n}}}$
+
+\hypertarget{residuum}{}
 
 \Def Вычетом $\residuum(f(z), z_0)$ функции $f(z)$ в точке $z_0$ называется $C_{-1}$ коэффициент ряда Лорана, если $z_0 \in \Complex$, и $-C_{-1}$, если $z_0 = \infty$
 
