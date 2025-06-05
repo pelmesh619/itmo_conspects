@@ -160,6 +160,38 @@
 
     При этом интеграл можно представить как $\lim_{n \to \infty} \sigma_n = \int_K f(z) dz = \int_K udx - vdy + i \int_K udy + vdx$
 
+    \begin{MyTheorem}
+        \ThNs{\hyperlink{cauchy_for_simply_connected_space}{Теорема Коши для односвязной области}} $f(z)$ аналитическая и однозначная в односвязной области $D$
+    
+        Если $f(z)$ непрерывна на $\Gamma_D$, то $\oint_{\Gamma_D} f(z) dz = 0$
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{\hyperlink{cauchy_for_connected_space}{Теорема Коши для многосвязной области}} Дана многосвязная область $D$, $f(z)$ - аналитична в $D$ и непрерывна на $\Gamma_D$
+    
+    
+        Граница $\Gamma_D = \Gamma_0 \cup \Gamma_1 \cup \Gamma_2 \cup \dots \cup \Gamma_n$, где положительным обходом области
+        считается тот, при котором область обхода слева
+    
+        Тогда $\int_{\Gamma_D^+} f(z) dz = 0$ или $\int_{\Gamma_0 \CounterClockwiseArrow} f(z) dz = \sum_{i = 1}^n \int_{\Gamma_i \CounterClockwiseArrow} f(z) dz$ 
+    \end{MyTheorem}
+
+    По теореме Барроу $\Phi(x) = \int_{x_0}^x f(t) dt$ - интеграл с переменным верхним пределом
+
+    Тогда $\Phi(x)$ - дифференцируема, и $\Phi^\prime(x) = f(x)$, то есть $\Phi(x)$ - \hyperlink{antiderivative}{первообразная} $f(x)$
+
+    \begin{MyTheorem}
+        \Ths $f(z)$ непрерывна в односвязной области $D$ и $\forall \Gamma \subset D \ \int_\Gamma f(z) dz = 0$
+
+        Тогда при фиксированном $z_0 \in D \ \Phi(z) = \int_{z_0}^z f(\zeta) d\zeta$ аналитична в $D$ и $\Phi^\prime(z) = f(z)$
+    \end{MyTheorem}
+
+    $\Phi(z) = \int_{z_0}^z f(\zeta) d\zeta$ называют первообразной для $f(z)$
+
+    Следствие - формула Ньютона-Лейбница: \fbox{$\int_{z_1}^{z_2} f(\zeta) d\zeta = \Phi(z_2) - \Phi(z_1)$}
+
+    
+
 \end{enumerate}
 
     
