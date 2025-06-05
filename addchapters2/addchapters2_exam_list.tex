@@ -6,8 +6,87 @@
 
 \begin{enumerate}
     \item Функции комплексного переменного (ФКП). Геометрия ФКП.
+
+    \Defs \hyperlink{complex_function}{Функция} $f : D \subset \Complex \longrightarrow G \subset \Complex \ \overset{def}{\Longleftrightarrow} \ $ отображение такое, 
+    что $\forall z \in D \ \exists w \in G \ | \ f(z) = w$
+
+    \Defs Если $\forall z \in D \ \exists! w \in G$, то $f$ называется однозначной функцией
+
+    \Defs Если $\forall z_1, z_2 \in D (z_1 \neq z_2) \Longrightarrow f(z_1) \neq f(z_2)$, 
+    то $f$ называется однолистной функцией
+    
+    \Exs $w = \sqrt{z}$ - неоднозначная функция, $w = z^2$ - неоднолистная функция
+
+    \Notas Если $f(z)$ однозначна и однолистна, то $f(z)$ - взаимно однозначное соответствие (биекция). Тогда $\exists g(x) \ | \ g(f(x)) = x$
+    
+    Комплексную функцию $f(z)$ можно представить как $u(x, y) + i v(x, y)$, где $x + iy = z$
+
     \item Предел, непрерывность функции комплексного переменного.
+
+    \DefNs{\hyperlink{complex_limit}{Предел}} $L \in \Complex, f : D \longrightarrow G, \quad L \overset{def}{=} \lim_{z \to z_0} f(z) \Longrightarrow
+    \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ \Big| \ z \in D, z \in \overset{\circ}{U}_\delta(z_0) \ f(x) \in U_\varepsilon(L)$
+
+    В определении существование и значение $L$ не должно зависеть от пути, по которому $z$ приближается к точке сгущения $z_0$.
+    Может быть так, что для любого направления стремления предел есть, но в общем смысле не существует
+
+    \DefNs{\hyperlink{continuity}{Непрерывность} функций в точке $z_0$} $f : D \longrightarrow G, z_0 \in D$, $f(z)$ называется непрерывной в $z_0$, если $\lim_{z \to z_0} f(z) = f(z_0)$
+
+    На языке приращений: $\Delta f = f(z_0 + \Delta z) - f(z_0) \underset{\Delta z \to 0}{\longrightarrow} 0$
+
     \item Элементарные функции. Степень и корень. Показательная функция и логарифм. Тригонометрические и гиперболические функции.
+
+    \hyperlink{elementary_functions}{Элементарные функции}:
+
+    \ExN{1} Линейная $f(z) = az + b, \qquad\qquad a, b \in \Complex \quad a \neq 0$
+
+    Эта функция однозначная, однолистная $\Longrightarrow \exists f^{-1}(z) = g(z) = \frac{z - b}{a}$. 
+    Линейная функция - композиция из поворота, растяжения и сдвига
+    
+    \ExN{2} Степенная $w = z^n, \quad n \in \Natural$ - однозначная, может быть неоднолистной
+    
+    Для $n \in \Rational$ функция становится неоднозначной
+    
+    \Exs $w = z^2 \qquad\qquad z = \rho e^{i\varphi}, w = \rho^2 e^{2i\varphi}$. Область однолистности $z^2$ - множество точек, для которых $\arg z \in [0; \pi)$.
+    Точку $w = 0$ называют точкой разветвления
+    
+    \Exs $w = z^{-1} = \frac{1}{z}$, при этом $w(0) = \infty, w(\infty) = 0$.    
+    Для $z \in \Complex \setminus \{0\}$ функция обратима
+    
+    Преобразование $|w| = \frac{1}{|z|}$ называется инверсией, а $\arg w = -\arg z$ дает симметрию относительно $\RE z$
+    
+    \ExN{3} Рациональная $f(z) = \frac{P_n(z)}{Q_m(z)}, \qquad\qquad n, m \in \Natural$
+    
+    \ExN{4} Показательная $w = e^z = e^x \cdot e^{iy} = e^x (\cos y + i \sin y)$ - многолистная функция. \underline{Свойства}: 
+    
+    \begin{enumerate}
+        \item $e^{z_1 + z_2} = e^{z_1} \cdot e^{z_2}$
+        \item $\left(e^{z_1}\right)^{z_2} = e^{z_1 z_2}$
+        \item $e^{z + 2\pi i} = e^{z} \cdot e^{2\pi i} = e^z$ - показательная функция периодична с периодом $2\pi i$
+    \end{enumerate}
+    
+    \ExN{5} Логарифмическая $w = \Ln z$ - многозначная функция
+    
+    Если $e^w = e^{u + vi} = e^u (\cos v + i \sin v) = z = |z| e^{i\arg z}$, то $u = \ln |z|$, $v = \arg z + 2\pi k$. Тогда \fbox{$\Ln z = \ln |z| + i (\arg z + 2\pi k)$}
+    
+    $\ln z = \Ln z$ при $k = 0$ - т. н. главное значение
+    
+    \ExN{6} Тригонометрические и гиперболические
+
+    \begin{multicols}{2}
+        \begin{center}
+            $\sin z = \frac{e^{iz} - e^{-iz}}{2i}$
+
+            $\cos z = \frac{e^{iz} + e^{-iz}}{2}$
+
+            $\sh z = \frac{e^{z} - e^{-z}}{2}$
+
+            $\ch z = \frac{e^{z} + e^{-z}}{2}$
+        \end{center}
+    \end{multicols}
+
+    В $\Complex$ область значений этих функций является $\Complex$ - эти функции не ограничены
+
+
     \item Дифференцирование и аналитичность функции комплексной переменной. Условия Коши-Римана. Свойства аналитических функций.
     \item Понятие конформного отображения. Геометрический смысл производной.
     \item Интеграл по комплексной переменной. Теорема Коши. Первообразная.
