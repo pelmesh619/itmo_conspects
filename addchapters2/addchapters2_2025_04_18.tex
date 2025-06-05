@@ -121,7 +121,7 @@ $f^\prime(z) = (c_0 + c_1 (z - a) + c_2 (z - a)^2 + \dots + c_n (z - a)^n + \dot
 \end{MyTheorem}
 
 \begin{MyProof}
-    По формуле Коши $f(z) = \frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta)}{\zeta - z} d\zeta \ \forall z \in K$, где $K = \{z \ | \ |z - a| , \rho\}$, $\gamma_\rho = \{ \zeta \ | \ |\zeta - a| = \rho\}$ и $K \subset D$
+    По формуле Коши $f(z) = \frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta)}{\zeta - z} d\zeta \ \forall z \in K$, где $K = \{z \ | \ |z - a| < \rho\}$, $\gamma_\rho = \{ \zeta \ | \ |\zeta - a| = \rho\}$ и $K \subset D$
 
     Разложим в ряд $\frac{1}{\zeta - z}$:
 
@@ -131,9 +131,9 @@ $f^\prime(z) = (c_0 + c_1 (z - a) + c_2 (z - a)^2 + \dots + c_n (z - a)^n + \dot
 
     Тогда $\frac{f(\zeta)}{\zeta - z} = \sum_{n = 0}^\infty \frac{f(\zeta) (z - a)^n}{(\zeta - a)^{n + 1}}$ - равномерно сходящийся 
 
-    $\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta)}{\zeta - z} = \frac{1}{2\pi i} \sum_{n = 0}^\infty \int_{\gamma_\rho} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} d\zeta (z - a)^n$
+    $\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta)}{\zeta - z} = \frac{1}{2\pi i} \sum_{n = 0}^\infty \left(\int_{\gamma_\rho} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} d\zeta \right) (z - a)^n$
 
-    $f(z) = \sum_{n = 0}^\infty b_n (z - a)^n$ - единственное разложение по Тейлору
+    $f(z) = \sum_{n = 0}^\infty b_n (z - a)^n$ - единственное разложение по Тейлору, где $b_n = \int_{\gamma_\rho} \frac{f(\zeta)}{(\zeta - a)^{n + 1}} d\zeta$
 
     Итак $\frac{1}{2\pi i} \int_{\gamma_\rho} \frac{f(\zeta) d\zeta}{(\zeta - a)^{n + 1}} = \frac{f^{(n)}(a)}{n!}$
 \end{MyProof}
