@@ -88,6 +88,34 @@
 
 
     \item Дифференцирование и аналитичность функции комплексной переменной. Условия Коши-Римана. Свойства аналитических функций.
+
+    \Def $f(z)$ называется \hyperlink{derivative}{дифференцируемой} в точке $z_0$, если $\exists f^\prime(z_0) \in \Complex$
+
+    \Defs Дифференцируемая в точке $z_0$ функция $w = f(z)$, производная $f^\prime(z_0)$ которой непрерывна в $z_0$, называется аналитической (или аналитичной) функцией в $z_0$
+
+    \begin{MyTheorem}
+        \Ths \hyperlink{cauchy_riemann}{Критерий аналитичности (или Условие Коши-Римана)}
+    
+        \begin{center}
+            $f(x) = u(x, y) + i v(x, y)$ аналитична в точке $z_0 = x + iy$ 
+            
+            \rotatebox{90}{$\Longleftrightarrow$}
+        
+            $\exists \frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial v}{\partial x}, \frac{\partial v}{\partial y}$ непрерывны в $z$ и
+            $\begin{cases}\frac{\partial u}{\partial x} = \frac{\partial v}{\partial y} \\ \frac{\partial u}{\partial y} = -\frac{\partial v}{\partial x}\end{cases}$
+        \end{center}
+    
+        Причем, $f^\prime(z) = u_x + i v_x = v_y - i u_y = u_x - i u_y = v_y + i v_x$
+    \end{MyTheorem}
+    
+    \underline{\hyperlink{analytic_function_properties}{Свойства аналитических функций}}: пусть $f, g$ - аналитические функции, тогда:
+
+    \begin{enumerate}[label=\arabic*$^\circ$]
+        \item Линейность: $af + bg$ - аналитическая
+        \item Композиция: $f(g(z))$ - аналитическая
+        \item Произведение: $f \cdot g$ - аналитическая
+    \end{enumerate}
+
     \item Понятие конформного отображения. Геометрический смысл производной.
     \item Интеграл по комплексной переменной. Теорема Коши. Первообразная.
 \end{enumerate}
