@@ -59,15 +59,6 @@
 
 [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_superconspect.pdf)
 
-* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_07.pdf)
-* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_21.pdf)
-* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_07.pdf)
-* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_21.pdf)
-* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_04.pdf)
-* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_18.pdf)
-* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_05_02.pdf)
-* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_05_16.pdf)
-
 ### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_superconspect.pdf)

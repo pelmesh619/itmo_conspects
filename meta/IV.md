@@ -13,3 +13,16 @@
 * Лекция №13 - календарный праздник
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_05_15.html)
 * [Лекция №17](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_2025_05_29.html)
+
+### Дополнительные главы высшей математики II (лектор Далевская О. П.)
+
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_superconspect.pdf)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_07.pdf)
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_02_21.pdf)
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_07.pdf)
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_03_21.pdf)
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_04.pdf)
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_04_18.pdf)
+* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_05_02.pdf)
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_2025_05_16.pdf)
