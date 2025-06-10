@@ -63,23 +63,6 @@
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_superconspect.pdf)
 
-* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_10.pdf)
-* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_17.pdf)
-* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_02_24.pdf)
-* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_03.pdf)
-* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_10.pdf)
-* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_17.pdf)
-* [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_24.pdf)
-* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_03_31.pdf)
-* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_07.pdf)
-* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_14.pdf)
-* [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_21.pdf)
-* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_04_28.pdf)
-* [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_05.pdf)
-* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_12.pdf)
-* [Лекция №16](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_19.pdf)
-* [Лекция №17](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_26.pdf)
-
 ### Математическая статистика (лектор Блаженов А. В.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_superconspect.pdf)
