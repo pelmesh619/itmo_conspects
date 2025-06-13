@@ -203,6 +203,8 @@ public class Dog {
 
 В `java.util.concurrent` существуют потокобезопасные версии коллекций
 
+![Иерархия коллекций](images/javatech_collections.png)
+
 Помимо Java Collections Framework другие фреймворки, такие как Google Guava и Apache Commons Collections, реализуют свои коллекции
 
 Чтобы обрабатывать коллекции, в Java есть Stream API. Работает он как LINQ в C#:
