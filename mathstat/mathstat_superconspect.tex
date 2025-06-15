@@ -65,6 +65,8 @@
 
 \Defs Исправленной дисперсией называется величина $S^2 = \frac{n}{n - 1} D^* = \frac{1}{n - 1}\sum_{i = 1}^n (X_i - \overline{x})^2$
 
+\hypertarget{selective_distribution_function}{}
+
 \Def Выборочной функцией распределения $F^*(x)$ называется функция $F^*(x) = \frac{\text{число данных } x_i < x}{n}$
 
 \begin{MyTheorem}
@@ -90,6 +92,8 @@
     \ThNs{Колмогорова} $\sqrt{n} \sup_{x \in \Real} |F^*(x) - F(x)| \rightrightarrows K$ - распределение Колмогорова с 
     функцией распределения $F_K(x) = \sum_{j = -\infty}^{\infty} (-1)^j e^{-2 j^2 x^2}, \ x \in [0;\infty)$
 \end{MyTheorem}
+
+\hypertarget{initial_data_processing}{}
 
 \subsection{Начальная обработка статданных}
 
@@ -2941,7 +2945,99 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
 \begin{enumerate}
     \item Выборочная функция распределения. Теоремы Гливенко-Кантелли и Колмогорова.
+
+    \Def \hyperlink{selective_distribution_function}{Выборочной функцией распределения} $F^*(x)$ называется функция $F^*(x) = \frac{\text{число данных } x_i < x}{n}$
+
+    \begin{MyTheorem}
+        \Ths Выборочная функция распределения поточечно сходится к теоретической функции распределения:
+
+        \[\forall y \in \Real F^*(y) \overset{p}{\longrightarrow} F(y)\]
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{Гливенко-Кантелли} $\sup_{x \in \Real} |F^*(x) - F(x)| \overset{p}{\longrightarrow} 0$
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{Колмогорова} $\sqrt{n} \sup_{x \in \Real} |F^*(x) - F(x)| \rightrightarrows K$ - распределение Колмогорова с 
+        функцией распределения $F_K(x) = \sum_{j = -\infty}^{\infty} (-1)^j e^{-2 j^2 x^2}, \ x \in [0;\infty)$
+    \end{MyTheorem}
+
     \item Вариационный и интервальный вариационный ряды. Полигон и гистограмма, ее свойства.
+
+        
+    \hyperlink{initial_data_processing}{Начальная обработка статданных}
+
+    \begin{enumerate}
+        \item Ранжирование данных - упорядочиваем выборки по возрастанию. В результате получаем вариационный ряд $\vec{X} = (X_{(1)}, X_{(2)}, \dots, X_{(n)})$
+
+        $X_{(1)} = \min X_i; \quad X_{(n)} = \max X_i$
+
+        $X_{(i)} = i$-ая порядковая статистика
+
+        \item Объединим повторяющиеся данные - получаем т.н. частотный вариационный ряд
+
+        \begin{tabular}{c|c|c|c|c}
+            $X_i$ & $X_{(1)}$ & \dots & $X_{(r)}$ & $\sum$ \\ 
+            \hline
+            $n_i$ & $n_1$ & \dots & $n_r$ & $n$ \\ 
+        \end{tabular}
+
+        Иногда часть данных отбрасывается сверху и снизу (по 5, по 10, по 5\% и так далее), чтобы сделать выборку репрезентативной
+
+        Тогда $\overline{x} = \frac{1}{n} \sum X_i n_i$, $D^* = \frac{1}{n} \sum (X_i - \overline{x})^2 n_i$
+        
+        \item Чтобы уменьшить количество вычислений или сделать гистограмму, делают интервальный вариационный ряд: 
+        разбиваем данные на интервалы и считаем, сколько данных $n_i$ попало в интервал. 
+
+        Тогда $n_i$ - частота интервала $A_i$
+
+        Есть два основные способа разбиения на интервалы: 
+
+        \begin{enumerate}
+            \item Интервалы одинаковой длины
+            \item Равнонаполненные интервалы (в каждом интервале примерно одинаковое количество данных)
+        \end{enumerate}
+
+        Число интервалов $K$ такое, что $\frac{K(n)}{n} \longrightarrow 0$ и $K(n) \underset{n \to \infty}{\longrightarrow} \infty$
+
+        Обычно применяют формулу Стерджесса $K \approx 1 + \log_2 n$ или $K \approx \sqrt[3]{n}$
+
+        Пусть получили интервальный вариационный ряд
+
+        \begin{tabular}{c|c|c|c|c|c}
+            интервалы & $[a_0; a_1)$ & $[a_1; a_2)$ & \dots & $[a_{K - 1}; a_K]$ & $\sum$ \\ 
+            \hline
+            частоты & $n_1$ & $n_2$ & \dots & $n_K$ & $n$ \\ 
+        \end{tabular}
+    \end{enumerate}
+
+    \smallvspace
+        
+    \begin{multicols}{2}
+        \begin{itemize}
+            \item Гистограмма
+
+            Строится ступенчатая фигура из прямоугольников, основание $i$-ого прямоугольника - интервал, 
+            высота прямоугольника - $\frac{n_i}{n l_i}$, где $l_i$ - длина интервала. 
+            Визуально можно сделать гипотезу, как ведет себя распределение. 
+
+            \begin{center}
+                \includegraphics[width=0.4\textwidth]{mathstat/images/mathstat_2025_02_11_1}
+            \end{center}
+
+            \item Полигон
+
+            На оси абсцисс отмечаем значения частотного вариационного ряда, по оси ординат - их частоты. 
+            Получившиеся точки соединяем отрезками
+
+            \begin{center}
+                \includegraphics[width=0.4\textwidth]{mathstat/images/mathstat_2025_02_11_2}
+            \end{center}
+        \end{itemize}
+    \end{multicols}
+
+
     \item Точечные оценки. Их свойства: состоятельность, несмещенность, эффективность.
     \item Точечные оценки моментов. Свойства оценок математического ожидания и дисперсии.
     \item Метод моментов. Пример.
