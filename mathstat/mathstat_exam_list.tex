@@ -1149,8 +1149,130 @@
     \end{enumerate}
 
     \item Свойства ошибок в модели линейной парной регрессии. Анализ дисперсии фактора-результата. Коэффициент детерминации, его свойства.
+
+    Пусть при $n$ экспериментах получены значения случайных величин $X$ и $Z$: $(X_1, Z_1), \dots, (X_n, Z_n)$
+
+    Пусть $X = \alpha + \beta Z + \varepsilon$ - теоретическая модель линейной регрессии, где $\varepsilon$ - случайная величина,
+    отражающая влияние невключенных факторов, нелинейность модели, ошибок измерений и просто случая.
+
+    Пусть построили с помощью метода наименьших квадратов выборочное уравнение линейной регрессии $\hat X = a + b Z$
+
+    Обозначим $\hat \varepsilon_i = X_i - \hat X_i$ - экспериментальная ошибка, разница между наблюдаемыми значениями и 
+    вычисляемыми по модели
+
+    Тогда $X_i = \hat X_i + \hat \varepsilon_i$ или $X_i = a + b Z_i + \hat \varepsilon_i$, где $a$ и $b$ - точечные оценки параметров $\alpha$ и $\beta$
+
+    Свойства $\hat \varepsilon_i$:
+
+    \begin{enumerate}
+        \item $\overline{\hat \varepsilon_i} = 0$
+
+        \begin{MyProof}
+            $a = \overline{X} - b \overline{Z} \Longrightarrow a + b \overline{Z} = \overline{X} \Longrightarrow \overline{\hat \varepsilon_i} = \overline{X_i - (a + b Z_i)} = \overline{X} - \overline{a + b Z_i} = \overline{X} - \overline{X} = 0$
+        \end{MyProof}
+
+        \item $\cov (\hat X, \hat \varepsilon) = 0$
+
+        \begin{MyProof}
+            $b = \overline{\overline{xz} - \overline{x} \cdot \overline{z}}{\hat \sigma^2_z} = \overline{\cov (X, Z)}{D(Z)} \Longrightarrow \cov (X, Z) - b D(Z) = 0$
+
+            $\cov (\hat X, \hat \varepsilon) = \cov (a + b Z, X - a - bZ) = \cov (bZ, X - bZ) = \cov (bZ, x) - \cov (bZ, bZ) = b \cov (Z, X) - b^2 D(Z) = b (\cov (Z, X) - b D(Z)) = 0$
+        \end{MyProof}
+    \end{enumerate}
+
+    \Def $D(X) = \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{X})^2$ - дисперсия наблюдаемых значений
+
+    \Defs $\hat D(X) = \frac{1}{n} \sum_{i = 1}^n (\hat X_i - \overline{X})^2$ - дисперсия расчетных значений
+
+    \Defs $D(\hat \varepsilon) = \frac{1}{n} \sum_{i = 1}^n (\hat \varepsilon_i)^2$ - дисперсия остатков
+
+    Так как $X = \hat X + \hat \varepsilon$, $\cov (\hat X, \hat \varepsilon) = 0$, то $D(X) = D(\hat X) + D(\hat \varepsilon) + 2\cov (\hat X, \hat \varepsilon) = D(\hat X) + D(\hat \varepsilon)$
+
+    \begin{MyTheorem}
+        \Ths $D(X) = D(\hat X) + D(\hat \varepsilon)$
+    \end{MyTheorem}
+
+    Очевидно, что качество модели будет тем лучше, чем меньше будет дисперсия остатков
+
+    \Def Коэффициентом детерминации $R^2$ называется величина $R^2 = \frac{D(\hat X)}{D(X)}$ или $R^2 = 1 - \frac{D(\hat \varepsilon)}{D(X)}$
+
+    \Notas Смысл $R^2$ - доля объясненной дисперсии, а $1 - R^2$ - доля необъясненной дисперсии
+
+    Свойства: 
+
+    \begin{enumerate}
+        \item $0 \leq R^2 \leq 1$
+        \item Если $R^2 = 1$, то $D(\hat \varepsilon) = 0 \Longrightarrow \hat \varepsilon_i = \overline{\hat \varepsilon_i} = 0$, то есть точки лежат строго на 
+        линии регрессии, модель идеальна
+
+        \item Если $R^2 = 0$, то $D(\hat X) = 0 \Longrightarrow \hat X = \overline{x}$, то есть получаем примитивную, ничего не объясняющую модель
+    \end{enumerate}
+
+    Чем больше $R^2$, тем лучше качество модели
+
     \item Проверка гипотезы о значимости уравнения линейной регрессии. Связь между коэффициентом детерминации и коэффициентом линейной корреляции.
+
+    \hyperlink{linear_regression_hypothesis}{Проверка гипотезы о значимости уравнения линейной регрессии}: проверяется $H_0 : R^2_\text{теор} = 0$ (уравнение регрессии статистически не значимо) против $H_1 : R^2_\text{теор} \neq 0$
+
+    \begin{MyTheorem}
+        \Ths Если $H_0$ верна, то $F = \frac{R^2 (n - 2)}{1 - R^2} \in F(1, n - 2)$
+    \end{MyTheorem}
+
+    Пусть $t_\alpha$ - квантиль $F(1, n - 2)$ уровня $\alpha$, тогда:
+
+    \begin{cases}
+        H_0 : R^2_{\text{теор}} = 0 & \text{ если } F < t_\alpha \\
+        H_0 : R^2_{\text{теор}} \neq 0 & \text{ если } F \geq t_\alpha \\
+    \end{cases}
+
+    \Nota Если $H_0 : R^2_{\text{теор}} = 0$, то $H_0 : \beta = 0$
+
+    \hyperlink{correlation_coefficient_connection}{Связь между коэффициентом детерминации и коэффициентом линейной корреляции}{}
+
+    \begin{enumerate}
+        \item $\sqrt{R^2} = r_{\hat X, X}$ - коэффициент корреляции между $\hat X$ и $X$
+        \begin{MyProof}
+            $r_{\hat X, X} = \frac{\cov (\hat X, X)}{\sqrt{D(\hat X) D(X)}} = \frac{\cov (\hat X, \hat X + \hat \varepsilon)}{\sqrt{D(\hat X) D(X)}} = 
+            \frac{D(\hat X) + \cancelto{0}{\cov (\hat X, \hat \varepsilon)}}{\sqrt{D(\hat X) D(X)}} = \sqrt{\frac{D(\hat X)}{D(X)}} = R$
+        \end{MyProof}
+
+        \item $r_{\hat X, X} = |r_{X, Z}|$
+
+        \begin{MyProof}
+            $\cov (\hat X, X) = \cov (a + bZ, X) = b \cov (Z, X)$
+
+            $D(\hat X) = D(a + b Z) = b^2 D(Z)$
+
+            $r_{\hat X, X} = \frac{\cov (\hat X, X)}{\sqrt{D(\hat X) D(X)}} = \frac{b \cov (Z, X)}{\sqrt{b^2 D(Z) D(X)}} = \left|\frac{\cov (X, Z)}{\sqrt{D(Z) D(X)}}\right| = |r_{X, Z}|$
+        \end{MyProof}
+    \end{enumerate}
+
     \item Теорема Гаусса-Маркова.
+
+    \begin{MyTheorem}
+        \ThNs{gauss_markov_theorem} Пусть $X_i = \alpha + \beta Z_i + \varepsilon_i$ - теоретическая модель регрессии
+
+        $X = a + b Z$ - модель, полученная по методу наименьших квадратов
+
+        Если выполнено условия:
+
+        \begin{enumerate}[label=\asbuk*),ref=\asbuk*]
+            \item Случайные члены $\varepsilon_i$ независимые случайные величины, имеющие одинаковое нормальное распределение $\varepsilon_i \in N(0, \sigma^2)$
+            \item Случайные величины $\varepsilon_i$ и $Z_i$ - независимы
+        \end{enumerate}
+
+        Тогда $a$ и $b$ - состоятельные, несмещенные, эффективные оценки параметров $\alpha$ и $\beta$, то есть
+
+        \begin{enumerate}
+            \item Состоятельность: $a \underset{n \to \infty}{\ConvergesInProbability} \alpha, b \underset{n \to \infty}{\ConvergesInProbability} \beta$
+            \item Несмещенность: $Ea = \alpha, Eb = \beta$
+            \item Наименьшая дисперсия, равная:
+
+            $D a = \frac{\overline{z^2} \sigma^2}{n D(Z)}, Db = \frac{\sigma^2}{n D(Z)}$
+        \end{enumerate}
+    \end{MyTheorem}
+
+
     \item Стандартные ошибки коэффициентов регрессии. Их доверительные интервалы.
     \item Прогнозирование в модели линейной парной регрессии. Стандартная ошибка прогноза, доверительный интервал прогноза.
     \item Общая модель линейной регрессии. Вывод нормального уравнения.
