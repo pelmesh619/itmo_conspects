@@ -1612,7 +1612,56 @@
     \end{enumerate}
 
     \item Взвешенный МНК.
+
+    \hyperlink{weighted_mls}{Взвешенный МНК}: пусть $\varepsilon_i \in N(0, v_i \sigma^2)$ и независимы (то есть дисперсия ошибки зависит от номера наблюдения). Другими словами, $D \vec \varepsilon = \sigma^2 V$, где $V = \operatorname{diag} (v_1, \dots, v_n)$
+
+    Логично наблюдениям с меньшей дисперсии ошибки предать больший вес. Пусть вес $w_i = \frac{1}{v_i}$. Домножим обе части уравнения регрессии на $\sqrt{w_i}$, тогда получим $\vec \tilde{X} = \tilde Z^T \vec \beta + \vec \tilde{\varepsilon}$, где $\tilde x_i=  \sqrt{w_i} x_i$, $\tilde Z^{(j)}_i = \sqrt{w_i} Z^{(j)}_i$, $\tilde \varepsilon_i = \sqrt{w_i} \varepsilon_i$
+
+    $D \vec \tilde{\varepsilon} = D(\sqrt{w_i} \varepsilon_i) = w_i D \varepsilon_i = \frac{1}{v_i} v_i \sigma^2 = \sigma^2$ - получаем, что $D \vec \tilde{\varepsilon} = \sigma^2 E_n$, то есть стандартную ситуацию
+
+    Тогда оценки $\vec b$ будут несмещенными и эффективными
+
+    Недостаток у этого метода: нужно знать коэффициенты $v_i$
+
+    \Ex Рассмотрим модель линейной парной регрессии без свободного члена $X = \beta_0 Z + \varepsilon$
+
+    Теоретическое уравнение $A \vec B = Z \vec X$, где $Z = \left(Z_1, \dots, Z_n\right)$ - матрица плана, $\vec B = \hat \beta_0$, $A = Z Z^T = z_1^2 + \dots + z_n^2$, $Z \vec X = z_1 x_1 + \dots + z_n x_n$
+
+    $\sum_{i = 1}^n z^2_i \hat \beta_0 = \sum_{i = 1}^n z_i x_i \Longrightarrow \hat \beta_0 = \frac{\sum_{z_i x_i}}{\sum z^2_i}$ - оценка МНК 
+
+    По взвешенному методу наименьших квадратов $\tilde \beta_0 = \frac{\sum w_i z_i x_i}{\sum w_i z_i^2}$ - оценка взвешенного МНК
+
     \item Приемы сведения нелинейных регрессий к линейным.
+
+    Помимо общего МНК многие нелинейные зависимости могут быть сведены к линейным при помощи простых приемов
+
+    \ExN{а} $X = \alpha + \beta f(Z) + \varepsilon$, где $f(x)$ - известная функция
+
+    Тогда можно взять новый фактор $Z^\prime = f(Z)$, свели задачу к стандартной, получаем уравнение $X = \alpha + \beta Z^\prime + \varepsilon$
+
+    Пример: $X = \alpha + \beta \ln Z + \varepsilon$, то $Z^\prime = \ln Z$
+
+    \ExN{б} $X = \alpha Z^\beta \varepsilon$
+
+    Логарифмируем: $\ln X = \ln \alpha + \beta \ln Z + \ln \varepsilon \Longleftrightarrow X^\prime = \alpha^\prime + \beta Z^\prime + \varepsilon^\prime$
+
+    \ExN{в} $X = \alpha e^{\beta Z} \varepsilon$
+
+    Логарифмируем: $\ln X = \ln \alpha + \beta Z + \ln \varepsilon \Longleftrightarrow X^\prime = \alpha^\prime + \beta Z + \varepsilon^\prime$
+
+    \ExN{г} Зависимость в виде полинома: $X = \beta_0 + \beta_1 Z + \beta_2 Z^2 + \dots + \beta_k Z^k$
+
+    Введем новые факторы $Z_1 = Z, Z_2 = Z^2, \dots, Z_k = Z^k$
+
+    $X = \beta_0 + \beta_1 Z + \beta_2 Z_2 + \dots + \beta_k Z_k$
+
+    При этом, чтобы избежать мультиколлинеарность, лучше брать $k < 4$. При больших $k$ получить многочлен большой степени, который сможет гарантировано пройти через все точки - это будет статистически незначимо
+
+
+    \Nota Если из теории мы знаем вид зависимости и подбираем ее под данные, то желательно строить модель как можно проще
+
+    \Notas Из построенных моделей предпочтительней та, где коэффициент детерминации больше
+
     \item Математические датчики случайных чисел.
     \item Моделирование случайных величин методом обратной функции (включая дискретный случай).
     \item Моделирование нормальной случайной величины.
