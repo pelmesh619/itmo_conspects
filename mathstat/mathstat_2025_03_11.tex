@@ -4,9 +4,11 @@ $date$=11.03.2025
 
 \section{Лекция 5.}
 
-\subsection{Квантильное распределение}
+\subsection{Квантиль распределение}
 
-Предполагаем, что распределение абсолютно непрерывное и $F(x)$ - функция распределения
+\hypertarget{quantile_distribution}{}
+
+Предполагаем, что распределение абсолютно непрерывное, и $F(x)$ - функция распределения
 
 \DefN{1} Число $t_\gamma$ называется квантилем распределения уровня $\gamma$, если значения
 функции распределения $F(t_\gamma) = \gamma$ или $P(X < t_\gamma) = \gamma$ ($t_\gamma = F^{-1}(\gamma)$)
@@ -26,6 +28,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \subsection{Интервальные оценки}
 
+\hypertarget{interval_estimation}{}
+
 Недостатки точечных оценок - неизвестно насколько они далеки от реального значения параметра и 
 насколько им можно доверять. Особенно это заметно при малых выборках. Поэтому мы указываем интервал, в котором 
 лежит этот параметр с заданной вероятностью (надежностью) $\gamma$. Такие оценки называются интервальными 
@@ -36,7 +40,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \Nota Если имеем дискретную случайную величину, то $P(\theta^-_\gamma < \theta < \theta^+_\gamma) \geq \gamma$
 
-\Notas Так как параметр $\theta$ - константа, то бесмысленно говорить о его попадании в интервал. Правильно: 
+\Notas Так как параметр $\theta$ - константа, то бессмысленно говорить о его попадании в интервал. Правильно: 
 доверительный интервал накрывает параметр $\theta$ с вероятностью $\gamma$
 
 \NotaN{1} $\alpha = 1 - \gamma$ называется уровнем значимости доверительного интервала
@@ -82,6 +86,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 Хотим найти интервалы для параметров $a$ и $\sigma^2$
 
 \begin{enumerate}[label*=\Roman*.]
+    \hypertarget{confidence_interval_for_a_known_sigma}{}
+
     \item Доверительный интервал для параметра $a$ при известном значении $\sigma^2$
 
     По пункту 1 из теоремы $\sqrt{n} \frac{\overline{x} - a}{\sigma} \in N(0, 1)$ 
@@ -104,6 +110,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     \overline{x} + t_\gamma \frac{\sigma}{\sqrt{n}}\right)$, 
     где $t_\gamma$ - квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
 
+    \hypertarget{confidence_interval_for_a_unknown_sigma}{}
+
     \item Доверительный интервал для параметра $a$ при неизвестном $\sigma^2$
 
     Из пункта 4 из теоремы $\sqrt{n} \frac{\overline{x} - a}{S} \in T_{n - 1}$
@@ -116,6 +124,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     Аналогично с примером выше получаем интервал $\left(\overline{x} - t_\gamma \frac{S}{\sqrt{n}}, 
     \overline{x} + t_\gamma \frac{S}{\sqrt{n}}\right)$, 
     где $t_\gamma$ - квантиль $T_{n - 1}$ уровня $\frac{1 + \gamma}{2}$
+
+    \hypertarget{confidence_interval_for_sigma_unknown_a}{}
 
     \item Доверительный интервал для параметра $\sigma^2$ при неизвестном $a$
 
@@ -136,6 +146,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     Получаем интервал $\left(\frac{(n - 1)S^2}{\chi_2^2}, \frac{(n - 1)S^2}{\chi_1^2}\right)$, где $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
 
     \Nota Данный интервал не симметричен относительно неизвестного параметра $\sigma^2$
+
+    \hypertarget{confidence_interval_for_sigma_known_a}{}
 
     \item Доверительный интервал для параметра $\sigma^2$ при известном $a$
 
