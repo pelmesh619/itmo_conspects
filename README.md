@@ -52,7 +52,7 @@
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_25.html) <!-- Макаревич -->
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_02.html) <!-- Макаревич -->
 * Лекция №14 - календарный праздник
-* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_16.html) - в производстве <!-- Макаревич -->
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_16.html) <!-- Макаревич -->
 * Лекция №16 - в производстве <!-- Макаревич -->
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
@@ -65,7 +65,7 @@
 
 ### Математическая статистика (лектор Блаженов А. В.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_superconspect.pdf)
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_superconspect.pdf)
 
 * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_11.pdf)
 * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_18.pdf)
