@@ -835,9 +835,11 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
 
 \section{Лекция 5.}
 
-\subsection{Квантильное распределение}
+\subsection{Квантиль распределение}
 
-Предполагаем, что распределение абсолютно непрерывное и $F(x)$ - функция распределения
+\hypertarget{quantile_distribution}{}
+
+Предполагаем, что распределение абсолютно непрерывное, и $F(x)$ - функция распределения
 
 \DefN{1} Число $t_\gamma$ называется квантилем распределения уровня $\gamma$, если значения
 функции распределения $F(t_\gamma) = \gamma$ или $P(X < t_\gamma) = \gamma$ ($t_\gamma = F^{-1}(\gamma)$)
@@ -857,6 +859,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \subsection{Интервальные оценки}
 
+\hypertarget{interval_estimation}{}
+
 Недостатки точечных оценок - неизвестно насколько они далеки от реального значения параметра и 
 насколько им можно доверять. Особенно это заметно при малых выборках. Поэтому мы указываем интервал, в котором 
 лежит этот параметр с заданной вероятностью (надежностью) $\gamma$. Такие оценки называются интервальными 
@@ -867,7 +871,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \Nota Если имеем дискретную случайную величину, то $P(\theta^-_\gamma < \theta < \theta^+_\gamma) \geq \gamma$
 
-\Notas Так как параметр $\theta$ - константа, то бесмысленно говорить о его попадании в интервал. Правильно: 
+\Notas Так как параметр $\theta$ - константа, то бессмысленно говорить о его попадании в интервал. Правильно: 
 доверительный интервал накрывает параметр $\theta$ с вероятностью $\gamma$
 
 \NotaN{1} $\alpha = 1 - \gamma$ называется уровнем значимости доверительного интервала
@@ -913,6 +917,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 Хотим найти интервалы для параметров $a$ и $\sigma^2$
 
 \begin{enumerate}[label*=\Roman*.]
+    \hypertarget{confidence_interval_for_a_known_sigma}{}
+
     \item Доверительный интервал для параметра $a$ при известном значении $\sigma^2$
 
     По пункту 1 из теоремы $\sqrt{n} \frac{\overline{x} - a}{\sigma} \in N(0, 1)$ 
@@ -935,6 +941,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     \overline{x} + t_\gamma \frac{\sigma}{\sqrt{n}}\right)$, 
     где $t_\gamma$ - квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
 
+    \hypertarget{confidence_interval_for_a_unknown_sigma}{}
+
     \item Доверительный интервал для параметра $a$ при неизвестном $\sigma^2$
 
     Из пункта 4 из теоремы $\sqrt{n} \frac{\overline{x} - a}{S} \in T_{n - 1}$
@@ -947,6 +955,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     Аналогично с примером выше получаем интервал $\left(\overline{x} - t_\gamma \frac{S}{\sqrt{n}}, 
     \overline{x} + t_\gamma \frac{S}{\sqrt{n}}\right)$, 
     где $t_\gamma$ - квантиль $T_{n - 1}$ уровня $\frac{1 + \gamma}{2}$
+
+    \hypertarget{confidence_interval_for_sigma_unknown_a}{}
 
     \item Доверительный интервал для параметра $\sigma^2$ при неизвестном $a$
 
@@ -967,6 +977,8 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     Получаем интервал $\left(\frac{(n - 1)S^2}{\chi_2^2}, \frac{(n - 1)S^2}{\chi_1^2}\right)$, где $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
 
     \Nota Данный интервал не симметричен относительно неизвестного параметра $\sigma^2$
+
+    \hypertarget{confidence_interval_for_sigma_known_a}{}
 
     \item Доверительный интервал для параметра $\sigma^2$ при известном $a$
 
@@ -3368,11 +3380,131 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
     \end{MyTheorem}
 
     \item Квантили распределений (оба определения). Функции для их вычисления в EXEL.
+
+    Пусть нам дано распределение абсолютно непрерывное, и $F(x)$ - функция распределения
+
+    \DefN{1} Число $t_\gamma$ называется \hyperlink{quantile_distribution}{квантилем распределения} уровня $\gamma$, если значения
+    функции распределения $F(t_\gamma) = \gamma$ или $P(X < t_\gamma) = \gamma$ ($t_\gamma = F^{-1}(\gamma)$)
+
+    % https://www.geogebra.org/calculator/ezemup66
+
+    \begin{center}
+        \includegraphics[width=7cm]{mathstat/images/mathstat_2025_03_11_1}
+    \end{center}
+
+    \Ex Медиана - квантиль уровня $\frac{1}{2}$
+
+    \DefN{2} Число $t_\alpha$ называется квантилем уровня значимости $\alpha$, если
+    $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
+
+    Ясно, что $\gamma = 1 - \alpha$
+
+    В Excel для вычисления квантилей распределения используются обратные функции распределения: \verb|НОРМ.СТ.ОБР()|, \verb|F.ОБР()|, \verb|ХИ2.ОБР()|, \verb|СТЬЮДЕНТ.ОБР()|
+
     \item Интервальные оценки. Определения, смысл, терминология.
+
+    Недостатки точечных оценок - неизвестно насколько они далеки от реального значения параметра и 
+    насколько им можно доверять. Особенно это заметно при малых выборках. Поэтому мы указываем интервал, в котором 
+    лежит этот параметр с заданной вероятностью (надежностью) $\gamma$. Такие оценки называются интервальными 
+    (доверительными)
+
+    \Def \hyperlink{interval_estimation}{Интервал} $(\theta^-_\gamma; \theta^+_\gamma)$ называется доверительным интервалом параметра $\theta$
+    надежности $\gamma$, если вероятность $P(\theta^-_\gamma < \theta < \theta^+_\gamma) = \gamma$
+    
+    \Nota Если имеем дискретную случайную величину, то $P(\theta^-_\gamma < \theta < \theta^+_\gamma) \geq \gamma$
+    
+    \Notas Так как параметр $\theta$ - константа, то бессмысленно говорить о его попадании в интервал. Правильно: 
+    доверительный интервал накрывает параметр $\theta$ с вероятностью $\gamma$
+    
+    \NotaN{1} $\alpha = 1 - \gamma$ называется уровнем значимости доверительного интервала
+    
+    \NotaN{2} Обычно пытаются строить симметричный доверительный интервал относительно несмещенной оценки $\theta^*$
+    
+    \NotaN{3} Возникает вопрос, какой уровень $\gamma$ выбрать для исследования.
+    Стандартные уровени надежности $\gamma$: $0.9, \ 0.95, \ 0.99, \ 0.999$. Самый мейнстримный - $0.95$. 
+    В малых выборках используют $0.9$
+
     \item Доверительный интервал для математического ожидания нормального распределения при известном $\sigma$.
+
+    \hyperlink{confidence_interval_for_a_known_sigma}{Доверительный интервал для параметра $a$ при известном значении $\sigma^2$}
+
+    По пункту 1 из теоремы $\sqrt{n} \frac{\overline{x} - a}{\sigma} \in N(0, 1)$ 
+
+    $P\left(-t_\gamma < \sqrt{n} \frac{\overline{x} - a}{\sigma} < t_\gamma\right) = 
+    P\left(\left|\sqrt{n} \frac{\overline{x} - a}{\sigma}\right| < t_\gamma\right) = 2F_0 (t_\gamma) - 1 = \gamma$
+
+    $F_0(t_\gamma) = \frac{1 + \gamma}{2} \Longrightarrow t_\gamma$ - квантиль уровня 
+    $\frac{1 + \gamma}{2}$ для $N(0, 1)$, где
+    $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{z^2}{2}} dz$
+
+    Решая неравенство, получаем $-t_\gamma < \sqrt{n} \frac{\overline{x} - a}{\sigma} < t_\gamma$
+
+    $-t_\gamma \frac{\sigma}{\sqrt{n}} < \overline{x} - a < t_\gamma \frac{\sigma}{\sqrt{n}}$
+
+    $\overline{x} - t_\gamma \frac{\sigma}{\sqrt{n}} < a < \overline{x} + t_\gamma \frac{\sigma}{\sqrt{n}}$ - 
+    симметричный интервал относительно $\overline{x}$
+
+    Доверительный интервал надежности $\gamma$: $\left(\overline{x} - t_\gamma \frac{\sigma}{\sqrt{n}}, 
+    \overline{x} + t_\gamma \frac{\sigma}{\sqrt{n}}\right)$, 
+    где $t_\gamma$ - квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
+
     \item Доверительный интервал для математического ожидания нормального распределения при неизвестном $\sigma$.
+
+    \hyperlink{confidence_interval_for_a_unknown_sigma}{Доверительный интервал для параметра $a$ при неизвестном $\sigma^2$}
+
+    Из пункта 4 из теоремы $\sqrt{n} \frac{\overline{x} - a}{S} \in T_{n - 1}$
+
+    $P\left(-t_\gamma < \sqrt{n} \frac{\overline{x} - a}{S} < t_\gamma\right) = P\left(\left|\sqrt{n} \frac{\overline{x} - a}{S}\right| < t_\gamma\right) = 2F_{T_{n - 1}}(t_\gamma) = \gamma$
+
+    $F_{T_{n - 1}}(t_\gamma) = \frac{1 + \gamma}{2} \Longrightarrow t_\gamma$ - квантиль $T_{n - 1}$ уровня 
+    $\frac{1 + \gamma}{2}$
+
+    Аналогично с примером выше получаем интервал $\left(\overline{x} - t_\gamma \frac{S}{\sqrt{n}}, 
+    \overline{x} + t_\gamma \frac{S}{\sqrt{n}}\right)$, 
+    где $t_\gamma$ - квантиль $T_{n - 1}$ уровня $\frac{1 + \gamma}{2}$
+
     \item Доверительный интервал для дисперсии нормального распределения при неизвестном $a$.
+
+    \hyperlink{confidence_interval_for_sigma_unknown_a}{Доверительный интервал для параметра $\sigma^2$ при неизвестном $a$}
+
+    По пункту 3 из теоремы $\sum_{i = 1}^n \left(\frac{X_i - \overline{x}}{\sigma}\right)^2 = \frac{(n - 1)S^2}{\sigma^2} = 
+    \frac{nD^*}{\sigma^2} \in H_{n - 1}$
+
+    Пусть $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
+
+    Тогда $P\left(\chi_1^2 < \frac{(n - 1)S^2}{\sigma^2} < \chi_2^2\right) = F_{H_{n - 1}}(\chi_1^2) - F_{H_{n - 1}}(\chi_2^2) = \frac{1 - \gamma}{2} - \frac{1 + \gamma}{2} = \gamma$
+
+    $\chi_1^2 < \frac{(n - 1)S^2}{\sigma^2} < \chi_2^2$
+
+    $\frac{1}{\chi_2^2} < \frac{\sigma^2}{(n - 1)S^2} < \frac{1}{\chi_1^2}$
+
+    $\frac{(n - 1)S^2}{\chi_2^2} < \sigma^2 < \frac{(n - 1)S^2}{\chi_1^2}$ или 
+    $\frac{nD^*}{\chi_2^2} < \sigma^2 < \frac{nD^*}{\chi_1^2}$
+
+    Получаем интервал $\left(\frac{(n - 1)S^2}{\chi_2^2}, \frac{(n - 1)S^2}{\chi_1^2}\right)$, где $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
+
+    \Nota Данный интервал не симметричен относительно неизвестного параметра $\sigma^2$
+
     \item Доверительный интервал для дисперсии нормального распределения при известном $a$.
+
+    \hyperlink{confidence_interval_for_sigma_known_a}{Доверительный интервал для параметра $\sigma^2$ при известном $a$}
+
+    По пункту 2 из теоремы $\sum_{i = 1}^n \left(\frac{X_i - a}{\sigma}\right)^2 = \frac{n \tilde{\sigma^2}}{\sigma^2} \in H_{n - 1}$
+    
+    Пусть $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
+
+    Тогда $P\left(\chi_1^2 < \frac{n \tilde{\sigma^2}}{\sigma^2} < \chi_2^2\right) = F_{H_{n}}(\chi_1^2) - F_{H_{n}}(\chi_2^2) = \frac{1 - \gamma}{2} - \frac{1 + \gamma}{2} = \gamma$
+
+    Аналогично получаем интервал $\left(\frac{n \tilde{\sigma^2}}{\chi_2^2}, \frac{n \tilde{\sigma^2}}{\chi_1^2}\right)$, 
+    где $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$, $n \tilde{\sigma^2} = \sum_{i = 1}^n (X_i - a)^2$
+
+    \Nota $\tilde{\sigma^2} - D^* = \frac{1}{n} \sum_{i = 1}^n (X_i - a)^2 - \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{x})^2 = 
+    \frac{1}{n} \sum_{i = 1}^n (X_i^2 - 2aX_i + a^2 - X_i^2 + 2 \overline{x} X_i - \overline{x}^2) = 
+    \frac{1}{n} (na^2 - 2a n \overline{x} + 2 \overline{x} \cdot n \overline{x} - n \overline{x}^2) = 
+    a^2 - 2a \overline{x} + \overline{x}^2 = (a - \overline{x})^2 \Longrightarrow \tilde{\sigma^2} = D^* + (a - \overline{x})^2$
+
+    Получаем $\left(\frac{n (D^* + (a - \overline{x})^2)}{\chi_2^2}, \frac{n (D^* + (a - \overline{x})^2)}{\chi_1^2}\right)$
+
     \item Проверка статистических гипотез. Определения, терминология. Уровень значимости и мощность критерия.
     \item Способы сравнения критериев проверки гипотез.
     \item Построение критериев согласия (основные принципы).
