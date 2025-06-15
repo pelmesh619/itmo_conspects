@@ -1274,7 +1274,67 @@
 
 
     \item Стандартные ошибки коэффициентов регрессии. Их доверительные интервалы.
+
+    Из теоремы видим, что $Da$ и $Db$ зависят от дисперсии $\sigma^2$ случайного члена. 
+    По экспериментальным ошибкам получаем оценку данной дисперсии:
+
+    $D(\hat \varepsilon) = \frac{1}{n} \sum_{i = 1}^n {\hat \varepsilon_i}^2 \underset{n \to \infty}{\ConvergesInProbability} \sigma^2$
+
+    Однако эта оценка является смещенной: $E(D(\hat \varepsilon)) = \frac{n - 2}{n} \sigma^2$
+
+    Поэтому несмещенной оценкой дисперсии $\sigma^2$ является величина $S^2 = \frac{1}{n - 2} \sum_{i = 1}^n {\hat \varepsilon_i}^2$
+
+    \Def Величина $S$ называется \hyperlink{regression_coefficient_error}{стандартной ошибкой регрессии}
+
+    Смысл: характеризует разброс наблюдаемых значений вокруг линии регрессии
+
+    \Notas Заменим в теореме Гаусса-Маркова $\sigma^2$ на $S^2$, получаем оценки дисперсий $Da$ и $Db$: $S_a^2 = \frac{\overline{z^2} S^2}{n D(z)}, S^2_b = \frac{S^2}{n D(Z)}$
+
+    \Defs $S_a$ и $S_b$ называются стандартным ошибками коэффициентов регрессии
+
+    Пусть $t_\gamma$ - квантиль $|T_{n - 2}|$ уровня $\gamma$
+
+    Тогда доверительные интервалы надежности $\gamma$ для параметров $\alpha$ и $\beta$:
+
+    $\qquad \alpha: (a - t_\gamma S_a; a + t_\gamma S_a)$
+
+    $\qquad \beta: (b - t_\gamma S_b; b + t_\gamma S_b)$
+
     \item Прогнозирование в модели линейной парной регрессии. Стандартная ошибка прогноза, доверительный интервал прогноза.
+
+    Пусть $X = \alpha + \beta Z + \varepsilon$ - теоретическая модель
+
+    $\hat X = a + b Z$ - модель МНК, построенная по выборке объема $n$
+
+    С помощью данной модели надо дать прогноз значения $X_p$ при заданном значении $Z_p$ и оценить качество прогноза 
+
+    Теоретическое значение - $X_p = \alpha + \beta Z_p + \varepsilon$, а точечный прогноз $\hat X_p = a + b Z_p$
+
+    Разность между ними $\Delta_p = \hat X_p - X_p$ называется ошибкой предсказания
+
+    Свойства $\Delta_p$:
+
+    \begin{enumerate}
+        \item $E \Delta_p = 0$
+        \item $D (\Delta_p) = \left(1 + \frac{1}{n} + \frac{(Z_p - \overline{z})^2}{n DZ}\right) \sigma^2$
+
+        Заменив $\sigma^2$ на $S^2$, получим стандартную ошибку прогноза: $S_{\Delta_p} = S \sqrt{1 + \frac{1}{n} + \frac{(Z_p - \overline{z})^2}{n DZ}}$
+
+        \item $D(\Delta_p) > \sigma^2$ - то есть точность прогноза ограничена случайным членом $\varepsilon$
+
+        \item При $n \to \infty$ $D(\Delta_p) \ConvergesInProbability \sigma^2$ - качество модели тем лучше, чем больше объем выборки
+
+        \item Чем больше $Z_p$ отклоняется от $\overline{z}$, тем хуже качество прогноза. Наилучшее качество в точке $Z_p = \overline{z}: \ D(\Delta_p) = \left(1 + \frac{1}{n}\right) \sigma^2$
+
+        % https://www.geogebra.org/calculator/brxkjkqc
+
+        \begin{center}
+            \includegraphics[width=7cm]{mathstat/images/mathstat_2025_04_15_1}
+        \end{center}
+    \end{enumerate}
+    
+    Доверительный интервал для прогноза $X_p: (\hat X_p - t_\gamma S_{\Delta_p}; \hat X_p + t_\gamma S_{\Delta_p})$
+
     \item Общая модель линейной регрессии. Вывод нормального уравнения.
     \item Свойства ОНМК в уравнении общей линейной регрессии.
     \item Основная теорема об ОМНК (п.2 без доказательства).
