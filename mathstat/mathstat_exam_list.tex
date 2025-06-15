@@ -672,11 +672,182 @@
     Поэтому доверительные интервалы можно использовать для проверки гипотез
 
     \item Критерий хи-квадрат для параметрической гипотезы.
+
+    \hyperlink{chi_square_criterion}{Критерий \enquote{хи-квадрат} Пирсона}:
+
+    Пусть выборка разбита на $k$ интервалов $A_1, A_2, \dots, A_k$, $A_i = [a_{i - 1}, a_1)$
+
+    $n_i$ - соответствующая частота интервала
+
+    При распределении $\mathcal{F}_1$ теоретические вероятности попадания в эти интервалы $p_i = F_{\mathcal{F}_1}(a_i) - F_{\mathcal{F}_1}(a_{i - 1})$.
+    Тогда $n_i^\prime = p_i \cdot n$ - теоретические частоты
+
+    В качестве статистики критерия выберем $\chi^2_\text{набл.} = \sum_{i = 1}^k \frac{(n_i - n_i^\prime)^2}{n_i^\prime}$
+
+    \begin{MyTheorem}
+        \ThNs{Пирсона} Если $H_0 : \mathcal{F} = \mathcal{F}_1$ верна, то $\chi^2_\text{набл.} \rightrightarrows \chi^2_{k - 1}$ - 
+        распределение \enquote{хи-квадрат} с $k - 1$ степенями свободы
+    \end{MyTheorem}
+
+    Критерий: $\letsymbol t_\alpha$ - квантиль $\chi^2_{k - 1}$ уровня $\alpha$
+
+    \begin{cases}
+        H_0 : \mathcal{F} = \mathcal{F}_1, & \text{если } \chi^2_\text{набл.} < t_\alpha \\
+        H_1 : \mathcal{F} \neq \mathcal{F}_1, & \text{если } \chi^2_\text{набл.} \geq t_\alpha \\
+    \end{cases}
+
+    \Nota Часто обозначают $t_\alpha = \chi^2_\text{теор.}$
+
     \item Критерий хи-квадрат для гипотезы о распределении.
+
+    \hyperlink{chi_square_fishers_criterion}{Критерий \enquote{хи-квадрат} Фишера}
+
+    Пусть выборка разбита на $k$ интервалов $A_1, A_2, \dots, A_k$, $A_i = [a_{i - 1}, a_1)$
+
+    $n_i$ - соответствующая частота интервала $A_i$
+
+    \Def Оценка максимального правдоподобия по частотам называется значения неизвестных параметров,
+    при которых вероятность появления таких частот явялется максимальной
+
+    Пусть $\hat \theta = (\hat \theta_1, \dots, \hat \theta_n)$ - оценка максимального правдоподобия 
+    по частотам неизвестных параметров. Тогда теоретические вероятности попадания в интервал считаем по формуле 
+    $p_i = F_{\mathcal{F}_\theta} (a_i) - F_{\mathcal{F}_\theta} (a_{i - 1})$, теоретическая частота - $n_i^\prime = n p_i$
+
+    В качестве статистики критерия берется функция $\chi^2_\text{набл.} = \sum_{i = 1}^k \frac{(n_i - n_i^\prime)^2}{n_i^\prime}$
+
+    \begin{MyTheorem}
+        \ThNs{Фишера} 
+        
+        Если $H_0 : \mathcal{F} \in \mathcal{F}_\theta$ верна, 
+        то $\chi^2_\text{набл.} = \sum_{i = 1}^k \frac{(n_i - n_i^\prime)^2}{n_i^\prime} \rightrightarrows \chi^2_{k - m - 1}$ - 
+        распределение \enquote{хи-квадрат}, где $m$ - число параметров неизвестного распределения
+    \end{MyTheorem}
+    
+    $\letsymbol t_\alpha$ - квантиль $\chi^2_{k - m - 1}$ уровня $\alpha$
+
+    \begin{cases}
+        H_0 : \mathcal{F} = \mathcal{F}_1, & \text{если } \chi^2_\text{набл.} < t_\alpha \\
+        H_1 : \mathcal{F} \neq \mathcal{F}_1, & \text{если } \chi^2_\text{набл.} \geq t_\alpha \\
+    \end{cases}
+
     \item Критерий Колмогорова для гипотезы о распределении.
+
+    \hyperlink{kolmogorovs_criterion}{Критерий Колмогорова}
+
+    Если $\mathcal{F}_1$ - \underline{абсолютно непрерывное} распределение с функцией распределения $F(x)$, то применим критерий Колмогорова
+
+    $\letsymbol K = \sqrt{n} \sup_x |F^*(x) - F(x)|$, где $F^*(x)$ - выборочная функция распределения
+
+    То есть используем теорему Колмогорова: если $H_0 : \mathcal{F} = \mathcal{F}_1$, то $K =\sqrt{n} \sup_x |F^*(x) - F(x)| 
+    \rightrightarrows \mathcal{K}$ - распределение Колмогорова 
+    с функцией распределения $F_\mathcal{K}(x) = \sum_{j = -\infty}^\infty (-1)^j e^{-2j^2 x^2}$
+
+    Для уровня значимости $\alpha$ находим квантиль $t_\alpha$ такой, что $P(\xi \geq t_\alpha) = \alpha$, 
+    где $\xi \in \mathcal{K}$
+
+    \begin{cases}
+        H_0 : \mathcal{F} = \mathcal{F}_1, & \text{если } K < t_\alpha \\
+        H_1 : \mathcal{F} \neq \mathcal{F}_1, & \text{если } K \geq t_\alpha \\
+    \end{cases}
+
     \item Критерий Колмогорова-Смирнова.
+
+    \hyperlink{kolmogorovs_smirnovs_criterion}{Критерий Колмогорова-Смирнова}
+
+    Пусть имеются 2 независимых выборки $(X_1, \dots, X_n)$ и $(Y_1, \dots, Y_m)$ объемов $n$ и $m$ из неизвестных непрерывных распределений $\mathcal{F}$ и $\mathcal{J}$
+
+    Проверяется $H_0 : \mathcal{F} = \mathcal{J}$ (данные однородны) против $H_1 : \mathcal{F} \neq \mathcal{J}$
+
+    В качестве статистики критерия берется функция $K = \sqrt{\frac{nm}{n + m}} \sup_x |F^*(x) - G^*(x)|$, где $F^*$ и $G^*$ - 
+    соответствующие выборочные функции распределения
+
+    \begin{MyTheorem}
+        \ThNs{Колмогорова-Смирнова}
+
+        Если $H_0 : \mathcal{F} = \mathcal{J}$ верна, то $K \rightrightarrows \mathcal{K}$ - распределение Колмогорова
+    \end{MyTheorem}
+
+    Критерий: $t_\alpha$ - квантиль $\mathcal{K}$ уровня значимости $\alpha$
+
+    \begin{cases}
+        H_0 : \mathcal{F} = \mathcal{J}, & \text{если } K < t_\alpha \\
+        H_1 : \mathcal{F} \neq \mathcal{J}, & \text{если } K \geq t_\alpha \\
+    \end{cases}
+
     \item Критерий Фишера.
+
+    \hyperlink{fishers_criterion}{Критерий Фишера}
+
+    Пусть имеют две независимые выборки $(X_1, \dots, X_n)$ и $(Y_1, \dots, Y_m)$ объемов $n$ и $m$ из нормальных распределений $X \in N(a_1, \sigma^2_1)$ и $Y \in N(a_2, \sigma^2_2)$
+
+    Проверяется $H_0 : \sigma_1 = \sigma_2$ против $H_1 : \sigma_1 \neq \sigma_2$
+
+    В качестве статистики критерия берется функция $K = \frac{S_X^2}{S_Y^2}$, где $S_X^2$, $S_Y^2$ - соответствующие исправленные дисперсии, причем
+    $S_X^2 \geq S_Y^2$
+
+    \begin{MyTheorem}
+        \Ths Если $H_0 : \sigma_1 = \sigma_2$ верна, то $K = \frac{S_X^2}{S_Y^2} \in F(n - 1, m - 1)$ - распределение Фишера-Снедекера
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        По пункту 3 основной теоремы $\frac{(n - 1)S^2}{\sigma^2} \in \chi^2_{n - 1}$. Если $H_0$ верна, то $K = \frac{S_X^2}{S_Y^2} = \frac{(n - 1) S_X^2 \sigma_2^2}{\sigma_1^2 (m - 1) S_Y^2} \frac{(m - 1)}{(n - 1)} = \frac{\frac{\chi^2_{n - 1}}{n - 1}}{\frac{\chi^2_{m - 1}}{m - 1}} \in F(n - 1, m - 1)$
+    \end{MyProof}
+
+    $t_\alpha$ - квантиль $F(n - 1, m - 1)$ уровня $\alpha$
+
+    \begin{cases}
+        H_0 : \sigma_1 = \sigma_2, & \text{если } K < t_\alpha \\
+        H_1 : \sigma_1 \neq \sigma_2, & \text{если } K \geq t_\alpha \\
+    \end{cases}
+
+    \Nota Здесь критерий согласия работает чуть иным образом: при верной альтернативной гипотезе $K = \frac{S_X^2}{S_Y^2} \ConvergesInProbability \frac{\sigma_1^2}{\sigma_2^2} > 1$
+
+    Если нулевая гипотеза отклоняется, то отклоняется общая гипотеза об однородности. А если основная гипотеза принимается, то 
+    применяем критерий Стьюдента
+
     \item Критерий Стьюдента.
+
+    \hyperlink{students_criterion}{Критерий Стьюдента}
+
+    Пусть $(X_1, \dots, X_n)$ и $(Y_1, \dots, Y_m)$ из нормальных распределений $X \in N(a_1, \sigma^2)$ и $Y \in N(a_2, \sigma^2)$
+
+    Проверяется $H_0 : a_1 = a_2$ против $H_1 : a_1 \neq a_2$
+
+    \begin{MyTheorem}
+        \Ths $\sqrt{\frac{nm}{n + m}} \frac{(\overline x - a_1) - (\overline y - a_2)}{\sqrt{\frac{(n - 1) S_X^2 + (m - 1) S^2_Y}{n + m - 2}}} \in T_{n + m - 2}$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        По пункту 5 основной теоремы считаем, что числитель и знаменатель независимы 
+
+        $\sqrt{\frac{nm}{n + m}} \frac{(\overline x - a_1) - (\overline y - a_2)}{\sqrt{\frac{(n - 1) S_X^2 + (m - 1) S^2_Y}{n + m - 2}}} = 
+        \sqrt{\frac{nm}{n + m}} \frac{\frac{\overline x - a_1}{\sigma} - \frac{\overline y - a_2}{\sigma}}{\sqrt{\frac{(n - 1) S_X^2 + (m - 1) S^2_Y}{\sigma^2 (n + m - 2)}}}$
+
+        По пункту 1 основной теоремы $\sqrt{n} \frac{\overline x - a_1}{\sigma}, \sqrt{m} \frac{\overline y - a_2}{\sigma} \in N(0, 1) \Longrightarrow \\
+        \frac{\overline x - a_1}{\sigma} \in N\left(0, \frac{1}{n}\right), \frac{\overline y - a_2}{\sigma} \in N\left(0, \frac{1}{m}\right) \Longrightarrow \\
+        \frac{\overline x - a_1}{\sigma} - \frac{\overline y - a_2}{\sigma} \in N\left(0, \sqrt{\frac{n + m}{nm}}\right) \Longrightarrow \\
+        \sqrt{\frac{nm}{n + m}} \left(\frac{\overline x - a_1}{\sigma} - \frac{\overline y - a_2}{\sigma}\right) \in N(0, 1)$
+
+        По пункту 3 основной теоремы $\frac{(n - 1)S^2_X}{\sigma^2} \in \chi^2_{n - 1}, \frac{(m - 1)S^2_Y}{\sigma^2} \in \chi^2_{m - 1} \Longrightarrow
+        \frac{(n - 1) S_X^2 + (m - 1) S^2_Y}{\sigma^2 (n + m - 2)} \in \frac{\chi^2_{n + m - 2}}{m + n - 2}$
+
+        Из этого $\sqrt{\frac{nm}{n + m}} \frac{(\overline x - a_1) - (\overline y - a_2)}{\sqrt{\frac{(n - 1) S_X^2 + (m - 1) S^2_Y}{n + m - 2}}} \in \frac{N(0, 1)}{\frac{\chi^2_{n + m - 2}}{n + m - 2}} = T_{n + m - 2}$
+    \end{MyProof}
+
+    В качестве статистики возьмем $\sqrt{\frac{nm}{n + m}} \frac{(\overline x - a_1) - (\overline y - a_2)}{\sqrt{\frac{(n - 1) S_X^2 + (m - 1) S^2_Y}{n + m - 2}}}$, 
+    по теореме при $a_1 = a_2$ получаем, что $K \in T_{n + m - 2}$
+
+    Если верна альтернативная гипотеза, то $K \longrightarrow \infty$
+
+    Критерий: $t_\alpha$ - квантиль $|T_{n + m - 2}|$ уровня $\alpha$
+
+    \begin{cases}
+        H_0 : a_1 = a_2, & \text{если } K < t_\alpha \\
+        H_1 : a_1 \neq a_2, & \text{если } K \geq t_\alpha \\
+    \end{cases}
+
+    \Nota Если при обоих критериях согласились с нулевой гипотезой, то соглашаемся с гипотезой об однородности выборок
+
     \item Понятие статистической зависимости. Корреляционное облако и корреляционная таблица. Первоначальные выводы по ним.
     \item Критерий хи-квадрат для проверки независимости.
     \item Однофакторный дисперсионный анализ. Общая, межгрупповая и внутригрупповая дисперсии. Теорема о разложении дисперсии.
