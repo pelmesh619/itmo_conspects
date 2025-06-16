@@ -1956,7 +1956,7 @@ $E(\text{Р}_\text{дочери} | Z_\text{отца} = Z_1, Z_\text{матери
     \item $\cov (\hat X, \hat \varepsilon) = 0$
 
     \begin{MyProof}
-        $b = \overline{\overline{xz} - \overline{x} \cdot \overline{z}}{\hat \sigma^2_z} = \overline{\cov (X, Z)}{D(Z)} \Longrightarrow \cov (X, Z) - b D(Z) = 0$
+        $b = \frac{\overline{xz} - \overline{x} \cdot \overline{z}}{\hat \sigma^2_z} = \frac{\cov (X, Z)}{D(Z)} \Longrightarrow \cov (X, Z) - b D(Z) = 0$
 
         $\cov (\hat X, \hat \varepsilon) = \cov (a + b Z, X - a - bZ) = \cov (bZ, X - bZ) = \cov (bZ, x) - \cov (bZ, bZ) = b \cov (Z, X) - b^2 D(Z) = b (\cov (Z, X) - b D(Z)) = 0$
     \end{MyProof}
@@ -1966,7 +1966,7 @@ $E(\text{Р}_\text{дочери} | Z_\text{отца} = Z_1, Z_\text{матери
 
 \Def $D(X) = \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{X})^2$ - дисперсия наблюдаемых значений
 
-\Defs $\hat D(X) = \frac{1}{n} \sum_{i = 1}^n (\hat X_i - \overline{X})^2$ - дисперсия расчетных значений
+\Defs $D(\hat X) = \frac{1}{n} \sum_{i = 1}^n (\hat X_i - \overline{X})^2$ - дисперсия расчетных значений
 
 \Defs $D(\hat \varepsilon) = \frac{1}{n} \sum_{i = 1}^n (\hat \varepsilon_i)^2$ - дисперсия остатков
 
@@ -4215,7 +4215,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
         \item $\cov (\hat X, \hat \varepsilon) = 0$
 
         \begin{MyProof}
-            $b = \overline{\overline{xz} - \overline{x} \cdot \overline{z}}{\hat \sigma^2_z} = \overline{\cov (X, Z)}{D(Z)} \Longrightarrow \cov (X, Z) - b D(Z) = 0$
+            $b = \frac{\overline{xz} - \overline{x} \cdot \overline{z}}{\hat \sigma^2_z} = \frac{\cov (X, Z)}{D(Z)} \Longrightarrow \cov (X, Z) - b D(Z) = 0$
 
             $\cov (\hat X, \hat \varepsilon) = \cov (a + b Z, X - a - bZ) = \cov (bZ, X - bZ) = \cov (bZ, x) - \cov (bZ, bZ) = b \cov (Z, X) - b^2 D(Z) = b (\cov (Z, X) - b D(Z)) = 0$
         \end{MyProof}
@@ -4223,7 +4223,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
     \Def $D(X) = \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{X})^2$ - дисперсия наблюдаемых значений
 
-    \Defs $\hat D(X) = \frac{1}{n} \sum_{i = 1}^n (\hat X_i - \overline{X})^2$ - дисперсия расчетных значений
+    \Defs $D(\hat X) = \frac{1}{n} \sum_{i = 1}^n (\hat X_i - \overline{X})^2$ - дисперсия расчетных значений
 
     \Defs $D(\hat \varepsilon) = \frac{1}{n} \sum_{i = 1}^n (\hat \varepsilon_i)^2$ - дисперсия остатков
 
