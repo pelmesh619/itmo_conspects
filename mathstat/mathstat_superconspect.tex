@@ -296,7 +296,7 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
 \begin{MyTheorem}
     \Ths Выборочный $k$-ый момент является состоятельной несмещенной оценкой теоретического $k$-ого момента
 
-    1) $\overline{E X^k} = E X^k$
+    1) $E \overline{X^k} = E X^k$
 
     2) $\overline{X^k} \overset{p}{\longrightarrow} X^k$
 \end{MyTheorem}
@@ -314,7 +314,7 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
     $E D^* = E(\overline{X^2} - \overline{X}^2) = E\overline{X^2} - E (\overline{X}^2) = 
     E X^2 - E (\overline{X}^2)$
 
-    Так как $D \overline{X} = E(\overline{X^2}) - (E \overline{X})^2$, то $E X^2 - E (\overline{X}^2) = 
+    Так как $D \overline{X} = E(\overline{X}^2) - (E \overline{X})^2$, то $E X^2 - E (\overline{X}^2) = 
     E X^2 - ((E\overline{X})^2 + D\overline{X}) = (E X^2 - EX) - D\overline{X} = D X - D \overline{X} = D X - D \left(\frac{X_1 + \dots + X_n}{n}\right) = 
     DX - \frac{1}{n^2} \sum_{i = 1}^n D X_i = DX - \frac{1}{n^2} n D X_1 = DX - \frac{1}{n} DX = \frac{n - 1}{n} DX$, то есть $D^*$ - смещенная вниз оценка
 
@@ -366,7 +366,7 @@ $\overline{x} = 2.25; \overline{x^2} = 6.75$
 
 $EX = \int_a^b x \frac{1}{b - a} dx = \frac{a + b}{2}$
 
-$EX = \int_a^b x^2 \frac{1}{b - a} dx = \frac{a^2 + ab + b^2}{3}$
+$EX^2 = \int_a^b x^2 \frac{1}{b - a} dx = \frac{a^2 + ab + b^2}{3}$
 
 \mediumvspace
 
@@ -3061,9 +3061,8 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
     $F^*(x) = \frac{\text{число данных } x_i < x}{n}$
 
     \begin{MyTheorem}
-        \Ths Выборочная функция распределения поточечно сходится к теоретической функции распределения:
-
-        \[\forall y \in \Real F^*(y) \overset{p}{\longrightarrow} F(y)\]
+        \Ths Выборочная функция распределения поточечно сходится к теоретической функции распределения: 
+        $\forall y \in \Real F^*(y) \overset{p}{\longrightarrow} F(y)$
     \end{MyTheorem}
 
     \begin{MyTheorem}
@@ -3212,7 +3211,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
     \begin{MyTheorem}
         \Ths Выборочный $k$-ый момент является состоятельной несмещенной оценкой теоретического $k$-ого момента
     
-        1) $\overline{E X^k} = E X^k$
+        1) $E \overline{X^k} = E X^k$
     
         2) $\overline{X^k} \overset{p}{\longrightarrow} X^k$
     \end{MyTheorem}
@@ -3251,7 +3250,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
     $EX = \int_a^b x \frac{1}{b - a} dx = \frac{a + b}{2}$
 
-    $EX = \int_a^b x^2 \frac{1}{b - a} dx = \frac{a^2 + ab + b^2}{3}$
+    $EX^2 = \int_a^b x^2 \frac{1}{b - a} dx = \frac{a^2 + ab + b^2}{3}$
 
     Получаем:
 
