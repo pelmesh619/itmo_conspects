@@ -47,3 +47,23 @@
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_12.pdf)
 * [Лекция №16](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_19.pdf)
 * [Лекция №17](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_2025_05_26.pdf)
+
+### Математическая статистика (лектор Блаженов А. В.)
+
+[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_superconspect.pdf)
+
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_11.pdf)
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_18.pdf)
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_02_25.pdf)
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_03_04.pdf)
+* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_03_11.pdf)
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_03_18.pdf)
+* [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_03_25.pdf)
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_01.pdf)
+* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_08.pdf)
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_15.pdf)
+* [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_22.pdf)
+* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_04_29.pdf)
+* [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_06.pdf)
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_13.pdf)
+* [Лекция №16](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_20.pdf)
