@@ -8,7 +8,7 @@
 
 ## IV семестр
 
-### Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф.)
+### Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
 
 [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_superconspect.html)
 
@@ -25,7 +25,7 @@
 * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_16.html) <!-- Мацнев -->
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_23.html) <!-- Мацнев -->
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_30.html) <!-- Мацнев и Самигуллин -->
-* Лекция №14 - в производстве <!-- Карчевский -->
+* [Лекция №14](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_07.html) <!-- Карчевский -->
 * Лекция №15 - в производстве <!-- Самигуллин -->
 * Лекция №16 - отменена
 * Лекция №17 - в производстве <!-- Мацнев -->
