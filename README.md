@@ -26,7 +26,7 @@
 * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_23.html) <!-- Мацнев -->
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_30.html) <!-- Мацнев и Самигуллин -->
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_07.html) <!-- Карчевский -->
-* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_14.html) - в производстве <!-- Самигуллин -->
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_14.html) <!-- Самигуллин -->
 * Лекция №16 - отменена
 * Лекция №17 - в производстве <!-- Мацнев -->
 
