@@ -67,3 +67,25 @@
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_06.pdf)
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_13.pdf)
 * [Лекция №16](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_2025_05_20.pdf)
+
+### Операционные системы (лектор Маятин А. В.)
+
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_superconspect.html)
+
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_02_11.html)
+* Лекция №3 - отменена
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_02_25.html)
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_04.html)
+* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_11.html)
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_18.html)
+* [Лекция №8](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_03_25.html)
+* Лекция №9 - отменена
+* [Лекция №10.1](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_08.html)
+* [Лекция №10.2](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_09.html)
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_15.html)
+* [Лекция №12.1](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_22.html)
+* [Лекция №12.2](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_23.html)
+* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_04_29.html)
+* [Лекция №14](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_06.html)
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_13.html)
+* [Лекция №16](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_20.html)
