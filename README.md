@@ -28,7 +28,7 @@
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_07.html) <!-- Карчевский -->
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_14.html) <!-- Самигуллин -->
 * Лекция №16 - отменена
-* Лекция №17 - в производстве <!-- Мацнев -->
+* [Лекция №17](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_28.html) <!-- Мацнев -->
 
 ### История российской науки и техники (лектор Васильев А. В.)
 
