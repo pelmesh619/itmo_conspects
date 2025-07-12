@@ -53,7 +53,7 @@
 * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_02.html) <!-- Макаревич -->
 * Лекция №14 - календарный праздник
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_16.html) <!-- Макаревич -->
-* Лекция №16 - в производстве <!-- Макаревич -->
+* [Лекция №16](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_23.html) <!-- Макаревич -->
 
 ### Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
