@@ -89,3 +89,46 @@
 * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_06.html)
 * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_13.html)
 * [Лекция №16](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_2025_05_20.html)
+
+### Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
+
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_superconspect.html)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_05.html) <!-- Мацнев -->
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_12.html) <!-- Мацнев -->
+* [Лекция №3](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_02_19.html)  <!-- Мацнев -->
+* Лекция №4 - отменена
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_05.html) <!-- Самигуллин -->
+* [Лекция №6](https://github.com/pelmesh619/itmo_conspects/blob/main/dbdesign/dbdesign_2025_03_12.md) <!-- Бартунов -->
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_19.html) <!-- Самигуллин -->
+* [Лекция №8](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_03_26.html) <!-- Мацнев -->
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_02.html) <!-- Мацнев и Самигуллин -->
+* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_09.html) <!-- Мацнев и Самигуллин -->
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_16.html) <!-- Мацнев -->
+* [Лекция №12](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_23.html) <!-- Мацнев -->
+* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_04_30.html) <!-- Мацнев и Самигуллин -->
+* [Лекция №14](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_07.html) <!-- Карчевский -->
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_14.html) <!-- Самигуллин -->
+* Лекция №16 - отменена
+* [Лекция №17](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_2025_05_28.html) <!-- Мацнев -->
+
+### Технологии программирования на Java (лекторы Макаревич Р. Д., Сомов А. В.)
+
+[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_superconspect.html)
+
+* [Лекция №1](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_07.html) <!-- Макаревич -->
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_14.html) <!-- Макаревич -->
+* [Лекция №2](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_21.html) <!-- Макаревич -->
+* [Лекция №4](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_02_28.html) <!-- Макаревич -->
+* [Лекция №5](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_07.html) <!-- Макаревич -->
+* [Лекция №6](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_14.html) <!-- Макаревич -->
+* [Лекция №7](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_03_21.html)  <!-- Макаревич -->
+* Лекция №8 - отменена
+* [Лекция №9](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_04.html)  <!-- Сомов -->
+* [Лекция №10](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_11.html) <!-- Макаревич -->
+* [Лекция №11](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_18.html) <!-- Макаревич -->
+* [Лекция №12](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_04_25.html) <!-- Макаревич -->
+* [Лекция №13](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_02.html) <!-- Макаревич -->
+* Лекция №14 - календарный праздник
+* [Лекция №15](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_16.html) <!-- Макаревич -->
+* [Лекция №16](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_2025_05_23.html) <!-- Макаревич -->
