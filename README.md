@@ -38,48 +38,47 @@
 
 ## [III семестр](meta/III.md)
 
-### Физические основы компьютерных и сетевых технологий (лектор Музыченко Я. Б.)
+* Физические основы компьютерных и сетевых технологий (лектор Музыченко Я. Б.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_superconspect.pdf)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_superconspect.pdf)
 
-Решение задач: [Решение задач №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_6.pdf), [Решение задач №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_7.pdf), [Решение задач №8](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_8.pdf), [Решение задач №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_9.pdf)
+    Решение задач: [Решение задач №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_6.pdf), [Решение задач №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_7.pdf), [Решение задач №8](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_8.pdf), [Решение задач №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics1/physics1_homework_9.pdf)
 
-### Теория вероятности (лектор Блаженов А. В.)
+* Теория вероятности (лектор Блаженов А. В.)
 
-[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_superconspect.pdf)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/probtheory/probtheory_superconspect.pdf)
 
-### Базы данных (лектор Маятин А. В.)
+* Базы данных (лектор Маятин А. В.)
 
-[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/databases/databases_superconspect.html)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/databases/databases_superconspect.html)
 
-### Дополнительные главы высшей математики (лектор Далевская О. П.)
+* Дополнительные главы высшей математики (лектор Далевская О. П.)
 
-[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_superconspect.pdf)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_superconspect.pdf)
 
-[Карточки для Anki](https://github.com/pelmesh619/itmo_conspects/releases/tag/anki.addchapters1.v1.1)
+    [Карточки для Anki](https://github.com/pelmesh619/itmo_conspects/releases/tag/anki.addchapters1.v1.1)
 
-### Объектно-ориентированное проектирование и программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
+* Объектно-ориентированное проектирование и программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html)
 
 ## [II семестр](meta/II.md)
 
-### Математический анализ II (лектор Далевская О. П.)
+* Математический анализ II (лектор Далевская О. П.)
 
-[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/calculus/calculus_superconspect.pdf)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/calculus/calculus_superconspect.pdf)
 
+* Специальные разделы высшей математики (лектор Далевская О. П.)
 
-### Специальные разделы высшей математики (лектор Далевская О. П.)
+    [**Весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf)
 
-[**Весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf)
+* Дискретная математика II (лектор Чухарев К. И.)
 
-### Дискретная математика II (лектор Чухарев К. И.)
+    [**Почти весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_superconspect.pdf)
 
-[**Почти весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_superconspect.pdf)
+    [**Шпаргалка по Комбинаторике**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_cheatsheet_combinatorics.pdf)
 
-[**Шпаргалка по Комбинаторике**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_cheatsheet_combinatorics.pdf)
-
-[**Шпаргалка по Рекуррентностям и Производящим функциям**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_cheatsheet_recurrences.pdf)
+    [**Шпаргалка по Рекуррентностям и Производящим функциям**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_cheatsheet_recurrences.pdf)
 
 ### Алгоритмы и Структуры Данных I-II
 
