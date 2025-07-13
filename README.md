@@ -6,7 +6,7 @@
 
 [![Спросить DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pelmesh619/itmo_conspects)
 
-## IV семестр
+## [IV семестр](meta/IV.md)
 
 * Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
 
