@@ -8,33 +8,33 @@
 
 ## IV семестр
 
-### Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
+* Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/dbdesign/dbdesign_superconspect.html)
 
-### История российской науки и техники (лектор Васильев А. В.)
+* История российской науки и техники (лектор Васильев А. В.)
+    
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_superconspect.html)
 
-[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/sathistory/sathistory_superconspect.html)
+* Технологии программирования на Java (лекторы Макаревич Р. Д., Сомов А. В.)
 
-### Технологии программирования на Java (лекторы Макаревич Р. Д., Сомов А. В.)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_superconspect.html)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/javatech/javatech_superconspect.html)
+* Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
-### Дополнительные главы высшей математики II (лектор Далевская О. П.)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_superconspect.pdf)
 
-[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_superconspect.pdf)
+* Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
-### Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_superconspect.pdf)
 
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics2/physics2_superconspect.pdf)
+* Математическая статистика (лектор Блаженов А. В.)
 
-### Математическая статистика (лектор Блаженов А. В.)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_superconspect.pdf)
 
-[**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/mathstat/mathstat_superconspect.pdf)
+* Операционные системы (лектор Маятин А. В.)
 
-### Операционные системы (лектор Маятин А. В.)
-
-[**Весь курс**](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_superconspect.html)
 
 ## [III семестр](meta/III.md)
 
