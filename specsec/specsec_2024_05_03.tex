@@ -8,33 +8,7 @@
 
 
 \begin{document}
-    \Mem $y^\prime + p(x)y = q(x)$
-
-    1) $y^\prime + p(x)y = 0$
-
-    $\frac{dy}{y} = -p(x)dx$
-
-    $y_0 = e^{-\int p(x)dx}$
-
-    $\overline{y} = Ce^{-\int p(x)dx}$ - общее решение ЛОДУ
-
-    2) $y^\prime + p(x)y = q(x)$
-
-    $y(x) = C(x)y_0$
-
-    $C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
-
-    $C(x)(y_0^\prime + p(x)y_0) = 0$ - так как $y_0$ - решение ЛОДУ
-
-    $C^\prime(x) = \frac{q(x)}{y_0}$
-
-    $C(x) = \int q(x)e^{\int p(x)dx} dx + C$
-
-    Окончательно, $y(x) = \left(\left(\int q(x) e^{\int p(x)dx} + C\right) dx\right) e^{-\int p(x) dx} =
-    Ce^{-\int p dx} + e^{-\int pdx} \int q e^{\int p dx} = \overline{y} + y^*$
-
-
-    \section{4.3. Существование и единственность решения}
+    \subsection{4.3. Существование и единственность решения}
 
     \hypertarget{existenceanduniquenessofsolution}{}
 

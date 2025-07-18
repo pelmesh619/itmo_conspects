@@ -189,7 +189,7 @@
 
         $\ln|\tilde{C}y| = -\int p(x)dx$
 
-        $\overline{y} = Ce^{-\int p(x) dx} = Cy_0$
+        $\overline{y} = Ce^{-\int p(x) dx} = Cy_0$ -- общее решение ЛОДУ
 
         \item для ЛНДУ $y^\prime + p(x)y = q(x)$
 
@@ -202,6 +202,9 @@
         $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
 
         $C(x) = \int q(x) e^{\int p(x)dx} dx$
+
+        Окончательно, $y(x) = \left(\left(\int q(x) e^{\int p(x)dx} + C\right) dx\right) e^{-\int p(x) dx} =
+        Ce^{-\int p dx} + e^{-\int pdx} \int q e^{\int p dx} = \overline{y} + y^*$
     \end{enumerate}
 
 \end{document}
