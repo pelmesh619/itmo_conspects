@@ -12,24 +12,20 @@
 
     \hypertarget{existenceanduniquenessofsolution}{}
 
-    \Mem
+    \Mem \Ths Для задачи Коши
     \begin{cases}
-        y^{\prime} = f(x, y) \\
-        y(x_0) = y_0
-    \end{cases} \Ths Если $\exists U(M_0) \ | \
-    \begin{cases}
-        f(x,y) \in C_{U(M_0)} \\
-        \frac{\partial f}{\partial y}\text{ - огр. в } U(M_0),
-    \end{cases}$ то в $M_0\ \exists! y(x)$ - решение ДУ
+        y^{\prime} = f(x, y), \\
+        y(x_0) = y_0,
+    \end{cases} 
+    если $\exists U(M_0)$, в которой $f(x,y) \in C_{U(M_0)}$ и $\frac{\partial f}{\partial y}\text{ ограничена в } U(M_0)$, то в $M_0\ \exists! y(x)$ -- решение ДУ
 
     \vspace{5mm}
 
-    Решение ДУ называется особым, если $\forall$ его точке нарушается \Ths существования и единственности, то есть
+    Решение ДУ называется особым, если в любой его точке нарушается \Ths существования и единственности, то есть
     через каждую точку проходит несколько интегральных кривых
 
-    \Def $P(x, y)dx + Q(x, y)dy = 0$ задает поле интегральных кривых, заполняющих область $D$
-
-    Соответственно точки $D$ могут быть особыми или обыкновенными (выпол. усл. \Ths)
+    \Def Уравнение $P(x, y)dx + Q(x, y)dy = 0$ задает поле интегральных кривых, заполняющих область $D$.
+    Соответственно точки $D$ могут быть особыми или обыкновенными (выполняются условия \Ths)
     \vspace{5mm}
 
     \underline{Условия особого решения} $\ P(x, y)$ или $Q(x, y) = 0$
@@ -45,102 +41,106 @@
         & $y = (x + C)^3$                        &                 & $P = 0 \Longrightarrow y = 0$       \\
     \end{tabular}
 
-
-    \section{4.4. ДУ высших порядков}
+    \subsection{4.4. ДУ высших порядков}
 
     \hypertarget{differentilaequationshigherdegree}{}
 
     \Nota Рассмотрим три типа интегрируемых ДУ
 
-    1* Непосредственно интегрирование
+    \begin{enumerate}[label*=\arabic** ]
+        \item Непосредственно интегрирование
 
-    $y^{(n)} = f(x)$
+        $y^{(n)} = f(x)$
 
-    Решение: $y^{(n - 1)} = \int f(x) dx + C_1$
+        Решение: $y^{(n - 1)} = \int f(x) dx + C_1$
 
-    $y^{(n - 2)} = \int (\int f(x) dx + C_1) dx + C_2$
+        $y^{(n - 2)} = \int \left(\int f(x) dx + C_1\right) dx + C_2$
 
-    \Ex См. Задачу 2 в начале
+        \Ex См. Задачу 2 в начале
 
-    2* ДУ$_2$, не содержащие $y(x)$
+        \item ДУ$_2$, не содержащие $y(x)$
 
-    $F(x, y^\prime(x), y^{\prime\prime}(x)) = 0$
+        $F(x, y^\prime(x), y^{\prime\prime}(x)) = 0$
 
-    Замена $y^\prime(x) = z(x)$, получаем:
+        Замена $y^\prime(x) = z(x)$, получаем:
 
-    $F(x, z(x), z^\prime(x)) = 0$ - ДУ$_1$
+        $F(x, z(x), z^\prime(x)) = 0$ -- ДУ$_1$
 
-    \Ex $(1 + x^2)y^{\prime\prime} + (1 + y^\prime^2) = 0 \quad y^\prime = z$
+        \Ex $(1 + x^2)y^{\prime\prime} + (1 + y^\prime^2) = 0 \quad y^\prime = z$
 
-    $(1 + x^2)z^\prime + 1 + z^2 = 0$
+        $(1 + x^2)z^\prime + 1 + z^2 = 0$
 
-    $z^\prime + \frac{1 + z^2}{1 + x^2} = 0 \Longleftrightarrow z^\prime = -\frac{1 + z^2}{1 + x^2} \Longleftrightarrow \frac{dz}{1 + z^2} = -\frac{dx}{1 + x^2}$
+        $z^\prime + \frac{1 + z^2}{1 + x^2} = 0 \Longleftrightarrow z^\prime = -\frac{1 + z^2}{1 + x^2} \Longleftrightarrow \frac{dz}{1 + z^2} = -\frac{dx}{1 + x^2}$
 
-    $\arctan x = \arctan(-x) + C$
+        $\arctan x = \arctan(-x) + C$
 
-    $z = \frac{-x + \tan(C)}{1 + x \tan C} = y^\prime$
+        $z = \frac{-x + \tan(C)}{1 + x \tan C} = y^\prime$
 
-    $y = \int \frac{-x + \tan(C)}{1 + x \tan C} dx = \dots $
+        $y = \int \frac{-x + \tan(C)}{1 + x \tan C} dx = \dots $
 
-    3* ДУ$_2$, не содержащие $x$
+        \item ДУ$_2$, не содержащие $x$
 
-    $F(y(x), y^\prime(x), y^{\prime\prime}(x)) = 0$
+        $F(y(x), y^\prime(x), y^{\prime\prime}(x)) = 0$
 
-    Замена $y^\prime(x) = z(y) \quad y^{\prime\prime}(x) = \frac{dz(y(x))}{dx} = \frac{dz}{dx} \frac{dy}{dx} = z^\prime_y y^\prime = z^\prime z$
+        Замена $y^\prime(x) = z(y) \quad y^{\prime\prime}(x) = \frac{dz(y(x))}{dx} = \frac{dz}{dx} \frac{dy}{dx} = z^\prime_y y^\prime = z^\prime z$
 
-    ДУ: $F(y, z(y), z^\prime(y)) = 0$
+        ДУ: $F(y, z(y), z^\prime(y)) = 0$
 
-    \Ex $y^{\prime\prime} + y^{\prime 2} = yy^\prime$
+        \Ex $y^{\prime\prime} + y^{\prime 2} = yy^\prime$
 
-    $y^\prime = z(y) \quad y^{\prime\prime} = z^\prime z$
+        $y^\prime = z(y) \quad y^{\prime\prime} = z^\prime z$
 
-    $z^\prime z + z^2 = yz \quad | \ : z \neq 0 \quad\quad z = 0 \Longrightarrow y = const$
+        $z^\prime z + z^2 = yz \quad | \ : z \neq 0 \quad\quad z = 0 \Longrightarrow y = const$
 
-    $z^\prime + z = y$ - ЛДУ
+        $z^\prime + z = y$ -- ЛДУ
 
-    \begin{tabular}{p{5cm}p{10cm}}
-        1) $z^\prime + z = 0$ & 2) $C^\prime (y) e^{-y} = y$                                                                                              \\
+        \begin{tabular}{p{5cm}p{10cm}}
+            1) $z^\prime + z = 0$ & 2) $C^\prime (y) e^{-y} = y$                                                                                              \\
 
-        $\ln|z| = -y + C$     & $C^\prime (y) = ye^{y}$                                                                                                   \\
+            $\ln|z| = -y + C$     & $C^\prime (y) = ye^{y}$                                                                                                   \\
 
-        $z = Ce^{-y}$         & $C(y) = \int y e^y dy = \int y de^y = ye^y - e^y + C_1$                                                                   \\
+            $z = Ce^{-y}$         & $C(y) = \int y e^y dy = \int y de^y = ye^y - e^y + C_1$                                                                   \\
 
-        & $z(y) = (ye^y - e^y + C_1)e^{-y} = \underset{z^*}{\undergroup{y - 1}} + \underset{\overline{z}}{\undergroup{C_1 e^{-y}}}$ \\
+            & $z(y) = (ye^y - e^y + C_1)e^{-y} = \underset{z^*}{\undergroup{y - 1}} + \underset{\overline{z}}{\undergroup{C_1 e^{-y}}}$ \\
 
-        & $y^\prime = C_1 e^{-y} + y - 1 \Longrightarrow ? \dots $
+            & $y^\prime = C_1 e^{-y} + y - 1 \Longrightarrow ? \dots $
 
-    \end{tabular}
+        \end{tabular}
+
+    \end{enumerate}
 
 
-    \section{4.5. ЛДУ$_2$}
+    \subsection{4.5. ЛДУ$_2$}
 
     \hypertarget{lineardifferentialequationhigherdegree}{}
 
-    \section{4.5.1. Определения}
+    \subsubsection{4.5.1. Определения}
 
-    \Def $a_0(x) y^{(n)}(x) + a_1(x)y^{(x)} + \dots + a_{n - 1}y^\prime(x) + a^n(x)y = f(x)$, где $y = y(x)$ - неизв. функция, - это ЛДУ$_n$
+    \Def $a_0(x) y^{(n)}(x) + a_1(x)y^{(x)} + \dots + a_{n - 1}y^\prime(x) + a^n(x)y = f(x)$, где $y = y(x)$ -- неизвестная функция, -- это линейное дифференциальное уравнение $n$-ого порядка
 
-    \Nota Если $n = 2$ - ЛДУ$_2$, $y^{\prime\prime}(x) + p(x)y^\prime(x) + q(x)y = f(x)$ - разрешенное относительно старших производных ЛДУ$_2$
+    \Notas Если $n = 2$, то ЛДУ$_2$, $y^{\prime\prime}(x) + p(x)y^\prime(x) + q(x)y = f(x)$ -- разрешенное относительно старших производных ЛДУ$_2$
 
-    \Nota Если $a_i(x) = a_i \in \Real$ - ЛДУ$_n$ с постоянными коэффициентами
+    \Notas Если $a_i(x) = a_i \in \Real$ -- ЛДУ$_n$ с постоянными коэффициентами
 
     \hypertarget{lineardifferentialequationseconddegreewithconstants}{}
 
-    \section{4.5.2. Решение ЛДУ$_2$ с постоянными коэффициентами}
+    \subsubsection{4.5.2. Решение ЛДУ$_2$ с постоянными коэффициентами}
 
     $y^{\prime\prime} + p y^\prime + q y = f(x), \quad p, q \in \Real$
 
-    $\forall p, q \in \Real \exists $ уравнение: $\quad \lambda^2 + p\lambda + q = 0$ и $\lambda_{1,2} \in \mathbb{C} \ | \ \lambda_1 + \lambda_2 = -p, \lambda_1 \lambda_2 = q$ - корни
+    Для любых $p, q \in \Real$ существует уравнение: $\quad \lambda^2 + p\lambda + q = 0$ и $\lambda_{1,2} \in \mathbb{C} \ | \ \lambda_1 + \lambda_2 = -p, \lambda_1 \lambda_2 = q$ - корни
 
     Назовем уравнение характеристическим (ХрУ) \Cat
 
     \Nota $\lambda_{1, 2}$ могут быть только
 
-    1) вещественными различными;
+    \begin{enumerate}
+        \item вещественными различными;
 
-    2) вещественными одинаковыми ($\lambda_1 = \lambda_2 = \lambda$ - корень 2-ой кратности);
+        \item вещественными одинаковыми ($\lambda_1 = \lambda_2 = \lambda$ - корень 2-ой кратности);
 
-    3) $\lambda_{1,2} = \alpha \pm i \beta \in \mathbb{C}$, где $\alpha, \beta \in \Real$
+        \item $\lambda_{1,2} = \alpha \pm i \beta \in \mathbb{C}$, где $\alpha, \beta \in \Real$
+    \end{enumerate}
 
     Запишем ЛДУ$_2$ через $\lambda_{1, 2}$:
 
@@ -169,10 +169,10 @@
     Поступим лучше, решим ЛОДУ$_2$ $(f(x) = 0)$
 
     Эта система \begin{cases}
-                    y^\prime - \lambda_2 y u(x) \\ u^\prime - \lambda_1 u = 0
+                    y^\prime - \lambda_2 y = u(x) \\ u^\prime - \lambda_1 u = 0
     \end{cases}
     \Longleftrightarrow \begin{cases}
-                            y^\prime - \lambda_2 y u(x) \\ u = C_1 e^{\lambda_1 x}
+                            y^\prime - \lambda_2 y = u(x) \\ u = C_1 e^{\lambda_1 x}
     \end{cases}
 
     Решим $y^\prime - \lambda_2 y = C_1 e^{\lambda_1 x}$:
@@ -184,7 +184,7 @@
 
         & $C_2^\prime(x) e^{\lambda_2 x} = C_1 e^{\lambda_1 x}$ \\
 
-        & $C^\prime_2 (x) = C_1 e^{\lambda_1 = \lambda_2} x$
+        & $C^\prime_2 (x) = C_1 e^{\lambda_1 - \lambda_2} x$
     \end{tabular}
 
     Далее все зависит от $\lambda_{1,2}$
