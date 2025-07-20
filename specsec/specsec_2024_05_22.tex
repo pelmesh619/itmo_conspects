@@ -60,6 +60,8 @@
         $Ly^* = L(y^*_1 + y^*_2) = Ly^*_1 + Ly^*_2 = f_1(x) + f_2(x)$
     \end{MyProof}
 
+    \hypertarget{desystem}{}
+
     \subsection{4.6. Системы ДУ}
 
     \Def Пусть дан набор функций $y_1, \dots, y_n$. Система, связывающие эти функции, то есть
@@ -87,6 +89,8 @@
     \Nota Такая система называется нормальной, то есть все уравнения разрешены относительно производных
 
     \Nota Всякое ДУ$_n$ можно рассмотреть как СДУ: $y^{(n)} = f(x, y, y^\prime, \dots, y^{(n - 1)}) \Longleftrightarrow \begin{cases}y = y_1(x) \\ y^\prime = y_2(x, y_1) \\ \vdots\end{cases}$
+
+    \hypertarget{exceptionmethod}{}
 
     Можно сделать и обратное -- свести СДУ к ДУ$_n$ с помощью 
     \underline{метода исключения}. Рассмотрим на примере СДУ 2-ого порядка
@@ -152,6 +156,8 @@
     \Nota СДУ из \Exs не содержала $t$ в явном виде. Такие СДУ называются автономными
 
     \mediumvspace
+
+    \hypertarget{matrixmethod}{}
 
     \underline{Матричный метод}
 
@@ -231,6 +237,8 @@
         \tilde{x}(0) = \tilde{x}_0 \\
         \tilde{y}(0) = \tilde{y}_0
     \end{cases}
+
+    \hypertarget{stability}{}
 
     Решение СДУ $x = x(t), y = y(t)$ называется устойчивым по Ляпунову при $t \to +\infty$, если
     $\forall \varepsilon > 0 \ \exists \delta > 0 \ | \ \underset{ \scriptsize \begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases}}{\forall x, y} \forall t > 0 \begin{cases}|\tilde{x}_0 - x_0| < \varepsilon \\ |\tilde{y}_0 - y_0| < \varepsilon\end{cases}$
