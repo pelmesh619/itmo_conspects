@@ -439,118 +439,136 @@
 
 % begin specsec_2024_03_15.tex
 
-    \Def Произведение операторов (композиция)
-
-    $\mathcal{A}\mathcal{B}$ - произведение, $\mathcal{A} : V \rightarrow W; \ \mathcal{B} : U \rightarrow V$
-
+    \Def Пусть $\mathcal{A} : V \rightarrow W; \ \mathcal{B} : U \rightarrow V$, тогда 
+    $\mathcal{A}\mathcal{B}$ - произведение операторов (композиция), причем
     $(\mathcal{A}\mathcal{B}) x = \mathcal{A}(\mathcal{B}x); \quad x \in U$
 
     \hypertarget{linearoperatorproperties}{}
 
-    Свойства: \underline{Lab} доказать
+    \underline{Свойства}: 
 
-    1* $\lambda (\mathcal{A}\mathcal{B}) = (\lambda \mathcal{A})\mathcal{B}$
+    \begin{enumerate}[label*=\arabic*$^\circ$]
+        \item $\lambda (\mathcal{A}\mathcal{B}) = (\lambda \mathcal{A})\mathcal{B}$
 
-    2* $(\mathcal{A} + \mathcal{B}) \mathcal{C} = \mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C}$
+        \item $(\mathcal{A} + \mathcal{B}) \mathcal{C} = \mathcal{A}\mathcal{C} + \mathcal{B}\mathcal{C}$
 
-    3* $\mathcal{A} (\mathcal{B} + \mathcal{C}) = \mathcal{A}\mathcal{B} + \mathcal{A}\mathcal{C}$
+        \item $\mathcal{A} (\mathcal{B} + \mathcal{C}) = \mathcal{A}\mathcal{B} + \mathcal{A}\mathcal{C}$
 
-    4* $\mathcal{A} (\mathcal{B}\mathcal{C}) = (\mathcal{A}\mathcal{B}) \mathcal{C}$
+        \item $\mathcal{A} (\mathcal{B}\mathcal{C}) = (\mathcal{A}\mathcal{B}) \mathcal{C}$
+    \end{enumerate}
 
+    \Lab доказать
 
-    \Nota Можно обобщить 4* на $n$ равных $\mathcal{A}$
+    \Nota Можно обобщить $4^\circ$ на $n$ равных $\mathcal{A}$
 
-    \Def $\mathcal{A}^n = \mathcal{A} \cdot \mathcal{A} \dots \mathcal{A}$ - $n$ раз, степень оператора
+    \Defs $\mathcal{A}^n = \underset{n \text{ раз}}{\underbrace{\mathcal{A} \cdot \mathcal{A} \cdot \dots \cdot \mathcal{A}}}$ - степень оператора
 
     Свойства: $\mathcal{A}^{m + n} = \mathcal{A}^n \cdot \mathcal{A}^m$
 
-    \section{2.3. Обратимость оператора}
+    \subsection{2.3. Обратимость оператора}
 
     \hypertarget{onetoonelinearoperator}{}
 
-    Def: $\mathcal{A} : V \rightarrow W$ так, что $\mathcal{A}V = W$ и $\forall x_1 \neq x_2 (x_1, x_2 \in V) \quad
+    \Def $\mathcal{A} : V \rightarrow W$ так, что $\mathcal{A}V = W$ и $\forall x_1 \neq x_2 (x_1, x_2 \in V) \quad
     \begin{cases}y_1 = \mathcal{A}x_1 \\ y_2 = \mathcal{A}x_2\end{cases} \Longrightarrow y_1 \neq y_2$
 
     Тогда $\mathcal{A}$ называется взаимно-однозначно действующим
 
     Nota: Проще сказать \enquote{линейный изоморфизм}
 
-    \Th $\Set{x_i}$ - линейно независима $\stackrel{\mathcal{A}x = y}{\longrightarrow} \Set{y_i}$ - линейно независима
+    \begin{MyTheorem}
+        \Ths $\Set{x_i}$ - линейно независима $\stackrel{\mathcal{A}x = y}{\Longrightarrow} \{y_i\}$ - линейно независима
 
-    В обратную сторону, если $\mathcal{A}$ - взаимно-однозначен
+        В обратную сторону верно, если $\mathcal{A}$ - взаимно-однозначен
+    \end{MyTheorem}
 
-    $\Box \sqsupset \mathcal{A} : V \rightarrow W$ и $\texttt{0}_V, \texttt{0}_W$ - нули $V$ и $W$ соответственно
-    \begin{enumerate}
-        \item $\mathcal{A}(\texttt{0}_V) = \mathcal{A}(\sum^k_{i=1} 0 \cdot e_i) = \sum^k_{i=1} 0 \cdot \mathcal{A}e_i = \texttt{0}_W$
+    \begin{MyProof}
+        Пусть $\mathcal{A} : V \rightarrow W$ и $\texttt{0}_V, \texttt{0}_W$ - нули $V$ и $W$ соответственно
 
-        \item Докажем, что если ${x_i} \subset V$ - лин. нез., то ${y_i} \subset W$ - лин. нез.
+        \begin{enumerate}
+            \item $\mathcal{A}(\texttt{0}_V) = \mathcal{A}\left(\sum^k_{i=1} 0 \cdot e_i\right) = \sum^k_{i=1} 0 \cdot \mathcal{A}e_i = \texttt{0}_W$
 
-        Составим $\sum^m_{j=1} \lambda_j y_j = \texttt{0}_W$ (От противного) $\sqsupset \Set{y_i}$ - лин. зав., тогда $\exists \lambda_k \neq 0$
+            \item Докажем, что если ${x_i} \subset V$ - линейно независима, то ${y_i} \subset W$ - линейно независима
 
-        При этом $\forall j \ \ y_j = \mathcal{A}x_j$ (т. к. $\mathcal{A}$ - вз.-однозн., то $n^\prime = m^\prime$: кол-во $x_i$ и $y_i$ равно)
+            Составим $\sum^m_{j=1} \lambda_j y_j = \texttt{0}_W$ 
+            
+            От противного пусть $\{y_i\}$ - линейно зависима, тогда $\exists \lambda_k \neq 0$
 
-        $\sum^{m^\prime}_{j=1} \lambda_j \mathcal{A}x_j \stackrel{\text{линейность}}{=} \mathcal{A} (\sum^{m^\prime}_{j=1} \lambda_j x_j) = \texttt{0}_W$
+            При этом $\forall j \ \ y_j = \mathcal{A}x_j$ (т. к. $\mathcal{A}$ - взаимно-однозначен, 
+            то $n^\prime = m^\prime$: кол-во $x_i$ и $y_i$ равно)
 
-        Так как $\mathcal{A}\texttt{0}_V = \texttt{0}_W$, то $\texttt{0}_W$ - образ $x = \texttt{0}_V$, но так как $\mathcal{A}$ - вз.-однозн., то
-        $\nexists x^\prime \neq x \ | \ \mathcal{A}(x^\prime) = \texttt{0}_W$
+            $\sum^{m^\prime}_{j=1} \lambda_j \mathcal{A}x_j \stackrel{\text{линейность}}{=} \mathcal{A} (\sum^{m^\prime}_{j=1} \lambda_j x_j) = \texttt{0}_W$
 
-        Значит $\sum^{m^\prime}_{j=1} \lambda_j x_j = \texttt{0}_V$, но $\exists \lambda_k \neq 0 \Longrightarrow \Set{x_j}$ - лин. зав. - \underline{противоречие}
+            Так как $\mathcal{A}\texttt{0}_V = \texttt{0}_W$, то $\texttt{0}_W$ - образ $x = \texttt{0}_V$, 
+            но так как $\mathcal{A}$ - взаимно-однозначен, то
+            $\nexists x^\prime \neq x \ | \ \mathcal{A}(x^\prime) = \texttt{0}_W$
 
-        \item $\sqsupset$ теперь $\Set{y_i}$ - л. нез., а $\Set{x_i}$ (по предположению от противного) - лин. зав.
+            Значит $\sum^{m^\prime}_{j=1} \lambda_j x_j = \texttt{0}_V$, но 
+            $\exists \lambda_k \neq 0 \Longrightarrow \{x_j\}$ - линейно зависима - \underline{противоречие}
 
-        $\sum^{n^\prime}_{i = 1} \lambda_i x_i \stackrel{\exists \lambda_k \neq 0}{=} \texttt{0}_V \quad \Big| \mathcal{A}$
+            \item Пусть теперь $\{y_i\}$ - линейно независима, а $\{x_i\}$ (по предположению от противного) - линейно зависима
 
-        $\sum^{n^\prime}_{i = 1} \lambda_i \mathcal{A}x_i = \texttt{0}_W$
+            $\sum^{n^\prime}_{i = 1} \lambda_i x_i \stackrel{\exists \lambda_k \neq 0}{=} \texttt{0}_V \quad \Big| \mathcal{A}$
 
-        При этом $\exists \lambda_k \neq 0 \Longrightarrow \Set{y_i}$ - лин. зав. - \underline{противоречие}
+            $\sum^{n^\prime}_{i = 1} \lambda_i \mathcal{A}x_i = \texttt{0}_W$
 
-    \end{enumerate}
+            При этом $\exists \lambda_k \neq 0 \Longrightarrow \{y_i\}$ - линейно зависима - \underline{противоречие}
 
-    Следствие: $\dim V = \dim W \Longleftarrow \mathcal{A}$ - лин. изоморфизм
+        \end{enumerate}
+    \end{MyProof}
+
+    Следствие: $\dim V = \dim W \Longrightarrow \mathcal{A}$ - линейный изоморфизм
 
     \hypertarget{reverselinearoperator}{}
 
-    Def: $\mathcal{B} : W \rightarrow V$ называется обратным оператором для $\mathcal{A} : V \rightarrow W$
-
+    \Def $\mathcal{B} : W \rightarrow V$ называется обратным оператором для $\mathcal{A} : V \rightarrow W$,
     если $\mathcal{B}\mathcal{A} = \mathcal{A}\mathcal{B} = \mathcal{I}$ (обозначается $\mathcal{B} = \mathcal{A}^{-1}$)
 
     Следствие: $\mathcal{A}\mathcal{A}^{-1} x = x$
 
-    \Th $\mathcal{A}x = \texttt{0}$ и $\exists \mathcal{A}^{-1}$, тогда $x = \texttt{0}$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A}x = \texttt{0}$ и $\exists \mathcal{A}^{-1}$, тогда $x = \texttt{0}$
+    \end{MyTheorem}
 
-    $\Box \mathcal{A}^{-1}\mathcal{A} x = \mathcal{A}^{-1}(\mathcal{A} x) = \mathcal{A}^{-1} \texttt{0}_W = \texttt{0}_V \Longrightarrow x = \texttt{0}$
+    \begin{MyProof}
+        $\mathcal{A}^{-1}\mathcal{A} x = \mathcal{A}^{-1}(\mathcal{A} x) = \mathcal{A}^{-1} \texttt{0}_W = \texttt{0}_V \Longrightarrow x = \texttt{0}$
+    \end{MyProof}
 
-    \Th Необходимые и Достаточные условия существования $\mathcal{A}^{-1}$
+    \begin{MyTheorem}
+        \Ths Необходимые и Достаточные условия существования $\mathcal{A}^{-1}$
 
-    $\exists \mathcal{A}^{-1} \Longleftrightarrow \mathcal{A}$ - вз.-однозн.
+        $\exists \mathcal{A}^{-1} \Longleftrightarrow \mathcal{A}$ - взаимно-однозначный
+    \end{MyTheorem}
 
-    $\Box \Longrightarrow \exists \mathcal{A}^{-1}$, но $\sqsupset \mathcal{A}$ - не вз.-однозн., то есть
-    $\exists x_1, x_2 \in V (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A}x_1 - \mathcal{A}x_2 = \texttt{0} \Longleftrightarrow
-    \mathcal{A}(x_1 - x_2) = \texttt{0}_W \stackrel{\exists \mathcal{A}^{-1}}{\Longrightarrow} x = \texttt{0}_V \Longleftrightarrow x_1 = x_2$ - противоречие
+    \begin{MyProof}
+        \fbox{$\Longrightarrow$} $\exists \mathcal{A}^{-1}$, но $\sqsupset \mathcal{A}$ - не взаимно-однозначен, то есть
+        $\exists x_1, x_2 \in V (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A}x_1 - \mathcal{A}x_2 = \texttt{0} \Longleftrightarrow
+        \mathcal{A}(x_1 - x_2) = \texttt{0}_W \stackrel{\exists \mathcal{A}^{-1}}{\Longrightarrow} x = \texttt{0}_V \Longleftrightarrow x_1 = x_2$ - противоречие
 
-    $\Longleftarrow$ Так как $\mathcal{A}$ - изоморфизм (не учитывая линейность), то $\exists \mathcal{A}^\prime$ - обратное отображение (не обязат. линейное)
 
-    Докажем, что $\mathcal{A}^\prime : W \rightarrow V$ - линейный оператор
+        \fbox{$\Longleftarrow$} Так как $\mathcal{A}$ - изоморфизм (не учитывая линейность), 
+        то $\exists \mathcal{A}^\prime$ - обратное отображение (не обязательно линейное)
 
-    ? $\mathcal{A}^\prime (\sum \lambda_i y_i) = \sum \lambda_i \mathcal{A}^\prime y_i = \sum \lambda_i x_i$
+        Докажем, что $\mathcal{A}^\prime : W \rightarrow V$ - линейный оператор
 
-    $\mathcal{A}$ - вз.-однозн. $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \sum$
+        $\mathcal{A}$ - взаимно-однозначен $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \sum$
 
-    $\mathcal{A}(\sum \lambda_i x_i) = \mathcal{A} x = y = \sum \lambda_i y_i \quad$ и $y$ имеет только один прообраз $x$
+        $\mathcal{A}\left(\sum \lambda_i x_i\right) = \mathcal{A} x = y = \sum \lambda_i y_i \quad$ и $y$ имеет только один прообраз $x$
 
-    Применим $\mathcal{A}^\prime$ к $y = \sum \lambda_i y_i \quad \mathcal{A}^\prime y = x = \sum \lambda_i x_i$ - единственный прообраз $y$
+        Применим $\mathcal{A}^\prime$ к $y = \sum \lambda_i y_i$, получим $\mathcal{A}^\prime y = x = \sum \lambda_i x_i$ - единственный прообраз $y$
 
-    Таким образом, $\mathcal{A}^\prime$ переводит лин. комбинацию в такую же лин. комбинацию прообразов, то есть $\mathcal{A}^\prime$ - линейный: $\mathcal{A}^\prime = \mathcal{A}^{-1}$
+        Таким образом, $\mathcal{A}^\prime$ переводит линейную комбинацию в такую же линейную комбинацию прообразов, то есть $\mathcal{A}^\prime$ - линейный: $\mathcal{A}^\prime = \mathcal{A}^{-1}$
+    \end{MyProof}
 
-    \section{2.4. Матрица ЛО}
+    \subsection{2.4. Матрица линейного оператора}
 
-    $\mathcal{A} : V^n \rightarrow W^m$
+    Пусть $\mathcal{A} : V^n \rightarrow W^m$
 
-    Возьмем вектор $x \in V^n$ и разложим по какому-либо базису $\Set{e_j}^n_{j=1}$
+    Возьмем вектор $x \in V^n$ и разложим по какому-либо базису $\{e_j\}^n_{j=1}$
 
-    $\mathcal{A}x = \mathcal{A} (\sum^n_{j=1} c_j e_j) = \sum^n_{j=1} c_j \mathcal{A}e_j$
+    $\mathcal{A}x = \mathcal{A} \left(\sum^n_{j=1} c_j e_j\right) = \sum^n_{j=1} c_j \mathcal{A}e_j$
 
-    $\mathcal{A} e_j \stackrel{\text{образ базисного вектора}}{=} y_j \stackrel{\Set{f_i} - \text{ базис } W^m}{=} \sum^m_{i=1} a_{ij}f_i$
+    $\mathcal{A} e_j \stackrel{\text{образ базисного вектора}}{=} y_j \stackrel{\{f_i\} - \text{ базис } W^m}{=} \sum^m_{i=1} a_{ij}f_i$
 
     $\mathcal{A}x = \sum^n_{j=1} c_j \mathcal{A}e_j = \sum^n_{j=1} c_j \sum^m_{i=1} a_{ij}f_i = \sum^n_{j=1} \sum^m_{i=1} c_j a_{ij} f_i = \sum^m_{i=1} \sum^n_{j=1} c_j a_{ij} f_i$
 
@@ -572,106 +590,113 @@
 
     \hypertarget{operatorsmatrix}{}
 
-    Def: Матрица $A = {a_{ij}}_{i=1..m, j=1..n}$ называется матрицей оператора $\mathcal{A} : V^n \rightarrow W^m$ в базисе $\Set{e_j}^n_{j=1}$ пространства $V^n$
+    \Def Матрица $A = \{a_{ij}\}_{i=1..m, j=1..n}$ называется матрицей оператора $\mathcal{A} : V^n \rightarrow W^m$ в базисе $\{e_j\}^n_{j=1}$ пространства $V^n$
 
-    Вопросы:
+    \begin{enumerate}
+        \item Для каждого ли оператора $\mathcal{A}$ существует матрица $A$?
 
-    1) $\forall ? \mathcal{A} \ \exists A$
+        При выбранном базисе $\{e_j\} \ \forall \mathcal{A} \ \exists A$ (алгоритм выше)
 
-    2) $\forall ? A \ \exists \mathcal{A}$
+        \item Для каждой ли матрицы $A$ существует оператор $\mathcal{A}$?
 
-    3) если $\exists A$ для $\mathcal{A}$, то единственная?
+        $\forall A_{m\times n}$ можно взять пару ЛП $V^n, W^m$ и определить $\mathcal{A} : V^n \rightarrow W^m$ по правилу $\mathcal{A}e_V = e^\prime_W$
 
-    4) если $\exists \mathcal{A}$ для $A$, то единственная?
+        \item Если существует матрица $A$ для оператора $\mathcal{A}$, то она единственная?
 
-    Ответы:
+        Такая $A$ единственная $\Longrightarrow$ в разных базисах матрицы ЛО $\mathcal{A} \quad A_e \neq A_{e^\prime}$
 
-    1) При выбранном базисе $\Set{e_j} \ \forall \mathcal{A} \ \exists A$ (алгоритм выше)
+        \item Если существует оператор $\mathcal{A}$ для матрицы $A$, то он единственный?
 
-    3) такая $A$ единственная $\Longrightarrow$ в разных базисах матрицы ЛО $\mathcal{A} \quad A_e \neq A_{e^\prime}$
+        \Lab
+    \end{enumerate}
 
-    2) $\forall A_{m\times n}$ можно взять пару ЛП $V^n, W^m$ и определить $\mathcal{A} : V^n \rightarrow W_n$ по правилу $\mathcal{A}e_V = e_W^\prime$
+    \Nota Далее будем решать две задачи:
 
-    4) \Lab
+    \begin{enumerate}
+        \item преобразование координат как действие оператора
 
-    Nota: Далее будем решать две задачи
+        \item поиск наиболее простой матрицы в некотором базисе
+    \end{enumerate}
 
-    1) преобразование координат как действие оператора
-
-    2) поиск наиболее простой матрицы в некотором базисе
-
-    \section{2.5. Ядро и образ оператора}
+    \subsection{2.5. Ядро и образ оператора}
 
     \hypertarget{kernalandimageofoperator}{}
 
-    \Def Ядро оператора - $Ker \mathcal{A} \stackrel{def}{=} \Set{x \in V \ | \ \mathcal{A}x = \texttt{0}_W}$
+    \Defs Ядро оператора $\Ker \mathcal{A} \stackrel{def}{=} \{x \in V \ | \ \mathcal{A}x = \texttt{0}_W\}$
 
-    \Def Образ оператора - $Im \mathcal{A} \stackrel{def}{=} \Set{y \in W \ | \ \mathcal{A}x = y}$
-
-    \Nota $Ker \mathcal{A}$ и $Im \mathcal{A}$ - подпространства
+    \Defs Образ оператора $\IM \mathcal{A} \stackrel{def}{=} \{y \in W \ | \ \mathcal{A}x = y\}$
 % end specsec_2024_03_15.tex
 
 % begin specsec_2024_03_22.tex
 
-    \Nota $Ker\ \mathcal{A}$ и $Im\ \mathcal{A}$ - подпространства $V$ ($\mathcal{A} : V \rightarrow V$)
+    \Notas $\Ker \mathcal{A}$ и $\IM \mathcal{A}$ - подпространства $V$ ($\mathcal{A} : V \rightarrow V$)
 
-    Вообще-то $Ker\ \mathcal{A} \subset V, Im\ \mathcal{A} \subset W \ (\mathcal{A} : V \rightarrow W)$
+    В общем случае $\Ker \mathcal{A} \subset V, \IM \mathcal{A} \subset W \ (\mathcal{A} : V \rightarrow W)$
 
-    $\dim W \leq \dim V$, тогда можно считать, что $W \subset V^\prime$ и
-    рассмотрим $\mathcal{A} : V \rightarrow V^\prime$ (где $V^\prime$ изоморфен $V$)
+    \mediumvspace
 
-    $Ker \mathcal{A}$ - подпространство, то есть $Ker \mathcal{A} \subset V$ и
-    $\sum c_i x_i \subset \mathcal{A}$, если $\forall x_i \in Ker \mathcal{A}$
+    Заметим, что если $\Ker \mathcal{A} = \texttt{0}$, то $\mathcal{A}$ - взаимно-однозначен
 
-    $\mathcal{A} (\sum c_i x_i) = \sum c_i \mathcal{A} x_i \stackrel{x_i \in \mathcal{A}}{=} \sum c_i \texttt{0} = \texttt{0}$
+    \begin{MyProof}
+        Докажем от противного:
 
-    Следствие: $Ker \mathcal{A} = \texttt{0} \Longrightarrow \mathcal{A}$ - вз.-однозн.
+        $\sqsupset \mathcal{A}$ - не взаимно-однозначен, то есть 
+        $\exists x_1, x_2 \in V (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow 
+        \mathcal{A} (x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \in \Ker \mathcal{A}$ - 
+        противоречие, так как $\Ker \mathcal{A} = \texttt{0}$
+    \end{MyProof}
 
-    $\Box$ От противного:
+    \Notas Обратное также верно:
 
-    $\sqsupset \mathcal{A}$ - не вз.-однозн., то есть $\exists x_1, x_2 \in V (x_1 \neq x_2) | \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A} (x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \in Ker \mathcal{A}$ - противоречие
+    \begin{MyProof}
+        $\mathcal{A}$ - взаимно-однозначен $\Longleftrightarrow y_1 = y_2 \Longrightarrow x_1 = x_2$
 
-    \Nota Обратное также верно:
+        Докажем от противного: $\dim \Ker \mathcal{A} \neq 0$, значит найдется $x = x_1 - x_2 \in \Ker \mathcal{A}$ $(x_1 \neq x_2)$, 
+        причем по определению ядра $\mathcal{A} x = \mathcal{A} (x_1 - x_2) = \texttt{0}$
 
-    $\mathcal{A}$ - вз.-однозн. $\Longleftrightarrow y_1 = y_2 \Longrightarrow x_1 = x_2$, так как $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 = 0$
-
-    Тогда $\texttt{0}$ является образом только $\texttt{0}$-вектора $\Longrightarrow Ker \mathcal{A} = \texttt{0}$
+        А так как $\mathcal{A} (x_1 - x_2) = \texttt{0}$, то $\mathcal{A} x_1 = \mathcal{A} x_2 \Longrightarrow x_1 = x_2$ - противоречие
+    \end{MyProof}
 
     \Nota Также очевидно, что
 
-    $Ker \mathcal{A} = 0 \Longleftrightarrow Im \mathcal{A} = V$
+    $\Ker \mathcal{A} = 0 \Longleftrightarrow \IM \mathcal{A} = V$
 
-    $Ker \mathcal{A} = V \Longrightarrow Im \mathcal{A} = \texttt{0}$ и $\mathcal{A} = 0$
+    $\Ker \mathcal{A} = V \Longrightarrow \IM \mathcal{A} = \texttt{0}$ и $\mathcal{A} = 0$
 
     \hypertarget{theoremaboutdimensions}{}
 
-    \Th $\mathcal{A} : V \rightarrow V$, тогда $\dim Ker \mathcal{A} + \dim Im \mathcal{A} = \dim V$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A} : V \rightarrow V$, тогда $\dim \Ker \mathcal{A} + \dim \IM \mathcal{A} = \dim V$
+    \end{MyTheorem}
 
-    $\Box$ Так как $Ker \mathcal{A}$ - подпространство $V$, то можно построить дополнение до прямой суммы (взяв базисные векторы ядра, дополнить их набор до базиса $V$: $e^k_1, \dots e^k_m, e^k_{m+1}, \dots e^k_n$)
+    \begin{MyProof}
+        Так как $\Ker \mathcal{A}$ - подпространство $V$, то можно построить дополнение до прямой суммы (взяв базисные векторы ядра, дополнить их набор до базиса $V$: $e^k_1, \dots e^k_m, e^k_{m+1}, \dots e^k_n$)
 
-    Обозначим дополнение $W$, тогда $Ker \mathcal{A} \xor W = V \Longrightarrow \dim Ker \mathcal{A} + \dim W = \dim V$
+        Обозначим дополнение $W$, тогда $Ker \mathcal{A} \xor W = V \Longrightarrow \dim \Ker \mathcal{A} + \dim W = \dim V$
 
-    Докажем, что $W$ и $Im \mathcal{A}$ - изоморфны
+        Докажем, что $W$ и $\IM \mathcal{A}$ - изоморфны
 
-    $\mathcal{A} : W \rightarrow Im \mathcal{A}$
+        $\mathcal{A} : W \rightarrow \IM \mathcal{A}$
 
-    $\mathcal{A} : Ker \mathcal{A} \rightarrow \texttt{0}$
+        $\mathcal{A} : Ker \mathcal{A} \rightarrow \texttt{0}$
 
-    Докажем, что $\mathcal{A}$ действует из $W$ в $Im \mathcal{A}$ взаимно-однозначно
+        Докажем, что $\mathcal{A}$ действует из $W$ в $\IM \mathcal{A}$ взаимно-однозначно
 
-    $\sqsupset \mathcal{A}$ невз.-однозн., тогда $\exists x_1, x_2 \in W (x_1 \neq x_2) | \mathcal{A}x_1 = \mathcal{A}x_2 \in Im \mathcal{A}$
+        $\sqsupset \mathcal{A}$ не взаимно-однозначный, тогда $\exists x_1, x_2 \in W (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \in \IM \mathcal{A}$
 
-    $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \stackrel{\text{обозн.}}{=} x \in Ker \mathcal{A}$, но $x \neq 0$, так как $x_1 \neq x_2$
+        Из этого $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \stackrel{\text{обозн.}}{=} x \in \Ker \mathcal{A}$, причем $x \neq 0$, так как $x_1 \neq x_2$
 
-    Но для прямой суммы $W \union Ker \mathcal{A} = \texttt{0}, x \ni W \union Ker \mathcal{A} \Longrightarrow$ предположение неверно
+        Но так как $W$ - дополнение до прямой суммы ($Ker \mathcal{A} \xor W = V$, то есть $W \union \Ker \mathcal{A} = \texttt{0}$), 
+        а $x \in W \union \Ker \mathcal{A}$ - противоречие ($x \neq 0$)
 
-    $\Longrightarrow \mathcal{A}$ - лин. вз.-однозн. $\Longrightarrow \dim W = \dim Im \mathcal{A}$
+        Из этого следует, что $\mathcal{A}$ - линейный и взаимно-однозначный $\Longrightarrow \dim W = \dim \IM \mathcal{A}$
 
-    $V = W_1 \xor W_2$ найдется ЛО $\mathcal{A} : V \rightarrow V$
+        Получается, что $V$ можно представить как прямую сумму $W_1 \xor W_2$, причем 
+        $W_1 = \Ker \mathcal{A}, W_2 = \IM \mathcal{A}$
+    \end{MyProof}
 
-    $W_1 = Ker \mathcal{A}, W_2 = Im \mathcal{A}$
-
-    \Def Рангом оператора $\mathcal{A}$ называется $\dim Im \mathcal{A}$: $rang \mathcal{A} \stackrel{def}{=} \dim Im \mathcal{A} (= r(\mathcal{A}) = rank \mathcal{A})$
+    \Def Рангом оператора $\mathcal{A}$ называется $\dim \IM \mathcal{A}$: $\rang \mathcal{A} \stackrel{def}{=} \dim \IM \mathcal{A}$ 
+    (также обозначается $\operatorname{r}(\mathcal{A})$ или $\operatorname{rank} \mathcal{A}$)
 
     \Nota Сравним ранг оператора с рангом его матрицы
 
@@ -721,70 +746,80 @@
          e_{n1} & e_{n2} & \dots
     \end{pmatrix}$
 
-    \Nota Поиск матрицы $\mathcal{A}$ можно осуществить, найдя ее в \enquote{домашнем} базисе $\Set{e_i}$, то есть $A (e_1, \dots e_n) = (e_1^\prime, \dots, e_m^\prime)$
+    \Nota Поиск матрицы $\mathcal{A}$ можно осуществить, найдя ее в \enquote{домашнем} базисе $\{e_i\}$, то есть $A (e_1, \dots, e_n) = (e_1^\prime, \dots, e_m^\prime)$
 
     Затем, можно найти матрицу в другом (нужном) базисе, используя формулы преобразований (см. \Ths позже)
 
-    Тогда $Ker \mathcal{A} = K$ - множество векторов, которые решают систему
+    Тогда $\Ker \mathcal{A} = K$ - множество векторов, которые решают систему
 
-    $AX = \texttt{0} \quad (\dim K = m = \dim \text{ФСР} = n - rang A)$ и при этом $\dim K = n - \dim Im \mathcal{A}$
+    $AX = \texttt{0} \quad (\dim K = m = \dim \text{ФСР} = n - \rang A)$ и при этом $\dim K = n - \dim \IM \mathcal{A}$
 
-    $rang \mathcal{A} = rang A = \dim Im \mathcal{A}$
+    $\rang \mathcal{A} = \rang A = \dim \IM \mathcal{A}$
 
-    Следствия (без док-в)
+    Следствия (без доказательств):
 
-    1) $rang(\mathcal{AB}) \leq rang(\mathcal{A})$ (или $rang \mathcal{B}$)
+    \begin{enumerate}
+        \item $\rang(\mathcal{AB}) \leq \rang(\mathcal{A})$ (или $\rang \mathcal{B}$)
 
-    2) $rang(\mathcal{AB}) \geq rang(\mathcal{A}) + rang(\mathcal{B}) - \dim V$
+        \item $\rang(\mathcal{AB}) \geq \rang(\mathcal{A}) + \rang(\mathcal{B}) - \dim V$
+    \end{enumerate}
 
     \Nota Рассмотрим преобразование координат, как линейный оператор $T : V^n \rightarrow V^n$ (переход из системы $Ox_i \rightarrow Ox_i^\prime$, $i = 1..n$)
 
-    $\dim Im T = n, \dim Ker T = 0 \Longrightarrow T$ - вз.-однозн.
+    $\dim \IM T = n, \dim \Ker T = 0 \Longrightarrow T$ - взаимно-однозначен
 
     Поставим задачу отыскания матрицы в другом базисе, используя $T_{e \to e^\prime}$
 
-    \section{2.6. Преобразование матрицы оператора при переходе к другому базису}
+    \subsection{2.6. Преобразование матрицы оператора при переходе к другому базису}
 
     \hypertarget{transformationtodifferentbasis}{}
 
-    \Th $\mathcal{A} : V^n \rightarrow V^n$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A} : V^n \rightarrow V^n$
 
-    $\Set{e_i} \stackrel{\text{об}}{=} e$ и $\Set{e^\prime_i} \stackrel{\text{об}}{=} e^\prime$ - базисы пространства $V$
+        $\{e_i\} \stackrel{\text{об}}{=} e$ и $\{e^\prime_i\} \stackrel{\text{об}}{=} e^\prime$ - базисы пространства $V$
 
-    $\mathcal{T} : V^n \rightarrow V^n$ - преобразование координат, то есть $Te_i = e^\prime_i$
+        $\mathcal{T} : V^n \rightarrow V^n$ - преобразование координат, то есть $Te_i = e^\prime_i$
 
-    $\sqsupset A, A^\prime$ - матрицы $\mathcal{A}$ в базисах $e$ и $e^\prime$
+        $\sqsupset A, A^\prime$ - матрицы $\mathcal{A}$ в базисах $e$ и $e^\prime$
 
-    Тогда $A^\prime = TAT^{-1}$ ($A^\prime_{e^\prime} = T_{e\to e^\prime}AT^{-1}_{e\to e^\prime}$)
+        Тогда $A^\prime = TAT^{-1}$ ($A^\prime_{e^\prime} = T_{e\to e^\prime}AT^{-1}_{e\to e^\prime}$)
+    \end{MyTheorem}
 
-    $\Box \sqsupset y = \mathcal{A}x$, где $x, y$ - векторы в базисе $e$ ($x_e = x^\prime_{e^\prime}$ - один вектор)
+    \begin{MyProof}
+        Пусть $y = \mathcal{A}x$, где $x, y$ - векторы в базисе $e$ ($x_e = x^\prime_{e^\prime}$ - один вектор)
 
-    $y^\prime = \mathcal{A} x^\prime$, где $x^\prime, y^\prime$ - векторы в базисе $e^\prime$
+        $y^\prime = \mathcal{A} x^\prime$, где $x^\prime, y^\prime$ - векторы в базисе $e^\prime$
 
-    $\mathcal{T}x = x^\prime, \mathcal{T}y = y^\prime$
+        $\mathcal{T}x = x^\prime, \mathcal{T}y = y^\prime$
 
-    $y = Ax$, $y^\prime = A^\prime x^\prime$, тогда $Ty = A^\prime (Tx) \quad \Big| \cdot T^{-1}$
+        $y = Ax$, $y^\prime = A^\prime x^\prime$, тогда $Ty = A^\prime (Tx) \quad \Big| \cdot T^{-1}$
 
-    $T^{-1}Ty = (T^{-1}A^\prime T)x$
-    
-    $Ax = y = (T^{-1}A^\prime T)x$
+        $T^{-1}Ty = (T^{-1}A^\prime T)x$
+        
+        $Ax = y = (T^{-1}A^\prime T)x$
 
-    $A = T^{-1}A^\prime T \Longrightarrow A^\prime = TA T^{-1}$
+        $A = T^{-1}A^\prime T \Longrightarrow A^\prime = TA T^{-1}$
+    \end{MyProof}
 % end specsec_2024_03_22.tex
 
 % begin specsec_2024_03_29.tex
 
-    \Th $A^\prime = T_{e\to e^\prime} A T^{-1}_{e\to e^\prime}$
+    \begin{MyTheorem}
+        \Ths $A^\prime = T_{e\to e^\prime} A T^{-1}_{e\to e^\prime}$
+    \end{MyTheorem}
 
     \Nota $C = A + \lambda B$
 
-    Следствия:
+    \underline{Следствия}:
 
-    1) $TCT^{-1} = T (A + \lambda B) T^{-1} = T A T^{-1} + \lambda T B T^{-1}$
+    \begin{enumerate}
+        \item $TCT^{-1} = T (A + \lambda B) T^{-1} = T A T^{-1} + \lambda T B T^{-1}$
 
-    2) $B = I \quad T B T^{-1} = T I T^{-1} = I$, т. к. $TI = T, T T^{-1} = I$
+        \item $B = I \quad T B T^{-1} = T I T^{-1} = I$, т. к. $TI = T, T T^{-1} = I$
 
-    3) $\det A^{-1} = \det (T A T^{-1}) = \det T \det A \det T^{-1} = \det A \cdot 1$
+        \item $\det A^{-1} = \det (T A T^{-1}) = \det T \det A \det T^{-1} = \det A \cdot 1$
+    \end{enumerate}
 
     \Nota То есть характеристика нашего объекта - инвариант при преобразовании $T$
 
@@ -799,7 +834,7 @@
          a_{21} & a_{22} & \dots & a_{2n} \\
          \vdots & \vdots & \ddots & \vdots \\
          a_{n1} & a_{n2} & \dots & a_{nn} \\
-    \end{pmatrix} \cdots \begin{pmatrix}
+    \end{pmatrix} \cdot \begin{pmatrix}
          a_{11} & a_{21} & \dots & a_{n1} \\
          a_{12} & a_{22} & \dots & a_{n2} \\
          \vdots & \vdots & \ddots & \vdots \\
@@ -811,295 +846,313 @@
          0 & 0 & \dots & 1 \\
     \end{pmatrix}$
 
+    Для элементов матрицы:
+
     $\forall i \sum^n_{j=1} a_{ij} a_{ij} = (A_i, A_i) = 1$
+
     $\forall i, j (i \neq j) \sum^n_{kk=1} a_{ik} a_{jk} = (A_i, A_j) = 0$
 
-    В общем $(A_i, A_j) = \begin{sqcases}1, i = j \\ 0, i \neq j \end{sqcases}$
+    В общем, $(A_i, A_j) = \begin{sqcases}1, & i = j \\ 0, & i \neq j \end{sqcases}$
 
     \Def Оператор $\mathcal{A}$ называется ортогональным, если его матрица ортогональна
 
-    ? $A$ ортогональна в каком-либо базисе или во всех?
+    Возникает вопрос: $A$ ортогональна в каком-либо базисе или во всех сразу?
 
-    Свойство. $\mathcal{A}$ - ортогонален, то $\det A = \pm 1$ (следует из определения $\det(AA^T) = \det^2(A) = \det(I)$)
+    Свойство: если $\mathcal{A}$ - ортогонален, то $\det A = \pm 1$ (следует из определения $\det(AA^T) = \det(A) \cdot \det(A^T) = \det(A) \cdot \det(A) = \det(I) = 1 \Longrightarrow \det(A) = \pm \sqrt{1}$)
 
-    \Th $T_{e\to e^\prime}$ - преобразование координат в $V^n$. Тогда $T$ - ортогональный оператор
+    \begin{MyTheorem}
+        \Ths $T_{e\to e^\prime}$ - преобразование координат в $V^n$. Тогда $T$ - ортогональный оператор
+    \end{MyTheorem}
 
-    Базис $e$ - ортонормированный базис
+    Здесь базис $e$ - ортонормированный базис
 
-    $\Box \quad \sqsupset $ в базисе $e$ матрица $T = \begin{pmatrix}
-          \tau_{11} & \dots & \tau_{1n} \\
-          \vdots & \ddots & \vdots \\
-          \tau_{n1} & \dots & \tau_{nn} \\
-    \end{pmatrix}$ - неортогональна
+    \begin{MyProof}
+        Пусть в базисе $e$ матрица $T = \begin{pmatrix}
+            \tau_{11} & \dots & \tau_{1n} \\
+            \vdots & \ddots & \vdots \\
+            \tau_{n1} & \dots & \tau_{nn} \\
+        \end{pmatrix}$ - неортогональна
 
-    Тогда $e_1^\prime = \sum_{i=1}^n \tau_{1i} e_i \quad \Big| \cdot e_1^\prime$
+        Тогда $e_1^\prime = \sum_{i=1}^n \tau_{1i} e_i \quad \Big| \cdot e_1^\prime$
 
-    $1 = (e_1^\prime, e_1^\prime) = (\sum_{i=1}^n \tau_{1i} e_i)^2 =
-    \tau^2_{11} e^2_1 + \tau_{11} e_1 \tau_{12} e_2 + \dots = \tau_{11}^2 + \dots + \tau_{1n}^2 = 1$ - то есть строка - единичный вектор
+        $1 = (e_1^\prime, e_1^\prime) = \left(\sum_{i=1}^n \tau_{1i} e_i\right)^2 =
+        \tau^2_{11} e^2_1 + \tau_{11} e_1 \tau_{12} e_2 + \dots = \tau_{11}^2 + \dots + \tau_{1n}^2 = 1$, то есть строка - это единичный вектор
 
-    $0 = (e_1^\prime, e_2^\prime) = (\tau_{11} e_1 + \tau_{12}e_1 + \dots) \cdot
-    (\tau_{21}e_1 + \tau_{22}e_2 + \dots) = $ произведение 1-ой строки на 2-ую, то есть строки ортогональны
+        $0 = (e_1^\prime, e_2^\prime) = (\tau_{11} e_1 + \tau_{12}e_1 + \dots) \cdot
+        (\tau_{21}e_1 + \tau_{22}e_2 + \dots) = $ произведение 1-ой строки на 2-ую, то есть строки ортогональны
 
-    Таким образом, матрица $T$ - ортогональна
+        Таким образом, матрица $T$ - ортогональна
+    \end{MyProof}
 
     \Nota Тогда $A^\prime = T A T^{-1} = T A T^T$
 
-    \section{2.7. Собственные векторы и значения оператора}
+
+    \subsection{2.7. Собственные векторы и значения оператора}
 
     \Def Инвариантное подпространство оператора $\mathcal{A} : V \rightarrow V$ -
-    это $U = \Set{x \in V_1 \in V | \mathcal{A}x \in V_1}$
+    это $U = \{x \in V_1 \in V \ | \ \mathcal{A}x \in V_1\}$
 
     \Ex $V = \mathcal{P}_n(t)$ - пространство многочленов степени $\leq n$ на $[a; b]$, $\mathcal{D} = \frac{d}{dt}$
 
-    \Nota $Ker \mathcal{A}, Im \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
+    \Nota $\Ker \mathcal{A}, \IM \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
 
     \hypertarget{eigenvalue}{}
 
-    \Def Характеристический многочлен оператора $\mathcal{A} : V \rightarrow V$
-    ($\mathcal{A}x = Ax, A$ - матрица в неком базисе)
+    \Def Характеристическим многочленом оператора $\mathcal{A} : V \rightarrow V$
+    ($\mathcal{A}x = Ax, A$ - матрица в неком базисе) называют $\xi(\lambda) = \det(A - \lambda I)$
 
-    $\xi(\lambda) = \det(A - \lambda I)$
-
-    \Nota Матрица $A - \lambda I$:
-
-    $\begin{vmatrix}a_{11} - \lambda & \dots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \dots & a_{nn} - \lambda \end{vmatrix}$
+    \Nota Определитель $|A - \lambda I|$ представляет собой $\begin{vmatrix}a_{11} - \lambda & \dots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \dots & a_{nn} - \lambda \end{vmatrix}$
 
     \Nota Уравнение $\xi(\lambda) = 0$ называется вековым
 
     \hypertarget{eigenvector}{}
 
     \Def Собственным вектором оператора $\mathcal{A}$, отвечающим собственному значению $\lambda$,
-    называется $x \neq 0 \ | \ \mathcal{A}x = \lambda x$
+    называется вектор $x \neq 0$ такой, что $\mathcal{A}x = \lambda x$
 
-    \Def Собственное подпространство оператора $\mathcal{A}$, отвечающее числу $\lambda_i$,
+    \Defs Собственное подпространство оператора $\mathcal{A}$, отвечающее числу $\lambda_i$, определяется как $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
 
-    $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
+    \Defs $\dim U_{\lambda_i} = \beta$ - геометрическая кратность числа $\lambda_i$
 
-    \Def $\dim U_{\lambda_i} = \beta$ - геометрическая кратность числа $\lambda_i$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
+    \end{MyTheorem}
 
-    \Th $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
+    \begin{MyProof}
+        $|A - \lambda I| = 0 \Longleftrightarrow rang (A - \lambda I) < n \Longleftrightarrow
+        \dim \IM (A - \lambda I) < n \Longleftrightarrow \dim \Ker (A - \lambda I) \geq 1$
 
-    $\Box \Longleftrightarrow |A - \lambda I| = 0 \Longleftrightarrow rang (A - \lambda I) < n \Longleftrightarrow
-    \dim Im(A - \lambda I) < n \Longleftrightarrow \dim Ker(A - \lambda I) \geq 1$
-
-    $\exists x \in Ker(A - \lambda I), x \neq 0 \ | \ (A - \lambda I) x = 0 \Longleftrightarrow Ax - \lambda I x = 0 \Longleftrightarrow Ax = \lambda x$
+        $\exists x \in \Ker (A - \lambda I), x \neq 0 \ | \ (A - \lambda I) x = 0 \Longleftrightarrow Ax - \lambda I x = 0 \Longleftrightarrow Ax = \lambda x$
+    \end{MyProof}
 
     \Nota По основной теореме алгебры вековое уравнение имеет $n$ корней (не всех из них вещественные).
     В конкретном множестве $\mathcal{K} \ni \lambda$ их может не быть
 
     \Def Кратность корня $\lambda_i$ называется алгебраической кратностью
 
-    \Th $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ - линейно независимы
+    \begin{MyTheorem}
+        \Ths $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ - линейно независимы
+    \end{MyTheorem}
 
-    $\Box$ Составим комбинацию: $c_1 x_1 + c_2 x_2 = 0 \quad \Big| \cdot \mathcal{A}$
+    \begin{MyProof}
+        Составим комбинацию: $c_1 x_1 + c_2 x_2 = 0 \quad \Big| \cdot \mathcal{A}$
 
-    $\lambda_1 \neq \lambda_2 \Longrightarrow \lambda_1^2 + \lambda_2^2 \neq 0, \sqsupset \lambda_2 \neq 0$
+        $\lambda_1 \neq \lambda_2 \Longrightarrow \lambda_1^2 + \lambda_2^2 \neq 0, \sqsupset \lambda_2 \neq 0$
 
-    $c_1 \mathcal{A} x_1 + c_2 \mathcal{A} x_2 = 0 \Longleftrightarrow c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 = 0$
+        $c_1 \mathcal{A} x_1 + c_2 \mathcal{A} x_2 = 0 \Longleftrightarrow c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 = 0$
 
-    Умножим $c_1 x_1 + c_2 x_2 = 0$ на $\lambda_2$: $c_1 \lambda_2 x_1 + c_2 \lambda_2 x_2 = 0$
+        Умножим $c_1 x_1 + c_2 x_2 = 0$ на $\lambda_2$: $c_1 \lambda_2 x_1 + c_2 \lambda_2 x_2 = 0$
 
-    $c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 - c_1 \lambda_2 x_1 - c_2 \lambda_2 x_2 = 0$
+        $c_1 \lambda_1 x_1 + c_2 \lambda_2 x_2 - c_1 \lambda_2 x_1 - c_2 \lambda_2 x_2 = 0$
 
-    $c_1 x_1(\lambda_1 - \lambda_2) = 0$
+        $c_1 x_1(\lambda_1 - \lambda_2) = 0$
 
-    Так как $\lambda_1 \neq \lambda_2$ по условию, $x_1 \neq 0$ - собственный вектор, поэтому $c_1 = 0$, а комбинация линейно независима
+        Так как $\lambda_1 \neq \lambda_2$ по условию, $x_1 \neq 0$ - собственный вектор, поэтому $c_1 = 0$, а комбинация линейно независима
 
-    Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
+        Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
+    \end{MyProof}
 
     \Nota Приняв доказательство за базу индукции, можно доказать линейную независимость для $k$-ой системы собственных векторов для попарно различных $k$ чисел $\lambda$
 % end specsec_2024_03_29.tex
 
 % begin specsec_2024_04_03.tex
 
-    \Th $\lambda_1, \dots \lambda_p$ - различные собственные значения $\mathcal{A} : V \rightarrow V$,
-    им соответствуют $U_{\lambda_i}$ - собственные подпространства $V$ для $\lambda_i$
+    \begin{MyTheorem}
+        \Ths $\lambda_1, \dots \lambda_p$ - различные собственные значения $\mathcal{A} : V \rightarrow V$,
+        им соответствуют $U_{\lambda_i}$ - собственные подпространства $V$ для $\lambda_i$
 
-    $\sqsupset e^{(1)} = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}}, e^{(2)} = \Set{e^{(2)}_1, \dots, e^{(2)}_{k_2}}, \dots$ -
-    базисы $U_{\lambda_1}, U_{\lambda_2}, \dots$
+        Пусть $e^{(1)} = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}}, e^{(2)} = \{e^{(2)}_1, \dots, e^{(2)}_{k_2}\}, \dots$ -
+        базисы $U_{\lambda_1}, U_{\lambda_2}, \dots$
 
-    Составим систему $e = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}}$ (*)
+        Составим систему $e = \{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}\}$
 
-    Тогда система $e$ - линейно независима
+        Тогда система $e$ - линейно независима
+    \end{MyTheorem}
 
-    $\Box$ Составим линейную комбинацию:
+    \begin{MyProof}
+        Составим линейную комбинацию:
 
-    1) $\sqsupset \quad \stackrel{x_1 \in U_{\lambda_1}}{\overgroup{\alpha_1 e^{(1)}_1 + \dots + \alpha_{k_1} e^{(1)}_{k_1}}} + \dots +
-    \stackrel{x_p \in U_{\lambda_p}}{\overgroup{\gamma_1 e^{(p)}_1 + \dots + \gamma_{k_p} e^{(p)}_{k_p}}} = 0$
+        \begin{enumerate}
+            \item Пусть $\stackrel{x_1 \in U_{\lambda_1}}{\overgroup{\alpha_1 e^{(1)}_1 + \dots + \alpha_{k_1} e^{(1)}_{k_1}}} + \dots +
+            \stackrel{x_p \in U_{\lambda_p}}{\overgroup{\gamma_1 e^{(p)}_1 + \dots + \gamma_{k_p} e^{(p)}_{k_p}}} = 0$
 
-    Тогда $\sum_{i=1}^p x_i = 0$ ($x_i$ - линейно независимы, так как $\lambda_i$ - различны) - этого не может быть, так как $\forall i \ x_i \neq 0$ (как собственный вектор)
+            Тогда $\sum_{i=1}^p x_i = 0$ ($x_i$ - линейно независимы, так как $\lambda_i$ - различны) - этого не может быть, так как $\forall i \ x_i \neq 0$ (как собственный вектор)
 
-    2) В $\forall U_{\lambda_i}$ содержится $0$-вектор. Тогда $\sum_{i=1}^n x_i = 0 \Longleftrightarrow \forall x_i = 0$
+            \item В $\forall U_{\lambda_i}$ содержится $0$-вектор. Тогда $\sum_{i=1}^n x_i = 0 \Longleftrightarrow \forall x_i = 0$
 
-    Но $x_j = \sum_{j=1}^{k_i} c_i e^{(j)}_i = 0$ ($e^{(j)}_i$ - базисные, т. е. л/нез) $\Longrightarrow \forall c_j = 0$ (комбинация должна быть тривиальна)
-
-    $\Box$
+            Но $x_j = \sum_{j=1}^{k_i} c_i e^{(j)}_i = 0$ ($e^{(j)}_i$ - базисные, то есть линейно независимы) $\Longrightarrow \forall c_j = 0$ (комбинация должна быть тривиальна)
+        \end{enumerate}
+    \end{MyProof}
 
     \Nota Таким образом, объединение базисов собственных подпространств $U_{\lambda_i}$ образует линейно независимую систему в $V^n$
 
-    Что можно сказать о размерности системы $e$ (*) ?
+    Что можно сказать о размерности системы $e = \{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}\}$?
 
-    Обозначим $S = \sum_{i=1}^p \dim U_{\lambda_i} = \sum_{i=1}^p \beta_i$, $\beta_i$ - геометрическая кратность $\lambda_i$
+    Обозначим $S = \sum_{i=1}^p \dim U_{\lambda_i} = \sum_{i=1}^p \beta_i$, где $\beta_i$ - геометрическая кратность $\lambda_i$
 
-    Очевидно, $S \leq n$
+    Очевидно, что $S \leq n$
 
-    \Th $S = n \Longleftrightarrow \exists$ базис $V^n$, составленный из собственных векторов
+    \begin{MyTheorem}
+        \Ths $S = n \Longleftrightarrow \exists$ базис $V^n$, составленный из собственных векторов
+    \end{MyTheorem}
 
-    $\Box$ Система $e = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}}$ состоит из собственных векторов
+    \begin{MyProof}
+        Система $e = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}}$ состоит из собственных векторов
 
-    Если $S = n$, получаем $n$ собственных векторов, линейно независимых - базис $V^n$
+        Если $S = n$, получаем $n$ собственных векторов, линейно независимых - базис $V^n$
 
-    Если $\exists$ базис из $n$ лин. незав. собственных векторов, тогда $\dim e = S = n$
+        Если $\exists$ базис из $n$ лин. незав. собственных векторов, тогда $\dim e = S = n$
+    \end{MyProof}
 
-    $\Box$
-
-    \Nota Условие Th равносильно: $V^n = \sum_{i=1}^p \xor U_{\lambda_i} (\lambda_i \neq \lambda_j)$
+    \Nota Условие \Ths равносильно: $V^n = \bigoplus_{i=1}^p U_{\lambda_i} (\lambda_i \neq \lambda_j)$
 
     Действительно: $\dim V^n = \sum_{i=1}^p \dim U_{\lambda_i}$ и $\forall i, j \ U_{\lambda_i} \cap U_{\lambda_j} = 0$
 
     \Ex Если $\exists n$ различных собственных чисел $\lambda_1, \dots, \lambda_n$, то $\dim U_{\lambda_i} = 1 \forall i$
 
-    \Def Оператор $\mathcal{A}$ диагонализируемый, если существует базис $e \ | \ A_e$ - диагональна
+    \Def Оператор $\mathcal{A}$ диагонализируемый, если существует базис $e$ такой, что $A_e$ - диагональна
 
     \hypertarget{diagonalizedmatrixtheorem}{}
 
-    \Th $\mathcal{A}$ - диаг.-ем $\Longleftrightarrow \exists$ базис из собственных векторов
+    \begin{MyTheorem}
+        \Ths $\mathcal{A}$ - диагонализируем $\Longleftrightarrow$ существует базис из собственных векторов
+    \end{MyTheorem}
 
-    $\Box \Longleftarrow e = \Set{e_1, \dots, e_n}$ - базис собственных векторов
+    \begin{MyProof}
+        $\fbox{\Longleftarrow} \quad e = \Set{e_1, \dots, e_n}$ - базис собственных векторов
 
-    Собственный вектор (def): $\exists \lambda_i \ | \ \mathcal{A}e_i = \lambda_i e_i = 0 \cdot e_1 + \dots + \lambda_i e_i + \dots + 0 \cdot e_n$
+        Собственный вектор по определению: $\exists \lambda_i \ | \ \mathcal{A}e_i = \lambda_i e_i = 0 \cdot e_1 + \dots + \lambda_i e_i + \dots + 0 \cdot e_n$
 
-    $\begin{cases}
-         \mathcal{A}e_1 = \lambda_1 e_1 + \sum_{k \neq 1} 0 \cdot e_k \\
-         \mathcal{A}e_2 = \lambda_2 e_2 + \sum_{k \neq 2} 0 \cdot e_k \\
-         \vdots
-    \end{cases} \Longleftrightarrow \begin{pmatrix}
-                                        \lambda_1 & 0         & \dots  & 0         \\
-                                        0         & \lambda_2 & \dots  & 0         \\
-                                        \vdots    & \vdots    & \ddots & \vdots    \\
-                                        0         & 0         & \dots  & \lambda_n
-    \end{pmatrix}_e \cdots e_i = \mathcal{A} e_i$
+        $\begin{cases}
+            \mathcal{A}e_1 = \lambda_1 e_1 + \sum_{k \neq 1} 0 \cdot e_k \\
+            \mathcal{A}e_2 = \lambda_2 e_2 + \sum_{k \neq 2} 0 \cdot e_k \\
+            \vdots
+        \end{cases} \Longleftrightarrow \begin{pmatrix}
+                                            \lambda_1 & 0         & \dots  & 0         \\
+                                            0         & \lambda_2 & \dots  & 0         \\
+                                            \vdots    & \vdots    & \ddots & \vdots    \\
+                                            0         & 0         & \dots  & \lambda_n
+        \end{pmatrix}_e \cdots e_i = \mathcal{A} e_i$
 
-    $\Longrightarrow \exists f$ - базис, в котором $A_f$ - диагональная (по \Defs $\mathcal{A}$ - диаг.-ем)
+        \mediumvspace
 
-    $A_f = \begin{pmatrix}
-               \alpha_1 & 0        & \dots  & 0        \\
-               0        & \alpha_2 & \dots  & 0        \\
-               \vdots   & \vdots   & \ddots & \vdots   \\
-               0        & 0        & \dots  & \alpha_n
-    \end{pmatrix} \quad\quad$ Применим $\mathcal{A}$ к $f_i \in f$
+        $\fbox{\Longrightarrow} \quad \exists f$ - базис, в котором $A_f$ - диагональная (по \Defs $\mathcal{A}$ - диагонализируем)
 
-    $\mathcal{A}f_i = A_f f_i = \begin{pmatrix}
-                                    \alpha_1 & \dots  & 0        \\
-                                    \vdots   & \ddots & \vdots   \\
-                                    0        & \dots  & \alpha_n
-    \end{pmatrix} f_i = \alpha_i f_i \Longrightarrow \alpha_i$ - собственное число (по def), а $f_i$ - собственный вектор
+        $A_f = \begin{pmatrix}
+                \alpha_1 & 0        & \dots  & 0        \\
+                0        & \alpha_2 & \dots  & 0        \\
+                \vdots   & \vdots   & \ddots & \vdots   \\
+                0        & 0        & \dots  & \alpha_n
+        \end{pmatrix} \quad\quad$ Применим $\mathcal{A}$ к $f_i \in f$
 
-    $\Box$
+        $\mathcal{A}f_i = A_f f_i = \begin{pmatrix}
+                                        \alpha_1 & \dots  & 0        \\
+                                        \vdots   & \ddots & \vdots   \\
+                                        0        & \dots  & \alpha_n
+        \end{pmatrix} f_i = \alpha_i f_i \Longrightarrow \alpha_i$ - собственное число (по def), а $f_i$ - собственный вектор
+    \end{MyProof}
 
-    \Nota О связи алгебраической и геометрической кратностей ($\alpha$ - алг., $\beta$ - геом.)
+    \Nota О связи алгебраической и геометрической кратностей ($\alpha$ - алгебраическая, $\beta$ - геометрическая кратность)
 
-    1) $\alpha, \beta$ не зависят от выбора базиса
+    \begin{enumerate}
+        \item $\alpha, \beta$ не зависят от выбора базиса
 
-    $\Box \beta_i$ по определению $\dim U_{\lambda_i}$ и не связана с базисом
+        \begin{MyProof}
+            $\beta_i$ по определению $\dim U_{\lambda_i}$ и не связана с базисом
 
-    Для $\alpha$: строим вековое уравнение $|A_f - \lambda I| = 0 \Longrightarrow \lambda_i$ с кратностью $\alpha_i$, $\alpha = \sum \alpha_i$
+            Для $\alpha$: строим вековое уравнение $|A_f - \lambda I| = 0 \Longrightarrow \lambda_i$ с кратностью $\alpha_i$, $\alpha = \sum \alpha_i$
 
-    $\sqsupset A_g$ - матрица $\mathcal{A}$ в базисе $g$
+            $\sqsupset A_g$ - матрица $\mathcal{A}$ в базисе $g$
 
-    Но $A_g = T_{f\to g} A_f T_{g\to f}$ или для оператора
+            Но $A_g = T_{f\to g} A_f T_{g\to f}$ или для оператора
 
-    $A_g - \lambda I = T_{f\to g} (A_f - \lambda I) T_{g\to f} =
-    \stackrel{= A_g}{\overgroup{T_{f\to g} A_f T_{g\to f}}} - \stackrel{= \lambda I}{\overgroup{\lambda T_{f\to g} I T_{g\to f}}} =
-    A_g - \lambda I$
+            $A_g - \lambda I = T_{f\to g} (A_f - \lambda I) T_{g\to f} =
+            \stackrel{= A_g}{\overgroup{T_{f\to g} A_f T_{g\to f}}} - \stackrel{= \lambda I}{\overgroup{\lambda T_{f\to g} I T_{g\to f}}} =
+            A_g - \lambda I$
 
-    Таким образом, матрицы $A_g - \lambda I$, $A_f - \lambda I$ - подобные
+            Таким образом, матрицы $A_g - \lambda I$, $A_f - \lambda I$ - подобные
 
-    \Def Подобные матрицы - матрицы, получаемые при помощи преобразования координат
+            \Def Подобные матрицы - матрицы, получаемые при помощи преобразования координат
 
-    Тогда $\det (A_f - \lambda I) = \det (A_g - \lambda I)$ (инвариант) $\Longrightarrow$ одинаковая кратность
+            Тогда $\det (A_f - \lambda I) = \det (A_g - \lambda I)$ (инвариант) $\Longrightarrow$ одинаковая кратность
 
-    $\Box$
+        \end{MyProof}
 
-    2) Геометрическая кратность не превышает алгебраической. У диагонализируемого оператора $\alpha = \beta$
+        \item Геометрическая кратность не превышает алгебраической. У диагонализируемого оператора $\alpha = \beta$
+    \end{enumerate}
 
-    \section{2.8. Самосопряженные операторы}
+    \subsection{2.8. Самосопряженные операторы}
 
     \textbf{1* Сопряженные операторы}
 
-    !!! Далее будем рассматривать операторы только в евклидовом пространстве над вещественном полем
-
+    Далее будем рассматривать операторы только в евклидовом пространстве над вещественном полем.
     Пространство со скалярным произведением над комплексным полем называется унитарным
 
-    \Mem Скалярное произведение
+    \Mem Скалярное произведение $(x, y) : \Real^2 \rightarrow \Real$ - функция, со свойствами:
 
-    $(x, y) : \Real^2 \rightarrow \Real$
+    \begin{enumerate}
+        \item $(x + y, z) = (x, z) + (y, z)$
 
-    1) $(x + y, z) = (x, z) + (y, z)$
+        \item $(\lambda x, y) = \lambda (x, y)$
 
-    2) $(\lambda x, y) = \lambda (x, y)$
+        \item $(x, x) \geq 0, \quad (x, x) = 0 \Longrightarrow x = 0$
 
-    3) $(x, x) \geq 0, \quad (x, x) = 0 \Longrightarrow x = 0$
-
-    4) $(x, y) = (y, x)$ в $\Real$. Но в комплексном множестве: $(x, y) = \overline{(y, x)}$. Тогда $(x, \lambda y) = \overline{(\lambda y, x)}$
+        \item $(x, y) = (y, x)$ в $\Real$. Но в комплексном множестве: $(x, y) = \overline{(y, x)}$. Тогда $(x, \lambda y) = \overline{(\lambda y, x)}$
+    \end{enumerate}
 % end specsec_2024_04_03.tex
 
 % begin specsec_2024_04_05.tex
 
 
-    \Mem $(x, y)$ в $\Real$
+    Важно, что линейность по первому аргументу присутствует и в $\Real$, и в $\Complex$, то есть $(\lambda x, y) \stackrel{\Real, \mathcal{C}}{=} \lambda (x, y)$
 
-    $(x, y) = (y, x)$
+    Однако:
 
-    Но. $(x, y)$ в комплексном множестве
+    \begin{itemize}
+        \item $(x, \lambda y) = \lambda (x, y)$ в $\Real$
 
-    $(x, y) = \overline{(y, x)}$
+        \item $(x, \lambda y) = \overline{\lambda} (x, y)$ в $\mathcal{C}$
+    \end{itemize}
 
-    Важно: линейность по первому аргументу - везде
+    \DefN{1} Оператор $\mathcal{A}^*$ называется сопряженным для $\mathcal{A} : V \to V$, если $(\mathcal{A}x, y) = (x, \mathcal{A}^* y)$
 
-    $(\lambda x, y) \stackrel{\Real, \mathcal{C}}{=} \lambda (x, y)$
+    \DefNs{2} $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любом ортонормированном базисе
 
-    Но:
+    \smallvspace
 
-    $(x, \lambda y) = \lambda (x, y)$ в $\Real$
+    \DefN{1} \Longleftrightarrow \DefNs{2}
 
-    $(x, \lambda y) = \overline{\lambda} (x, y)$ в $\mathcal{C}$
+    \begin{MyProof}
+        $(\mathcal{A}x, y) \stackrel{\text{на языке матриц}}{=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel=} (AX, Y) = (AX)^T \cdot Y = X^T \cdot A^T \cdot Y$
 
-    \DefN{1} Оператор $\mathcal{A}^*$ называется сопряженным для $\mathcal{A} : V \to V$, если
+        $\stackrel{||}{(x, \mathcal{A}^* y)} = X^T \cdot (A^* Y) = (X^T A^*) \cdot Y = X^T \cdot A^T \cdot Y \Longrightarrow A^* = A^T$
+    \end{MyProof}
 
-    $(\mathcal{A}x, y) = (x, \mathcal{A}^* y)$
-
-    \DefN{2} $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любом ортонормированном базисе
-
-    \textbf{Def. 1.} \Longleftrightarrow \textbf{Def. 2.}
-
-    $(\mathcal{A}x, y) \stackrel{\text{на языке матриц}}{=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel=} (AX, Y) = (AX)^T \cdot Y = X^T \cdot A^T \cdot Y$
-
-    $\stackrel{||}{(x, \mathcal{A}^* y)} = X^T \cdot (A^* Y) = (X^T A^*) \cdot Y = X^T \cdot A^T \cdot Y \Longrightarrow A^* = A^T$
-
-    \Lab Очевидно существование $\mathcal{A}^* \ \forall \mathcal{A}$ (определяется в ортонормированном базисе действием $\mathcal{A}^T$)
-
-    Доказать единственность $\mathcal{A}^*$ рассмотреть от противного $(x, \mathcal{A}_1^* y) \neq (x, \mathcal{A}_2^* y)$)
+    \Lab Очевидно существование $\mathcal{A}^*$ для всякого $\mathcal{A}$ (определяется в ортонормированном базисе действием $\mathcal{A}^T$).
+    Доказать единственность $\mathcal{A}^*$ рассмотреть от противного $(x, \mathcal{A}_1^* y) \neq (x, \mathcal{A}_2^* y)$
 
     \hypertarget{conjugateoperatorproperties}{}
 
-    Свойства:
+    \underline{Свойства}:
 
-    1) $\mathcal{I} = \mathcal{I}^* \quad \Box (\mathcal{I}x, y) = (x, y) = (x, \mathcal{I}y) \qed$
+    \begin{enumerate}
 
-    2) $(\mathcal{A} + \mathcal{B})^* = \mathcal{A}^* + \mathcal{B}^*$
+        \item $\mathcal{I} = \mathcal{I}^* \quad \Box (\mathcal{I}x, y) = (x, y) = (x, \mathcal{I}y) \qed$
 
-    3) $(\lambda \mathcal{A})^* = \lambda \mathcal{A}^*$
+        \item $(\mathcal{A} + \mathcal{B})^* = \mathcal{A}^* + \mathcal{B}^*$
 
-    4) $(\mathcal{A}^*)^* = \mathcal{A}$
+        \item $(\lambda \mathcal{A})^* = \lambda \mathcal{A}^*$
 
-    5) $(\mathcal{A}\mathcal{B})^* = \mathcal{B}^* \mathcal{A}^*$ (св-во транспонирования матриц)
+        \item $(\mathcal{A}^*)^* = \mathcal{A}$
 
-    или $((\mathcal{AB})x, y) = (\mathcal{A}(\mathcal{B}x), y) = (\mathcal{B}x, \mathcal{A}^* y) = (x, \mathcal{B}^* \mathcal{A}^* y)$
+        \item $(\mathcal{A}\mathcal{B})^* = \mathcal{B}^* \mathcal{A}^*$ (св-во транспонирования матриц)
 
-    6) $\mathcal{A}^*$ - линейный оператор ($\mathcal{A}x = x^\prime, \mathcal{A}y = y^\prime \Longrightarrow \mathcal{A}(\lambda x + \mu y) = \lambda x^\prime + \mu y^\prime$)
+        или $((\mathcal{AB})x, y) = (\mathcal{A}(\mathcal{B}x), y) = (\mathcal{B}x, \mathcal{A}^* y) = (x, \mathcal{B}^* \mathcal{A}^* y)$
 
-    Можно использовать линейные свойства умножения матриц $A^* (\lambda X + \mu Y) = \lambda \mathcal{A}^* X + \mu \mathcal{A}^* Y$
+        \item $\mathcal{A}^*$ - линейный оператор ($\mathcal{A}x = x^\prime, \mathcal{A}y = y^\prime \Longrightarrow \mathcal{A}(\lambda x + \mu y) = \lambda x^\prime + \mu y^\prime$)
+
+        Можно использовать линейные свойства умножения матриц $A^* (\lambda X + \mu Y) = \lambda \mathcal{A}^* X + \mu \mathcal{A}^* Y$
+    \end{enumerate}
 
     \hypertarget{selfconjugateoperator}{}
 
@@ -1107,53 +1160,61 @@
 
     \Def $\mathcal{A}$ называется самосопряженным, если $\mathcal{A} = \mathcal{A}^*$
 
-    Следствие. $A^T = A \Longrightarrow$ матрица $A$ симметричная
+    Следствие: $A^T = A \Longrightarrow$ матрица $A$ симметричная
 
     \hypertarget{selfconjugateoperatorproperties}{}
 
-    Свойства самосопряженных операторов:
+    \underline{Свойства} самосопряженных операторов:
 
-    1) $\mathcal{A} = \mathcal{A}^*, \ \lambda : \ \mathcal{A}x = \lambda x (x \neq 0)$. Тогда, $\lambda \in \Real$
+    \begin{enumerate}
+        \item $\mathcal{A} = \mathcal{A}^*, \ \lambda : \ \mathcal{A}x = \lambda x (x \neq 0)$. Тогда, $\lambda \in \Real$
 
-    $\Box (\mathcal{A}x, y) = (\lambda x, y) = \lambda (x, y) \quad (x, \mathcal{A}^* y) = (x, \mathcal{A}y) = (x, \lambda y) \stackrel{\text{ в } \mathcal{C}}{=} \overline{\lambda} (x, y)$
+        \begin{MyProof}
+            $(\mathcal{A}x, y) = (\lambda x, y) = \lambda (x, y) \quad (x, \mathcal{A}^* y) = (x, \mathcal{A}y) = (x, \lambda y) \stackrel{\text{ в } \mathcal{C}}{=} \overline{\lambda} (x, y)$
 
-    $(\mathcal{A}x, y) = (x, \mathcal{A}y) \Longrightarrow \lambda (x, y) = \overline{\lambda} (x, y) \Longrightarrow \lambda = \overline{\lambda} \Longrightarrow \lambda \in \Real$
+            $(\mathcal{A}x, y) = (x, \mathcal{A}y) \Longrightarrow \lambda (x, y) = \overline{\lambda} (x, y) \Longrightarrow \lambda = \overline{\lambda} \Longrightarrow \lambda \in \Real$
 
-    $\qed$
+        \end{MyProof}
 
-    2) $\mathcal{A} = \mathcal{A}^*, \ \mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2$ и $\lambda_1 \neq \lambda_2$
+        \item $\mathcal{A} = \mathcal{A}^*, \ \mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2$ и $\lambda_1 \neq \lambda_2$.
+        Тогда $x_1 \perp x_2$
 
-    Тогда $x_1 \perp x_2$
+        \begin{MyProof}
+            Хотим доказать, что $(x_1, x_2) = 0$, при том, что $x_{1,2} \neq 0$
 
-    $\Box$ Хотим доказать, что $(x_1, x_2) = 0$, при том, что $x_{1,2} \neq 0$
+            $\lambda_1 (x_1, x_2) = (\lambda_1 x_1, x_2) = (\mathcal{A} x_1, x_2) = (x_1, \mathcal{A} x_2) = (x_1, \lambda_2 x_2) = (x_1, x_2) \lambda_2$
 
-    $\lambda_1 (x_1, x_2) = (\lambda_1 x_1, x_2) = (\mathcal{A} x_1, x_2) = (x_1, \mathcal{A} x_2) = (x_1, \lambda_2 x_2) = (x_1, x_2) \lambda_2$
-
-    Так как $\lambda_1 \neq \lambda_2$, то $(\lambda_1 - \lambda_2) (x_1, x_2) = 0 \Longrightarrow (x_1, x_2) = 0 \qed$
+            Так как $\lambda_1 \neq \lambda_2$, то $(\lambda_1 - \lambda_2) (x_1, x_2) = 0 \Longrightarrow (x_1, x_2) = 0$
+        \end{MyProof}
+    \end{enumerate}
 
     \hypertarget{lemmaabouteigenvectors}{}
 
-    \Th Лемма. $\mathcal{A} = \mathcal{A}^*$, $e$ - собственный вектор ($l_{\Set{e}}$ - линейная оболочка $e$ - инвариантное подпространство для $\mathcal{A}$)
+    \begin{MyTheorem}
+        \Ths Лемма. $\mathcal{A} = \mathcal{A}^*$, $e$ - собственный вектор ($l_{\Set{e}}$ - линейная оболочка $e$ - инвариантное подпространство для $\mathcal{A}$)
 
-    $V_1 = \Set{x \in V \ | \ x \perp e}$
+        $V_1 = \Set{x \in V \ | \ x \perp e}$
 
-    Тогда $V_1$ - инвариантное для $\mathcal{A}$
+        Тогда $V_1$ - инвариантное для $\mathcal{A}$
+    \end{MyTheorem}
 
-    $\Box$ Нужно доказать, что $\forall x \in V_1 \ \mathcal{A}x \in V_1$ и так как $x \in V_1 \ | \ x \perp e$, то
-    покажем, что $\mathcal{A}x \perp e$
+    \begin{MyProof}
+        Нужно доказать, что $\forall x \in V_1 \ \mathcal{A}x \in V_1$ и так как $x \in V_1 \ | \ x \perp e$, то
+        покажем, что $\mathcal{A}x \perp e$
 
-    $(\mathcal{A}x, e) = (x, \mathcal{A}e) = (x, \lambda e) = \lambda (x, e) \stackrel{x \perp e}{=\joinrel=} 0$
-
-    $\qed$
+        $(\mathcal{A}x, e) = (x, \mathcal{A}e) = (x, \lambda e) = \lambda (x, e) \stackrel{x \perp e}{=\joinrel=} 0$
+    \end{MyProof}
 
     \hypertarget{theoremabouteigenvectorsinselfconjugateoperator}{}
 
-    \Th $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
-    тогда $\exists e_1, \dots, e_n$ - набор собственных векторов $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
+    \begin{MyTheorem}
+        \Ths $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
+        тогда $\exists e_1, \dots, e_n$ - набор собственных векторов $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
 
-    (другими словами: $\mathcal{A}$ - диагонализируем)
+        Другими словами: $\mathcal{A}$ - диагонализируем
+    \end{MyTheorem}
 
-    Наводящие соображения.
+    Наводящие соображения:
 
     \ExN{1} $A = \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} = I$
 
@@ -1173,40 +1234,34 @@
 
     $\begin{vmatrix}\frac{1}{\sqrt{2}} - \lambda & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} - \lambda\end{vmatrix} =
     \left(\frac{1}{\sqrt{2}} - \lambda\right)^2 + \frac{1}{2} = 0$ - вещественных корней нет
-
-    $\Box \sqsupset e_1$ - какой-либо собственный вектор $\mathcal{A}$ ...
 % end specsec_2024_04_05.tex
 
 % begin specsec_2024_04_12.tex
 
-    \Th $\mathcal{A}: V^n \to V^n, \mathcal{A} = \mathcal{A}^* \ \Longrightarrow \ \exists \Set{e_i}^n_{i=1}, e_1$ -
-    собственные вектора $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
+    \begin{MyProof}
+        Пусть $e_1$ - собственный вектор $\mathcal{A}$
 
-    $\Box \ \supsqset e_1$ - собственный вектор $\mathcal{A}$
+        $e_1$ найдется, если $\mathcal{A}x = \lambda x$ имеет нетривиальное решение $\Longleftrightarrow \det(\mathcal{A} - \lambda I) = 0 \\ \stackrel{\mathcal{A}\text{ - самосопряженный}}{\Longrightarrow} \exists \lambda \in \Real$
 
-    $e_1$ найдется, если $\mathcal{A}x = \lambda x$ имеет нетривиального решение \ \Longleftrightarrow \
-    $\det(\mathcal{A} - \lambda I) = 0$ \ \stackrel{\mathcal{A}\text{ - самосопр.}}{\Longrightarrow} \ $\exists \lambda \in \Real$
+        Для вектора $e_1$ строим инвариантное подпространство $V_1 \perp e_1$ (см. лемму), $\dim V_1 = n - 1$
 
-    Для вектора $e_1$ строим инвариантное подпространство $V_1 \perp e_1$ (см. лемму), $\dim V_1 = n - 1$
+        В подпространстве $V_1$ $\mathcal{A}$ действует как самосопряженный и имеет собственный вектор $e_2 \perp e_1$.
+        Для $e_2$ строим $V_2 \perp e_2, e_1$
 
-    В подпространстве $V_1$ $\mathcal{A}$ действует как самосопряженный и имеет собственный вектор $e_2 \perp e_1$.
-    Для $e_2$ строим $V_2 \perp e_2, e_1$
+        Затем, $V_3, V_4, V_5, \dots,$ в котором, найдя $e_i$, ортогональный всем предыдущим
 
-    Затем, $V_3, V_4, V_5, \dots,$ в котором, найдя $e_i$, ортогональный всем предыдущим
-
-    Составили ортогональный базис из $e_i$, который можно нормировать
-
-    $\Box$
+        Составили ортогональный базис из $e_i$, который можно нормировать
+    \end{MyProof}
 
     \Nota Чтобы упорядочить построение базиса, в котором $V_i$ может брать $\max \lambda_i$
 
-    \Nota Из теоремы следует, что самосопряженный оператор диагонализируется: $\Sigma$ алг. крат. $ = n$ (степень уравнения), а $\Sigma$ геом. крат. $= \dim \Set{e_1, \dots, _n} = n$
+    \Notas Из теоремы следует, что самосопряженный оператор диагонализируется: сумма алгебраический кратностей равна $n$ (степень уравнения), а сумма геометрических - $\dim \{e_1, \dots, e_n\} = n$
 
     \hypertarget{spectraldecomposition}{}
 
-    Разложение самосопряж. оператора в спектр:
+    Разложение самосопряженного оператора в спектр:
 
-    $x \in V^n \quad \Set{e_i}_{i=1}^n$ - базис из собственных векторов $\mathcal{A}$ (ортонорм.)
+    $x \in V^n \quad \Set{e_i}_{i=1}^n$ - базис из собственных векторов $\mathcal{A}$ (ортонормированный)
 
     $x = x_1 e_1 + \dots + x_n e_n = (x, e_1) e_1 + \dots + (x, e_n) e_n = \sum_{i = 1}^{n} (x, e_i) e_i$
 
@@ -1214,13 +1269,15 @@
 
     \Def Оператор $P_i x = (x, e_i) e_i$ называется проектором на одномерное пространство, порожденное $e_i$ (линейная оболочка)
 
-    Свойства:
+    \underline{Свойства}:
 
-    1) $P_i^2 = P_i$ (более того $P^m_i = P_i$)
+    \begin{enumerate}
+        \item $P_i^2 = P_i$ (более того $P^m_i = P_i$)
 
-    2) $P_i P_j = 0$
+        \item $P_i P_j = 0$
 
-    3) $P_i = P_i^* \quad ((P_i x, y) \stackrel{?}{=} (x, P_i y)) \Longleftrightarrow (P_i x, y) = ((x, e_i) e_i, y) = (x, e_i) (e_i, y) = (x, (y, e_i) e_i) = (x, P_i y)$
+        \item $P_i = P_i^* \quad ((P_i x, y) \stackrel{?}{=} (x, P_i y)) \Longleftrightarrow (P_i x, y) = ((x, e_i) e_i, y) = (x, e_i) (e_i, y) = (x, (y, e_i) e_i) = (x, P_i y)$
+    \end{enumerate}
 
     Итак, если $\mathcal{A}: V^n \to V^n$ - самосопряженный и $\Set{e_i}$ - ортонормированный базис собственных векторов $\mathcal{A}$, то
 
@@ -1233,37 +1290,35 @@
     $\Longleftrightarrow \mathcal{A} = \sum_{i = 1}^{n} \lambda_i P_i$ - спектральное разложение $\mathcal{A}$,
     спектр $= \Set{\lambda_1, \dots, \lambda_n \ | \ \lambda_i \leq \dots \leq \lambda_n}$
 
-    \Ex
+    \Ex $y = y_1 e_1 + y_2 e_2 = (y, e_1) e_1 + (y, e_2) e_2 = (\mathcal{A}x, e_1) e_1 + (\mathcal{A}x, e_2) e_2 = \lambda_1 x_1 e_1 + \lambda_2 x_2 e_2$
 
-    $y = y_1 e_1 + y_2 e_2 = (y, e_1) e_1 + (y, e_2) e_2 = (\mathcal{A}x, e_1) e_1 + (\mathcal{A}x, e_2) e_2 = \lambda_1 x_1 e_1 + \lambda_2 x_2 e_2$
-
-    \section{2.9. Ортогональный оператор}
+    \subsection{2.9. Ортогональный оператор}
 
     \hypertarget{orthogonaloperator}{}
 
-    \Mem Орт. оператор $T: V^n \to V^n \overset{def}{\Longleftrightarrow} \forall$ о/н базиса матрица $T$ - ортогональная $T^{-1} = T^T$
+    \Mem Ортогональный оператор $T: V^n \to V^n \overset{def}{\Longleftrightarrow}$ для любого ортонормированного базиса матрица $T$ - ортогональная $T^{-1} = T^T$
 
-    \Nota Иначе, $T$ - ортогональный оператор \Longleftrightarrow $T^{-1} = T^*$ \Longrightarrow $T T^* = I$
+    \Nota Иначе говоря, $T$ - ортогональный оператор $\Longleftrightarrow T^{-1} = T^* \Longrightarrow T T^* = I$
 
-    \Def $T$ - ортог. оператор, если $(Tx, Ty) = (x, y)$
+    \Def $T$ - ортогональный оператор, если $(Tx, Ty) = (x, y)$
 
     Следствие: $\|Tx\| = \|x\|$, то есть $T$ сохраняет расстояние
 
     \Nota Ранее в теореме об изменении матрицы $A$ при преобразовании координат $T$ - ортогональный оператор
 
-    Это необязательно, то есть можно переходить в другой произвольный базис (док-во теоремы позволяет)
+    Это необязательно, то есть можно переходить в другой произвольный базис (доказательство теоремы позволяет)
 
-    Диагонализация самосопряженного оператора:
+    Диагонализация самосопряженного оператора: для матрицы $A_f$
 
-    Дана матрица $A_f$
+    \begin{enumerate}
+        \item Находим $\lambda_1, \dots, \lambda_n$
 
-    1) Находим $\lambda_1, \dots, \lambda_n$
+        \item Находим $e_1, \dots e_n$ - ортогональный базис собственных векторов
 
-    2) Находим $e_1, \dots e_n$ - ортогональный базис собственных векторов
+        \item Составляем $T = \begin{pmatrix}e_{11} & \dots & e_{1n} \\ \vdots & \ddots & \vdots \\ e_{n1} & \dots & e_{nn}\end{pmatrix}$ - матрица поворота базиса
 
-    3) Составляем $T = \begin{pmatrix}e_{11} & \dots & e_{1n} \\ \vdots & \ddots & \vdots \\ e_{n1} & \dots & e_{nn}\end{pmatrix}$ - матрица поворота базиса
-
-    4) Находим $T_{e\to f}A_f T_{f\to e} = A_e$ - диагональная
+        \item Находим $T_{e\to f}A_f T_{f\to e} = A_e$ - диагональная
+    \end{enumerate}
 
     Таким образом диагонализация самосопряженного $\mathcal{A}$ - это нахождение композиции поворотов и симметрий,
     как приведение пространства к главным направлением
@@ -1274,101 +1329,95 @@
 
     \hypertarget{bilinearforms}{}
 
-    \section{3.1. Билинейные формы}
+    \subsection{3.1. Билинейные формы}
 
-    \Def $x, y \in V^n \quad$ Отображение $\mathcal{B}: V^n \to \Real$ (обозн. $\mathcal{B}(x, y)$)
+    \Def Пусть $x, y \in V^n$. Отображение $\mathcal{B}: V^n \to \Real$ (обозначается $\mathcal{B}(x, y)$)
     называется билинейной формой, если выполнены
 
-    1) $\mathcal{B}(\lambda x + \mu y, z) = \lambda \mathcal{B}(x, z) + \mu \mathcal{B}(y, z)$
+    \begin{enumerate}
+        \item $\mathcal{B}(\lambda x + \mu y, z) = \lambda \mathcal{B}(x, z) + \mu \mathcal{B}(y, z)$
 
-    2) $\mathcal{B}(x, \lambda y + \mu z) = \lambda \mathcal{B}(x, y) + \mu \mathcal{B}(x, z)$
+        \item $\mathcal{B}(x, \lambda y + \mu z) = \lambda \mathcal{B}(x, y) + \mu \mathcal{B}(x, z)$
+    \end{enumerate}
 
-    \Ex
+    \ExN{1} $\mathcal{B}(x, y) \stackrel{\text{в } E^n_\Real}{=} (x, y)$
 
-    1) $\mathcal{B}(x, y) \stackrel{\text{в } E^n_\Real}{=} (x, y)$
-
-    2) $\mathcal{B}(x, y) = P_y x$ - проектор $x$ на $y$
+    \ExNs{2} $\mathcal{B}(x, y) = P_y x$ - проектор $x$ на $y$
 
     \hypertarget{bilinearformmatrix}{}
 
-    Матрица Б.Ф.
+    \mediumvspace
 
-    \Th $\Set{e_i}_{i=1}^n$ - базис $V_n$, $u, v \in V^n$. Тогда $\mathcal{B}(u, v) =
-    \sum_{j = 1}^{n}\sum_{i = 1}^{n} b_{ij} u_i v_j$, где $b_{ij} \in \Real$
+    Для билинейной формы можно определить матрицу
 
-    $\Box$
+    \begin{MyTheorem}
+        \Ths $\{e_i}_{i=1}^n$ - базис $V_n$, $u, v \in V^n$. Тогда $\mathcal{B}(u, v) =
+        \sum_{j = 1}^{n}\sum_{i = 1}^{n} b_{ij} u_i v_j$, где $b_{ij} \in \Real$
+    \end{MyTheorem}
 
-    $\begin{matrix}u = u_1 e_1 + \dots + u_n e_n \\ v = v_1 e_1 + \dots + v_n e_n\end{matrix} \\
-    \mathcal{B}(u, v) = \mathcal{B}(\sum_{i = 1}^{n} u_i e_i, \sum_{j = 1}^{n} v_j e_j) =
-    \sum_{i = 1}^{n} u_i \mathcal{B}(e_i, \sum_{j = 1}^{n} v_j e_j) =
-    \sum_{i = 1}^{n} u_i (\sum_{j = 1}^{n} v_j \mathcal{B}(e_i, e_j)) \overset{\text{обозн. } \mathcal{B}(e_i, e_j) = b_{ij}}{=}
-    \sum_{i = 1}^{n} u_i \sum_{j = 1}^{n} v_j b_{ij} = \sum_{i = 1}^{n} \sum_{j = 1}^{n} u_i v_j b_{ij}$
+    \begin{MyProof}
+        $\begin{matrix}u = u_1 e_1 + \dots + u_n e_n \\ v = v_1 e_1 + \dots + v_n e_n\end{matrix} \\
+        \mathcal{B}(u, v) = \mathcal{B}(\sum_{i = 1}^{n} u_i e_i, \sum_{j = 1}^{n} v_j e_j) =
+        \sum_{i = 1}^{n} u_i \mathcal{B}(e_i, \sum_{j = 1}^{n} v_j e_j) =
+        \sum_{i = 1}^{n} u_i (\sum_{j = 1}^{n} v_j \mathcal{B}(e_i, e_j)) \overset{\text{обозн. } \mathcal{B}(e_i, e_j) = b_{ij}}{=}
+        \sum_{i = 1}^{n} u_i \sum_{j = 1}^{n} v_j b_{ij} = \sum_{i = 1}^{n} \sum_{j = 1}^{n} u_i v_j b_{ij}$
+    \end{MyProof}
 
-    $\Box$
+    \Nota Составим из $\mathcal{B}(e_i, e_j)$ матрицу $B = \begin{pmatrix}b_{11} & \dots & b_{1n} \\ \vdots & \ddots & \vdots \\ b_{n1} & \dots & b_{nn}\end{pmatrix}$
 
-    \Nota Составим матрицу из $\mathcal{B}(e_i, e_j)$
+    \DefN{1} Если $\mathcal{B}(u, v) = \mathcal{B}(v, u)$, то $\mathcal{B}$ - симметричная
 
-    $B = \begin{pmatrix}b_{11} & \dots & b_{1n} \\ \vdots & \ddots & \vdots \\ b_{n1} & \dots & b_{nn}\end{pmatrix}$
+    \DefNs{2} Если $\mathcal{B}(u, v) = -\mathcal{B}(v, u)$, то $\mathcal{B}$ - антисимметричная
 
-    \Def Если
+    \DefNs{3} Если $\mathcal{B}(u, v) = \overline{\mathcal{B}(v, u)}$, то $\mathcal{B}$ - кососимметричная (в $\mathcal{C}$)
 
-    1) $\mathcal{B}(u, v) = \mathcal{B}(v, u)$, то $\mathcal{B}$ - симметричная
+    \Def $\rang \mathcal{B}(u, v) \stackrel{def}{=} \rang B$
 
-    2) $\mathcal{B}(u, v) = -\mathcal{B}(v, u)$, то $\mathcal{B}$ - антисимметричная
+    \NotaN{1} $\mathcal{B}$ называется невырожденной, если $\rang \mathcal{B} = n$
 
-    3) $\mathcal{B}(u, v) = \overline{\mathcal{B}(v, u)}$, то $\mathcal{B}$ - кососимметричная (в $\mathcal{C}$)
-
-    \Def $rang \mathcal{B}(u, v) \stackrel{def}{=} rang B$
-
-    \Nota
-
-    1) $\mathcal{B}$ называется невырожденной, если $rang \mathcal{B} = n$
-
-    2) $rang \mathcal{B}_e = rang \mathcal{B}_{e^\prime} $ ($e, e^\prime$ - различные базисы $V^n$), то есть $rang \mathcal{B}$ инвариантно относительно преобразования $e \to e^\prime$
+    \NotaN{2} $\rang \mathcal{B}_e = \rang \mathcal{B}_{e^\prime} $ ($e, e^\prime$ - различные базисы $V^n$), то есть $\rang \mathcal{B}$ инвариантно относительно преобразования $e \to e^\prime$
 
     \Ex $\mathcal{B}(u, v) \stackrel{\text{ск. пр.}}{=} (u, v)$
 
-    $\begin{matrix}u = u_1 e_1 + u_2 e_2 \\ v = v_1 e_1 + v_2 e_2\end{matrix}$, тогда $\mathcal{B}(e_i, e_j) = \stackrel{\text{об}}{=} b_{ij} = (e_i, e_j)$
+    $u = u_1 e_1 + u_2 e_2, v = v_1 e_1 + v_2 e_2$, тогда $\mathcal{B}(e_i, e_j) \stackrel{\text{об}}{=} b_{ij} = (e_i, e_j)$
 
     Таким образом, $B = \begin{pmatrix}(e_1, e_1) & (e_1, e_2) \\ (e_2, e_1) & (e_2, e_2)\end{pmatrix}$ - матрица Грама
 
-    \Ex $\begin{matrix}u(t) = 1 + 3t \\ v(t) = 2 - t\end{matrix}$, $\Set{e_i} = (1, t)$, $\mathcal{B}(u, v) = (u, v) = \int_{-1}^1 uv dt$
+    \Ex $u(t) = 1 + 3t, v(t) = 2 - t$, $\{e_i\} = (1, t)$, $\mathcal{B}(u, v) = (u, v) = \int_{-1}^1 uv dt$
 
     Тогда, $B = \begin{pmatrix}\int_{-1}^1 dt & \int_{-1}^1 t dt \\ \int_{-1}^1 t dt & \int_{-1}^1 t^2 dt\end{pmatrix} = \begin{pmatrix}2 & 0 \\ 0 & \frac{2}{3}\end{pmatrix}$
 % end specsec_2024_04_12.tex
 
 % begin specsec_2024_04_17.tex
 
-    \Nota Особое значение имеют симметричные билинейные формы
-
-    Если рассмотреть матрицы симм. Б. Ф. как матрицу самосопряженного оператора, то можно найти базис
-    (ортонормированный базис собственных векторов), в котором матрица Б. Ф. диагонализируется
+    \Nota Особое значение имеют симметричные билинейные формы. 
+    Если рассмотреть матрицы симметричную билинейную форму как матрицу самосопряженного оператора, то можно найти базис
+    (ортонормированный базис собственных векторов), в котором матрица билинейной формы диагонализируется
 
     Этот базис называется каноническим базисом билинейной формы
 
-    \section{3.2. Квадратичные формы}
+    \subsection{3.2. Квадратичные формы}
 
     \hypertarget{quadraticform}{}
 
-    \Def Квадратичной формой, порожденной Б. Ф. $\mathcal{B}(u, v)$, называется форма $\mathcal{B}(u, u)$
+    \Def Квадратичной формой называется форма $\mathcal{B}(u, u)$, порожденная билинейной формой $\mathcal{B}(u, v)$
 
-    \Ex Поверхность
-
-    $u = (x, y), v = (x, y, z)$
+    \Ex Поверхность: $u = (x, y), v = (x, y, z)$
 
     $\mathcal{B}(u, u) = b_{11}u_1 u_1 + b_{12} u_1 u_2 + b_{21} u_2 u_1 + b_{22} u_2 u_2 = b_{11} x^2 + b_{12}xy + b_{21}xy + b_{22}y^2$
 
-    $\mathcal{B}(v, v) = \beta_{11} x^2 + \beta_{12}xy + \beta_{13}xz + \beta_{21} xy + \beta_{22}y^2 + \beta_{23}yz + \beta_{31} xz + \beta_{32}yz + \beta_{33}z^2$
+    \begin{tabular}{@{\hspace{-0.4em}}r@{\hspace{0.2em}}l}
+        \setlength{\tabcolsep}{0pt} $\mathcal{B}(v, v)$ & $= \beta_{11} x^2 + \beta_{12}xy + \beta_{13}xz + \beta_{21} xy + \beta_{22}y^2 + \beta_{23}yz + \beta_{31} xz + \beta_{32}yz + \beta_{33}z^2$ \\
+        & $= \beta_{11} x^2 + \beta_{22} y^2 + \beta_{33} z^2 + (\beta_{12} + \beta_{21}) xy + (\beta_{23} + \beta_{32}) yz + (\beta_{13} + \beta_{31}) xz$
+    \end{tabular}
 
-    \Mem Ранее уравнение поверхности второго порядка (без линейной группы, то есть сдвига)
+    \Mems Ранее уравнение поверхности второго порядка (без линейной группы, то есть сдвига): $a_{11}x^2 + 2a_{12}xy + a_{22}y^2 + 2a_{23}yz + 2a_{13}xz + a_{33}z^2 = c$
 
-    \[a_{11}x^2 + 2a_{12}xy + a_{22}y^2 + 2a_{23}yz + 2a_{13}xz + a_{33}z^2 = c\]
-
-    \Nota Заметим, что здесь коэфф. $a_{ij}$ соответствуют матрице симметричной Б. Ф.:
+    \Nota Заметим, что здесь коэффициент $a_{ij}$ соответствуют матрице симметричной билинейной форме:
 
     $B(v, v) = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{12} & a_{22} & a_{23} \\ a_{13} & a_{23} & a_{33}\end{pmatrix}$
 
-    Если диагонализировать $B(v, v)$, то приведем уравнение поверхности к каноническому виду:
+    Если диагонализировать $B(v, v)$, то уравнение поверхности приводится к каноническому виду:
 
     $\mathcal{B}(v, v)_{\text{канон.}} = c_{11}x^2 + c_{22}y^2 + c_{33}z^2$
 
@@ -1378,180 +1427,185 @@
 
     \Def Положительно определенная форма
 
+    \begin{enumerate}[label*=\arabic*) ]
+        \item Оператор $\mathcal{A}$ называется положительно определенным, если $\exists \gamma > 0 \ | \ \forall x \in V \quad (\mathcal{A}x, x) \geq \gamma \|x\|^2$
+
+        \item $\mathcal{A}$ называется положительным, если
+        $\forall x \in V, \ x \neq 0 \quad (\mathcal{A}x, x) > 0$
+    \end{enumerate}
+
     \Nota Можно говорить о положительно определенном операторе $\mathcal{A}: V^n \rightarrow V^n$
 
-    1) Оператор $\mathcal{A}$ называется положительно определенным, если
+    \begin{MyTheorem}
+        \Ths Определения 1), 2) $\Longleftrightarrow \forall \lambda_i$ - собственное число $\mathcal{A}$, $\lambda_i > 0$
+    \end{MyTheorem}
 
-    $\exists \gamma > 0 \ | \ \forall x \in V \quad (\mathcal{A}x, x) \geq \gamma \|x\|^2$
+    \begin{MyProof}
+        \fbox{$\Longrightarrow$} $\lambda_i$ - собственное число, $e_i$ - соответствующий ему собственный вектор
 
-    2) $\mathcal{A}$ называется положительным, если
+        $\forall x \in V \quad x = \overset{n}{\underset{i = 1}{\sum}} c_i e_i$
 
-    $\forall x \in V, \ x \neq 0 \quad (\mathcal{A}x, x) > 0$
+        $(\mathcal{A}x, x) = \left(\overset{n}{\underset{i = 1}{\sum}} c_i \overset{\lambda_i e_i}{\overgroup{\mathcal{A}e_i}}, \overset{n}{\underset{i = 1}{\sum}} c_i e_i\right) =
+        \overset{n}{\underset{i = 1}{\sum}} \lambda_i c_i^2 \geq \overset{n}{\underset{i = 1}{\sum}}\lambda_{\min} c_i^2 =
+        \lambda_{\min} \overset{n}{\underset{i = 1}{\sum}}c_i^2 = \lambda_{\min} \|x\|^2$
 
-    \Th 1), 2) \Longleftrightarrow $\ \forall \lambda_i$ - с. число $\mathcal{A}$, $\lambda_i > 0$
+        Если $0 < \lambda_{\min} < \lambda_i, \lambda_i \neq \lambda_{\min}$, то $(\mathcal{A}x, x) > 0$
 
-    $\Box \Longrightarrow \quad \lambda_i$ - с. число, $e_i$ - соответствующий им с. вектора
+        \fbox{$\Longleftarrow$} 1) $\Longleftrightarrow \exists \gamma > 0 \ | \ (\mathcal{A}x, x) \geq \gamma \|x\|^2 \quad \forall x \in V$ в том числе $x = e_i \neq 0$
 
-    $\forall x \in V \quad x = \overset{n}{\underset{i = 1}{\Sigma}} c_i e_i$
+        $(\mathcal{A}e_i, e_i) = \lambda_i (e_i, e_i) = \lambda_i > 0 \ \forall i$
 
-    $(\mathcal{A}x, x) = (\overset{n}{\underset{i = 1}{\Sigma}} c_i \overset{\lambda_i e_i}{\overgroup{\mathcal{A}e_i}}, \overset{n}{\underset{i = 1}{\Sigma}} c_i e_i) =
-    \overset{n}{\underset{i = 1}{\Sigma}} \lambda_i c_i^2 \geq \overset{n}{\underset{i = 1}{\Sigma}}\lambda_{\min} c_i^2 =
-    \lambda_{\min} \overset{n}{\underset{i = 1}{\Sigma}}c_i^2 = \lambda_{\min} \|x\|^2$
+    \end{MyProof}
 
-    Если $0 < \lambda_{\min} < \lambda_i, \lambda_i \neq \lambda_{\min}$, то $(\mathcal{A}x, x) > 0$
-
-    \Longleftarrow \quad 1) \Longleftrightarrow $\exists \gamma > 0 \ | \ (\mathcal{A}x, x) \geq \gamma \|x\|^2 \quad \forall x \in V$ в том числе $x = e_i \neq 0$
-
-    $(\mathcal{A}e_i, e_i) = \lambda_i (e_i, e_i) = \lambda_i > 0 \ \forall i$
-
-    $\Box$
-
-    \Nota $\det A$ инвариантен при замене базиса, $\det A = \lambda_1 \cdot \dots \cdot \lambda_n > 0$. Тогда $\exists \mathcal{A}^{-1}$
+    \Notas $\det A$ инвариантен при замене базиса, $\det A = \lambda_1 \cdot \dots \cdot \lambda_n > 0$. Тогда $\exists \mathcal{A}^{-1}$
 
     \hypertarget{criterionSilvester}{}
 
-    \Th Критерий Сильвестра
+    \begin{MyTheorem}
+    \ThNs{Критерий Сильвестра}
 
     $\mathcal{A}: V^n \to V^n$ - положительно определен \Longleftrightarrow $\forall k = 1..n \ \Delta_k =
-    \begin{vmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{vmatrix} > 0$
+    \begin{vmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{vmatrix} > 0$ 
 
-    $\Box \Longrightarrow \quad \mathcal{A}$ - пол. опред.
+    Угловой минор матрицы положительно определенного оператора больше нуля
 
-    $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_n}$ собственных векторов.
-    Тогда, $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_k}$, $k \leq n$
+    \end{MyTheorem}
 
-    $A_k = \begin{pmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{pmatrix} \quad
-    \Delta_k = \det A_k \stackrel{inv}{=} \begin{vmatrix}\lambda_{1} & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{k}\end{vmatrix} > 0$
+    \begin{MyProof}
 
-    $\Longleftarrow$ ММИ
+        \fbox{$\Longrightarrow$} $\mathcal{A}$ - положительно определен, значит, $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_n}$ собственных векторов.
+        Тогда, $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_k}$, $k \leq n$
 
-    $\forall k = 1..n, \Delta_k > 0$
+        $A_k = \begin{pmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{pmatrix} \quad
+        \Delta_k = \det A_k \stackrel{inv}{=} \begin{vmatrix}\lambda_{1} & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{k}\end{vmatrix} > 0$
 
-    1) Для $k = 1 \quad \mathcal{A}$ - пол. опр.
+        \fbox{$\Longleftarrow$} Метод математической индукции
 
-    2) $\mathcal{A}_{n-1}$ - пол. опр. \Longrightarrow $\mathcal{A}_n$ - пол. опр.
+        $\forall k = 1..n, \Delta_k > 0$, тогда:
 
-    1) $\mathcal{A}x = a_{11}x \quad |a_{11}| > 0 \Longrightarrow \mathcal{A}$ - пол. опр.
+        \begin{enumerate}
+            \item База: для $k = 1 \quad \mathcal{A}$ - положительно определен
 
-    2) $\mathcal{A}$ диагон. \quad $\mathcal{A}_e x =
-    \begin{vmatrix}\lambda_{1} & \dots & 0 \\ & \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{n}\end{vmatrix}x =
-    \overset{n - 1}{\underset{i = 1}{\Sigma}}\lambda_i c_i e_i + \lambda_n c_n e_n \quad$ Для $i \leq n - 1$ все $\lambda_i > 0$
+            $\mathcal{A}x = a_{11}x \quad |a_{11}| > 0 \Longrightarrow \mathcal{A}$ - положительно определен
 
-    $(\mathcal{A}x, x) = (\overset{n - 1}{\underset{i = 1}{\Sigma}} \lambda_i c_i e_i + \lambda_n c_n e_n,
-    \overset{n - 1}{\underset{i = 1}{\Sigma}} c_i e_i) = \overset{> 0}{\overgroup{\overset{n - 1}{\underset{i = 1}{\Sigma}} \lambda_i c_i^2}} + \lambda_n c_n^2$ - знак зависит от $\lambda_n$
+            \item Шаг индукции: $\mathcal{A}_{n-1}$ - положительно определен \Longrightarrow $\mathcal{A}_n$ - положительно определен
 
-    $\Delta_n = \underset{> 0}{\undergroup{\lambda_1 \cdot \dots \cdot \lambda_{n-1}}} \cdot \lambda_n
-    \Longrightarrow \lambda_n > 0 \Longrightarrow (\mathcal{A}x, x) > 0$
+            $\mathcal{A}$ диагонализируется в базисе ${e_i}$, в этом базисе:
+            
+            $\mathcal{A}_e x =
+            \begin{vmatrix}\lambda_{1} & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{n}\end{vmatrix}x =
+            \overset{n - 1}{\underset{i = 1}{\sum}}\lambda_i c_i e_i + \lambda_n c_n e_n \quad$ Для $i \leq n - 1$ все $\lambda_i > 0$
 
-    $\Box$
+            $(\mathcal{A}x, x) = \left(\overset{n - 1}{\underset{i = 1}{\sum}} \lambda_i c_i e_i + \lambda_n c_n e_n,
+            \overset{n - 1}{\underset{i = 1}{\sum}} c_i e_i\right) = \overset{> 0}{\overgroup{\overset{n - 1}{\underset{i = 1}{\sum}} \lambda_i c_i^2}} + \lambda_n c_n^2$ - знак зависит от $\lambda_n$
+        \end{enumerate}
+
+        $\Delta_n = \underset{> 0}{\undergroup{\lambda_1 \cdot \dots \cdot \lambda_{n-1}}} \cdot \lambda_n
+        \Longrightarrow \lambda_n > 0 \Longrightarrow (\mathcal{A}x, x) > 0$
+
+    \end{MyProof}
 
     \Ex Поверхность: $x^2 + y^2 + z^2 = 1$
 
     $\mathcal{B}(u, u) = \begin{pmatrix}1 & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & 1\end{pmatrix},
     \quad \Delta_k = 1 > 0 \ \forall k$
 
-    Положительная определенность - наличие экстремума
+    Положительная определенность - наличие экстремума (точнее положительная определенность матрицы Гессе $\left(\frac{\partial^2 f}{\partial x_i \partial x_j}\right)_{i,j}$ в критической точке, в которой $\triangledown f = 0$, является достаточным условием для наличия в этой точке строгого локального минимума функции)
 
     \Def Оператор $\mathcal{A}$ называется отрицательно определенным, если $-\mathcal{A}$ - положительно определенный
 
-    \Nota Для $-\mathcal{A}$ работает критерий Сильвестра: $\Delta_k(-\mathcal{A}) =
+    \Notas Для $-\mathcal{A}$ работает критерий Сильвестра: $\Delta_k(-\mathcal{A}) =
     \begin{vmatrix}-a_{11} & \dots & -a_{1n} \\ \vdots & \ddots & \vdots \\ -a_{n1} & \dots & -a_{nn}\end{vmatrix} = (-1)^k \Delta_k (\mathcal{A}) > 0$
 
-    Таким образом, $\mathcal{A}$ - отриц. опред. $\Longleftrightarrow \Delta_k$ чередует знаки
+    Таким образом, $\mathcal{A}$ - отрицательно определен $\Longleftrightarrow \Delta_k$ чередует знаки
 
-    \Nota Аналогично операторы определяются положительно или отрицательно билинейные формы
+    \Nota Аналогично операторам определяются положительно или отрицательно билинейные формы
 
-    $\mathcal{B}(u, v) = \overset{n}{\underset{j = 1}{\Sigma}}\overset{n}{\underset{i = 1}{\Sigma}} b_{ij} u_i v_j \stackrel{?}{=} \dots$ через оператор
+    $\mathcal{B}(u, v) = \overset{n}{\underset{j = 1}{\sum}}\overset{n}{\underset{i = 1}{\sum}} b_{ij} u_i v_j = \sum_{j = 1}^n v_j \sum_{i = 1}^n b_{ij} u_i = (\mathcal{A} u, v)$
 
-    Так как $\mathcal{B}(u, v)$ и  $\mathcal{B}(u, u)$ - числа, то $\mathcal{B}$ - называется пол. опред., если $\mathcal{B}(u, v) > 0$
+    Так как $\mathcal{B}(u, v)$ и  $\mathcal{B}(u, u)$ - числа, то $\mathcal{B}$ называется положительно определенным, если $\mathcal{B}(u, v) > 0$
 
-    \Nota После приведения $\mathcal{B}(u, v)$ к каноническому виду, получаем
+    \Nota После приведения $\mathcal{B}(u, v)$ к каноническому виду, получаем $\mathcal{B}(u, u)_{\text{канон.}} = \lambda_1 x_1^2 + \dots + \lambda_n x_n^2$
 
-    $\mathcal{B}(u, u)_{\text{канон.}} = \lambda_1 x_1^2 + \dots + \lambda_n x_n^2$
-
-    В общем случае $\lambda_i$ любого знака
-
-    Но можно доказать, что количества $\lambda_i > 0, \lambda_j < 0, \lambda_k = 0$ постоянны по отношению к способу приведения
-    к каноническому виду (т. н. закон инерции квадратичной формы)
+    В общем случае $\lambda_i$ любого знака, но можно доказать, что количества $\lambda_i > 0, \lambda_j < 0, \lambda_k = 0$ постоянны по отношению к способу приведения
+    к каноническому виду (так называемый закон инерции квадратичной формы)
 % end specsec_2024_04_17.tex
 
 % begin specsec_2024_04_19.tex
 
     \section{4. Дифференциальные уравнения}
 
-    \section{4.1. Общие понятия}
+    \subsection{4.1. Общие понятия}
 
-    \textbf{1* Постановка задачи}
+    \subsubsection{4.1.1. Постановка задачи}
 
     \hypertarget{radiumproblem}{}
 
-    \textit{Pr. 1.} Скорость распада радия в текущий момент времени $t$ пропорциональна его наличному количеству $Q$. Требуется найти закон распада радия:
+    \begin{tcolorbox}
+        \textit{Pr. 1.} Скорость распада радия в текущий момент времени $t$ пропорциональна его наличному количеству $Q$. Требуется найти закон распада радия:
 
-    \[Q = Q(t),\]
+        \[Q = Q(t),\]
 
-    если в начальный момент времени $t_0 = 0$ количество равнялось $Q_0$
+        если в начальный момент времени $t_0 = 0$ количество равнялось $Q(t_0) = Q_0$
 
-    Коэффициент пропорциональности $k$ найден эмпирически.
+        Коэффициент пропорциональности $k$ найден эмпирически.
+    \end{tcolorbox}
 
-    \underline{Решение.} Скорость распада.
-
-    $\frac{dQ(t)}{dt} = kQ \quad$ - ищем $Q(t)$
+    \underline{Решение.} Имеем уравнение $\frac{dQ(t)}{dt} = kQ \quad$, ищем $Q(t)$
 
     $dQ(t) = kQdt$
 
-    $\underset{\text{содержит только }Q}{\undergroup{\frac{dQ(t)}{Q}}} = \underset{\text{содержит только }t}{\undergroup{kdt}}$ - \enquote{разделение переменных}
+    $\underset{\text{содержит только }Q}{\undergroup{\frac{dQ(t)}{Q}}} = \underset{\text{содержит только }t}{\undergroup{kdt}}$ \hfill \enquote{разделение переменных}
 
-    Внесем все в дифференциал:
+    $d \ln Q = kdt = dkt$ \hfill вносим $k$ в дифференциал
 
-    $d \ln Q = kdt = dkt$
+    Получаем $d(\ln Q - kt) = 0$. Находим семейство первообразных:
 
-    $d(\ln Q - kt) = 0$
+    $\ln Q - kt = \tilde{C} \Longrightarrow \ln Q = \tilde{C} + kt$
 
-    Нашли семейство первообразных:
-
-    $\ln Q - kt = \tilde{C}$
-
-    $\ln Q = \tilde{C} + kt$
-
-    $Q = e^{\tilde{C} + kt} \stackrel{e^\tilde{C} = C}{=\joinrel=\joinrel=\joinrel=} Ce^{kt}$
+    $Q = e^{\tilde{C} + kt} \stackrel{e^{\tilde{C}} = C}{=\joinrel=\joinrel=\joinrel=} Ce^{kt}$
 
     По смыслу $k < 0$, так как $Q$ уменьшается. Обозначим $n = -k, n > 0$
 
-    \vspace{5mm}
-
     Тогда \fbox{$Q(t) = Ce^{-nt}$}
 
-    \vspace{5mm}
+    \mediumvspace
 
-    Получили вид закона распада. Выбор константы $C$ определен Н.У. (начальными условиями):
+    Получили вид закона распада. Выбор константы $C$ определен начальными условиями (НУ):
 
     $t_0 = 0 \quad Q(t_0) = Q_0 = C$
 
-    Тогда, закон - \fbox{$Q^*(t) = Q_0 e^{-nt}$}
+    Тогда, закон -- \fbox{$Q^*(t) = Q_0 e^{-nt}$}
 
-    \Nota Оба закона: общий $Q(t) = Ce^{-nt}$ и частный $Q^*(t) = Q_0 e^{-nt}$ -
+    \Nota Оба закона -- общий $Q(t) = Ce^{-nt}$ и частный $Q^*(t) = Q_0 e^{-nt}$ --
     являются решением дифференциального уравнения:
 
-    $Q^\prime(t) = kQ$  (явный вид)
+    \begin{multicols}{2}
+        \begin{center}
+        Явный вид
 
-    $d \ln Q(t) - kdt = 0$ (в дифференциалах)
+        $Q^\prime(t) = kQ$
+
+        В дифференциалах
+
+        $d \ln Q(t) - kdt = 0$
+        \end{center}
+    \end{multicols}
 
     \vspace{5mm}
 
     \hypertarget{freefallingbodyproblem}{}
 
-    \textit{Pr. 2} \quad Тело массой $m$ брошено вверх с начальной скоростью $v_0$. Нужно найти закон движения $y = y(t)$.
-    Сопротивлением воздуха пренебречь.
+    \begin{tcolorbox}
+        \textit{Pr. 2} \quad Тело массой $m$ брошено вверх с начальной скоростью $v_0$. Нужно найти закон движения $y = y(t)$.
+        Сопротивлением воздуха пренебречь.
+    \end{tcolorbox}
 
     По II закону Ньютона:
 
-    $m\overrightarrow{a} = m\overrightarrow{g}$
+    $m\vec{a} = m\vec{g} \Longleftrightarrow \vec{a} = \vec{g}$
 
-    $\overrightarrow{a} = \overrightarrow{g}$
-
-    $\overrightarrow{a} = \overrightarrow{g}$
-
-    $a = $\fbox{$\frac{d^2 y}{dt^2} = -g$} - ДУ
+    $a = $\fbox{$\frac{d^2 y}{dt^2} = -g$} - дифференциальное уравнение
 
     \underline{Решение.} \quad $y^{\prime\prime}(t) = -g$
 
@@ -1561,7 +1615,7 @@
 
     $y(t) = \int (-gt + C_1) dt = $\fbox{$-\frac{gt^2}{2} + C_1 t + C_2 = y(t)$} - общий закон
 
-    $C_{1,2}$ ищем из Н.У.
+    Коэффициенты $C_{1,2}$ ищем из начальных условий
 
     В задаче нет условия для $y(t_0)$. Возьмем $y_0 = y(t_0) = 0$
 
@@ -1575,21 +1629,19 @@
 
     Частный закон: \fbox{$y^*(t) = v_0 t - \frac{gt^2}{2}$}
 
-    \vspace{5mm}
-
-    \textbf{2* Основные определения}
+    \subsubsection{4.1.2. Основные определения}
 
     \hypertarget{differentialequationdefinition}{}
 
     \DefN{1} Уравнение $F(x, y(x), y^\prime(x), \dots, y^{(n)}(x)) = 0$ - называется обыкновенным ДУ $n$-ого порядка $(*)$
 
-    \Ex $Q^\prime + nQ = 0 \quad$ и $\quad y^{\prime\prime} + g = 0$
+    \Exs $Q^\prime + nQ = 0$ и $y^{\prime\prime} + g = 0$
 
     \DefN{2} Решением ДУ $(*)$ называется функция $y(x)$, которая при подстановке обращает $(*)$ в тождество
 
-    \DefN{2'} Если $y(x)$ имеет неявное задание $\Phi(x, y(x)) = 0$, то $\Phi(x, y)$ называется интегралом уравнения $(*)$
+    \DefNs{2$^\prime$} Если $y(x)$ имеет неявное задание $\Phi(x, y(x)) = 0$, то $\Phi(x, y)$ называется интегралом уравнения $(*)$
 
-    \Nota Разделяют общее решение ДУ - семейство функций, при этом каждое из них - решение; и
+    \Notas Разделяют общее решение ДУ - семейство функций, при этом каждое из них - решение; и
     частное решение - отдельная функция
 
     \DefN{3} Кривая с уравнением $y = y(x)$ или $\Phi(x, y(x)) = 0$ называют интегральной кривой
@@ -1600,17 +1652,19 @@
 
     Тогда $\begin{cases}(*) \\ (**)\end{cases}$ - задача Коши (ЗК)
 
-    \Nota Задача Коши может не иметь решений или иметь множество решений
+    \Notas Задача Коши может не иметь решений или иметь множество решений
 
-    \Th $y^\prime = f(x, y)$ - ДУ
+    \begin{MyTheorem}
+        \Ths $y^\prime = f(x, y)$ - ДУ
 
-    $M_0(x_0, y_0) \in D$ - точка, принадлежащая ОДЗ
+        $M_0(x_0, y_0) \in D$ - точка, принадлежащая ОДЗ
 
-    Если $f(x, y)$ и $\frac{\partial f}{\partial y}$ непрерывны в $M_0$, то ЗК
+        Если $f(x, y)$ и $\frac{\partial f}{\partial y}$ непрерывны в $M_0$, то задача Коши
 
-    $\begin{cases}y^\prime = f(x, y) \\ y(x_0) = y_0\end{cases}$
+        \[\begin{cases}y^\prime = f(x, y) \\ y(x_0) = y_0\end{cases}\]
 
-    имеет единственное решение $\varphi(x, y) = 0$, удовлетворяющее Начальному Условию (без док-ва)
+        имеет единственное решение $\varphi(x, y) = 0$, удовлетворяющее начальным условиям (без док-ва)
+    \end{MyTheorem}
 
     \Nota Преобразуем ДУ: $\underset{F(x, y(x), y^\prime(x))}{\undergroup{y^\prime - f(x, y)}} = 0$
 
@@ -1621,7 +1675,7 @@
 
     \DefN{6} Общим решением ДУ $(*)$ называется $y = f(x, C_1, C_2, \dots, C_n)$
 
-    \Nota $\Phi(x, y(x), C_1, \dots, C_n) = 0$ - общий интеграл
+    \Notas $\Phi(x, y(x), C_1, \dots, C_n) = 0$ - общий интеграл
 
     \DefN{7} Решением $(*)$ с определенными значениями $C_1^*, \dots, C_n^*$ называется частным
 
@@ -1630,39 +1684,39 @@
     Разрешенное относительно производной $y^\prime = f(x, y)$
 
     Сведем к виду: $\frac{dy}{dx} = \frac{P(x, y)}{-Q(x, y)} \Longrightarrow -Q(x, y)dy = P(x, y)dx \Longrightarrow $
-
     \fbox{$P(x, y)dx + Q(x, y)dy = 0$} - форма в дифференциалах
 % end specsec_2024_04_19.tex
 
 % begin specsec_2024_04_26.tex
 
-    \section{4.2 ДУ первого порядка (ДУ$_1$)}
+    \subsection{4.2 ДУ первого порядка (ДУ$_1$)}
 
     \Nota Среди ДУ$_1$ рассмотрим несколько типов точно интегрируемых ДУ
 
-    1) Уравнение с разделяющимися переменными (УРП)
+    \begin{enumerate}
+        \item Уравнение с разделяющимися переменными (УРП)
 
-    2) Однородное уравнение (ОУ)
+        \item Однородное уравнение (ОУ)
 
-    3) Уравнение полных дифференциалов (УПД)
+        \item Уравнение полных дифференциалов (УПД)
 
-    4) Линейное дифференциальное уравнение первого порядка (ЛДУ$_1$)
-
+        \item Линейное дифференциальное уравнение первого порядка (ЛДУ$_1$)
+    \end{enumerate}
     Кроме этого интегрируются дифференциальные уравнения Бернулли, Лагранжа, Клеро, Рикатти и др. (см. литературу)
-
-    \mediumvspace
 
     \hypertarget{equationwithseparablevariables}{}
 
-    \paragraph{1* УРП}\mbox{}\\
+    \subsubsection{4.2.1. УРП}
 
-    \Def $m(x)N(y)dx + M(x)n(y)dy = 0$
+    \Def \fbox{$m(x)N(y)dx + M(x)n(y)dy = 0$} -- уравнение с разделяющимися переменными
 
-    \underline{Решение} : $N(y)M(x) \neq 0$
+    \underline{Решение}: при $N(y)M(x) \neq 0$ получаем
 
-    $\frac{m(x)}{M(x)}dx + \frac{n(y)}{N(y)}dy = 0 \quad y = y(x)$ - неизвестная функция (ее ищем, решая ДУ)
+    $\frac{m(x)}{M(x)}dx + \frac{n(y)}{N(y)}dy = 0$,
+    
+    где $y = y(x)$ -- неизвестная функция (ее ищем, решая ДУ)
 
-    $(\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime)dx = 0$
+    $\left(\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime\right)dx = 0$
 
     Интегрируем по $dx$:
 
@@ -1672,13 +1726,11 @@
 
     $\int \frac{m(x)}{M(x)}dx + \int\frac{n(y)}{N(y)}dy = const$
 
-    или: $\int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$
+    или: \fbox{$\int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$}
 
     \Ex $xdy - ydx = 0$
 
-    $xdy = ydx$
-
-    $\frac{dy}{y} = \frac{dx}{x} \quad (x, y \neq 0)$
+    $xdy = ydx \Longrightarrow \frac{dy}{y} = \frac{dx}{x} \quad (x, y \neq 0)$
 
     $\int \frac{dy}{y} = \int \frac{dx}{x}$
 
@@ -1688,7 +1740,7 @@
 
     $y = Cx, \quad C \in \Real$
 
-    Заметим, $x = y = 0$ - решение, но они учтены общим решением $y = Cx$, (при $C = 0, y = 0$) и подстановкой в ДУ $x = 0$
+    Заметим, $x = y = 0$ -- решение, но они учтены общим решением $y = Cx$, (при $C = 0, y = 0$) и подстановкой в ДУ $x = 0$
 
     \Nota В процессе решения нужно проверить $M(x) = 0$ и $N(y) = 0$
 
@@ -1698,29 +1750,27 @@
 
     То есть $M(x) = 0$ и $N(y) = 0$ - решение
 
-    \mediumvspace
-
     \hypertarget{homogeneousequation}{}
 
-    \paragraph{2* ОУ}\mbox{}\\
+    \subsubsection{4.2.2. ОУ}
 
-    \DefN{1} Однородная функция $n$-ого порядка называется функция $f(x, y)$ такая, что
+    \DefNs{1} Однородная функция $n$-ого порядка называется функция $f(x, y)$ такая, что
 
     $f(\lambda x, \lambda y) = \lambda^k f(x, y), \quad \lambda \in \Real, \lambda \neq 0$
 
-    \Ex $f = \cos\left(\frac{x}{y}\right), \cos(\frac{\lambda x}{\lambda y}) = \cos(\frac{x}{y})$ - нулевой порядок однородности
+    \Exs $f = \cos\left(\frac{x}{y}\right), \cos\left(\frac{\lambda x}{\lambda y}\right) = \cos\left(\frac{x}{y}\right)$ -- нулевой порядок однородности
 
-    $f = \sqrt{x^2 + y^2}$ - первый порядок
+    $f = \sqrt{x^2 + y^2}$ -- первый порядок
 
-    \DefN{2} \fbox{$P(x, y)dx + Q(x, y)dy = 0$, где $P(x, y), Q(x, y)$ - однородные функции одного порядка} - ОУ
+    \DefN{2} \fbox{$P(x, y)dx + Q(x, y)dy = 0$}, где $P(x, y), Q(x, y)$ -- однородные функции одного порядка, называется однородным уравнением
 
-    \underline{Решение} $P(x, y) = P\left(x \cdot 1, x \cdot \frac{y}{x}\right) = x^k P\left(1, \frac{y}{x}\right)$
+    \underline{Решение}: $P(x, y) = P\left(x \cdot 1, x \cdot \frac{y}{x}\right) = x^k P\left(1, \frac{y}{x}\right)$
 
     $Q(x, y) = x^k Q\left(1, \frac{y}{x}\right)$
 
     Тогда, $P\left(1, \frac{y}{x}\right)dx + Q\left(1, \frac{y}{x}\right)dy = 0$.
 
-    Обозначим $\frac{y}{x} = t, \quad y^\prime = \frac{dy}{dx} \stackrel{y = tx}{=\joinrel=} t^\prime_x x + t x^\prime_x = t^\prime_x x + t$
+    Обозначим $\frac{y}{x} = t, \quad y^\prime = \frac{dy}{dx} \stackrel{y = tx}{=} t^\prime_x x + t x^\prime_x = t^\prime_x x + t$
 
     $P(1, t) + Q(1, t)y^\prime = P(1, t) + Q(1, t)(t^\prime x + t) = 0$
 
@@ -1728,21 +1778,21 @@
 
     $t^\prime x = f(t) - t$
 
-    $\frac{dt}{dx}x = f(t) - t \neq 0$
+    \begin{itemize}
+        \item Если $f(t) - t \neq 0$, то получаем уравнение с разделяющимися переменными:
 
-    $\frac{dt}{f(t) - t} = \frac{dx}{x}$
+        $\frac{dt}{f(t) - t} = \frac{dx}{x}$
 
-    $\int\frac{dt}{f(t) - t} = \int\frac{dx}{x} = \ln|Cx|$
+        $\int\frac{dt}{f(t) - t} = \int\frac{dx}{x} = \ln|Cx|$
 
-    $Cx = e^{\int\frac{dt}{f(t) - t}} = \varphi(x, y)$ - общий интеграл
+        $Cx = e^{\int\frac{dt}{f(t) - t}} = \varphi(x, y)$ - общий интеграл
 
-    Если $f(t) - t = 0$, то пусть $t = k$ - корень, тогда $k = \frac{y}{x} \to y = kx$ - тоже решение
+        \item Если $f(t) - t = 0$, а $t = k$ - корень уравнения $f(t) - t = 0$, тогда $y = kx$ - тоже решение
+    \end{itemize}
 
     \Ex $(x + y)dx + (x - y)dy = 0$
 
-    $\frac{y}{x} = t \quad y^\prime = t^\prime x + t$
-
-    $y = tx \quad dy = (t^\prime x + t)dx$
+    $\frac{y}{x} = t \quad y^\prime = t^\prime x + t \quad dy = (t^\prime x + t)dx$
 
     $(x + tx)dx + (x - tx)(t^\prime x + t)dx = 0$
 
@@ -1756,7 +1806,7 @@
 
     $\frac{(1 - t)dt}{(1 - t)^2 - 2} = -\frac{1}{2}\frac{d((1 - t)^2) - 2}{(1 - t)^2 - 2} = -\frac{1}{2}\ln|(1 - t)^2 - 2| = \ln\frac{1}{\sqrt{(1 - t)^2 - 2}} = \ln|Cx|$
 
-    $\tilde{C}x = \frac{1}{\sqrt{(1 - t)^2 - 2}} \Longleftrightarrow Cx^2 = \frac{1}{(1 - t)^2 - 2} = \Longleftrightarrow Cx^2 ((1 - t)^2 - 2) = 1$
+    $\tilde{C}x = \frac{1}{\sqrt{(1 - t)^2 - 2}} \Longleftrightarrow Cx^2 = \frac{1}{(1 - t)^2 - 2} \Longleftrightarrow Cx^2 ((1 - t)^2 - 2) = 1$
 
     $C ((y - x)^2 - 2x^2) = 1$
 
@@ -1766,17 +1816,15 @@
 
     $(t - 1)^2 - 2 = 0 \quad \frac{y}{x} = 1 \pm \sqrt{2} \quad y = (1 \pm \sqrt{2})x$ - асимптоты
 
-    \mediumvspace
-
     \hypertarget{equationincompletedifferentials}{}
 
-    \paragraph{3* Уравнение в полных дифференциалах}\mbox{}\\
+    \subsubsection{4.2.3. УПД}
 
-    \Def \fbox{$P(x, y)dx + Q(x, y)dy = 0 \quad \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$} - УПД
+    \Def \fbox{$P(x, y)dx + Q(x, y)dy = 0$} при $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$ -- уравнение в полных дифференциалах
 
-    \mediumvspace
-
-    \underline{Решение} \Mems \Ths об интеграле НЗП $\quad \exists \Phi(x, y)\ | \ d\Phi = P(x, y)dx + Q(x, y)dy$
+    \underline{Решение}: 
+    
+    \Mems \ThNs{Об интеграле НЗП} $\quad \exists \Phi(x, y)\ | \ d\Phi = P(x, y)dx + Q(x, y)dy$
 
     $\Phi(x, y) = \int^{(x,y)}_{(x_0,y_0)} Pdx + Qdy$
 
@@ -1784,7 +1832,7 @@
 
     $\Phi(x, y) = \int^{(x, y)}_{(x_0,y_0)} (x + y)dx + (x - y)dy =
     \int^{(x,0)}_{(0,0)} xdx + \int^{(x,y)}_{(x,0)} (x - y)dy = \frac{x^2}{2} \Big|_{(0, 0)}^{(x, 0)} +
-    (xy + \frac{y^2}{2}) \Big|_{(x, 0)}^{(x, y)} = \frac{x^2}{2} + xy - \frac{y^2}{2} + C$ - общий интеграл
+    \left(xy + \frac{y^2}{2}\right) \Big|_{(x, 0)}^{(x, y)} = \frac{x^2}{2} + xy - \frac{y^2}{2} + C$ - общий интеграл
 
     $x^2 + 2xy - y^2 = C$
 
@@ -1792,11 +1840,9 @@
 
     \hypertarget{lineardifferentialequation}{}
 
-    \paragraph{4* ЛДУ}\mbox{}\\
+    \subsubsection{4.2.4. ЛДУ}
 
-    \Def \fbox{$y^\prime + p(x)y = q(x)$} - ЛДУ$_1$
-
-    $p, q \in C_{[a, b]}$
+    \Def \fbox{$y^\prime + p(x)y = q(x)$}, где $p, q \in C_{[a, b]}$, -- линейное дифференциальное уравнение первого порядка
 
     \hypertarget{methodLagrange}{}
 
@@ -1807,87 +1853,62 @@
 
     \Def Однородное (ЛОДУ): $y^\prime + p(x)y = 0$
 
-    \Def Неоднородное (ЛНДУ): $y^\prime + p(x)y = q(x)$
+    \Defs Неоднородное (ЛНДУ): $y^\prime + p(x)y = q(x)$
 
-    \Ex $\letsymbol y(x) = x^2 e^{-x}$ - частное решение ЛНДУ
+    \Ex Пусть $y(x) = x^2 e^{-x}$ - частное решение ЛНДУ
 
     А $y_0 = x e^{-x}$, тогда $y = x xe^{-x} = C(x) x e^{-x}$
 
     То есть $C(x)$ варьируется, чтобы получить решение $y = y(x)$
 
-    \underline{Решение} а) $y^\prime + p(x)y = 0$
+    \underline{Решение}: 
+    
+    \begin{enumerate}
+        \item для ЛОДУ $y^\prime + p(x)y = 0$
 
-    $\frac{dy}{dx} + p(x)y = 0$ - УРП
+        $\frac{dy}{dx} + p(x)y = 0$ -- УРП, тогда $\frac{dy}{y} = -p(x)dx$
 
-    $\frac{dy}{y} = -p(x)dx$
+        $\ln|\tilde{C}y| = -\int p(x)dx$
 
-    $\ln|\tilde{C}y| = -\int p(x)dx$
+        $\overline{y} = Ce^{-\int p(x) dx} = Cy_0$ -- общее решение ЛОДУ
 
-    $\overline{y} = Ce^{-\int p(x) dx} = Cy_0$
+        \item для ЛНДУ $y^\prime + p(x)y = q(x)$
 
-    б) $y^\prime + p(x)y = q(x)$
+        Ищем $y(x)$ в виде $y = C(x)y_0$
 
-    Ищем $y(x)$ в виде $y = C(x)y_0$
+        $C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
 
-    $C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
+        $C^\prime(x)y_0 + C(x)\underset{=0}{\undergroup{(y^\prime_0 + p(x)y_0)}} = q(x)$
 
-    $C^\prime(x)y_0 + C(x)\underset{=0}{\undergroup{(y^\prime_0 + p(x)y_0)}} = q(x)$
+        $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
 
-    $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
+        $C(x) = \int q(x) e^{\int p(x)dx} dx$
 
-    $C(x) = \int q(x) e^{\int p(x)dx} dx$
+        Окончательно, $y(x) = \left(\left(\int q(x) e^{\int p(x)dx} + C\right) dx\right) e^{-\int p(x) dx} =
+        Ce^{-\int p dx} + e^{-\int pdx} \int q e^{\int p dx} = \overline{y} + y^*$
+    \end{enumerate}
 % end specsec_2024_04_26.tex
 
 % begin specsec_2024_05_03.tex
 
-    \Mem $y^\prime + p(x)y = q(x)$
-
-    1) $y^\prime + p(x)y = 0$
-
-    $\frac{dy}{y} = -p(x)dx$
-
-    $y_0 = e^{-\int p(x)dx}$
-
-    $\overline{y} = Ce^{-\int p(x)dx}$ - общее решение ЛОДУ
-
-    2) $y^\prime + p(x)y = q(x)$
-
-    $y(x) = C(x)y_0$
-
-    $C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
-
-    $C(x)(y_0^\prime + p(x)y_0) = 0$ - так как $y_0$ - решение ЛОДУ
-
-    $C^\prime(x) = \frac{q(x)}{y_0}$
-
-    $C(x) = \int q(x)e^{\int p(x)dx} dx + C$
-
-    Окончательно, $y(x) = \left(\left(\int q(x) e^{\int p(x)dx} + C\right) dx\right) e^{-\int p(x) dx} =
-    Ce^{-\int p dx} + e^{-\int pdx} \int q e^{\int p dx} = \overline{y} + y^*$
-
-
-    \section{4.3. Существование и единственность решения}
+    \subsection{4.3. Существование и единственность решения}
 
     \hypertarget{existenceanduniquenessofsolution}{}
 
-    \Mem
+    \Mem \Ths Для задачи Коши
     \begin{cases}
-        y^{\prime} = f(x, y) \\
-        y(x_0) = y_0
-    \end{cases} \Ths Если $\exists U(M_0) \ | \
-    \begin{cases}
-        f(x,y) \in C_{U(M_0)} \\
-        \frac{\partial f}{\partial y}\text{ - огр. в } U(M_0),
-    \end{cases}$ то в $M_0\ \exists! y(x)$ - решение ДУ
+        y^{\prime} = f(x, y), \\
+        y(x_0) = y_0,
+    \end{cases} 
+    если $\exists U(M_0)$, в которой $f(x,y) \in C_{U(M_0)}$ и $\frac{\partial f}{\partial y}\text{ ограничена в } U(M_0)$, то в $M_0\ \exists! y(x)$ -- решение ДУ
 
     \vspace{5mm}
 
-    Решение ДУ называется особым, если $\forall$ его точке нарушается \Ths существования и единственности, то есть
+    Решение ДУ называется особым, если в любой его точке нарушается \Ths существования и единственности, то есть
     через каждую точку проходит несколько интегральных кривых
 
-    \Def $P(x, y)dx + Q(x, y)dy = 0$ задает поле интегральных кривых, заполняющих область $D$
-
-    Соответственно точки $D$ могут быть особыми или обыкновенными (выпол. усл. \Ths)
+    \Def Уравнение $P(x, y)dx + Q(x, y)dy = 0$ задает поле интегральных кривых, заполняющих область $D$.
+    Соответственно точки $D$ могут быть особыми или обыкновенными (выполняются условия \Ths)
     \vspace{5mm}
 
     \underline{Условия особого решения} $\ P(x, y)$ или $Q(x, y) = 0$
@@ -1903,102 +1924,106 @@
         & $y = (x + C)^3$                        &                 & $P = 0 \Longrightarrow y = 0$       \\
     \end{tabular}
 
-
-    \section{4.4. ДУ высших порядков}
+    \subsection{4.4. ДУ высших порядков}
 
     \hypertarget{differentilaequationshigherdegree}{}
 
     \Nota Рассмотрим три типа интегрируемых ДУ
 
-    1* Непосредственно интегрирование
+    \begin{enumerate}[label*=\arabic** ]
+        \item Непосредственно интегрирование
 
-    $y^{(n)} = f(x)$
+        $y^{(n)} = f(x)$
 
-    Решение: $y^{(n - 1)} = \int f(x) dx + C_1$
+        Решение: $y^{(n - 1)} = \int f(x) dx + C_1$
 
-    $y^{(n - 2)} = \int (\int f(x) dx + C_1) dx + C_2$
+        $y^{(n - 2)} = \int \left(\int f(x) dx + C_1\right) dx + C_2$
 
-    \Ex См. Задачу 2 в начале
+        \Ex См. Задачу 2 в начале
 
-    2* ДУ$_2$, не содержащие $y(x)$
+        \item ДУ$_2$, не содержащие $y(x)$
 
-    $F(x, y^\prime(x), y^{\prime\prime}(x)) = 0$
+        $F(x, y^\prime(x), y^{\prime\prime}(x)) = 0$
 
-    Замена $y^\prime(x) = z(x)$, получаем:
+        Замена $y^\prime(x) = z(x)$, получаем:
 
-    $F(x, z(x), z^\prime(x)) = 0$ - ДУ$_1$
+        $F(x, z(x), z^\prime(x)) = 0$ -- ДУ$_1$
 
-    \Ex $(1 + x^2)y^{\prime\prime} + (1 + y^\prime^2) = 0 \quad y^\prime = z$
+        \Ex $(1 + x^2)y^{\prime\prime} + (1 + y^\prime^2) = 0 \quad y^\prime = z$
 
-    $(1 + x^2)z^\prime + 1 + z^2 = 0$
+        $(1 + x^2)z^\prime + 1 + z^2 = 0$
 
-    $z^\prime + \frac{1 + z^2}{1 + x^2} = 0 \Longleftrightarrow z^\prime = -\frac{1 + z^2}{1 + x^2} \Longleftrightarrow \frac{dz}{1 + z^2} = -\frac{dx}{1 + x^2}$
+        $z^\prime + \frac{1 + z^2}{1 + x^2} = 0 \Longleftrightarrow z^\prime = -\frac{1 + z^2}{1 + x^2} \Longleftrightarrow \frac{dz}{1 + z^2} = -\frac{dx}{1 + x^2}$
 
-    $\arctan x = \arctan(-x) + C$
+        $\arctan x = \arctan(-x) + C$
 
-    $z = \frac{-x + \tan(C)}{1 + x \tan C} = y^\prime$
+        $z = \frac{-x + \tan(C)}{1 + x \tan C} = y^\prime$
 
-    $y = \int \frac{-x + \tan(C)}{1 + x \tan C} dx = \dots $
+        $y = \int \frac{-x + \tan(C)}{1 + x \tan C} dx = \dots $
 
-    3* ДУ$_2$, не содержащие $x$
+        \item ДУ$_2$, не содержащие $x$
 
-    $F(y(x), y^\prime(x), y^{\prime\prime}(x)) = 0$
+        $F(y(x), y^\prime(x), y^{\prime\prime}(x)) = 0$
 
-    Замена $y^\prime(x) = z(y) \quad y^{\prime\prime}(x) = \frac{dz(y(x))}{dx} = \frac{dz}{dx} \frac{dy}{dx} = z^\prime_y y^\prime = z^\prime z$
+        Замена $y^\prime(x) = z(y) \quad y^{\prime\prime}(x) = \frac{dz(y(x))}{dx} = \frac{dz}{dx} \frac{dy}{dx} = z^\prime_y y^\prime = z^\prime z$
 
-    ДУ: $F(y, z(y), z^\prime(y)) = 0$
+        ДУ: $F(y, z(y), z^\prime(y)) = 0$
 
-    \Ex $y^{\prime\prime} + y^{\prime 2} = yy^\prime$
+        \Ex $y^{\prime\prime} + y^{\prime 2} = yy^\prime$
 
-    $y^\prime = z(y) \quad y^{\prime\prime} = z^\prime z$
+        $y^\prime = z(y) \quad y^{\prime\prime} = z^\prime z$
 
-    $z^\prime z + z^2 = yz \quad | \ : z \neq 0 \quad\quad z = 0 \Longrightarrow y = const$
+        $z^\prime z + z^2 = yz \quad | \ : z \neq 0 \quad\quad z = 0 \Longrightarrow y = const$
 
-    $z^\prime + z = y$ - ЛДУ
+        $z^\prime + z = y$ -- ЛДУ
 
-    \begin{tabular}{p{5cm}p{10cm}}
-        1) $z^\prime + z = 0$ & 2) $C^\prime (y) e^{-y} = y$                                                                                              \\
+        \begin{tabular}{p{5cm}p{10cm}}
+            1) $z^\prime + z = 0$ & 2) $C^\prime (y) e^{-y} = y$                                                                                              \\
 
-        $\ln|z| = -y + C$     & $C^\prime (y) = ye^{y}$                                                                                                   \\
+            $\ln|z| = -y + C$     & $C^\prime (y) = ye^{y}$                                                                                                   \\
 
-        $z = Ce^{-y}$         & $C(y) = \int y e^y dy = \int y de^y = ye^y - e^y + C_1$                                                                   \\
+            $z = Ce^{-y}$         & $C(y) = \int y e^y dy = \int y de^y = ye^y - e^y + C_1$                                                                   \\
 
-        & $z(y) = (ye^y - e^y + C_1)e^{-y} = \underset{z^*}{\undergroup{y - 1}} + \underset{\overline{z}}{\undergroup{C_1 e^{-y}}}$ \\
+            & $z(y) = (ye^y - e^y + C_1)e^{-y} = \underset{z^*}{\undergroup{y - 1}} + \underset{\overline{z}}{\undergroup{C_1 e^{-y}}}$ \\
 
-        & $y^\prime = C_1 e^{-y} + y - 1 \Longrightarrow ? \dots $
+            & $y^\prime = C_1 e^{-y} + y - 1 \Longrightarrow ? \dots $
 
-    \end{tabular}
+        \end{tabular}
+
+    \end{enumerate}
 
 
-    \section{4.5. ЛДУ$_2$}
+    \subsection{4.5. ЛДУ$_2$}
 
     \hypertarget{lineardifferentialequationhigherdegree}{}
 
-    \section{4.5.1. Определения}
+    \subsubsection{4.5.1. Определения}
 
-    \Def $a_0(x) y^{(n)}(x) + a_1(x)y^{(x)} + \dots + a_{n - 1}y^\prime(x) + a^n(x)y = f(x)$, где $y = y(x)$ - неизв. функция, - это ЛДУ$_n$
+    \Def $a_0(x) y^{(n)}(x) + a_1(x)y^{(x)} + \dots + a_{n - 1}y^\prime(x) + a^n(x)y = f(x)$, где $y = y(x)$ -- неизвестная функция, -- это линейное дифференциальное уравнение $n$-ого порядка
 
-    \Nota Если $n = 2$ - ЛДУ$_2$, $y^{\prime\prime}(x) + p(x)y^\prime(x) + q(x)y = f(x)$ - разрешенное относительно старших производных ЛДУ$_2$
+    \Notas Если $n = 2$, то ЛДУ$_2$, $y^{\prime\prime}(x) + p(x)y^\prime(x) + q(x)y = f(x)$ -- разрешенное относительно старших производных ЛДУ$_2$
 
-    \Nota Если $a_i(x) = a_i \in \Real$ - ЛДУ$_n$ с постоянными коэффициентами
+    \Notas Если $a_i(x) = a_i \in \Real$ -- ЛДУ$_n$ с постоянными коэффициентами
 
     \hypertarget{lineardifferentialequationseconddegreewithconstants}{}
 
-    \section{4.5.2. Решение ЛДУ$_2$ с постоянными коэффициентами}
+    \subsubsection{4.5.2. Решение ЛДУ$_2$ с постоянными коэффициентами}
 
     $y^{\prime\prime} + p y^\prime + q y = f(x), \quad p, q \in \Real$
 
-    $\forall p, q \in \Real \exists $ уравнение: $\quad \lambda^2 + p\lambda + q = 0$ и $\lambda_{1,2} \in \mathbb{C} \ | \ \lambda_1 + \lambda_2 = -p, \lambda_1 \lambda_2 = q$ - корни
+    Для любых $p, q \in \Real$ существует уравнение: $\quad \lambda^2 + p\lambda + q = 0$ и $\lambda_{1,2} \in \mathbb{C} \ | \ \lambda_1 + \lambda_2 = -p, \lambda_1 \lambda_2 = q$ - корни
 
     Назовем уравнение характеристическим (ХрУ) \Cat
 
     \Nota $\lambda_{1, 2}$ могут быть только
 
-    1) вещественными различными;
+    \begin{enumerate}
+        \item вещественными различными;
 
-    2) вещественными одинаковыми ($\lambda_1 = \lambda_2 = \lambda$ - корень 2-ой кратности);
+        \item вещественными одинаковыми ($\lambda_1 = \lambda_2 = \lambda$ - корень 2-ой кратности);
 
-    3) $\lambda_{1,2} = \alpha \pm i \beta \in \mathbb{C}$, где $\alpha, \beta \in \Real$
+        \item $\lambda_{1,2} = \alpha \pm i \beta \in \mathbb{C}$, где $\alpha, \beta \in \Real$
+    \end{enumerate}
 
     Запишем ЛДУ$_2$ через $\lambda_{1, 2}$:
 
@@ -2027,10 +2052,10 @@
     Поступим лучше, решим ЛОДУ$_2$ $(f(x) = 0)$
 
     Эта система \begin{cases}
-                    y^\prime - \lambda_2 y u(x) \\ u^\prime - \lambda_1 u = 0
+                    y^\prime - \lambda_2 y = u(x) \\ u^\prime - \lambda_1 u = 0
     \end{cases}
     \Longleftrightarrow \begin{cases}
-                            y^\prime - \lambda_2 y u(x) \\ u = C_1 e^{\lambda_1 x}
+                            y^\prime - \lambda_2 y = u(x) \\ u = C_1 e^{\lambda_1 x}
     \end{cases}
 
     Решим $y^\prime - \lambda_2 y = C_1 e^{\lambda_1 x}$:
@@ -2042,7 +2067,7 @@
 
         & $C_2^\prime(x) e^{\lambda_2 x} = C_1 e^{\lambda_1 x}$ \\
 
-        & $C^\prime_2 (x) = C_1 e^{\lambda_1 = \lambda_2} x$
+        & $C^\prime_2 (x) = C_1 e^{\lambda_1 - \lambda_2} x$
     \end{tabular}
 
     Далее все зависит от $\lambda_{1,2}$
@@ -2052,367 +2077,394 @@
 
     \Mem $y^{\prime\prime} + py^\prime + qy = f(x), \quad p, q \in \Real$
 
-    Для начала $y^{\prime\prime} + py^\prime + qy = 0$ - ЛОДУ$_2$
+    Для начала $y^{\prime\prime} + py^\prime + qy = 0$ -- ЛОДУ$_2$
 
     $C^\prime_2 (x) = C_1 e^{(\lambda_1 - \lambda_2)x}$
 
-    Рассмотрим три случай для $\lambda_{1,2}$
+    Рассмотрим три случай для $\lambda_{1,2}$:
 
     \hypertarget{ldesgdifferentrealsolutions}{}
 
-    1) $\lambda_{1.2} \in \Real, \lambda_1 \neq \lambda_2$ - случай различных вещественных корней
+    \begin{enumerate}
+        \item $\lambda_{1,2} \in \Real, \lambda_1 \neq \lambda_2$ -- случай различных вещественных корней
 
-    $C_2(x) = \int C_1 e^{(\lambda_1 - \lambda_2)x} dx = \frac{C_1 e^{(\lambda_1 - \lambda_2)x}}{\lambda_1 - \lambda_2} + C_2 =
-    \underset{\tilde{C_1}}{\undergroup{\frac{C_1}{\lambda_1 - \lambda_2}}} e^{(\lambda_1 - \lambda_2)x} + C_2$
+        $C_2(x) = \int C_1 e^{(\lambda_1 - \lambda_2)x} dx = \frac{C_1 e^{(\lambda_1 - \lambda_2)x}}{\lambda_1 - \lambda_2} + C_2 =
+        \underset{\tilde{C_1}}{\undergroup{\frac{C_1}{\lambda_1 - \lambda_2}}} e^{(\lambda_1 - \lambda_2)x} + C_2$
 
-    Тогда, $y(x) = C_2(x) e^{\lambda_2 x} = (\tilde{C_1}e^{\lambda_1 - \lambda_2}x + C_2)e^{\lambda_2 x} = $\fbox{$C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$} - решение ЛОДУ, $\lambda_1 \neq \lambda_2$
+        Тогда, $y(x) = C_2(x) e^{\lambda_2 x} = (\tilde{C_1}e^{\lambda_1 - \lambda_2}x + C_2)e^{\lambda_2 x} = $\fbox{$C_1 e^{\lambda_1 x} + C_2 e^{\lambda_2 x}$} -- решение ЛОДУ, $\lambda_1 \neq \lambda_2$
 
-    \hypertarget{ldesgequalrealsolutions}{}
+        \hypertarget{ldesgequalrealsolutions}{}
 
-    2) $\lambda_1 = \lambda_2 = \lambda \in \Real$ - случай вещ. кратных корней
+        \item $\lambda_1 = \lambda_2 = \lambda \in \Real$ -- случай вещественных кратных корней
 
-    $C_2^\prime (x) = C_1 e^{0x} = C_1 \Longrightarrow C_2(x) = \int C_1 dx = C_1 x + C_2$
+        $C_2^\prime (x) = C_1 e^{0x} = C_1 \Longrightarrow C_2(x) = \int C_1 dx = C_1 x + C_2$
 
-    $y(x) = (C_1 x + C_2)e^{\lambda x} = $\fbox{$C_1 x e^{\lambda x} + C_2 e^{\lambda x} = y(x)$} - решение ЛОДУ, $\lambda_1 = \lambda_2$
+        $y(x) = (C_1 x + C_2)e^{\lambda x} = $\fbox{$C_1 x e^{\lambda x} + C_2 e^{\lambda x} = y(x)$} -- решение ЛОДУ, $\lambda_1 = \lambda_2$
 
-    \hypertarget{ldesgcomplexsolutions}{}
+        \hypertarget{ldesgcomplexsolutions}{}
 
-    3) $\lambda = \alpha \pm i \beta \in \mathbb{C}$ - случай комплексно сопряженных корней
+        \item $\lambda = \alpha \pm i \beta \in \mathbb{C}$ -- случай комплексно сопряженных корней
 
-    Так как $\lambda_1 \neq \lambda_2$, то аналогично первому случаю $y(x) = C_1 e^{(\alpha + i \beta)x + C_2 e} + C_2 e^{(\alpha - i \beta) x}$ - решение ЛОДУ
+        Так как $\lambda_1 \neq \lambda_2$, то аналогично первому случаю $y(x) = C_1 e^{(\alpha + i \beta)x + C_2 e} + C_2 e^{(\alpha - i \beta) x}$ -- решение ЛОДУ
 
-    Получим $\Real$-решения:
+        Получим $\Real$-решения:
 
-    $y(x) = C_1 e^{\alpha x} e^{i\beta x} + C_2 e^{\alpha x} e^{-i\beta x} = e^{\alpha x} (C_1 (\cos\beta x + i\sin\beta x) + C_2 (\cos\beta x - i\sin \beta x)) =
-    e^{\alpha x} (C_1 + C_2) \cos\beta x + e^{\alpha x} i (C_1 - C_2) \sin\beta x$
+        $y(x) = C_1 e^{\alpha x} e^{i\beta x} + C_2 e^{\alpha x} e^{-i\beta x} = e^{\alpha x} (C_1 (\cos\beta x + i\sin\beta x) + C_2 (\cos\beta x - i\sin \beta x)) =
+        e^{\alpha x} (C_1 + C_2) \cos\beta x + e^{\alpha x} i (C_1 - C_2) \sin\beta x$
 
-    $Re y(x) = \underset{u(x)}{\undergroup{(C_1 + C_2) e^{\alpha x} \cos\beta x}}, Im y(x) = \underset{v(x)}{\undergroup{(C_1 + C_2) e^{\alpha x} \sin\beta x}} \quad y(x) = u(x) + iv(x)$
+        $\RE y(x) = \underset{u(x)}{\undergroup{(C_1 + C_2) e^{\alpha x} \cos\beta x}}, \IM y(x) = \underset{v(x)}{\undergroup{(C_1 + C_2) e^{\alpha x} \sin\beta x}} \quad y(x) = u(x) + iv(x)$
 
-    Так как $y(x)$ - решение ЛОДУ:
+        Так как $y(x)$ -- решение ЛОДУ:
 
-    $u^{\prime\prime} + iv^{\prime\prime} + pu^\prime + ipv\prime + qu + iqv = 0$
+        $u^{\prime\prime} + iv^{\prime\prime} + pu^\prime + ipv\prime + qu + iqv = 0$
 
-    $(u^{\prime\prime} + pu^\prime + qu) + i(v^{\prime\prime} + pv\prime + qv) = 0 \quad \forall x \in [\alpha; \beta]$, то есть $z \in \mathbb{C}$ и $z = 0$
+        $(u^{\prime\prime} + pu^\prime + qu) + i(v^{\prime\prime} + pv\prime + qv) = 0 \quad \forall x \in [\alpha; \beta]$, то есть $z \in \mathbb{C}$ и $z = 0$
 
-    \begin{cases}
-        u^{\prime\prime} + pu^\prime + qu = 0, \\
-        v^{\prime\prime} + pv\prime + qv = 0
-    \end{cases}
+        \begin{cases}
+            u^{\prime\prime} + pu^\prime + qu = 0, \\
+            v^{\prime\prime} + pv\prime + qv = 0
+        \end{cases}
 
-    Тогда можно считать решением $y(x) = u(x) + v(x) = C_1 e^{\alpha x}\cos\beta x + C_2 e^{\alpha x} \sin\beta x$ - решение ЛОДУ, $\lambda_{1,2} \in \mathbb{C}$
+        Тогда можно считать решением $y(x) = u(x) + v(x) = C_1 e^{\alpha x}\cos\beta x + C_2 e^{\alpha x} \sin\beta x$ -- решение ЛОДУ, $\lambda_{1,2} \in \mathbb{C}$
+    \end{enumerate}
 
     \Nota Ни про одно из полученных решений нельзя сказать, что оно общее (см. след. пункт)
 
     Также еще не решено ЛНДУ$_2$
 
-    \section{4.5.3. Свойства решений ЛДУ$_2$}
+    \subsubsection{4.5.3. Свойства решений ЛДУ$_2$}
 
-    \Def $Ly \stackrel{def}{=} y^{\prime\prime}(x) + py^\prime(x) + qy(x)$ - лин. дифф. оператор
+    \Def $Ly \stackrel{def}{=} y^{\prime\prime}(x) + py^\prime(x) + qy(x)$ -- линейный дифференциальный оператор
 
     $L : E \subset C^2_{[a;b]} \implies F \subset C_{[a;b]}$
 
-    \Nota Все определения лин. пространства, базиса, лин. независимости, лин. оболочки сохраняются
+    \Notas Все определения линейного пространства, базиса, линейной независимости, линейной оболочки сохраняются. А ЛОДУ$_2$ записывается как $Ly = 0$, ЛНДУ$_2$ -- $Ly = f(x)$
 
-    И ЛДУ$_2$ записывается как $Ly = 0$ - ЛОДУ$_2$, $Ly = f(x)$ - ЛНДУ$_2$
+    \begin{MyTheorem}
+        \ThNs{1} $\letsymbol y_1, y_2$ - частные решения ЛОДУ, то есть $Ly_1 = 0, Ly_2 = 0$
 
-    \ThN{1} $\letsymbol y_1, y_2$ - частные решение ЛОДУ, то есть $Ly_1 = 0, Ly_2 = 0$
+        Тогда $Ly = 0$, если $y = C_1 y_1 + C_2 y_2$
+    \end{MyTheorem}
 
-    Тогда $Ly = 0$, если $y = C_1 y_1 + C_2 y_2$
+    \begin{MyProof}
+        $Ly = y^{\prime\prime} + py^\prime + qy = (C_1 y_1 + C_2 y_2)^{\prime\prime} + p(C_1 y_1 + C_2 y_2)^{\prime} + q(C_1 y_1 + C_2 y_2) = C_1 Ly_1 + C_2 L y_2 = 0$
 
-    $\Box$
+    \end{MyProof}
 
-    $Ly = y^{\prime\prime} + py^\prime + qy = (C_1 y_1 + C_2 y_2)^{\prime\prime} + p(C_1 y_1 + C_2 y_2)^{\prime} + q(C_1 y_1 + C_2 y_2) = C_1 Ly_1 + C_2 L y_2 = 0$
+    \hypertarget{linearindependance}{}
 
-    $\Box$
+    \Def $y_1, y_2$ -- линейно независимы $\Longleftrightarrow C_1 y_1 + C_2 y_2 = 0 \Longrightarrow \forall C_1 = 0 \Longleftrightarrow \nexists k : y_2 = k y_1, k \in \Real$
 
-    \Def $y_1, y_2$ - лин. нез. $\Longleftrightarrow C_1 y_1 + C_2 y_2 = 0 \Longrightarrow \forall C_1 = 0 \Longleftrightarrow \nexists k : y_2 = k y_1, k \in \Real$
+    \Mem Для определения линейной независимости в Линейной алгебре мы использовали $\rang A$ или $\det A$
 
-    \Mem Для определения лин. независимости в Линале использовали $rg A$ или $\det A$
+    Введем индикатор линейной независимости.
+    Заметим, что если $y_1, y_2$ -- линейно зависимы, то $y_1^\prime, y_2^\prime$ -- линейно зависимы
 
-    Введем индикатор лин. независимости
+    \hypertarget{determinantWronski}{}
 
-    Заметим, что если $y_1, y_2$ - лин. зав., то $y_1^\prime, y_2^\prime$ - лин. зав.
+    \Def $W \stackrel{\text{обозн}}{=} \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = \begin{vmatrix}y_1(x) & y_2(x) \\ \frac{d y_1(x)}{dx} & \frac{d y_2(x)}{dx}\end{vmatrix}$ -- определитель Вронского или вронскиан
 
-    \Def $W \stackrel{\text{обозн}}{=} \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix}$ - определитель Вронского или вронскиан
+    \begin{MyTheorem}
+        \ThNs{2} $y_1, y_2$ -- линейно зависимы $\Longrightarrow W = 0$ на $[a;b]$
+    \end{MyTheorem}
 
-    \ThN{2} $y_1, y_2$ - лин. зав. $\Longrightarrow W = 0$ на $[a;b]$
+    \begin{MyProof}
+        $\begin{matrix}y_2 = k y_1 \\ y_2^\prime = k y_1^\prime\end{matrix} \Longrightarrow W = \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = 0$
+    \end{MyProof}
 
-    $\Box$
+    \begin{MyTheorem}
+        \ThNs{3} $x_0 \in [a;b]$, пусть $W(x_0) = W_0$. Тогда: 
+        
+        $\begin{matrix}W_0 = 0 \Longrightarrow W(x) = 0 \forall x \in [a;b] \\
+        W_0 \neq 0 \Longrightarrow W(x) \neq 0 \forall x \in [a;b]\end{matrix}$
+    \end{MyTheorem}
 
-    $\begin{matrix}y_2 = k y_1 \\ y_2^\prime = k y_1^\prime\end{matrix} \Longrightarrow W = \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = 0$
+    \begin{MyProof}
+        Пусть $y_1(x), y_2(x)$ -- решения ЛОДУ,
 
-    $\Box$
+        $\begin{cases}
+            Ly_1 = 0 \quad | \cdot y_2 \\
+            Ly_2 = 0 \quad | \cdot y_1 \\
+        \end{cases} \Longleftrightarrow
+        \begin{cases}
+            y_1^{\prime\prime} y_2 + py_1^{\prime} y_2 + q y_1 y_2 = 0 \\
+            y_2^{\prime\prime} y_1 + py_2^{\prime} y_1 + q y_1 y_2 = 0
+        \end{cases}$
 
-    \ThN{3} $x_0 \in [a;b], \quad \letsymbol W(x_0) = W_0$
+        $(y_1^{\prime\prime} y_2 - y_2^{\prime\prime} y_1) + p (y_1^{\prime} y_2 - y_2^{\prime} y_1) = 0$
 
-    Тогда $\begin{matrix}W_0 = 0 \Longrightarrow W(x) = 0 \forall x \in [a;b] \\
-    W_0 \neq 0 \Longrightarrow W(x) \neq 0 \forall x \in [a;b]\end{matrix}$
+        $W^\prime(x) + pW(x) = 0$
 
-    $\Box$
+        $\frac{dW(x)}{W(x)} = -pdx$
 
-    $\letsymbol y_1(x), y_2(x)$ - реш ЛОДУ,
+        $W(x) = Ce^{-\int_{x_0}^x pdx}$
 
-    $\begin{cases}
-        Ly_1 = 0 \quad | \cdot y_2 \\
-        Ly_2 = 0 \quad | \cdot y_1 \\
-    \end{cases} \Longleftrightarrow
-    \begin{cases}
-        y_1^{\prime\prime} y_2 + py_1^{\prime} y_2 + q y_1 y_2 = 0
-        y_2^{\prime\prime} y_1 + py_2^{\prime} y_1 + q y_1 y_2 = 0
-    \end{cases}$
+        $W_0 = Ce^{-\int^{x_0}_{x_0} pdx} = C$
 
-    $(y_1^{\prime\prime} y_2 - y_2^{\prime\prime} y_1) + p (y_1^{\prime} y_2 - y_2^{\prime} y_1) = 0$
+        Тогда $W(x) = W_0 e^{-\int_{x_0}^x pdx} \Longleftrightarrow \begin{sqcases}W_0 = 0 \Longrightarrow W(x) = 0 \\ W_0 \neq 0 \Longrightarrow W(x) \neq 0\end{sqcases} \forall x \in [a;b]$
 
-    $W^\prime(x) + pW(x) = 0$
+    \end{MyProof}
 
-    $\frac{dW(x)}{W(x)} = -pdx$
+    \begin{MyTheorem}
+        \ThNs{4} $y_1, y_2$ -- линейно независимы $\Longrightarrow W(x) \neq 0$ на $[a;b]$
+    \end{MyTheorem}
 
-    $W(x) = Ce^{-\int_{x_0}^x pdx}$
+    \begin{MyProof} 
+        Докажем от противного
 
-    $W_0 = Ce^{-\int^{x_0}_{x_0} pdx} = C$
+        Пусть $\exists x_0 \in [a;b] \ | \ W(x_0)= 0 \Longrightarrow W(x) = 0 \ \forall x \in [a;b] \Longleftrightarrow
+        \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = y_1(x) y_2^\prime(x) - y_2(x) y_1^\prime(x) \ \forall x \in [a;b]$
 
-    Тогда $W(x) = W_0 e^{-\int_{x_0}^x pdx} \Longleftrightarrow \begin{sqcases}W_0 = 0 \Longrightarrow W(x) = 0 \\ W_0 \neq 0 \Longrightarrow W(x) \neq 0\end{sqcases} \forall x \in [a;b]$
+        Можно поделить на $y_1^2$, так как $y_1, y_2$ -- линейно независимы. Тогда $\frac{W}{y^2_1} = \left(\frac{y_2}{y_1}\right)^\prime = 0 \Longrightarrow \frac{y_2}{y_1} = k \in \Real \Longleftrightarrow y_2 = k y_1$ -- линейно зависимы, противоречие
+    \end{MyProof}
 
-    $\Box$
-
-    \ThN{4} $y_1, y_2$ - лин. нез. $\Longrightarrow W(x) \neq 0$ на $[a;b]$
-
-    $\Box$ Докажем от противного
-
-    $\letsymbol \exists x_0 \in [a;b] \ | \ W(x_0)= 0 \Longrightarrow W(x) = 0 \forall x \in [a;b] \Longleftrightarrow
-    \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = y_1(x) y_2^\prime(x) - y_2(x) y_1^\prime(x) \forall x \in [a;b]$
-
-    Можно поделить на $y_1^2$, так как $y_1, y_2$ - лин. нез. Тогда $\frac{W}{y^2_1} = \left(\frac{y_2}{y_1}\right)^\prime = 0 \Longrightarrow \frac{y_2}{y_1} = k \in \Real \Longleftrightarrow y_2 = k y_1$ - лин. зав., противоречие
-
-    $\Box$
-
-    \Nota Общее решение ЛОДУ$_2$ - это семейство всех решений (интегральных кривых), каждое из которых проходит через точку
+    \Nota Общее решение ЛОДУ$_2$ -- это семейство всех решений (интегральных кривых), каждое из которых проходит через точку
     $(x_0, y_0) \in D$ и ему соответствует свой и единственный набор $(C_1, C_2)$
 
-    \ThN{5} $y_1, y_2$ - лин. нез. решения ЛОДУ, тогда $\overline{y}(x) = C_1 y_1 + C_2 y_2$ - общее решение ЛОДУ$_2$
+    \begin{MyTheorem}
+        \ThNs{5} $y_1, y_2$ -- линейно независимые решения ЛОДУ, тогда $\overline{y}(x) = C_1 y_1 + C_2 y_2$ -- общее решение ЛОДУ$_2$
+    \end{MyTheorem}
 
-    $\Box$ Нужно убедиться, что через точку $(x_0, y_0) \in D$ проходит и только одна кривая $\overline{y}(x_0)$
+    \begin{MyProof}
+        Нужно убедиться, что через точку $(x_0, y_0) \in D$ проходит и только одна кривая $\overline{y}(x_0)$
 
-    Зададим НУ: $\begin{cases}
-                     y_1(x_0) = y_{10} \\
-                     y_2(x_0) = y_{20}
-    \end{cases}$, тогда $\begin{matrix}\overline{y}(x_0) = C_1 y_{10} + C_2 y_{20} \\ \overline{y}^\prime(x_0) = C_1 y_{10}^\prime + C_2 y_{20}^\prime\end{matrix}$ - задача Коши
+        Зададим НУ: $\begin{cases}
+                        y_1(x_0) = y_{10}, \\
+                        y_2(x_0) = y_{20},
+        \end{cases}$ тогда $\begin{matrix}\overline{y}(x_0) = C_1 y_{10} + C_2 y_{20} \\ \overline{y}^\prime(x_0) = C_1 y_{10}^\prime + C_2 y_{20}^\prime\end{matrix}$ -- задача Коши
 
-    Знаем, что $\overline{y} = C_1 y_1 + C_2 y_2$ - решение (просто, не общее)
+        Знаем, что $\overline{y} = C_1 y_1 + C_2 y_2$ -- решение (просто, не общее)
 
-    Тогда в $x_0$ $\begin{cases}
-                       C_1 y_{10} + C_2 y_{20} = \overline{y}_0 \\
-                       C_1 y_{10}^\prime + C_2 y_{20}^\prime = \overline{y}_0^\prime \\
-    \end{cases} \Longleftrightarrow \begin{pmatrix}y_{10} & y_{20} \\ y_{10}^\prime & y_{20}^\prime \end{pmatrix} \begin{pmatrix}C_1 \\ C_2\end{pmatrix} = \begin{pmatrix}\overline{y}_0 \\ \overline{y}^\prime_0\end{pmatrix}$ -
-    система крамеровского типа
+        Тогда в $x_0$ $\begin{cases}
+                        C_1 y_{10} + C_2 y_{20} = \overline{y}_0 \\
+                        C_1 y_{10}^\prime + C_2 y_{20}^\prime = \overline{y}_0^\prime \\
+        \end{cases} \Longleftrightarrow \begin{pmatrix}y_{10} & y_{20} \\ y_{10}^\prime & y_{20}^\prime \end{pmatrix} \begin{pmatrix}C_1 \\ C_2\end{pmatrix} = \begin{pmatrix}\overline{y}_0 \\ \overline{y}^\prime_0\end{pmatrix}$ -
+        система крамеровского типа
 
-    $\begin{vmatrix}y_{10} & y_{20} \\ y^\prime_{10} & y^\prime_{20}\end{vmatrix} = W_0 \neq 0 \Longleftrightarrow \exists! (C_1, C_2)$ - решение СЛАУ
+        $\begin{vmatrix}y_{10} & y_{20} \\ y^\prime_{10} & y^\prime_{20}\end{vmatrix} = W_0 \neq 0 \Longleftrightarrow \exists! (C_1, C_2)$ -- решение СЛАУ
 
-    Таким образом через всякую $x_0$ проходит одна! кривая $\overline{y}(x) = C_1 y_1 + C_2 y_2$
+        Таким образом через всякую $x_0$ проходит одна кривая $\overline{y}(x) = C_1 y_1 + C_2 y_2$
 
-    $\Box$
+    \end{MyProof}
 
-    \Nota Вывод: если найдены какие-либо лин. нез. $y_1, y_2$, то общее решение ЛОДУ$_2$ будет $C_1 y_1 + C_2 + y_2 = \overline{y}$
+    \Nota Вывод: если найдены какие-либо линейно независимые $y_1, y_2$, то общее решение ЛОДУ$_2$ будет $C_1 y_1 + C_2 y_2 = \overline{y}$
 
-    \Def Такие $\Set{y_1, y_2}$ называется ФСР ЛОДУ$_2$
+    \Def Такие $\{y_1, y_2\}$ называется ФСР ЛОДУ$_2$
 
-    \Nota Тогда, найденные решения ЛОДУ - все общие
+    \Nota Тогда, найденные решения ЛОДУ -- все общие
 
-    1) $\lambda_1 \neq \lambda_2$: ФСР $\Set{e^{\lambda_1 x}, e^{\lambda_2 x}}, \lambda_i \in \Real$
+    \begin{enumerate}
+        \item $\lambda_1 \neq \lambda_2$: ФСР $\{e^{\lambda_1 x}, e^{\lambda_2 x}\}, \lambda_i \in \Real$
 
-    2) $\lambda_1 = \lambda_2 = \lambda$: ФСР $\Set{e^{\lambda x}, x e^{\lambda x}}$
+        \item $\lambda_1 = \lambda_2 = \lambda$: ФСР $\{e^{\lambda x}, x e^{\lambda x}\}$
 
-    3) $\lambda_{1,2} = \alpha \pm i \beta \in \mathbb{\Complex}$: ФСР $\Set{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin \beta x}$
+        \item $\lambda_{1,2} = \alpha \pm i \beta \in \mathbb{\Complex}$: ФСР $\{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin \beta x\}$
+    \end{enumerate}
 
-    \ThN{6} Решение ЛНДУ $Ly = f(x)$
+    \begin{MyTheorem}
+        \ThNs{6} Решение ЛНДУ $Ly = f(x)$
 
-    $\overline{y}(x): L\overline{y} = 0$ - общее решение ЛОДУ
+        $\overline{y}(x): L\overline{y} = 0$ -- общее решение ЛОДУ
 
-    $y^*(x): Ly^*(x) = f(x)$ - частное решение ЛНДУ
+        $y^*(x): Ly^*(x) = f(x)$ -- частное решение ЛНДУ
 
-    Тогда $y(x) = \overline{y} + y^*$ - общее решение ЛНДУ
+        Тогда $y(x) = \overline{y} + y^*$ -- общее решение ЛНДУ
+    \end{MyTheorem}
 
-    $\Box$ \Lab $\Box$
+    \begin{MyProof} \Lab \end{MyProof}
 % end specsec_2024_05_10.tex
 
 % begin specsec_2024_05_17.tex
 
     \Mem ЛДУ$_2$
 
-    1) Решим $y^{\prime\prime} + py^\prime + qy = 0$ (ХрУ \Cat: $\lambda^2 + p \lambda + q = 0$)
+    1) Решим $y^{\prime\prime} + py^\prime + qy = 0$ (ХрУ: $\lambda^2 + p \lambda + q = 0$)
 
     ФСР для всех случаев:
 
-    1* $\lambda_1 \neq \lambda_2 \in \Real \to \Set{e^{\lambda_1 x}, e^{\lambda_2 x}}$
+    \begin{enumerate}
+        \item $\lambda_1 \neq \lambda_2 \in \Real \to \Set{e^{\lambda_1 x}, e^{\lambda_2 x}}$
 
-    2* $\lambda_1 = \lambda_2 = \lambda \in \Real \to \Set{e^{\lambda x}, xe^{\lambda x}}$
+        \item $\lambda_1 = \lambda_2 = \lambda \in \Real \to \Set{e^{\lambda x}, xe^{\lambda x}}$
 
-    3* $\lambda_{1,2} = \alpha \pm i \beta \to \Set{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x}$
+        \item $\lambda_{1,2} = \alpha \pm i \beta \to \Set{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x}$
+    \end{enumerate}
 
-    $\overline{y} = l_{\Set{\text{ФСР}}}$
+    $\overline{y} = l_{\{\text{ФСР}\}}$
 
     2) Изначально $y^{\prime\prime} + py^\prime + qy = f(x)$
 
-    Доказали: $y(x) = \overline{y} + y^*$, где $\overline{y} = \sum_{i=1}^n C_i y_i$ - вектора из ФСР, а $y^*$ - частное решение (какое-либо) ЛНДУ
+    Доказали: $y(x) = \overline{y} + y^*$, где $\overline{y} = \sum_{i=1}^n C_i y_i$ - вектора из ФСР, а $y^*$ -- частное решение (какое-либо) ЛНДУ
 
     \Nota Рассмотрим два метода поиска $y^*$ для ЛДУ$_2$
 
-    1* Метод неопределенных коэффициентов для случая специальной правой части
+    \begin{enumerate}
+        \item Метод неопределенных коэффициентов для случая специальной правой части
 
-    2* Метод (Лагранжа) вариации произвольных постоянных (универсальный)
+        \item Метод (Лагранжа) вариации произвольных постоянных (универсальный)
+    \end{enumerate}
 
-    \vspace{10mm}
+    \mediumvspace
 
-    1* \textbf{СПЧ}
+    \hypertarget{specialrightpart}{}
+
+    1. \textbf{Специальная правая часть}
 
     \Ex $y^{\prime\prime} - 3y^\prime + 3y = 2e^{3x} \quad (\heartsuit)$
 
-    Наводящие соображения: Заметим, что $y = e^{ax}$ не меняет свой вид при дифференцировании,
-    так же как и $y = P_n(x)$, $y = A\cos bx + B\cos bx$
+    Наводящие соображения: заметим, что $y = e^{ax}$ не меняет свой вид при дифференцировании,
+    так же как и $y = P_n(x)$, $y = A\cos bx + B\sin bx$
 
-    Имеет смысл искать частные решения $(\heartsuit)$ в виде $y = Ae^{3x}$
+    Имеет смысл искать частные решения для $(\heartsuit)$ в виде $y = Ae^{3x}$
 
     $(Ae^3x)^{\prime\prime} - 3(Ae^{3x})^\prime + 2Ae^{3x} = 2e^{3x}$
 
     $9A - 9A + 2A = 2 \Longrightarrow A = 1$, то есть $y^* = e^{3x}$
 
-    \Nota Если правая часть содержит произведения $e^{ax}, P_n(x), \cos bx, \sin bx$, то $y^*$ ищем в виде ПЧ
+    \Nota Если правая часть ЛНДУ содержит произведения $e^{ax}, P_n(x), \cos bx, \sin bx$, то $y^*$ ищем в виде специальной правой части
 
-    \Def СПЧ: $f(x) = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$ (обозначим $k = a \pm ib$)
+    \Def Специальная правая часть (СПЧ) -- функция $f(x) = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$ (обозначим $k = a \pm ib$)
 
     \underline{Частные случаи}:
 
-    1) $f(x) = P_n(x) e^{ax} \quad (b = 0)$
+    \begin{enumerate}
+        \item $f(x) = P_n(x) e^{ax} \quad (b = 0)$
 
-    2) $f(x) = A\cos b x + B \sin bx$ - гармоника $\quad (a = 0, n = m = 0)$
+        \item $f(x) = A\cos b x + B \sin bx$ -- гармоника $\quad (a = 0, n = m = 0)$
 
-    3) $f(x) = P_n(x) \quad (a = b = 0)$
+        \item $f(x) = P_n(x) \quad (a = b = 0)$
+    \end{enumerate}
 
     Метод: Решение ищется в виде $y^* = e^{ax} (\overline{P}_l \cos bx + \overline{Q}_l (x) \sin bx)$,
-    где $a, b$ - коэфф. СПЧ, $l = \max(m, n), \overline{P}_l, \overline{Q}_l$ - многочлены в неопр. коэфф
+    где $a, b$ -- коэффициенты СПЧ, $l = \max(m, n), \overline{P}_l, \overline{Q}_l$ -- многочлены в неопределенных коэффициентах
 
-    \ExN{1} $\heartsuit \quad y^{\prime\prime} - 3y^\prime + 3y = 2e^{3x} = e^{3x} (2 \cos 0x) \quad (k = 3 \pm 0 = 3)$
+    \ExN{1} $(\heartsuit)$: $y^{\prime\prime} - 3y^\prime + 3y = 2e^{3x} = e^{3x} (2 \cos 0x) \quad (k = 3 \pm 0 = 3)$
 
     $y^* = e^{3x} (\overline{P}_{l = 0} (x) \cos 0x) = e^{3x} \cdot A$
 
-    \ExN{2} Однако!
+    \ExN{2} Однако, для этого уравнения: $y^{\prime\prime} - 3y^\prime + 2y = e^{2x}$
 
-    $y^{\prime\prime} - 3y^\prime + 2y = e^{2x}$ (!)
-
-    СПЧ: $e^{2x} = e^{2x} (1 \cos 0x + B \sin 0x) \quad k = a \pm ib$
+    СПЧ: $e^{2x} = e^{2x} (1 \cos 0x + B \sin 0x) \quad k = a \pm ib = 2$
 
     \begin{rcases*}
     $y^* = Ae^{2x}$ \\
-
     $y^{*\prime} = 2Ae^{2x}$ \\
-
     $y^{*\prime\prime} = 4Ae^{2x}$ \\
-    \end{rcases*} ДУ $\longrightarrow \begin{matrix}4Ae^{2x} - 6Ae^{2x} + 2Ae^{2x} = e^{2x} \\ 4A - 6A + 2A = 1 \\ 0A = 1\end{matrix}$ - {\Huge 🤯}
+    \end{rcases*} ДУ $\longrightarrow \begin{matrix}4Ae^{2x} - 6Ae^{2x} + 2Ae^{2x} = e^{2x} \\ 4A - 6A + 2A = 1 \\ 0A = 1\end{matrix}$ -- нельзя найти $A$ {\Huge 🤯}
 
-    Нельзя найти $A$
+    Решим ХрУ: $\lambda_2 - 3\lambda + 2 = 0 \Longrightarrow \lambda_1 = 1, \lambda_2 = 2$
 
-    Решим ХрУ 😼: $\lambda_2 - 3\lambda + 2 = 0 \Longrightarrow \lambda_1 = 1, \lambda_2 = 2$
+    В этом случае число $k$, соответствующее СПЧ, совпадает с корнем ХрУ
 
-    Внимание! Число $k$, соответствующее СПЧ, равно ХрУ \Cat
-
-    \vspace{5mm}
+    \smallvspace
 
     Исследуем ситуацию на примере СПЧ $f(x) = P_n(x) e^{ax}$
 
-    \underline{Проблема} $y^{\prime\prime} + py^\prime + qy = P_n(x)e^{ax}$
+    Пусть дано ДУ: $y^{\prime\prime} + py^\prime + qy = P_n(x)e^{ax}$
 
-    ХрУ \Cat: $\lambda^2 + p\lambda + q = 0 \Longrightarrow \lambda_{1,2}$ - корни
+    Для него ХрУ: $\lambda^2 + p\lambda + q = 0 \Longrightarrow \lambda_{1,2}$ - корни
 
-    \vspace{5mm}
     Ищем $y^* = \overline{P}_n(x) e^{ax}$
 
     $y^{*\prime} = \overline{P}_{n - 1} (x) e^{ax} + a\overline{P}_n(x) e^{ax}$
 
-    $y^{*\prime} = \overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax}$
+    $y^{*\prime\prime} = \overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax}$
 
-    \vspace{5mm}
     Получаем:
 
-    $\overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax} + (\overline{P}_{n - 1} (x) e^{ax} + a\overline{P}_n(x) e^{ax})p + \overline{P}_n(x) e^{ax} q $
+    $\overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax} + (\overline{P}_{n - 1} (x) e^{ax} + a\overline{P}_n(x) e^{ax})p + \overline{P}_n(x) e^{ax} q = P_n(x) e^{ax}$
 
     $\overline{P}_{n - 2} (x) e^{ax} + (2a + p)\overline{P}_{n - 1} (x) e^{ax} + (a^2 + pa + q)\overline{P}_n(x) e^{ax} = P_n(x) e^{ax}$
 
     $\overline{P}_{n - 2} (x) + (2a + p)\overline{P}_{n - 1} (x) + (a^2 + pa + q)\overline{P}_n(x) = P_n(x)$
 
-    Заметим, что если $a$ - корень ХрУ \Cat, то есть $a \pm ib = a = k = \lambda_i$ (пусть 1-ой кратности), то $a^2 + pa + q = 0$ и степень
+    \smallvspace
+
+    Заметим, что если $a$ -- корень ХрУ, то есть $a \pm ib = a = k = \lambda_i$ (пусть 1-ой кратности), то $a^2 + pa + q = 0$ и степень
     левой части понижается до $n - 1$
 
-    Если $a$ - корень ХрУ \Cat 2-ой кратности, то есть $a^2 + pa + q = \left(a + \frac{p}{2}\right)^2 = 0 \Longleftrightarrow 2a + p = 0$, то степень левой части понижается на $2$
+    Если $a$ -- корень ХрУ 2-ой кратности, то есть $a^2 + pa + q = \left(a + \frac{p}{2}\right)^2 = 0 \Longleftrightarrow 2a + p = 0$, то степень левой части понижается на $2$
 
-    Чтобы сделать уравнение для $\overline{P}_n$ решаемым, домножим $y^*$ на $x^r$, где $r$ - число совпадений $k = a \pm ib$ с корнем ХрУ $\lambda_i$ (или кратность $\lambda_i$, с которым совпадает $k$)
+    Чтобы сделать уравнение для $\overline{P}_n$ решаемым, домножим $y^*$ на $x^r$, где $r$ -- число совпадений $k = a \pm ib$ с корнем ХрУ $\lambda_i$ (другими словами, кратность $\lambda_i$, с которым совпадает $k$)
 
-    \vspace{5mm}
-    Метод (окончательно): $y^{\prime\prime} + py^\prime + qy = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx), \quad \lambda_{1,2}$ - корни ХрУ \Cat, $k = a \pm ib$
+    \mediumvspace
 
-    $y^* = x^r e^{ax} (\overline{P}_l (x)\cos bx + \overline{Q}_l (x) \sin bx), \quad l = \max(m, n)$
+    Окончательно, метод выглядит так: для уравнения $y^{\prime\prime} + py^\prime + qy = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$, где $\lambda_{1,2}$ -- корни ХрУ, $k = a \pm ib$
 
-    \vspace{5mm}
-    Обобщение для ЛДУ$_n$
+    Частное решение выглядит так: \fbox{$y^* = x^r e^{ax} (\overline{P}_l (x)\cos bx + \overline{Q}_l (x) \sin bx$}, где $l = \max(m, n)$, $r$ - кратность корня ХрУ $\lambda_i = k$
 
-    $y^{(n)} + p_1 y^{(n - 1)} + \dots + p_n y = f(x)$
+    \smallvspace
 
-    ХрУ \Cat: $\lambda^n + p_1 \lambda^{n - 1} + \dots + p_n = 0$
+    Обобщим для ЛДУ$_n$: $y^{(n)} + p_1 y^{(n - 1)} + \dots + p_n y = f(x)$
 
-    \vspace{5mm}
-    \underline{Правило} построения ФСР для $\overline{y}$ - общее решение однородного ДУ
+    ХрУ выглядит так: $\lambda^n + p_1 \lambda^{n - 1} + \dots + p_n = 0$
 
-    1) Всякому $\lambda_i$ - одиночному $\Real$-корню ХрУ сопоставляем $y_i = e^{\lambda_i x}$
+    \mediumvspace
 
-    2) \Real-корню $\lambda$ кратности $s$ сопоставляем набор $\Set{y_1, y_2, \dots, y_s} = \Set{e^{\lambda x}, xe^{\lambda x}, \dots, x^{s - 1} e^{\lambda x}}$
+    \hypertarget{fssforlde2}
 
-    3) Всякой одиночной паре $\lambda_{j_1,j_2} = \alpha_j \pm i\beta_j$ соотвветствует пара $\Set{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin\beta x}$
+    \underline{Правило} построения ФСР для $\overline{y}$, общего решения однородного ДУ:
 
-    4) $\mathbb{C}$-паре $\lambda = \alpha \pm i\beta$ кратности $t$ соответствует набор $\{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x, x e^{\alpha x} \cos \beta x, \dots, x^{t - 1}e^{\alpha x} \cos\beta x, x^{t - 1}e^{\alpha x} \sin\beta x\}$
+    \begin{enumerate}
+        \item Всякому $\lambda_i$ -- одиночному $\Real$-корню ХрУ сопоставляем $y_i = e^{\lambda_i x}$
 
-    \Nota количество векторов $y_i$ в ФСР равно порядку $n$ ДУ
+        \item $\Real$-корню $\lambda$ кратности $s$ сопоставляем набор $\Set{y_1, y_2, \dots, y_s} = \Set{e^{\lambda x}, xe^{\lambda x}, \dots, x^{s - 1} e^{\lambda x}}$
 
-    \underline{СПЧ} $y^* = x^r e^{ax} (\dots)$, где $r$ - кратность $\Real$-корня или $\mathbb{C}$-пары, с которыми совпадает $k = a \pm ib$
+        \item Всякой одиночной паре $\lambda_{j_1,j_2} = \alpha_j \pm i\beta_j$ соответствует пара $\{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin\beta x\}$
+
+        \item Комплексной паре $\lambda = \alpha \pm i\beta$ кратности $t$ соответствует набор 
+        
+        $\{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x, x e^{\alpha x} \cos \beta x, \dots, x^{t - 1}e^{\alpha x} \cos\beta x, x^{t - 1}e^{\alpha x} \sin\beta x\}$
+    \end{enumerate}
+
+    \Nota Количество векторов $y_i$ в ФСР равно порядку $n$ дифференциального уравнения
+
+    Специальная правая часть ищется в виде $y^* = x^r e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$, где $r$ - кратность $\Real$-корня или $\mathbb{C}$-пары, с которыми совпадает $k = a \pm ib$
 
     \Ex Вернемся к $y^{\prime\prime} - 3y^\prime + 2y = e^{2x}$
 
     $\begin{rcases*}
     y^* = Ax^1 e^{2x} \\
-
     y^{*\prime} = Ae^{2x} 2Axe^{2x} \\
-
     y^{*\prime\prime} = 2Ae^{2x} + 2Ae^{2x} + 4Axe^{2x}
     \end{rcases*} \to (4 - 6 + 2) Axe^{2x} + (4 - 3) Ae^{2x} = e^{2x} \quad A = 1$
 
     $y(x) = C_1 e^{2x} + C_2 e^{2x} + xe^{2x}$
 
-    \vspace{10mm}
+    \mediumvspace
 
-    2* \textbf{Лагранжа}
+    \hypertarget{methodLagrangesecondorder}{}
 
-    \Mem ЛДУ$_1$: $y^\prime + py = f(x)$
+    \item \textbf{Лагранжа}
 
-    1) ЛОДУ - $y^\prime + py = 0 \to \overline{y} = Cy_0$ - ФСР
+    \Mems Решение ЛДУ$_1$: $y^\prime + py = f(x)$
 
-    2) ЛНДУ - $y(x) = C(x)y_0 \longrightarrow C^\prime(x) y_0 = f(x) \to C(x)$
+    \begin{enumerate}[label*=\arabic*) ]
+        \item Решаем ЛОДУ $y^\prime + py = 0$, получаем ФСР $\overline{y} = Cy_0$
 
-    \Nota Введем аналогичный метод для ЛДУ$_2$
+        \item Решаем ЛНДУ, ищем решения в виде $y(x) = C(x)y_0$, получаем $C^\prime(x) y_0 = f(x) \to C(x)$
+    \end{enumerate}
 
-    1 этап) $y^{\prime\prime} + py^\prime + qy = 0$ - ЛОДУ, $\quad \lambda_{1, 2}$ - корни, соответствующие ФСР $\Set{y_1, y_2}$
+    \Nota Введем аналогичный метод для ЛДУ$_2$:
 
-    $\overline{y}(x) = C_1 y_1 + C_2 y_2$
+    \begin{enumerate}[label*=\arabic* этап) ]
+        \item $y^{\prime\prime} + py^\prime + qy = 0$ -- ЛОДУ, $\lambda_{1, 2}$ -- корни, соответствующие ФСР $\{y_1, y_2\}$
 
-    2 этап) Варьируем $C_1$ и $C_2$, но теперь нужны два условия для их определения. Одним является ДУ
+        Получаем общее решение $\overline{y}(x) = C_1 y_1 + C_2 y_2$
+
+        \item Варьируем $C_1$ и $C_2$, но теперь нужны два условия для их определения. Одним из них является само ДУ
+    \end{enumerate}
 
     \Ex $y^{\prime\prime} - 3y^\prime + 2y = 2e^{3x}$
 
     $\overline{y} = C_1 e^x + C_2 e^{2x}$
 
-    $y(x) = C_1(x)e^x + C_2(X)e^{2x} = C_1 e^x + C_2 e^{2x} + y^*$
+    $y(x) = C_1 e^x + C_2 e^{2x} + y^*$
 
     $(g(x) + C_1)e^x + (h(x) + C_2)e^{2x} = C_1 e^x + C_2 e^{2x} + g(x)e^x + h(x)e^{2x}$
 
     Подберем $g, h$: $\underset{g}{\undergroup{\frac{e^{2x}}{2}}}e^x + \underset{h}{\undergroup{\frac{e^x}{2}}}e^{2x} = e^{3x}$ или
-    $\underset{g}{\undergroup{-e^{2x}}} e^x + \underset{g}{\undergroup{2e^x}} e^{2x} = e^{3x}$
+    $\underset{g}{\undergroup{-e^{2x}}} e^x + \underset{h}{\undergroup{2e^x}} e^{2x} = e^{3x}$
 
     Заметим, что $C_1^\prime(x)$ во втором случае $g^\prime = -2e^{2x}$, а $C_2^\prime = 2e^x$
 
@@ -2420,112 +2472,119 @@
 
     \Nota Подставим $y(x) = C_1 (x) y_1 + C_2 (x) y_2$ в ДУ
 
-    \underline{Метод} $y^\prime(x) = C^\prime_1(x) y_1 + C_1(x)y^\prime_1 + C^\prime_2(x) y_2 + C_2(x)y^\prime_2$
+    Получаем производную $y^\prime(x) = C^\prime_1(x) y_1 + C_1(x)y^\prime_1 + C^\prime_2(x) y_2 + C_2(x)y^\prime_2$
 
     Требуем $C^\prime_1 y_1 + C_2^\prime y_2 = 0$
 
-    $y^{\prime\prime}(x) = C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime C_2 (x) y_2^{\prime\prime}$
+    Тогда вторая производная: $y^{\prime\prime}(x) = C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime + C_2 (x) y_2^{\prime\prime}$
 
-    $C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime C_2 (x) y_2^{\prime\prime} + pC_1(x)y^\prime_1 + pC_2(x)y^\prime_2 + qC_1(x)y_1 + qC_2(x)y_2 = f(x)$
+    $C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime + C_2 (x) y_2^{\prime\prime} + pC_1(x)y^\prime_1 + pC_2(x)y^\prime_2 + qC_1(x)y_1 + qC_2(x)y_2 = f(x)$
 
     $\underset{=\ 0}{C_1(x)Ly_1} + \underset{=\ 0}{C_2(x)Ly_2} + C_1^\prime(x)y_1^\prime + C_2^\prime(x)y_2^\prime = f(x)$
 
-    \underline{Итак}, Система для определения $C_1(x), C_2(x)$:
+    \underline{Итак}, система для определения $C_1(x), C_2(x)$:
     \begin{cases}
         C^\prime_1(x)y_1 + C^\prime_2(x)y_2 = 0 \\
         C_1^\prime(x)y_1^\prime + C_2^\prime(x)y_2^\prime = f(x)
     \end{cases}
 
-    $\underset{ = W}{\undergroup{\begin{pmatrix}y_1 & y_2 \\ y^\prime_1 & y^\prime_2\end{pmatrix}}}\begin{pmatrix}C^\prime_1(x) \\ C^\prime_2(x)\end{pmatrix} = \begin{pmatrix}0 \\ f(x)\end{pmatrix} \stackrel{\text{Крамер}}{\longrightarrow} \begin{matrix}C_1^\prime(x) = \frac{W_1}{W} \\ C_2^\prime(x) = \frac{W_2}{W}\end{matrix}$
+    $\underset{ = W}{\undergroup{\begin{pmatrix}y_1 & y_2 \\ y^\prime_1 & y^\prime_2\end{pmatrix}}}\begin{pmatrix}C^\prime_1(x) \\ C^\prime_2(x)\end{pmatrix} = \begin{pmatrix}0 \\ f(x)\end{pmatrix} \stackrel{\text{по Крамеру}}{\longrightarrow} \begin{matrix}C_1^\prime(x) = \frac{W_1}{W} \\ C_2^\prime(x) = \frac{W_2}{W}\end{matrix}$
 
     \Nota Обобщив метод на $n$-ый порядок систему, получим
 
     $\begin{pmatrix}y_1 & \dots & y_n \\ \vdots & \ddots & \vdots \\ y^{(n - 2)}_1 & \dots & y^{(n - 2)}_n \\ y^{(n - 1)}_1 & \dots & y^{(n - 1)}_n\end{pmatrix}\begin{pmatrix}C^\prime_1(x) \\ \vdots \\ C^\prime_{n - 1}(x) \\ C^\prime_n(x)\end{pmatrix} = \begin{pmatrix}0 \\ \vdots \\ 0 \\ f(x)\end{pmatrix}$
 
-    ? Доказать, что $\overline{y} + y^*$ - общее решение ЛНДУ
+    \Lab Доказать, что $\overline{y} + y^*$ - общее решение ЛНДУ
 % end specsec_2024_05_17.tex
 
 % begin specsec_2024_05_22.tex
 
-    \Th $Ly = f(x), y = \overline{y} + y^*$ - решение $Ly = f(x)$.
+    \begin{MyTheorem}
+        \Ths $Ly = f(x), y = \overline{y} + y^*$ - решение $Ly = f(x)$.
 
-    Тогда $\overline{y} + y^*$ - общее решение
+        Тогда $\overline{y} + y^*$ - общее решение
+    \end{MyTheorem}
 
-    $\Box$
+    \begin{MyProof}
 
-    Правда ли, что найдется единственный набор констант $C_1, \dots, C_n$, которое удовлетворяет НУ $\begin{cases}y(x_0) = y_0 \\ y^\prime(x_0) = y_0^\prime \\ \vdots\end{cases}$
+        Правда ли, что найдется единственный набор констант $C_1, \dots, C_n$, которые удовлетворяют начальным условиям $\begin{cases}y(x_0) = y_0 \\ y^\prime(x_0) = y_0^\prime \\ \vdots\end{cases}$
 
-    Так как $\overline{y} + y^*$ - решение, то
+        Так как $\overline{y} + y^*$ - решение, то
+        $\begin{cases}
+            y_0 = C_1 y_{01} + C_2 y_{02} + \dots + C_n y_{0n} + y_0^* \\
+            y_0^\prime = C_1 y_{01}^\prime + \dots + y_0^*^{\prime} \\
+            \vdots
+        \end{cases} \Longleftrightarrow$
+        
+        $\Longleftrightarrow
+        \begin{cases}
+            y_0 - y_0^* = \sum_{i = 1}^n C_i y_{0i} \\
+            y_0^\prime - y_0^*^\prime = \sum_{i = 1}^n C_i y_{0i}^\prime \\
+            \vdots
+        \end{cases} \Longleftrightarrow
+        \underset{\det W \neq 0}{\undergroup{
+        \begin{pmatrix}
+            y_{01} & y_{02} & \dots & y_{0n} \\
+            y_{01}^\prime & y_{02}^\prime & \dots & y_{0n}^\prime \\
+            \vdots & \vdots & \ddots & \vdots \\
+            y_{01}^{(n)} & y_{02}^{(n)} & \dots & y_{0n}^{(n)} \\
+        \end{pmatrix}}}
+        \begin{pmatrix}
+            C_1 \\ C_2 \\ \vdots \\ C_n
+        \end{pmatrix} =
+        \begin{pmatrix}
+            y_0 - y_0^* \\ \vdots \\ \vdots \\ \vdots
+        \end{pmatrix}
+        $
+
+        Таким образом система имеет единое решение $(C_1, \dots, C_n)$, которое удовлетворяет начальным условиям
+
+    \end{MyProof}
+
+    \begin{MyTheorem}
+        \Ths $Ly = f_1(x) + f_2(x)$
+
+        Пусть $Ly_1^* = f_1(x)$ и $Ly^*_2 = f_2(x)$, тогда $Ly^* = f_1 + f_2$, где $y^* = y_1^* + y_2^*$
+    \end{MyTheorem}
+
+    \begin{MyProof}
+        $Ly^* = L(y^*_1 + y^*_2) = Ly^*_1 + Ly^*_2 = f_1(x) + f_2(x)$
+    \end{MyProof}
+
+    \hypertarget{desystem}{}
+
+    \subsection{4.6. Системы ДУ}
+
+    \Def Пусть дан набор функций $y_1, \dots, y_n$. Система, связывающие эти функции, то есть
     $\begin{cases}
-         y_0 = C_1 y_{01} + C_2 y_{02} + \dots + C_n y_{0n} + y_0^* \\
-         y_0^\prime = C_1 y_{01}^\prime + \dots + y_0^*^{\prime}
-    \end{cases} \Longleftrightarrow
-    \begin{cases}
-        y_0 - y_0^* = \sum C_i y_{0i} \\
-        y_0^\prime - y_0^*^\prime = \sum C_i y_{0i}^\prime \\
-    \end{cases} \Longleftrightarrow
-    \underset{\det W \neq 0}{\undergroup{
-    \begin{pmatrix}
-        y_{01} & y_{02} & \dots & y_{0n} \\
-        y_{01}^\prime & y_{02}^\prime & \dots & y_{0n}^\prime \\
-        \vdots & \vdots & \ddots & \vdots \\
-        y_{01}^{(n)} & y_{02}^{(n)} & \dots & y_{0n}^{(n)} \\
-    \end{pmatrix}}}
-    \begin{pmatrix}
-        C_1 \\ C_2 \\ \vdots \\ C_n
-    \end{pmatrix} =
-    \begin{pmatrix}
-        y_0 - y_0^* \\ \vdots \\ \vdots \\ \vdots
-    \end{pmatrix}
-    $
-
-    Таким образом система имеет единое решение $(C_1, \dots, C_n)$, которое удовлетворяет НУ
-
-    $\Box$
-
-    \Th $Ly = f_1(x) + f_2(x)$
-
-    Пусть $Ly_1^* = f_1(x)$ и $Ly^*_2 = f_2(x)$, тогда $Ly^* = f_1 + f_2$, где $y^* = y_1^* + y_2^*$
-
-    $\Box$
-
-    $Ly^* = L(y^*_1 + y^*_2) = Ly^*_1 + Ly^*_2 = f_1(x) + f_2(x)$
-
-    $\Box$
-
-    \section{4.6. Системы ДУ}
-
-    \Def Набор функций $y_1, \dots, y_n$.
-
-    Система дифференциальных уравнений, связывающие эти функции, то есть
-
-    $\begin{cases}
-         F_1(x_1, y_1, \dots y_n, \dots, y_1^{(n)}, \dots y_n^{(n)}) = 0
+         F_1(x_1, y_1, \dots y_n, \dots, y_1^{(n)}, \dots y_n^{(n)}) = 0 \\
          \vdots
-    \end{cases}$ называется системой ДУ
+    \end{cases}$, называется системой дифференциальных уравнений (СДУ)
 
     \vspace{5mm}
 
-    \underline{Механический смысл}
+    \underline{Механический смысл}: пусть $\Real^n$ -- фазовое пространство, пространство состояний системы,
+    $t$ -- время, $x_i$ -- координаты точки $M$ в $\Real^n$
 
-    $\Real^n$ - фазовое пространство - пространство состояний системы
-
-    $t$ - время, $x_i$ - координаты точки $M$ в $\Real^n$
+    Тогда такая система ДУ
 
     $\begin{cases}
          \frac{dx_1}{dt} = \varphi_1(t, \Set{x_i}) \\
          \frac{dx_2}{dt} = \varphi_2(t, \Set{x_i}) \\
          \vdots \\
          \frac{dx_n}{dt} = \varphi_n(t, \Set{x_i}) \\
-    \end{cases}$ \begin{tabular}{r} - СДУ описывает состояние исследуемой системы во времени, \\ причем $\frac{dx_i}{dt} = \dot{x_i}$ - скорости \end{tabular}
+    \end{cases}$
+        
+    описывает состояние исследуемой системы во времени, причем $\frac{dx_i}{dt} = \dot{x_i}$ -- скорости
 
     \Nota Такая система называется нормальной, то есть все уравнения разрешены относительно производных
 
-    \Nota Всякое ДУ$_n$ можно рассмотреть как СДУ: $y^{(n)} = f(x, y, y^\prime, \dots, y^{(n - 1)}) \Longleftrightarrow y = y_1(x), y^\prime = y_2(x, y_1), \dots$
+    \Nota Всякое ДУ$_n$ можно рассмотреть как СДУ: $y^{(n)} = f(x, y, y^\prime, \dots, y^{(n - 1)}) \Longleftrightarrow \begin{cases}y = y_1(x) \\ y^\prime = y_2(x, y_1) \\ \vdots\end{cases}$
 
-    Можно сделать и обратное - свести СДУ к ДУ$_n$
+    \hypertarget{exceptionmethod}{}
 
-    \underline{Метод исключения} Рассмотрим на примере СДУ 2-ого порядка
+    Можно сделать и обратное -- свести СДУ к ДУ$_n$ с помощью 
+    \underline{метода исключения}. Рассмотрим на примере СДУ 2-ого порядка
 
     $\begin{cases}
          \frac{dy}{dt} = f(x, y, t) \\
@@ -2538,13 +2597,15 @@
          \dot{x} = g(x, y, t)
     \end{cases}$
 
-    Свели СДУ к ДУ$_2$: $\ddot y = \frac{\partial f}{\partial t} + \frac{\partial f}{\partial x}g + \frac{\partial f}{\partial y}f$
+    Свели систему ДУ к ДУ$_2$: $\ddot y = \frac{\partial f}{\partial t} + \frac{\partial f}{\partial x}g + \frac{\partial f}{\partial y}f$
 
-    \Nota Чтобы свести к ДУ СДУ $\begin{cases}
+    \Nota Чтобы свести к ДУ систему ДУ $\begin{cases}
          \dot x_1 = \varphi_1(t, x_1, \dots, x_n) \\
          \vdots \\
          \dot x_n = \varphi_n(t, x_1, \dots, x_n) \\
-    \end{cases}$ \begin{tabular}{l}\\ нужно исключить $n - 1$ \\ выражение $\dot x_i$, для этого взять $\frac{d^{n - 1} \dot x_1}{dt^{n - 1}}$\end{tabular}
+    \end{cases}$ 
+    
+    нужно исключить $n - 1$ выражение $\dot x_i$, для этого взять производные $\frac{d^{n - 1} x_i}{dt^{n - 1}}$
 
     Таким образом общий порядок СДУ (сумма порядков старших производных) будет равен порядку ДУ
 
@@ -2570,7 +2631,7 @@
         \dot x = -y - 3x
     \end{cases} \Longleftrightarrow \ddot y + 2\dot y + 2y = 0$
 
-    ХрУ 😼: $\lambda_{1,2} = -1 \pm i \rightarrow \overline{y} = e^{-t} (C_1 \cos t + C_2 \sin t)$
+    ХрУ 😼: $\lambda_{1,2} = -1 \pm i \Longrightarrow \overline{y} = e^{-t} (C_1 \cos t + C_2 \sin t)$
 
     Найдем $x(t)$ из 1-ого ДУ: $\dot{\overline{y}} = -e^{-t} (C_1 \cos t + C_2 \sin t) + e^{-t} (-C_1 \sin t + C_2 \cos t) = e^{-t} ((C_2 - C_1) \cos t - (C_1 + C_2) \sin t)$
 
@@ -2581,11 +2642,13 @@
          x(t) = \frac{1}{5} e^{-t} ((C_2 - 2C_1) \cos t - (C_1 + 2C_2) \sin t)
     \end{cases}$
 
-    \Nota Метод исключения сохраняет линейность, поэтому линейная СДУ (с постоян. коэфф.) сводится к ЛДУ (с пост. коэфф.)
+    \Nota Метод исключения сохраняет линейность, поэтому линейная СДУ (с постоянными коэффициентами) сводится к ЛДУ (с постоянными коэффициентами)
 
     \Nota СДУ из \Exs не содержала $t$ в явном виде. Такие СДУ называются автономными
 
-    \vspace{5mm}
+    \mediumvspace
+
+    \hypertarget{matrixmethod}{}
 
     \underline{Матричный метод}
 
@@ -2595,11 +2658,11 @@
          y^{\prime}_n = a_{n1}y_n + a_{n2}y_2 + \dots + a_{nn} y_n
     \end{cases} \quad a_{ij} \in \Real$
 
-    Обозначим $(y_1, \dots, y_n) = Y$, $\Set{a_ij} = A_{\text{(матрица СДУ)}}$
+    Обозначим $(y_1, \dots, y_n) = Y$ -- вектор функций, $\{a_{ij}\} = A$ -- матрица СДУ
 
-    Тогда СДУ запишется $Y^\prime = AY$ (однородная СДУ, так как нет $f(x)$)
+    Тогда СДУ запишется в виде $Y^\prime = AY$ (однородная СДУ, так как нет $f(x)$)
 
-    $\letsymbol \lambda_1, \dots, \lambda_n$ - собственные числа $A$ и $h_i$ - собственный вектор для $\lambda_i$
+    Пусть $\lambda_1, \dots, \lambda_n$ -- собственные числа $A$ и $h_i$ -- собственный вектор для $\lambda_i$
 
     Будем искать решение $Y$ в виде $Y = \ln e^{\lambda_i x}$
 
@@ -2622,18 +2685,19 @@
 
     $\lambda^2 - 4\lambda - 5 = 0, \lambda_1 = -1, \lambda_2 = 5$
 
-    $h_1: \begin{pmatrix}[cc|c] 2 & 1 & 0 \\ 8 & 4 & 0\end{pmatrix} \sim \begin{pmatrix}[cc|c] 2 & 1 & 0 \\ 0 & 0 & 0\end{pmatrix} \to
-    h_1 = \begin{pmatrix}1 \\ -2\end{pmatrix}$
+    $h_1: 
+    \left( \begin{array}{cc|c} 2 & 1 & 0 \\ 8 & 4 & 0 \end{array}\right) \sim 
+    \left( \begin{array}{cc|c} 2 & 1 & 0 \\ 0 & 0 & 0 \end{array}\right) 
+    \to h_1 = \begin{pmatrix}1 \\ -2\end{pmatrix}$
 
-    $h_2: \begin{pmatrix}[cc|c] -4 & 1 & 0 \\ 8 & -2 & 0\end{pmatrix} \sim \begin{pmatrix}[cc|c] -4 & 1 & 0 \\ 0 & 0 & 0\end{pmatrix} \to
+    $h_2: \left( \begin{array}{cc|c} -4 & 1 & 0 \\ 8 & -2 & 0 \end{array}\right) \sim 
+    \left( \begin{array}{cc|c} -4 & 1 & 0 \\ 0 & 0 & 0 \end{array}\right)  \to
     h_1 = \begin{pmatrix}1 \\ 4\end{pmatrix}$
 
     $\begin{pmatrix}x \\ y\end{pmatrix} = C_1 h_1 e^{\lambda_1 t} + C_2 h_2 e^{\lambda_2 t} =
-    C_1 \begin{pmatrix}1 \\ -2\end{pmatrix} e^{-t} = C_2 \begin{pmatrix}1 \\ 4\end{pmatrix} e^{5t}$
+    C_1 \begin{pmatrix}1 \\ -2\end{pmatrix} e^{-t} + C_2 \begin{pmatrix}1 \\ 4\end{pmatrix} e^{5t}$
 
-    Задача Коши: $\begin{pmatrix}0 \\ 2\end{pmatrix} = \begin{pmatrix}
-                                                           C_1 + C_2 \\ -2C_1 + 4C_2
-    \end{pmatrix} \to C_1 = -\frac{1}{3}, C_2 = \frac{1}{3}$
+    Задача Коши: $\begin{pmatrix}0 \\ 2\end{pmatrix} = \begin{pmatrix} C_1 + C_2 \\ -2C_1 + 4C_2 \end{pmatrix} \to C_1 = -\frac{1}{3}, C_2 = \frac{1}{3}$
 
     Итак $\begin{cases}
               x(t) = -\frac{1}{3} e^{-t} + \frac{1}{3} e^{5t} \\
@@ -2645,19 +2709,17 @@
     Для кратных собственных $\Real$-чисел нельзя построить базис из $h_i$, а чтобы составить общее решение СДУ,
     нужно $n$ линейно независимых решений $Y_i$ (ФСР). В этом случае используют жорданов базис (см. литературу)
 
-    Для $\lambda_{1,2} \in \mathbb{C}$ можно искать решения в том же виде, но потом свести к вещественным функциям (см. литературу{\huge 🧐})
+    Для $\lambda_{1,2} \in \mathbb{C}$ можно искать решения в том же виде, но потом свести к вещественным функциям (см. литературу{\Large 🧐})
 
-    \section{4.7. Теория устойчивости (элементы)}
+    \subsection{4.7. Теория устойчивости (элементы)}
 
-    Наводящие соображения:
+    Наводящие соображения: возьмем грузик, подвешенный на стержне. Когда он находится снизу, он находится в устойчивом равновесии, но когда сверху -- в неустойчивом
 
-    Возьмем грузик, подвешенный на стержне. Когда он находится снизу, он находится в устойчивом равновесии, но когда сверху - в неустойчивом
-
-    \Def СДУ$_2$:
+    \Def Пусть даны СДУ$_2$:
     \begin{cases}
         \dot x = f_1(t, x, y) \\
         \dot y = f_2(t, x, y)
-    \end{cases} и НУ$_1$:
+    \end{cases}, НУ$_1$:
     \begin{cases}
         x(0) = x_0 \\
         y(0) = y_0
@@ -2667,22 +2729,23 @@
         \tilde{y}(0) = \tilde{y}_0
     \end{cases}
 
-    Решение СДУ $x = x(t), y = y(t)$ называется устойчивым по Ляпунову при $t \to +\infty$
+    \hypertarget{stability}{}
 
-    $\forall \varepsilon > 0 \ \exists \delta > 0 \ | \ \underset{\begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases}}{\forall x, y} \forall t > 0 \begin{cases}|\tilde{x}_0 - x_0| < \varepsilon \\ |\tilde{y}_0 - y_0| < \varepsilon\end{cases}$
+    Решение СДУ $x = x(t), y = y(t)$ называется устойчивым по Ляпунову при $t \to +\infty$, если
+    $\forall \varepsilon > 0 \ \exists \delta > 0 \ | \ \underset{ \scriptsize \begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases}}{\forall x, y} \forall t > 0 \begin{cases}|\tilde{x}_0 - x_0| < \varepsilon \\ |\tilde{y}_0 - y_0| < \varepsilon\end{cases}$
 
     Или $\begin{matrix}\Delta x (t) \to 0 \\ \Delta y (t) \to 0\end{matrix}$ при $t \to +\infty$ и $\begin{cases}\Delta x_0 \to 0 \\ \Delta y_0 \to 0\end{cases}$
 
     \Nota Малое воздействие приводит к малым отклонениям от исходной траектории
 
-    \Nota Обычно рассматривают отклонение решений от нулевого, то есть $\begin{matrix}x_0 = 0 \\ y_0 = 0\end{matrix}$
+    \Nota Обычно рассматривают отклонение решений от нулевого, то есть $\begin{cases}x_0 = 0 \\ y_0 = 0\end{cases}$
 
     \Ex $\dot y + y = 1$, НУ: $y(0) = 1, \tilde{y}(0) = \tilde{y}_0$ (малое отклонение)
 
     $\begin{cases}y = Ce^{-t} + 1 \\ y(0) = 1\end{cases} \rightarrow C = 0 \quad
     \begin{cases}y = Ce^{-t} + 1 \\ \tilde{y}(0) = \tilde{y}_0\end{cases} \to C = \tilde{y} - 1$
 
-    $\tilde{y} - y = (\tilde{y}_0 - y) e^{-t} + 1 - 1 = (\tilde{y}_0 - 1)e^{-t} \stackrel{t \to +\infty}{\longrightarrow} 0$ - устойчива{\huge 🥳}
+    $\tilde{y} - y = (\tilde{y}_0 - y) e^{-t} + 1 - 1 = (\tilde{y}_0 - 1)e^{-t} \stackrel{t \to +\infty}{\longrightarrow} 0$ - устойчива{\Large 🥳}
 % end specsec_2024_05_22.tex
 
 % begin specsec_2024_05_29.tex
@@ -2696,79 +2759,81 @@
 
     Заметим, что функции $x = 0$ и $y = 0$ являются решениями (подстановка)
 
-    Причем, точка $(0, 0)$ - особая, так как СДУ $\to \frac{dy}{dx} = \frac{kx + my}{ax + by}$
+    Причем, точка $(0, 0)$ -- особая, так как СДУ $\to \frac{dy}{dx} = \frac{kx + my}{ax + by}$
 
     Рассмотрим различные случаи значений $\lambda_{1,2}$:
 
-    1) $\lambda_1 \neq \lambda_2, \lambda_{1,2} \in \Real^-$
+    \begin{enumerate}[label*=\arabic*) ]
+        \item $\lambda_1 \neq \lambda_2, \lambda_{1,2} \in \Real^-$
 
-    Тогда решения СДУ будут $x(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}, \quad
-    \dot x(t) = C_1 \lambda_1 e^{\lambda_1 t} + C_2 \lambda_2 e^{\lambda_2 t}$
+        Тогда решения СДУ будут $x(t) = C_1 e^{\lambda_1 t} + C_2 e^{\lambda_2 t}, \quad
+        \dot x(t) = C_1 \lambda_1 e^{\lambda_1 t} + C_2 \lambda_2 e^{\lambda_2 t}$
 
-    Подставляем в первое уравнение, из него получаем $y(t) = \frac{1}{b}(C_1 (\lambda_1 - a)e^{\lambda_1 t} + C_2 (\lambda_2 - a)e^{\lambda_2 t})$
+        Подставляем в первое уравнение, из него получаем $y(t) = \frac{1}{b}(C_1 (\lambda_1 - a)e^{\lambda_1 t} + C_2 (\lambda_2 - a)e^{\lambda_2 t})$
 
-    Введем Н.У. $y(0) = y_0, x(0) = x_0$
+        Введем начальные условия $y(0) = y_0, x(0) = x_0$
 
-    Решение З.К.: $\begin{cases}x(t) = \frac{ax_0 + by_0 - x_0 \lambda_2}{\lambda_1 - \lambda_2} e^{\lambda_1 t} + \frac{x_0 \lambda_1 - ax_0 - by_0}{\lambda_1 - \lambda_2} e^{\lambda_2 t} \\
-    y(t) = \frac{1}{b}(\frac{ax_0 + by_0 - x_0 \lambda_2}{\lambda_1 - \lambda_2} (\lambda_1 - a) e^{\lambda_1 t} + \frac{x_0 \lambda_1 - ax_0 - by_0}{\lambda_1 - \lambda_2} (\lambda_2 - a) e^{\lambda_2 t}) \\
-    \end{cases}$
+        Решение задачи Коши: $\begin{cases}x(t) = \frac{ax_0 + by_0 - x_0 \lambda_2}{\lambda_1 - \lambda_2} e^{\lambda_1 t} + \frac{x_0 \lambda_1 - ax_0 - by_0}{\lambda_1 - \lambda_2} e^{\lambda_2 t} \\
+        y(t) = \frac{1}{b}(\frac{ax_0 + by_0 - x_0 \lambda_2}{\lambda_1 - \lambda_2} (\lambda_1 - a) e^{\lambda_1 t} + \frac{x_0 \lambda_1 - ax_0 - by_0}{\lambda_1 - \lambda_2} (\lambda_2 - a) e^{\lambda_2 t}) \\
+        \end{cases}$
 
-    При $t \to +\infty \ |e^{\lambda_i t}| < 1$ и $\forall \varepsilon > 0 \begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases} \Longrightarrow
-    \begin{cases}|\tilde{x}(t) - x(t)| < \varepsilon \\ |\tilde{y}(t) - y(t)| < \varepsilon\end{cases}$
+        При $t \to +\infty \ |e^{\lambda_i t}| < 1$ и $\forall \varepsilon > 0 \begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases} \Longrightarrow
+        \begin{cases}|\tilde{x}(t) - x(t)| < \varepsilon \\ |\tilde{y}(t) - y(t)| < \varepsilon\end{cases}$
 
-    $\lim_{t \to +\infty} x(t) = 0, \lim_{t \to +\infty} y(t) = 0$, то есть $(0, 0)$ - устойчивое решение
+        $\lim_{t \to +\infty} x(t) = 0, \lim_{t \to +\infty} y(t) = 0$, то есть $(0, 0)$ -- устойчивое решение
 
-    \ExN{1} \begin{cases}\dot x = -x \\ \dot y = -2y\end{cases} $\Longleftrightarrow$
-    \begin{cases}\frac{dx}{x} = -dt \\ \frac{dy}{y} = -2dt\end{cases} $\Longleftrightarrow$
-    \begin{cases}x = C_1 e^{-t} \\ y = C_2 e^{-2t}\end{cases} + Н.У. $\Longrightarrow$
-    \begin{cases}x = x_0 e^{-t} \\ y = y_0 e^{-2t}\end{cases}
+        \ExN{1} \begin{cases}\dot x = -x \\ \dot y = -2y\end{cases} $\Longleftrightarrow$
+        \begin{cases}\frac{dx}{x} = -dt \\ \frac{dy}{y} = -2dt\end{cases} $\Longleftrightarrow$
+        \begin{cases}x = C_1 e^{-t} \\ y = C_2 e^{-2t}\end{cases} + Н.У. $\Longrightarrow$
+        \begin{cases}x = x_0 e^{-t} \\ y = y_0 e^{-2t}\end{cases}
 
-    Изобразим интегральные кривые (фазовый портрет системы): СДУ $\Longrightarrow \frac{dy}{dx} = \frac{2y}{x} \Longrightarrow y = Cx^2$
+        Изобразим интегральные кривые (фазовый портрет системы): СДУ $\Longrightarrow \frac{dy}{dx} = \frac{2y}{x} \Longrightarrow y = Cx^2$
 
-    В этом примере получается семейство парабол, при $t \to +\infty$ они все стремятся к $(0, 0)$ - устойчивому узлу
+        В этом примере получается семейство парабол, при $t \to +\infty$ они все стремятся к $(0, 0)$ -- устойчивому узлу
 
-    2) $\lambda_1 \cdot \lambda_2 < 0, \lambda_{1,2} \in \Real$
+        \item $\lambda_1 \cdot \lambda_2 < 0, \lambda_{1,2} \in \Real$
 
-    \ExN{2} \begin{cases}\dot x = x \\ \dot y = -2y\end{cases} \quad  \begin{cases}x = x_0 e^t \\ y = y_0 e^{-2t}\end{cases}
+        \ExN{2} \begin{cases}\dot x = x \\ \dot y = -2y\end{cases} \quad  \begin{cases}x = x_0 e^t \\ y = y_0 e^{-2t}\end{cases}
 
-    Фазовый портрет $\frac{dy}{dx} = \frac{-2y}{x} \Longrightarrow y = \frac{C}{x^2}$
+        Фазовый портрет $\frac{dy}{dx} = \frac{-2y}{x} \Longrightarrow y = \frac{C}{x^2}$
 
-    Гиперболы при $t \to \infty$ стремятся к точками $(\pm \infty, 0)$ и образуют так называемое седло неустойчивости
+        Гиперболы при $t \to \infty$ стремятся к точками $(\pm \infty, 0)$ и образуют так называемое седло неустойчивости
 
-    3) $\lambda_{1,2} = \alpha \pm i \beta, \alpha < 0$
+        \item $\lambda_{1,2} = \alpha \pm i \beta, \alpha < 0$
 
-    \ExN{3} \begin{cases}\dot x = -x + y \\ \dot y = -x - y\end{cases} $\lambda_{1,2} = -1 \pm i$
+        \ExN{3} \begin{cases}\dot x = -x + y \\ \dot y = -x - y\end{cases} $\lambda_{1,2} = -1 \pm i$
 
-    \begin{cases}x(t) = e^{-t} (x_0 \cos t + y_0 \sin t) \\ y(t) = e^{-t} (y_0 \cos t - x_0 \sin t)\end{cases} - устойчивая
+        \begin{cases}x(t) = e^{-t} (x_0 \cos t + y_0 \sin t) \\ y(t) = e^{-t} (y_0 \cos t - x_0 \sin t)\end{cases} -- устойчивая
 
-    Фазовый портрет: перейдем в ПСК $\begin{matrix}x = \rho \cos \varphi \\ y = \rho \sin \varphi\end{matrix} \quad \begin{matrix}x_0 = A\cos \varphi_0 \\ y_0 = A \sin \varphi_0\end{matrix}$
+        Фазовый портрет: перейдем в ПСК $\begin{matrix}x = \rho \cos \varphi \\ y = \rho \sin \varphi\end{matrix} \quad \begin{matrix}x_0 = A\cos \varphi_0 \\ y_0 = A \sin \varphi_0\end{matrix}$
 
-    Тогда $\begin{cases}\rho \cos \varphi = e^{-t} = A \cos (t - \varphi_0) \\ \rho \sin \varphi = e^{-t} = A \sin (t - \varphi_0)\end{cases} \Longrightarrow
-    \rho^2 = A^2 e^{-2t} \Longrightarrow \rho = Ae^{-t}$
+        Тогда $\begin{cases}\rho \cos \varphi = e^{-t} = A \cos (t - \varphi_0) \\ \rho \sin \varphi = e^{-t} = A \sin (t - \varphi_0)\end{cases} \Longrightarrow
+        \rho^2 = A^2 e^{-2t} \Longrightarrow \rho = Ae^{-t}$
 
-    Выразим $t$ через $\varphi$: $\tan \varphi = \tan (t - \varphi_0)$
+        Выразим $t$ через $\varphi$: $\tan \varphi = \tan (t - \varphi_0)$
 
-    Получаем $\rho = Ae^{-(\varphi + \varphi_0 + \pi n)}$
+        Получаем $\rho = Ae^{-(\varphi + \varphi_0 + \pi n)}$
 
-    Получается семейство логарифмических спиралей ($\rho = Ae^{\varphi}$)
+        Получается семейство логарифмических спиралей ($\rho = Ae^{\varphi}$)
 
-    3$^\prime$) $\lambda_{1,2} = \pm i\beta (\alpha = 0)$
+        \item[3$^\prime$)] $\lambda_{1,2} = \pm i\beta (\alpha = 0)$
 
-    $\begin{cases}x(t) = x_0 \cos \beta t + y_0 \sin \beta t \\ y(t) = y_0 \cos \beta t - x_0 \sin \beta t\end{cases}$.
+        $\begin{cases}x(t) = x_0 \cos \beta t + y_0 \sin \beta t \\ y(t) = y_0 \cos \beta t - x_0 \sin \beta t\end{cases}$.
 
-    Фазовый портрет - семейство соосных и концентрических эллипсов. Центр этих эллипсов устойчивый
+        Фазовый портрет -- семейство соосных и концентрических эллипсов. Центр этих эллипсов устойчивый
 
-    4) $\lambda_{1,2} \in \Real, \lambda_1 \cdot \lambda_2 = 0$
+        \item $\lambda_{1,2} \in \Real, \lambda_1 \cdot \lambda_2 = 0$
 
-    \Lab
+        \Lab
 
-    1. \begin{cases}\dot x = 0 \\ \dot y = -y\end{cases}
+        1. \begin{cases}\dot x = 0 \\ \dot y = -y\end{cases}
 
-    2. \begin{cases}\dot x = -x \\ \dot y = -y\end{cases}
+        2. \begin{cases}\dot x = -x \\ \dot y = -y\end{cases}
 
-    3. \begin{cases}\dot x = y \\ \dot y = -0\end{cases}
+        3. \begin{cases}\dot x = y \\ \dot y = -0\end{cases}
+    \end{enumerate}
 
-    \underline{Обобщим}. Если хотя бы один $\lambda \neq 0$ и лежит слева от $Im \lambda$, то решение устойчивое
+    \underline{Обобщим}: если хотя бы один $\lambda \neq 0$ и лежит слева от $\IM \lambda$, то решение устойчивое
 % end specsec_2024_05_29.tex
 
 % begin specsec_exam_list.tex
@@ -3088,32 +3153,151 @@
 
         \item Свойства решений ЛОДУ2: линейная независимость решений, определитель Вронского. Теоремы 1,2.
 
+        \hyperlink{linearindependance}{Линейная независимость}: \Defs $y_1, y_2$ -- линейно независимы $\Longleftrightarrow C_1 y_1 + C_2 y_2 = 0 \Longrightarrow \forall C_1 = 0 \Longleftrightarrow \nexists k : y_2 = k y_1, k \in \Real$
+        
+        \hyperlink{determinantWronski}{Определитель Вронского}: \Defs $W \stackrel{\text{обозн}}{=} \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = \begin{vmatrix}y_1(x) & y_2(x) \\ \frac{d y_1(x)}{dx} & \frac{d y_2(x)}{dx}\end{vmatrix}$ -- определитель Вронского или вронскиан
+
+        \begin{MyTheorem}
+            \ThNs{1} $\letsymbol y_1, y_2$ - частные решения ЛОДУ, то есть $Ly_1 = 0, Ly_2 = 0$
+
+            Тогда $Ly = 0$, если $y = C_1 y_1 + C_2 y_2$
+        \end{MyTheorem}
+
+        \begin{MyTheorem}
+            \ThNs{2} $y_1, y_2$ -- линейно зависимы $\Longrightarrow W = 0$ на $[a;b]$
+        \end{MyTheorem}    
 
         \item Свойства решений ЛОДУ2: линейная комбинация решений, линейная зависимость решений. Определитель Вронского. Теоремы о вронскиане.
 
+        \begin{MyTheorem}
+            \ThNs{3} $x_0 \in [a;b]$, пусть $W(x_0) = W_0$. Тогда: 
+            
+            $\begin{matrix}W_0 = 0 \Longrightarrow W(x) = 0 \forall x \in [a;b] \\
+            W_0 \neq 0 \Longrightarrow W(x) \neq 0 \forall x \in [a;b]\end{matrix}$
+        \end{MyTheorem}
+
+        \begin{MyTheorem}
+            \ThNs{4} $y_1, y_2$ -- линейно независимы $\Longrightarrow W(x) \neq 0$ на $[a;b]$
+        \end{MyTheorem}
+    
 
         \item Свойства решений ЛОДУ2: линейная комбинация решений, линейная зависимость решений. Теорема о структуре общего решения ЛОДУ2. Фундаментальная система решений (определение).
 
+        \begin{MyTheorem}
+            \ThNs{5} $y_1, y_2$ -- линейно независимые решения ЛОДУ, тогда $\overline{y}(x) = C_1 y_1 + C_2 y_2$ -- общее решение ЛОДУ$_2$
+        \end{MyTheorem}
 
         \item Свойства решений ЛНДУ2: теоремы о структуре общего решения и решении ДУ с суммой правых частей.
+
+        \begin{MyTheorem}
+            \ThNs{6} Решение ЛНДУ $Ly = f(x)$
+    
+            $\overline{y}(x): L\overline{y} = 0$ -- общее решение ЛОДУ
+    
+            $y^*(x): Ly^*(x) = f(x)$ -- частное решение ЛНДУ
+    
+            Тогда $y(x) = \overline{y} + y^*$ -- общее решение ЛНДУ
+        \end{MyTheorem}
 
 
         \item Структура решения ЛОДУn: линейная независимость решений, нахождение фундаментальной системы решений по корням характеристического уравнения.
 
+        \hyperlink{fssforlde2}{ФСР для всех случаев}:
+
+        \begin{enumerate}
+            \item Всякому $\lambda_i$ -- одиночному $\Real$-корню ХрУ сопоставляем $y_i = e^{\lambda_i x}$
+    
+            \item $\Real$-корню $\lambda$ кратности $s$ сопоставляем набор $\Set{y_1, y_2, \dots, y_s} = \Set{e^{\lambda x}, xe^{\lambda x}, \dots, x^{s - 1} e^{\lambda x}}$
+    
+            \item Всякой одиночной паре $\lambda_{j_1,j_2} = \alpha_j \pm i\beta_j$ соответствует пара $\{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin\beta x\}$
+    
+            \item Комплексной паре $\lambda = \alpha \pm i\beta$ кратности $t$ соответствует набор 
+            
+            $\{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x, x e^{\alpha x} \cos \beta x, \dots, x^{t - 1}e^{\alpha x} \cos\beta x, x^{t - 1}e^{\alpha x} \sin\beta x\}$
+        \end{enumerate}
+
+        $\overline{y} = l_{\{\text{ФСР}\}}$
 
         \item Решение ЛНУ2 с постоянными коэффициентами: специальная правая часть, поиск частного решения методом неопределенных коэффициентов.
+
+        \hyperlink{specialrightpart}{Специальная правая часть}: для линейного неоднородного уравнения второго порядка $y^\prime^\prime + py^\prime + qy = f(x)$ с постоянными коэффициентами, где правая часть $f(x)$ является специальной, частное решение $y^*$ ищут методом неопределённых коэффициентов: 
+        
+        \begin{enumerate}
+            \item Анализ корней характеристического уравнения $\lambda^2 + p\lambda + q = 0$;
+            \item Определение структуры $y^*$ в виде $x^r e^{ax} (\overline{P}_l(x) \cos(bx) + \overline{Q}_l(x) \sin(bx))$, где
+            $a, b$ берутся из $f(x) = e^{ax}(P_n(x)\cos(bx) + Q_m(x)\sin(bx))$,
+            $l = \max(n, m)$,
+            $r$ -- кратность корня $k = a \pm ib$ в характеристическом уравнении ($r = 0$ при отсутствии совпадения)
+            \item Подстановку $y^*$ в уравнение и определение коэффициентов $\overline{P}_l$, $\overline{Q}_l$ приравниванием аналогичных членов. Метод эффективен для правых частей вида $e^{\alpha x}$, $x^k$, $\cos \beta x$, $\sin \beta x$ и их произведений.
+        \end{enumerate}
 
 
         \item Решение ЛНУ2: метод вариации произвольных постоянных (Лагранжа).
 
+        \hyperlink{methodLagrangesecondorder}{Метод Лагранжа}: подход для решения линейных неоднородных дифференциальных уравнений второго порядка $y^\prime^\prime + p(x)y^\prime + q(x)y = f(x)$ с произвольной непрерывной правой частью:
+        \begin{enumerate} 
+            \item Нахождение фундаментальной системы решений (ФСР) $y_1(x), y_2(x)$ соответствующего однородного уравнения
+
+            \item Поиск частного решения в виде $y^*(x) = C_1(x)y_1(x) + C_2(x)y_2(x)$, где функции $C_1(x), C_2(x)$ заменяют константы из общего решения однородного уравнения
+
+            \item Решение системы для производных $C_1^\prime(x), C_2^\prime(x)$:
+            
+            $\begin{cases} 
+            C_1^\primey_1 + C_2^\primey_2 = 0 \\
+            C_1^\primey_1^\prime + C_2^\primey_2^\prime = f(x)
+            \end{cases}$
+            
+            с использованием вронскиана $W = y_1y_2^\prime - y_2y_1^\prime$
+            \item Интегрирование выражений: 
+            
+            $C_1(x) = \int -\frac{y_2 f}{W}dx, \quad C_2(x) = \int \frac{y_1 f}{W}dx$
+        \end{enumerate}
+
 
         \item Системы дифференциальных уравнений: определения, решение методом исключения.
 
+        \hyperlink{desystem}{Система ДУ}: \Defs Пусть дан набор функций $y_1, \dots, y_n$. Система, связывающие эти функции, то есть
+        $\begin{cases}
+             F_1(x_1, y_1, \dots y_n, \dots, y_1^{(n)}, \dots y_n^{(n)}) = 0 \\
+             \vdots
+        \end{cases}$, называется системой дифференциальных уравнений (СДУ)
+
+        \hyperlink{exceptionmethod}{Метод исключения}: чтобы свести к ДУ систему ДУ $\begin{cases}
+            \dot x_1 = \varphi_1(t, x_1, \dots, x_n) \\
+            \vdots \\
+            \dot x_n = \varphi_n(t, x_1, \dots, x_n) \\
+       \end{cases}$ 
+       
+       нужно исключить $n - 1$ выражение $\dot x_i$, для этого взять производные $\frac{d^{n - 1} x_i}{dt^{n - 1}}$
 
         \item Системы дифференциальных уравнений: определения, решение матричным методом в случае различных вещественных собственных чисел.
 
+        \hyperlink{matrixmethod}{Матричный метод}: 
+
+        
+        $\begin{cases}
+            y^{\prime}_1 = a_{11}y_1 + a_{12}y_2 + \dots + a_{1n} y_n \\
+            \vdots \\
+            y^{\prime}_n = a_{n1}y_n + a_{n2}y_2 + \dots + a_{nn} y_n
+        \end{cases} \quad a_{ij} \in \Real$
+
+        Обозначим $(y_1, \dots, y_n) = Y$ -- вектор функций, $\{a_{ij}\} = A$ -- матрица СДУ
+
+        Тогда СДУ запишется в виде $Y^\prime = AY$ (однородная СДУ, так как нет $f(x)$)
+
+        Пусть $\lambda_1, \dots, \lambda_n$ -- собственные числа $A$ и $h_i$ -- собственный вектор для $\lambda_i$
+
+        Будем искать решение $Y$ в виде $Y = \ln e^{\lambda_i x}$
+
+        Подставим в СДУ: $Y^\prime = \lambda_i h_i = e^{\lambda_i x} = A \underset{Y}{\undergroup{h_i e^{\lambda_i x}}} = AY$
+
 
         \item Теория устойчивости: определение устойчивости по Ляпунову, фазовая плоскость, траектории ДУ. Примеры устойчивого и неустойчивого решения.
+
+        \hyperlink{stability}{Устойчивость}: Решение СДУ $x = x(t), y = y(t)$ называется устойчивым по Ляпунову при $t \to +\infty$, если
+        $\forall \varepsilon > 0 \ \exists \delta > 0 \ | \ \underset{ \scriptsize \begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases}}{\forall x, y} \forall t > 0 \begin{cases}|\tilde{x}_0 - x_0| < \varepsilon \\ |\tilde{y}_0 - y_0| < \varepsilon\end{cases}$
+
+        Или $\begin{matrix}\Delta x (t) \to 0 \\ \Delta y (t) \to 0\end{matrix}$ при $t \to +\infty$ и $\begin{cases}\Delta x_0 \to 0 \\ \Delta y_0 \to 0\end{cases}$
 
 
     \end{enumerate}
