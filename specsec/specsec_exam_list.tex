@@ -353,6 +353,8 @@
             \ThNs{5} $y_1, y_2$ -- линейно независимые решения ЛОДУ, тогда $\overline{y}(x) = C_1 y_1 + C_2 y_2$ -- общее решение ЛОДУ$_2$
         \end{MyTheorem}
 
+        \item Свойства решений ЛНДУ2: теоремы о структуре общего решения и решении ДУ с суммой правых частей.
+
         \begin{MyTheorem}
             \ThNs{6} Решение ЛНДУ $Ly = f(x)$
     
@@ -363,25 +365,105 @@
             Тогда $y(x) = \overline{y} + y^*$ -- общее решение ЛНДУ
         \end{MyTheorem}
 
-        \item Свойства решений ЛНДУ2: теоремы о структуре общего решения и решении ДУ с суммой правых частей.
-
 
         \item Структура решения ЛОДУn: линейная независимость решений, нахождение фундаментальной системы решений по корням характеристического уравнения.
 
+        \hyperlink{fssforlde2}{ФСР для всех случаев}:
+
+        \begin{enumerate}
+            \item Всякому $\lambda_i$ -- одиночному $\Real$-корню ХрУ сопоставляем $y_i = e^{\lambda_i x}$
+    
+            \item $\Real$-корню $\lambda$ кратности $s$ сопоставляем набор $\Set{y_1, y_2, \dots, y_s} = \Set{e^{\lambda x}, xe^{\lambda x}, \dots, x^{s - 1} e^{\lambda x}}$
+    
+            \item Всякой одиночной паре $\lambda_{j_1,j_2} = \alpha_j \pm i\beta_j$ соответствует пара $\{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin\beta x\}$
+    
+            \item Комплексной паре $\lambda = \alpha \pm i\beta$ кратности $t$ соответствует набор 
+            
+            $\{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x, x e^{\alpha x} \cos \beta x, \dots, x^{t - 1}e^{\alpha x} \cos\beta x, x^{t - 1}e^{\alpha x} \sin\beta x\}$
+        \end{enumerate}
+
+        $\overline{y} = l_{\{\text{ФСР}\}}$
 
         \item Решение ЛНУ2 с постоянными коэффициентами: специальная правая часть, поиск частного решения методом неопределенных коэффициентов.
+
+        \hyperlink{specialrightpart}{Специальная правая часть}: для линейного неоднородного уравнения второго порядка $y^\prime^\prime + py^\prime + qy = f(x)$ с постоянными коэффициентами, где правая часть $f(x)$ является специальной, частное решение $y^*$ ищут методом неопределённых коэффициентов: 
+        
+        \begin{enumerate}
+            \item Анализ корней характеристического уравнения $\lambda^2 + p\lambda + q = 0$;
+            \item Определение структуры $y^*$ в виде $x^r e^{ax} (\overline{P}_l(x) \cos(bx) + \overline{Q}_l(x) \sin(bx))$, где
+            $a, b$ берутся из $f(x) = e^{ax}(P_n(x)\cos(bx) + Q_m(x)\sin(bx))$,
+            $l = \max(n, m)$,
+            $r$ -- кратность корня $k = a \pm ib$ в характеристическом уравнении ($r = 0$ при отсутствии совпадения)
+            \item Подстановку $y^*$ в уравнение и определение коэффициентов $\overline{P}_l$, $\overline{Q}_l$ приравниванием аналогичных членов. Метод эффективен для правых частей вида $e^{\alpha x}$, $x^k$, $\cos \beta x$, $\sin \beta x$ и их произведений.
+        \end{enumerate}
 
 
         \item Решение ЛНУ2: метод вариации произвольных постоянных (Лагранжа).
 
+        \hyperlink{methodLagrangesecondorder}{Метод Лагранжа}: подход для решения линейных неоднородных дифференциальных уравнений второго порядка $y^\prime^\prime + p(x)y^\prime + q(x)y = f(x)$ с произвольной непрерывной правой частью:
+        \begin{enumerate} 
+            \item Нахождение фундаментальной системы решений (ФСР) $y_1(x), y_2(x)$ соответствующего однородного уравнения
+
+            \item Поиск частного решения в виде $y^*(x) = C_1(x)y_1(x) + C_2(x)y_2(x)$, где функции $C_1(x), C_2(x)$ заменяют константы из общего решения однородного уравнения
+
+            \item Решение системы для производных $C_1^\prime(x), C_2^\prime(x)$:
+            
+            $\begin{cases} 
+            C_1^\primey_1 + C_2^\primey_2 = 0 \\
+            C_1^\primey_1^\prime + C_2^\primey_2^\prime = f(x)
+            \end{cases}$
+            
+            с использованием вронскиана $W = y_1y_2^\prime - y_2y_1^\prime$
+            \item Интегрирование выражений: 
+            
+            $C_1(x) = \int -\frac{y_2 f}{W}dx, \quad C_2(x) = \int \frac{y_1 f}{W}dx$
+        \end{enumerate}
+
 
         \item Системы дифференциальных уравнений: определения, решение методом исключения.
 
+        \hyperlink{desystem}{Система ДУ}: \Defs Пусть дан набор функций $y_1, \dots, y_n$. Система, связывающие эти функции, то есть
+        $\begin{cases}
+             F_1(x_1, y_1, \dots y_n, \dots, y_1^{(n)}, \dots y_n^{(n)}) = 0 \\
+             \vdots
+        \end{cases}$, называется системой дифференциальных уравнений (СДУ)
+
+        \hyperlink{exceptionmethod}{Метод исключения}: чтобы свести к ДУ систему ДУ $\begin{cases}
+            \dot x_1 = \varphi_1(t, x_1, \dots, x_n) \\
+            \vdots \\
+            \dot x_n = \varphi_n(t, x_1, \dots, x_n) \\
+       \end{cases}$ 
+       
+       нужно исключить $n - 1$ выражение $\dot x_i$, для этого взять производные $\frac{d^{n - 1} x_i}{dt^{n - 1}}$
 
         \item Системы дифференциальных уравнений: определения, решение матричным методом в случае различных вещественных собственных чисел.
 
+        \hyperlink{matrixmethod}{Матричный метод}: 
+
+        
+        $\begin{cases}
+            y^{\prime}_1 = a_{11}y_1 + a_{12}y_2 + \dots + a_{1n} y_n \\
+            \vdots \\
+            y^{\prime}_n = a_{n1}y_n + a_{n2}y_2 + \dots + a_{nn} y_n
+        \end{cases} \quad a_{ij} \in \Real$
+
+        Обозначим $(y_1, \dots, y_n) = Y$ -- вектор функций, $\{a_{ij}\} = A$ -- матрица СДУ
+
+        Тогда СДУ запишется в виде $Y^\prime = AY$ (однородная СДУ, так как нет $f(x)$)
+
+        Пусть $\lambda_1, \dots, \lambda_n$ -- собственные числа $A$ и $h_i$ -- собственный вектор для $\lambda_i$
+
+        Будем искать решение $Y$ в виде $Y = \ln e^{\lambda_i x}$
+
+        Подставим в СДУ: $Y^\prime = \lambda_i h_i = e^{\lambda_i x} = A \underset{Y}{\undergroup{h_i e^{\lambda_i x}}} = AY$
+
 
         \item Теория устойчивости: определение устойчивости по Ляпунову, фазовая плоскость, траектории ДУ. Примеры устойчивого и неустойчивого решения.
+
+        \hyperlink{stability}{Устойчивость}: Решение СДУ $x = x(t), y = y(t)$ называется устойчивым по Ляпунову при $t \to +\infty$, если
+        $\forall \varepsilon > 0 \ \exists \delta > 0 \ | \ \underset{ \scriptsize \begin{cases}|\tilde{x}_0 - x_0| < \delta \\ |\tilde{y}_0 - y_0| < \delta\end{cases}}{\forall x, y} \forall t > 0 \begin{cases}|\tilde{x}_0 - x_0| < \varepsilon \\ |\tilde{y}_0 - y_0| < \varepsilon\end{cases}$
+
+        Или $\begin{matrix}\Delta x (t) \to 0 \\ \Delta y (t) \to 0\end{matrix}$ при $t \to +\infty$ и $\begin{cases}\Delta x_0 \to 0 \\ \Delta y_0 \to 0\end{cases}$
 
 
     \end{enumerate}
