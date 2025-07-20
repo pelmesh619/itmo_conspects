@@ -22,7 +22,7 @@
 
 * Дополнительные главы высшей математики II (лектор Далевская О. П.)
 
-    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_superconspect.pdf)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters2/addchapters2_superconspect.pdf) [🥇Gold]
 
 * Физические основы компьютерных и сетевых технологий II (лектор Герт А. В.)
 
@@ -34,7 +34,7 @@
 
 * Операционные системы (лектор Маятин А. В.)
 
-    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/opersys/opersys_superconspect.html) [🥇Gold]
 
 ## [III семестр](meta/III.md)
 
@@ -54,7 +54,7 @@
 
 * Дополнительные главы высшей математики (лектор Далевская О. П.)
 
-    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_superconspect.pdf)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/addchapters1/addchapters1_superconspect.pdf) [🥇Gold]
 
     [Карточки для Anki](https://github.com/pelmesh619/itmo_conspects/releases/tag/anki.addchapters1.v1.1)
 
