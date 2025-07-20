@@ -319,12 +319,49 @@
 
         \item Свойства решений ЛОДУ2: линейная независимость решений, определитель Вронского. Теоремы 1,2.
 
+        \hyperlink{linearindependance}{Линейная независимость}: \Defs $y_1, y_2$ -- линейно независимы $\Longleftrightarrow C_1 y_1 + C_2 y_2 = 0 \Longrightarrow \forall C_1 = 0 \Longleftrightarrow \nexists k : y_2 = k y_1, k \in \Real$
+        
+        \hyperlink{determinantWronski}{Определитель Вронского}: \Defs $W \stackrel{\text{обозн}}{=} \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = \begin{vmatrix}y_1(x) & y_2(x) \\ \frac{d y_1(x)}{dx} & \frac{d y_2(x)}{dx}\end{vmatrix}$ -- определитель Вронского или вронскиан
+
+        \begin{MyTheorem}
+            \ThNs{1} $\letsymbol y_1, y_2$ - частные решения ЛОДУ, то есть $Ly_1 = 0, Ly_2 = 0$
+
+            Тогда $Ly = 0$, если $y = C_1 y_1 + C_2 y_2$
+        \end{MyTheorem}
+
+        \begin{MyTheorem}
+            \ThNs{2} $y_1, y_2$ -- линейно зависимы $\Longrightarrow W = 0$ на $[a;b]$
+        \end{MyTheorem}    
 
         \item Свойства решений ЛОДУ2: линейная комбинация решений, линейная зависимость решений. Определитель Вронского. Теоремы о вронскиане.
 
+        \begin{MyTheorem}
+            \ThNs{3} $x_0 \in [a;b]$, пусть $W(x_0) = W_0$. Тогда: 
+            
+            $\begin{matrix}W_0 = 0 \Longrightarrow W(x) = 0 \forall x \in [a;b] \\
+            W_0 \neq 0 \Longrightarrow W(x) \neq 0 \forall x \in [a;b]\end{matrix}$
+        \end{MyTheorem}
+
+        \begin{MyTheorem}
+            \ThNs{4} $y_1, y_2$ -- линейно независимы $\Longrightarrow W(x) \neq 0$ на $[a;b]$
+        \end{MyTheorem}
+    
 
         \item Свойства решений ЛОДУ2: линейная комбинация решений, линейная зависимость решений. Теорема о структуре общего решения ЛОДУ2. Фундаментальная система решений (определение).
 
+        \begin{MyTheorem}
+            \ThNs{5} $y_1, y_2$ -- линейно независимые решения ЛОДУ, тогда $\overline{y}(x) = C_1 y_1 + C_2 y_2$ -- общее решение ЛОДУ$_2$
+        \end{MyTheorem}
+
+        \begin{MyTheorem}
+            \ThNs{6} Решение ЛНДУ $Ly = f(x)$
+    
+            $\overline{y}(x): L\overline{y} = 0$ -- общее решение ЛОДУ
+    
+            $y^*(x): Ly^*(x) = f(x)$ -- частное решение ЛНДУ
+    
+            Тогда $y(x) = \overline{y} + y^*$ -- общее решение ЛНДУ
+        \end{MyTheorem}
 
         \item Свойства решений ЛНДУ2: теоремы о структуре общего решения и решении ДУ с суммой правых частей.
 
