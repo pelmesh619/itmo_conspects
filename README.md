@@ -70,7 +70,7 @@
 
 * Специальные разделы высшей математики (лектор Далевская О. П.)
 
-    [**Весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf)
+    [**Весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf) [✨Remastered]
 
 * Дискретная математика II (лектор Чухарев К. И.)
 
