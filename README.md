@@ -191,9 +191,9 @@ $teacher$=right header
 
 ### Anki
 
-Anki - приложение для запоминания материала с помощью карточек. Гайд установки - [*тык*](https://pelmesh619.github.io\itmo_conspects\Add-Chapters-Cards\GUIDE.html)
+Anki - приложение для запоминания материала с помощью карточек. Гайд установки - [*тык*](https://github.com/pelmesh619/itmo_conspects/blob/main/addchapters1/anki/GUIDE.md)
 
-Пока что доступны карточки по [дополнительным главам высшей математики](https://github.com/pelmesh619/itmo_conspects/tree/main/Add-Chapters-Cards) (числовые, функциональные ряды, ряды Фурье, интеграл Фурье)
+Пока что доступны карточки по [дополнительным главам высшей математики](https://github.com/pelmesh619/itmo_conspects/releases/tag/anki.addchapters1.v1.1) (числовые, функциональные ряды, ряды Фурье, интеграл Фурье)
 
 ### A Playful Production Process
 
