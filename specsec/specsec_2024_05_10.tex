@@ -19,7 +19,7 @@
     \hypertarget{ldesgdifferentrealsolutions}{}
 
     \begin{enumerate}
-        \item $\lambda_{1,2} \in \Real, \lambda_1 \neq \lambda_2$ - случай различных вещественных корней
+        \item $\lambda_{1,2} \in \Real, \lambda_1 \neq \lambda_2$ -- случай различных вещественных корней
 
         $C_2(x) = \int C_1 e^{(\lambda_1 - \lambda_2)x} dx = \frac{C_1 e^{(\lambda_1 - \lambda_2)x}}{\lambda_1 - \lambda_2} + C_2 =
         \underset{\tilde{C_1}}{\undergroup{\frac{C_1}{\lambda_1 - \lambda_2}}} e^{(\lambda_1 - \lambda_2)x} + C_2$
@@ -58,7 +58,7 @@
             v^{\prime\prime} + pv\prime + qv = 0
         \end{cases}
 
-        Тогда можно считать решением $y(x) = u(x) + v(x) = C_1 e^{\alpha x}\cos\beta x + C_2 e^{\alpha x} \sin\beta x$ - решение ЛОДУ, $\lambda_{1,2} \in \mathbb{C}$
+        Тогда можно считать решением $y(x) = u(x) + v(x) = C_1 e^{\alpha x}\cos\beta x + C_2 e^{\alpha x} \sin\beta x$ -- решение ЛОДУ, $\lambda_{1,2} \in \mathbb{C}$
     \end{enumerate}
 
     \Nota Ни про одно из полученных решений нельзя сказать, что оно общее (см. след. пункт)
@@ -67,7 +67,7 @@
 
     \subsubsection{4.5.3. Свойства решений ЛДУ$_2$}
 
-    \Def $Ly \stackrel{def}{=} y^{\prime\prime}(x) + py^\prime(x) + qy(x)$ - линейней дифференциальный оператор
+    \Def $Ly \stackrel{def}{=} y^{\prime\prime}(x) + py^\prime(x) + qy(x)$ -- линейный дифференциальный оператор
 
     $L : E \subset C^2_{[a;b]} \implies F \subset C_{[a;b]}$
 
@@ -84,17 +84,17 @@
 
     \end{MyProof}
 
-    \Def $y_1, y_2$ - линейно независимы $\Longleftrightarrow C_1 y_1 + C_2 y_2 = 0 \Longrightarrow \forall C_1 = 0 \Longleftrightarrow \nexists k : y_2 = k y_1, k \in \Real$
+    \Def $y_1, y_2$ -- линейно независимы $\Longleftrightarrow C_1 y_1 + C_2 y_2 = 0 \Longrightarrow \forall C_1 = 0 \Longleftrightarrow \nexists k : y_2 = k y_1, k \in \Real$
 
     \Mem Для определения линейной независимости в Линейной алгебре мы использовали $\rang A$ или $\det A$
 
     Введем индикатор линейной независимости.
-    Заметим, что если $y_1, y_2$ - линейно зависимы, то $y_1^\prime, y_2^\prime$ - линейно зависимы
+    Заметим, что если $y_1, y_2$ -- линейно зависимы, то $y_1^\prime, y_2^\prime$ -- линейно зависимы
 
-    \Def $W \stackrel{\text{обозн}}{=} \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = \begin{vmatrix}y_1(x) & y_2(x) \\ \frac{d y_1(x)}{dx} & \frac{d y_2(x)}{dx}\end{vmatrix}$ - определитель Вронского или вронскиан
+    \Def $W \stackrel{\text{обозн}}{=} \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = \begin{vmatrix}y_1(x) & y_2(x) \\ \frac{d y_1(x)}{dx} & \frac{d y_2(x)}{dx}\end{vmatrix}$ -- определитель Вронского или вронскиан
 
     \begin{MyTheorem}
-        \ThNs{2} $y_1, y_2$ - линейно зависимы $\Longrightarrow W = 0$ на $[a;b]$
+        \ThNs{2} $y_1, y_2$ -- линейно зависимы $\Longrightarrow W = 0$ на $[a;b]$
     \end{MyTheorem}
 
     \begin{MyProof}
@@ -109,7 +109,7 @@
     \end{MyTheorem}
 
     \begin{MyProof}
-        Пусть $y_1(x), y_2(x)$ - решения ЛОДУ,
+        Пусть $y_1(x), y_2(x)$ -- решения ЛОДУ,
 
         $\begin{cases}
             Ly_1 = 0 \quad | \cdot y_2 \\
@@ -144,7 +144,7 @@
         Пусть $\exists x_0 \in [a;b] \ | \ W(x_0)= 0 \Longrightarrow W(x) = 0 \ \forall x \in [a;b] \Longleftrightarrow
         \begin{vmatrix}y_1(x) & y_2(x) \\ y_1^\prime(x) & y_2^\prime(x)\end{vmatrix} = y_1(x) y_2^\prime(x) - y_2(x) y_1^\prime(x) \ \forall x \in [a;b]$
 
-        Можно поделить на $y_1^2$, так как $y_1, y_2$ - линейно независимы. Тогда $\frac{W}{y^2_1} = \left(\frac{y_2}{y_1}\right)^\prime = 0 \Longrightarrow \frac{y_2}{y_1} = k \in \Real \Longleftrightarrow y_2 = k y_1$ -- линейно зависимы, противоречие
+        Можно поделить на $y_1^2$, так как $y_1, y_2$ -- линейно независимы. Тогда $\frac{W}{y^2_1} = \left(\frac{y_2}{y_1}\right)^\prime = 0 \Longrightarrow \frac{y_2}{y_1} = k \in \Real \Longleftrightarrow y_2 = k y_1$ -- линейно зависимы, противоречие
     \end{MyProof}
 
     \Nota Общее решение ЛОДУ$_2$ -- это семейство всех решений (интегральных кривых), каждое из которых проходит через точку
