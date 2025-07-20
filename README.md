@@ -86,7 +86,50 @@
 
     Почти все алгоритмы из курса и некоторые пояснения к ним есть в моем другом репозитории: [pelmesh619/algorithm_archives](https://github.com/pelmesh619/algorithm_archives)
 
+## Другие конспекты и материалы для программы ИС
 
+* [isagila/tesc](https://github.com/isagila/tesc) - очень хорошие конспекты y26, а именно:
+    * Линейная алгебра (I)
+    * Математический анализ (I и II)
+    * Дискретная математика (II)
+    * Специальные разделы высшей математики (II)
+    * Дополнительные главы высшей математики (III и IV)
+    * Теория вероятности (III)
+    * Базы данных (III)
+    * Физические основы компьютерных и сетевых технологий (III)
+    * Математическая статистика (IV)
+    * Операционные системы (IV)
+* [neerc.ifmo.ru/wiki](https://neerc.ifmo.ru/wiki/) - конспекты курса КТ, очень подробно расписаны "Алгоритмы и структуры данных" (I и II)
+* [Lipen/discrete-math-course](https://github.com/Lipen/discrete-math-course) - репозиторий лектора Чухарева К. И. по "Дискретной математике" (I и II) с шпаргалками и презентациями к лекциям
+* [ronimizy.notion.site/Lecturing-Notes-a02925fcb3574c2a8f6e2048ba8bdc11](https://ronimizy.notion.site/Lecturing-Notes-a02925fcb3574c2a8f6e2048ba8bdc11) - ноушн лектора Круглова Г. Н. по "Объектно-ориентированному программированию и проектированию" (III)
+* [itmo-synopses/academy](https://itmo-synopses.github.io/academy/introduction) - расписанные билеты по "Базам данных" (III) и введение в "Архитектуру информационных систем" (VI на 2-ой спец.)
+* [litmo.notion.site/676367343d784a13ac0f04d12c947367](https://litmo.notion.site/676367343d784a13ac0f04d12c947367) - расписанные билеты по "Теории вероятности" (III)
+* [shining-giver-0ad.notion.site/e598d7b42452466986620c07412c3d4e](https://shining-giver-0ad.notion.site/e598d7b42452466986620c07412c3d4e) - расписанные билеты по "Физическим основам компьютерных и сетевых технологий" (III)
+* [sashafromlibertalia.github.io/itmo-db-course/exam/](https://sashafromlibertalia.github.io/itmo-db-course/exam/) - расписанные билеты по "Базам данных" (III)
+* [www.notion.so/pypka/ITMO-University-c78a9ec0ce0a4b5ea181b2cccd33b527](https://www.notion.so/pypka/ITMO-University-c78a9ec0ce0a4b5ea181b2cccd33b527) - ноушн с расписанными билетами по:
+    * Математическому анализу (II)
+    * Физическим основам компьютерных и сетевых технологий (III и IV)
+    * Дополнительным главам высшей математики (III и IV)
+    * Объектно-ориентированному программированию и проектированию (III)
+    * Операционным системам (IV)
+    * Технологиям программирования на Java (IV)
+    * и кучей всего другого
+* [jolly-smoke-775.notion.site/Exams-1ce7bdf95e324af4a7a67822b7c797ad](https://jolly-smoke-775.notion.site/Exams-1ce7bdf95e324af4a7a67822b7c797ad) - ноушн с расписанными билетами по:
+    * Дополнительным главам высшей математики (III и IV)
+    * Теории вероятности (III)
+    * Базам данных (III)
+    * Объектно-ориентированному программированию и проектированию (III)
+    * Физическим основам компьютерных и сетевых технологий (III и V)
+    * Проектированию баз данных (IV)
+    * Математической статистике (IV)
+    * Операционным системам (IV)
+    * Технологиям программирования на Java (IV)
+    * Машинному обучению (V)
+    * Web-разработке: Frontend (V)
+    * Технологии нагруженных систем обработки данных (V)
+* [right-deposit-4a7.notion.site/CV-EXAM-1ec7df7668cf806480dcde9580634eff](https://right-deposit-4a7.notion.site/CV-EXAM-1ec7df7668cf806480dcde9580634eff) - расписанные билеты по "Компьютерному зрению" (VI)
+
+Если хотите сюда добавить что-то полезное (или убрать свое отсюда), не стесняйтесь писать: [@pelmeshke](https://t.me/pelmeshke)
 
 ## TODO
 
