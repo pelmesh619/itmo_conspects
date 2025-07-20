@@ -8,33 +8,34 @@
 
 
 \begin{document}
-    \section{4.2 ДУ первого порядка (ДУ$_1$)}
+    \subsection{4.2 ДУ первого порядка (ДУ$_1$)}
 
     \Nota Среди ДУ$_1$ рассмотрим несколько типов точно интегрируемых ДУ
 
-    1) Уравнение с разделяющимися переменными (УРП)
+    \begin{enumerate}
+        \item Уравнение с разделяющимися переменными (УРП)
 
-    2) Однородное уравнение (ОУ)
+        \item Однородное уравнение (ОУ)
 
-    3) Уравнение полных дифференциалов (УПД)
+        \item Уравнение полных дифференциалов (УПД)
 
-    4) Линейное дифференциальное уравнение первого порядка (ЛДУ$_1$)
-
+        \item Линейное дифференциальное уравнение первого порядка (ЛДУ$_1$)
+    \end{enumerate}
     Кроме этого интегрируются дифференциальные уравнения Бернулли, Лагранжа, Клеро, Рикатти и др. (см. литературу)
-
-    \mediumvspace
 
     \hypertarget{equationwithseparablevariables}{}
 
-    \paragraph{1* УРП}\mbox{}\\
+    \subsubsection{4.2.1. УРП}
 
-    \Def $m(x)N(y)dx + M(x)n(y)dy = 0$
+    \Def \fbox{$m(x)N(y)dx + M(x)n(y)dy = 0$} -- уравнение с разделяющимися переменными
 
-    \underline{Решение} : $N(y)M(x) \neq 0$
+    \underline{Решение}: при $N(y)M(x) \neq 0$ получаем
 
-    $\frac{m(x)}{M(x)}dx + \frac{n(y)}{N(y)}dy = 0 \quad y = y(x)$ - неизвестная функция (ее ищем, решая ДУ)
+    $\frac{m(x)}{M(x)}dx + \frac{n(y)}{N(y)}dy = 0$,
+    
+    где $y = y(x)$ -- неизвестная функция (ее ищем, решая ДУ)
 
-    $(\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime)dx = 0$
+    $\left(\frac{m(x)}{M(x)} + \frac{n(y)}{N(y)}y^\prime\right)dx = 0$
 
     Интегрируем по $dx$:
 
@@ -44,13 +45,11 @@
 
     $\int \frac{m(x)}{M(x)}dx + \int\frac{n(y)}{N(y)}dy = const$
 
-    или: $\int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$
+    или: \fbox{$\int \frac{m(x)}{M(x)}dx = \int\frac{-n(y)}{N(y)}dy$}
 
     \Ex $xdy - ydx = 0$
 
-    $xdy = ydx$
-
-    $\frac{dy}{y} = \frac{dx}{x} \quad (x, y \neq 0)$
+    $xdy = ydx \Longrightarrow \frac{dy}{y} = \frac{dx}{x} \quad (x, y \neq 0)$
 
     $\int \frac{dy}{y} = \int \frac{dx}{x}$
 
@@ -60,7 +59,7 @@
 
     $y = Cx, \quad C \in \Real$
 
-    Заметим, $x = y = 0$ - решение, но они учтены общим решением $y = Cx$, (при $C = 0, y = 0$) и подстановкой в ДУ $x = 0$
+    Заметим, $x = y = 0$ -- решение, но они учтены общим решением $y = Cx$, (при $C = 0, y = 0$) и подстановкой в ДУ $x = 0$
 
     \Nota В процессе решения нужно проверить $M(x) = 0$ и $N(y) = 0$
 
@@ -70,29 +69,27 @@
 
     То есть $M(x) = 0$ и $N(y) = 0$ - решение
 
-    \mediumvspace
-
     \hypertarget{homogeneousequation}{}
 
-    \paragraph{2* ОУ}\mbox{}\\
+    \subsubsection{4.2.2. ОУ}
 
-    \DefN{1} Однородная функция $n$-ого порядка называется функция $f(x, y)$ такая, что
+    \DefNs{1} Однородная функция $n$-ого порядка называется функция $f(x, y)$ такая, что
 
     $f(\lambda x, \lambda y) = \lambda^k f(x, y), \quad \lambda \in \Real, \lambda \neq 0$
 
-    \Ex $f = \cos\left(\frac{x}{y}\right), \cos(\frac{\lambda x}{\lambda y}) = \cos(\frac{x}{y})$ - нулевой порядок однородности
+    \Exs $f = \cos\left(\frac{x}{y}\right), \cos\left(\frac{\lambda x}{\lambda y}\right) = \cos\left(\frac{x}{y}\right)$ -- нулевой порядок однородности
 
-    $f = \sqrt{x^2 + y^2}$ - первый порядок
+    $f = \sqrt{x^2 + y^2}$ -- первый порядок
 
-    \DefN{2} \fbox{$P(x, y)dx + Q(x, y)dy = 0$, где $P(x, y), Q(x, y)$ - однородные функции одного порядка} - ОУ
+    \DefN{2} \fbox{$P(x, y)dx + Q(x, y)dy = 0$}, где $P(x, y), Q(x, y)$ -- однородные функции одного порядка, называется однородным уравнением
 
-    \underline{Решение} $P(x, y) = P\left(x \cdot 1, x \cdot \frac{y}{x}\right) = x^k P\left(1, \frac{y}{x}\right)$
+    \underline{Решение}: $P(x, y) = P\left(x \cdot 1, x \cdot \frac{y}{x}\right) = x^k P\left(1, \frac{y}{x}\right)$
 
     $Q(x, y) = x^k Q\left(1, \frac{y}{x}\right)$
 
     Тогда, $P\left(1, \frac{y}{x}\right)dx + Q\left(1, \frac{y}{x}\right)dy = 0$.
 
-    Обозначим $\frac{y}{x} = t, \quad y^\prime = \frac{dy}{dx} \stackrel{y = tx}{=\joinrel=} t^\prime_x x + t x^\prime_x = t^\prime_x x + t$
+    Обозначим $\frac{y}{x} = t, \quad y^\prime = \frac{dy}{dx} \stackrel{y = tx}{=} t^\prime_x x + t x^\prime_x = t^\prime_x x + t$
 
     $P(1, t) + Q(1, t)y^\prime = P(1, t) + Q(1, t)(t^\prime x + t) = 0$
 
@@ -100,21 +97,21 @@
 
     $t^\prime x = f(t) - t$
 
-    $\frac{dt}{dx}x = f(t) - t \neq 0$
+    \begin{itemize}
+        \item Если $f(t) - t \neq 0$, то получаем уравнение с разделяющимися переменными:
 
-    $\frac{dt}{f(t) - t} = \frac{dx}{x}$
+        $\frac{dt}{f(t) - t} = \frac{dx}{x}$
 
-    $\int\frac{dt}{f(t) - t} = \int\frac{dx}{x} = \ln|Cx|$
+        $\int\frac{dt}{f(t) - t} = \int\frac{dx}{x} = \ln|Cx|$
 
-    $Cx = e^{\int\frac{dt}{f(t) - t}} = \varphi(x, y)$ - общий интеграл
+        $Cx = e^{\int\frac{dt}{f(t) - t}} = \varphi(x, y)$ - общий интеграл
 
-    Если $f(t) - t = 0$, то пусть $t = k$ - корень, тогда $k = \frac{y}{x} \to y = kx$ - тоже решение
+        \item Если $f(t) - t = 0$, а $t = k$ - корень уравнения $f(t) - t = 0$, тогда $y = kx$ - тоже решение
+    \end{itemize}
 
     \Ex $(x + y)dx + (x - y)dy = 0$
 
-    $\frac{y}{x} = t \quad y^\prime = t^\prime x + t$
-
-    $y = tx \quad dy = (t^\prime x + t)dx$
+    $\frac{y}{x} = t \quad y^\prime = t^\prime x + t \quad dy = (t^\prime x + t)dx$
 
     $(x + tx)dx + (x - tx)(t^\prime x + t)dx = 0$
 
@@ -128,7 +125,7 @@
 
     $\frac{(1 - t)dt}{(1 - t)^2 - 2} = -\frac{1}{2}\frac{d((1 - t)^2) - 2}{(1 - t)^2 - 2} = -\frac{1}{2}\ln|(1 - t)^2 - 2| = \ln\frac{1}{\sqrt{(1 - t)^2 - 2}} = \ln|Cx|$
 
-    $\tilde{C}x = \frac{1}{\sqrt{(1 - t)^2 - 2}} \Longleftrightarrow Cx^2 = \frac{1}{(1 - t)^2 - 2} = \Longleftrightarrow Cx^2 ((1 - t)^2 - 2) = 1$
+    $\tilde{C}x = \frac{1}{\sqrt{(1 - t)^2 - 2}} \Longleftrightarrow Cx^2 = \frac{1}{(1 - t)^2 - 2} \Longleftrightarrow Cx^2 ((1 - t)^2 - 2) = 1$
 
     $C ((y - x)^2 - 2x^2) = 1$
 
@@ -138,17 +135,15 @@
 
     $(t - 1)^2 - 2 = 0 \quad \frac{y}{x} = 1 \pm \sqrt{2} \quad y = (1 \pm \sqrt{2})x$ - асимптоты
 
-    \mediumvspace
-
     \hypertarget{equationincompletedifferentials}{}
 
-    \paragraph{3* Уравнение в полных дифференциалах}\mbox{}\\
+    \subsubsection{4.2.3. УПД}
 
-    \Def \fbox{$P(x, y)dx + Q(x, y)dy = 0 \quad \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$} - УПД
+    \Def \fbox{$P(x, y)dx + Q(x, y)dy = 0$} при $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}$ -- уравнение в полных дифференциалах
 
-    \mediumvspace
-
-    \underline{Решение} \Mems \Ths об интеграле НЗП $\quad \exists \Phi(x, y)\ | \ d\Phi = P(x, y)dx + Q(x, y)dy$
+    \underline{Решение}: 
+    
+    \Mems \ThNs{Об интеграле НЗП} $\quad \exists \Phi(x, y)\ | \ d\Phi = P(x, y)dx + Q(x, y)dy$
 
     $\Phi(x, y) = \int^{(x,y)}_{(x_0,y_0)} Pdx + Qdy$
 
@@ -156,7 +151,7 @@
 
     $\Phi(x, y) = \int^{(x, y)}_{(x_0,y_0)} (x + y)dx + (x - y)dy =
     \int^{(x,0)}_{(0,0)} xdx + \int^{(x,y)}_{(x,0)} (x - y)dy = \frac{x^2}{2} \Big|_{(0, 0)}^{(x, 0)} +
-    (xy + \frac{y^2}{2}) \Big|_{(x, 0)}^{(x, y)} = \frac{x^2}{2} + xy - \frac{y^2}{2} + C$ - общий интеграл
+    \left(xy + \frac{y^2}{2}\right) \Big|_{(x, 0)}^{(x, y)} = \frac{x^2}{2} + xy - \frac{y^2}{2} + C$ - общий интеграл
 
     $x^2 + 2xy - y^2 = C$
 
@@ -164,11 +159,9 @@
 
     \hypertarget{lineardifferentialequation}{}
 
-    \paragraph{4* ЛДУ}\mbox{}\\
+    \subsubsection{4.2.4. ЛДУ}
 
-    \Def \fbox{$y^\prime + p(x)y = q(x)$} - ЛДУ$_1$
-
-    $p, q \in C_{[a, b]}$
+    \Def \fbox{$y^\prime + p(x)y = q(x)$}, где $p, q \in C_{[a, b]}$, -- линейное дифференциальное уравнение первого порядка
 
     \hypertarget{methodLagrange}{}
 
@@ -179,35 +172,40 @@
 
     \Def Однородное (ЛОДУ): $y^\prime + p(x)y = 0$
 
-    \Def Неоднородное (ЛНДУ): $y^\prime + p(x)y = q(x)$
+    \Defs Неоднородное (ЛНДУ): $y^\prime + p(x)y = q(x)$
 
-    \Ex $\letsymbol y(x) = x^2 e^{-x}$ - частное решение ЛНДУ
+    \Ex Пусть $y(x) = x^2 e^{-x}$ - частное решение ЛНДУ
 
     А $y_0 = x e^{-x}$, тогда $y = x xe^{-x} = C(x) x e^{-x}$
 
     То есть $C(x)$ варьируется, чтобы получить решение $y = y(x)$
 
-    \underline{Решение} а) $y^\prime + p(x)y = 0$
+    \underline{Решение}: 
+    
+    \begin{enumerate}
+        \item для ЛОДУ $y^\prime + p(x)y = 0$
 
-    $\frac{dy}{dx} + p(x)y = 0$ - УРП
+        $\frac{dy}{dx} + p(x)y = 0$ -- УРП, тогда $\frac{dy}{y} = -p(x)dx$
 
-    $\frac{dy}{y} = -p(x)dx$
+        $\ln|\tilde{C}y| = -\int p(x)dx$
 
-    $\ln|\tilde{C}y| = -\int p(x)dx$
+        $\overline{y} = Ce^{-\int p(x) dx} = Cy_0$ -- общее решение ЛОДУ
 
-    $\overline{y} = Ce^{-\int p(x) dx} = Cy_0$
+        \item для ЛНДУ $y^\prime + p(x)y = q(x)$
 
-    б) $y^\prime + p(x)y = q(x)$
+        Ищем $y(x)$ в виде $y = C(x)y_0$
 
-    Ищем $y(x)$ в виде $y = C(x)y_0$
+        $C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
 
-    $C^\prime(x)y_0 + C(x)y^\prime_0 + p(x)C(x)y_0 = q(x)$
+        $C^\prime(x)y_0 + C(x)\underset{=0}{\undergroup{(y^\prime_0 + p(x)y_0)}} = q(x)$
 
-    $C^\prime(x)y_0 + C(x)\underset{=0}{\undergroup{(y^\prime_0 + p(x)y_0)}} = q(x)$
+        $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
 
-    $C^\prime(x) = \frac{q(x)}{y_0} = q(x)e^{\int p(x)dx}$
+        $C(x) = \int q(x) e^{\int p(x)dx} dx$
 
-    $C(x) = \int q(x) e^{\int p(x)dx} dx$
+        Окончательно, $y(x) = \left(\left(\int q(x) e^{\int p(x)dx} + C\right) dx\right) e^{-\int p(x) dx} =
+        Ce^{-\int p dx} + e^{-\int pdx} \int q e^{\int p dx} = \overline{y} + y^*$
+    \end{enumerate}
 
 \end{document}
 

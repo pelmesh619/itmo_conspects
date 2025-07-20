@@ -9,59 +9,55 @@
 
 \begin{document}
 
-    \Mem $(x, y)$ в $\Real$
+    Важно, что линейность по первому аргументу присутствует и в $\Real$, и в $\Complex$, то есть $(\lambda x, y) \stackrel{\Real, \mathcal{C}}{=} \lambda (x, y)$
 
-    $(x, y) = (y, x)$
+    Однако:
 
-    Но. $(x, y)$ в комплексном множестве
+    \begin{itemize}
+        \item $(x, \lambda y) = \lambda (x, y)$ в $\Real$
 
-    $(x, y) = \overline{(y, x)}$
+        \item $(x, \lambda y) = \overline{\lambda} (x, y)$ в $\mathcal{C}$
+    \end{itemize}
 
-    Важно: линейность по первому аргументу - везде
+    \DefN{1} Оператор $\mathcal{A}^*$ называется сопряженным для $\mathcal{A} : V \to V$, если $(\mathcal{A}x, y) = (x, \mathcal{A}^* y)$
 
-    $(\lambda x, y) \stackrel{\Real, \mathcal{C}}{=} \lambda (x, y)$
+    \DefNs{2} $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любом ортонормированном базисе
 
-    Но:
+    \smallvspace
 
-    $(x, \lambda y) = \lambda (x, y)$ в $\Real$
+    \DefN{1} \Longleftrightarrow \DefNs{2}
 
-    $(x, \lambda y) = \overline{\lambda} (x, y)$ в $\mathcal{C}$
+    \begin{MyProof}
+        $(\mathcal{A}x, y) \stackrel{\text{на языке матриц}}{=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel=} (AX, Y) = (AX)^T \cdot Y = X^T \cdot A^T \cdot Y$
 
-    \DefN{1} Оператор $\mathcal{A}^*$ называется сопряженным для $\mathcal{A} : V \to V$, если
+        $\stackrel{||}{(x, \mathcal{A}^* y)} = X^T \cdot (A^* Y) = (X^T A^*) \cdot Y = X^T \cdot A^T \cdot Y \Longrightarrow A^* = A^T$
+    \end{MyProof}
 
-    $(\mathcal{A}x, y) = (x, \mathcal{A}^* y)$
-
-    \DefN{2} $\mathcal{A}^*$ сопряженный для $\mathcal{A}$, если $A^* = A^T$ в любом ортонормированном базисе
-
-    \textbf{Def. 1.} \Longleftrightarrow \textbf{Def. 2.}
-
-    $(\mathcal{A}x, y) \stackrel{\text{на языке матриц}}{=\joinrel=\joinrel=\joinrel=\joinrel=\joinrel=} (AX, Y) = (AX)^T \cdot Y = X^T \cdot A^T \cdot Y$
-
-    $\stackrel{||}{(x, \mathcal{A}^* y)} = X^T \cdot (A^* Y) = (X^T A^*) \cdot Y = X^T \cdot A^T \cdot Y \Longrightarrow A^* = A^T$
-
-    \Lab Очевидно существование $\mathcal{A}^* \ \forall \mathcal{A}$ (определяется в ортонормированном базисе действием $\mathcal{A}^T$)
-
-    Доказать единственность $\mathcal{A}^*$ рассмотреть от противного $(x, \mathcal{A}_1^* y) \neq (x, \mathcal{A}_2^* y)$)
+    \Lab Очевидно существование $\mathcal{A}^*$ для всякого $\mathcal{A}$ (определяется в ортонормированном базисе действием $\mathcal{A}^T$).
+    Доказать единственность $\mathcal{A}^*$ рассмотреть от противного $(x, \mathcal{A}_1^* y) \neq (x, \mathcal{A}_2^* y)$
 
     \hypertarget{conjugateoperatorproperties}{}
 
-    Свойства:
+    \underline{Свойства}:
 
-    1) $\mathcal{I} = \mathcal{I}^* \quad \Box (\mathcal{I}x, y) = (x, y) = (x, \mathcal{I}y) \qed$
+    \begin{enumerate}
 
-    2) $(\mathcal{A} + \mathcal{B})^* = \mathcal{A}^* + \mathcal{B}^*$
+        \item $\mathcal{I} = \mathcal{I}^* \quad \Box (\mathcal{I}x, y) = (x, y) = (x, \mathcal{I}y) \qed$
 
-    3) $(\lambda \mathcal{A})^* = \lambda \mathcal{A}^*$
+        \item $(\mathcal{A} + \mathcal{B})^* = \mathcal{A}^* + \mathcal{B}^*$
 
-    4) $(\mathcal{A}^*)^* = \mathcal{A}$
+        \item $(\lambda \mathcal{A})^* = \lambda \mathcal{A}^*$
 
-    5) $(\mathcal{A}\mathcal{B})^* = \mathcal{B}^* \mathcal{A}^*$ (св-во транспонирования матриц)
+        \item $(\mathcal{A}^*)^* = \mathcal{A}$
 
-    или $((\mathcal{AB})x, y) = (\mathcal{A}(\mathcal{B}x), y) = (\mathcal{B}x, \mathcal{A}^* y) = (x, \mathcal{B}^* \mathcal{A}^* y)$
+        \item $(\mathcal{A}\mathcal{B})^* = \mathcal{B}^* \mathcal{A}^*$ (св-во транспонирования матриц)
 
-    6) $\mathcal{A}^*$ - линейный оператор ($\mathcal{A}x = x^\prime, \mathcal{A}y = y^\prime \Longrightarrow \mathcal{A}(\lambda x + \mu y) = \lambda x^\prime + \mu y^\prime$)
+        или $((\mathcal{AB})x, y) = (\mathcal{A}(\mathcal{B}x), y) = (\mathcal{B}x, \mathcal{A}^* y) = (x, \mathcal{B}^* \mathcal{A}^* y)$
 
-    Можно использовать линейные свойства умножения матриц $A^* (\lambda X + \mu Y) = \lambda \mathcal{A}^* X + \mu \mathcal{A}^* Y$
+        \item $\mathcal{A}^*$ - линейный оператор ($\mathcal{A}x = x^\prime, \mathcal{A}y = y^\prime \Longrightarrow \mathcal{A}(\lambda x + \mu y) = \lambda x^\prime + \mu y^\prime$)
+
+        Можно использовать линейные свойства умножения матриц $A^* (\lambda X + \mu Y) = \lambda \mathcal{A}^* X + \mu \mathcal{A}^* Y$
+    \end{enumerate}
 
     \hypertarget{selfconjugateoperator}{}
 
@@ -69,53 +65,61 @@
 
     \Def $\mathcal{A}$ называется самосопряженным, если $\mathcal{A} = \mathcal{A}^*$
 
-    Следствие. $A^T = A \Longrightarrow$ матрица $A$ симметричная
+    Следствие: $A^T = A \Longrightarrow$ матрица $A$ симметричная
 
     \hypertarget{selfconjugateoperatorproperties}{}
 
-    Свойства самосопряженных операторов:
+    \underline{Свойства} самосопряженных операторов:
 
-    1) $\mathcal{A} = \mathcal{A}^*, \ \lambda : \ \mathcal{A}x = \lambda x (x \neq 0)$. Тогда, $\lambda \in \Real$
+    \begin{enumerate}
+        \item $\mathcal{A} = \mathcal{A}^*, \ \lambda : \ \mathcal{A}x = \lambda x (x \neq 0)$. Тогда, $\lambda \in \Real$
 
-    $\Box (\mathcal{A}x, y) = (\lambda x, y) = \lambda (x, y) \quad (x, \mathcal{A}^* y) = (x, \mathcal{A}y) = (x, \lambda y) \stackrel{\text{ в } \mathcal{C}}{=} \overline{\lambda} (x, y)$
+        \begin{MyProof}
+            $(\mathcal{A}x, y) = (\lambda x, y) = \lambda (x, y) \quad (x, \mathcal{A}^* y) = (x, \mathcal{A}y) = (x, \lambda y) \stackrel{\text{ в } \mathcal{C}}{=} \overline{\lambda} (x, y)$
 
-    $(\mathcal{A}x, y) = (x, \mathcal{A}y) \Longrightarrow \lambda (x, y) = \overline{\lambda} (x, y) \Longrightarrow \lambda = \overline{\lambda} \Longrightarrow \lambda \in \Real$
+            $(\mathcal{A}x, y) = (x, \mathcal{A}y) \Longrightarrow \lambda (x, y) = \overline{\lambda} (x, y) \Longrightarrow \lambda = \overline{\lambda} \Longrightarrow \lambda \in \Real$
 
-    $\qed$
+        \end{MyProof}
 
-    2) $\mathcal{A} = \mathcal{A}^*, \ \mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2$ и $\lambda_1 \neq \lambda_2$
+        \item $\mathcal{A} = \mathcal{A}^*, \ \mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2$ и $\lambda_1 \neq \lambda_2$.
+        Тогда $x_1 \perp x_2$
 
-    Тогда $x_1 \perp x_2$
+        \begin{MyProof}
+            Хотим доказать, что $(x_1, x_2) = 0$, при том, что $x_{1,2} \neq 0$
 
-    $\Box$ Хотим доказать, что $(x_1, x_2) = 0$, при том, что $x_{1,2} \neq 0$
+            $\lambda_1 (x_1, x_2) = (\lambda_1 x_1, x_2) = (\mathcal{A} x_1, x_2) = (x_1, \mathcal{A} x_2) = (x_1, \lambda_2 x_2) = (x_1, x_2) \lambda_2$
 
-    $\lambda_1 (x_1, x_2) = (\lambda_1 x_1, x_2) = (\mathcal{A} x_1, x_2) = (x_1, \mathcal{A} x_2) = (x_1, \lambda_2 x_2) = (x_1, x_2) \lambda_2$
-
-    Так как $\lambda_1 \neq \lambda_2$, то $(\lambda_1 - \lambda_2) (x_1, x_2) = 0 \Longrightarrow (x_1, x_2) = 0 \qed$
+            Так как $\lambda_1 \neq \lambda_2$, то $(\lambda_1 - \lambda_2) (x_1, x_2) = 0 \Longrightarrow (x_1, x_2) = 0$
+        \end{MyProof}
+    \end{enumerate}
 
     \hypertarget{lemmaabouteigenvectors}{}
 
-    \Th Лемма. $\mathcal{A} = \mathcal{A}^*$, $e$ - собственный вектор ($l_{\Set{e}}$ - линейная оболочка $e$ - инвариантное подпространство для $\mathcal{A}$)
+    \begin{MyTheorem}
+        \Ths Лемма. $\mathcal{A} = \mathcal{A}^*$, $e$ - собственный вектор ($l_{\Set{e}}$ - линейная оболочка $e$ - инвариантное подпространство для $\mathcal{A}$)
 
-    $V_1 = \Set{x \in V \ | \ x \perp e}$
+        $V_1 = \Set{x \in V \ | \ x \perp e}$
 
-    Тогда $V_1$ - инвариантное для $\mathcal{A}$
+        Тогда $V_1$ - инвариантное для $\mathcal{A}$
+    \end{MyTheorem}
 
-    $\Box$ Нужно доказать, что $\forall x \in V_1 \ \mathcal{A}x \in V_1$ и так как $x \in V_1 \ | \ x \perp e$, то
-    покажем, что $\mathcal{A}x \perp e$
+    \begin{MyProof}
+        Нужно доказать, что $\forall x \in V_1 \ \mathcal{A}x \in V_1$ и так как $x \in V_1 \ | \ x \perp e$, то
+        покажем, что $\mathcal{A}x \perp e$
 
-    $(\mathcal{A}x, e) = (x, \mathcal{A}e) = (x, \lambda e) = \lambda (x, e) \stackrel{x \perp e}{=\joinrel=} 0$
-
-    $\qed$
+        $(\mathcal{A}x, e) = (x, \mathcal{A}e) = (x, \lambda e) = \lambda (x, e) \stackrel{x \perp e}{=\joinrel=} 0$
+    \end{MyProof}
 
     \hypertarget{theoremabouteigenvectorsinselfconjugateoperator}{}
 
-    \Th $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
-    тогда $\exists e_1, \dots, e_n$ - набор собственных векторов $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
+    \begin{MyTheorem}
+        \Ths $\mathcal{A} = \mathcal{A}^*$ ($\mathcal{A} : V^n \to V^n$),
+        тогда $\exists e_1, \dots, e_n$ - набор собственных векторов $\mathcal{A}$ и $\Set{e_i}$ - ортонормированный базис
 
-    (другими словами: $\mathcal{A}$ - диагонализируем)
+        Другими словами: $\mathcal{A}$ - диагонализируем
+    \end{MyTheorem}
 
-    Наводящие соображения.
+    Наводящие соображения:
 
     \ExN{1} $A = \begin{pmatrix}1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 1\end{pmatrix} = I$
 
@@ -135,7 +139,5 @@
 
     $\begin{vmatrix}\frac{1}{\sqrt{2}} - \lambda & -\frac{1}{\sqrt{2}} \\ \frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} - \lambda\end{vmatrix} =
     \left(\frac{1}{\sqrt{2}} - \lambda\right)^2 + \frac{1}{2} = 0$ - вещественных корней нет
-
-    $\Box \sqsupset e_1$ - какой-либо собственный вектор $\mathcal{A}$ ...
 
 \end{document}

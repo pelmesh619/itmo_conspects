@@ -8,65 +8,74 @@
 
 
 \begin{document}
-    \Nota $Ker\ \mathcal{A}$ и $Im\ \mathcal{A}$ - подпространства $V$ ($\mathcal{A} : V \rightarrow V$)
+    \Notas $\Ker \mathcal{A}$ и $\IM \mathcal{A}$ - подпространства $V$ ($\mathcal{A} : V \rightarrow V$)
 
-    Вообще-то $Ker\ \mathcal{A} \subset V, Im\ \mathcal{A} \subset W \ (\mathcal{A} : V \rightarrow W)$
+    В общем случае $\Ker \mathcal{A} \subset V, \IM \mathcal{A} \subset W \ (\mathcal{A} : V \rightarrow W)$
 
-    $\dim W \leq \dim V$, тогда можно считать, что $W \subset V^\prime$ и
-    рассмотрим $\mathcal{A} : V \rightarrow V^\prime$ (где $V^\prime$ изоморфен $V$)
+    \mediumvspace
 
-    $Ker \mathcal{A}$ - подпространство, то есть $Ker \mathcal{A} \subset V$ и
-    $\sum c_i x_i \subset \mathcal{A}$, если $\forall x_i \in Ker \mathcal{A}$
+    Заметим, что если $\Ker \mathcal{A} = \texttt{0}$, то $\mathcal{A}$ - взаимно-однозначен
 
-    $\mathcal{A} (\sum c_i x_i) = \sum c_i \mathcal{A} x_i \stackrel{x_i \in \mathcal{A}}{=} \sum c_i \texttt{0} = \texttt{0}$
+    \begin{MyProof}
+        Докажем от противного:
 
-    Следствие: $Ker \mathcal{A} = \texttt{0} \Longrightarrow \mathcal{A}$ - вз.-однозн.
+        $\sqsupset \mathcal{A}$ - не взаимно-однозначен, то есть 
+        $\exists x_1, x_2 \in V (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow 
+        \mathcal{A} (x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \in \Ker \mathcal{A}$ - 
+        противоречие, так как $\Ker \mathcal{A} = \texttt{0}$
+    \end{MyProof}
 
-    $\Box$ От противного:
+    \Notas Обратное также верно:
 
-    $\sqsupset \mathcal{A}$ - не вз.-однозн., то есть $\exists x_1, x_2 \in V (x_1 \neq x_2) | \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A} (x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \in Ker \mathcal{A}$ - противоречие
+    \begin{MyProof}
+        $\mathcal{A}$ - взаимно-однозначен $\Longleftrightarrow y_1 = y_2 \Longrightarrow x_1 = x_2$
 
-    \Nota Обратное также верно:
+        Докажем от противного: $\dim \Ker \mathcal{A} \neq 0$, значит найдется $x = x_1 - x_2 \in \Ker \mathcal{A}$ $(x_1 \neq x_2)$, 
+        причем по определению ядра $\mathcal{A} x = \mathcal{A} (x_1 - x_2) = \texttt{0}$
 
-    $\mathcal{A}$ - вз.-однозн. $\Longleftrightarrow y_1 = y_2 \Longrightarrow x_1 = x_2$, так как $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 = 0$
-
-    Тогда $\texttt{0}$ является образом только $\texttt{0}$-вектора $\Longrightarrow Ker \mathcal{A} = \texttt{0}$
+        А так как $\mathcal{A} (x_1 - x_2) = \texttt{0}$, то $\mathcal{A} x_1 = \mathcal{A} x_2 \Longrightarrow x_1 = x_2$ - противоречие
+    \end{MyProof}
 
     \Nota Также очевидно, что
 
-    $Ker \mathcal{A} = 0 \Longleftrightarrow Im \mathcal{A} = V$
+    $\Ker \mathcal{A} = 0 \Longleftrightarrow \IM \mathcal{A} = V$
 
-    $Ker \mathcal{A} = V \Longrightarrow Im \mathcal{A} = \texttt{0}$ и $\mathcal{A} = 0$
+    $\Ker \mathcal{A} = V \Longrightarrow \IM \mathcal{A} = \texttt{0}$ и $\mathcal{A} = 0$
 
     \hypertarget{theoremaboutdimensions}{}
 
-    \Th $\mathcal{A} : V \rightarrow V$, тогда $\dim Ker \mathcal{A} + \dim Im \mathcal{A} = \dim V$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A} : V \rightarrow V$, тогда $\dim \Ker \mathcal{A} + \dim \IM \mathcal{A} = \dim V$
+    \end{MyTheorem}
 
-    $\Box$ Так как $Ker \mathcal{A}$ - подпространство $V$, то можно построить дополнение до прямой суммы (взяв базисные векторы ядра, дополнить их набор до базиса $V$: $e^k_1, \dots e^k_m, e^k_{m+1}, \dots e^k_n$)
+    \begin{MyProof}
+        Так как $\Ker \mathcal{A}$ - подпространство $V$, то можно построить дополнение до прямой суммы (взяв базисные векторы ядра, дополнить их набор до базиса $V$: $e^k_1, \dots e^k_m, e^k_{m+1}, \dots e^k_n$)
 
-    Обозначим дополнение $W$, тогда $Ker \mathcal{A} \xor W = V \Longrightarrow \dim Ker \mathcal{A} + \dim W = \dim V$
+        Обозначим дополнение $W$, тогда $Ker \mathcal{A} \xor W = V \Longrightarrow \dim \Ker \mathcal{A} + \dim W = \dim V$
 
-    Докажем, что $W$ и $Im \mathcal{A}$ - изоморфны
+        Докажем, что $W$ и $\IM \mathcal{A}$ - изоморфны
 
-    $\mathcal{A} : W \rightarrow Im \mathcal{A}$
+        $\mathcal{A} : W \rightarrow \IM \mathcal{A}$
 
-    $\mathcal{A} : Ker \mathcal{A} \rightarrow \texttt{0}$
+        $\mathcal{A} : Ker \mathcal{A} \rightarrow \texttt{0}$
 
-    Докажем, что $\mathcal{A}$ действует из $W$ в $Im \mathcal{A}$ взаимно-однозначно
+        Докажем, что $\mathcal{A}$ действует из $W$ в $\IM \mathcal{A}$ взаимно-однозначно
 
-    $\sqsupset \mathcal{A}$ невз.-однозн., тогда $\exists x_1, x_2 \in W (x_1 \neq x_2) | \mathcal{A}x_1 = \mathcal{A}x_2 \in Im \mathcal{A}$
+        $\sqsupset \mathcal{A}$ не взаимно-однозначный, тогда $\exists x_1, x_2 \in W (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \in \IM \mathcal{A}$
 
-    $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \stackrel{\text{обозн.}}{=} x \in Ker \mathcal{A}$, но $x \neq 0$, так как $x_1 \neq x_2$
+        Из этого $\mathcal{A}(x_1 - x_2) = \texttt{0} \Longrightarrow x_1 - x_2 \stackrel{\text{обозн.}}{=} x \in \Ker \mathcal{A}$, причем $x \neq 0$, так как $x_1 \neq x_2$
 
-    Но для прямой суммы $W \union Ker \mathcal{A} = \texttt{0}, x \ni W \union Ker \mathcal{A} \Longrightarrow$ предположение неверно
+        Но так как $W$ - дополнение до прямой суммы ($Ker \mathcal{A} \xor W = V$, то есть $W \union \Ker \mathcal{A} = \texttt{0}$), 
+        а $x \in W \union \Ker \mathcal{A}$ - противоречие ($x \neq 0$)
 
-    $\Longrightarrow \mathcal{A}$ - лин. вз.-однозн. $\Longrightarrow \dim W = \dim Im \mathcal{A}$
+        Из этого следует, что $\mathcal{A}$ - линейный и взаимно-однозначный $\Longrightarrow \dim W = \dim \IM \mathcal{A}$
 
-    $V = W_1 \xor W_2$ найдется ЛО $\mathcal{A} : V \rightarrow V$
+        Получается, что $V$ можно представить как прямую сумму $W_1 \xor W_2$, причем 
+        $W_1 = \Ker \mathcal{A}, W_2 = \IM \mathcal{A}$
+    \end{MyProof}
 
-    $W_1 = Ker \mathcal{A}, W_2 = Im \mathcal{A}$
-
-    \Def Рангом оператора $\mathcal{A}$ называется $\dim Im \mathcal{A}$: $rang \mathcal{A} \stackrel{def}{=} \dim Im \mathcal{A} (= r(\mathcal{A}) = rank \mathcal{A})$
+    \Def Рангом оператора $\mathcal{A}$ называется $\dim \IM \mathcal{A}$: $\rang \mathcal{A} \stackrel{def}{=} \dim \IM \mathcal{A}$ 
+    (также обозначается $\operatorname{r}(\mathcal{A})$ или $\operatorname{rank} \mathcal{A}$)
 
     \Nota Сравним ранг оператора с рангом его матрицы
 
@@ -116,62 +125,60 @@
          e_{n1} & e_{n2} & \dots
     \end{pmatrix}$
 
-    \Nota Поиск матрицы $\mathcal{A}$ можно осуществить, найдя ее в \enquote{домашнем} базисе $\Set{e_i}$, то есть $A (e_1, \dots e_n) = (e_1^\prime, \dots, e_m^\prime)$
+    \Nota Поиск матрицы $\mathcal{A}$ можно осуществить, найдя ее в \enquote{домашнем} базисе $\{e_i\}$, то есть $A (e_1, \dots, e_n) = (e_1^\prime, \dots, e_m^\prime)$
 
     Затем, можно найти матрицу в другом (нужном) базисе, используя формулы преобразований (см. \Ths позже)
 
-    Тогда $Ker \mathcal{A} = K$ - множество векторов, которые решают систему
+    Тогда $\Ker \mathcal{A} = K$ - множество векторов, которые решают систему
 
-    $AX = \texttt{0} \quad (\dim K = m = \dim \text{ФСР} = n - rang A)$ и при этом $\dim K = n - \dim Im \mathcal{A}$
+    $AX = \texttt{0} \quad (\dim K = m = \dim \text{ФСР} = n - \rang A)$ и при этом $\dim K = n - \dim \IM \mathcal{A}$
 
-    $rang \mathcal{A} = rang A = \dim Im \mathcal{A}$
+    $\rang \mathcal{A} = \rang A = \dim \IM \mathcal{A}$
 
-    Следствия (без док-в)
+    Следствия (без доказательств):
 
-    1) $rang(\mathcal{AB}) \leq rang(\mathcal{A})$ (или $rang \mathcal{B}$)
+    \begin{enumerate}
+        \item $\rang(\mathcal{AB}) \leq \rang(\mathcal{A})$ (или $\rang \mathcal{B}$)
 
-    2) $rang(\mathcal{AB}) \geq rang(\mathcal{A}) + rang(\mathcal{B}) - \dim V$
+        \item $\rang(\mathcal{AB}) \geq \rang(\mathcal{A}) + \rang(\mathcal{B}) - \dim V$
+    \end{enumerate}
 
     \Nota Рассмотрим преобразование координат, как линейный оператор $T : V^n \rightarrow V^n$ (переход из системы $Ox_i \rightarrow Ox_i^\prime$, $i = 1..n$)
 
-    $\dim Im T = n, \dim Ker T = 0 \Longrightarrow T$ - вз.-однозн.
+    $\dim \IM T = n, \dim \Ker T = 0 \Longrightarrow T$ - взаимно-однозначен
 
     Поставим задачу отыскания матрицы в другом базисе, используя $T_{e \to e^\prime}$
 
-    \section[p2\_6]{2.6. Преобразование матрицы оператора при переходе к другому базису}
+    \subsection[p2\_6]{2.6. Преобразование матрицы оператора при переходе к другому базису}
 
     \hypertarget{transformationtodifferentbasis}{}
 
-    \Th $\mathcal{A} : V^n \rightarrow V^n$
+    \begin{MyTheorem}
+        \Ths $\mathcal{A} : V^n \rightarrow V^n$
 
-    $\Set{e_i} \stackrel{\text{об}}{=} e$ и $\Set{e^\prime_i} \stackrel{\text{об}}{=} e^\prime$ - базисы пространства $V$
+        $\{e_i\} \stackrel{\text{об}}{=} e$ и $\{e^\prime_i\} \stackrel{\text{об}}{=} e^\prime$ - базисы пространства $V$
 
-    $\mathcal{T} : V^n \rightarrow V^n$ - преобразование координат, то есть $Te_i = e^\prime_i$
+        $\mathcal{T} : V^n \rightarrow V^n$ - преобразование координат, то есть $Te_i = e^\prime_i$
 
-    $\sqsupset A, A^\prime$ - матрицы $\mathcal{A}$ в базисах $e$ и $e^\prime$
+        $\sqsupset A, A^\prime$ - матрицы $\mathcal{A}$ в базисах $e$ и $e^\prime$
 
-    Тогда $A^\prime = TAT^{-1}$ ($A^\prime_{e^\prime} = T_{e\to e^\prime}AT^{-1}_{e\to e^\prime}$)
+        Тогда $A^\prime = TAT^{-1}$ ($A^\prime_{e^\prime} = T_{e\to e^\prime}AT^{-1}_{e\to e^\prime}$)
+    \end{MyTheorem}
 
-    $\Box \sqsupset y = \mathcal{A}x$, где $x, y$ - векторы в базисе $e$ ($x_e = x^\prime_{e^\prime}$ - один вектор)
+    \begin{MyProof}
+        Пусть $y = \mathcal{A}x$, где $x, y$ - векторы в базисе $e$ ($x_e = x^\prime_{e^\prime}$ - один вектор)
 
-    $y^\prime = \mathcal{A} x^\prime$, где $x^\prime, y^\prime$ - векторы в базисе $e^\prime$
+        $y^\prime = \mathcal{A} x^\prime$, где $x^\prime, y^\prime$ - векторы в базисе $e^\prime$
 
-    $\mathcal{T}x = x^\prime, \mathcal{T}y = y^\prime$
+        $\mathcal{T}x = x^\prime, \mathcal{T}y = y^\prime$
 
-    $y = Ax$, $y^\prime = A^\prime x^\prime$, тогда $Ty = A^\prime (Tx) \quad \Big| \cdot T^{-1}$
+        $y = Ax$, $y^\prime = A^\prime x^\prime$, тогда $Ty = A^\prime (Tx) \quad \Big| \cdot T^{-1}$
 
-    $T^{-1}Ty = (T^{-1}A^\prime T)x$
-    
-    $Ax = y = (T^{-1}A^\prime T)x$
+        $T^{-1}Ty = (T^{-1}A^\prime T)x$
+        
+        $Ax = y = (T^{-1}A^\prime T)x$
 
-    $A = T^{-1}A^\prime T \Longrightarrow A^\prime = TA T^{-1}$
-
-
-
-
-
-
+        $A = T^{-1}A^\prime T \Longrightarrow A^\prime = TA T^{-1}$
+    \end{MyProof}
 
 \end{document}
-
-

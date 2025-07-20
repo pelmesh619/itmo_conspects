@@ -9,134 +9,146 @@
 
 
 \begin{document}
-    \Th $\lambda_1, \dots \lambda_p$ - различные собственные значения $\mathcal{A} : V \rightarrow V$,
-    им соответствуют $U_{\lambda_i}$ - собственные подпространства $V$ для $\lambda_i$
+    \begin{MyTheorem}
+        \Ths $\lambda_1, \dots \lambda_p$ - различные собственные значения $\mathcal{A} : V \rightarrow V$,
+        им соответствуют $U_{\lambda_i}$ - собственные подпространства $V$ для $\lambda_i$
 
-    $\sqsupset e^{(1)} = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}}, e^{(2)} = \Set{e^{(2)}_1, \dots, e^{(2)}_{k_2}}, \dots$ -
-    базисы $U_{\lambda_1}, U_{\lambda_2}, \dots$
+        Пусть $e^{(1)} = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}}, e^{(2)} = \{e^{(2)}_1, \dots, e^{(2)}_{k_2}\}, \dots$ -
+        базисы $U_{\lambda_1}, U_{\lambda_2}, \dots$
 
-    Составим систему $e = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}}$ (*)
+        Составим систему $e = \{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}\}$
 
-    Тогда система $e$ - линейно независима
+        Тогда система $e$ - линейно независима
+    \end{MyTheorem}
 
-    $\Box$ Составим линейную комбинацию:
+    \begin{MyProof}
+        Составим линейную комбинацию:
 
-    1) $\sqsupset \quad \stackrel{x_1 \in U_{\lambda_1}}{\overgroup{\alpha_1 e^{(1)}_1 + \dots + \alpha_{k_1} e^{(1)}_{k_1}}} + \dots +
-    \stackrel{x_p \in U_{\lambda_p}}{\overgroup{\gamma_1 e^{(p)}_1 + \dots + \gamma_{k_p} e^{(p)}_{k_p}}} = 0$
+        \begin{enumerate}
+            \item Пусть $\stackrel{x_1 \in U_{\lambda_1}}{\overgroup{\alpha_1 e^{(1)}_1 + \dots + \alpha_{k_1} e^{(1)}_{k_1}}} + \dots +
+            \stackrel{x_p \in U_{\lambda_p}}{\overgroup{\gamma_1 e^{(p)}_1 + \dots + \gamma_{k_p} e^{(p)}_{k_p}}} = 0$
 
-    Тогда $\sum_{i=1}^p x_i = 0$ ($x_i$ - линейно независимы, так как $\lambda_i$ - различны) - этого не может быть, так как $\forall i \ x_i \neq 0$ (как собственный вектор)
+            Тогда $\sum_{i=1}^p x_i = 0$ ($x_i$ - линейно независимы, так как $\lambda_i$ - различны) - этого не может быть, так как $\forall i \ x_i \neq 0$ (как собственный вектор)
 
-    2) В $\forall U_{\lambda_i}$ содержится $0$-вектор. Тогда $\sum_{i=1}^n x_i = 0 \Longleftrightarrow \forall x_i = 0$
+            \item В $\forall U_{\lambda_i}$ содержится $0$-вектор. Тогда $\sum_{i=1}^n x_i = 0 \Longleftrightarrow \forall x_i = 0$
 
-    Но $x_j = \sum_{j=1}^{k_i} c_i e^{(j)}_i = 0$ ($e^{(j)}_i$ - базисные, т. е. л/нез) $\Longrightarrow \forall c_j = 0$ (комбинация должна быть тривиальна)
-
-    $\Box$
+            Но $x_j = \sum_{j=1}^{k_i} c_i e^{(j)}_i = 0$ ($e^{(j)}_i$ - базисные, то есть линейно независимы) $\Longrightarrow \forall c_j = 0$ (комбинация должна быть тривиальна)
+        \end{enumerate}
+    \end{MyProof}
 
     \Nota Таким образом, объединение базисов собственных подпространств $U_{\lambda_i}$ образует линейно независимую систему в $V^n$
 
-    Что можно сказать о размерности системы $e$ (*) ?
+    Что можно сказать о размерности системы $e = \{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}\}$?
 
-    Обозначим $S = \sum_{i=1}^p \dim U_{\lambda_i} = \sum_{i=1}^p \beta_i$, $\beta_i$ - геометрическая кратность $\lambda_i$
+    Обозначим $S = \sum_{i=1}^p \dim U_{\lambda_i} = \sum_{i=1}^p \beta_i$, где $\beta_i$ - геометрическая кратность $\lambda_i$
 
-    Очевидно, $S \leq n$
+    Очевидно, что $S \leq n$
 
-    \Th $S = n \Longleftrightarrow \exists$ базис $V^n$, составленный из собственных векторов
+    \begin{MyTheorem}
+        \Ths $S = n \Longleftrightarrow \exists$ базис $V^n$, составленный из собственных векторов
+    \end{MyTheorem}
 
-    $\Box$ Система $e = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}}$ состоит из собственных векторов
+    \begin{MyProof}
+        Система $e = \Set{e^{(1)}_1, \dots, e^{(1)}_{k_1}, \dots, e^{(p)}_1, \dots, e^{(p)}_{k_p}}$ состоит из собственных векторов
 
-    Если $S = n$, получаем $n$ собственных векторов, линейно независимых - базис $V^n$
+        Если $S = n$, получаем $n$ собственных векторов, линейно независимых - базис $V^n$
 
-    Если $\exists$ базис из $n$ лин. незав. собственных векторов, тогда $\dim e = S = n$
+        Если $\exists$ базис из $n$ лин. незав. собственных векторов, тогда $\dim e = S = n$
+    \end{MyProof}
 
-    $\Box$
-
-    \Nota Условие Th равносильно: $V^n = \sum_{i=1}^p \xor U_{\lambda_i} (\lambda_i \neq \lambda_j)$
+    \Nota Условие \Ths равносильно: $V^n = \bigoplus_{i=1}^p U_{\lambda_i} (\lambda_i \neq \lambda_j)$
 
     Действительно: $\dim V^n = \sum_{i=1}^p \dim U_{\lambda_i}$ и $\forall i, j \ U_{\lambda_i} \cap U_{\lambda_j} = 0$
 
     \Ex Если $\exists n$ различных собственных чисел $\lambda_1, \dots, \lambda_n$, то $\dim U_{\lambda_i} = 1 \forall i$
 
-    \Def Оператор $\mathcal{A}$ диагонализируемый, если существует базис $e \ | \ A_e$ - диагональна
+    \Def Оператор $\mathcal{A}$ диагонализируемый, если существует базис $e$ такой, что $A_e$ - диагональна
 
     \hypertarget{diagonalizedmatrixtheorem}{}
 
-    \Th $\mathcal{A}$ - диаг.-ем $\Longleftrightarrow \exists$ базис из собственных векторов
+    \begin{MyTheorem}
+        \Ths $\mathcal{A}$ - диагонализируем $\Longleftrightarrow$ существует базис из собственных векторов
+    \end{MyTheorem}
 
-    $\Box \Longleftarrow e = \Set{e_1, \dots, e_n}$ - базис собственных векторов
+    \begin{MyProof}
+        $\fbox{\Longleftarrow} \quad e = \Set{e_1, \dots, e_n}$ - базис собственных векторов
 
-    Собственный вектор (def): $\exists \lambda_i \ | \ \mathcal{A}e_i = \lambda_i e_i = 0 \cdot e_1 + \dots + \lambda_i e_i + \dots + 0 \cdot e_n$
+        Собственный вектор по определению: $\exists \lambda_i \ | \ \mathcal{A}e_i = \lambda_i e_i = 0 \cdot e_1 + \dots + \lambda_i e_i + \dots + 0 \cdot e_n$
 
-    $\begin{cases}
-         \mathcal{A}e_1 = \lambda_1 e_1 + \sum_{k \neq 1} 0 \cdot e_k \\
-         \mathcal{A}e_2 = \lambda_2 e_2 + \sum_{k \neq 2} 0 \cdot e_k \\
-         \vdots
-    \end{cases} \Longleftrightarrow \begin{pmatrix}
-                                        \lambda_1 & 0         & \dots  & 0         \\
-                                        0         & \lambda_2 & \dots  & 0         \\
-                                        \vdots    & \vdots    & \ddots & \vdots    \\
-                                        0         & 0         & \dots  & \lambda_n
-    \end{pmatrix}_e \cdots e_i = \mathcal{A} e_i$
+        $\begin{cases}
+            \mathcal{A}e_1 = \lambda_1 e_1 + \sum_{k \neq 1} 0 \cdot e_k \\
+            \mathcal{A}e_2 = \lambda_2 e_2 + \sum_{k \neq 2} 0 \cdot e_k \\
+            \vdots
+        \end{cases} \Longleftrightarrow \begin{pmatrix}
+                                            \lambda_1 & 0         & \dots  & 0         \\
+                                            0         & \lambda_2 & \dots  & 0         \\
+                                            \vdots    & \vdots    & \ddots & \vdots    \\
+                                            0         & 0         & \dots  & \lambda_n
+        \end{pmatrix}_e \cdots e_i = \mathcal{A} e_i$
 
-    $\Longrightarrow \exists f$ - базис, в котором $A_f$ - диагональная (по \Defs $\mathcal{A}$ - диаг.-ем)
+        \mediumvspace
 
-    $A_f = \begin{pmatrix}
-               \alpha_1 & 0        & \dots  & 0        \\
-               0        & \alpha_2 & \dots  & 0        \\
-               \vdots   & \vdots   & \ddots & \vdots   \\
-               0        & 0        & \dots  & \alpha_n
-    \end{pmatrix} \quad\quad$ Применим $\mathcal{A}$ к $f_i \in f$
+        $\fbox{\Longrightarrow} \quad \exists f$ - базис, в котором $A_f$ - диагональная (по \Defs $\mathcal{A}$ - диагонализируем)
 
-    $\mathcal{A}f_i = A_f f_i = \begin{pmatrix}
-                                    \alpha_1 & \dots  & 0        \\
-                                    \vdots   & \ddots & \vdots   \\
-                                    0        & \dots  & \alpha_n
-    \end{pmatrix} f_i = \alpha_i f_i \Longrightarrow \alpha_i$ - собственное число (по def), а $f_i$ - собственный вектор
+        $A_f = \begin{pmatrix}
+                \alpha_1 & 0        & \dots  & 0        \\
+                0        & \alpha_2 & \dots  & 0        \\
+                \vdots   & \vdots   & \ddots & \vdots   \\
+                0        & 0        & \dots  & \alpha_n
+        \end{pmatrix} \quad\quad$ Применим $\mathcal{A}$ к $f_i \in f$
 
-    $\Box$
+        $\mathcal{A}f_i = A_f f_i = \begin{pmatrix}
+                                        \alpha_1 & \dots  & 0        \\
+                                        \vdots   & \ddots & \vdots   \\
+                                        0        & \dots  & \alpha_n
+        \end{pmatrix} f_i = \alpha_i f_i \Longrightarrow \alpha_i$ - собственное число (по def), а $f_i$ - собственный вектор
+    \end{MyProof}
 
-    \Nota О связи алгебраической и геометрической кратностей ($\alpha$ - алг., $\beta$ - геом.)
+    \Nota О связи алгебраической и геометрической кратностей ($\alpha$ - алгебраическая, $\beta$ - геометрическая кратность)
 
-    1) $\alpha, \beta$ не зависят от выбора базиса
+    \begin{enumerate}
+        \item $\alpha, \beta$ не зависят от выбора базиса
 
-    $\Box \beta_i$ по определению $\dim U_{\lambda_i}$ и не связана с базисом
+        \begin{MyProof}
+            $\beta_i$ по определению $\dim U_{\lambda_i}$ и не связана с базисом
 
-    Для $\alpha$: строим вековое уравнение $|A_f - \lambda I| = 0 \Longrightarrow \lambda_i$ с кратностью $\alpha_i$, $\alpha = \sum \alpha_i$
+            Для $\alpha$: строим вековое уравнение $|A_f - \lambda I| = 0 \Longrightarrow \lambda_i$ с кратностью $\alpha_i$, $\alpha = \sum \alpha_i$
 
-    $\sqsupset A_g$ - матрица $\mathcal{A}$ в базисе $g$
+            $\sqsupset A_g$ - матрица $\mathcal{A}$ в базисе $g$
 
-    Но $A_g = T_{f\to g} A_f T_{g\to f}$ или для оператора
+            Но $A_g = T_{f\to g} A_f T_{g\to f}$ или для оператора
 
-    $A_g - \lambda I = T_{f\to g} (A_f - \lambda I) T_{g\to f} =
-    \stackrel{= A_g}{\overgroup{T_{f\to g} A_f T_{g\to f}}} - \stackrel{= \lambda I}{\overgroup{\lambda T_{f\to g} I T_{g\to f}}} =
-    A_g - \lambda I$
+            $A_g - \lambda I = T_{f\to g} (A_f - \lambda I) T_{g\to f} =
+            \stackrel{= A_g}{\overgroup{T_{f\to g} A_f T_{g\to f}}} - \stackrel{= \lambda I}{\overgroup{\lambda T_{f\to g} I T_{g\to f}}} =
+            A_g - \lambda I$
 
-    Таким образом, матрицы $A_g - \lambda I$, $A_f - \lambda I$ - подобные
+            Таким образом, матрицы $A_g - \lambda I$, $A_f - \lambda I$ - подобные
 
-    \Def Подобные матрицы - матрицы, получаемые при помощи преобразования координат
+            \Def Подобные матрицы - матрицы, получаемые при помощи преобразования координат
 
-    Тогда $\det (A_f - \lambda I) = \det (A_g - \lambda I)$ (инвариант) $\Longrightarrow$ одинаковая кратность
+            Тогда $\det (A_f - \lambda I) = \det (A_g - \lambda I)$ (инвариант) $\Longrightarrow$ одинаковая кратность
 
-    $\Box$
+        \end{MyProof}
 
-    2) Геометрическая кратность не превышает алгебраической. У диагонализируемого оператора $\alpha = \beta$
+        \item Геометрическая кратность не превышает алгебраической. У диагонализируемого оператора $\alpha = \beta$
+    \end{enumerate}
 
-    \section[p2\_8]{2.8. Самосопряженные операторы}
+    \subsection[p2\_8]{2.8. Самосопряженные операторы}
 
     \textbf{1* Сопряженные операторы}
 
-    !!! Далее будем рассматривать операторы только в евклидовом пространстве над вещественном полем
-
+    Далее будем рассматривать операторы только в евклидовом пространстве над вещественном полем.
     Пространство со скалярным произведением над комплексным полем называется унитарным
 
-    \Mem Скалярное произведение
+    \Mem Скалярное произведение $(x, y) : \Real^2 \rightarrow \Real$ - функция, со свойствами:
 
-    $(x, y) : \Real^2 \rightarrow \Real$
+    \begin{enumerate}
+        \item $(x + y, z) = (x, z) + (y, z)$
 
-    1) $(x + y, z) = (x, z) + (y, z)$
+        \item $(\lambda x, y) = \lambda (x, y)$
 
-    2) $(\lambda x, y) = \lambda (x, y)$
+        \item $(x, x) \geq 0, \quad (x, x) = 0 \Longrightarrow x = 0$
 
-    3) $(x, x) \geq 0, \quad (x, x) = 0 \Longrightarrow x = 0$
-
-    4) $(x, y) = (y, x)$ в $\Real$. Но в комплексном множестве: $(x, y) = \overline{(y, x)}$. Тогда $(x, \lambda y) = \overline{(\lambda y, x)}$
+        \item $(x, y) = (y, x)$ в $\Real$. Но в комплексном множестве: $(x, y) = \overline{(y, x)}$. Тогда $(x, \lambda y) = \overline{(\lambda y, x)}$
+    \end{enumerate}
 \end{document}

@@ -8,36 +8,34 @@
 
 
 \begin{document}
-    \Nota Особое значение имеют симметричные билинейные формы
-
-    Если рассмотреть матрицы симм. Б. Ф. как матрицу самосопряженного оператора, то можно найти базис
-    (ортонормированный базис собственных векторов), в котором матрица Б. Ф. диагонализируется
+    \Nota Особое значение имеют симметричные билинейные формы. 
+    Если рассмотреть матрицы симметричную билинейную форму как матрицу самосопряженного оператора, то можно найти базис
+    (ортонормированный базис собственных векторов), в котором матрица билинейной формы диагонализируется
 
     Этот базис называется каноническим базисом билинейной формы
 
-    \section[p3\_2]{3.2. Квадратичные формы}
+    \subsection[p3\_2]{3.2. Квадратичные формы}
 
     \hypertarget{quadraticform}{}
 
-    \Def Квадратичной формой, порожденной Б. Ф. $\mathcal{B}(u, v)$, называется форма $\mathcal{B}(u, u)$
+    \Def Квадратичной формой называется форма $\mathcal{B}(u, u)$, порожденная билинейной формой $\mathcal{B}(u, v)$
 
-    \Ex Поверхность
-
-    $u = (x, y), v = (x, y, z)$
+    \Ex Поверхность: $u = (x, y), v = (x, y, z)$
 
     $\mathcal{B}(u, u) = b_{11}u_1 u_1 + b_{12} u_1 u_2 + b_{21} u_2 u_1 + b_{22} u_2 u_2 = b_{11} x^2 + b_{12}xy + b_{21}xy + b_{22}y^2$
 
-    $\mathcal{B}(v, v) = \beta_{11} x^2 + \beta_{12}xy + \beta_{13}xz + \beta_{21} xy + \beta_{22}y^2 + \beta_{23}yz + \beta_{31} xz + \beta_{32}yz + \beta_{33}z^2$
+    \begin{tabular}{@{\hspace{-0.4em}}r@{\hspace{0.2em}}l}
+        \setlength{\tabcolsep}{0pt} $\mathcal{B}(v, v)$ & $= \beta_{11} x^2 + \beta_{12}xy + \beta_{13}xz + \beta_{21} xy + \beta_{22}y^2 + \beta_{23}yz + \beta_{31} xz + \beta_{32}yz + \beta_{33}z^2$ \\
+        & $= \beta_{11} x^2 + \beta_{22} y^2 + \beta_{33} z^2 + (\beta_{12} + \beta_{21}) xy + (\beta_{23} + \beta_{32}) yz + (\beta_{13} + \beta_{31}) xz$
+    \end{tabular}
 
-    \Mem Ранее уравнение поверхности второго порядка (без линейной группы, то есть сдвига)
+    \Mems Ранее уравнение поверхности второго порядка (без линейной группы, то есть сдвига): $a_{11}x^2 + 2a_{12}xy + a_{22}y^2 + 2a_{23}yz + 2a_{13}xz + a_{33}z^2 = c$
 
-    \[a_{11}x^2 + 2a_{12}xy + a_{22}y^2 + 2a_{23}yz + 2a_{13}xz + a_{33}z^2 = c\]
-
-    \Nota Заметим, что здесь коэфф. $a_{ij}$ соответствуют матрице симметричной Б. Ф.:
+    \Nota Заметим, что здесь коэффициент $a_{ij}$ соответствуют матрице симметричной билинейной форме:
 
     $B(v, v) = \begin{pmatrix}a_{11} & a_{12} & a_{13} \\ a_{12} & a_{22} & a_{23} \\ a_{13} & a_{23} & a_{33}\end{pmatrix}$
 
-    Если диагонализировать $B(v, v)$, то приведем уравнение поверхности к каноническому виду:
+    Если диагонализировать $B(v, v)$, то уравнение поверхности приводится к каноническому виду:
 
     $\mathcal{B}(v, v)_{\text{канон.}} = c_{11}x^2 + c_{22}y^2 + c_{33}z^2$
 
@@ -47,101 +45,108 @@
 
     \Def Положительно определенная форма
 
+    \begin{enumerate}[label*=\arabic*) ]
+        \item Оператор $\mathcal{A}$ называется положительно определенным, если $\exists \gamma > 0 \ | \ \forall x \in V \quad (\mathcal{A}x, x) \geq \gamma \|x\|^2$
+
+        \item $\mathcal{A}$ называется положительным, если
+        $\forall x \in V, \ x \neq 0 \quad (\mathcal{A}x, x) > 0$
+    \end{enumerate}
+
     \Nota Можно говорить о положительно определенном операторе $\mathcal{A}: V^n \rightarrow V^n$
 
-    1) Оператор $\mathcal{A}$ называется положительно определенным, если
+    \begin{MyTheorem}
+        \Ths Определения 1), 2) $\Longleftrightarrow \forall \lambda_i$ - собственное число $\mathcal{A}$, $\lambda_i > 0$
+    \end{MyTheorem}
 
-    $\exists \gamma > 0 \ | \ \forall x \in V \quad (\mathcal{A}x, x) \geq \gamma \|x\|^2$
+    \begin{MyProof}
+        \fbox{$\Longrightarrow$} $\lambda_i$ - собственное число, $e_i$ - соответствующий ему собственный вектор
 
-    2) $\mathcal{A}$ называется положительным, если
+        $\forall x \in V \quad x = \overset{n}{\underset{i = 1}{\sum}} c_i e_i$
 
-    $\forall x \in V, \ x \neq 0 \quad (\mathcal{A}x, x) > 0$
+        $(\mathcal{A}x, x) = \left(\overset{n}{\underset{i = 1}{\sum}} c_i \overset{\lambda_i e_i}{\overgroup{\mathcal{A}e_i}}, \overset{n}{\underset{i = 1}{\sum}} c_i e_i\right) =
+        \overset{n}{\underset{i = 1}{\sum}} \lambda_i c_i^2 \geq \overset{n}{\underset{i = 1}{\sum}}\lambda_{\min} c_i^2 =
+        \lambda_{\min} \overset{n}{\underset{i = 1}{\sum}}c_i^2 = \lambda_{\min} \|x\|^2$
 
-    \Th 1), 2) \Longleftrightarrow $\ \forall \lambda_i$ - с. число $\mathcal{A}$, $\lambda_i > 0$
+        Если $0 < \lambda_{\min} < \lambda_i, \lambda_i \neq \lambda_{\min}$, то $(\mathcal{A}x, x) > 0$
 
-    $\Box \Longrightarrow \quad \lambda_i$ - с. число, $e_i$ - соответствующий им с. вектора
+        \fbox{$\Longleftarrow$} 1) $\Longleftrightarrow \exists \gamma > 0 \ | \ (\mathcal{A}x, x) \geq \gamma \|x\|^2 \quad \forall x \in V$ в том числе $x = e_i \neq 0$
 
-    $\forall x \in V \quad x = \overset{n}{\underset{i = 1}{\Sigma}} c_i e_i$
+        $(\mathcal{A}e_i, e_i) = \lambda_i (e_i, e_i) = \lambda_i > 0 \ \forall i$
 
-    $(\mathcal{A}x, x) = (\overset{n}{\underset{i = 1}{\Sigma}} c_i \overset{\lambda_i e_i}{\overgroup{\mathcal{A}e_i}}, \overset{n}{\underset{i = 1}{\Sigma}} c_i e_i) =
-    \overset{n}{\underset{i = 1}{\Sigma}} \lambda_i c_i^2 \geq \overset{n}{\underset{i = 1}{\Sigma}}\lambda_{\min} c_i^2 =
-    \lambda_{\min} \overset{n}{\underset{i = 1}{\Sigma}}c_i^2 = \lambda_{\min} \|x\|^2$
+    \end{MyProof}
 
-    Если $0 < \lambda_{\min} < \lambda_i, \lambda_i \neq \lambda_{\min}$, то $(\mathcal{A}x, x) > 0$
-
-    \Longleftarrow \quad 1) \Longleftrightarrow $\exists \gamma > 0 \ | \ (\mathcal{A}x, x) \geq \gamma \|x\|^2 \quad \forall x \in V$ в том числе $x = e_i \neq 0$
-
-    $(\mathcal{A}e_i, e_i) = \lambda_i (e_i, e_i) = \lambda_i > 0 \ \forall i$
-
-    $\Box$
-
-    \Nota $\det A$ инвариантен при замене базиса, $\det A = \lambda_1 \cdot \dots \cdot \lambda_n > 0$. Тогда $\exists \mathcal{A}^{-1}$
+    \Notas $\det A$ инвариантен при замене базиса, $\det A = \lambda_1 \cdot \dots \cdot \lambda_n > 0$. Тогда $\exists \mathcal{A}^{-1}$
 
     \hypertarget{criterionSilvester}{}
 
-    \Th Критерий Сильвестра
+    \begin{MyTheorem}
+    \ThNs{Критерий Сильвестра}
 
     $\mathcal{A}: V^n \to V^n$ - положительно определен \Longleftrightarrow $\forall k = 1..n \ \Delta_k =
-    \begin{vmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{vmatrix} > 0$
+    \begin{vmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{vmatrix} > 0$ 
 
-    $\Box \Longrightarrow \quad \mathcal{A}$ - пол. опред.
+    Угловой минор матрицы положительно определенного оператора больше нуля
 
-    $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_n}$ собственных векторов.
-    Тогда, $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_k}$, $k \leq n$
+    \end{MyTheorem}
 
-    $A_k = \begin{pmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{pmatrix} \quad
-    \Delta_k = \det A_k \stackrel{inv}{=} \begin{vmatrix}\lambda_{1} & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{k}\end{vmatrix} > 0$
+    \begin{MyProof}
 
-    $\Longleftarrow$ ММИ
+        \fbox{$\Longrightarrow$} $\mathcal{A}$ - положительно определен, значит, $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_n}$ собственных векторов.
+        Тогда, $\mathcal{A}$ диагонализируется в базисе $\Set{e_1, \dots, e_k}$, $k \leq n$
 
-    $\forall k = 1..n, \Delta_k > 0$
+        $A_k = \begin{pmatrix}a_{11} & \dots & a_{1k} \\ \vdots & \ddots & \vdots \\ a_{k1} & \dots & a_{kk}\end{pmatrix} \quad
+        \Delta_k = \det A_k \stackrel{inv}{=} \begin{vmatrix}\lambda_{1} & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{k}\end{vmatrix} > 0$
 
-    1) Для $k = 1 \quad \mathcal{A}$ - пол. опр.
+        \fbox{$\Longleftarrow$} Метод математической индукции
 
-    2) $\mathcal{A}_{n-1}$ - пол. опр. \Longrightarrow $\mathcal{A}_n$ - пол. опр.
+        $\forall k = 1..n, \Delta_k > 0$, тогда:
 
-    1) $\mathcal{A}x = a_{11}x \quad |a_{11}| > 0 \Longrightarrow \mathcal{A}$ - пол. опр.
+        \begin{enumerate}
+            \item База: для $k = 1 \quad \mathcal{A}$ - положительно определен
 
-    2) $\mathcal{A}$ диагон. \quad $\mathcal{A}_e x =
-    \begin{vmatrix}\lambda_{1} & \dots & 0 \\ & \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{n}\end{vmatrix}x =
-    \overset{n - 1}{\underset{i = 1}{\Sigma}}\lambda_i c_i e_i + \lambda_n c_n e_n \quad$ Для $i \leq n - 1$ все $\lambda_i > 0$
+            $\mathcal{A}x = a_{11}x \quad |a_{11}| > 0 \Longrightarrow \mathcal{A}$ - положительно определен
 
-    $(\mathcal{A}x, x) = (\overset{n - 1}{\underset{i = 1}{\Sigma}} \lambda_i c_i e_i + \lambda_n c_n e_n,
-    \overset{n - 1}{\underset{i = 1}{\Sigma}} c_i e_i) = \overset{> 0}{\overgroup{\overset{n - 1}{\underset{i = 1}{\Sigma}} \lambda_i c_i^2}} + \lambda_n c_n^2$ - знак зависит от $\lambda_n$
+            \item Шаг индукции: $\mathcal{A}_{n-1}$ - положительно определен \Longrightarrow $\mathcal{A}_n$ - положительно определен
 
-    $\Delta_n = \underset{> 0}{\undergroup{\lambda_1 \cdot \dots \cdot \lambda_{n-1}}} \cdot \lambda_n
-    \Longrightarrow \lambda_n > 0 \Longrightarrow (\mathcal{A}x, x) > 0$
+            $\mathcal{A}$ диагонализируется в базисе ${e_i}$, в этом базисе:
+            
+            $\mathcal{A}_e x =
+            \begin{vmatrix}\lambda_{1} & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & \lambda_{n}\end{vmatrix}x =
+            \overset{n - 1}{\underset{i = 1}{\sum}}\lambda_i c_i e_i + \lambda_n c_n e_n \quad$ Для $i \leq n - 1$ все $\lambda_i > 0$
 
-    $\Box$
+            $(\mathcal{A}x, x) = \left(\overset{n - 1}{\underset{i = 1}{\sum}} \lambda_i c_i e_i + \lambda_n c_n e_n,
+            \overset{n - 1}{\underset{i = 1}{\sum}} c_i e_i\right) = \overset{> 0}{\overgroup{\overset{n - 1}{\underset{i = 1}{\sum}} \lambda_i c_i^2}} + \lambda_n c_n^2$ - знак зависит от $\lambda_n$
+        \end{enumerate}
+
+        $\Delta_n = \underset{> 0}{\undergroup{\lambda_1 \cdot \dots \cdot \lambda_{n-1}}} \cdot \lambda_n
+        \Longrightarrow \lambda_n > 0 \Longrightarrow (\mathcal{A}x, x) > 0$
+
+    \end{MyProof}
 
     \Ex Поверхность: $x^2 + y^2 + z^2 = 1$
 
     $\mathcal{B}(u, u) = \begin{pmatrix}1 & \dots & 0 \\ \vdots & \ddots & \vdots \\ 0 & \dots & 1\end{pmatrix},
     \quad \Delta_k = 1 > 0 \ \forall k$
 
-    Положительная определенность - наличие экстремума
+    Положительная определенность - наличие экстремума\footnote{Точнее положительная определенность матрицы Гессе $\left(\frac{\partial^2 f}{\partial x_i \partial x_j}\right)_{i,j}$ в критической точке, в которой $\triangledown f = 0$, является достаточным условием для наличия в этой точке строгого локального минимума функции}
 
     \Def Оператор $\mathcal{A}$ называется отрицательно определенным, если $-\mathcal{A}$ - положительно определенный
 
-    \Nota Для $-\mathcal{A}$ работает критерий Сильвестра: $\Delta_k(-\mathcal{A}) =
+    \Notas Для $-\mathcal{A}$ работает критерий Сильвестра: $\Delta_k(-\mathcal{A}) =
     \begin{vmatrix}-a_{11} & \dots & -a_{1n} \\ \vdots & \ddots & \vdots \\ -a_{n1} & \dots & -a_{nn}\end{vmatrix} = (-1)^k \Delta_k (\mathcal{A}) > 0$
 
-    Таким образом, $\mathcal{A}$ - отриц. опред. $\Longleftrightarrow \Delta_k$ чередует знаки
+    Таким образом, $\mathcal{A}$ - отрицательно определен $\Longleftrightarrow \Delta_k$ чередует знаки
 
-    \Nota Аналогично операторы определяются положительно или отрицательно билинейные формы
+    \Nota Аналогично операторам определяются положительно или отрицательно билинейные формы
 
-    $\mathcal{B}(u, v) = \overset{n}{\underset{j = 1}{\Sigma}}\overset{n}{\underset{i = 1}{\Sigma}} b_{ij} u_i v_j \stackrel{?}{=} \dots$ через оператор
+    $\mathcal{B}(u, v) = \overset{n}{\underset{j = 1}{\sum}}\overset{n}{\underset{i = 1}{\sum}} b_{ij} u_i v_j = \sum_{j = 1}^n v_j \sum_{i = 1}^n b_{ij} u_i = (\mathcal{A} u, v)$
 
-    Так как $\mathcal{B}(u, v)$ и  $\mathcal{B}(u, u)$ - числа, то $\mathcal{B}$ - называется пол. опред., если $\mathcal{B}(u, v) > 0$
+    Так как $\mathcal{B}(u, v)$ и  $\mathcal{B}(u, u)$ - числа, то $\mathcal{B}$ называется положительно определенным, если $\mathcal{B}(u, v) > 0$
 
-    \Nota После приведения $\mathcal{B}(u, v)$ к каноническому виду, получаем
+    \Nota После приведения $\mathcal{B}(u, v)$ к каноническому виду, получаем $\mathcal{B}(u, u)_{\text{канон.}} = \lambda_1 x_1^2 + \dots + \lambda_n x_n^2$
 
-    $\mathcal{B}(u, u)_{\text{канон.}} = \lambda_1 x_1^2 + \dots + \lambda_n x_n^2$
-
-    В общем случае $\lambda_i$ любого знака
-
-    Но можно доказать, что количества $\lambda_i > 0, \lambda_j < 0, \lambda_k = 0$ постоянны по отношению к способу приведения
-    к каноническому виду (т. н. закон инерции квадратичной формы)
+    В общем случае $\lambda_i$ любого знака, но можно доказать, что количества $\lambda_i > 0, \lambda_j < 0, \lambda_k = 0$ постоянны по отношению к способу приведения
+    к каноническому виду (так называемый закон инерции квадратичной формы)
 
 \end{document}
 

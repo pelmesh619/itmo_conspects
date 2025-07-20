@@ -10,180 +10,193 @@
 \begin{document}
     \Mem ЛДУ$_2$
 
-    1) Решим $y^{\prime\prime} + py^\prime + qy = 0$ (ХрУ \Cat: $\lambda^2 + p \lambda + q = 0$)
+    1) Решим $y^{\prime\prime} + py^\prime + qy = 0$ (ХрУ: $\lambda^2 + p \lambda + q = 0$)
 
     ФСР для всех случаев:
 
-    1* $\lambda_1 \neq \lambda_2 \in \Real \to \Set{e^{\lambda_1 x}, e^{\lambda_2 x}}$
+    \begin{enumerate}
+        \item $\lambda_1 \neq \lambda_2 \in \Real \to \Set{e^{\lambda_1 x}, e^{\lambda_2 x}}$
 
-    2* $\lambda_1 = \lambda_2 = \lambda \in \Real \to \Set{e^{\lambda x}, xe^{\lambda x}}$
+        \item $\lambda_1 = \lambda_2 = \lambda \in \Real \to \Set{e^{\lambda x}, xe^{\lambda x}}$
 
-    3* $\lambda_{1,2} = \alpha \pm i \beta \to \Set{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x}$
+        \item $\lambda_{1,2} = \alpha \pm i \beta \to \Set{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x}$
+    \end{enumerate}
 
-    $\overline{y} = l_{\Set{\text{ФСР}}}$
+    $\overline{y} = l_{\{\text{ФСР}\}}$
 
     2) Изначально $y^{\prime\prime} + py^\prime + qy = f(x)$
 
-    Доказали: $y(x) = \overline{y} + y^*$, где $\overline{y} = \sum_{i=1}^n C_i y_i$ - вектора из ФСР, а $y^*$ - частное решение (какое-либо) ЛНДУ
+    Доказали: $y(x) = \overline{y} + y^*$, где $\overline{y} = \sum_{i=1}^n C_i y_i$ - вектора из ФСР, а $y^*$ -- частное решение (какое-либо) ЛНДУ
 
     \Nota Рассмотрим два метода поиска $y^*$ для ЛДУ$_2$
 
-    1* Метод неопределенных коэффициентов для случая специальной правой части
+    \begin{enumerate}
+        \item Метод неопределенных коэффициентов для случая специальной правой части
 
-    2* Метод (Лагранжа) вариации произвольных постоянных (универсальный)
+        \item Метод (Лагранжа) вариации произвольных постоянных (универсальный)
+    \end{enumerate}
 
-    \vspace{10mm}
+    \mediumvspace
 
-    1* \textbf{СПЧ}
+    \hypertarget{specialrightpart}{}
+
+    1. \textbf{Специальная правая часть}
 
     \Ex $y^{\prime\prime} - 3y^\prime + 3y = 2e^{3x} \quad (\heartsuit)$
 
-    Наводящие соображения: Заметим, что $y = e^{ax}$ не меняет свой вид при дифференцировании,
-    так же как и $y = P_n(x)$, $y = A\cos bx + B\cos bx$
+    Наводящие соображения: заметим, что $y = e^{ax}$ не меняет свой вид при дифференцировании,
+    так же как и $y = P_n(x)$, $y = A\cos bx + B\sin bx$
 
-    Имеет смысл искать частные решения $(\heartsuit)$ в виде $y = Ae^{3x}$
+    Имеет смысл искать частные решения для $(\heartsuit)$ в виде $y = Ae^{3x}$
 
     $(Ae^3x)^{\prime\prime} - 3(Ae^{3x})^\prime + 2Ae^{3x} = 2e^{3x}$
 
     $9A - 9A + 2A = 2 \Longrightarrow A = 1$, то есть $y^* = e^{3x}$
 
-    \Nota Если правая часть содержит произведения $e^{ax}, P_n(x), \cos bx, \sin bx$, то $y^*$ ищем в виде ПЧ
+    \Nota Если правая часть ЛНДУ содержит произведения $e^{ax}, P_n(x), \cos bx, \sin bx$, то $y^*$ ищем в виде специальной правой части
 
-    \Def СПЧ: $f(x) = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$ (обозначим $k = a \pm ib$)
+    \Def Специальная правая часть (СПЧ) -- функция $f(x) = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$ (обозначим $k = a \pm ib$)
 
     \underline{Частные случаи}:
 
-    1) $f(x) = P_n(x) e^{ax} \quad (b = 0)$
+    \begin{enumerate}
+        \item $f(x) = P_n(x) e^{ax} \quad (b = 0)$
 
-    2) $f(x) = A\cos b x + B \sin bx$ - гармоника $\quad (a = 0, n = m = 0)$
+        \item $f(x) = A\cos b x + B \sin bx$ -- гармоника $\quad (a = 0, n = m = 0)$
 
-    3) $f(x) = P_n(x) \quad (a = b = 0)$
+        \item $f(x) = P_n(x) \quad (a = b = 0)$
+    \end{enumerate}
 
     Метод: Решение ищется в виде $y^* = e^{ax} (\overline{P}_l \cos bx + \overline{Q}_l (x) \sin bx)$,
-    где $a, b$ - коэфф. СПЧ, $l = \max(m, n), \overline{P}_l, \overline{Q}_l$ - многочлены в неопр. коэфф
+    где $a, b$ -- коэффициенты СПЧ, $l = \max(m, n), \overline{P}_l, \overline{Q}_l$ -- многочлены в неопределенных коэффициентах
 
-    \ExN{1} $\heartsuit \quad y^{\prime\prime} - 3y^\prime + 3y = 2e^{3x} = e^{3x} (2 \cos 0x) \quad (k = 3 \pm 0 = 3)$
+    \ExN{1} $(\heartsuit)$: $y^{\prime\prime} - 3y^\prime + 3y = 2e^{3x} = e^{3x} (2 \cos 0x) \quad (k = 3 \pm 0 = 3)$
 
     $y^* = e^{3x} (\overline{P}_{l = 0} (x) \cos 0x) = e^{3x} \cdot A$
 
-    \ExN{2} Однако!
+    \ExN{2} Однако, для этого уравнения: $y^{\prime\prime} - 3y^\prime + 2y = e^{2x}$
 
-    $y^{\prime\prime} - 3y^\prime + 2y = e^{2x}$ (!)
-
-    СПЧ: $e^{2x} = e^{2x} (1 \cos 0x + B \sin 0x) \quad k = a \pm ib$
+    СПЧ: $e^{2x} = e^{2x} (1 \cos 0x + B \sin 0x) \quad k = a \pm ib = 2$
 
     \begin{rcases*}
     $y^* = Ae^{2x}$ \\
-
     $y^{*\prime} = 2Ae^{2x}$ \\
-
     $y^{*\prime\prime} = 4Ae^{2x}$ \\
-    \end{rcases*} ДУ $\longrightarrow \begin{matrix}4Ae^{2x} - 6Ae^{2x} + 2Ae^{2x} = e^{2x} \\ 4A - 6A + 2A = 1 \\ 0A = 1\end{matrix}$ - {\Huge 🤯}
+    \end{rcases*} ДУ $\longrightarrow \begin{matrix}4Ae^{2x} - 6Ae^{2x} + 2Ae^{2x} = e^{2x} \\ 4A - 6A + 2A = 1 \\ 0A = 1\end{matrix}$ -- нельзя найти $A$ {\Huge 🤯}
 
-    Нельзя найти $A$
+    Решим ХрУ: $\lambda_2 - 3\lambda + 2 = 0 \Longrightarrow \lambda_1 = 1, \lambda_2 = 2$
 
-    Решим ХрУ 😼: $\lambda_2 - 3\lambda + 2 = 0 \Longrightarrow \lambda_1 = 1, \lambda_2 = 2$
+    В этом случае число $k$, соответствующее СПЧ, совпадает с корнем ХрУ
 
-    Внимание! Число $k$, соответствующее СПЧ, равно ХрУ \Cat
-
-    \vspace{5mm}
+    \smallvspace
 
     Исследуем ситуацию на примере СПЧ $f(x) = P_n(x) e^{ax}$
 
-    \underline{Проблема} $y^{\prime\prime} + py^\prime + qy = P_n(x)e^{ax}$
+    Пусть дано ДУ: $y^{\prime\prime} + py^\prime + qy = P_n(x)e^{ax}$
 
-    ХрУ \Cat: $\lambda^2 + p\lambda + q = 0 \Longrightarrow \lambda_{1,2}$ - корни
+    Для него ХрУ: $\lambda^2 + p\lambda + q = 0 \Longrightarrow \lambda_{1,2}$ - корни
 
-    \vspace{5mm}
     Ищем $y^* = \overline{P}_n(x) e^{ax}$
 
     $y^{*\prime} = \overline{P}_{n - 1} (x) e^{ax} + a\overline{P}_n(x) e^{ax}$
 
-    $y^{*\prime} = \overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax}$
+    $y^{*\prime\prime} = \overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax}$
 
-    \vspace{5mm}
     Получаем:
 
-    $\overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax} + (\overline{P}_{n - 1} (x) e^{ax} + a\overline{P}_n(x) e^{ax})p + \overline{P}_n(x) e^{ax} q $
+    $\overline{P}_{n - 2} (x) e^{ax} + 2a\overline{P}_{n - 1} (x) e^{ax} + a^2\overline{P}_n(x) e^{ax} + (\overline{P}_{n - 1} (x) e^{ax} + a\overline{P}_n(x) e^{ax})p + \overline{P}_n(x) e^{ax} q = P_n(x) e^{ax}$
 
     $\overline{P}_{n - 2} (x) e^{ax} + (2a + p)\overline{P}_{n - 1} (x) e^{ax} + (a^2 + pa + q)\overline{P}_n(x) e^{ax} = P_n(x) e^{ax}$
 
     $\overline{P}_{n - 2} (x) + (2a + p)\overline{P}_{n - 1} (x) + (a^2 + pa + q)\overline{P}_n(x) = P_n(x)$
 
-    Заметим, что если $a$ - корень ХрУ \Cat, то есть $a \pm ib = a = k = \lambda_i$ (пусть 1-ой кратности), то $a^2 + pa + q = 0$ и степень
+    \smallvspace
+
+    Заметим, что если $a$ -- корень ХрУ, то есть $a \pm ib = a = k = \lambda_i$ (пусть 1-ой кратности), то $a^2 + pa + q = 0$ и степень
     левой части понижается до $n - 1$
 
-    Если $a$ - корень ХрУ \Cat 2-ой кратности, то есть $a^2 + pa + q = \left(a + \frac{p}{2}\right)^2 = 0 \Longleftrightarrow 2a + p = 0$, то степень левой части понижается на $2$
+    Если $a$ -- корень ХрУ 2-ой кратности, то есть $a^2 + pa + q = \left(a + \frac{p}{2}\right)^2 = 0 \Longleftrightarrow 2a + p = 0$, то степень левой части понижается на $2$
 
-    Чтобы сделать уравнение для $\overline{P}_n$ решаемым, домножим $y^*$ на $x^r$, где $r$ - число совпадений $k = a \pm ib$ с корнем ХрУ $\lambda_i$ (или кратность $\lambda_i$, с которым совпадает $k$)
+    Чтобы сделать уравнение для $\overline{P}_n$ решаемым, домножим $y^*$ на $x^r$, где $r$ -- число совпадений $k = a \pm ib$ с корнем ХрУ $\lambda_i$ (другими словами, кратность $\lambda_i$, с которым совпадает $k$)
 
-    \vspace{5mm}
-    Метод (окончательно): $y^{\prime\prime} + py^\prime + qy = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx), \quad \lambda_{1,2}$ - корни ХрУ \Cat, $k = a \pm ib$
+    \mediumvspace
 
-    $y^* = x^r e^{ax} (\overline{P}_l (x)\cos bx + \overline{Q}_l (x) \sin bx), \quad l = \max(m, n)$
+    Окончательно, метод выглядит так: для уравнения $y^{\prime\prime} + py^\prime + qy = e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$, где $\lambda_{1,2}$ -- корни ХрУ, $k = a \pm ib$
 
-    \vspace{5mm}
-    Обобщение для ЛДУ$_n$
+    Частное решение выглядит так: \fbox{$y^* = x^r e^{ax} (\overline{P}_l (x)\cos bx + \overline{Q}_l (x) \sin bx$}, где $l = \max(m, n)$, $r$ - кратность корня ХрУ $\lambda_i = k$
 
-    $y^{(n)} + p_1 y^{(n - 1)} + \dots + p_n y = f(x)$
+    \smallvspace
 
-    ХрУ \Cat: $\lambda^n + p_1 \lambda^{n - 1} + \dots + p_n = 0$
+    Обобщим для ЛДУ$_n$: $y^{(n)} + p_1 y^{(n - 1)} + \dots + p_n y = f(x)$
 
-    \vspace{5mm}
-    \underline{Правило} построения ФСР для $\overline{y}$ - общее решение однородного ДУ
+    ХрУ выглядит так: $\lambda^n + p_1 \lambda^{n - 1} + \dots + p_n = 0$
 
-    1) Всякому $\lambda_i$ - одиночному $\Real$-корню ХрУ сопоставляем $y_i = e^{\lambda_i x}$
+    \mediumvspace
 
-    2) \Real-корню $\lambda$ кратности $s$ сопоставляем набор $\Set{y_1, y_2, \dots, y_s} = \Set{e^{\lambda x}, xe^{\lambda x}, \dots, x^{s - 1} e^{\lambda x}}$
+    \hypertarget{fssforlde2}
 
-    3) Всякой одиночной паре $\lambda_{j_1,j_2} = \alpha_j \pm i\beta_j$ соотвветствует пара $\Set{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin\beta x}$
+    \underline{Правило} построения ФСР для $\overline{y}$, общего решения однородного ДУ:
 
-    4) $\mathbb{C}$-паре $\lambda = \alpha \pm i\beta$ кратности $t$ соответствует набор $\{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x, x e^{\alpha x} \cos \beta x, \dots, x^{t - 1}e^{\alpha x} \cos\beta x, x^{t - 1}e^{\alpha x} \sin\beta x\}$
+    \begin{enumerate}
+        \item Всякому $\lambda_i$ -- одиночному $\Real$-корню ХрУ сопоставляем $y_i = e^{\lambda_i x}$
 
-    \Nota количество векторов $y_i$ в ФСР равно порядку $n$ ДУ
+        \item $\Real$-корню $\lambda$ кратности $s$ сопоставляем набор $\Set{y_1, y_2, \dots, y_s} = \Set{e^{\lambda x}, xe^{\lambda x}, \dots, x^{s - 1} e^{\lambda x}}$
 
-    \underline{СПЧ} $y^* = x^r e^{ax} (\dots)$, где $r$ - кратность $\Real$-корня или $\mathbb{C}$-пары, с которыми совпадает $k = a \pm ib$
+        \item Всякой одиночной паре $\lambda_{j_1,j_2} = \alpha_j \pm i\beta_j$ соответствует пара $\{e^{\alpha x} \cos\beta x, e^{\alpha x} \sin\beta x\}$
+
+        \item Комплексной паре $\lambda = \alpha \pm i\beta$ кратности $t$ соответствует набор 
+        
+        $\{e^{\alpha x} \cos \beta x, e^{\alpha x} \sin \beta x, x e^{\alpha x} \cos \beta x, \dots, x^{t - 1}e^{\alpha x} \cos\beta x, x^{t - 1}e^{\alpha x} \sin\beta x\}$
+    \end{enumerate}
+
+    \Nota Количество векторов $y_i$ в ФСР равно порядку $n$ дифференциального уравнения
+
+    Специальная правая часть ищется в виде $y^* = x^r e^{ax} (P_n(x)\cos bx + Q_m (x)\sin bx)$, где $r$ - кратность $\Real$-корня или $\mathbb{C}$-пары, с которыми совпадает $k = a \pm ib$
 
     \Ex Вернемся к $y^{\prime\prime} - 3y^\prime + 2y = e^{2x}$
 
     $\begin{rcases*}
     y^* = Ax^1 e^{2x} \\
-
     y^{*\prime} = Ae^{2x} 2Axe^{2x} \\
-
     y^{*\prime\prime} = 2Ae^{2x} + 2Ae^{2x} + 4Axe^{2x}
     \end{rcases*} \to (4 - 6 + 2) Axe^{2x} + (4 - 3) Ae^{2x} = e^{2x} \quad A = 1$
 
     $y(x) = C_1 e^{2x} + C_2 e^{2x} + xe^{2x}$
 
-    \vspace{10mm}
+    \mediumvspace
 
-    2* \textbf{Лагранжа}
+    \hypertarget{methodLagrangesecondorder}{}
 
-    \Mem ЛДУ$_1$: $y^\prime + py = f(x)$
+    \item \textbf{Лагранжа}
 
-    1) ЛОДУ - $y^\prime + py = 0 \to \overline{y} = Cy_0$ - ФСР
+    \Mems Решение ЛДУ$_1$: $y^\prime + py = f(x)$
 
-    2) ЛНДУ - $y(x) = C(x)y_0 \longrightarrow C^\prime(x) y_0 = f(x) \to C(x)$
+    \begin{enumerate}[label*=\arabic*) ]
+        \item Решаем ЛОДУ $y^\prime + py = 0$, получаем ФСР $\overline{y} = Cy_0$
 
-    \Nota Введем аналогичный метод для ЛДУ$_2$
+        \item Решаем ЛНДУ, ищем решения в виде $y(x) = C(x)y_0$, получаем $C^\prime(x) y_0 = f(x) \to C(x)$
+    \end{enumerate}
 
-    1 этап) $y^{\prime\prime} + py^\prime + qy = 0$ - ЛОДУ, $\quad \lambda_{1, 2}$ - корни, соответствующие ФСР $\Set{y_1, y_2}$
+    \Nota Введем аналогичный метод для ЛДУ$_2$:
 
-    $\overline{y}(x) = C_1 y_1 + C_2 y_2$
+    \begin{enumerate}[label*=\arabic* этап) ]
+        \item $y^{\prime\prime} + py^\prime + qy = 0$ -- ЛОДУ, $\lambda_{1, 2}$ -- корни, соответствующие ФСР $\{y_1, y_2\}$
 
-    2 этап) Варьируем $C_1$ и $C_2$, но теперь нужны два условия для их определения. Одним является ДУ
+        Получаем общее решение $\overline{y}(x) = C_1 y_1 + C_2 y_2$
+
+        \item Варьируем $C_1$ и $C_2$, но теперь нужны два условия для их определения. Одним из них является само ДУ
+    \end{enumerate}
 
     \Ex $y^{\prime\prime} - 3y^\prime + 2y = 2e^{3x}$
 
     $\overline{y} = C_1 e^x + C_2 e^{2x}$
 
-    $y(x) = C_1(x)e^x + C_2(X)e^{2x} = C_1 e^x + C_2 e^{2x} + y^*$
+    $y(x) = C_1 e^x + C_2 e^{2x} + y^*$
 
     $(g(x) + C_1)e^x + (h(x) + C_2)e^{2x} = C_1 e^x + C_2 e^{2x} + g(x)e^x + h(x)e^{2x}$
 
     Подберем $g, h$: $\underset{g}{\undergroup{\frac{e^{2x}}{2}}}e^x + \underset{h}{\undergroup{\frac{e^x}{2}}}e^{2x} = e^{3x}$ или
-    $\underset{g}{\undergroup{-e^{2x}}} e^x + \underset{g}{\undergroup{2e^x}} e^{2x} = e^{3x}$
+    $\underset{g}{\undergroup{-e^{2x}}} e^x + \underset{h}{\undergroup{2e^x}} e^{2x} = e^{3x}$
 
     Заметим, что $C_1^\prime(x)$ во втором случае $g^\prime = -2e^{2x}$, а $C_2^\prime = 2e^x$
 
@@ -191,29 +204,29 @@
 
     \Nota Подставим $y(x) = C_1 (x) y_1 + C_2 (x) y_2$ в ДУ
 
-    \underline{Метод} $y^\prime(x) = C^\prime_1(x) y_1 + C_1(x)y^\prime_1 + C^\prime_2(x) y_2 + C_2(x)y^\prime_2$
+    Получаем производную $y^\prime(x) = C^\prime_1(x) y_1 + C_1(x)y^\prime_1 + C^\prime_2(x) y_2 + C_2(x)y^\prime_2$
 
     Требуем $C^\prime_1 y_1 + C_2^\prime y_2 = 0$
 
-    $y^{\prime\prime}(x) = C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime C_2 (x) y_2^{\prime\prime}$
+    Тогда вторая производная: $y^{\prime\prime}(x) = C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime + C_2 (x) y_2^{\prime\prime}$
 
-    $C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime C_2 (x) y_2^{\prime\prime} + pC_1(x)y^\prime_1 + pC_2(x)y^\prime_2 + qC_1(x)y_1 + qC_2(x)y_2 = f(x)$
+    $C_1^\prime (x) y_1^\prime + C_1 (x) y_1^{\prime\prime} + C_2^\prime (x) y_2^\prime + C_2 (x) y_2^{\prime\prime} + pC_1(x)y^\prime_1 + pC_2(x)y^\prime_2 + qC_1(x)y_1 + qC_2(x)y_2 = f(x)$
 
     $\underset{=\ 0}{C_1(x)Ly_1} + \underset{=\ 0}{C_2(x)Ly_2} + C_1^\prime(x)y_1^\prime + C_2^\prime(x)y_2^\prime = f(x)$
 
-    \underline{Итак}, Система для определения $C_1(x), C_2(x)$:
+    \underline{Итак}, система для определения $C_1(x), C_2(x)$:
     \begin{cases}
         C^\prime_1(x)y_1 + C^\prime_2(x)y_2 = 0 \\
         C_1^\prime(x)y_1^\prime + C_2^\prime(x)y_2^\prime = f(x)
     \end{cases}
 
-    $\underset{ = W}{\undergroup{\begin{pmatrix}y_1 & y_2 \\ y^\prime_1 & y^\prime_2\end{pmatrix}}}\begin{pmatrix}C^\prime_1(x) \\ C^\prime_2(x)\end{pmatrix} = \begin{pmatrix}0 \\ f(x)\end{pmatrix} \stackrel{\text{Крамер}}{\longrightarrow} \begin{matrix}C_1^\prime(x) = \frac{W_1}{W} \\ C_2^\prime(x) = \frac{W_2}{W}\end{matrix}$
+    $\underset{ = W}{\undergroup{\begin{pmatrix}y_1 & y_2 \\ y^\prime_1 & y^\prime_2\end{pmatrix}}}\begin{pmatrix}C^\prime_1(x) \\ C^\prime_2(x)\end{pmatrix} = \begin{pmatrix}0 \\ f(x)\end{pmatrix} \stackrel{\text{по Крамеру}}{\longrightarrow} \begin{matrix}C_1^\prime(x) = \frac{W_1}{W} \\ C_2^\prime(x) = \frac{W_2}{W}\end{matrix}$
 
     \Nota Обобщив метод на $n$-ый порядок систему, получим
 
     $\begin{pmatrix}y_1 & \dots & y_n \\ \vdots & \ddots & \vdots \\ y^{(n - 2)}_1 & \dots & y^{(n - 2)}_n \\ y^{(n - 1)}_1 & \dots & y^{(n - 1)}_n\end{pmatrix}\begin{pmatrix}C^\prime_1(x) \\ \vdots \\ C^\prime_{n - 1}(x) \\ C^\prime_n(x)\end{pmatrix} = \begin{pmatrix}0 \\ \vdots \\ 0 \\ f(x)\end{pmatrix}$
 
-    ? Доказать, что $\overline{y} + y^*$ - общее решение ЛНДУ
+    \Lab Доказать, что $\overline{y} + y^*$ - общее решение ЛНДУ
 
 \end{document}
 
