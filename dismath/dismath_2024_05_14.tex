@@ -36,7 +36,8 @@
 
         Далее исключаем эти варианты из количества всех вариантов, а значит подходящих вариантов всего $78 - 75 = 3$
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Принцип включения/исключения} (Inclusion/Exclusion Principle (PIE))
 
         \begin{itemize}
@@ -49,7 +50,8 @@
 
         $N(\emptyset) = X \quad |N(\emptyset)| = |X| = n$
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Теорема ПВ/И} (Theorem PIE)
 
         $|X \setminus (X_1 \union X_2 \union \dots \union X_m)| = \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)|$ - количество элементов множества $X$, не имеющих никакое из свойств
@@ -68,12 +70,14 @@
 
         Поэтому $x$ дает в сумму $\sum_{S \subseteq T} (-1)^{|S|} = \sum_{i = 0}^k \Comb{k}{i} (-1)^i = 0$
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Следствие}
 
         $|\bigunion_{i \in [m]} X_i| = |X| - \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m], S \neq \emptyset} (-1)^{|S| - 1} |N(S)|$
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Приложения}:
 
         * Определяете \enquote{плохие} свойства $P_1, \dots, P_m$
@@ -82,7 +86,8 @@
 
         * Применяете ПВ/И
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Количество сюръекций (правототальных функций)}
 
         * $X = \Set{\text{функция } f : [k] \to [n]}$
@@ -92,8 +97,8 @@
         * $|\Set{\text{сюръекции } f : [k] \to [n]}| = |X \setminus (X_1 \union \dots \union X_m)| \stackrel{\text{PIE}}{=}
         \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m]} (-1)^{|S|} (n - |S|)^k =
         \sum^k_{i = 0} (-1)^{i} \Comb{k}{i} (k - i)^n$
+        \mediumvspace
 
-        \vspace{5mm}
         \item \textbf{Количество биекций}
 
         $n! = \sum_{i=0}^n (-1)^i \Comb{n}{i} (n - i)^n$
@@ -104,8 +109,8 @@
 
         $\sum^k_{i = 0} (-1)^{i} \Comb{k}{i} (k - i)^n = n! S^{II}_n (k)$
 
-        \vspace{5mm}
         \item \textbf{Беспорядки} (Derangements) - перестановка без фиксированных точек
+        \mediumvspace
 
         Если $f(i) = i$, то $i$ - фиксированная точка
 
