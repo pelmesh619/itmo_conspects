@@ -56,21 +56,23 @@
 
         \item \textbf{Теорема ПВ/И} (Theorem PIE)
 
-        $|X \setminus (X_1 \union X_2 \union \dots \union X_m)| = \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)|$ -- количество элементов множества $X$, не имеющих никакое из свойств
+        \begin{MyTheorem}
+            $|X \setminus (X_1 \union X_2 \union \dots \union X_m)| = \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)|$ -- количество элементов множества $X$, не имеющих никакое из свойств
+        \end{MyTheorem}
 
-        Доказательство:
+        \begin{MyProof}
+            Пусть $x \in X$
 
-        Пусть $x \in X$
+            Если $x$ не имеет свойств $P_1,\dots,P_m$, то $x \in N(\emptyset)$ и $x \notin N(S) \ \forall S \neq \emptyset$
 
-        Если $x$ не имеет свойств $P_1,\dots,P_m$, то $x \in N(\emptyset)$ и $x \notin N(S) \ \forall S \neq \emptyset$
+            Поэтому $x$ дает в общую сумму $1$
 
-        Поэтому $x$ дает в общую сумму $1$
+            Иначе, если $x$ имеет $k \geq 1$ свойств $T \in \Comb{[m]}{k}$,
 
-        Иначе, если $x$ имеет $k \geq 1$ свойств $T \in \Comb{[m]}{k}$,
+            то $x \in N(S)$ тогда и только тогда, когда $S \subseteq T$.
 
-        то $x \in N(S)$ тогда и только тогда, когда $S \subseteq T$.
-
-        Поэтому $x$ дает в сумму $\sum_{S \subseteq T} (-1)^{|S|} = \sum_{i = 0}^k \Comb{k}{i} (-1)^i = 0$
+            Поэтому $x$ дает в сумму $\sum_{S \subseteq T} (-1)^{|S|} = \sum_{i = 0}^k \Comb{k}{i} (-1)^i = 0$
+        \end{MyProof}
 
         \mediumvspace
 
