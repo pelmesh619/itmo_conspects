@@ -16,35 +16,20 @@
 
     Доказательство:
 
-    $\Box$
+    \begin{MyProof}
+        $(x_1 + \dots + x_r)^n = \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1 =
+        \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_1^{k_1} \cdot \dots \cdot x_r^{k_r}$, где $k_t$ -- количество $x$ с индексом $t$ в одночлене ($k_t = |\Set{j \in [n] | i_j = t}|$)
 
-    $(x_1 + \dots + x_r)^n = \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1 =
-    \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_1^{k_1} \cdot \dots \cdot x_r^{k_r}$, где $k_t$ - количество $x$ с индексом $t$ в одночлене ($k_t = |\Set{j \in [n] | i_j = t}|$)
+        Получается мультиномиальный коэффициент $\Comb{n}{k_1, \dots, k_r}$
+        будет равен количество способов поставить $k_1$ единиц в индексы в $x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1$, $k_2$ двоек в индексы и так далее
 
-    Получается мультиномиальный коэффицциент $\begin{pmatrix}
-                                                  n \\ k_1, \dots, k_r
-    \end{pmatrix}$
-    будет равен количество способов поставить $k_1$ единиц в индексы в $x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1$, $k_2$ двоек в индексы и так далее
+        У нас есть $\Comb{n}{k_1}$ способов поставить единицу в индексы в одночлен,
+        $\Comb{n - k_1}{k_2}$ способов поставить двойку и т. д., получаем:
 
-    У нас есть $\begin{pmatrix}
-                    n \\ k_1
-    \end{pmatrix}$ способов поставить единицу в индексы в одночлен,
-    $\begin{pmatrix}
-         n - k_1 \\ k_2
-    \end{pmatrix}$ способов поставить двойку и т. д., получаем:
+        $\Comb{n}{k_1, \dots, k_r} = \Comb{n}{k_1} \Comb{n - k_1}{k_2} \dots \Comb{n - k_1 - \dots - k_{r - 1}}{k_r} = [n - k_1 - \dots - k_r = 0] = \\
+        \frac{n!}{k_1! (n - k_1)!} \frac{(n - k_1)!}{k_2! (n - k_1 - k_2)!} \dots \frac{(n - k_1 - \dots - k_{r - 1})!}{k_r! 0!} = \frac{n!}{k_1! \dots k_r!}$
 
-    $\begin{pmatrix}
-         n \\ k_1, \dots, k_r
-    \end{pmatrix} = \begin{pmatrix}
-                        n \\ k_1
-    \end{pmatrix} \begin{pmatrix}
-                      n - k_1 \\ k_2
-    \end{pmatrix} \dots \begin{pmatrix}
-                            n - k_1 - \dots - k_{r - 1} \\ k_r
-    \end{pmatrix} = [n - k_1 - \dots - k_r = 0] = \\
-    \frac{n!}{k_1! (n - k_1)!} \frac{(n - k_1)!}{k_2! (n - k_1 - k_2)!} \dots \frac{(n - k_1 - \dots - k_{r - 1})!}{k_r! 0!} = \frac{n!}{k_1! \dots k_r!}$
-
-    $\Box$
+    \end{MyProof}
 
     \begin{itemize}
 
