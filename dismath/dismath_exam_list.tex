@@ -1104,33 +1104,128 @@
     \subsection{7. Комбинаторика.}
 
     \begin{enumerate}
-        \item \textbf{} (\textit{Ordered arrangements})
+        \item \textbf{Расстановка} (\textit{Ordered arrangements})
 
-        \item \textbf{} (\textit{Permutations})
+        \hyperlink{orderedarrangements}{Расстановка} -- последовательность каких-либо элементов (тоже самое, что кортеж),
+        \Exs $x = (a, b, c, d, b, b, c) \quad |x| = n$
 
-        \item \textbf{} (\textit{k-permutations})
+        Расстановку можно представить как функцию $f : \underset{\text{domain}}{\undergroup{[n]}} \to \underset{\text{codomain}}{\undergroup{\Sigma}}$, которая по порядковому номеру выдает символ
 
-        \item \textbf{} (\textit{Cyclic permutations})
+        \item \textbf{Перестановка} (\textit{Permutations})
 
-        \item \textbf{} (\textit{Unordered arrangements})
+        \hyperlink{permutation}{Перестановка} -- $\pi : [n] \to \Sigma$, где $n = |\Sigma|$
 
-        \item \textbf{} (\textit{k-combinations})
+        Расстановка $\pi$ -- биекция между $[n]$ и $\Sigma$
 
-        \item \textbf{} (\textit{Multisets})
+        \item \textbf{$k$-перестановка} (\textit{k-permutations})
+        
+        \hyperlink{kpermutation}{$k$-перестановка} -- расстановка из $k$ различных элементов из $\Sigma$
 
-        \item \textbf{} (\textit{Permutations of multisets})
+        \Ex $\underset{\text{5-perm из } \Sigma = [7]}{\undergroup{|31475|}} = 5$
 
-        \item \textbf{} (\textit{Combinations of infinite multisets})
+        $k$-перестановка -- инъекция $\pi : [k] \to \Sigma$ ($k \leq n = |\Sigma|$)
 
-        \item \textbf{} (\textit{Compositions})
+        \item \textbf{Циклические $k$-перестановки} (\textit{Cyclic permutations})
 
-        \item \textbf{} (\textit{Set partitions})
+        $\pi_1, \pi_2 \in P(n, k)$ -- циклически эквивалентны тогда и только тогда:
 
-        \item \textbf{} (\textit{Stirling numbers of the second kind})
+        $\exists s \ | \ \forall i \ \pi_1((i + s) \% k) = \pi_2(i)$
 
-        \item \textbf{} (\textit{Integer partitions})
+        \item \textbf{Неупорядоченная расстановка} (\textit{Unordered arrangements})
+        
+        \hyperlink{unorderedarrangement}{Неупорядоченная расстановка $k$ элементов} -- мультимножество $\Sigma^*$ размера $k$
 
-        \item \textbf{} (\textit{Principle of Inclusion-Exclusion})
+        \Ex $\Sigma^* = \Set{\triangle, \triangle, \Box, \triangle, \circ, \Box}^* = \Set{3 \cdot \triangle, 2 \cdot \Box, 1 \cdot \circ} = (\Sigma, r)$
+
+        Неупорядоченную расстановку можно представить как функцию:
+
+        $r : \Sigma \to \Natural, \quad r(x)$ -- кол-во повторений объекта $x$
+
+        \item \textbf{$k$-сочетание} (\textit{k-combinations})
+
+        \hyperlink{kcombination}{$k$-сочетание} -- неупорядоченная перестановка из $k$ различных элементов из $\Sigma$ (еще называют $k$-подмножеством, $k$-subset)
+
+        Соответственно $C(n, k)$ -- множество всех таких $k$-сочетаний
+
+        \item \textbf{Мультимножество} (\textit{Multisets})
+
+        Мультимножество - множество, допускающее включение одного элемента более одного раза
+
+        \item \textbf{Перестановка мультимножества} (\textit{Permutations of multisets})
+
+        \hyperlink{multisetpermutation}{Перестановка мультимножества $\Sigma^*$}
+
+        $\Sigma^* = \Set{\triangle^1, \triangle^2, \Box, \star} = (\Sigma, r) \quad r : \Sigma \to \Natural_0 \quad n = |\Sigma^*| = 4 \quad s = |\Sigma| = 3$
+
+        \Notas \begin{cases}
+            \triangle^1, \triangle^2, \Box, \star \\
+            \triangle^2, \triangle^1, \Box, \star
+        \end{cases} считаются равными перестановками
+
+        $|P^*(\Sigma^*, n)| = \frac{n!}{r_1! \dots r_s!} = \Comb{n}{r_1, \dots, r_s}$ -- количество перестановок мультимножества, где $r_i$ -- количество $i$-ого элемента в мультимножестве
+
+        \item \textbf{$k$-комбинация бесконечного мультимножества} (\textit{Combinations of infinite multisets})
+        
+        \hyperlink{infinitemultisetcombination}{$k$-комбинация бесконечного мультимножества} -- такое субмультимножество размера $k$, содержащее элементы из исходного мультимножества.
+        При этом соблюдается, что количество какого-либо элемента $r_i$ в исходном мультимножестве не больше размера комбинации $k$
+
+        $\Sigma^* = \Set{\infty \cdot \triangle, \infty \cdot \Box, \infty \cdot \star, \infty \cdot \Cat}^* \quad n = |\Sigma^*| = \infty$
+
+        Количество возможных $k$-комбинаций бесконечного мультимножества:
+        $\frac{(k + s - 1)!}{k!(s - 1)!} = \Comb{k + s - 1}{k, s - 1} =
+        \Comb{k + s - 1}{k} = \Comb{k + s - 1}{s - 1}$, где $s$ -- количество уникальных элементов 
+
+        \item \textbf{Композиции} (\textit{Compositions})
+
+        \hyperlink{weakcomposition}{Слабая композиция} неотрицательного целого числа $n$ в $k$ частей -- это решение $(b_1, \dots, b_k)$ уравнение $b_1 + \dots + b_k = n$, где $b_i \geq 0$
+
+        $|\Set{\text{слабая композиция } n \text{ в } k \text{ частей}}| = \Comb{n + k - 1}{n, k - 1}$
+
+        Получаем задачу поиска количеств $k$-комбинаций в мультимножестве: $\Set{n \cdot 1, (k - 1) \cdot \Big|}$; получаем $\Comb{n + k - 1}{n, k - 1}$
+
+        \hyperlink{compositions}{Композиция} -- решение для $b_1 + \dots + b_k = n$, где $b_i > 0$
+
+        $|\Set{\text{композиция } n \text{ в } k \text{ частей}}| = \Comb{n - k + k - 1}{n - k, k - 1}$
+
+        Мы знаем, что одну единичку получит каждая $b_i$, поэтому мы решаем это как слабую композицию для $n - k$ в $k$ частей
+
+        \item \textbf{Разбиения множества} (\textit{Set partitions})
+
+        \hyperlink{setpartition}{Разбиения множества} -- множество размера $k$ непересекающихся непустых подмножеств
+
+        $|\Set{\text{разбиение } n \text{ элементов в } k \text{ частей}}| = \Stirling{n}{k} = S^{II}_k (n) = S(n, k)$ -- число Стирлинга второго рода
+
+        \item \textbf{Число Стирлинга второго рода} (\textit{Stirling numbers of the second kind})
+
+        Число Стирлинга $\Stirling{n}{k} = S^{II}_k (n) = S(n, k)$ равняется числу разбиений множества
+
+        Рекуррентное соотношение: $\Stirling{n}{k} = \Stirling{n - 1}{k - 1} + k \cdot \Stirling{n - 1}{k}$
+
+        \item \textbf{Целочисленное разбиение} (\textit{Integer partitions})        
+        
+        \hyperlink{integerpartition}{Целочисленное разбиение} -- решение для $a_1 + \dots + a_k = n$, где $a_1 \geq a_2 \geq \dots \geq a_k \geq 1$
+
+        $p(n, k)$ -- число целочисленных разбиений $n$ в $k$ частей
+
+        $p(n) = \sum_{k = 1}^n p(n, k)$ -- число всех разбиений для $n$
+
+        \item \textbf{Принцип включения/исключения} (\textit{Principle of Inclusion-Exclusion})
+
+        \hyperlink{pieprinciple}{Принцип включения/исключения}
+
+        \begin{itemize}
+            \item $X$ -- начальное множество элементов
+            \item $P_1, \dots, P_m$ -- свойства
+            \item Пусть $X_i = \Set{x \in X \ | \ P_i\text{ - свойство для } x}$
+            \item Пусть $S \in [m]$ -- множество свойств
+            \item Пусть $N(S) = \bigcap_{i \in S} X_i = \Set{x \in X\ | \ x \text{ имеет все свойства } P_1, \dots, P_m}$
+        \end{itemize}
+
+        $N(\emptyset) = X \quad |N(\emptyset)| = |X| = n$
+
+        \begin{MyTheorem}
+            $|X \setminus (X_1 \union X_2 \union \dots \union X_m)| = \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)|$ -- количество элементов множества $X$, не имеющих никакое из свойств
+        \end{MyTheorem}
 
     \end{enumerate}
 
