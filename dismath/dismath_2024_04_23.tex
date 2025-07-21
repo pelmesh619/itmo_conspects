@@ -16,11 +16,11 @@
     \begin{itemize}
         \item \textbf{Алфавит} (Alphabet) $\Sigma$ (или $X$, \Exs $X = \Set{a, b, c}$) - множество символов в нашей системе
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item \textbf{Диапазон} (Range) $[n] = \Set{1, \dots, n}$ - конечное множество последовательных натуральных чисел
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item \textbf{Расстановка} (Ordered arrangement) - последовательность каких-либо элементов (тоже самое, что кортеж),
         \Exs $x = (a, b, c, d, b, b, c) \quad |x| = n$
@@ -29,7 +29,7 @@
 
         $ran f = \Set{c \in \Sigma \ | \ \exists i \in [n]\ :\ f(i) = c}$
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item \textbf{Перестановка} (Permutation) - $\pi : [n] \to \Sigma$, где $n = |\Sigma|$
 
@@ -37,7 +37,7 @@
 
         \Ex $\pi = \mathtt{2713546}$
 
-        \vspace{3mm}
+        \smallvspace
 
         \begin{tabular}{l|ccccccc}
             i      & 1          & 2          & 3          & 4          & 5          & 6          & 7          \\
@@ -45,11 +45,11 @@
             \pi(i) & \mathtt{2} & \mathtt{7} & \mathtt{1} & \mathtt{3} & \mathtt{5} & \mathtt{4} & \mathtt{6}
         \end{tabular}
 
-        \vspace{5mm}
+        \mediumvspace
 
         \underline{Одна из задач комбинаторики} - посчитать количество различных расстановок или перестановок при заданных $n$ и $\Sigma$
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item \textbf{$k$-перестановка} (k-permutation) - расстановка из $k$ различных элементов из $\Sigma$
 
@@ -57,7 +57,7 @@
 
         $k$-перестановка - инъекция $\pi : [k] \to \Sigma$ ($k \leq n = |\Sigma|$)
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item $P(n, k)$ - множество всех $k$-перестановок алфавита $\Sigma = [n]$ (если исходный алфавит не состоит из чисел, то мы можем сделать биекцию между ним и $[n]$)
 
@@ -65,7 +65,7 @@
 
         Чаще интересует не само множество, а его размер, поэтому под обозначением $P(n, k)$ подразумевается $|P(n, k)|$
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item $S_n = P_n = P(n, n)$ - множество всех перестановок. Также чаще всего нас будет интересовать не множество, а его размер
 
@@ -73,7 +73,7 @@
 
         $|P(n, k)| = n \cdot (n - 1) \cdot (n - 2) \cdot \dots \cdot (n - k + 1) = \frac{n!}{(n - k)!}$
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item \textbf{Циклические $k$-перестановки} (Circular $k$-permutations)
 
@@ -120,7 +120,7 @@
 
         $|P_C(n, k)| = \frac{|P(n, k)|}{k} = \frac{n!}{k(n - k)!}$
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item \textbf{Неупорядоченная расстановка $k$ элементов} (Unordered arrangement of $k$ elements) - мультимножество $\Sigma^*$ размера $k$
 
@@ -130,7 +130,7 @@
 
         $r : \Sigma \to \Natural, \quad r(x)$ - кол-во повторений объекта $x$
 
-        \vspace{5mm}
+        \mediumvspace
 
         \item \textbf{$k$-сочетание} ($k$-combination) - неупорядоченная перестановка из $k$ различных элементов из $\Sigma$ (еще называют $k$-подмножеством, $k$-subset)
 
