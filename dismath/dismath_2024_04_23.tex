@@ -14,15 +14,15 @@
     \textbf{Базовые понятия:}
 
     \begin{itemize}
-        \item \textbf{Алфавит} (Alphabet) $\Sigma$ (или $X$, \Exs $X = \Set{a, b, c}$) - множество символов в нашей системе
+        \item \textbf{Алфавит} (Alphabet) $\Sigma$ (или $X$, \Exs $X = \Set{a, b, c}$) -- множество символов в нашей системе
 
         \mediumvspace
 
-        \item \textbf{Диапазон} (Range) $[n] = \Set{1, \dots, n}$ - конечное множество последовательных натуральных чисел
+        \item \textbf{Диапазон} (Range) $[n] = \Set{1, \dots, n}$ -- конечное множество последовательных натуральных чисел
 
         \mediumvspace
 
-        \item \textbf{Расстановка} (Ordered arrangement) - последовательность каких-либо элементов (тоже самое, что кортеж),
+        \item \textbf{Расстановка} (Ordered arrangement) -- последовательность каких-либо элементов (тоже самое, что кортеж),
         \Exs $x = (a, b, c, d, b, b, c) \quad |x| = n$
 
         Расстановку можно представить как функцию $f : \underset{\text{domain}}{\undergroup{[n]}} \to \underset{\text{codomain}}{\undergroup{\Sigma}}$, которая по порядковому номеру выдает символ
@@ -31,9 +31,9 @@
 
         \mediumvspace
 
-        \item \textbf{Перестановка} (Permutation) - $\pi : [n] \to \Sigma$, где $n = |\Sigma|$
+        \item \textbf{Перестановка} (Permutation) -- $\pi : [n] \to \Sigma$, где $n = |\Sigma|$
 
-        Расстановка $\pi$ - биекция между $[n]$ и $\Sigma$
+        Расстановка $\pi$ -- биекция между $[n]$ и $\Sigma$
 
         \Ex $\pi = \mathtt{2713546}$
 
@@ -47,19 +47,19 @@
 
         \mediumvspace
 
-        \underline{Одна из задач комбинаторики} - посчитать количество различных расстановок или перестановок при заданных $n$ и $\Sigma$
+        \underline{Одна из задач комбинаторики} -- посчитать количество различных расстановок или перестановок при заданных $n$ и $\Sigma$
 
         \mediumvspace
 
-        \item \textbf{$k$-перестановка} (k-permutation) - расстановка из $k$ различных элементов из $\Sigma$
+        \item \textbf{$k$-перестановка} (k-permutation) -- расстановка из $k$ различных элементов из $\Sigma$
 
         \Ex $\underset{\text{5-perm из } \Sigma = [7]}{\undergroup{|31475|}} = 5$
 
-        $k$-перестановка - инъекция $\pi : [k] \to \Sigma$ ($k \leq n = |\Sigma|$)
+        $k$-перестановка -- инъекция $\pi : [k] \to \Sigma$ ($k \leq n = |\Sigma|$)
 
         \mediumvspace
 
-        \item $P(n, k)$ - множество всех $k$-перестановок алфавита $\Sigma = [n]$ (если исходный алфавит не состоит из чисел, то мы можем сделать биекцию между ним и $[n]$)
+        \item $P(n, k)$ -- множество всех $k$-перестановок алфавита $\Sigma = [n]$ (если исходный алфавит не состоит из чисел, то мы можем сделать биекцию между ним и $[n]$)
 
         $P(n, k) = \Set{f \ | \ f : [k] \to [n]}$
 
@@ -67,9 +67,9 @@
 
         \mediumvspace
 
-        \item $S_n = P_n = P(n, n)$ - множество всех перестановок. Также чаще всего нас будет интересовать не множество, а его размер
+        \item $S_n = P_n = P(n, n)$ -- множество всех перестановок. Также чаще всего нас будет интересовать не множество, а его размер
 
-        $|S_n| = n!$ - всего существует $n!$ перестановок
+        $|S_n| = n!$ -- всего существует $n!$ перестановок
 
         $|P(n, k)| = n \cdot (n - 1) \cdot (n - 2) \cdot \dots \cdot (n - k + 1) = \frac{n!}{(n - k)!}$
 
@@ -77,7 +77,7 @@
 
         \item \textbf{Циклические $k$-перестановки} (Circular $k$-permutations)
 
-        $\pi_1, \pi_2 \in P(n, k)$ - циклически эквивалентны тогда и только тогда:
+        $\pi_1, \pi_2 \in P(n, k)$ -- циклически эквивалентны тогда и только тогда:
 
         $\exists s \ | \ \forall i \ \pi_1((i + s) \% k) = \pi_2(i)$
 
@@ -114,7 +114,7 @@
         ;
         \end{tikzpicture}
 
-        $P_C(n, k)$ - множество всех циклических $k$-перестановок в $\Sigma$
+        $P_C(n, k)$ -- множество всех циклических $k$-перестановок в $\Sigma$
 
         $|P_C(n, k)| \cdot k = |P(n, k)|$
 
@@ -122,19 +122,19 @@
 
         \mediumvspace
 
-        \item \textbf{Неупорядоченная расстановка $k$ элементов} (Unordered arrangement of $k$ elements) - мультимножество $\Sigma^*$ размера $k$
+        \item \textbf{Неупорядоченная расстановка $k$ элементов} (Unordered arrangement of $k$ elements) -- мультимножество $\Sigma^*$ размера $k$
 
         \Ex $\Sigma^* = \Set{\triangle, \triangle, \Box, \triangle, \circ, \Box}^* = \Set{3 \cdot \triangle, 2 \cdot \Box, 1 \cdot \circ} = (\Sigma, r)$
 
         Неупорядоченную расстановку можно представить как функцию:
 
-        $r : \Sigma \to \Natural, \quad r(x)$ - кол-во повторений объекта $x$
+        $r : \Sigma \to \Natural, \quad r(x)$ -- кол-во повторений объекта $x$
 
         \mediumvspace
 
-        \item \textbf{$k$-сочетание} ($k$-combination) - неупорядоченная перестановка из $k$ различных элементов из $\Sigma$ (еще называют $k$-подмножеством, $k$-subset)
+        \item \textbf{$k$-сочетание} ($k$-combination) -- неупорядоченная перестановка из $k$ различных элементов из $\Sigma$ (еще называют $k$-подмножеством, $k$-subset)
 
-        Соответственно $C(n, k)$ - множество всех таких $k$-сочетаний
+        Соответственно $C(n, k)$ -- множество всех таких $k$-сочетаний
 
         $|C(n, k)| = C^k_n = \begin{pmatrix}n \\ k\end{pmatrix}$
 
@@ -150,12 +150,12 @@
 
     \[(x + y)^n = \sum_{k=0}^n \begin{pmatrix}n \\ k\end{pmatrix} x^k y^{n - k}\]
 
-    $\begin{pmatrix}n \\ k\end{pmatrix}$ - биномиальный коэффициент
+    $\begin{pmatrix}n \\ k\end{pmatrix} = \frac{n!}{k!(n - k)!}$ -- биномиальный коэффициент
 
     \Th Мультиномиальная теорема (Multinomial theorem)
 
     \[(x_1 + \dots + x_r)^n = \sum_{\substack{k_i \in 1..n, \\ k_1 + \dots + k_r = n}} \begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} x^{k_1}_1 \cdot \dots \cdot x^{k_r}_r\]
 
-    $\begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} = \frac{n!}{k_1! \dots k_r!}$ - мультиномиальный коэффициент
+    $\begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} = \frac{n!}{k_1! \dots k_r!}$ -- мультиномиальный коэффициент
 
 \end{document}
