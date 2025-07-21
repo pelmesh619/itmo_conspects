@@ -9,60 +9,45 @@
 
 
 \begin{document}
-    \Ex мультиномиальной теоремы:
+    \Ex Пример мультиномиальной теоремы:
 
     $(x + y + z)^4 = 1 (x^4 + y^4 + z^4) + 4 (xy^3 + xz^3 + x^3y + yz^3 + y^3z + yz^3) +
     6(x^2y^2 + y^2z^2 + x^2z^2) + 12 (xyz^2 + xy^2z + x^2yz)$
 
     Доказательство:
 
-    $\Box$
+    \begin{MyProof}
+        $(x_1 + \dots + x_r)^n = \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1 =
+        \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_1^{k_1} \cdot \dots \cdot x_r^{k_r}$, где $k_t$ -- количество $x$ с индексом $t$ в одночлене ($k_t = |\Set{j \in [n] | i_j = t}|$)
 
-    $(x_1 + \dots + x_r)^n = \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1 =
-    \sum_{\substack{i_j \in [r] \\ j \in [n]}} x_1^{k_1} \cdot \dots \cdot x_r^{k_r}$, где $k_t$ - количество $x$ с индексом $t$ в одночлене ($k_t = |\Set{j \in [n] | i_j = t}|$)
+        Получается мультиномиальный коэффициент $\Comb{n}{k_1, \dots, k_r}$
+        будет равен количество способов поставить $k_1$ единиц в индексы в $x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1$, $k_2$ двоек в индексы и так далее
 
-    Получается мультиномиальный коэффицциент $\begin{pmatrix}
-                                                  n \\ k_1, \dots, k_r
-    \end{pmatrix}$
-    будет равен количество способов поставить $k_1$ единиц в индексы в $x_{i_1}^1 \cdot \dots \cdot x_{i_n}^1$, $k_2$ двоек в индексы и так далее
+        У нас есть $\Comb{n}{k_1}$ способов поставить единицу в индексы в одночлен,
+        $\Comb{n - k_1}{k_2}$ способов поставить двойку и т. д., получаем:
 
-    У нас есть $\begin{pmatrix}
-                    n \\ k_1
-    \end{pmatrix}$ способов поставить единицу в индексы в одночлен,
-    $\begin{pmatrix}
-         n - k_1 \\ k_2
-    \end{pmatrix}$ способов поставить двойку и т. д., получаем:
+        $\Comb{n}{k_1, \dots, k_r} = \Comb{n}{k_1} \Comb{n - k_1}{k_2} \dots \Comb{n - k_1 - \dots - k_{r - 1}}{k_r} = [n - k_1 - \dots - k_r = 0] = \\
+        \frac{n!}{k_1! (n - k_1)!} \frac{(n - k_1)!}{k_2! (n - k_1 - k_2)!} \dots \frac{(n - k_1 - \dots - k_{r - 1})!}{k_r! 0!} = \frac{n!}{k_1! \dots k_r!}$
 
-    $\begin{pmatrix}
-         n \\ k_1, \dots, k_r
-    \end{pmatrix} = \begin{pmatrix}
-                        n \\ k_1
-    \end{pmatrix} \begin{pmatrix}
-                      n - k_1 \\ k_2
-    \end{pmatrix} \dots \begin{pmatrix}
-                            n - k_1 - \dots - k_{r - 1} \\ k_r
-    \end{pmatrix} = [n - k_1 - \dots - k_r = 0] = \\
-    \frac{n!}{k_1! (n - k_1)!} \frac{(n - k_1)!}{k_2! (n - k_1 - k_2)!} \dots \frac{(n - k_1 - \dots - k_{r - 1})!}{k_r! 0!} = \frac{n!}{k_1! \dots k_r!}$
-
-    $\Box$
+    \end{MyProof}
 
     \begin{itemize}
+        \hypertarget{multisetpermutation}{}
 
         \item \textbf{Перестановка мультимножества $\Sigma^*$} (Permutations of a multiset $\Sigma^*$)
 
         $\Sigma^* = \Set{\triangle^1, \triangle^2, \Box, \star} = (\Sigma, r) \quad r : \Sigma \to \Natural_0 \quad n = |\Sigma^*| = 4 \quad s = |\Sigma| = 3$
 
         \Nota \begin{cases}
-                  \triangle^1, \triangle^2, \Box, \star \\
-                  \triangle^2, \triangle^1, \Box, \star
+            \triangle^1, \triangle^2, \Box, \star \\
+            \triangle^2, \triangle^1, \Box, \star
         \end{cases} считаются равными перестановками
 
-        $|P^*(\Sigma^*, n)| = \frac{n!}{r_1! \dots r_s!} = \begin{pmatrix}
-                                                               n \\ r_1, \dots, r_s
-        \end{pmatrix}$ - количество перестановок мультимножества, где $r_i$ - количество $i$-ого элемента в мультимножестве
+        $|P^*(\Sigma^*, n)| = \frac{n!}{r_1! \dots r_s!} = \Comb{n}{r_1, \dots, r_s}$ -- количество перестановок мультимножества, где $r_i$ -- количество $i$-ого элемента в мультимножестве
 
-        \item \textbf{$k$-комбинация бесконечного мультимножества} ($k$-combinations of infinite multiset) -
-        такое субмультимножество размера $k$, содержащее элементы из исходного мультимножества.
+        \hypertarget{infinitemultisetcombination}{}
+
+        \item \textbf{$k$-комбинация бесконечного мультимножества} ($k$-combinations of infinite multiset) -- такое субмультимножество размера $k$, содержащее элементы из исходного мультимножества.
         При этом соблюдается, что количество какого-либо элемента $r_i$ в исходном мультимножестве не больше размера комбинации $k$
 
         $\Sigma^* = \Set{\infty \cdot \triangle, \infty \cdot \Box, \infty \cdot \star, \infty \cdot \Cat}^* \quad n = |\Sigma^*| = \infty$
@@ -75,7 +60,7 @@
 
         $\triangle \Big| \Box \Box \Big| \star \star \Big| $
 
-        Заменяем элементы на точечки - нам уже не так важен тип элемента, потому что мы знаем из разделения:
+        Заменяем элементы на точечки -- нам уже не так важен тип элемента, потому что мы знаем из разделения:
 
         $\bullet \Big| \bullet \bullet \Big| \bullet \bullet \Big| $
 
@@ -84,25 +69,18 @@
         Получается всего $k$ точечек и $s - 1$ палочек, всего $k + s - 1$ объектов. Получаем мультимножество $\Set{k \cdot \bullet, (s - 1) \cdot \Big|}$ (\textit{Star and Bars method})
 
         Получаем количество перестановок этого мультимножества:
-        $\frac{(k + s - 1)!}{k!(s - 1)!} = \begin{pmatrix}
-                                               k + s - 1 \\ k, s - 1
-        \end{pmatrix} =
-        \begin{pmatrix}
-            k + s - 1 \\ k
-        \end{pmatrix} = \begin{pmatrix}
-                            k + s - 1 \\ s - 1
-        \end{pmatrix}$
+        $\frac{(k + s - 1)!}{k!(s - 1)!} = \Comb{k + s - 1}{k, s - 1} =
+        \Comb{k + s - 1}{k} = \Comb{k + s - 1}{s - 1}$
 
         что и является количеством возможных $k$-комбинаций бесконечного мультимножества
 
-        \vspace{5mm}
+        \mediumvspace
 
-        \item \textbf{Слабая композиция} (Weak composition) неотрицательного целого числа $n$ в $k$ частей -
-        это решение $(b_1, \dots, b_k)$ уравнение $b_1 + \dots + b_k = n$, где $b_i \geq 0$
+        \hypertarget{weakcomposition}{}
 
-        $|\Set{\text{слабая композиция } n \text{ в } k \text{ частей}}| = \begin{pmatrix}
-                                                                               n + k - 1 \\ n, k - 1
-        \end{pmatrix}$
+        \item \textbf{Слабая композиция} (Weak composition) неотрицательного целого числа $n$ в $k$ частей -- это решение $(b_1, \dots, b_k)$ уравнение $b_1 + \dots + b_k = n$, где $b_i \geq 0$
+
+        $|\Set{\text{слабая композиция } n \text{ в } k \text{ частей}}| = \Comb{n + k - 1}{n, k - 1}$
 
         Для решения воспользуемся аналогичным из доказательства мультиномиальной теоремы приемом:
 
@@ -112,32 +90,31 @@
 
         $n = 1 + 1 \Big| 1 \Big| \dots + 1$
 
-        Получаем задачу поиска количеств $k$-комбинаций в мультимножестве: $\Set{n \cdot 1, (k - 1) \cdot \Big|}$; получаем $\begin{pmatrix}
-                                                                                                                                 n + k - 1 \\ n, k - 1
-        \end{pmatrix}$
+        Получаем задачу поиска количеств $k$-комбинаций в мультимножестве: $\Set{n \cdot 1, (k - 1) \cdot \Big|}$; получаем $\Comb{n + k - 1}{n, k - 1}$
 
-        \vspace{5mm}
-        \item \textbf{Композиция} (Composition) - решение для $b_1 + \dots + b_k = n$, где $b_i > 0$
+        \mediumvspace
 
-        $|\Set{\text{композиция } n \text{ в } k \text{ частей}}| = \begin{pmatrix}
-                                                                        n - k + k - 1 \\ n - k, k - 1
-        \end{pmatrix}$
+        \hypertarget{compositions}{}
+
+        \item \textbf{Композиция} (Composition) -- решение для $b_1 + \dots + b_k = n$, где $b_i > 0$
+
+        $|\Set{\text{композиция } n \text{ в } k \text{ частей}}| = \Comb{n - k + k - 1}{n - k, k - 1}$
 
         Мы знаем, что одну единичку получит каждая $b_i$, поэтому мы решаем это как слабую композицию для $n - k$ в $k$ частей
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Число композиций $n$ в некоторой число частей} (Number of all compositions into some number of positive parts)
 
-        $\sum_{k=1}^n \begin{pmatrix}
-                          n - 1 \\ k - 1
-        \end{pmatrix} = 2^{n-1}$
+        $\sum_{k=1}^n \Comb{n - 1}{k - 1} = 2^{n-1}$
 
-        Пусть $t = k - 1$, тогда $\sum_{t = 0}^{n-1} \begin{pmatrix}
-                                                         n - 1 \\ t
-        \end{pmatrix} = 2^{n - 1}$
+        Пусть $t = k - 1$, тогда $\sum_{t = 0}^{n-1} \Comb{n - 1}{t} = 2^{n - 1}$
 
-        \vspace{5mm}
-        \item \textbf{Разбиения множества} (Set partitions) - множество размера $k$ непересекающихся непустых подмножеств
+        \mediumvspace
+
+        \hypertarget{setpartition}{}
+
+        \item \textbf{Разбиения множества} (Set partitions) -- множество размера $k$ непересекающихся непустых подмножеств
 
         \begin{tabular}{cp}
             \Exs $\Set{1, 2, 3, 4}, n = 4, k = 2 \rightarrow [\text{разбиение в 2 части}] \rightarrow & \Set{\Set{1}, \Set{2, 3, 4}}, \\
@@ -149,74 +126,54 @@
             & \Set{\Set{3}, \Set{1, 2, 4}}$
         \end{tabular}
 
-        $|\Set{\text{разбиение } n \text{ элементов в } k \text{ частей}}| = \begin{Bmatrix}
-                                                                                 n \\ k
-        \end{Bmatrix} = S^{II}_k (n) = S(n, k)$ - число Стирлинга второго рода
+        $|\Set{\text{разбиение } n \text{ элементов в } k \text{ частей}}| = \Stirling{n}{k} = S^{II}_k (n) = S(n, k)$ -- число Стирлинга второго рода
 
-        Для примера выше число Стирлинга $S(4, 2) = \begin{Bmatrix}
-                                                        4 \\ 2
-        \end{Bmatrix} = 7$
+        Для примера выше число Стирлинга $S(4, 2) = \Stirling{4}{2} = 7$
 
         Согласно Википедии \href{https://ru.wikipedia.org/wiki/%D0%A7%D0%B8%D1%81%D0%BB%D0%B0_%D0%A1%D1%82%D0%B8%D1%80%D0%BB%D0%B8%D0%BD%D0%B3%D0%B0_%D0%B2%D1%82%D0%BE%D1%80%D0%BE%D0%B3%D0%BE_%D1%80%D0%BE%D0%B4%D0%B0}{для формулы Стирлинга}
-        есть формула: $S(n, k) = \frac{1}{k!} \sum_{j=0}^k (-1)^{k+j} \begin{pmatrix}
-                                                                          k \\ j
-        \end{pmatrix}j^n$
+        есть формула: $S(n, k) = \frac{1}{k!} \sum_{j=0}^k (-1)^{k+j} \Comb{k}{j}j^n$
 
-        \vspace{5mm}
+        \mediumvspace
         \item \textbf{Формула Паскаля} (Pascal's formula)
 
-        $\begin{pmatrix}
-             n \\ k
-        \end{pmatrix} = \begin{pmatrix}
-                            n - 1 \\ k - 1
-        \end{pmatrix} + \begin{pmatrix}
-                            n - 1 \\ k
-        \end{pmatrix}$
+        $\Comb{n}{k} = \Comb{n - 1}{k - 1} + \Comb{n - 1}{k}$
 
-        \vspace{5mm}
+        \mediumvspace
         \item \textbf{Рекуррентное отношение для чисел Стирлинга} (Recurrence relation for Stirling$^{(2)}$ number):
 
-        $\begin{Bmatrix}
-             n \\ k
-        \end{Bmatrix} = \begin{Bmatrix}
-                            n - 1 \\ k - 1
-        \end{Bmatrix} + k \cdot \begin{Bmatrix}
-                                    n - 1 \\ k
-        \end{Bmatrix}$
+        $\Stirling{n}{k} = \Stirling{n - 1}{k - 1} + k \cdot \Stirling{n - 1}{k}$
 
         Возьмем какое-либо разбиение для $n - 1$ элементов на $k$ частей, тогда возможны два случая:
 
-        1) В $k$-ое множество нет ни одного элемента, тогда мы обязаны в него положить наш $n$-ый элемент по определению,
-        количество перестановок будет равно $\begin{Bmatrix}
-                                                 n - 1 \\ k - 1
-        \end{Bmatrix} \cdot 1$
+        \begin{enumerate}
+            \item В $k$-ое множество нет ни одного элемента, тогда мы обязаны в него положить наш $n$-ый элемент по определению,
+            количество перестановок будет равно $\Stirling{n - 1}{k - 1} \cdot 1$
 
-        2) В $k$-ом множестве уже есть элементы, тогда все множества будут заполнены и у нас будет выбор из $k$ множеств,
-        куда положить $k$-ый элемент, то есть $k \cdot \begin{Bmatrix}
-                                                           n - 1 \\ k
-        \end{Bmatrix}$
+            \item В $k$-ом множестве уже есть элементы, тогда все множества будут заполнены и у нас будет выбор из $k$ множеств,
+            куда положить $k$-ый элемент, то есть $k \cdot \Stirling{n - 1}{k}$
+        \end{enumerate}
 
-        Эти два случая независимы, поэтому получаем $\begin{Bmatrix}
-                                                         n - 1 \\ k - 1
-        \end{Bmatrix} + k \cdot \begin{Bmatrix}
-                                    n - 1 \\ k
-        \end{Bmatrix}$
+        Эти два случая независимы, поэтому получаем $\Stirling{n - 1}{k - 1} + k \cdot \Stirling{n - 1}{k}$
 
-        \vspace{5mm}
-        \item \textbf{Число Белла} (Bell number) - количество всех неупорядоченных разбиений множества размера $n$
+        \mediumvspace
+
+        \item \textbf{Число Белла} (Bell number) -- количество всех неупорядоченных разбиений множества размера $n$
 
         Число Белла вычисляется по формуле: $B_n = \sum_{m=0}^n S(n, m)$
 
-        \vspace{5mm}
-        \item \textbf{Целочисленное разбиение} (Integer partition) - решение для $a_1 + \dots + a_k = n$, где $a_1 \geq a_2 \geq \dots \geq a_k \geq 1$
+        \mediumvspace
 
-        $p(n, k)$ - число целочисленных разбиений $n$ в $k$ частей
+        \hypertarget{integerpartition}{}
 
-        $p(n) = \sum_{k = 1}^n p(n, k)$ - число всех разбиений для $n$
+        \item \textbf{Целочисленное разбиение} (Integer partition) -- решение для $a_1 + \dots + a_k = n$, где $a_1 \geq a_2 \geq \dots \geq a_k \geq 1$
+
+        $p(n, k)$ -- число целочисленных разбиений $n$ в $k$ частей
+
+        $p(n) = \sum_{k = 1}^n p(n, k)$ -- число всех разбиений для $n$
 
         \Ex $5 = 5 = 4 + 1 = 3 + 2 = 3 + 1 + 1 = 2 + 2 + 1 = 2 + 1 + 1 + 1 = 1 + 1 + 1 + 1 + 1$
 
-        \vspace{5mm}
+        \mediumvspace
 
     \end{itemize}
 

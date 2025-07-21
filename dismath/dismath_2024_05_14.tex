@@ -10,6 +10,8 @@
 
 \begin{document}
     \begin{itemize}
+        \hypertarget{pieprinciple}{}
+
         \item \textbf{Принцип включения/исключения} (Principle of Incusion/Exclusion (PIE))
 
         $|A \union B \union C| = |A| + |B| + |C| - |A \cap B| - |B \cap C| - |A \cap C| + |A \cap B \cap C|$
@@ -17,18 +19,18 @@
         \Ex есть $n = 11$ объектов, нужно распределить их между $k = 3$ группами $A$, $B$ и $C$
 
         Эту задачу можно решить с помощью \textit{Stars and bars method}, тогда мы получим $
-        \begin{pmatrix} n + k - 1 \\ n, k - 1 \end{pmatrix} = \begin{pmatrix} 13 \\ 2 \end{pmatrix} = 78$
+        \Comb{n + k - 1}{n, k - 1} = \Comb{13}{2} = 78$
 
         Введем ограничение: пусть мощность каждого множества будет не больше 4.
 
         Посчитаем количество неподходящих вариантов:
 
         $|A| = |\Set{b_A \geq 5}| = 1 \cdot
-        \begin{pmatrix} 11 - 5 + 3 - 1 \\ 3 - 1 \end{pmatrix} =
-        \begin{pmatrix} 8 \\ 2 \end{pmatrix} = 28$
+        \Comb{11 - 5 + 3 - 1}{3 - 1} =
+        \Comb{8}{2} = 28$
 
         $|A \cap B| = |\Set{b_A \geq 5 \land b_B \geq 5}| =
-        \begin{pmatrix} 3 \\ 2 \end{pmatrix} = 3$
+        \Comb{3}{2} = 3$
 
         $|A \cap B \cap C| = |\Set{b_A \geq 5 \land b_B \geq 5 \land b_C \geq 5}| = 0$
 
@@ -36,44 +38,50 @@
 
         Далее исключаем эти варианты из количества всех вариантов, а значит подходящих вариантов всего $78 - 75 = 3$
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Принцип включения/исключения} (Inclusion/Exclusion Principle (PIE))
 
         \begin{itemize}
-            \item $X$ - начальное множество элементов
-            \item $P_1, \dots, P_m$ - свойства
+            \item $X$ -- начальное множество элементов
+            \item $P_1, \dots, P_m$ -- свойства
             \item Пусть $X_i = \Set{x \in X \ | \ P_i\text{ - свойство для } x}$
-            \item Пусть $S \in [m]$ - множество свойств
+            \item Пусть $S \in [m]$ -- множество свойств
             \item Пусть $N(S) = \bigcap_{i \in S} X_i = \Set{x \in X\ | \ x \text{ имеет все свойства } P_1, \dots, P_m}$
         \end{itemize}
 
         $N(\emptyset) = X \quad |N(\emptyset)| = |X| = n$
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Теорема ПВ/И} (Theorem PIE)
 
-        $|X \setminus (X_1 \union X_2 \union \dots \union X_m)| = \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)|$ - количество элементов множества $X$, не имеющих никакое из свойств
+        \begin{MyTheorem}
+            $|X \setminus (X_1 \union X_2 \union \dots \union X_m)| = \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)|$ -- количество элементов множества $X$, не имеющих никакое из свойств
+        \end{MyTheorem}
 
-        Доказательство:
+        \begin{MyProof}
+            Пусть $x \in X$
 
-        Пусть $x \in X$
+            Если $x$ не имеет свойств $P_1,\dots,P_m$, то $x \in N(\emptyset)$ и $x \notin N(S) \ \forall S \neq \emptyset$
 
-        Если $x$ не имеет свойств $P_1,\dots,P_m$, то $x \in N(\emptyset)$ и $x \notin N(S) \ \forall S \neq \emptyset$
+            Поэтому $x$ дает в общую сумму $1$
 
-        Поэтому $x$ дает в общую сумму $1$
+            Иначе, если $x$ имеет $k \geq 1$ свойств $T \in \Comb{[m]}{k}$,
 
-        Иначе, если $x$ имеет $k \geq 1$ свойств $T \in \begin{pmatrix} [m] \\ k\end{pmatrix}$,
+            то $x \in N(S)$ тогда и только тогда, когда $S \subseteq T$.
 
-        то $x \in N(S)$ тогда и только тогда, когда $S \subseteq T$.
+            Поэтому $x$ дает в сумму $\sum_{S \subseteq T} (-1)^{|S|} = \sum_{i = 0}^k \Comb{k}{i} (-1)^i = 0$
+        \end{MyProof}
 
-        Поэтому $x$ дает в сумму $\sum_{S \subseteq T} (-1)^{|S|} = \sum_{i = 0}^k \begin{pmatrix} k \\ i \end{pmatrix} (-1)^i = 0$
+        \mediumvspace
 
-        \vspace{5mm}
         \item \textbf{Следствие}
 
         $|\bigunion_{i \in [m]} X_i| = |X| - \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m], S \neq \emptyset} (-1)^{|S| - 1} |N(S)|$
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Приложения}:
 
         * Определяете \enquote{плохие} свойства $P_1, \dots, P_m$
@@ -82,46 +90,48 @@
 
         * Применяете ПВ/И
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Количество сюръекций (правототальных функций)}
 
-        * $X = \Set{\text{функция } f : [k] \to [n]}$
+        \begin{itemize}
+            \item $X = \Set{\text{функция } f : [k] \to [n]}$
 
-        * Плохое свойство $P_i \ : \ X_i = \Set{f : [k] \to [n] \ | \ \nexists j \in [k] : f(j) = i}$
+            \item Плохое свойство $P_i \ : \ X_i = \Set{f : [k] \to [n] \ | \ \nexists j \in [k] : f(j) = i}$
 
-        * $|\Set{\text{сюръекции } f : [k] \to [n]}| = |X \setminus (X_1 \union \dots \union X_m)| \stackrel{\text{PIE}}{=}
-        \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m]} (-1)^{|S|} (n - |S|)^k =
-        \sum^k_{i = 0} (-1)^{i} \begin{pmatrix} k \\ i \end{pmatrix} (k - i)^n$
+            \item $|\Set{\text{сюръекции } f : [k] \to [n]}| = |X \setminus (X_1 \union \dots \union X_m)| \stackrel{\text{PIE}}{=}
+            \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m]} (-1)^{|S|} (n - |S|)^k =
+            \sum^k_{i = 0} (-1)^{i} \Comb{k}{i} (k - i)^n$
+        \end{itemize}
 
-        \vspace{5mm}
+        \mediumvspace
+
         \item \textbf{Количество биекций}
 
-        $n! = \sum_{i=0}^n (-1)^i \begin{pmatrix}
-                                      n \\ i
-        \end{pmatrix} (n - i)^n$
+        $n! = \sum_{i=0}^n (-1)^i \Comb{n}{i} (n - i)^n$
 
         \item \textbf{Число Стирлинга} (опять)
 
         Заметим, что сюръекция = разбиение, тогда:
 
-        $\sum^k_{i = 0} (-1)^{i} \begin{pmatrix} k \\ i \end{pmatrix} (k - i)^n = n! S^{II}_n (k)$
+        $\sum^k_{i = 0} (-1)^{i} \Comb{k}{i} (k - i)^n = n! S^{II}_n (k)$
 
-        \vspace{5mm}
-        \item \textbf{Беспорядки} (Derangements) - перестановка без фиксированных точек
+        \mediumvspace
 
-        Если $f(i) = i$, то $i$ - фиксированная точка
+        \item \textbf{Беспорядки} (Derangements) -- перестановка без фиксированных точек
 
-        * $X = $ все $n!$ перестановок
+        Если $f(i) = i$, то $i$ -- фиксированная точка
 
-        * Плохие свойства $P_1,\dots,P_m : \pi \in X$ имеет свойство $P_i$ \Longleftrightarrow $\pi(i) = i$
+        \begin{itemize}
+            \item $X = $ все $n!$ перестановок
 
-        * Посчитаем $N(S): \quad N(S) = (n - |S|)!$
+            \item Плохие свойства $P_1,\dots,P_m : \pi \in X$ имеет свойство $P_i$ \Longleftrightarrow $\pi(i) = i$
 
-        * Применяем ПВ/И: $X \setminus (X_1 \union \dots \union X_n) = \sum_{S \subseteq [n]} (-1)^{|S|} N(S) =
-        \sum_{S \subseteq [n]} (-1)^{|S|} (n - |S|)! = \sum_{i = 0}^n (-1)^{i} \begin{pmatrix}
-                                                                                   n \\ i
-        \end{pmatrix} (n - i)!$
+            \item Посчитаем $N(S): \quad N(S) = (n - |S|)!$
 
+            \item Применяем ПВ/И: $X \setminus (X_1 \union \dots \union X_n) = \sum_{S \subseteq [n]} (-1)^{|S|} N(S) =
+            \sum_{S \subseteq [n]} (-1)^{|S|} (n - |S|)! = \sum_{i = 0}^n (-1)^{i} \Comb{n}{i} (n - i)!$
+        \end{itemize}
     \end{itemize}
 
     \clearpage
@@ -130,6 +140,8 @@
     \section{8. Рекуррентности и производящие функции}
 
     \begin{itemize}
+        \hypertarget{generatingfunction}{}
+
         \item \textbf{Производящие функции} (Generating Functions)
 
         $\sum_{n = 0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots$
@@ -190,7 +202,7 @@
 
         $A(x) = A_1 \cdot A_2 \cdot A_3 = 1 + 3x + 6x^2 + 10x^3 + 14x^4 + 17x^5 + \underline{18x^6} + 17x^7 + \dots$
 
-        Ответ - 18
+        Ответ -- 18
 
     \end{itemize}
 
