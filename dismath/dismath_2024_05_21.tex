@@ -12,13 +12,13 @@
     \begin{itemize}
         \item \textbf{Рекуррентные соотношения} (Recurrence relations)
 
-        \underline{Решить рекуррентное соотношение} - найти закрытую формулу
+        \underline{Решить рекуррентное соотношение} -- найти закрытую (то есть нерекуррентную) формулу
 
         \Ex Арифметическая прогрессия
 
         $a_n = \begin{cases}a_0 = const \quad n = 0 \\ a_{n - 1} + d, \quad n > 0\end{cases}$
 
-        Решение: $a_n = a_0 + nd$ - анзац (Ansatz, догадка)
+        Решение: $a_n = a_0 + nd$ -- анзац (Ansatz, догадка)
 
         Проверка: $a_n = a_0 + nd = a_{n - 1} + d = a_0 + (n - 1)d + d = a_0 + nd \quad$ - {\Large👍👍}
 
@@ -35,7 +35,7 @@
         $r_{1,2} = -2, 3$
 
         \fbox{\begin{tabular}{l}
-            Если $r_1 \neq r_2$, то $a_n = ar_1^n + br_2^n$ - общее решение \\
+            Если $r_1 \neq r_2$, то $a_n = ar_1^n + br_2^n$ -- общее решение \\
             Если $r_1 = r_2 = r$, то $a_n = ar^n + bnr^n$
         \end{tabular}}
 
@@ -85,16 +85,16 @@
         \hfill\href{https://en.wikipedia.org/wiki/Akra%E2%80%93Bazzi_method}{*тык*}
 
 
-        $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n)) \Longrightarrow T(n) \in \Theta\left(n^p \cdot \left(1 + \int_1^n \frac{f(x)}{x^{p + 1}} dx\right)\right)$, где $p$ - решение для $\sum_{i = 1}^k a_i b_i^p = 1$
+        $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n)) \Longrightarrow T(n) \in \Theta\left(n^p \cdot \left(1 + \int_1^n \frac{f(x)}{x^{p + 1}} dx\right)\right)$, где $p$ -- решение для $\sum_{i = 1}^k a_i b_i^p = 1$
 
         \begin{cases}
             k = const \\
             a_i > 0 \\
             0 < b_i < 1 \\
-            h_1(n) \in O(\frac{n}{\log^2 n}) \text{ - малые возмущения}
+            h_1(n) \in O\left(\frac{n}{\log^2 n}\right) \text{ -- малые возмущения}
         \end{cases}
 
-        \Ex $T(n) = T\left(\lfloor\frac{n}{2}\rfloor\right) + T\left(\lceil\frac{n}{2}\rceil\right) + n$ - асимптотика сортировки слиянием
+        \Ex $T(n) = T\left(\left\lfloor\frac{n}{2}\right\rfloor\right) + T\left(\left\lceil\frac{n}{2}\right\rceil\right) + n$ -- асимптотика сортировки слиянием
 
         $T(n) = T\left(\frac{n}{2} + O(1)\right) + T\left(\frac{n}{2} - O(1)\right) + \theta(n)$
 
@@ -104,7 +104,7 @@
 
         $a_1 = 1, b_1 = \frac{3}{4}, a_2 = 1, b_2 = \frac{1}{4}, f(n) = n$
 
-        $(\frac{3}{4})^p + \left(\frac{1}{4}\right)^p = 1$
+        $\left(\frac{3}{4}\right)^p + \left(\frac{1}{4}\right)^p = 1$
 
         $p = 1$
 
