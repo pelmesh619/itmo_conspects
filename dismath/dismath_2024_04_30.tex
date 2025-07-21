@@ -38,16 +38,15 @@
         $\Sigma^* = \Set{\triangle^1, \triangle^2, \Box, \star} = (\Sigma, r) \quad r : \Sigma \to \Natural_0 \quad n = |\Sigma^*| = 4 \quad s = |\Sigma| = 3$
 
         \Nota \begin{cases}
-                  \triangle^1, \triangle^2, \Box, \star \\
-                  \triangle^2, \triangle^1, \Box, \star
+            \triangle^1, \triangle^2, \Box, \star \\
+            \triangle^2, \triangle^1, \Box, \star
         \end{cases} считаются равными перестановками
 
         $|P^*(\Sigma^*, n)| = \frac{n!}{r_1! \dots r_s!} = \begin{pmatrix}
                                                                n \\ r_1, \dots, r_s
         \end{pmatrix}$ - количество перестановок мультимножества, где $r_i$ - количество $i$-ого элемента в мультимножестве
 
-        \item \textbf{$k$-комбинация бесконечного мультимножества} ($k$-combinations of infinite multiset) -
-        такое субмультимножество размера $k$, содержащее элементы из исходного мультимножества.
+        \item \textbf{$k$-комбинация бесконечного мультимножества} ($k$-combinations of infinite multiset) -- такое субмультимножество размера $k$, содержащее элементы из исходного мультимножества.
         При этом соблюдается, что количество какого-либо элемента $r_i$ в исходном мультимножестве не больше размера комбинации $k$
 
         $\Sigma^* = \Set{\infty \cdot \triangle, \infty \cdot \Box, \infty \cdot \star, \infty \cdot \Cat}^* \quad n = |\Sigma^*| = \infty$
@@ -60,7 +59,7 @@
 
         $\triangle \Big| \Box \Box \Big| \star \star \Big| $
 
-        Заменяем элементы на точечки - нам уже не так важен тип элемента, потому что мы знаем из разделения:
+        Заменяем элементы на точечки -- нам уже не так важен тип элемента, потому что мы знаем из разделения:
 
         $\bullet \Big| \bullet \bullet \Big| \bullet \bullet \Big| $
 
@@ -82,8 +81,7 @@
 
         \mediumvspace
 
-        \item \textbf{Слабая композиция} (Weak composition) неотрицательного целого числа $n$ в $k$ частей -
-        это решение $(b_1, \dots, b_k)$ уравнение $b_1 + \dots + b_k = n$, где $b_i \geq 0$
+        \item \textbf{Слабая композиция} (Weak composition) неотрицательного целого числа $n$ в $k$ частей -- это решение $(b_1, \dots, b_k)$ уравнение $b_1 + \dots + b_k = n$, где $b_i \geq 0$
 
         $|\Set{\text{слабая композиция } n \text{ в } k \text{ частей}}| = \begin{pmatrix}
                                                                                n + k - 1 \\ n, k - 1
@@ -101,12 +99,12 @@
                                                                                                                                  n + k - 1 \\ n, k - 1
         \end{pmatrix}$
 
-        \item \textbf{Композиция} (Composition) - решение для $b_1 + \dots + b_k = n$, где $b_i > 0$
         \mediumvspace
 
         $|\Set{\text{композиция } n \text{ в } k \text{ частей}}| = \begin{pmatrix}
                                                                         n - k + k - 1 \\ n - k, k - 1
         \end{pmatrix}$
+        \item \textbf{Композиция} (Composition) -- решение для $b_1 + \dots + b_k = n$, где $b_i > 0$
 
         Мы знаем, что одну единичку получит каждая $b_i$, поэтому мы решаем это как слабую композицию для $n - k$ в $k$ частей
 
@@ -123,7 +121,7 @@
         \end{pmatrix} = 2^{n - 1}$
         \mediumvspace
 
-        \item \textbf{Разбиения множества} (Set partitions) - множество размера $k$ непересекающихся непустых подмножеств
+        \item \textbf{Разбиения множества} (Set partitions) -- множество размера $k$ непересекающихся непустых подмножеств
 
         \begin{tabular}{cp}
             \Exs $\Set{1, 2, 3, 4}, n = 4, k = 2 \rightarrow [\text{разбиение в 2 части}] \rightarrow & \Set{\Set{1}, \Set{2, 3, 4}}, \\
@@ -188,18 +186,19 @@
                                     n - 1 \\ k
         \end{Bmatrix}$
 
-        \item \textbf{Число Белла} (Bell number) - количество всех неупорядоченных разбиений множества размера $n$
         \mediumvspace
+
+        \item \textbf{Число Белла} (Bell number) -- количество всех неупорядоченных разбиений множества размера $n$
 
         Число Белла вычисляется по формуле: $B_n = \sum_{m=0}^n S(n, m)$
 
-        \item \textbf{Целочисленное разбиение} (Integer partition) - решение для $a_1 + \dots + a_k = n$, где $a_1 \geq a_2 \geq \dots \geq a_k \geq 1$
         \mediumvspace
 
+        \item \textbf{Целочисленное разбиение} (Integer partition) -- решение для $a_1 + \dots + a_k = n$, где $a_1 \geq a_2 \geq \dots \geq a_k \geq 1$
 
-        $p(n, k)$ - число целочисленных разбиений $n$ в $k$ частей
+        $p(n, k)$ -- число целочисленных разбиений $n$ в $k$ частей
 
-        $p(n) = \sum_{k = 1}^n p(n, k)$ - число всех разбиений для $n$
+        $p(n) = \sum_{k = 1}^n p(n, k)$ -- число всех разбиений для $n$
 
         \Ex $5 = 5 = 4 + 1 = 3 + 2 = 3 + 1 + 1 = 2 + 2 + 1 = 2 + 1 + 1 + 1 = 1 + 1 + 1 + 1 + 1$
 
