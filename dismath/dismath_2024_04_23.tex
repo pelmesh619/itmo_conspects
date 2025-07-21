@@ -136,30 +136,30 @@
 
         Соответственно $C(n, k)$ -- множество всех таких $k$-сочетаний
 
-        $|C(n, k)| = C^k_n = \begin{pmatrix}n \\ k\end{pmatrix}$
+        $|C(n, k)| = C^k_n = \Comb{n}{k}$
 
-        $C(n, k) = \begin{pmatrix}\Sigma \\ k\end{pmatrix}$
+        $C(n, k) = \Comb{\Sigma}{k}$
 
-        $\begin{pmatrix}n \\ k\end{pmatrix} \cdot k! = |P(n, k)|$
+        $\Comb{n}{k} \cdot k! = |P(n, k)|$
 
-        $|C(n, k)| = \begin{pmatrix}n \\ k\end{pmatrix} = \frac{n!}{k!(n - k)!}$
+        $|C(n, k)| = \Comb{n}{k} = \frac{n!}{k!(n - k)!}$
 
     \end{itemize}
 
     \begin{MyTheorem}
         \Ths Биномиальная теорема (Binomial theorem):
 
-        \[(x + y)^n = \sum_{k=0}^n \begin{pmatrix}n \\ k\end{pmatrix} x^k y^{n - k}\]
+        \[(x + y)^n = \sum_{k=0}^n \Comb{n}{k} x^k y^{n - k}\]
     \end{MyTheorem}
 
-    $\begin{pmatrix}n \\ k\end{pmatrix} = \frac{n!}{k!(n - k)!}$ -- биномиальный коэффициент
+    $\Comb{n}{k} = \frac{n!}{k!(n - k)!}$ -- биномиальный коэффициент
 
     \begin{MyTheorem}
         \Ths Мультиномиальная теорема (Multinomial theorem):
 
-        \[(x_1 + \dots + x_r)^n = \sum_{\substack{k_i \in 1..n, \\ k_1 + \dots + k_r = n}} \begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} x^{k_1}_1 \cdot \dots \cdot x^{k_r}_r\]
+        \[(x_1 + \dots + x_r)^n = \sum_{\substack{k_i \in 1..n, \\ k_1 + \dots + k_r = n}} \Comb{n}{k_1, \dots, k_r} x^{k_1}_1 \cdot \dots \cdot x^{k_r}_r\]
     \end{MyTheorem}
 
-    $\begin{pmatrix}n \\ k_1, \dots, k_r\end{pmatrix} = \frac{n!}{k_1! \dots k_r!}$ -- мультиномиальный коэффициент
+    $\Comb{n}{k_1, \dots, k_r} = \frac{n!}{k_1! \dots k_r!}$ -- мультиномиальный коэффициент
 
 \end{document}
