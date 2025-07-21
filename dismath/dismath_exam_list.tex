@@ -1233,29 +1233,285 @@
 
 
     \begin{enumerate}
-        \item \textbf{} (\textit{Recurrence relations})
+        \item \textbf{Рекуррентные соотношения} (\textit{Recurrence relations})
+        
+        \hyperlink{recurrencerelations}{Рекуррентные соотношения}
 
-        \item \textbf{} (\textit{Solving recurrence relations using characteristic equations})
+        \underline{Решить рекуррентное соотношение} - найти закрытую формулу
 
-        \item \textbf{} (\textit{Generating functions})
+        \Exs Арифметическая прогрессия $a_n = a_{n - 1} + d, a_0 = const$
 
-        \item \textbf{} (\textit{Power series})
+        Решение: $a_n = a_0 + nd$ - анзац (Ansatz, догадка)
 
-        \item \textbf{} (\textit{Solving linear recurrences using generating functions})
+        Проверка: $a_n = a_0 + nd = a_{n - 1} + d = a_0 + (n - 1)d + d = a_0 + nd \quad$ - {\Large👍👍👍}
 
-        \item \textbf{} (\textit{Solving combinatorial problems using generating functions})
+        \item \textbf{Метод характеристического уравнения} (\textit{Solving recurrence relations using characteristic equations})
 
-        \item \textbf{} (\textit{Operators and annihilators})
+        \substack{\text{Рекуррентное} \\ \text{соотношение}} \ $\stackrel{a_n \to r^n}{\rightsquigarrow}$ \ \substack{\text{Характеристическое} \\ \text{уравнение}} \ $\stackrel{\text{решение}}{\rightsquigarrow}$ Корни $\stackrel{\text{магия}}{\rightsquigarrow}$ Решение $\rightsquigarrow$ Проверка
 
-        \item \textbf{} (\textit{Solving linear recurrences using annihilators})
+        \vspace{3mm}
 
-        \item \textbf{} (\textit{Catalan numbers})
+        \Exs $a_n = a_{n - 1} + 6a_{n - 2}, \quad a_0 = 1, a_1 = 8$
 
-        \item \textbf{} (\textit{Divide-and-Conquer algorithms analysis using recursion trees})
+        ХрУ: $r^n - r^{n - 1} - 6r^{n - 2} = 0 \Longrightarrow r_{1,2} = -2, 3$
 
-        \item \textbf{} (\textit{Master theorem})
+        \fbox{\begin{tabular}{l}
+            Если $r_1 \neq r_2$, то $a_n = ar_1^n + br_2^n$ - общее решение \\
+            Если $r_1 = r_2 = r$, то $a_n = ar^n + bnr^n$
+        \end{tabular}}
 
-        \item \textbf{} (\textit{Akra-Bazzi method})
+        \vspace{3mm}
+
+        $
+        \begin{cases}a_n = a(-2)^n + b(3)^n \\ a_0 = 1 = a + b \\ a_1 = 8 = -2a + 3b\end{cases} \Longleftrightarrow
+        \begin{cases}a = -1 \\ b = 2 \\ a_n = -(-2)^n + 2 \cdot 3^n \text{ - решение}\end{cases}
+        $
+
+
+        \item \textbf{Производящие функции} (\textit{Generating functions})
+
+        \hyperlink{generatingfunction}{Производящие функции}
+
+        $\sum_{n = 0}^\infty a_n x^n = a_0 + a_1 x + a_2 x^2 + \dots$
+
+        Функция выше задает последовательность $a_0, a_1, a_2, \dots$
+
+        \Exs $3 + 8x^2 + x^3 + \frac{1}{7}x^5 + 100x^6 + \dots \implies (3, 0, 8, 1, 0, \frac{1}{7}, 100, \dots)$
+
+        \Exs Последовательность $(1, 1, 1, \dots)$ задает функцию $1 + x + x^2 + \dots = \sum_{n = 0}^\infty x^n$
+
+        {
+        \footnotesize
+        \begin{tabular}{p{0.5\textwidth}|p{0.3\textwidth}}
+            \hline
+
+            \hfil Что? & \hfil Куда? \\
+
+            \hline
+            $\frac{1}{1 + x} = 1 - x + x^2 - x^3 + \dots \hfill = \sum_{n = 0}^\infty (-1)^n x^n$ & $(1, -1, 1, -1, \dots)$ \\
+
+            $\frac{1}{1 - kx} = 1 + kx + k^2 x^2 + k^3 x^3 + \dots \hfill = \sum_{n = 0}^\infty k^n x^n$ & $(1, k, k^2, k^3, \dots)$ \\
+
+            $\frac{1}{1 - kx} + \frac{1}{1 - mx} = 1 + (k + m)x + (k + m)^2 x^2 + \dots \hfill = \sum_{n = 0}^\infty (k + m)^n x^n$ & $(1, k + m, (k + m)^2, (k + m)^3, \dots)$ \\
+
+            $\frac{k}{1 - x} = 2 + 2x + 2x^2 + 2x^3 + \dots \hfill = \sum_{n = 0}^\infty 2 x^n$ & $(k, k, k, k, \dots)$ \\
+
+            $\frac{1}{1 - x^2} = 1 + x^2 + x^4 + x^6 + \dots \hfill = \sum_{n = 0}^\infty x^{2n}$ & $(1, 0, 1, 0, \dots)$ \\
+
+            $\frac{x}{1 - x} = x + x^2 + \dots \hfill = \sum_{n = 0}^\infty x^{n + 1}$ & $(0, 1, 1, 1, \dots)$ \\
+
+            $\frac{1 - x^k}{1 - x} = 1 + x + x^2 + x^3 + \dots + x^{k - 1} \hfill = \sum_{n = 0}^{k - 1} x^n$ & $\underset{k \text{ раз}}{(1, 1, 1, \dots, 1)}$ \\
+
+            $\frac{d}{dx}\frac{1}{1 - x} = \frac{1}{(1 - x)^2} = 1 + 2x + 3x^2 + \dots \hfill = \sum_{n = 0}^{\infty} (n + 1) x^n$ & $(1, 2, 3, 4, \dots)$ \\\hline
+
+        \end{tabular}
+        }
+
+        \item \textbf{Степенные ряды} (\textit{Power series})
+
+        Степенной ряд - ряд вида $\sum_{n = 0}^\infty c_n x^n$
+
+        \item \textbf{Решение при помощи производящих функций} (\textit{Solving linear recurrences using generating functions})
+
+        Решить рекуррентное соотношение $a_n = 3a_{n-1} - 2a_{n-1}$, где $a_0 = 1, a_1 = 3$
+
+        Используем производящие функции:
+
+        \setlength{\tabcolsep}{2pt}
+        \begin{tabular}{cccrcrcccll}
+            $A(x) = $ & $a_0$ & $+$ & $a_1 x$ & $+$ & $a_2 x^2$    & $+$ & $a_3 x^3$ & $+$ & $\dots$  &  $ = A(x)$                  \\ \hline
+             &       &     &         &     & $3x(a_1 x$   & $+$ & $a_2 x^2$ & $+$ & $\dots)$ & $= 3x(A(x) - a_0)$ \\
+                   &       &     &         &     & $-2x^2(a_0 $ & $+$ & $a_1 x$   & $+$ & $\dots)$ & $= -2x^2 A(x)$     \\
+                   & $a_0$ & $+$ & $a_1 x$ &     &              &     &           &     &          & $= a_0 + a_1 x$
+        \end{tabular}
+
+        $A(x) = a_0 + a_1 x + 3x(A(x) - a_0) - 2x^2 A(x) = 1 + 3x + 3xA(x) - 3x - 2x^2 A(x)$
+
+        $A(x) (2x^2 - 3x + 1) = 1 \Longrightarrow A(x) = \frac{1}{1 - 3x + 2x^2} = \frac{-1}{1 - x} + \frac{2}{1 - 2x} \Longrightarrow a_n = 2^{n + 1} - 1$
+
+        \item \textbf{Подсчет, используя производящие функции} (\textit{Solving combinatorial problems using generating functions})
+        
+        Найти число решений для $x_1 + x_2 + x_3 = 6$, где $x_i \geq 0, x_1 \leq 4, x_2 \leq 3, x_3 \leq 5$
+
+        $A_1(x) = 1 + x + x^2 + x^3 + x^4$
+
+        $A_2(x) = 1 + x + x^2 + x^3$
+
+        $A_3(x) = 1 + x + x^2 + x^3 + x^4 + x^5$
+
+        $A(x) = A_1 \cdot A_2 \cdot A_3 = 1 + 3x + 6x^2 + 10x^3 + 14x^4 + 17x^5 + \underline{18x^6} + 17x^7 + \dots$
+
+        Ответ -- 18
+
+        \item \textbf{Операторы и аннигиляторы} (\textit{Operators and annihilators})
+
+        \hyperlink{operators}{Операторы}:
+
+        \begin{tabular}{ll}
+            \hline
+
+            \hfil Что? & \hfil Как? \\
+
+            \hline
+
+            Сумма & $(f + g)(n) = f(n) + g(n)$ \\
+
+            \hline
+
+            Умножение на число & $(\alpha \cdot f)(n) = \alpha f(n)$ \\
+
+            \hline
+
+            Сдвиг & $E f(n) = f(n + 1)$ \\
+
+            \hline
+
+            Сдвиг на $k$ & $E^k f(n) = f(n + k)$ \\
+
+            \hline
+
+            Композиция & $(X + Y) f(n) = Xf(n) + Yf(n)$ \\
+
+             & $(XY) f(n) = X(Yf(n)) = Y(Xf(n))$ \\
+
+        \end{tabular}
+
+        \hyperlink{annihilator}{Аннигилятор} -- оператор, который трансформирует $f$ в функцию, тождественную $0$
+
+        
+        \begin{tabular}{lc}
+            \hline
+
+            \hfil Что? & Что аннигилирует? \\
+
+            \hline
+
+            $(E - 1)$ & $\alpha$ \\
+
+            \hline
+
+            $(E - c)$ & $c^n$ \\
+
+            \hline
+
+            $(E - a)(E - b)$ & $\alpha a^n + \beta b^n$ \\
+
+            \hline
+
+            $(E - 1)^2$ & $\alpha n + \beta$ \\
+
+            \hline
+
+            $(E - a)^2$ & $(\alpha n + \beta) a^n$ \\
+
+            \hline
+
+            $(E - c)^d$ & $P_{d - 1}(n) \cdot c^n$ \\
+
+            \hline
+
+        \end{tabular}
+
+        \Notas Любой составной оператор аннигилирует класс функций
+
+        \Notas Любая функция, составленная из полинома и экспоненты, имеет свой единственный аннигилятор
+
+        Если $X$ аннигилирует $f$, то $X$ также аннигилирует $Ef$
+
+        Если $X$ аннигилирует $f$ и $Y$ аннигилирует $g$, то $XY$ аннигилирует $f \pm g$
+
+
+        \item \textbf{Аннигилирование рекуррентностей} (\textit{Solving linear recurrences using annihilators})
+
+        \begin{enumerate}
+            \item Запишите рекуррентное соотношение в форме операторов
+
+            \item Выделите аннигилятор для соотношения
+
+            \item Разложите на множители (если понадобится)
+
+            \item Выделите общее решение из аннигилятора
+
+            \item Найдите коэффициенты используя базовые случаи (если даны)
+        \end{enumerate}
+
+        \vspace{3mm}
+
+        \Exs $r(n) = 5r(n - 1), r(0) = 3$
+
+        \begin{enumerate}
+            \item $r(n + 1) - 5r(n) = 0 \quad (E - 5)r(n) = 0$
+
+            \item $(E - 5)$ аннигилирует $r(n)$
+
+            \item $(E - 5)$ уже разложен
+
+            \item $r(n) = \alpha \cdot 5^n$
+
+            \item $r(0) = 3 \Longrightarrow \alpha = 3$
+        \end{enumerate}
+
+        \item \textbf{Числа Каталана} (\textit{Catalan numbers})
+
+        Числа Каталана - целочисленная последовательность, изпользующаяся в комбинаторике и начинающаяся так: 1, 2, 5, 14, 42, 132, 429, 1430, 4862, 16796, 58786, 208012, 742900, 2674440 \dots (\href{https://oeis.org/A000108}{*тык*})
+
+        $n$-ое число Каталана описывает число правильных скобочных последовательностей размера $2n$
+
+        Число Каталана описывается рекуррентным соотношением: $C_0 = 1, \quad C_n = \sum_{i = 0}^{n - 1} C_{i} C_{n - i - 1}$
+
+        \item \textbf{Основная теорема о рекуррентных соотношениях} (\textit{Divide-and-Conquer algorithms analysis using recursion trees})
+
+        \hyperlink{mastertheorem}{Основная теорема о рекуррентных соотношениях}
+
+        Пусть асимптотика алгоритма - $T(n) = aT\left(\frac{n}{b}\right) + f(n)$, из этого, $c_{crit} = \log_b a$, тогда:
+
+        \begin{tabular}{cll}
+            \hline
+
+            Что? & \hfil Когда? & \hfil Что делать? \\
+
+            \hline
+
+            I случай: слияние $<$ рекурсия & $f(n) \in O(n^c)$, где $c < c_{crit}$ & $T(n) \in \Theta(n^{c_{crit}})$ \\
+
+            \hline
+
+            II случай: слияние $\approx$ рекурсия & $f(n) \in \Theta(n^{c_{crit}} \log^k n)$ & \\
+
+            \hline
+
+            & II.a случай - $k \geq 0$ & $T(n) \in \Theta(n^{c_{crit}} \log^{k + 1} n)$ \\
+
+            & II.b случай - $k = -1$ & $T(n) \in \Theta(n^{c_{crit}} \log \log n)$ \\
+
+            & II.c случай - $k < -1$ & $T(n) \in \Theta(n^{c_{crit}})$ \\
+
+            \hline
+
+            III случай: слияние $>$ рекурсия & $f(n) \in \Omega(n^c)$, где $c > c_{crit}$ & $T(n) \in \Theta(f(n))$\\
+
+            \hline
+
+        \end{tabular}
+
+        \item \textbf{Метод Акра-Бацци} (\textit{Akra-Bazzi method})
+
+        \hyperlink{akrabazzimethod}{Метод Акра-Бацци}
+
+        $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n)) \Longrightarrow T(n) \in \Theta\left(n^p \cdot \left(1 + \int_1^n \frac{f(x)}{x^{p + 1}} dx\right)\right)$, где $p$ -- решение для $\sum_{i = 1}^k a_i b_i^p = 1$
+
+        \begin{cases}
+            k = const \\
+            a_i > 0 \\
+            0 < b_i < 1 \\
+            h_1(n) \in O\left(\frac{n}{\log^2 n}\right) \text{ -- малые возмущения}
+        \end{cases}
+
+        \Ex $T(n) = T\left(\left\lfloor\frac{n}{2}\right\rfloor\right) + T\left(\left\lceil\frac{n}{2}\right\rceil\right) + n$ -- асимптотика сортировки слиянием
+
+        $T(n) = T\left(\frac{n}{2} + O(1)\right) + T\left(\frac{n}{2} - O(1)\right) + \theta(n)$
+
+        Здесь $b_i = \frac{1}{2}, \quad h = \pm O(1) \in O\left(\frac{n}{\log^2 n}\right)$
 
     \end{enumerate}
 
