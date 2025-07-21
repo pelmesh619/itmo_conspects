@@ -90,13 +90,16 @@
 
         \item \textbf{Количество сюръекций (правототальных функций)}
 
-        * $X = \Set{\text{функция } f : [k] \to [n]}$
+        \begin{itemize}
+            \item $X = \Set{\text{функция } f : [k] \to [n]}$
 
-        * Плохое свойство $P_i \ : \ X_i = \Set{f : [k] \to [n] \ | \ \nexists j \in [k] : f(j) = i}$
+            \item Плохое свойство $P_i \ : \ X_i = \Set{f : [k] \to [n] \ | \ \nexists j \in [k] : f(j) = i}$
 
-        * $|\Set{\text{сюръекции } f : [k] \to [n]}| = |X \setminus (X_1 \union \dots \union X_m)| \stackrel{\text{PIE}}{=}
-        \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m]} (-1)^{|S|} (n - |S|)^k =
-        \sum^k_{i = 0} (-1)^{i} \Comb{k}{i} (k - i)^n$
+            \item $|\Set{\text{сюръекции } f : [k] \to [n]}| = |X \setminus (X_1 \union \dots \union X_m)| \stackrel{\text{PIE}}{=}
+            \sum_{S \subseteq [m]} (-1)^{|S|} |N(S)| = \sum_{S \subseteq [m]} (-1)^{|S|} (n - |S|)^k =
+            \sum^k_{i = 0} (-1)^{i} \Comb{k}{i} (k - i)^n$
+        \end{itemize}
+
         \mediumvspace
 
         \item \textbf{Количество биекций}
@@ -115,13 +118,16 @@
 
         Если $f(i) = i$, то $i$ -- фиксированная точка
 
-        * Плохие свойства $P_1,\dots,P_m : \pi \in X$ имеет свойство $P_i$ \Longleftrightarrow $\pi(i) = i$
+        \begin{itemize}
+            \item $X = $ все $n!$ перестановок
 
-        * Посчитаем $N(S): \quad N(S) = (n - |S|)!$
+            \item Плохие свойства $P_1,\dots,P_m : \pi \in X$ имеет свойство $P_i$ \Longleftrightarrow $\pi(i) = i$
 
-        * Применяем ПВ/И: $X \setminus (X_1 \union \dots \union X_n) = \sum_{S \subseteq [n]} (-1)^{|S|} N(S) =
-        \sum_{S \subseteq [n]} (-1)^{|S|} (n - |S|)! = \sum_{i = 0}^n (-1)^{i} \Comb{n}{i} (n - i)!$
+            \item Посчитаем $N(S): \quad N(S) = (n - |S|)!$
 
+            \item Применяем ПВ/И: $X \setminus (X_1 \union \dots \union X_n) = \sum_{S \subseteq [n]} (-1)^{|S|} N(S) =
+            \sum_{S \subseteq [n]} (-1)^{|S|} (n - |S|)! = \sum_{i = 0}^n (-1)^{i} \Comb{n}{i} (n - i)!$
+        \end{itemize}
     \end{itemize}
 
     \clearpage
