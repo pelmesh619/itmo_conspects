@@ -70,11 +70,11 @@
 
 * Специальные разделы высшей математики (лектор Далевская О. П.)
 
-    [**Весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf) [✨Remastered]
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/specsec/specsec_superconspect.pdf) [✨Remastered]
 
 * Дискретная математика II (лектор Чухарев К. И.)
 
-    [**Почти весь курс с неполной программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_superconspect.pdf) [✨Remastered]
+    [**Почти весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_superconspect.pdf) [✨Remastered]
 
     [**Шпаргалка по Комбинаторике**](https://pelmesh619.github.io/itmo_conspects/conspects/dismath/dismath_cheatsheet_combinatorics.pdf)
 
