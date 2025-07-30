@@ -251,88 +251,87 @@
 
     Тогда $\Phi(x) = \int^x_a f(t) dt$ - первообразная для $f(x)$ - $\Phi(x) = F(x)$
 
-    $\Box$
+    \begin{MyProof}
+        Докажем по определению
 
-    Докажем по определению
+        $\Phi^\prime(x) = \lim_{\Delta x \to 0}\frac{\Delta \Phi}{\Delta x} = \lim_{\Delta x \to 0}\frac{\Phi(x + \Delta x) - \Phi(x)}{\Delta x} =
+        \lim_{\Delta x \to 0}\frac{\int^{x + \Delta x}_a f(t)dt - \int^{x}_a f(t)dt}{\Delta x} =
+        \lim_{\Delta x \to 0}\frac{\int^{x + \Delta x}_x f(t)dt}{\Delta x} = [\text{по \Ths Лагранжа } \exists \xi \in [x;x + \Delta x]] =
+        \lim_{\Delta x \to 0} \frac{f(\xi)\Delta x}{\Delta x} = \lim_{\substack{\Delta x \to 0 \\ \xi \to x}} f(\xi) = f(x)$
+    \end{MyProof}
 
-    $\Phi^\prime(x) = \lim_{\Delta x \to 0}\frac{\Delta \Phi}{\Delta x} = \lim_{\Delta x \to 0}\frac{\Phi(x + \Delta x) - \Phi(x)}{\Delta x} =
-    \lim_{\Delta x \to 0}\frac{\int^{x + \Delta x}_a f(t)dt - \int^{x}_a f(t)dt}{\Delta x} =
-    \lim_{\Delta x \to 0}\frac{\int^{x + \Delta x}_x f(t)dt}{\Delta x} = [\text{по \Ths Лагранжа } \exists \xi \in [x;x + \Delta x]] =
-    \lim_{\Delta x \to 0} \frac{f(\xi)\Delta x}{\Delta x} = \lim_{\substack{\Delta x \to 0 \\ \xi \to x}} f(\xi) = f(x)$
+    \begin{MyTheorem}
+        \Ths \hypertarget{formulanewtonleibniz}{Основная теорема математического анализа} (формула Ньютона-Лейбница, N-L)
 
-    $\Box$
+        $f(x) \in C_{[a;b]}, F(x)$ -- какая-либо первообразная $f(x)$
 
-    \Th \hypertarget{formulanewtonleibniz}{Основная теорема математического анализа} (формула Ньютона-Лейбница, N-L)
+        Тогда \fbox{$\int^b_a f(x)dx = F(x) \Big|^b_a = F(b) - F(a)$}
+    \end{MyTheorem}
 
-    $f(x) \in C_{[a;b]}, F(x)$ - какая-либо первообразная $f(x)$
+    \begin{MyProof}
+        Для $f(x)$ определена $\Phi(x) = \int_a^x f(t)dt = F(x) + C$
 
-    \fbox{$\int^b_a f(x)dx = F(x) \Big|^b_a = F(b) - F(a)$}
+        Найдем значения $\Phi(a)$ и $\Phi(b)$
 
-    $\Box$
+        $\Phi(a) = F(a) + C = \int^a_a f(t)dt = 0 \Longrightarrow F(a) + C = 0 \Longrightarrow F(a) = -C$
 
-    Для $f(x)$ определена $\Phi(x) = \int_a^x f(t)dt = F(x) + C$
+        $\Phi(b) = F(b) + C = F(b) - F(a) = \int^b_a f(t) dt$
 
-    Найдем значения $\Phi(a)$ и $\Phi(b)$
-
-    $\Phi(a) = F(a) + C = \int^a_a f(t)dt = 0 \Longrightarrow F(a) + C = 0 \Longrightarrow F(a) = -C$
-
-    $\Phi(b) = F(b) + C = F(b) - F(a) = \int^b_a f(t) dt$
-
-    $\int^b_a f(x)dx = F(b) - F(a)$
-
-    $\Box$
+        $\int^b_a f(x)dx = F(b) - F(a)$
+    \end{MyProof}
 
 
-
-    1* \hypertarget{integralsubstitution}{Замена переменной в определенном интеграле}
     \subsubsection{1.3.2. Методы интегрирования}
 
-    \Th $f(x) \in C_{[a;b]} \quad x = \varphi(t) \in C^\prime_{[\alpha;\beta]}, \varphi(\alpha) = a, \varphi(\beta) = b$
+    \begin{enumerate}[label*=\arabic** ]
+        \item \hypertarget{integralsubstitution}{Замена переменной в определенном интеграле}
 
-    $\int^b_a f(x)dx = \int^\beta_\alpha f(\varphi(t)) \varphi^\prime(t) dt$
+        \begin{MyTheorem}
+            \Ths $f(x) \in C_{[a;b]} \quad x = \varphi(t) \in C^\prime_{[\alpha;\beta]}, \varphi(\alpha) = a, \varphi(\beta) = b$
 
-    $\Box$
+            $\int^b_a f(x)dx = \int^\beta_\alpha f(\varphi(t)) \varphi^\prime(t) dt$
+        \end{MyTheorem}
 
-    N-L: $\int^b_a f(x)dx = F(x) \Big|_a^b$
+        \begin{MyProof}
+            N-L: $\int^b_a f(x)dx = F(x) \Big|_a^b$
 
-    Докажем, что $F(x) = F(\varphi(t))$ - первообразная для $f(\varphi(t))\varphi^\prime(t)$
+            Докажем, что $F(x) = F(\varphi(t))$ -- первообразная для $f(\varphi(t))\varphi^\prime(t)$
 
-    $\frac{dF(\varphi(t))}{dt} = F^\prime(\varphi(t)) \varphi^\prime(t)$
+            $\frac{dF(\varphi(t))}{dt} = F^\prime(\varphi(t)) \varphi^\prime(t)$
 
-    $\frac{dF(\varphi(t))}{d\varphi(t)}\frac{d\varphi(t)}{dt} = \frac{dF(x)}{dx} \varphi^\prime(t) = f(x)\varphi^\prime(t)$
+            $\frac{dF(\varphi(t))}{d\varphi(t)}\frac{d\varphi(t)}{dt} = \frac{dF(x)}{dx} \varphi^\prime(t) = f(x)\varphi^\prime(t)$
+        \end{MyProof}
 
-    $\Box$
+        \Ex $\int_0^{\frac{1}{2}} \frac{dx}{\sqrt{1 - x^2}} = 
+        \begin{bmatrix}
+            x = \sin t \\ x \uparrow^\frac{1}{2}_0 \ t \uparrow_0^\frac{\pi}{6}
+        \end{bmatrix} =
+        \int_0^\frac{\pi}{6} \frac{dt}{\sqrt{1 - \sin^2 t}}\cos t =
+        \int_0^\frac{\pi}{6} \frac{dt}{|\cos t|} \cos t = \int_0^\frac{\pi}{6} dt = t \Big|_0^\frac{\pi}{6} = \frac{\pi}{6}$
 
-    \Ex $\int_0^{\frac{1}{2}} \frac{dx}{\sqrt{1 - x^2}} = \begin{bmatrix}
-                                                              x = \sin t \\ x \uparrow^\frac{1}{2}_0 \ t \uparrow_0^\frac{\pi}{6}
-    \end{bmatrix} =
-    \int_0^\frac{\pi}{6} \frac{dt}{\sqrt{1 - \sin^2 t}}\cos t =
-    \int_0^\frac{\pi}{6} \frac{dt}{|\cos t|} \cos t = \int_0^\frac{\pi}{6} dt = t \Big|_0^\frac{\pi}{6} = \frac{\pi}{6}$
+        \item \hypertarget{integralbyparts}{По частям}
 
-    2* \hypertarget{integralbyparts}{По частям}
+        \begin{MyTheorem}
+            \Ths $u, v \in C^\prime_{[a;b]} \quad uv \Big|_a^b = u(b)v(b) - u(a)v(a)$
 
-    \Th $u, v \in C^\prime_{[a;b]} \quad uv \Big|_a^b = u(b)v(b) - u(a)v(a)$
+            Тогда: $\int^b_a udv = uv \Big|_a^b - \int^b_a vdu$
+        \end{MyTheorem}
 
-    Тогда: $\int^b_a udv = uv \Big|_a^b - \int^b_a vdu$
-
-    $\Box$
+        \begin{MyProof}
             $u(x)v(x)$ -- первообразная для $u^\prime(x)v(x) + v^\prime(x)u(x)$
 
+            Или $d(uv) = udv + vdu$
 
-    Или $d(uv) = udv + vdu$
+            По формуле N-L $\int_a^b (udv + vdu) = \int^b_a d(uv) = u(x)v(x) \Big|^b_a$
 
-    По формуле N-L $\int_a^b (udv + vdu) = \int^b_a d(uv) = u(x)v(x) \Big|^b_a$
+            $\int_a^b udv = uv \Big|^b_a - \int^b_a vdu$
+        \end{MyProof}
 
-    $\int_a^b udv = uv \Big|^b_a - \int^b_a vdu$
+        \Ex $\int_1^e \ln x dx = x \ln x \Big|^e_1 - \int^e_1 xd\ln x = e \ln e - 1 \ln 1 -
+        \int^e_1 dx = e - x \Big|_1^e = 1$
 
-    $\Box$
-
-    \Ex $\int_1^e \ln x dx = x \ln x \Big|^e_1 - \int^e_1 xd\ln x = e \ln e - 1 \ln 1 -
-    \int^e_1 dx = e - x \Big|_1^e = 1$
-
-    \Nota Не всякий интеграл вида $\int^b_a f(x) dx $ является определенным
-
-
+        \Nota Не всякий интеграл вида $\int^b_a f(x) dx $ является определенным
 
         \Ex $\int^e_0 \ln x dx = x \ln x \Big|_0^e - x \Big|_0^e = e \ln e - \underset{0 \cdot \infty}{\undergroup{0 \ln 0}} - e$ -- несобственный интеграл
+    \end{enumerate}
 \end{document}
