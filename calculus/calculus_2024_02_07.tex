@@ -122,48 +122,47 @@
 
         $m (b-a) \leq \int^b_a f(x)dx \leq M(b - a)$
 
-        $\Box$ Док-во:
+        \begin{MyProof}
+            Доказательство: по теореме Вейерштрасса 2 $f(x)$ принимает наименьшее и наибольшее значения и для всякого $x$ из $[a; b]$:  $m <= f(x) <= M$
 
-        По теореме Вейерштрасса 2 $f(x)$ принимает наименьшее и наибольшее значения и для всякого $x$ из $[a; b]$:  $m <= f(x) <= M$
+            Так как все средние точки принадлежат $[a; b]$, то
 
-        Так как все средние точки принадлежат $[a; b]$, то
+            $m \leq f(\xi_i) \leq M \quad \forall \xi_i$
 
-        $m \leq f(\xi_i) \leq M \quad \forall \xi_i$
+            $m \Delta_i \leq f(\xi_i) \Delta_i \leq M \Delta_i$
 
-        $m \Delta_i \leq f(\xi_i) \Delta_i \leq M \Delta_i$
+            $m \sum_{i=1}^n \Delta x_i \leq f(\xi_i) \sum_{i=1}^n \Delta x_i \leq M \sum_{i=1}^n \Delta x_i$
 
-        $m \sum_{i=1}^n \Delta x_i \leq f(\xi_i) \sum_{i=1}^n \Delta x_i \leq M \sum_{i=1}^n \Delta x_i$
+            Предельный переход:
 
-        Предельный переход:
+            $\lim_{\substack{n\to\infty \\ \tau\to0}} m \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq \lim_{\substack{n\to\infty \\ \tau\to0}} M \sum_{i=1}^n \Delta x_i$
 
-        $\lim_{\substack{n\to\infty \\ \tau\to0}} m \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq \lim_{\substack{n\to\infty \\ \tau\to0}} M \sum_{i=1}^n \Delta x_i$
+            $m \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq M \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \Delta x_i$
 
-        $m \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \Delta x_i \leq \int^b_a f(x) dx \leq M \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \Delta x_i$
+            $m (b - a) \leq \int^b_a f(x) dx \leq M (b - a)$
 
-        $m (b - a) \leq \int^b_a f(x) dx \leq M (b - a)$
-
-        $\Box$
-
+        \end{MyProof}
 
         \item \Th \hypertarget{theoremlagrangeaboutaverage}{Лагранжа о среднем} (в интегральной форме)
 
+        \item \Mems Теорема Лагранжа о среднем: 
         $f(x) \in C^\prime_{[a,b]} \Longrightarrow \exists \xi \in (a, b) \ f^\prime(\xi) = \frac{f(b) - f(a)}{b - a}$
 
-        Тогда найдется такая средняя точка, что
+        \begin{MyTheorem}
+            \Ths \hypertarget{theoremlagrangeaboutaverage}{Лагранжа о среднем} в интегральной форме
 
-        $f(x) \in C_{[a,b]} \Longrightarrow \exists \xi \in (a, b) \ f(\xi)(b - a) = \int^b_a f(x)dx$
+            $f(x) \in C_{[a,b]} \Longrightarrow \exists \xi \in (a, b) \ f(\xi)(b - a) = \int^b_a f(x)dx$
+        \end{MyTheorem}
 
         % help me
 
-        $\Box$
+        \begin{MyProof}
+            $m \leq \underset{\text{некоторое число}}{\undergroup{\frac{1}{b-a} \int_a^b f(x)dx}} \leq M$ по свойству выше
 
-        $m \leq \underset{\text{некоторое число}}{\undergroup{\frac{1}{b-a} \int_a^b f(x)dx}} \leq M$ по свойству выше
+            По теореме Больцано-Коши $f(x)$ непрерывна, поэтому пробегает все значения от $m$ до $M$
 
-        По теореме Больцано-Коши $f(x)$ непрерывна, поэтому пробегает все значения от $m$ до $M$
-
-        Значит найдется такая точка $\xi$, что $f(\xi) = \frac{1}{b-a} \int_a^b f(x)dx$
-
-        $\Box$
+            Значит найдется такая точка $\xi$, что $f(\xi) = \frac{1}{b-a} \int_a^b f(x)dx$
+        \end{MyProof}
 
         \item Сравнение интегралов
 
@@ -171,42 +170,38 @@
 
         Тогда $\int_a^b f(x)dx \geq \int_a^b g(x)dx$
 
-        $\Box$
-
-        $\int_a^b f(x)dx - \int_a^b g(x)dx = \int_a^b (f(x) - g(x))dx =
-        \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \underset{\geq 0}{\undergroup{(f(\xi_i) - g(\xi_i))}} \underset{\geq 0}{\undergroup{\Delta x_i}} \geq 0$
-
-        $\Box$
+        \begin{MyProof}
+            $\int_a^b f(x)dx - \int_a^b g(x)dx = \int_a^b (f(x) - g(x))dx =
+            \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n \underset{\geq 0}{\undergroup{(f(\xi_i) - g(\xi_i))}} \underset{\geq 0}{\undergroup{\Delta x_i}} \geq 0$
+        \end{MyProof}
 
 
         \item Интеграл и модуль
 
         $\left| \int^b_a f(x)dx \right| \leq \int^b_a |f(x)| dx$
 
-        $\Box$
+        \begin{MyProof}
+            $\int^b_a f(x)dx = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n f(\xi_i) \Delta x_i = \lim_{n\to\infty} \sigma_n$
 
-        $\int^b_a f(x)dx = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n f(\xi_i) \Delta x_i = \lim_{n\to\infty} \sigma_n$
+            $\int^b_a |f(x)|dx = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$
 
-        $\int^b_a |f(x)|dx = \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$
+            Докажем, что $\lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n|$
 
-        Докажем, что $\lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n|$
+            Так как определен $\int^b_a f(x)dx = \lim_{n\to\infty} \sigma_n = S \in \Real$, то можно рассмотреть случаи
 
-        Так как определен $\int^b_a f(x)dx = \lim_{n\to\infty} \sigma_n = S \in \Real$, то можно рассмотреть случаи
+            $S > 0: \quad \exists n_0 \ \forall n > n_0 \ \sigma_n > 0$ (вблизи $S$)
 
-        $S > 0: \quad \exists n_0 \ \forall n > n_0 \ \sigma_n > 0$ (вблизи $S$)
+            $\lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n|$
 
-        $\lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n|$
+            $S > 0: \quad \exists n_0 \ \forall n > n_0 \ \sigma_n < 0$ (вблизи $S$)
 
-        $S > 0: \quad \exists n_0 \ \forall n > n_0 \ \sigma_n < 0$ (вблизи $S$)
+            $\lim_{n\to\infty} |\sigma_n| = -\lim_{n\to\infty} \sigma_n = |\lim_{n\to\infty} \sigma_n|$
 
-        $\lim_{n\to\infty} |\sigma_n| = -\lim_{n\to\infty} \sigma_n = |\lim_{n\to\infty} \sigma_n|$
+            $S = 0: \lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n| = 0$
 
-        $S = 0: \lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n| = 0$
-
-        $\left| \int^b_a f(x)dx \left| = |\lim_{n\to\infty} \sigma_n| = \lim_{n\to\infty} |\sigma_n| =
-        \lim_{\substack{n\to\infty \\ \tau\to0}} \left|\sum_{i=1}^n f(\xi_i) \Delta x_i\right| \leq \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$ (модуль суммы меньше или равен сумме модулей)
-
-        $\Box$
+            $\left| \int^b_a f(x)dx \left| = |\lim_{n\to\infty} \sigma_n| = \lim_{n\to\infty} |\sigma_n| =
+            \lim_{\substack{n\to\infty \\ \tau\to0}} \left|\sum_{i=1}^n f(\xi_i) \Delta x_i\right| \leq \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$ (модуль суммы меньше или равен сумме модулей)
+        \end{MyProof}
 
     \end{enumerate}
 
