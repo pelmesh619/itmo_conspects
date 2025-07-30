@@ -143,7 +143,6 @@
 
         \end{MyProof}
 
-        \item \Th \hypertarget{theoremlagrangeaboutaverage}{Лагранжа о среднем} (в интегральной форме)
 
         \item \Mems Теорема Лагранжа о среднем: 
         $f(x) \in C^\prime_{[a,b]} \Longrightarrow \exists \xi \in (a, b) \ f^\prime(\xi) = \frac{f(b) - f(a)}{b - a}$
@@ -245,11 +244,13 @@
 
     Выявим связь между ними.
 
-    \Th \hypertarget{theorembarrow}{Об интеграле с переменным верхним пределом} (Барроу)
+    \begin{MyTheorem}
+        \Ths \hypertarget{theorembarrow}{Об интеграле с переменным верхним пределом} (Барроу)
 
-    $f(x) : [a;+\infty) \to \Real \quad f(x) \in C_{[a;+\infty+}$
+        $f(x) : [a;+\infty) \to \Real \quad f(x) \in C_{[a;+\infty]}$
 
-    Тогда $\Phi(x) = \int^x_a f(t) dt$ - первообразная для $f(x)$ - $\Phi(x) = F(x)$
+        Тогда $\Phi(x) = \int^x_a f(t) dt$ -- первообразная для $f(x)$, то есть $\Phi(x) = F(x)$
+    \end{MyTheorem}
 
     \begin{MyProof}
         Докажем по определению
