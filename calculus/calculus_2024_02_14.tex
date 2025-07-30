@@ -13,23 +13,25 @@
 
     \subsubsection{1.4.1. Площади}
 
-    1* \Mem \hypertarget{integralareadpsk}{Значение интеграла} - площадь фигуры под графиком
+    \begin{enumerate}[label*=\arabic** ]
+        \item \Mem \hypertarget{integralareadpsk}{Значение интеграла} - площадь фигуры под графиком
 
-    \begin{center}
-        \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_1}
-    \end{center}
+        \begin{center}
+            \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_1}
+        \end{center}
 
-    \underline{Геом. смысл}. $S = \int_a^b f(x) dx \quad\quad S^\prime = -\int_b^c f(x)dx$
+        \underline{Геом. смысл}. $S = \int_a^b f(x) dx \quad\quad S^\prime = -\int_b^c f(x)dx$
 
-    \mediumvspace
+        \mediumvspace
 
-    2*
+        \item
 
-    \begin{center}
-        \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_3}
-    \end{center}
+        \begin{center}
+            \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_3}
+        \end{center}
 
-    Площадь фигуры, окруженной графиками функций $S = \int_a^b |f(x) - g(x)| dx$, $a, b$ - абсциссы точек пересечения
+        Площадь фигуры, окруженной графиками функций $S = \int_a^b |f(x) - g(x)| dx$, $a, b$ - абсциссы точек пересечения
+    \end{enumerate}
 
     \Nota Симметрия
 
@@ -41,15 +43,17 @@
 
     \hypertarget{integralareapsk}{В ДПСК мы производили дробление фигуры на элементарные прямоугольники.} Сделаем подобное в ПСК для $\rho(\varphi)$:
 
-    1) Дробление $[\alpha;\beta]$ на угловые сектора $[\varphi_{i - 1};\varphi_i]$
+    \begin{enumerate}
+        \item Дробление $[\alpha;\beta]$ на угловые сектора $[\varphi_{i - 1};\varphi_i]$
 
-    $\Delta \varphi_i$ - угол сектора
+        $\Delta \varphi_i$ - угол сектора
 
-    2) Выбор средней точки $\psi_i \in [\varphi_{i - 1};\varphi_i]$, площадь сектора $S_i = \frac{1}{2} \Delta \varphi_i \rho^2(\psi_i)$
+        \item Выбор средней точки $\psi_i \in [\varphi_{i - 1};\varphi_i]$, площадь сектора $S_i = \frac{1}{2} \Delta \varphi_i \rho^2(\psi_i)$
 
-    3) Интегральная сумма $\sigma_n = \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i$
+        \item Интегральная сумма $\sigma_n = \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i$
 
-    4) Предел $\lim_{n \to \infty} \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i = \frac{1}{2} \int_\alpha^\beta \rho^2(\varphi) d\varphi$
+        \item Предел $\lim_{n \to \infty} \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i = \frac{1}{2} \int_\alpha^\beta \rho^2(\varphi) d\varphi$
+    \end{enumerate}
 
     \Ex Кардиоида:
 
@@ -105,26 +109,28 @@
 
     \subsubsection{1.4.4. Объемы тел}
 
-    1* \hypertarget{volumeofbodieswithknownarea}{Объемы тел с известными площадями сечений}
+    \begin{enumerate}[label*=\arabic** ]
+        \item \hypertarget{volumeofbodieswithknownarea}{Объемы тел с известными площадями сечений}
 
-    Для тела известна площадь сечения перпендикулярной $Ox$ плоскости $S(x)$
+        Для тела известна площадь сечения перпендикулярной $Ox$ плоскости $S(x)$
 
-    Аналогично обычному дроблению $\lim_{\substack{n \to \infty \\ \tau \to 0}} \nu_n = \int^b_a S(x)dx = V_\text{тела}$
+        Аналогично обычному дроблению $\lim_{\substack{n \to \infty \\ \tau \to 0}} \nu_n = \int^b_a S(x)dx = V_\text{тела}$
 
-    \Ex Тело отсечено от I октанта плоскостью $\frac{x}{a} + \frac{y}{a} + \frac{z}{a} = 1$
+        \Ex Тело отсечено от I октанта плоскостью $\frac{x}{a} + \frac{y}{a} + \frac{z}{a} = 1$
 
-    \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_2}
+        \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_2}
 
-    $S(x) = S_{DBC} = \frac{(a - x)^2}{2}$
+        $S(x) = S_{DBC} = \frac{(a - x)^2}{2}$
 
-    Тогда $V = \int_0^a \frac{1}{2} (a - x)^2 dx = \frac{1}{2} \int_0^a (x - a)^2 dx =
-    \frac{1}{2} \int^a_0 (x - a)^2 d(x - a) = \frac{1}{6} (x - a)^3 \Big|^a_0 = \frac{a^3}{6}$
+        Тогда $V = \int_0^a \frac{1}{2} (a - x)^2 dx = \frac{1}{2} \int_0^a (x - a)^2 dx =
+        \frac{1}{2} \int^a_0 (x - a)^2 d(x - a) = \frac{1}{6} (x - a)^3 \Big|^a_0 = \frac{a^3}{6}$
 
-    \Nota \hypertarget{volumeofbodyofrevolution}{Объем тела вращения}
+        \Nota \hypertarget{volumeofbodyofrevolution}{Объем тела вращения}
 
-    Пусть дана функция $r(x)$, задающая радиус тела вращения на уровне $x$,
-    тогда объем тела вращения будет равен $\int_a^b \pi r^2(x) dx$
+        Пусть дана функция $r(x)$, задающая радиус тела вращения на уровне $x$,
+        тогда объем тела вращения будет равен $\int_a^b \pi r^2(x) dx$
 
-    \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_4}
+        \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_4}
+    \end{enumerate}
 
 \end{document}
