@@ -15,7 +15,7 @@
 
     Из этого следует, что $\displaystyle I(\alpha) = \int_{+\infty}_{0} \frac{1}{a + \alpha^2} dx = arctg(\alpha) + C$
 
-    Так как $I(\alpha)$ - несобственный интеграл, это функция, а не семейство функций. Найдем $C$.
+    Так как $I(\alpha)$ -- несобственный интеграл, это функция, а не семейство функций. Найдем $C$.
 
     $\displaystyle I(0) = \int^{+\infty}_0 e^{-x} \frac{\sin 0 * x}{x}dx = 0 \Longrightarrow C = 0$
     Таким образом, $\displaystyle I(\alpha) = \left(\int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x} dx\right)^\prime_\alpha = arctg(\alpha)$
@@ -74,13 +74,13 @@
     \hypertarget{limitoffunctionoftwovariables}{}
     \Def $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ | \ \forall M \in \stackrel{o}{U}_\delta(M_0) \ \ |z(x, y) - L| < \varepsilon$
 
-    $M_0$ - точка сгущения и $x_0, y_0 \in \Real$ (здесь)
+    Здесь $M_0$ -- точка сгущения, и $x_0, y_0 \in \Real$
 
     \Nota На плоскости $Oxy$ возможно стремление $M \rightarrow M_0$ по разным путям $F(x, y) = 0$ (уравнение кривой)
 
     При этом значение предела вдоль разных путей могут отличаться (аналог односторонних пределов)
 
-    Предел в определении - предел в общем смысле: его существование и значение не зависит от пути
+    Предел в определении -- предел в общем смысле: его существование и значение не зависит от пути
 
     \hypertarget{continuityoffunctionoftwovariables}{}
     \Def $z = f(x, y)$ называется непрерывной в точке $M(x_0, y_0)$, если $z = f(x_0, y_0) = \lim_{M \to M_0} z(x, y)$
@@ -117,20 +117,20 @@
     $\displaystyle \frac{\partial z}{\partial y} \stackrel{def}{=} \lim_{\Delta y \to 0} \frac{\Delta_y z}{\Delta y}$,
     где $\Delta_y z = z(x, y + \Delta y) - z(x, y)$
 
-    Определили частную производную $z$ по $y$
+    \Def Частной производной $z = f(x, y)$ по $y$ называется $\displaystyle \frac{\partial z}{\partial y} \stackrel{def}{=} \lim_{\Delta y \to 0} \frac{\Delta_y z}{\Delta y}$
 
-    \Lab Дать определение $\displaystyle \frac{\partial z}{\partial x}$
+    \Lab Аналогично дать определение $\displaystyle \frac{\partial z}{\partial x}$
 
     \Nota $\Delta_y z = z(x, y + \Delta y) - z(x, y)$ и  $\Delta_y z$ называют частным приращением
 
     \Def Полное приращение $\Delta z \stackrel{def}{=} z(x + \Delta x, y + \Delta y) - z(x, y)$
 
-    \Nota $\Delta z \neq \Delta_x z + \Delta_y z$ !!!
+    \Notas При этом $\Delta z \neq \Delta_x z + \Delta_y z$ !!!
 
-    Обозн.: $\displaystyle \frac{\partial z}{\partial x} = z^\prime_x = z_x$, $\displaystyle \frac{\partial z}{\partial y} = z^\prime_y = z_y$
+    Обозначение: $\displaystyle \frac{\partial z}{\partial x} = z^\prime_x = z_x$, $\displaystyle \frac{\partial z}{\partial y} = z^\prime_y = z_y$
 
     Как определить функцию, дифференцируемую в точке?
 
-    По аналогии $\Delta z = A \Delta x + B \Delta y + \alpha \Delta x + \beta \Delta y$, где $A, B \in \Real$, $\alpha, \beta$ - б. м.
+    По аналогии $\Delta z = A \Delta x + B \Delta y + \alpha \Delta x + \beta \Delta y$, где $A, B \in \Real$, $\alpha, \beta$ -- бесконечно малые
 
 \end{document}
