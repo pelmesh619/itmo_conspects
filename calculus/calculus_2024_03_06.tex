@@ -64,68 +64,70 @@
     \Nota При нахождении $\displaystyle \frac{\partial z}{\partial x_i}$ ($x_i$ - какая-либо переменная) дифференцирование проводится по правилам для функции одной переменной ($x_j \neq x_i$ считаются константами)
 
     Выпишем более сложные правила
-    
-    \vspace{3mm}
 
     \hypertarget{derivativeofcomplexfunctionoftwovariables}{}
 
-    \textbf{1* Сложная функция}
+    \begin{enumerate}[label*=\textbf{\arabic**} ]
+        \item \textbf{Сложная функция}
 
-    \Mem $\displaystyle (f(g(x)))^\prime = f^\prime(g(x)) \cdot g^\prime(x)$
+        \Mem $\displaystyle (f(g(x)))^\prime = f^\prime(g(x)) \cdot g^\prime(x)$
 
         \Def Сложная функция двух переменных -- $\displaystyle z = z(u, v)$, где $u = u(x, y), v = v(x, y)$
 
-    Формула: Найдем $\displaystyle \frac{\partial z(u, v)}{\partial x}$ и $\displaystyle \frac{\partial z(u, v)}{\partial y}$
+        Формула: Найдем $\displaystyle \frac{\partial z(u, v)}{\partial x}$ и $\displaystyle \frac{\partial z(u, v)}{\partial y}$
 
-    \Th $\displaystyle z = z(u, v), \ u(x, y), v(x, y)$ непрерывно дифференцируемы по $\displaystyle x, y$
+        \begin{MyTheorem}
+            \Ths $\displaystyle z = z(u, v), \ u(x, y), v(x, y)$ непрерывно дифференцируемы по $\displaystyle x, y$
 
-    Тогда $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x}$
+            Тогда $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x}$
 
-    $\displaystyle \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial y} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial y}$
+            $\displaystyle \frac{\partial z}{\partial y} = \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial y} + \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial y}$
+        \end{MyTheorem}
 
-    $\displaystyle \Box \quad z$ дифференцируема $\displaystyle \Longleftrightarrow \Delta z = \frac{\partial z}{\partial u} \Delta u + \frac{\partial z}{\partial v} \Delta v + \alpha \Delta u + \beta \Delta v$
+        \begin{MyProof}
+            $\displaystyle z$ дифференцируема $\displaystyle \Longleftrightarrow \Delta z = \frac{\partial z}{\partial u} \Delta u + \frac{\partial z}{\partial v} \Delta v + \alpha \Delta u + \beta \Delta v$
 
-    Зададим приращение $\displaystyle \Delta x$ (представление $\displaystyle \Delta z$ не должно измениться)
+            Зададим приращение $\displaystyle \Delta x$ (представление $\displaystyle \Delta z$ не должно измениться)
 
-    $\displaystyle \Delta_x z = \frac{\partial z}{\partial u} \Delta_x u + \frac{\partial z}{\partial v} \Delta_x v + \alpha \Delta_x u + \beta \Delta_x + v \quad \Big| \cdot \Delta x$
+            $\displaystyle \Delta_x z = \frac{\partial z}{\partial u} \Delta_x u + \frac{\partial z}{\partial v} \Delta_x v + \alpha \Delta_x u + \beta \Delta_x + v \quad \Big| \cdot \Delta x$
 
-    $\displaystyle \frac{\Delta_x z}{\Delta x} = \frac{\partial z}{\partial u} \frac{\Delta_x u}{\Delta x} + \frac{\partial z}{\partial v} \frac{\Delta_x v}{\Delta x} + \alpha \frac{\Delta_x u}{\Delta x} + \beta \frac{\Delta_x v}{\Delta x} \quad \Big| \cdot \Delta x$
+            $\displaystyle \frac{\Delta_x z}{\Delta x} = \frac{\partial z}{\partial u} \frac{\Delta_x u}{\Delta x} + \frac{\partial z}{\partial v} \frac{\Delta_x v}{\Delta x} + \alpha \frac{\Delta_x u}{\Delta x} + \beta \frac{\Delta_x v}{\Delta x}$
 
-    По теореме Лагранжа: $\displaystyle \frac{\partial u}{\partial x}(\xi) \stackrel{\Delta x \to 0}{\rightarrow} \frac{\partial u}{\partial x}$
+            По теореме Лагранжа: $\displaystyle \frac{\Delta_x u}{\Delta x}(\xi) \stackrel{\Delta x \to 0}{\rightarrow} \frac{\partial u}{\partial x}$
 
-    В пределе: $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial x}$
+            В пределе: $\displaystyle \frac{\partial z}{\partial x} = \frac{\partial z}{\partial u} \frac{\partial u}{\partial x} + \frac{\partial z}{\partial v} \frac{\partial v}{\partial x}$
 
-    Аналогично для $\displaystyle \frac{\partial z}{\partial y}$
+            Аналогично для $\displaystyle \frac{\partial z}{\partial y}$
+        \end{MyProof}
 
-    \hypertarget{completederivativeoffunctionoftwovariables}{}
+        \hypertarget{completederivativeoffunctionoftwovariables}{}
 
-    \Nota Интересен случай $\displaystyle z = z(x, u, v)$, где $\displaystyle u = u(x), v = v(x)$
+        \Nota Интересен случай $\displaystyle z = z(x, u, v)$, где $\displaystyle u = u(x), v = v(x)$
 
-    Здесь $\displaystyle z$ является функцией одной переменной $\displaystyle x$
+        Здесь $\displaystyle z$ является функцией одной переменной $\displaystyle x$
 
-    Обобщая правило на случай трех переменных, можем записать формулу полной производной, которая имеет смысл
+        Обобщая правило на случай трех переменных, можем записать формулу полной производной, которая имеет смысл
 
-    $\displaystyle \frac{dz}{dx} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial x} +
-    \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} +
-    \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x} =
-    \frac{\partial z}{\partial x} +
-    \frac{\partial z}{\partial u} \cdot \frac{du}{dx} +
-    \frac{\partial z}{\partial v} \cdot \frac{dv}{dx}
-    $
+        $\displaystyle \frac{dz}{dx} = \frac{\partial z}{\partial x} \cdot \frac{\partial x}{\partial x} +
+        \frac{\partial z}{\partial u} \cdot \frac{\partial u}{\partial x} +
+        \frac{\partial z}{\partial v} \cdot \frac{\partial v}{\partial x} =
+        \frac{\partial z}{\partial x} +
+        \frac{\partial z}{\partial u} \cdot \frac{du}{dx} +
+        \frac{\partial z}{\partial v} \cdot \frac{dv}{dx}
+        $
 
         \Ex Пусть $\displaystyle w = w(x, y, z)$ -- функция координат, $\displaystyle x = x(t), y = y(t), z = z(t)$ -- функции времени
 
         $\displaystyle w$ явно не зависит от времени, тогда $\displaystyle \frac{dw}{dt} = w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z$, где $\displaystyle v_x$ -- проекция скорости
 
-    Если $\displaystyle w = w(x, y, z, t)$, то $\displaystyle \frac{dw}{dt} = \frac{\partial w}{\partial t} (w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z)$
-    
-    \vspace{3mm}
-    
-    \textbf{2* Неявная функция одной переменной}: пусть $\displaystyle F(x, y(x)) = 0$ - неявное задание $\displaystyle y = y(x)$
+        Если $\displaystyle w = w(x, y, z, t)$, то $\displaystyle \frac{dw}{dt} = \frac{\partial w}{\partial t} (w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z)$
+        
+        \item \textbf{Неявная функция одной переменной}: пусть $\displaystyle F(x, y(x)) = 0$ -- неявное задание $\displaystyle y = y(x)$
 
-    Найдем $\displaystyle dF = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy = 0$
+        Найдем $\displaystyle dF = \frac{\partial F}{\partial x} dx + \frac{\partial F}{\partial y} dy = 0$
 
-    Отсюда $\displaystyle \frac{dy}{dx} = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}$
+        Отсюда $\displaystyle \frac{dy}{dx} = -\frac{\frac{\partial F}{\partial x}}{\frac{\partial F}{\partial y}}$
+    \end{enumerate}
     
 
     \subsection{4.4. Производная высших порядков}
