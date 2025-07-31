@@ -241,20 +241,18 @@
     Итак:
 
     $\displaystyle d(dz) \stackrel{z - \text{Ф}_1\text{П}}{=} (dz)^\prime_t dt =
-    \left(\frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y}dy\right)^\prime_t dt
-    \stackrel{dx(t) = \frac{dx}{dt}dt, dy(t) = \frac{dy}{dt}dt}{=}
-    \left(\frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}\right)^{\prime}_t dt^2 =
-    \left(\frac{\partial z}{\partial x}\frac{dx}{dt}\right)^{\prime}_t dt^2 + \left(\frac{\partial z}{\partial y}\frac{dy}{dt}\right)^{\prime}_t dt^2 =
+    \left(\frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y}dy\right)^\prime_t dt = \begin{bmatrix}dx(t) = \frac{dx}{dt}dt \\ dy(t) = \frac{dy}{dt}dt\end{bmatrix} = 
+    \left(\frac{\partial z}{\partial x}\frac{dx}{dt} + \frac{\partial z}{\partial y}\frac{dy}{dt}\right)^{\prime}_t dt^2 = \\
+    = \left(\frac{\partial z}{\partial x}\frac{dx}{dt}\right)^{\prime}_t dt^2 + \left(\frac{\partial z}{\partial y}\frac{dy}{dt}\right)^{\prime}_t dt^2 =
     \left(\left(\frac{\partial z}{\partial x}\right)^{\prime}_t\frac{dx}{dt} + \frac{\partial z}{\partial x}\left(\frac{dx}{dt}\right)^{\prime}_t\right) dt^2 +
-    \left(\left(\frac{\partial z}{\partial y}\right)^{\prime}_t\frac{dy}{dt} + \frac{\partial z}{\partial y}\left(\frac{dy}{dt}\right)^{\prime}_t\right) dt^2 =
-    \left(\frac{\partial^2 z}{\partial x^2} \left(\frac{dx}{dt}\right)^2 + \frac{\partial z}{\partial x} \frac{d^2 x}{dt^2}\right) dt^2 +
-    \left(\frac{\partial^2 z}{\partial y^2} \left(\frac{dy}{dt}\right)^2 + \frac{\partial z}{\partial y} \frac{d^2 y}{dt^2}\right) dt^2 +
-    \left(\frac{\partial^2 z}{\partial x \partial y}\frac{dy}{dt}\frac{dx}{dt} + \frac{\partial^2 z}{\partial y \partial x}\frac{dx}{dt}\frac{dy}{dt}\right) dt^2 =
-    \frac{\partial^2 z}{\partial x^2} dx^2 + \frac{\partial z}{\partial x} d^2 x +
+    \left(\left(\frac{\partial z}{\partial y}\right)^{\prime}_t\frac{dy}{dt} + \frac{\partial z}{\partial y}\left(\frac{dy}{dt}\right)^{\prime}_t\right) dt^2 = \\
+    = \left(\frac{\partial^2 z}{\partial x^2} \left(\frac{dx}{dt}\right)^2 + \frac{\partial^2 z}{\partial x \partial y}\frac{dy}{dt}\frac{dx}{dt} + \frac{\partial z}{\partial x} \frac{d^2 x}{dt^2}\right) dt^2 +
+    \left(\frac{\partial^2 z}{\partial y^2} \left(\frac{dy}{dt}\right)^2 + \frac{\partial^2 z}{\partial y \partial x}\frac{dx}{dt}\frac{dy}{dt} + \frac{\partial z}{\partial y} \frac{d^2 y}{dt^2}\right) dt^2 = \\
+    = \frac{\partial^2 z}{\partial x^2} dx^2 + \frac{\partial z}{\partial x} d^2 x +
     \frac{\partial^2 z}{\partial y^2} dy^2 + \frac{\partial z}{\partial y} d^2 y +
     2 \frac{\partial^2 z}{\partial x \partial y}dydx =
-    \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z \frac{\partial z}{\partial x} d^2 x + \frac{\partial z}{\partial y} d^2 y
-    $\displaystyle 
+    \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z + \frac{\partial z}{\partial x} d^2 x + \frac{\partial z}{\partial y} d^2 y
+    $
 
     $\displaystyle \begin{cases}
         x = mt + x_0 \\
