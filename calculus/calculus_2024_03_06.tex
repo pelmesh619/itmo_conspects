@@ -156,28 +156,29 @@
 
     Тогда $\displaystyle z^{\prime\prime}_{xy} = z^{\prime\prime}_{yx}$
 
-    $\displaystyle \Box \quad$ Введем вспомогательную величину
 
-    $\displaystyle \Phi = (z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y)) - (z(x, y + \Delta y) - z(x, y))$
+    \begin{MyProof}
+        Введем вспомогательную величину
 
-    Обозначим $\displaystyle \phi(x) = z(x, y + \Delta y) - z(x, y)$
+        $\displaystyle \Phi = (z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y)) - (z(x, y + \Delta y) - z(x, y))$
 
-    Тогда $\displaystyle \Phi = \phi(x + \Delta x) - \phi(x)$ - дифференцируема, непрерывна, как комбинация
+        Обозначим $\displaystyle \phi(x) = z(x, y + \Delta y) - z(x, y)$
 
-    По теореме Лагранжа $\displaystyle \phi(x + \Delta x) - \phi(x) = \phi^\prime(\xi) \Delta x = (z^\prime_x(\xi, y + \Delta y) - z^\prime_x(\xi, y)) \Delta x$, где $\displaystyle \xi \in (x; x + \Delta x)$
+        Тогда $\displaystyle \Phi = \phi(x + \Delta x) - \phi(x)$ -- дифференцируема, непрерывна, как комбинация
 
-    Здесь $\displaystyle z^\prime_x$ дифференцируема также на $\displaystyle [y, y + \Delta y]$
+        По теореме Лагранжа $\displaystyle \phi(x + \Delta x) - \phi(x) = \phi^\prime(\xi) \Delta x = (z^\prime_x(\xi, y + \Delta y) - z^\prime_x(\xi, y)) \Delta x$, где $\displaystyle \xi \in (x; x + \Delta x)$
+
+        Здесь $\displaystyle z^\prime_x$ дифференцируема также на $\displaystyle [y, y + \Delta y]$
 
 
-    Тогда по теореме Лагранжа $\displaystyle \exists \eta \in (y, y + \Delta y) \ | \ z^\prime_x(\xi, y + \Delta y) - z^\prime_x(\xi, y) = z^{\prime\prime}_{xy} (\xi, \eta) \Delta y$
+        Тогда по теореме Лагранжа $\displaystyle \exists \eta \in (y, y + \Delta y) \ | \ z^\prime_x(\xi, y + \Delta y) - z^\prime_x(\xi, y) = z^{\prime\prime}_{xy} (\xi, \eta) \Delta y$
 
-    Таким образом $\displaystyle \Phi = z^{\prime\prime}_{xy} (\xi, \eta) \Delta x \Delta y$
+        Таким образом $\displaystyle \Phi = z^{\prime\prime}_{xy} (\xi, \eta) \Delta x \Delta y$
 
-    Перегруппируем $\displaystyle \Phi$, далее аналогично для $\displaystyle z^{\prime\prime}_{yx}$
+        Перегруппируем $\displaystyle \Phi$, далее аналогично для $\displaystyle z^{\prime\prime}_{yx}$
 
-    Тогда $\displaystyle z^{\prime\prime}_{xy} (\xi, \eta) \Delta x \Delta y = \Phi = z^{\prime\prime}_{yx} (\xi^\prime, \eta^\prime) \Delta x \Delta y$
-
-    \vspace{8mm}
+        Тогда $\displaystyle z^{\prime\prime}_{xy} (\xi, \eta) \Delta x \Delta y = \Phi = z^{\prime\prime}_{yx} (\xi^\prime, \eta^\prime) \Delta x \Delta y$
+    \end{MyProof}
 
     \subsection{4.5. Дифференциалы}
     
