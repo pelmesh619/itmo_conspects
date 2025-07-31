@@ -254,24 +254,28 @@
 
     $\displaystyle J(\alpha) = \int^b_a f(x, \alpha)dx$ - интеграл, зависящий от параметра
 
-    $f(x, \alpha)$ непрерывна в $a \leq x \leq b$, $c \leq \alpha \leq d$ и существует непрерывная производная $f^\prime_\alpha$
+    \begin{MyTheorem}
+        $f(x, \alpha)$ непрерывна в $a \leq x \leq b$, $c \leq \alpha \leq d$ и существует непрерывная производная $f^\prime_\alpha$
 
-    Тогда на $[c;d]$ определена $J^\prime_\alpha(\alpha) = \left(\int^b_a f(x, \alpha)dx\right)^\prime_\alpha = \int^b_a f^\prime_\alpha dx$
+        Тогда на $[c;d]$ определена $J^\prime_\alpha(\alpha) = \left(\int^b_a f(x, \alpha)dx\right)^\prime_\alpha = \int^b_a f^\prime_\alpha dx$
+    \end{MyTheorem}
 
     Если последний интеграл берется лучше, чем исходный, то теорема полезна
 
-    $\displaystyle \Box J^\prime_\alpha(\alpha) = \lim_{\Delta \alpha \to 0} \frac{J(\alpha + \Delta \alpha) - J(\alpha)}{\Delta \alpha} =
-    \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} \left(\int^b_a f(x, \alpha + \Delta \alpha)dx - \int^b_a f(x, \alpha)dx\right) =
-    = \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} \left(\int^b_a (f(x, \alpha + \Delta \alpha) - f(x, \alpha))dx\right)$
+    \begin{MyProof}
+        $\displaystyle J^\prime_\alpha(\alpha) = \lim_{\Delta \alpha \to 0} \frac{J(\alpha + \Delta \alpha) - J(\alpha)}{\Delta \alpha} =
+        \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} \left(\int^b_a f(x, \alpha + \Delta \alpha)dx - \int^b_a f(x, \alpha)dx\right) = \\
+        = \lim_{\Delta \alpha \to 0} \frac{1}{\Delta \alpha} \left(\int^b_a (f(x, \alpha + \Delta \alpha) - f(x, \alpha))dx\right)$
 
-    По теореме Лагранжа о среднем $\exists \xi \in [\alpha; \alpha + \Delta \alpha]$
+        По теореме Лагранжа о среднем $\exists \xi \in [\alpha; \alpha + \Delta \alpha]$
 
-    $\displaystyle = \lim_{\Delta \alpha \to 0} \int^b_a f(x, \xi)dx$
+        $\displaystyle = \lim_{\Delta \alpha \to 0} \int^b_a f(x, \xi)dx$
 
-    Т. к. $f^\prime_\alpha$ непрерывна, то $\displaystyle f^\prime_\alpha (x, \xi) = \lim_{\xi \to \alpha} f^\prime_\alpha (x, \xi) + \varepsilon = f^\prime_\alpha (x, \alpha) + \varepsilon$
+        Т. к. $f^\prime_\alpha$ непрерывна, то $\displaystyle f^\prime_\alpha (x, \xi) = \lim_{\xi \to \alpha} f^\prime_\alpha (x, \xi) + \varepsilon = f^\prime_\alpha (x, \alpha) + \varepsilon$
 
-    Таким образом $\displaystyle J^\prime_\alpha(\alpha) = \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \alpha) dx + \lim_{\Delta \alpha \to 0} \int^{b}_{a} \varepsilon dx =
-    \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \xi) dx$
+        Таким образом, $\displaystyle J^\prime_\alpha(\alpha) = \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \alpha) dx + \lim_{\Delta \alpha \to 0} \int^{b}_{a} \varepsilon dx =
+        \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \xi) dx$
+    \end{MyProof}
 
 
 \end{document}
