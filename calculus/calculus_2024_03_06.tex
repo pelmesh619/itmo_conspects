@@ -15,26 +15,28 @@
         Тогда дифференциал функции представим как $\displaystyle \Delta z = A dx + B dy + \alpha \Delta x + \beta \Delta y$, где $\displaystyle A, B \in \Real, \ \alpha, \beta$ -- бесконечно малые
     \end{MyTheorem}
 
+    \begin{MyProof}
+        $\displaystyle \Delta z = z (x + \Delta x, y + \Delta y) - z (x, y) = z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y) +
+        z(x + \Delta x, y) - z(x, y)$
 
-    $\displaystyle \Box \quad \Delta z = z (x + \Delta x, y + \Delta y) - z (x, y) = z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y) +
-    z(x + \Delta x, y) - z(x, y)$
+        По теореме Лагранжа:
 
-    По теореме Лагранжа:
+        $\displaystyle z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y) = z^\prime_y(\eta) \Delta y$
 
-    $\displaystyle z(x + \Delta x, y + \Delta y) - z(x + \Delta x, y) = z^\prime_y(\eta) \Delta y$
+        $\displaystyle z(x + \Delta x, y) - z(x, y) = z^\prime_x(\xi)\Delta x$
 
-    $\displaystyle z(x + \Delta x, y) - z(x, y) = z^\prime_x(\xi)\Delta x$
+        По теореме о представлении функции ее пределом:
 
-    По теореме о представлении функции ее пределом:
+        $\displaystyle z^\prime_x(\xi) = \lim_{\substack{\xi \to x \\ (\Delta x \to 0)}} z^\prime_x(\xi) + \alpha$
 
-    $\displaystyle z^\prime_x(\xi) = \lim_{\xi \to x (\Delta x \to 0)} z^\prime_x(\xi) + \alpha$
+        $\displaystyle z^\prime_y(\eta) = \lim_{\eta \to y} z^\prime_y(\eta) + \beta$
 
-    $\displaystyle z^\prime_y(\eta) = \lim_{\eta \to y} z^\prime_y(\eta) + \beta$
+        Так как $\displaystyle z^\prime_x(\xi), z^\prime_y(\eta)$ непрерывны, то $\displaystyle \lim_{\xi \to x} z^\prime_x(\xi) = \frac{\partial z}{\partial x}, \lim_{\eta \to y} z^\prime_y(\eta) = \frac{\partial z}{\partial y}$
 
-    Так как $\displaystyle z^\prime_x(\xi), z^\prime_y(\eta)$ непрерывны, то $\displaystyle \lim_{\xi \to x} z^\prime_x(\xi) = \frac{\partial z}{\partial x}, \lim_{\eta \to y} z^\prime_y(\eta) = \frac{\partial z}{\partial y}$
+        Тогда $\displaystyle \Delta z = \left(\frac{\partial z}{\partial x} + \alpha\right) \Delta x + \left(\frac{\partial z}{\partial y} + \beta\right)\Delta y =
+        \Delta z = \frac{\partial z}{\partial x}\Delta x + \frac{\partial z}{\partial y}\Delta y + \alpha \Delta x + \beta \Delta y$
+    \end{MyProof}
 
-    Тогда $\displaystyle \Delta z = \left(\frac{\partial z}{\partial x} + \alpha\right) \Delta x + \left(\frac{\partial z}{\partial y} + \beta\right)\Delta y =
-    \Delta z = \frac{\partial z}{\partial x}\Delta x + \frac{\partial z}{\partial y}\Delta y + \alpha \Delta x + \beta \Delta y$
 
     Заметим, что $\displaystyle \alpha \Delta x$ и $\displaystyle \beta \Delta y$ - б. м. порядка выше, чем $\displaystyle \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2} \Longleftrightarrow$
 
