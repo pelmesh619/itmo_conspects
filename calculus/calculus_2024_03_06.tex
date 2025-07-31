@@ -37,12 +37,12 @@
         \Delta z = \frac{\partial z}{\partial x}\Delta x + \frac{\partial z}{\partial y}\Delta y + \alpha \Delta x + \beta \Delta y$
     \end{MyProof}
 
+    Заметим, что $\displaystyle \alpha \Delta x$ и $\displaystyle \beta \Delta y$ -- бесконечно малые порядка выше, чем $\displaystyle \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2} \Longleftrightarrow$
 
-    Заметим, что $\displaystyle \alpha \Delta x$ и $\displaystyle \beta \Delta y$ - б. м. порядка выше, чем $\displaystyle \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2} \Longleftrightarrow$
 
     $\displaystyle 1 = \sqrt{\left(\frac{\Delta x}{\Delta \rho}\right)^2 + \left(\frac{\Delta y}{\Delta \rho}\right)^2} \quad |\frac{\Delta x}{\Delta \rho}| \leq 1, |\frac{\Delta y}{\Delta \rho}| \leq 1$
 
-    Сравним $\displaystyle \frac{\alpha \Delta x}{\Delta \rho} =$ б. м. огр. $\displaystyle \stackrel{\Delta \rho \to 0}{\to} 0$, $\displaystyle \frac{\beta \Delta y}{\Delta \rho} \stackrel{\Delta \rho \to 0}{\to} 0$
+    Сравним $\displaystyle \alpha \frac{\Delta x}{\Delta \rho} = \text{б.м.} \cdot \text{огран.} \stackrel{\Delta \rho \to 0}{\to} 0$, $\displaystyle \frac{\beta \Delta y}{\Delta \rho} \stackrel{\Delta \rho \to 0}{\to} 0$
 
     Функция, приращение которой представимо $\displaystyle \Delta z = \frac{\partial z}{\partial x}\Delta x + \frac{\partial z}{\partial y}\Delta y + o(\Delta \rho)$, называется дифференцируемой в точке $\displaystyle (x, y)$,
     линейная часть приращения называется полным дифференциалом
@@ -73,7 +73,7 @@
 
     \Mem $\displaystyle (f(g(x)))^\prime = f^\prime(g(x)) \cdot g^\prime(x)$
 
-    \Def Сложная функция двух переменных: $\displaystyle z = z(u, v), u = u(x, y), v = v(x, y)$
+        \Def Сложная функция двух переменных -- $\displaystyle z = z(u, v)$, где $u = u(x, y), v = v(x, y)$
 
     Формула: Найдем $\displaystyle \frac{\partial z(u, v)}{\partial x}$ и $\displaystyle \frac{\partial z(u, v)}{\partial y}$
 
@@ -113,9 +113,9 @@
     \frac{\partial z}{\partial v} \cdot \frac{dv}{dx}
     $
 
-    \Ex Пусть $\displaystyle w = w(x, y, z)$ - функция координат $\displaystyle x = x(t), y = y(t), z = z(t)$ - функции времени
+        \Ex Пусть $\displaystyle w = w(x, y, z)$ -- функция координат, $\displaystyle x = x(t), y = y(t), z = z(t)$ -- функции времени
 
-    $\displaystyle w$ явно не зависит от времени, тогда $\displaystyle \frac{dw}{dt} = w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z$, где $\displaystyle v_x$ - проекция скорости
+        $\displaystyle w$ явно не зависит от времени, тогда $\displaystyle \frac{dw}{dt} = w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z$, где $\displaystyle v_x$ -- проекция скорости
 
     Если $\displaystyle w = w(x, y, z, t)$, то $\displaystyle \frac{dw}{dt} = \frac{\partial w}{\partial t} (w^\prime_x v_x + w^\prime_y v_y + w^\prime_z v_z)$
     
@@ -133,7 +133,7 @@
 
     \hypertarget{secondderivativeoffunctionoftwovariables}{}
 
-    \Nota Пусть $\displaystyle z = z(x, y)$ дифференцируема и $\displaystyle \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}$ также дифференцируемы, при этом в общем случае
+    \Nota Пусть $\displaystyle z = z(x, y)$ дифференцируема, $\displaystyle \frac{\partial z}{\partial x}, \frac{\partial z}{\partial y}$ также дифференцируемы, при этом в общем случае
     $\displaystyle \frac{\partial z}{\partial x} = f(x, y), \frac{\partial z}{\partial y} = g(x, y)$
 
     Тогда определены вторые частные производные
@@ -185,7 +185,7 @@
     \hypertarget{completedifferentialoffunctionoftwovariables}{}
     \MemN{1} Полный дифференциал (1-ого порядка) функции $\displaystyle z = z(x, y)$
 
-    $\displaystyle dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$ - сумма частных дифференциалов
+    $\displaystyle dz = \frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y} dy$ -- сумма частных дифференциалов
 
     \MemN{2} Инвариантность формы первого дифференциала функции одной переменной
 
@@ -211,13 +211,11 @@
 
     \vspace{3mm}
     
-    \textit{Def}: $\displaystyle z = z(x, y)$ - дифференцируема и $\displaystyle dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy$ - дифференцируемая функция
+    \Def: $\displaystyle z = z(x, y)$ -- дифференцируема и $\displaystyle dz = \frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy$ -- дифференцируемая функция
 
     \hypertarget{seconddifferentialoffunctionoftwovariables}{}
 
-    Тогда второй полный дифференциал:
-
-    $\displaystyle d^2 z \stackrel{def}{=} d(dz)$
+    Тогда второй полный дифференциал равен $\displaystyle d^2 z \stackrel{def}{=} d(dz)$
 
     Формула: $\displaystyle d^2 z = d\left(\frac{\partial z}{\partial x}dx + \frac{\partial z}{\partial y}dy\right) = (z^\prime_x dx + z^\prime_y dy)^\prime_x dx + (z^\prime_x dx + z^\prime_y dy)^\prime_y dy =
     (z^\prime_x dx)^\prime_x dx + (z^\prime_y dy)^\prime_x dx + (z^\prime_x dx)^\prime_y dy + (z^\prime_y dy)^\prime_y dy =
@@ -228,20 +226,20 @@
 
     Введем условное обозначение $\displaystyle \frac{\partial^2}{\partial x^2} + 2 \frac{\partial^2}{\partial x \partial y} + \frac{\partial^2}{\partial y^2} = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2$
 
-    Тогда $\displaystyle d^2 z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z$, здесь $\displaystyle \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2$ - оператор второго полного дифференцирования
+    Тогда $\displaystyle d^2 z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z$, здесь $\displaystyle \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2$ -- оператор второго полного дифференцирования
 
-    $\displaystyle d^n z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^n z$ - дифференциал $\displaystyle n$-ого порядка
+    $\displaystyle d^n z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^n z$ -- дифференциал $\displaystyle n$-ого порядка
 
     \hypertarget{noninvariantofseconddifferentialoffunctionoftwovariables}{}
 
-    \textit{Nota}: Можно ли утверждать, что $\displaystyle d^2 z(x, y) = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z \stackrel{x = x(u, v), y = y(u, v)}{=} \left(\frac{\partial}{\partial u} + \frac{\partial}{\partial v}\right)^2 z$ ???
+    \textit{Nota}: Можно ли утверждать, что $\displaystyle d^2 z(x, y) = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z \stackrel{x = x(u, v), y = y(u, v)}{=} \left(\frac{\partial}{\partial u} + \frac{\partial}{\partial v}\right)^2 z$ ?
 
     Нет, нельзя ($d^2 z$ не инвариантен при замене)
 
-    Покажем, что не выполняется в простом случае: $\displaystyle z  = z(x, y) = z(x(t), y(t))$ - параметризация.
+    Покажем, что не выполняется в простом случае: $\displaystyle z  = z(x, y) = z(x(t), y(t))$ -- параметризация.
     Геометрически, это выбор пути в области $\displaystyle D$ от точки $\displaystyle M_0(x_0, y_0)$ до точки $\displaystyle M(x, y)$
 
-    Итак
+    Итак:
 
     $\displaystyle d(dz) \stackrel{z - \text{Ф}_1\text{П}}{=} (dz)^\prime_t dt =
     \left(\frac{\partial z}{\partial x} dx + \frac{\partial z}{\partial y}dy\right)^\prime_t dt
@@ -262,7 +260,7 @@
     $\displaystyle \begin{cases}
         x = mt + x_0 \\
          y = nt + y_0
-    \end{cases}$ - линейная параметризация
+    \end{cases}$ -- линейная параметризация
 
     \Lab Дать инвариантность при линейной параметризации
 
@@ -281,19 +279,19 @@
 
     \Mem $\displaystyle f(x) = f(x_0) + \frac{f^\prime(x_0)}{1!}(x - x_0) + \dots + \frac{f^{(n)}(x_0)}{n!}(x - x_0)^n +
     \begin{sqcases}
-        o((x - x_0)^n) - \text{Пеано}\\
-        \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1} - \text{Лагранжа}
+        o((x - x_0)^n) & \text{ -- ост. в форме Пеано}\\
+        \frac{f^{(n+1)}(\xi)}{(n+1)!}(x - x_0)^{n+1} & \text{ -- ост. в форме Лагранжа}
     \end{sqcases}$
 
     В дифференциалах:
 
-    $\displaystyle f(x) = f(x_0) + \frac{df(x_0)}{1!} + \frac{d^2 f(x_0)}{2!} + \dots + \frac{d^n f(x_0)}{n!} +$  остаток
+    $\displaystyle f(x) = f(x_0) + \frac{df(x_0)}{1!} + \frac{d^2 f(x_0)}{2!} + \dots + \frac{d^n f(x_0)}{n!} +$ остаток
 
     Формула Тейлора для $\displaystyle z = z(x, y)$ в окрестности $\displaystyle M_0(x_0, y_0)$ (как раньше $\displaystyle \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2}$)
 
     $\displaystyle z(M = \stackrel{o}{U}(M_0)) = z(M_0) + \frac{dz(M_0)}{1!} + \dots + \frac{d^n z(M_0)}{n!} + o((\Delta \rho)^n)$
 
-    \Nota  Формула выше верна, если $\displaystyle z = z(x, y)$ - непрерывна со своими частными производными до $\displaystyle n + 1$ порядка
+    \Nota Формула выше верна, если $\displaystyle z = z(x, y)$ непрерывна со своими частными производными до $\displaystyle n + 1$ порядка
     включительно в некоторой окрестности $\displaystyle U_\delta(M_0(x_0, y_0))$, где $\displaystyle M(x, y) \in U_\delta(M_0)$
 
 
