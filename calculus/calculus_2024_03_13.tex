@@ -12,7 +12,7 @@
 
     $d^2 z = \left(\frac{\partial }{\partial x}dx + \frac{\partial}{\partial y}dy\right)^2 z \stackrel{\text{инвариант}}{=} z^{(n)}_t dt^n$
 
-    Введем функцию: $z(x(t), y(t)) \stackrel{\text{обозн}}{=} \varphi (t)$ - $(n + 1)$ раз дифференцируема (композиция $(n + 1)$ дифференцируемых и линейных функций)
+    Введем функцию: $z(x(t), y(t)) \stackrel{\text{обозн}}{=} \varphi (t)$ -- она $(n + 1)$ раз дифференцируема (композиция $(n + 1)$ дифференцируемых и линейных функций)
 
     Заметим, что $x = x_0 + \Delta x t \stackrel{t_0 = 0}{=} x_0$, $y = y_0 + \Delta y t \stackrel{t_0 = 0}{=} y_0$
 
@@ -32,7 +32,7 @@
 
     $r_n(x, y)$ должен быть б. м. по отношению к $(\Delta \rho)^n$, то есть $r_n(x, y) = o((\Delta \rho)^n)$
 
-    ($r_n(t) \stackrel{n \to \infty}{\rightarrow}$, если $\varphi(t)$ нужное число раз дифференцируема $Rightarrow$ ограничена, $r_n(t)$ - огр. б. м.)
+    ($r_n(t) \stackrel{n \to \infty}{\rightarrow} 0$, если $\varphi(t)$ нужное число раз дифференцируема $\Rightarrow$ ограничена, $r_n(t)$ -- ограниченная бесконечно малая)
 
     \Nota В дальнейшем для исследования $z(x, y)$ на экстремум достаточно разложения по формуле Тейлора до 2-ого порядка включительно.
     Покажем сходимость $r_n(x, y) \stackrel{(\Delta \rho)^n \to 0}{\rightarrow} 0$ на примере $\displaystyle r_2 (x, y) = \frac{d^3 z(M_{\text{сред.}})}{3!}$
@@ -63,15 +63,15 @@
 
     Кривая $l$ с уравнением $z(x, y) = c$ называется линией уровня Ф$_2$П $z = z(x, y)$
 
-    \Def Поверхность уровня $\mathcal{P}$ - это поверхность с уровнем $u(x, y, z) = c$
+    \Def Поверхность уровня $\mathcal{P}$ -- это поверхность с уровнем $u(x, y, z) = c$
 
     Физ. смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ - скаляры).
     Тогда говорят, что в $\Real^3$ задано скалярное поле.
     Например, поле температур, давления, плотности и т. д.
 
-    Тогда $u = c$ - поверхности постоянных температур, давления и т. п. (изотермические, изобарные, эквипотенциальные)
+    Тогда $u = c$ -- поверхности постоянных температур, давления и т. п. (изотермические, изобарные, эквипотенциальные)
 
-    \Ex Конус - $z = -\sqrt{x^2 + y^2}$
+    \Ex Конус: $z = -\sqrt{x^2 + y^2}$
 
     \includegraphics[height=90mm]{calculus/images/calculus_2024_03_13_1}
 
@@ -118,10 +118,9 @@
 
     где $\alpha, \beta, \gamma$ - направления $\overrightarrow{s}$, называют производной функции $u = u(x, y, z)$ в направлении $\overrightarrow{s}$
 
-    \Nota Производная в определении - число, но $\frac{\partial u}{\partial s} \overrightarrow{s^0}$ - вектор скорости
+    \Nota Производная в определении -- число, но $\frac{\partial u}{\partial s} \vec{s^0}$ -- вектор скорости
 
-    \Nota Заметим, что если $\overrightarrow{i}, \overrightarrow{j}, \overrightarrow{k}$ - декартовы орты, то
-
+    \Nota Заметим, что если $\vec \imath, \vec \jmath, \vec{k}$ -- декартовы орты, то
     $\frac{\partial u}{\partial i} = \frac{\partial u}{\partial x} 1 + \frac{\partial u}{\partial y} 0 + \frac{\partial u}{\partial z} 0 = \frac{\partial u}{\partial x}$
 
     и аналогично в других направлениях: $\frac{\partial u}{\partial j} = \frac{\partial u}{\partial y}, \frac{\partial u}{\partial k} = \frac{\partial u}{\partial z}$
