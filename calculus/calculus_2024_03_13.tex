@@ -156,20 +156,33 @@
     Доказательства:
 
     \begin{enumerate}
-        \item $\frac{\partial u}{\partial s} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right) \cdot \overrightarrow{s^0} =
-        \overrightarrow{\triangledown} u \overrightarrow{s^0} = |\overrightarrow{\triangledown} u| |\overrightarrow{s^0}| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) =
-        |\overrightarrow{\triangledown} u| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
+        \item \begin{MyProof}
+            $\frac{\partial u}{\partial s} = \left(\left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right) \cdot \vec{s^0}\right) u = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right) u \cdot \vec{s^0} =
+            \vec\nabla u \cdot \vec{s^0}$
+            
+            $|\vec\nabla u \cdot \vec{s^0}| = |\vec\nabla u| |\vec{s^0}| \cos(\widehat{\vec\nabla u, \vec{s^0}}) =
+            |\vec\nabla u| \cos(\widehat{\vec\nabla u, \vec{s^0}}) = \text{пр.}_{\vec{s}} \vec\nabla u$
+        \end{MyProof}
 
-        \item $\frac{\partial u}{\partial s} = |\overrightarrow{\triangledown} u| \cos\varphi \dots $ \Lab
+        \item \begin{MyProof}
+            $\frac{\partial u}{\partial s} = |\vec\nabla u| \cos\varphi$, где $\varphi$ - угол между $\vec{s}$ и $\vec\nabla u$
 
-        \item \Lab
+            Косинус принимает наибольшее значение, если угол между $\vec{s}$ и $\vec\nabla u$ равен нулю, то есть направления векторов совпадает. Значит, при $\vec{s} = \vec\nabla u$ производная принимает наибольшее значение
+        \end{MyProof}
 
-        \item $u = c$ - уравнение $l_{\text{пр}}$ в плоскости $Oxy$, то есть $u(x, y) = c$, можем рассмотреть как неявную функцию $u(x, y(x)) - c = 0$
+        \item \begin{MyProof}
+            Из доказательства \ThNs{2} следует, что если $\vec{s}$ сонаправлен с $\vec\nabla u$, то производная принимает наибольшее значение. Следовательно, если $\vec{s} \perp \vec\nabla s$, то $\cos\varphi = 0$, $\frac{\partial u}{\partial s} = 0$
+        \end{MyProof}
 
-        Производная неявной функции: $\frac{dy}{dx} = -\frac{u_x}{u_y} = k_l$ - угловой коэффициент касательной к $l$
+        \item \begin{MyProof}
+            $u = c$ -- уравнение $l_{\text{пр}}$ в плоскости $Oxy$, то есть $u(x, y) = c$ мы можем рассмотреть как неявную функцию $u(x, y(x)) - c = 0$
 
-        $\overrightarrow{\triangledown} u = (u_x, u_y) \quad \frac{u_y}{u_x} = k_{\text{град.}}$ - наклон вектора градиента.
-        Очевидно $k_l \cdot k_{\text{град.}} = -1 \Longrightarrow \overrightarrow{\triangledown} u \perp l$
+            Производная неявной функции: $\frac{dy}{dx} = -\frac{u_x}{u_y} = k_l$ -- угловой коэффициент касательной к $l$
+
+            $\vec\nabla u = (u_x, u_y) \quad \frac{u_y}{u_x} = k_{\text{град.}}$ -- наклон вектора градиента.
+
+            Очевидно $k_l \cdot k_{\text{град.}} = -1 \Longrightarrow \vec\nabla u \perp l$
+        \end{MyProof}
     \end{enumerate}
 
 
