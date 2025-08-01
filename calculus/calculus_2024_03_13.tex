@@ -59,11 +59,11 @@
 
     В сечении плоскостью $z = c$ образуется кривая $l$ с уравнением $\begin{cases}z = c \\ \varphi(x, y) = 0 \leftarrow \text{уравнение $l_\text{проек}$ на $Oxy$}\end{cases}$
 
-    Кривая $l$ с уравнением $z(x, y) = c$ называется линией уровня Ф$_2$П $z = z(x, y)$
+    Кривая $l$ с уравнением $z(x, y) = c$ называется линией уровня функции двух переменных $z = z(x, y)$
 
     \Def Поверхность уровня $\mathcal{P}$ -- это поверхность с уровнем $u(x, y, z) = c$
 
-    Физ. смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ - скаляры).
+    Физический смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ -- скаляры).
     Тогда говорят, что в $\Real^3$ задано скалярное поле.
     Например, поле температур, давления, плотности и т. д.
 
@@ -78,13 +78,13 @@
     \begin{enumerate}
         \item $c > 0 \quad \emptyset$
         \item $c = 0 \quad x = y = 0 - $ точка $(0, 0)$
-        \item $c < 0 \quad -|c| = -\sqrt{x^2 + y^2} \quad c^2 = x^2 + y^2$
+        \item $c < 0 \quad -|c| = -\sqrt{x^2 + y^2} \text{ или } c^2 = x^2 + y^2$
     \end{enumerate}
 
 
     \subsubsection{4.7.2. Производная по направлению, градиент}
 
-    \underline{Задача}. Дано скалярное поле $u = u(x, y, z)$ (напр. давления). Как меняется давление при перемещении в заданном направлении?
+    \underline{Задача}. Дано скалярное поле $u = u(x, y, z)$ (например, давления). Как меняется давление при перемещении в заданном направлении?
 
     Это задача о нахождении скорости изменения $u(x, y, z)$ в заданном направлении $\vec{s}$
 
@@ -99,12 +99,11 @@
     Потребуем, чтобы $u(x, y, z)$ имела непрерывность $u_x, u_y, u_z$ в $D$
 
     То есть $u(x, y, z)$ дифференцируема и
+    $\Delta u = du + o(\Delta s) = u_x \Delta x + u_y \Delta y + u_z \Delta x + o(\Delta s)$
 
-    $\Delta u = du + o(\Delta s) = u_x \Delta x + u_y \Delta y + u_z \Delta x + o(\Delta s) \quad \Big| \cdot \frac{1}{\Delta s}$
+    $\frac{\Delta u}{\Delta s} = u_x \cos\alpha + u_y \cos\beta + u_z \cos\gamma + \frac{o(\Delta s)}{\Delta s}$
 
-    $\frac{\Delta u}{\Delta s} = u_x \cos\alpha + u_y \cos\beta + u_z \cos\gamma + \frac{o(\Delta s)}{\Delta s}$ - предельный переход
-
-    $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
+    В предельном переходе получаем: $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
 
     \Nota Изначально $\Delta u = du + \text{(б. м.)} \Delta x + \text{(б. м.)} \Delta y + \text{(б. м.)} \Delta z \quad \Big| \cdot \frac{1}{\Delta s}$
 
