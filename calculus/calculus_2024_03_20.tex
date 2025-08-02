@@ -188,57 +188,62 @@
         \end{enumerate}
     \end{MyTheorem}
 
-    $\Box$
+    \begin{MyProof}
+        Функция $z$ дважды дифференцируема, тогда ($z_0 = z(M_0)$)
 
-    Функция $z$ дважды дифференцируема, тогда ($z_0 = z(M_0)$)
+        $\Delta z = z - z_0 = \frac{dz}{1!} \Big|_{M_0} + \frac{d^2 z}{2!} \Big|_{M_0} + o((\Delta \rho)^2)$
+        
+        $\Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2} = \sqrt{(dx)^2 + (dy)^2}, \ dx = \Delta\rho \cos\alpha, dy = \Delta\rho \sin\alpha$
 
-    $\Delta z = z - z_0 = \frac{dz}{1!} |_{M_0} + \frac{d^2 z}{2!} |_{M_0} + o((\Delta \rho)^2) \quad \Delta \rho = \sqrt{(\Delta x)^2 + (\Delta y)^2} = \sqrt{(dx)^2 + (dy)^2}, \ dx = \Delta\rho \cos\alpha, dy = \Delta\rho \sin\alpha$
+        $o((\Delta \rho)^2) = \lambda (\Delta \rho)^3$
 
-    $o((\Delta \rho)^2) = \lambda (\Delta \rho)^3$
+        Заметим, что $dz \Big|_{M_0} = 0$, так как $M_0$ -- критическая
 
-    Заметим, что $dz |_{M_0} = 0$, так как $M_0$ - критическая
+        $d^2 z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z = \left(\frac{\partial^2}{\partial x^2} + 2 \frac{\partial^2}{\partial x \partial y} + \frac{\partial^2}{\partial y^2}\right) z =
+        \frac{\partial^2 z}{\partial x^2} (dx)^2 + 2 \frac{\partial^2 z}{\partial x \partial y} dxdy + \frac{\partial^2 z}{\partial y^2} (dy)^2 = A (dx)^2 + 2B dxdy + C(dy)^2 =
+        A(\Delta \rho)^2 \cos^2\alpha + 2B (\Delta \rho)^2 \cos\alpha\sin\alpha + C(\Delta \rho)^2 \sin^2\alpha$
 
-    $d^2 z = \left(\frac{\partial}{\partial x} + \frac{\partial}{\partial y}\right)^2 z = \left(\frac{\partial^2}{\partial x^2} + 2 \frac{\partial^2}{\partial x \partial y} + \frac{\partial^2}{\partial y^2}\right) z =
-    \frac{\partial^2 z}{\partial x^2} (dx)^2 + 2 \frac{\partial^2 z}{\partial x \partial y} dxdy + \frac{\partial^2 z}{\partial y^2} (dy)^2 = A (dx)^2 + 2B dxdy + C(dy)^2 =
-    A(\Delta \rho)^2 \cos^2\alpha + 2B (\Delta \rho)^2 \cos\alpha\sin\alpha + C(\Delta \rho)^2 \sin^2\alpha$
+        Тогда $\Delta z = \frac{1}{2} (\Delta \rho)^2 (A\cos^2\alpha + 2B\cos\alpha\sin\alpha + C\sin^2\alpha + 2\lambda \Delta \rho)$
 
-    Тогда $\Delta z = \frac{1}{2} (\Delta \rho)^2 (A\cos^2\alpha + 2B\cos\alpha\sin\alpha + C\sin^2\alpha + 2\lambda \Delta \rho)$
+        Далее рассмотрим отдельно случаи $A \neq 0$ и $A = 0$
 
-    Далее рассмотрим отдельно случаи $A \neq 0$ и $A = 0$
+        $A \neq 0$: $A\cos^2\alpha + 2B\cos\alpha\sin\alpha + C\sin^2\alpha = \frac{A^2\cos^2\alpha + 2AB\cos\alpha\sin\alpha + B^2\sin^2\alpha + (AC - B^2)\sin^2\alpha}{A} =
+        \frac{(A\cos\alpha + B\sin\alpha)^2 + (AC - B^2)\sin^2\alpha}{A}$
 
-    $A \neq 0$: $A\cos^2\alpha + 2B\cos\alpha\sin\alpha + C\sin^2\alpha = \frac{A^2\cos^2\alpha + 2AB\cos\alpha\sin\alpha + B^2\sin^2\alpha + (AC - B^2)\sin^2\alpha}{A} =
-    \frac{(A\cos\alpha + B\sin\alpha)^2 + (AC - B^2)\sin^2\alpha}{A}$
+        \begin{enumerate}
+            \item Пусть $AC - B^2 > 0 \ (A > 0)$: Числитель неотрицательный и не равен нулю (иначе $\sin\alpha = 0$, то тогда $A\cos\alpha \neq 0$)
 
-    1) $\sqsupset AC - B^2 > 0 (A > 0)$: Числитель неотрицательный и не равен нулю (иначе $\sin\alpha = 0$, то тогда $A\cos\alpha \neq 0$)
+            Итак, числитель и знаменатель больше нуля. Обозначим всю дробь за $k^2 > 0$
 
-    Итак, числитель и знаменатель больше нуля. Обозначим всю дробь за $k^2 > 0$
+            Вернемся к $\Delta z = \frac{1}{2}(\Delta \rho)^2 (k^2 + 2\lambda\Delta\rho)$
 
-    Вернемся к $\Delta z = \frac{1}{2}(\Delta \rho)^2 (k^2 + 2\lambda\Delta\rho)$
+            Устремим $\Delta \rho \rightarrow 0$, начиная с какого-то $\delta \ \forall M \in U_\delta(M_0) \ k^2 + \lambda\Delta\rho > 0$
 
-    Устремим $\Delta \rho \rightarrow 0$, начиная с какого-то $\delta \ \forall M \in U_\delta(M_0) \ k^2 + \lambda\Delta\rho > 0$
+            То есть $\Delta z > 0$ в $U_\delta(M_0) \Longrightarrow M_0$ -- точка минимума (локально в $U_\delta(M_0)$)
 
-    То есть $\Delta z > 0$ в $U_\delta(M_0) \Longrightarrow M_0$ - точка минимума (локально в $U_\delta(M_0)$)
+            \item Пусть $AC - B^2 > 0 \ (A < 0)$, тогда $\Delta z = \frac{1}{2}(\Delta \rho)^2 (-k^2 + 2\lambda\Delta\rho) < 0$ при достаточно малом $\Delta \rho$
 
-    2) $\sqsupset AC - B^2 > 0 (A < 0)$, тогда $\Delta z = \frac{1}{2}(\Delta \rho)^2 (-k^2 + 2\lambda\Delta\rho) < 0$ при достаточно малом $\Delta \rho$
+            Аналогично $\Delta z < 0 \Longrightarrow M_0$ -- точка максимума
 
-    3) $\sqsupset AC - B^2 < 0 (A > 0)$, тогда фиксируем направления $\alpha = 0 \Longrightarrow \sin\alpha = 0$
+            \item Пусть $AC - B^2 < 0 \ (A > 0)$, тогда фиксируем направления $\alpha = 0 \Longrightarrow \sin\alpha = 0$
 
-    $\Delta z = \frac{1}{2}(\Delta \rho)^2 (A + 2\lambda\Delta\rho) > 0$
+            $\Delta z = \frac{1}{2}(\Delta \rho)^2 (A + 2\lambda\Delta\rho) > 0$
 
-    $tg \alpha = -\frac{A}{B} \Longrightarrow \frac{(AC - B^2)\sin^2\alpha}{A} = -k^2, \Delta z = \frac{(\Delta \rho)^2}{2}(-k^2 + 2\lambda\Delta\rho) < 0$
+            $\tg \alpha = -\frac{A}{B} \Longrightarrow \frac{(AC - B^2)\sin^2\alpha}{A} = -k^2, \Delta z = \frac{(\Delta \rho)^2}{2}(-k^2 + 2\lambda\Delta\rho) < 0$
 
-    Вдоль разных путей $\alpha = 0$, $tg \alpha = -\frac{A}{B}$, разный знак $\Delta z \Longrightarrow$ нет экстремума
+            Вдоль разных путей $\alpha = 0$, $\tg \alpha = -\frac{A}{B}$, разный знак $\Delta z \Longrightarrow$ нет экстремума
 
-    \Nota Можно аналогично рассмотреть $A < 0$
+            \Notas Можно аналогично рассмотреть $A < 0$
 
-    4) $A = 0$, вернемся к выражению $\Delta z = \frac{1}{2} (\Delta \rho)^2 (\sin\alpha(2B\cos\alpha + C\sin\alpha) + 2\lambda\Delta\rho)$
+            \item $A = 0$, вернемся к выражению $\Delta z = \frac{1}{2} (\Delta \rho)^2 (\sin\alpha(2B\cos\alpha + C\sin\alpha) + 2\lambda\Delta\rho)$
 
-    Пусть $\alpha$ беск. мал, тогда $\sin\alpha \approx 0, C\sin\alpha \approx 0, 2B\cos\alpha \approx 2B$. Тогда знак $\sin\alpha \cdot 2B$ зависит от $\alpha$
+            Пусть $\alpha$ -- бесконечно малая, тогда $\sin\alpha \approx 0, C\sin\alpha \approx 0, 2B\cos\alpha \approx 2B$. Тогда знак $\sin\alpha \cdot 2B$ зависит от $\alpha$
 
-    То есть $\Delta z$ колеблется вместе с $\alpha$ по знаку $\Longrightarrow$ нет экстремума
+            То есть $\Delta z$ колеблется вместе с $\alpha$ по знаку $\Longrightarrow$ нет экстремума
+        \end{enumerate}
 
-    Можно доказать при $A \neq 0$, например, выбрав $tg \alpha = -\frac{A}{B}$, что знак $\Delta z$ зависит от $\alpha$
+        Можно доказать при $A \neq 0$, например, выбрав $\tg \alpha = -\frac{A}{B}$, что знак $\Delta z$ зависит от $\alpha$
 
-    $\Box$
+    \end{MyProof}
 
 \end{document}
