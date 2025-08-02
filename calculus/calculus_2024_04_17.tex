@@ -119,16 +119,18 @@
 
     \Ex Дуга $L$ - отрезок прямой от $A(1, 1)$ до $B(3, 5)$
 
-    1) $\int_{AB} (x + y) dl = \begin{bmatrix}AB: \frac{x - 1}{2} = \frac{y - 1}{4} \\
-    \text{или} y = 2x - 1, x \in [1, 3] \\
-    f(x, y) = x + 2x - 1 = 3x - 1 \\
-    dl = \sqrt{1 + y^{\prime 2}}dx = \sqrt{5}dx\end{bmatrix} =
-    \int_1^3 (3x - 1) \sqrt{5}dx = \sqrt{5} \left(\frac{3x^2}{2} - x\right) \Big|_1^3 = \sqrt{5}(12 - 2) = 10\sqrt{5}$
+    \begin{enumerate}
+        \item $\int_{AB} (x + y) dl = \begin{bmatrix}AB: \frac{x - 1}{2} = \frac{y - 1}{4} \\
+        \text{или } y = 2x - 1, x \in [1, 3] \\
+        f(x, y) = x + 2x - 1 = 3x - 1 \\
+        dl = \sqrt{1 + y^{\prime 2}}dx = \sqrt{5}dx\end{bmatrix} =
+        \int_1^3 (3x - 1) \sqrt{5}dx = \sqrt{5} \left(\frac{3x^2}{2} - x\right) \Big|_1^3 = \sqrt{5}(12 - 2) = 10\sqrt{5}$
 
-    2) $\int_{AB} (x + y) dx + (x + y) dy = \begin{bmatrix}x \uparrow^3_1, y \uparrow^5_1 \\
-    y = 2x - 1, x = \frac{y + 1}{2} \\
-    dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 \left(\frac{y + 1}{2} + y\right) dy = \\
-    \left(\frac{3x^2}{2} - x\right) \Big|_1^3 + \frac{1}{2} \left(\frac{3y^2}{2} + y\right) \Big|_1^5 = 10 + 20 = 30$
+        \item $\int_{AB} (x + y) dx + (x + y) dy = \begin{bmatrix}x \uparrow^3_1, y \uparrow^5_1 \\
+        y = 2x - 1, x = \frac{y + 1}{2} \\
+        dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 \left(\frac{y + 1}{2} + y\right) dy = \\
+        \left(\frac{3x^2}{2} - x\right) \Big|_1^3 + \frac{1}{2} \left(\frac{3y^2}{2} + y\right) \Big|_1^5 = 10 + 20 = 30$
+    \end{enumerate}
 
     \hypertarget{formulaGreen}{}
 
