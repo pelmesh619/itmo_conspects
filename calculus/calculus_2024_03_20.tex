@@ -36,41 +36,39 @@
         \Ths Все касательные прямые к $\pi$ в обыкновенной точке $M_0$ лежат в одной плоскости
     \end{MyTheorem}
 
-    $\Box$
+    \begin{MyProof}
+        $\vec{s}$ -- направляющий вектор касательной $\tau$, проведенной к кривой $l$ в некоторой секущей плоскости
 
-    $d \overrightarrow{s}$ - направляющий вектор касательной $\tau$, проведенной к кривой $l$ в некоторой секущей плоскости
+        $d \vec{s}$ -- вектор малых приращений, то есть $d \vec{s} = (dx, dy, dz)$
 
-    $d \overrightarrow{s}$ - вектор малых приращений, то есть $d \overrightarrow{s} = (dx, dy, dz)$
+        $d \vec{p}$ -- проекция $d \vec{s}$ на $Oxy$, то есть $d \vec{p} = (dx, dy)$
 
-    $d \overrightarrow{p}$ - проекция $d \overrightarrow{s}$ на $Oxy$, то есть $d \overrightarrow{p} = (dx, dy)$
+        Кривую $l$ можно задать параметрическими уравнениями $\begin{cases}x = \varphi(t) \\ y = \xi(t) \\ z = \theta(t)\end{cases}$
 
-    Кривую $l$ можно задать параметрическими уравнениями $\begin{cases}x = \varphi(t) \\ y = \xi(t) \\ z = \theta(t)\end{cases}$
+        Прямая $\tau$ имеет уравнение
 
-    Прямая $\tau$ имеет уравнение
+        \[\frac{x - x_0}{dx} = \frac{y - y_0}{dy} = \frac{z - z_0}{dz}\]
 
-    \[\frac{x - x_0}{dx} = \frac{y - y_0}{dy} = \frac{z - z_0}{dz}\]
+        При отходе от $M_0$ на малое расстояние по поверхности (точнее по кривой $l$) задаем приращение $dt \neq 0$
 
-    При отходе от $M_0$ на малое расстояние по поверхности (точнее по кривой $l$) задаем приращение $dt \neq 0$
+        Домножим уравнение на $dt$
 
-    Домножим уравнение на $dt$
+        \[\frac{x - x_0}{\frac{dx}{dt}} = \frac{y - y_0}{\frac{dy}{dt}} = \frac{z - z_0}{\frac{dz}{dt}}\]
 
-    \[\frac{x - x_0}{\frac{dx}{dt}} = \frac{y - y_0}{\frac{dy}{dt}} = \frac{z - z_0}{\frac{dz}{dt}}\]
+        Из условия обыкновенности точки $M_0$ следует дифференцируемость функции $F$.
+        Кроме того, уравнение можно преобразовать к виду $F(x(t), y(t), z(t)) = 0$, где $x(t), y(t), z(t)$ -- тоже дифференцируемы в точке $M_0$
 
-    Из условия обыкновенности точки $M_0$ следует дифференцируемость функции $F$.
-    Кроме того, уравнение можно преобразовать к виду $F(x(t), y(t), z(t)) = 0$, где $x(t), y(t), z(t)$ - тоже дифференцируемы в точке $M_0$
+        Запишем $F^\prime_t$, как вложенную:
 
-    Запишем $F^\prime_t$, как вложенную:
+        \[F^\prime_t = \frac{\partial F}{\partial x}\frac{dx}{dt} + \frac{\partial F}{\partial y}\frac{dy}{dt} + \frac{\partial F}{\partial z}\frac{dz}{dt} = 0\]
 
-    \[F^\prime_t = \frac{\partial F}{\partial x}\frac{dx}{dt} + \frac{\partial F}{\partial y}\frac{dy}{dt} + \frac{\partial F}{\partial z}\frac{dz}{dt} = 0\]
+        Или $\left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}\right) \cdot \left(\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}\right) = 0$
 
-    Или $\left(\frac{\partial F}{\partial x}, \frac{\partial F}{\partial y}, \frac{\partial F}{\partial z}\right) \cdot \left(\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}\right) = 0$
+        Таким образом, $\vec{N} \cdot \frac{d\vec{s}}{dt} = 0$. То есть $\vec{N} \perp \frac{d\vec{s}}{dt}$, при том, что $d\vec{s}$ выбран произвольно (кривая $l$ -- кривая произвольного сечения)
 
-    Таким образом, $\overrightarrow{N} \cdot \frac{d\overrightarrow{s}}{dt} = 0$. То есть $\overrightarrow{N} \perp \frac{d\overrightarrow{s}}{dt}$, при том, что $d\overrightarrow{s}$ выбран произвольно (кривая $l$ - кривая произвольного сечения)
-
-    Итак, вектор $\overrightarrow{N} \perp$ любой касательной $\tau$ к поверхности $\pi$ в точке $M_0$.
-    Следовательно, все касательные лежат в плоскости $\kappa$ такой, что $\overrightarrow{N} \perp \kappa$
-
-    $\Box$
+        Итак, вектор $\vec{N}$ перпендикулярен любой касательной $\tau$ к поверхности $\pi$ в точке $M_0$.
+        Следовательно, все касательные лежат в плоскости $\kappa$ такой, что $\vec{N} \perp \kappa$
+    \end{MyProof}
 
     \hypertarget{tangentplanetosurface}{}
 
