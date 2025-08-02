@@ -142,21 +142,23 @@
 
     Тогда $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = \oint_{K^+} Pdx + Qdy$
 
-    $\Box \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
-    \iint_D \frac{\partial Q}{\partial x} dxdy - \iint_D \frac{\partial P}{\partial y} dxdy =
-    \int^\beta_\alpha dy \int_{x=x_1(y)}^{x=x_2(y)} \frac{\partial Q}{\partial x} dx -
-    \int^b_a dx \int_{y=y_1(x)}^{y=y_2(x)} \frac{\partial P}{\partial y} dy =
-    \int^\beta_\alpha \left(Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)}\right)dy - \int^b_a \left(P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)}\right)dx = \\
-    \int_\alpha^\beta (Q(x_2(y), y) - Q(x_1(y), y)) dy - \int_a^b (P(x, y_2(x)) - P(x, y_1(x))) dx =
-    \int_{NST}Q dy - \int_{NMT} Q dy - \int_{MTS} P dx + \int_{MNS}Pdx =
-    \underset{\oint_{K^+}Qdy}{\undergroup{\int_{NST} Qdy + \int_{TMN} Qdy}} +
-    \underset{\oint_{K^+}Pdx}{\undergroup{\int_{STM} Qdy + \int_{MNS} Qdy}} =
-    \oint_{K^+} Pdx + Qdy$
 
     $\Box$
 
 
 
+    \begin{MyProof}
+        $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
+        \iint_D \frac{\partial Q}{\partial x} dxdy - \iint_D \frac{\partial P}{\partial y} dxdy =
+        \int^\beta_\alpha dy \int_{x=x_1(y)}^{x=x_2(y)} \frac{\partial Q}{\partial x} dx -
+        \int^b_a dx \int_{y=y_1(x)}^{y=y_2(x)} \frac{\partial P}{\partial y} dy =
+        \int^\beta_\alpha \left(Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)}\right)dy - \int^b_a \left(P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)}\right)dx = \\
+        \int_\alpha^\beta (Q(x_2(y), y) - Q(x_1(y), y)) dy - \int_a^b (P(x, y_2(x)) - P(x, y_1(x))) dx =
+        \int_{NST}Q dy - \int_{NMT} Q dy - \int_{MTS} P dx + \int_{MNS}Pdx =
+        \underset{\oint_{K^+}Qdy}{\undergroup{\int_{NST} Qdy + \int_{TMN} Qdy}} +
+        \underset{\oint_{K^+}Pdx}{\undergroup{\int_{STM} Qdy + \int_{MNS} Qdy}} =
+        \oint_{K^+} Pdx + Qdy$
+    \end{MyProof}
 \end{document}
 
 
