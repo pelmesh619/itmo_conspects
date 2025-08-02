@@ -46,72 +46,75 @@
 
         \end{enumerate}
 
-    $\Box I \Longleftrightarrow II$
         Тогда I $\Longleftrightarrow$ II $\Longleftrightarrow$ III $\Longleftrightarrow$ IV
     \end{MyTheorem}
 
-    $\fbox{\Longrightarrow}$ По def $\int$НЗП $\Longleftrightarrow \int_{AMB} = \int_{ANB}$
+    \begin{MyProof}
+        \begin{enumerate}
+            \item I $\Longleftrightarrow$ II
 
-    Рассмотрим $\int_{AMB} - \int_{ANB} = \int_{AMB} + \int_{BNA} = \oint_K = 0 \forall K \subset D$
+            $\fbox{\Longrightarrow}$ По определению $\int$НЗП $\Longleftrightarrow \int_{AMB} = \int_{ANB}$
 
-    $\fbox{\Longleftarrow}$ Достаточно разбить $\oint_{K^+} = \int_{AMB} + \int_{BNA} = 0$
+            Рассмотрим $\int_{AMB} - \int_{ANB} = \int_{AMB} + \int_{BNA} = \oint_K = 0 \ \forall K \subset D$
 
-    Поскольку $\int_{AMB} + \int_{BNA} = 0$, то $\int_{AMB} - \int_{ANB} = 0$
+            $\fbox{\Longleftarrow}$ Достаточно разбить $\oint_{K^+} = \int_{AMB} + \int_{BNA} = 0$
 
-    II $\Longleftrightarrow$ III
+            Поскольку $\int_{AMB} + \int_{BNA} = 0$, то $\int_{AMB} - \int_{ANB} = 0$
 
-    $\fbox{\Longrightarrow} \oint_K = 0 \stackrel{?}{\Longrightarrow} \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
+            \item II $\Longleftrightarrow$ III
 
-    От противного $\quad \exists M_0(x_0, y_0) \in D \ | \ \frac{\partial P}{\partial y} \Big|_{M_0} \neq \frac{\partial Q}{\partial x} \Big|_{M_0} \Longleftrightarrow \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} \neq 0$
+            $\fbox{\Longrightarrow} \oint_K = 0 \stackrel{?}{\Longrightarrow} \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
 
-    Для определенности $\letsymbol \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} > 0$
+            От противного $\quad \exists M_0(x_0, y_0) \in D \ | \ \frac{\partial P}{\partial y} \Big|_{M_0} \neq \frac{\partial Q}{\partial x} \Big|_{M_0} \Longleftrightarrow \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} \neq 0$
 
-    Тогда $\exists \delta > 0 \ | \ \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} > \delta > 0$
+            Для определенности пусть $\left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} > 0$
 
-    Выберем малую окрестность в точке $M_0$ ($U(M_0)$) и обозначим ее контур $\Gamma$
+            Тогда $\exists \delta > 0 \ | \ \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} > \delta > 0$
 
-    Так как $P$ и $Q$ непр. дифф., $(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}) \Big|_{M_0} > 0$ в $U(M_0)$
+            Выберем малую окрестность в точке $M_0$ ($U(M_0)$) и обозначим ее контур $\Gamma$
 
-    Формула Грина: $\iint_{U(M_0)} \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) dxdy > \iint_{U(M_0)} \delta dxdy = \delta S_{U(M_0)} > 0$
+            Так как $P$ и $Q$ непрерывно дифференцируемы, $\left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} > 0$ в $U(M_0)$
 
-    С другой стороны $\iint_{U(M_0)} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\Gamma^+} Pdx + Qdy = 0$
+            Формула Грина: $\iint_{U(M_0)} \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) dxdy > \iint_{U(M_0)} \delta dxdy = \delta S_{U(M_0)} > 0$
 
-    Таким образом, возникаем противоречие
+            С другой стороны $\iint_{U(M_0)} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)dxdy = \oint_{\Gamma^+} Pdx + Qdy = 0$
 
-    $\fbox{\Longleftarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \forall M \in D$
+            Таким образом, возникает противоречие
 
-    Тогда $\forall D^\prime \subset D \ \ \iint_{D^\prime} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = 0 = \oint_{\Gamma_{D^\prime}} Pdx + Qdy \forall \Gamma_{D^\prime} \subset D$
+            $\fbox{\Longleftarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \ \forall M \in D$
 
-    III \Longleftrightarrow IV
+            Тогда $\forall D^\prime \subset D \ \iint_{D^\prime} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = 0 = \oint_{\Gamma_{D^\prime}} Pdx + Qdy \ \forall \Gamma_{D^\prime} \subset D$
 
-    $\fbox{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \Longrightarrow \exists \Phi(x, y)$
+            \item III $\Longleftrightarrow$ IV
 
-    Так как доказано $I \Longleftrightarrow III$, то докажем $I \Longrightarrow IV$
+            $\fbox{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \Longrightarrow \exists \Phi(x, y)$
 
-    $\int_{AM} Pdx + Qdy = \int^{M(x,y)}_{A(x_0,y_0)} Pdx + Qdy$ - НЗП $\forall A, M \in D$
+            Так как доказано $I \Longleftrightarrow III$, то докажем $I \Longrightarrow IV$
 
-    Обозн. $\int^{M(x,y)}_{A(x_0,y_0)} Pdx + Qdy - \Phi(x,y)$
+            $\int_{AM} Pdx + Qdy = \int^{M(x,y)}_{A(x_0,y_0)} Pdx + Qdy$ -- $\int$НЗП $\forall A, M \in D$
 
-    Докажем, что $d\Phi = Pdx + Qdy$
+            Обозначим $\int^{M(x,y)}_{A(x_0,y_0)} Pdx + Qdy - \Phi(x,y)$
 
-    Так как $d\Phi(x,y) = \frac{\partial \Phi}{\partial x}dx - \frac{\partial \Phi}{\partial y}dy$, то нужно доказать $\frac{\partial \Phi}{\partial x} = P(x, y), \frac{\partial \Phi}{\partial y} = Q(x, y)$
+            Докажем, что $d\Phi = Pdx + Qdy$
 
-    $\frac{\partial \Phi}{\partial x} = \lim_{\Delta x \to 0}\frac{\Delta_x \Phi}{\Delta x} = $ [задали приращение вдоль $MM_1$] $ =
-    \lim_{\Delta x \to 0} \frac{\Phi(x + \Delta x, y) - \Phi(x,y)}{\Delta x} = \\
-    \lim_{\Delta x \to 0} \frac{\int^{M_1}_A Pdx + Qdy - \int^M_A Pdx + Qdy}{\Delta x} =
-    \lim_{\Delta x \to 0} \frac{\int^M_A + \int^{M_1}_M - \int^M_A}{\Delta x} = \lim_{\Delta x \to 0} \frac{\int^{M_1}_M}{\Delta x} \stackrel{\text{НЗП}}{=}
-    \lim_{\Delta x \to 0} \frac{\int_{(x,y)}^{(x + \Delta x, y)} P dx}{\Delta x} = [\text{по th Лагранжа } \exists \xi \in [x; x + \Delta x]] = \lim_{\Delta x \to 0} \frac{P(\xi, y) \Delta x}{\Delta x} =
-    \lim_{\Delta x \to 0} P(\xi, y) = P(x, y)$
+            Так как $d\Phi(x,y) = \frac{\partial \Phi}{\partial x}dx - \frac{\partial \Phi}{\partial y}dy$, то нужно доказать $\frac{\partial \Phi}{\partial x} = P(x, y), \frac{\partial \Phi}{\partial y} = Q(x, y)$
 
-    Аналогично $\frac{\partial \Phi}{\partial y} = Q(x, y)$
+            $\frac{\partial \Phi}{\partial x} = \lim_{\Delta x \to 0}\frac{\Delta_x \Phi}{\Delta x} = $ [задали приращение вдоль $MM_1$] $ =
+            \lim_{\Delta x \to 0} \frac{\Phi(x + \Delta x, y) - \Phi(x,y)}{\Delta x} = \\
+            \lim_{\Delta x \to 0} \frac{\int^{M_1}_A Pdx + Qdy - \int^M_A Pdx + Qdy}{\Delta x} =
+            \lim_{\Delta x \to 0} \frac{\int^M_A + \int^{M_1}_M - \int^M_A}{\Delta x} = \lim_{\Delta x \to 0} \frac{\int^{M_1}_M}{\Delta x} \stackrel{\text{НЗП}}{=}
+            \lim_{\Delta x \to 0} \frac{\int_{(x,y)}^{(x + \Delta x, y)} P dx}{\Delta x} = [\text{по th Лагранжа } \exists \xi \in [x; x + \Delta x]] = \lim_{\Delta x \to 0} \frac{P(\xi, y) \Delta x}{\Delta x} =
+            \lim_{\Delta x \to 0} P(\xi, y) = P(x, y)$
 
-    $\fbox{\Longleftarrow} d\Phi = Pdx + Qdy \stackrel{?}{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$
+            Аналогично $\frac{\partial \Phi}{\partial y} = Q(x, y)$
 
-    Известно $P = \frac{\partial \Phi}{\partial x}, Q = \frac{\partial \Phi}{\partial y}$
+            $\fbox{\Longleftarrow} d\Phi = Pdx + Qdy \stackrel{?}{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$
 
-    Тогда $\frac{\partial Q}{\partial x} = \frac{\partial^2 \Phi}{\partial x \partial y} = \frac{\partial^2 \Phi}{\partial y \partial x} = \frac{\partial P}{\partial y}$
+            Известно $P = \frac{\partial \Phi}{\partial x}, Q = \frac{\partial \Phi}{\partial y}$
 
-    $\Box$
+            Тогда $\frac{\partial Q}{\partial x} = \frac{\partial^2 \Phi}{\partial x \partial y} = \frac{\partial^2 \Phi}{\partial y \partial x} = \frac{\partial P}{\partial y}$
+        \end{enumerate}
+    \end{MyProof}
 
     \Nota $\Phi$ -- первообразная для $Pdx + Qdy$
 
