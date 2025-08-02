@@ -16,18 +16,14 @@
     Формула Грина: $\iint_D \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right)dxdy = \iint_D \left(\frac{1}{2} - \left(\-\frac{1}{2}\right)\right)dxdy =
     \iint_D dxdy = S_D \stackrel{\text{Ф. Гр.}}{=} \oint_{K^+} \left(-\frac{y}{2}\right)dx + \frac{x}{2} dy$
 
-    $\int$НЗП -  Интеграл, не зависящий от пути интегрирования.
+    \Def Пусть даны $P, Q : D \subset \Real^2 \to \Real$, непрерывно дифференцируемы по 2-м переменным
 
-    \Def $P, Q : D \subset \Real^2 \to \Real$, непрерывно дифференцируемы по 2-м переменным
-
-    $\overset{\smile}{AB} \subset D \quad \forall M, N \in D$
-
-    Параметризация $\overset{\smile}{AB}:
-    \begin{cases}x = \varphi(t) \\ y = \psi(t)\end{cases}$ - $\varphi, \psi$ - непр. дифф (кусочно)
+    А также кривая $\overset{\frown}{AB}$, соединяющая любые две точки области, $\overset{\frown}{AB}:
+    \begin{cases}x = \varphi(t) \\ y = \psi(t)\end{cases}$, $\varphi, \psi$ -- непрерывно дифференцируемы (кусочно)
 
     \hypertarget{pathindependentintegrals}{}
 
-    $I = \int_{AB}Pdx + Qdy$ называется интегралом НЗП, если $\forall M, N \in D \quad \int_{AMB}Pdx + Qdy = \int_{ANB}Pdx + Qdy$
+    $I = \int_{AB}Pdx + Qdy$ называется интегралом, не зависящим от пути интегрирования (НЗП), если $\forall M, N \in D \ \int_{AMB}Pdx + Qdy = \int_{ANB}Pdx + Qdy$
 
     \Nota Обозначают $\int_A^B Pdx + Qdy$ или $\int_{(x_2,y_2)}^{(x_1,y_1)} Pdx + Qdy$
 
