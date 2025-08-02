@@ -112,18 +112,17 @@
 
     \hypertarget{tripleintegral}{}
 
-    \Def Тройной интеграл
+    \Def Тройной интеграл: пусть дана функция $u(x, y, z) \ : \ T \subset \Real^3 \rightarrow \Real$
 
-    Пусть дана функция $u(x, y, z) \ : \ T \subset \Real^3 \rightarrow \Real$
+    \begin{enumerate}
+        \item Дробление на элементы объема $dv = dxdydz$
 
-    1) Дробление на элементы объема $dv = dxdydz$
+        \item Вычисление среднего содержания $u(x, y, z)$ в $dv$: $u(\xi_i, \eta_i, \zeta_i) dv$
 
-    2) Вычисление среднего содержания $u(x, y, z)$ в $dv$: $u(\xi_i, \eta_i, \zeta_i) dv$
+        \item Интегральная сумма $\sigma_n = \sum u(M_i) dv$
 
-    3) Интегральная сумма $\sigma_n = \Sum u(M_i) dv$
-
-    4) $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dv = \iiint_T u(x, y, z) dxdydz$
-
+        \item $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dv = \iiint_T u(x, y, z) dxdydz$
+    \end{enumerate}
 
     \underline{Геометрический смысл}: только при $u = 1$ интеграл $\iiint_T dxdydz = V_T$ равен объему
 
