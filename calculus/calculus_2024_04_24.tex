@@ -29,27 +29,26 @@
 
     \hypertarget{theorempathindependentintegrals}{}
 
-    \Th Об интеграле НЗП
+    \begin{MyTheorem}
+        \ThNs{Об интеграле НЗП} В условиях определения
 
-    В условиях def
+        \begin{enumerate}[label=\Roman*.]
 
-    \begin{enumerate}[label=\Roman*.]
+        \item $\int_{AB} Pdx + Qdy$ -- интеграл, не зависящий от пути
 
-    \item $\int_{AB} Pdx + Qdy$ - инт. НЗП
+        \item $\oint_K Pdx + Qdy = 0 \quad \forall K \subset D$
 
-    \item $\oint_K Pdx + Qdy = 0 \quad \forall K \subset D$
+        \item $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
 
-    \item $\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
+        \item $\exists \Phi(x, y) \ | \ d\Phi = P(x, y)dx + Q(x, y)dy$ в области $D$
 
-    \item $\exists \Phi(x, y) \ | \ d\Phi = P(x, y)dx + Q(x, y)dy$ в обл. $D$
+        Причем $\Phi(x, y) = \int_{(x_0,y_0)}^{(x_1,y_1)}Pdx+Qdy$, где $(x_0, y_0), (x_1,y_1) \in D$
 
-    Причем $\Phi(x, y) = \int_{(x_0,y_0)}^{(x_1,y_1)}Pdx+Qdy$, где $(x_0, y_0), (x_1,y_1) \in D$
-
-    \end{enumerate}
-
-    Тогда $I \Longleftrightarrow II \Longleftrightarrow III \Longleftrightarrow IV$
+        \end{enumerate}
 
     $\Box I \Longleftrightarrow II$
+        Тогда I $\Longleftrightarrow$ II $\Longleftrightarrow$ III $\Longleftrightarrow$ IV
+    \end{MyTheorem}
 
     $\fbox{\Longrightarrow}$ По def $\int$НЗП $\Longleftrightarrow \int_{AMB} = \int_{ANB}$
 
