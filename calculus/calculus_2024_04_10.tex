@@ -32,14 +32,14 @@
     картинка
 
     Заменим криволинейный параллелограмм на обычный, стянув вершины хордами (погрешность в площади - малая более высокого порядка, чем площадь)
+    $A = (x_A, y_A) = (\varphi(u, v), \psi(u, v))$
 
-    $A(x_A, y_A) = (\varphi(u, v), \psi(u, v))$
+    $B = (x_B, y_B) = (\varphi(u, v+\Delta v), \psi(u, v+\Delta v))$
 
-    $B(x_B, y_B) = (\varphi(u, v+\Delta v), \psi(u, v+\Delta v))$
+    $C = (x_C, y_C) = (\varphi(u + \Delta u, v+\Delta v), \psi(u + \Delta u, v+\Delta v))$
 
-    $C(x_C, y_C) = (\varphi(u + \Delta u, v+\Delta v), \psi(u + \Delta u, v+\Delta v))$
+    $D = (x_D, y_D) = (\varphi(u + \Delta u, v), \psi(u + \Delta u, v))$
 
-    $D(x_D, y_D) = (\varphi(u + \Delta u, v), \psi(u + \Delta u, v))$
 
     $\Delta s = S_{ABCD} = |\overrightarrow{AB} \times \overrightarrow{AD}| = \left|
     \begin{vmatrix}
