@@ -73,7 +73,7 @@
 
     \hypertarget{doubleintegralcalculation}{}
 
-    Вычисление: По геометрическому смыслу найти $\iint_D z(x, y) dx dy$ - значит найти объем подповерхности
+    Вычисление: по геометрическому смыслу найти $\iint_D z(x, y) dx dy$ -- значит найти объем подповерхности
 
     Можно найти $S(x) = \int^{y_2(x)}_{y_1(x)} z(x = c, y) dy$ - площадь поперечного сечения
 
@@ -85,7 +85,7 @@
 
     \Nota Кратный
 
-    Если найдена первообразная для $z(x = c, y)$ (обозн. $F(x, y(x))$), то по формуле N-L:
+    Если найдена первообразная для $z(x = c, y)$ (обозначим $F(x, y(x))$), то по формуле N-L:
 
     $\int^{y_2(x)}_{y_1(x)} z(x = c, y) dy = F(x, y(x)) \Big|^{y_2(x)}_{y_1(x)} = F(x, y_2(x)) - F(x, y_1(x))$
 
@@ -93,9 +93,9 @@
 
     Пределы интегрирования во внутреннем интеграле - функции, во внешнем - точки
 
-    ? Можно ли вычислить V, рассекая тело сечениями $y = const$? Верно ли, что $\int_a^b \left(\int_{y_1(x)}^{y_2(x)} z(x, y) dy\right) dx = \int_\alpha^\beta \left(\int_{x_1(y)}^{x_2(y)} z(x, y) dx\right) dy$?
+    Можно ли вычислить V, рассекая тело сечениями $y = \const$? Верно ли, что $\int_a^b \left(\int_{y_1(x)}^{y_2(x)} z(x, y) dy\right) dx = \int_\alpha^\beta \left(\int_{x_1(y)}^{x_2(y)} z(x, y) dx\right) dy$?
 
-    Верно, $V$ не зависит от порядка сечения
+    Верно: $V$ не зависит от порядка сечения
 
     Таким образом, двойной интеграл $\iint_D z(x, y) dxdy = \int_a^b \int_{y_1}^{y_2} z(x, y) dydx = \int_\alpha^\beta \int_{x_1}^{x_2} z(x, y) dxdy$
 
@@ -124,14 +124,13 @@
 
     4) $\lim_{\substack{n \to \infty \\ \tau = \max (dv) \to 0}} \stackrel{def}{=} \iiint_T u(x, y, z) dv = \iiint_T u(x, y, z) dxdydz$
 
-    Геометрический смысл. Только при $u = 1$ интеграл $\iiint_T dxdydz = V_T$ равен объему
 
-    Физический смысл. Пусть $u(x, y, z)$ - плотность в каждой точке $T$
+    \underline{Геометрический смысл}: только при $u = 1$ интеграл $\iiint_T dxdydz = V_T$ равен объему
 
-    Тогда $\iiint_T u(x, y, z) dxdydz = m_T$ - масса
+    Физический смысл: пусть $u(x, y, z)$ -- плотность в каждой точке $T$, тогда $\iiint_T u(x, y, z) dxdydz = m_T$ -- масса
 
     \hypertarget{tripleintegralcalculation}{}
 
-    Вычисление. $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
+    Тройной интеграл можно вычислить через кратный: $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
 
 \end{document}
