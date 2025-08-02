@@ -14,35 +14,42 @@
 
     \Nota Дадим строгое определение
 
-    \begin{tabular}{p{0.45\textwidth}p{0.45\textwidth}}
+    \begin{multicols}{2}
         \Defs $z = z(x, y) \quad z : D \subset \Real^2 \rightarrow \Real$
-        &
-        \Mems $\int_a^b f(x) dx \quad\quad f(x) : [a, b] \rightarrow \Real^+$ \\
-        1) Дробление на $[x_{i-1}, x_i]$ длиной $\Delta x$
-        &
-        1) Дробление на элементы $P_i$ прямыми $x = const, y = const$, $S_{P_i} = \Delta x_i \Delta y_i$ (дали $dx$, $dy$) \\
-        2) Выбор средней точки $M_i(\xi_i, \eta_i)$, по значению $z(M_i)$ строим элемент. параллелепипед объемом
+        
+        \begin{enumerate}
+            \item Дробление на $[x_{i-1}, x_i]$ длиной $\Delta x$
 
-        $\nu_i = z(M_i) \Delta x_i \Delta y_i \approx V_{\text{малого цилиндра}}$
-        &
-        2) Выбор $\xi_i \in [x_{i-1}, x_i]$, площадь элементарных прямоугольников $f(\xi_i)\Delta x_i \approx S_{\text{полоски}}$ \\
-        3) Интеграл суммы
+            \item Выбор средней точки $M_i(\xi_i, \eta_i)$, по значению $z(M_i)$ строим элемент. параллелепипед объемом
 
-        $v_i = \sum_{i=1}^n \nu_i = \sum z(M_i) \Delta x_i \Delta y_i$
-        &
-        3) Интеграл суммы $\sigma_n = \sum_{i=1}^n f(\xi_i) \Delta x_i$ \\
-        4) Если $\exists \lim v_n \in \Real$, не зависящий от типа дробления и т.д. при $n \rightarrow \infty$ и
-        $\tau = \max (\Delta x_i, \Delta y_i) \to 0$,
+            $\nu_i = z(M_i) \Delta x_i \Delta y_i \approx V_{\text{малого цилиндра}}$
+            
+            \item Интеграл суммы
 
-        то $\lim_{\substack{n\to\infty \\ \tau \to 0}} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
-        &
-        4) $\lim_{\substack{n\to\infty \\ \tau \to 0}} \sigma_n = \int^b_a f(x) dx$
+            $v_i = \sum_{i=1}^n \nu_i = \sum z(M_i) \Delta x_i \Delta y_i$
+            
+            \item Если $\exists \lim v_n \in \Real$, не зависящий от типа дробления и т.д. при $n \rightarrow \infty$ и
+            $\tau = \max (\Delta x_i, \Delta y_i) \to 0$,
+    
+            то $\lim_{\substack{n\to\infty \\ \tau \to 0}} v_n \stackrel{def}{=} \iint_D z(x, y) dx dy$ - двойной интеграл от $z(x, y)$ на области $D$
+        \end{enumerate}
 
-    \end{tabular}
+        \mediumvspace
 
     \Nota Об области $D$
+        \Mems Определение определенного интеграла:
+        
+        $\quad \int_a^b f(x) dx \quad\quad f(x) : [a, b] \rightarrow \Real^+$ \\
+        
+        \begin{enumerate}
+            \item Дробление на элементы $P_i$ прямыми $x = \const, y = \const$, $S_{P_i} = \Delta x_i \Delta y_i$ (дали $dx$, $dy$)
+            \item Выбор $\xi_i \in [x_{i-1}, x_i]$, площадь элементарных прямоугольников $f(\xi_i)\Delta x_i \approx S_{\text{полоски}}$
+            \item Интеграл суммы $\sigma_n = \sum_{i=1}^n f(\xi_i) \Delta x_i$
+            \item $\lim_{\substack{n\to\infty \\ \tau \to 0}} \sigma_n = \int^b_a f(x) dx$
+        \end{enumerate}
 
     В простейшем случае рассматривают выпуклую, односвязную $\Real^2$-область
+    \end{multicols}
 
     a) Выпуклость:
 
