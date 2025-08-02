@@ -86,34 +86,34 @@
 
     \hypertarget{curvilinearintegraloffirstkindcalculation}{}
 
-    Вычисление. (Сведение к $\int_a^b dx$ или $\int_\alpha^\beta dy$ или $\int_\tau^T dt$)
+    Вычисление сводится к $\int_a^b dx$ или $\int_\alpha^\beta dy$ или $\int_\tau^T dt$
 
-    1) Параметризация дуги $L$:
+    \begin{enumerate}
+        \item Параметризация дуги $L$:
 
-    $\begin{cases}
-        x = \varphi(t) \\
-        y = \psi(t)
-    \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
-        A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
-        B(x_B, y_B) = (\varphi(T), \psi(T))
-    \end{matrix}$
+        $\begin{cases}
+            x = \varphi(t) \\
+            y = \psi(t)
+        \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
+            A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
+            B(x_B, y_B) = (\varphi(T), \psi(T))
+        \end{matrix}$
 
-    При этом задании $L \quad y = y(x), x \in [a, b]$ или $x = x(y), y \in [\alpha, \beta]$ - частные случаи параметризации
+        При этом задании $L \quad y = y(x), x \in [a, b]$ или $x = x(y), y \in [\alpha, \beta]$ -- частные случаи параметризации
 
-    2) \begin{multicols}{2}
-        I рода
+        \item \begin{multicols}{2}
+            I рода:
 
-        $\int_{L} f(x, y) dl = \left[dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|\right] = $
+            $\int_{L} f(x, y) dl = \left[dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|\right] = \\
+            = \int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
 
-        $\int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
+            II рода:
 
-        II рода
+            $\int_{L = \overset{\frown}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = \\
+            = \int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
 
-        $\int_{L = \overset{\smile}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = $
-
-        $\int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
-
-    \end{multicols}
+        \end{multicols}
+    \end{enumerate}
 
     \Ex Дуга $L$ -- отрезок прямой от $A(1, 1)$ до $B(3, 5)$. Вычислим $\int_{AB} (x + y) dl$ двумя способами:
 
