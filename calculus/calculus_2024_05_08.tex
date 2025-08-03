@@ -49,18 +49,18 @@
 
     \hypertarget{surfaceintegraloffirstkindcalculation}{}
 
-    \underline{Поверхностный}
+    Аналогично для поверхностного: $\iint_S u(x, y, z) d\sigma$
 
-    $\iint_S u(x, y, z) d\sigma$
+    \begin{enumerate}
+        \item Параметризация $S$: самая частая -- $z = z(x, y), (x, y) \in D$ -- пределы интегрирования
 
-    1) Параметризация $S$: самая частая - $z = z(x, y), (x, y) \in D$ - пределы интегрирования
+        \item $d\sigma = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} |dxdy|$, но так как
+        в двойном интеграле договорились, что $dxdy > 0$ (площадь), модуль можно не ставить (область $D$ проходится в направлении против часовой стрелки)
 
-    2) $d\sigma = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} |dxdy|$, но т. к.
-    в двойном интеграле договорились, что $dxdy > 0$ (площадь), модуль можно не ставить (область $D$ проходится в направлении против часовой стрелки)
+        \item $u(x, y, z) = \tilde{u}(x, y, z(x, y)) = \tilde{u}(x, y)$
 
-    3) $u(x, y, z) = \tilde{u}(x, y, z(x, y)) = \tilde{u}(x, y)$
-
-    $\iint_S u(x, y, z) d\sigma = \iint_{D^+} \tilde{u}(x, y) \sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}} dxdy$
+        $\iint_S u(x, y, z) d\sigma = \iint_{D^+} \tilde{u}(x, y) \sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}} dxdy$
+    \end{enumerate}
 
     \Ex $S: \ x^2 + y^2 = z^2, z = 0, z = 1$
 
