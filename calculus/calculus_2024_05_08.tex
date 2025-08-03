@@ -138,17 +138,25 @@
 
     \underline{Вычисление}:
 
-    1) Параметризация $S$ \quad для $\iint Rdxdy \quad z = z(x, y)$, для $\iint Qdxdz \quad y = y(x, z)$,
+    \begin{enumerate}
+        \item Параметризация $S$:
+        
+        \begin{itemize}
+            \item для $\iint Rdxdy \quad z = z(x, y)$
+            
+            \item для $\iint Qdxdz \quad y = y(x, z)$
 
-    для $\iint Pdydz \quad x = x(y, z)$
+            \item для $\iint Pdydz \quad x = x(y, z)$
+        \end{itemize}
 
-    Пределы интегрирования $D_{xy} = \text{пр.}_{Oxy} S$ и т. д.
+        Пределы интегрирования: $D_{xy} = \text{проек.}_{Oxy} S$ для $\iint Rdxdy$, $D_{xz} = \text{проек.}_{Oxz} S$ для $\iint Qdxdz$, $D_{yz} = \text{проек.}_{Oyz} S$ для $\iint Pdydz$
 
-    2) $dxdy \to \pm dxdy$, если обход $D_{xy}$ в направлении против часовой стрелки ($+dxdy$, если угол между $\overrightarrow{n}$ и $Oz$ острый, иначе $-dxdy$)
+        \item $dxdy \to \pm dxdy$, если обход $D_{xy}$ в направлении против часовой стрелки ($+dxdy$, если угол между $\vec{n}$ и $Oz$ острый, иначе $-dxdy$, аналогично с другими в зависимости от угла между нормалью и осью)
 
-    3) $R(x, y, z) = \tilde{R}(x, y, z(x, y)), P(x, y, z) = \tilde{P}(y, z), Q(x, y, z) = \tilde{Q}(x, z)$
+        \item $R(x, y, z) = \tilde{R}(x, y, z(x, y)), P(x, y, z) = \tilde{P}(x(y, z), y, z), Q(x, y, z) = \tilde{Q}(x, y(x, z), z)$
 
-    4) $\iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy = \iint_{D_{xy}} \pm \tilde{P}dydz \pm \tilde{Q}dxdz \pm \tilde{R}dxdy$
+        \item $\iint_{S^{\overrightarrow{n}}} \vec F(x, y, z) d\vec\sigma = \iint_{D} \pm \tilde{P}dydz \pm \tilde{Q}dxdz \pm \tilde{R}dxdy = \iint_{D_{yz}} \pm \tilde{P}dydz + \iint_{D_{xz}} \pm \tilde{Q}dxdz + \iint_{D_{xy}} \pm \tilde{R}dxdy$
+    \end{enumerate}
     \end{enumerate}
 
 \end{document}
