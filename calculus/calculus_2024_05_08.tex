@@ -98,10 +98,10 @@
     но в нашем случае высота цилиндра равна $\text{пр.}_{\overrightarrow{n}} \overrightarrow{F} = (\overrightarrow{n}, \overrightarrow{F}) = F \cos\varphi$, где $\overrightarrow{n}$ - единичный вектор нормали, $\varphi$ - угол между нормалью и потоком,
     $d\Pi = (\overrightarrow{F}, \overrightarrow{n}) d\sigma = F_n d\sigma$
 
-    Пусть $\overrightarrow{n} = (\cos\alpha, \cos\beta, \cos\gamma)$, тогда $d\Pi = (\overrightarrow{F}, (\cos\alpha, \cos\beta, \cos\gamma)) d\sigma =
+    Пусть $\vec{n} = (\cos\alpha, \cos\beta, \cos\gamma)$, тогда $d\Pi = (\vec{F}, (\cos\alpha, \cos\beta, \cos\gamma)) d\sigma =
     (P\cos\alpha, Q\cos\beta, R\cos\gamma)d\sigma$
 
-    Итак, $\Pi = \iint_{S^{\overrightarrow{n}}} d\Pi = \iint_{S^{\overrightarrow{n}}} F_n d\sigma = \iint_{S^{\overrightarrow{n}}} (\overrightarrow{F}, \overrightarrow{n})d\sigma = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma)d\sigma$
+    Итак, $\Pi = \iint_{S^{\vec{n}}} d\Pi = \iint_{S^{\vec{n}}} F_n d\sigma = \iint_{S^{\vec{n}}} (\vec{F}, \vec{n})d\sigma = \iint_{S^{\vec{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma)d\sigma$
 
     Но, еще нет координатной записи подынтегрального выражения
 
@@ -117,11 +117,11 @@
 
     Аналогично $\cos\beta d\sigma = \pm dxdz$
 
-    Тогда в $\iint_{S^{\overrightarrow{n}}} P\cos\alpha d\sigma \quad \cos\alpha d\sigma = \pm dydz$
+    Тогда в $\iint_{S^{\vec{n}}} P\cos\alpha d\sigma \quad \cos\alpha d\sigma = \pm dydz$
 
     \hypertarget{connectionbetweensurfaceintegral}{}
 
-    Окончательно, поток $\Pi = \iint_{S^{\overrightarrow{n}}} \pm Pdydz \pm Qdxdz \pm Rdxdy = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma) d\sigma$ - связь интегралов I и II рода
+    Окончательно, поток $\Pi = \iint_{S^{\vec{n}}} \pm Pdydz \pm Qdxdz \pm Rdxdy = \iint_{S^{\vec{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma) d\sigma$ -- связь интегралов I и II рода
 
     \Nota Формулу интеграла можно получить еще так: $(\overrightarrow{F}, \overrightarrow{n})d\sigma = \overrightarrow{F}\overrightarrow{n}d\sigma = \overrightarrow{F}d\overrightarrow{\sigma}$, где $d\overrightarrow{\sigma} = (\pm dydz, \pm dxdz, \pm dxdy)$
 
