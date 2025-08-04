@@ -294,16 +294,30 @@
     $Pdx + Qdy + Rdz = \overrightarrow{F}d\overrightarrow{l}$
 
     $\oint_L \overrightarrow{F}d\overrightarrow{l} = \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma}$
+        \mediumvspace
 
-    \mediumvspace
+        \hypertarget{theoremaboutpotentialinvectorform}{}
 
-    \hypertarget{theoremaboutpotentialinvectorform}{}
+        \item \textbf{\Ths О потенциале}
 
-    3* \textbf{\Ths о потенциале}
+        Рассмотрим \Ths об интеграле, не зависящего от пути. Для поля $\vec F = (P(x, y), Q(x, y))$ третий пункт $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$ можно представить как $\Rot \vec F = 
+        \begin{vmatrix}
+            \vec\imath & \vec\jmath & \vec k \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            P & Q & 0
+        \end{vmatrix} = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \vec k = 0$
 
-    $\forall L \ \oint_L \overrightarrow{F}d\overrightarrow{l} = 0 \Longleftrightarrow rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown} u = \overrightarrow{F}$
+        Так как $\Rot \vec F = 0$, то по свойству безвихревого поля $\exists u(x, y, z) \ | \ \vec\nabla u = \vec F$
 
-    (см. \Ths интеграла НЗП)
+        Поэтому $\int_{(x_0, y_0)}^{(x, y)} \vec{F}d\vec{l} =  \int_{(x_0, y_0)}^{(x, y)} \left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, 0\right) \cdot (dx, dy, dz) = \int_{(x_0, y_0)}^{(x, y)} \frac{\partial u}{\partial x} dx + \frac{\partial u}{\partial y} dy = \int_{(x_0, y_0)}^{(x, y)} Pdx + Qdy = \Phi(x, y)$
+
+        \begin{MyTheorem}
+            \ThNs{О потенциале} Для поля $\vec F = (P, Q)$ и для любого контура $L$ верно:
+
+            \[\oint_L \vec{F}d\vec{l} = 0 \Longleftrightarrow \Rot \vec{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \vec\nabla u = \vec{F}\]
+        \end{MyTheorem}
+
+    \end{enumerate}
 
     \Ex $\vec{F} = x\vec\imath + xy \vec\jmath, \ L: x = y, x = -y, x = 1$
 
