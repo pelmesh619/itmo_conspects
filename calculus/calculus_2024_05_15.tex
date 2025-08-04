@@ -165,18 +165,20 @@
     $\overrightarrow{\triangledown} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ - набла-оператор
     \Mems $\vec\nabla u = \overrightarrow{\operatorname{grad}} \ u = \left(\frac{\partial u}{\partial x}; \frac{\partial u}{\partial y}; \frac{\partial u}{\partial z}\right)$ -- градиент скалярного поля
 
-    \Nota Для $\overrightarrow{\triangledown}$ определены действия:
 
-    $\overrightarrow{\triangledown} \cdot \overrightarrow{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z}$
+    \Nota Так как $\vec\nabla$ -- это вектор, то для $\vec\nabla$ определены действия:
 
-    $\overrightarrow{\triangledown} \times \overrightarrow{a} =
-    \begin{vmatrix}
-        \overrightarrow{i}          & \overrightarrow{j}          & \overrightarrow{j}          \\
-        \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-        a_1                         & a_2                         & a_3
-    \end{vmatrix}$
+    \begin{itemize}
+        \item $\vec\nabla \cdot \vec{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z}$
 
     Причем $\overrightarrow{\triangledown} \cdot \overrightarrow{\triangledown} = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} = \triangle$ - лапласиан
+        \item $\vec\nabla \times \vec{a} =
+        \begin{vmatrix}
+            \vec\imath & \vec\jmath & \vec k \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            a_1 & a_2 & a_3
+        \end{vmatrix}$
+    \end{itemize}
 
     $\overrightarrow{\triangledown} \times \overrightarrow{\triangledown} = 0$
 
