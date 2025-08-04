@@ -30,24 +30,24 @@
     $\iint_S = 3\pi$
 
 
-    \hypertarget{theoremGaussOstrogradskyy}{}
-
-    \Th Гаусса-Остроградского
-
-    $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ - кривая)
     \subsection{5.7. Связь поверхностных интегралов с другими}
 
-    $S = \bigunion_{i = 1}^3 S_i$ - замкнута! и ограничивает тело $T$ ($S_2$ - цилиндр, $S_1$ - шапочка, $S_3$ - шапочка снизу)
+    \hypertarget{theoremGaussOstrogradskyy}{}
 
-    $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ - непр. дифф., действуют в области $\Omega \supset T$
+    \begin{MyTheorem}
+        \ThNs{Гаусса-Остроградского}
 
-    Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
+        $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ -- кривая)
 
     \Mem Формула Грина
+        $S = \bigunion_{i = 1}^3 S_i$ - замкнута и ограничивает тело $T$ ($S_2$ -- цилиндр, $S_1$ -- шапочка сверху, $S_3$ -- шапочка снизу)
 
     $\oint_K Pdx + Qdy = \iint_{D_{xy}} \left(\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}\right) dxdy$
+        $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ -- непрерывно дифференцируемы, действуют в области $\Omega \supset T$
 
     $\Box$
+        Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
+    \end{MyTheorem}
 
     Вычислим почленно $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv$
 
