@@ -171,7 +171,6 @@
     \begin{itemize}
         \item $\vec\nabla \cdot \vec{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z}$
 
-    Причем $\overrightarrow{\triangledown} \cdot \overrightarrow{\triangledown} = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} = \triangle$ - лапласиан
         \item $\vec\nabla \times \vec{a} =
         \begin{vmatrix}
             \vec\imath & \vec\jmath & \vec k \\
@@ -180,9 +179,20 @@
         \end{vmatrix}$
     \end{itemize}
 
-    $\overrightarrow{\triangledown} \times \overrightarrow{\triangledown} = 0$
+    Причем:
+    
+    \begin{itemize}
+        \item $\vec\nabla \cdot \vec\nabla = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} = \Delta$ -- лапласиан, оператор Лапласа
 
-    \Nota $\triangle u = \underset{\text{часть волнового уравнения матфизики}}{\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}} = 0$ - уравнение, определяющее гармоническую функцию $u(x, y, z)$, уравнение Лапласа
+        \item $\vec\nabla \times \vec\nabla = 
+        \begin{vmatrix}
+            \vec\imath & \vec\jmath & \vec k \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+        \end{vmatrix} = 0$ -- повторяющиеся строки в определителе
+    \end{itemize}
+    
+    \Nota $\Delta u = \underset{\substack{\text{часть волнового}\\ \text{уравнения матфизики}}}{\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}} = 0$ -- уравнение, определяющее гармоническую функцию $u(x, y, z)$, уравнение Лапласа
 
     \hypertarget{divergence}{}
 
