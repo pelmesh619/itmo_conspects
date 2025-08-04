@@ -217,8 +217,8 @@
         \ThNs{1} Свойство безвихревого поля: $\Rot \vec{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \vec\nabla u = \vec{F}$
     \end{MyTheorem}
 
-
-    $\Box$ \fbox{\Longrightarrow}
+    \begin{MyProof}
+        \fbox{\Longrightarrow}
 
         $\Rot \overrightarrow{F} =
         \begin{vmatrix}
@@ -227,12 +227,12 @@
             P & Q & R
         \end{vmatrix} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\vec\imath + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\vec\jmath + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\vec{k} = 0$
 
-    $\Longleftrightarrow
-    \begin{cases}
-        \frac{\partial R}{\partial y} = \frac{\partial Q}{\partial z} \\
-        \frac{\partial P}{\partial z} = \frac{\partial R}{\partial x} \\
-        \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}
-    \end{cases}$
+        $\Longleftrightarrow
+        \begin{cases}
+            \frac{\partial R}{\partial y} = \frac{\partial Q}{\partial z} \\
+            \frac{\partial P}{\partial z} = \frac{\partial R}{\partial x} \\
+            \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}
+        \end{cases}$
 
         Рассмотрим $u = u(x, y, z) \ | \ \frac{\partial u}{\partial x} = P, \frac{\partial u}{\partial y} = Q, \frac{\partial u}{\partial z} = R$ -- эта функция удовлетворяет системе равенств
 
@@ -242,7 +242,7 @@
 
         $\Rot \vec{F} = \vec\nabla \times \vec{F} = \vec\nabla \times (\vec\nabla u) = (\vec\nabla \times \vec\nabla) u = 0$
 
-    $\Box$
+    \end{MyProof}
 
     \Nota Доказали, что если векторное поле является градиентом какого-то скалярного, то его вихрь равен нулю: $\Rot \overrightarrow{\operatorname{grad}} u = 0$
 
