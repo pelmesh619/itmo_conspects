@@ -43,24 +43,24 @@
 
         $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ -- непрерывно дифференцируемы, действуют в области $\Omega \supset T$
 
-    $\Box$
         Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
     \end{MyTheorem}
 
-    Вычислим почленно $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv$
     \Mem Формула Грина: $\oint_K Pdx + Qdy = \iint_{D_{xy}} \left(\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}\right) dxdy$
 
-    $\iiint_T \left(\frac{\partial R(x, y, z)}{\partial z} dz\right) dxdy = \iint_{D_{xy}} R(x, y, z) \Big|_{z = z_1 (x, y)}^{z = z_3(x, y)} dxdy = \iint_{D_{xy}} (R(x, y, z_3(x, y)) - R(x, y, z_1(x, y))) dxdy =
-    \underset{\text{двойной}}{\iint_{D_{xy}} R(x, y, z_3) dxdy} - \iint_{D_{xy}} R(x, y, z_1(x, y)) dxdy = \underset{\text{поверхностный}}{\iint_{S_3} R(x, y, z) dxdy} + \iint_{S_1} R(x, y, z) dxdy +
-    \underset{\text{равен } 0\text{, т.к. } dxdy\ |_{S_2} = 0}{\iint_{S_2} R(x, y, z) dxdy} = \iint_{S_{\text{внешн.}}} Rdxdy$
+    \begin{MyProof}
+        Вычислим почленно $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv$
 
-    \smallvspace
+        $\iiint_T \left(\frac{\partial R(x, y, z)}{\partial z} dz\right) dxdy = \iint_{D_{xy}} R(x, y, z) \Big|_{z = z_1 (x, y)}^{z = z_3(x, y)} dxdy = \iint_{D_{xy}} (R(x, y, z_3(x, y)) - R(x, y, z_1(x, y))) dxdy =
+        \underset{\text{двойной}}{\iint_{D_{xy}} R(x, y, z_3) dxdy} - \iint_{D_{xy}} R(x, y, z_1(x, y)) dxdy = \underset{\text{поверхностный}}{\iint_{S_3} R(x, y, z) dxdy} + \iint_{S_1} R(x, y, z) dxdy +
+        \underset{\text{равен } 0\text{, т.к. } dxdy\ |_{S_2} = 0}{\iint_{S_2} R(x, y, z) dxdy} = \iint_{S_{\text{внешн.}}} Rdxdy$
 
-    Аналогично остальные члены:
+        \smallvspace
 
-    $\iiint_T \frac{\partial Q}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Qdxdz, \iiint_T \frac{\partial P}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Pdxdz$
+        Аналогично остальные члены:
 
-    $\Box$
+        $\iiint_T \frac{\partial Q}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Qdxdz, \iiint_T \frac{\partial P}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Pdxdz$
+    \end{MyProof}
 
     \Nota Если $\iint_{S_{\text{внутр}}}$, то $\iint_S = - \iiint_T$
 
