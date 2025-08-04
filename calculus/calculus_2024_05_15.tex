@@ -69,18 +69,15 @@
 
     \hypertarget{theoremStokes}{}
 
-    \Th Стокса
+    \begin{MyTheorem}
+        \ThNs{Стокса}
 
-    Пусть $S : z = z(x, y)$ - незамкнутая поверхность, $L$ - контур, на которую она опирается
+        Пусть $S : z = z(x, y)$ -- незамкнутая поверхность, $L$ -- контур, на которую она опирается
 
-    $\text{пр}_{Oxy} L = K_{xy}, \quad \text{пр}_{Oxy} S = D_{xy}$
-
-    В области $\Omega \supset S$ действуют функции $P, Q, R$ - непр. дифф.
-
-    Тогда $\oint_{L^+} Pdx + Qdy + Rdz = \iint_{S^+} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha +
-    \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\beta + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma$
+        $\text{пр}_{Oxy} L = K_{xy}, \quad \text{пр}_{Oxy} S = D_{xy}$
 
     $\Box$
+        В области $\Omega \supset S$ действуют функции $P, Q, R$, непрерывно дифференцируемые
 
     Найдем слагаемое $\oint_L P(x, y, z) dx \stackrel{\text{на } L\ : \ z = z(x, y)}{=\joinrel=\joinrel=\joinrel=}
     \oint_{K^+_{xy}} \tilde{P}(x, y, z(x, y)) dx = \oint_{K_{xy}} \tilde{P}dx + \tilde{Q}dy =
@@ -89,6 +86,9 @@
     -\iint_{S^+} \frac{\partial P(x, y, z)}{\partial y} dxdy =
     -\iint_{S^+} \left(\frac{\partial P}{\partial y} + \frac{\partial P}{\partial z} \frac{\partial z}{\partial y}\right) dxdy =
     -\iint_{S^+} \left(\frac{\partial P}{\partial y}\cos\gamma + \frac{\partial P}{\partial z} (-\cos\beta)\right) d\sigma$
+        Тогда $\oint_{L^+} Pdx + Qdy + Rdz = \iint_{S^+} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha +
+        \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\beta + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma$
+    \end{MyTheorem}
 
     $\overrightarrow{n} = \left(\frac{-\frac{\partial z}{\partial x}}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}}\right)$
 
