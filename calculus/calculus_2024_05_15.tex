@@ -39,10 +39,8 @@
 
         $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ -- кривая)
 
-    \Mem Формула Грина
         $S = \bigunion_{i = 1}^3 S_i$ - замкнута и ограничивает тело $T$ ($S_2$ -- цилиндр, $S_1$ -- шапочка сверху, $S_3$ -- шапочка снизу)
 
-    $\oint_K Pdx + Qdy = \iint_{D_{xy}} \left(\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}\right) dxdy$
         $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ -- непрерывно дифференцируемы, действуют в области $\Omega \supset T$
 
     $\Box$
@@ -50,6 +48,7 @@
     \end{MyTheorem}
 
     Вычислим почленно $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv$
+    \Mem Формула Грина: $\oint_K Pdx + Qdy = \iint_{D_{xy}} \left(\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}\right) dxdy$
 
     $\iiint_T \left(\frac{\partial R(x, y, z)}{\partial z} dz\right) dxdy = \iint_{D_{xy}} R(x, y, z) \Big|_{z = z_1 (x, y)}^{z = z_3(x, y)} dxdy = \iint_{D_{xy}} (R(x, y, z_3(x, y)) - R(x, y, z_1(x, y))) dxdy =
     \underset{\text{двойной}}{\iint_{D_{xy}} R(x, y, z_3) dxdy} - \iint_{D_{xy}} R(x, y, z_1(x, y)) dxdy = \underset{\text{поверхностный}}{\iint_{S_3} R(x, y, z) dxdy} + \iint_{S_1} R(x, y, z) dxdy +
