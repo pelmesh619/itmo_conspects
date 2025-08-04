@@ -289,10 +289,18 @@
 
         \item \textbf{Стокса}
 
+        $Pdx + Qdy + Rdz = \vec{F}d\vec{l}$
 
-    $Pdx + Qdy + Rdz = \overrightarrow{F}d\overrightarrow{l}$
+        $\oint_L Pdx + Qdy + Rdz = 
+        \oint_L \vec{F}d\vec{l} = \iint_{S} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\beta + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma = 
+        \iint_{S} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right), \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right), \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\right) \cdot (\cos \alpha, \cos\beta, \cos\gamma) d\sigma = \iint_S \Rot \vec{F} \vec{n} d\sigma = \iint_S \Rot \vec{F} d\vec{\sigma}$
 
-    $\oint_L \overrightarrow{F}d\overrightarrow{l} = \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma}$
+        \begin{MyTheorem}
+            \ThNs{Стокса} Циркуляция поля $\vec F$ через контур равен интегралу ротора этого поля по поверхности внутри контура
+            
+            \[\oint_L \vec{F}d\vec{l} = \iint_S \Rot \vec{F} d\vec{\sigma}\]
+        \end{MyTheorem}
+
         \mediumvspace
 
         \hypertarget{theoremaboutpotentialinvectorform}{}
