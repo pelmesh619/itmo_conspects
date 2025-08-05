@@ -20,29 +20,28 @@
 
     Выясним смысл ротора и циркуляции на примере конкретного поля
 
-    \Ex $\overrightarrow{F} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ - поле линейных скоростей, вращающегося твердого тела, где $\overrightarrow{\omega} = const$ - угловая скорость
+    \Ex $\vec{F} = -\omega y \vec\imath + \omega x \vec\jmath$ -- поле линейных скоростей вращающегося твердого тела, где $\vec{\omega} = const$ -- угловая скорость
 
     Выберем контур $L$, ограничивающий область $S$
 
-    Найдем $\Gamma_L = \oint_L \overrightarrow{F}d\overrightarrow{l} = \oint_L (-\omega y) dx + \omega x dy \stackrel{\text{Стокс}}{=}
-    \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\cos \gamma d\sigma =
+    Найдем $\Gamma_L = \oint_L \vec{F}d\vec{l} = \oint_L (-\omega y) dx + \omega x dy \stackrel{\Ths \text{Стокса}}{=}
+    \iint_S \Rot \vec{F} \vec{n} d\sigma = \iint_S \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos \gamma d\sigma =
     \iint_S 2\omega \cos \gamma d\sigma$
 
     Так как ротор сонаправлен оси $Oz$, получаем $\cos \gamma = 1$
 
     $\iint_S 2\omega \cos \gamma d\sigma = 2\omega \iint_S d\sigma = 2\omega S$
 
-    Раньше в интеграле видно, что $rot \overrightarrow{F} \overrightarrow{n} \Longrightarrow |rot \overrightarrow{F}| = 2\omega$
+    Раньше в интеграле видно, что $\Rot \vec{F} \vec{n} \Longrightarrow |\Rot \vec{F}| = 2\omega$
 
     \hypertarget{rotormechanicalmeaning2}{}
 
-    То есть механический смысл ротора - удвоенная угловая скорость вращающегося тела (или диска)
+    То есть механический смысл ротора -- удвоенная угловая скорость вращающегося тела (или диска)
 
     \Nota Чтобы уточнить смысл $\Gamma$, рассмотрим такое же поле жидких скоростей (водоворот)
+    $\vec{v} = -\omega y \vec\imath + \omega x \vec\jmath$ и погруженное в него колесо с лопатками (водяная мельница)
 
-    $\overrightarrow{v} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ и погруженное в него колесо с лопатками (водяная мельница)
-
-    В качестве контура $L$ берем обод колеса, а его располагаем под углом $\gamma$ к вектору $\overrightarrow{\omega}$
+    В качестве контура $L$ берем обод колеса, а его располагаем под углом $\gamma$ к вектору $\vec{\omega}$
 
     Все равно $\Gamma_L = \iint_S 2\omega \cos \gamma d\sigma = 2\omega\cos \gamma S$
 
