@@ -76,23 +76,26 @@
     % TODO
 
     $\overrightarrow{\triangledown} (\rho \overrightarrow{v}) = \overrightarrow{\triangledown} \rho \cdot \overrightarrow{v} + \rho \overrightarrow{\triangledown} \overrightarrow{v} \Longleftrightarrow \overrightarrow{\triangledown} \rho \overrightarrow{v} = \overrightarrow{\triangledown} (\rho \overrightarrow{v}) - \rho \overrightarrow{\triangledown} \overrightarrow{v}$
+        \item Уравнения Максвелла
 
     $\frac{d\rho}{dt} + \rho div \overrightarrow{v} = 0$ - уравнение неразрывности (при несжимаемой жидкости $div \overrightarrow{v} = 0$)
+        Экспериментально выяснено, что: 
+        
+        \begin{enumerate}
+            \item $\int_L \vec{H} d\vec{l} = \iint_S \vec{r}d\vec{\sigma}$ -- теорема о циркуляции магнитного поля
 
-    2* Уравнения Максвелла
+            \item $\int_L \vec{E} d\vec{l} = -\frac{\partial}{\partial t} \iint_S \vec{B}d\vec{\sigma}$ -- закон Фарадея
+        \end{enumerate}
 
-    Экспериментально: 1) $\int_L \overrightarrow{H} d\overrightarrow{l} = \iint_S \overrightarrow{r}d\overrightarrow{\sigma}$ - закон Био-Савара
+        где $\vec{H}$ -- напряженность магнитного поля, $\vec{r}$ -- полный ток, $\vec{E}$ -- напряженность электрического поля, $\vec{B}$ -- индукция магнитного поля
 
-    2) $\int_L \overrightarrow{E} d\overrightarrow{l} = -\frac{\partial}{\partial t} \iint_S \overrightarrow{B}d\overrightarrow{\sigma}$ - закон Фарадея
+        Максвелл узнал, что $\vec{r}$ = ток проводимости + ток смещения = $\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}$, где $\lambda$ -- коэффициент проводимости, $\varepsilon, \mu$ -- проницаемость
 
-    где $\overrightarrow{H}$ - магнитная сила, $\overrightarrow{r}$ - полный ток, $\overrightarrow{E}$ - электрическая сила, $\overrightarrow{B}$ - магнитная индукция
         \begin{enumerate}
             \item Закон Ампера: $\oint_L \vec{H} d\vec{l} = \iint_S \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right) d\vec{\sigma}$
 
-    Максвелл: $\overrightarrow{r}$ = ток проводимости + ток смещения = $\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}$
             По \Ths Стокса: $\iint_S \Rot \vec{H} d\vec{\sigma} - \iint_S \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right) d\vec{\sigma} = 0$
 
-    $\lambda$ - коэффициент проводимости, $\varepsilon, \mu$ - проницаемость
             В векторной форме: $\Rot \vec{H} = \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right)$ -- источники магнитного поля, то есть токи проводимости и смещения
 
             \item Закон Фарадея: $\oint_L \vec{E}d\vec{l} = \iint_S \Rot \vec{E}d\vec{\sigma} = -\iint_S \frac{\partial \vec{B}}{\partial t}d\vec{\sigma} \Longleftrightarrow
