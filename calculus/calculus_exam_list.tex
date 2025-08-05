@@ -168,7 +168,7 @@
 
         \hyperlink{derivativeoffunctionindirection}{Производная по направлению} -- $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$,
 
-        где $\alpha, \beta, \gamma$ -- направления $\overrightarrow{s}$
+        где $\alpha, \beta, \gamma$ -- направления $\vec{s}$
 
         \hyperlink{gradientdefinition}{Градиент}: $\vec\nabla = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ -- условный вектор
 
@@ -177,11 +177,11 @@
         \hyperlink{gradientproperties}{Свойства градиентов}:
 
         \begin{itemize}
-            \item $\frac{\partial u}{\partial s} = \text{проек.}_{\overrightarrow{s}} \vec\nabla u$
+            \item $\frac{\partial u}{\partial s} = \text{проек.}_{\vec{s}} \vec\nabla u$
 
             \item $\vec\nabla u$ -- направление наибольшего значения $\frac{\partial u}{\partial s}$
 
-            \item $\overrightarrow{s} \perp \vec\nabla u \Longrightarrow \frac{\partial u}{\partial s} = 0$
+            \item $\vec{s} \perp \vec\nabla u \Longrightarrow \frac{\partial u}{\partial s} = 0$
 
             \item $u = u(x, y), u = c$ -- линии уровня $l$. Тогда $\vec\nabla u \perp l$
         \end{itemize}
@@ -196,7 +196,7 @@
 
         \hyperlink{tangentplanetosurface}{Касательная плоскость}: Плоскость $\kappa$ (содержащая все касательные прямые $\tau$ к $\pi$ в точке $M_0$) называется касательной плоскостью к $\pi$ в $M_0$. Плоскость $\kappa$ задается как $z - z_0 = \frac{\partial z}{\partial x}(x - x_0) + \frac{\partial z}{\partial y} (y - y_0)$
 
-        \hyperlink{normaltosurface}{Нормаль к поверхности}: Прямая в направлении $\overrightarrow{N}$, перпендикулярном касательной плоскости, через точку $M_0$ называется нормалью к $\pi$ в $M_0$
+        \hyperlink{normaltosurface}{Нормаль к поверхности}: Прямая в направлении $\vec{N}$, перпендикулярном касательной плоскости, через точку $M_0$ называется нормалью к $\pi$ в $M_0$
 
         Уравнение нормали $n$: $\frac{x - x_0}{-\frac{\partial z}{\partial x}} = \frac{y - y_0}{-\frac{\partial z}{\partial y}} = \frac{z - z_0}{1}$
 
@@ -311,9 +311,9 @@
         \item Криволинейный интеграл 2-го рода как работа силы вдоль пути. Определение, вычисление и свойства. Формула связи криволинейных интегралов 1-го и 2-го рода.
 
         \hyperlink{curvilinearintegralofsecondkind}{Криволинейный интеграл 2-го рода}:
-        Дана векторная функция $\overrightarrow{F} = (P, Q)$ и кривая $l$, тогда суммарная величина скалярных произведений функции и координат на кривой равна $\int_{l} Pdx + Qdy$
+        Дана векторная функция $\vec{F} = (P, Q)$ и кривая $l$, тогда суммарная величина скалярных произведений функции и координат на кривой равна $\int_{l} Pdx + Qdy$
 
-        Физический смысл: работа сила $\overrightarrow{F} = (P, Q)$ над точкой вдоль пути, обозначенной кривой
+        Физический смысл: работа сила $\vec{F} = (P, Q)$ над точкой вдоль пути, обозначенной кривой
 
         \hyperlink{curvilinearintegraloffirstkindproperties}{Свойства}:
 
@@ -343,7 +343,7 @@
 
         \hyperlink{formulaGreen}{Формула Грина}: $D \subset R^2$, обходящаяся в правильном направлении $\uparrow Ox, \uparrow Oy$, $K$ -- гладкая замкнутая кривая (контур), которая ограничивает $D$
 
-        В области $D$ действует $\overrightarrow{F} = (P(x, y), Q(x, y))$ -- непрерывные дифференциалы
+        В области $D$ действует $\vec{F} = (P(x, y), Q(x, y))$ -- непрерывные дифференциалы
 
         Тогда $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = \oint_{K^+} Pdx + Qdy$
 
