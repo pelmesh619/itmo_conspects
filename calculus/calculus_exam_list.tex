@@ -396,17 +396,17 @@
 
         \item Поверхностный интеграл 2-го рода как поток жидкости через поверхность. Связь между поверхностными интегралами 1-го и 2-го рода.
 
-        \hyperlink{surfaceintegralofsecondkind}{Поверхностный интеграл 2-го рода} -- поток жидкости через площадку, направленную по вектору $\overrightarrow{n}$
+        \hyperlink{surfaceintegralofsecondkind}{Поверхностный интеграл 2-го рода} -- поток жидкости через площадку, направленную по вектору $\vec{n}$
 
-        $\Pi = \iint_{S^{\overrightarrow{n}}} d\Pi = \iint_{S^{\overrightarrow{n}}} F_n d\sigma = \iint_{S^{\overrightarrow{n}}} (\overrightarrow{F}, \overrightarrow{n})d\sigma = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma)d\sigma$
+        $\Pi = \iint_{S^{\vec{n}}} d\Pi = \iint_{S^{\vec{n}}} F_n d\sigma = \iint_{S^{\vec{n}}} (\vec{F}, \vec{n})d\sigma = \iint_{S^{\vec{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma)d\sigma$
 
-        \hyperlink{connectionbetweensurfaceintegral}{Связь}: поток $\Pi = \iint_{S^{\overrightarrow{n}}} \pm Pdydz \pm Qdxdz \pm Rdxdy = \iint_{S^{\overrightarrow{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma) d\sigma$ -- связь интегралов I и II рода
+        \hyperlink{connectionbetweensurfaceintegral}{Связь}: поток $\Pi = \iint_{S^{\vec{n}}} \pm Pdydz \pm Qdxdz \pm Rdxdy = \iint_{S^{\vec{n}}} (P\cos\alpha + Q\cos\beta + R\cos\gamma) d\sigma$ -- связь интегралов I и II рода
 
         \item Поверхностный интеграл 2-го рода: математическое определение, вычисление, свойства.
 
-        \hyperlink{surfaceintegralofsecondkindmath}{Определение}: $\iint_{S^{\overrightarrow{n}}} f(x, y, z) dxdy = \lim_{\substack{n \to \infty \\ \tau = \max \Delta s_k \to 0}} \sum_{k=1}^n f(\xi_k, \eta_k, \zeta_k) \Delta s_k$ -- поверхностный интеграл второго рода
+        \hyperlink{surfaceintegralofsecondkindmath}{Определение}: $\iint_{S^{\vec{n}}} f(x, y, z) dxdy = \lim_{\substack{n \to \infty \\ \tau = \max \Delta s_k \to 0}} \sum_{k=1}^n f(\xi_k, \eta_k, \zeta_k) \Delta s_k$ -- поверхностный интеграл второго рода
 
-        \hyperlink{surfaceintegralofsecondkindproperties}{Свойства}: Меняет знак при смене обхода с $\overrightarrow{n}^+$ на $\overrightarrow{n}^-$
+        \hyperlink{surfaceintegralofsecondkindproperties}{Свойства}: Меняет знак при смене обхода с $\vec{n}^+$ на $\vec{n}^-$
 
         \hyperlink{surfaceintegralofsecondkindcalculation}{Вычисление}:
 
@@ -438,7 +438,7 @@
 
         \hyperlink{theoremStokes}{Теорема Стокса}: Пусть $S : z = z(x, y)$ -- незамкнутая поверхность, $L$ -- контур, на которую она опирается
 
-        $\text{пр}_{Oxy} L = K_{xy}, \quad \text{пр}_{Oxy} S = D_{xy}$
+        $\text{проек.}_{Oxy} L = K_{xy}, \quad \text{проек.}_{Oxy} S = D_{xy}$
 
         В области $\Omega \supset S$ действуют функции $P, Q, R$ -- непрерывно дифференцируемы
 
@@ -450,21 +450,21 @@
 
         \hyperlink{scalarfield}{Скалярное поле}: $\Omega \subset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
 
-        \hyperlink{vectorfield}{Векторное поле}: Функция $\overrightarrow{F} = (F_1(\overrightarrow{x}), \dots, F_n(\overrightarrow{x})) : \Omega \to \Real^n$ называется векторным полем
+        \hyperlink{vectorfield}{Векторное поле}: Функция $\vec{F} = (F_1(\vec{x}), \dots, F_n(\vec{x})) : \Omega \to \Real^n$ называется векторным полем
 
         \hyperlink{scalarandvectorfieldgeometric}{Геометрические характеристики}:
 
-        $u = u(x, y, z)$: $l$ - линии уровня $u = const$
+        $u = u(x, y, z)$: $l$ - линии уровня $u = \const$
 
-        $\overrightarrow{F} = (P, Q, R)$: $w$ -- векторная линия, в каждой точке $w$ вектор $\overrightarrow{F}$ -- касательная к $w$
+        $\vec{F} = (P, Q, R)$: $w$ -- векторная линия, в каждой точке $w$ вектор $\vec{F}$ -- касательная к $w$
 
         \underline{Векторная трубка} -- совокупность непересекающихся векторных линий
 
         \hyperlink{differentialcharacteristics}{Дифференциальные характеристики}:
 
-        \hyperlink{divergence}{Дивергенция} $div \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \cdot \overrightarrow{F}$
+        \hyperlink{divergence}{Дивергенция} $\Div \vec{F} \stackrel{def}{=} \vec\nabla \cdot \vec{F}$
 
-        \hyperlink{rotor}{Ротор} $rot \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \times \overrightarrow{F}$
+        \hyperlink{rotor}{Ротор} $\Rot \vec{F} \stackrel{def}{=} \vec\nabla \times \vec{F}$
 
         \hyperlink{integralcharacteristics}{Интегральные характеристики}:
 
@@ -474,24 +474,24 @@
 
         \item Виды векторных полей и их свойства (теоремы о поле градиента и поле вихря).
 
-        \hyperlink{vectorfieldtypes}{Безвихревое поле}: $rot \overrightarrow{F} = 0$
+        \hyperlink{vectorfieldtypes}{Безвихревое поле}: $\Rot \vec{F} = 0$
 
-        \hyperlink{irrotationalfieldproperty}{Свойство безвихревого поля}: $rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown}u = \overrightarrow{F}$
+        \hyperlink{irrotationalfieldproperty}{Свойство безвихревого поля}: $\Rot \vec{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \vec\nabla u = \vec{F}$
 
-        \hyperlink{vectorfieldtypes}{Соленоидальное поле}: $div \overrightarrow{F} = 0$
+        \hyperlink{vectorfieldtypes}{Соленоидальное поле}: $\Div \vec{F} = 0$
 
-        \hyperlink{solenoidalfieldproperty}{Свойство соленоидального поля}: $div (rot \overrightarrow{F}) = 0$
+        \hyperlink{solenoidalfieldproperty}{Свойство соленоидального поля}: $\Div (\Rot \vec{F}) = 0$
 
-        Смысл утверждения $div (rot \overrightarrow F) = 0$ -- поле вихря свободно от источников
+        Смысл утверждения $\Div (\Rot \vec F) = 0$ -- поле вихря свободно от источников
 
-        Утверждение $rot (\overrightarrow{grad}\ u) = 0$ -- поле потенциалов свободно от вихрей
+        Утверждение $\Rot (\overrightarrow{\operatorname{grad}}\ u) = 0$ -- поле потенциалов свободно от вихрей
 
 
         \item Механический смысл потока и дивергенции.
 
         \hyperlink{divergencemechanicalmeaning}{Механический смысл}:
 
-        $div \overrightarrow{F} \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ -- мощность точечного источника
+        $\Div \vec{F} \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ -- мощность точечного источника
 
         Поток $\Pi$ -- кол-во жидкости через площадку за единицу времени
 
@@ -500,20 +500,20 @@
 
         \hyperlink{rotormechanicalmeaning}{Механический смысл}:
 
-        $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ -- циркуляция по бесконечно малому контуру (\hyperlink{rotormechanicalmeaning2}{удвоенная угловая скорость} вращающегося тела)
+        $\Rot \vec{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ -- циркуляция по бесконечно малому контуру (\hyperlink{rotormechanicalmeaning2}{удвоенная угловая скорость} вращающегося тела)
 
         Циркуляция $\Gamma$ -- максимальная мощность вращения водяной мельницы
 
 
         \item Векторная запись теорем теории поля и их механический смысл.
 
-        \hyperlink{gaussostrogradskyyvector}{Теорема Гаусса-Остроградского в векторной форме}: $\iint_S \overrightarrow{F} d\overrightarrow{\sigma} = \iiint_T div \overrightarrow{F}$
+        \hyperlink{gaussostrogradskyyvector}{Теорема Гаусса-Остроградского в векторной форме}: $\iint_S \vec{F} d\vec{\sigma} = \iiint_T \Div \vec{F}$
 
-        \hyperlink{theoremGaussOstrogradskyyinvectorform}{Теорема Стокса в векторной форме}: $Pdx + Qdy + Rdz = \overrightarrow{F}d\overrightarrow{l}$
+        \hyperlink{theoremGaussOstrogradskyyinvectorform}{Теорема Стокса в векторной форме}: $Pdx + Qdy + Rdz = \vec{F}d\vec{l}$
 
-        $\oint_L \overrightarrow{F}d\overrightarrow{l} = \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma}$
+        $\oint_L \vec{F}d\vec{l} = \iint_S \Rot \vec{F} \vec{n} d\sigma = \iint_S \Rot \vec{F} d\vec{\sigma}$
 
-        \hyperlink{theoremaboutpotentialinvectorform}{Теорема о потенциале}: $\forall L \ \oint_L \overrightarrow{F}d\overrightarrow{l} = 0 \Longleftrightarrow rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown} u = \overrightarrow{F}$
+        \hyperlink{theoremaboutpotentialinvectorform}{Теорема о потенциале}: $\forall L \ \oint_L \vec{F}d\vec{l} = 0 \Longleftrightarrow \Rot \vec{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \vec\nabla u = \vec{F}$
 
 
     \end{enumerate}
