@@ -66,7 +66,7 @@
 
 * Математический анализ II (лектор Далевская О. П.)
 
-    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/calculus/calculus_superconspect.pdf)
+    [**Весь курс с программой экзамена**](https://pelmesh619.github.io/itmo_conspects/conspects/calculus/calculus_superconspect.pdf) [✨Remastered]
 
 * Специальные разделы высшей математики (лектор Далевская О. П.)
 
