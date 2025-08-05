@@ -321,16 +321,18 @@
 
         \hyperlink{curvilinearintegraloffirstkindcalculation}{Вычисление}:
 
-        1) Параметризация $\begin{cases}
-            x = \varphi(t) \\
-            y = \psi(t)
-        \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
-            A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
-            B(x_B, y_B) = (\varphi(T), \psi(T))
-        \end{matrix}$
+        \begin{enumerate}
+            \item Параметризация $\begin{cases}
+                x = \varphi(t) \\
+                y = \psi(t)
+            \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
+                A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
+                B(x_B, y_B) = (\varphi(T), \psi(T))
+            \end{matrix}$
 
-        2) $\int_{L = \overset{\smile}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = $
-        $\int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
+            \item $\int_{L = \overset{\frown}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = $
+            $\int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
+        \end{enumerate}
 
 
         \hyperlink{connectionbetweencurvilinearintegrals}{Связь между интегралами}: $\int_L Pdx + Qdy = \int_L (P, Q)(dx, dy) = \int_L (P, Q) (\cos\alpha, \cos\beta) \underset{\approx dl}{\undergroup{ds}} = \int_L (P\cos\alpha + Q\cos\beta)dl$
