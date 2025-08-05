@@ -60,15 +60,15 @@
         $\vec\nabla \cdot (f\vec{F}) = \vec\nabla f \cdot \vec{F} + f \cdot (\vec\nabla \vec{F})$, где $f$ -- скалярное поле, $\vec{F}$ -- векторное поле
 
 
-    \underline{Задача} Дано $\overrightarrow{F} = \rho \overrightarrow{v}$ - поле скоростей жидкости с весом $\rho = \rho(x, y, z, t)$
+        Через площадку $dS$ за время $dt$ протекает $d\Pi = \rho v_n dt dS$ или за единицу времени $d\Pi = \rho v_n dS$
 
-    Через площадку $dS$ за время $dt$ протекает $d\Pi = \rho v_n dt dS$ или за ед. времени $d\Pi = \rho v_n dS$
+        Приращение жидкости за единицу времени $|dm| = \left|\frac{\partial \rho}{\partial t} dV\right|$
 
-    Приращение жидкости за единицу времени $|dm| = |\frac{\partial \rho}{\partial t} dV|$
+        Поток жидкости равен ее убыли в объеме $V$, то есть $\Pi = \oiint_S \rho v_n dS = -\iiint_V \frac{\partial \rho}{\partial t} dV$
 
-    Поток жидкости равен ее убыли в объеме $V$, то есть $\Pi = \oiint_S \rho v_n dS = -\iiint_V \frac{\partial \rho}{\partial t} dV$
+        Применяя \Ths Гаусса-Остроградского: $\Pi = \iiint_V \Div (\rho \vec{v}) dV = -\iiint_V \frac{\partial \rho}{\partial t} dV \Longleftrightarrow \\
+        \Longleftrightarrow \iiint_V \left(\Div (\rho \vec{v}) + \frac{\partial \rho}{\partial t}\right) dV = 0 \quad \forall V$ (поэтому подынтегральная функция $= 0$)
 
-    Применяя Г.-О.: $\Pi = \iiint_V \div (\rho \overrightarrow{v}) dV = -\iiint_V \frac{\partial \rho}{\partial t} dV \Longleftrightarrow \iiint_V (div (\rho \overrightarrow{v}) + \frac{\partial \rho}{\partial t}) dV = 0 \quad \forall V$ (поэтому подынт. функ. = 0)
 
     $\Longleftrightarrow \overrightarrow{\triangledown} (\rho \overrightarrow{v}) + \frac{\partial \rho}{\partial t} = 0$
 
