@@ -86,23 +86,22 @@
     2) $\int_L \overrightarrow{E} d\overrightarrow{l} = -\frac{\partial}{\partial t} \iint_S \overrightarrow{B}d\overrightarrow{\sigma}$ - закон Фарадея
 
     где $\overrightarrow{H}$ - магнитная сила, $\overrightarrow{r}$ - полный ток, $\overrightarrow{E}$ - электрическая сила, $\overrightarrow{B}$ - магнитная индукция
+        \begin{enumerate}
+            \item Закон Ампера: $\oint_L \vec{H} d\vec{l} = \iint_S \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right) d\vec{\sigma}$
 
     Максвелл: $\overrightarrow{r}$ = ток проводимости + ток смещения = $\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}$
+            По \Ths Стокса: $\iint_S \Rot \vec{H} d\vec{\sigma} - \iint_S \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right) d\vec{\sigma} = 0$
 
     $\lambda$ - коэффициент проводимости, $\varepsilon, \mu$ - проницаемость
+            В векторной форме: $\Rot \vec{H} = \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right)$ -- источники магнитного поля, то есть токи проводимости и смещения
 
-    1) $\oint_L \overrightarrow{H} d\overrightarrow{l} = \iint_S (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}) d\overrightarrow{\sigma}$
+            \item Закон Фарадея: $\oint_L \vec{E}d\vec{l} = \iint_S \Rot \vec{E}d\vec{\sigma} = -\iint_S \frac{\partial \vec{B}}{\partial t}d\vec{\sigma} \Longleftrightarrow
+            \Rot \vec{E} = -\frac{\partial \vec{B}}{\partial t}$ -- изменение индукции дает электрический ток в соленоиде
 
-    Стокс: $\iint_S rot \overrightarrow{H} d\overrightarrow{\sigma} - \iint_S (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}) d\overrightarrow{\sigma} = 0$
+            \item Теорема Гаусса: $\vec\nabla \varepsilon \vec{E} = \rho$ -- электрический заряд является источником индукции электрического поля
 
-    В векторной форме: $rot \overrightarrow{H} = (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t})$ - источники магнитного поля - токи проводимости и смещения
-
-    2) $\oint_L \overrightarrow{E}d\overrightarrow{l} = \iint_S rot \overrightarrow{E}d\overrightarrow{\sigma} = -\iint_S \frac{\partial \overrightarrow{B}}{\partial t}d\overrightarrow{\sigma} \Longleftrightarrow
-    rot \overrightarrow{E} = -\frac{\partial \overrightarrow{B}}{\partial t}$ - изменение индукции дает эл. ток в соленоиде.
-
-    3) $\overrightarrow{\triangledown} \varepsilon \overrightarrow{E} = \rho$
-
-    4) $\overrightarrow{\triangledown} \mu \overrightarrow{H} = 0$
+            \item Теорема Гаусса для магнитного поля: $\vec\nabla \mu \vec{H} = 0$ -- магнитное поле не создают \enquote{магнитные заряды}
+        \end{enumerate}
 
 \end{document}
 
