@@ -383,13 +383,15 @@
 
         \hyperlink{surfaceintegraloffirstkindcalculation}{Вычисление}: $\iint_S u(x, y, z) d\sigma$
 
-        1) Параметризация $S$: самая частая - $z = z(x, y), (x, y) \in D$ -- пределы интегрирования
+        \begin{enumerate}
+            \item Параметризация $S$: самая частая -- $z = z(x, y), (x, y) \in D$ -- пределы интегрирования
 
-        2) $d\sigma = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} dxdy$,
+            \item $d\sigma = \sqrt{1 + \left(\frac{\partial z}{\partial x}\right)^2 + \left(\frac{\partial z}{\partial y}\right)^2} dxdy$,
 
-        3) $u(x, y, z) = \tilde{u}(x, y, z(x, y)) = \tilde{u}(x, y)$
+            \item $u(x, y, z) = \tilde{u}(x, y, z(x, y)) = \tilde{u}(x, y)$
 
-        $\iint_S u(x, y, z) d\sigma = \iint_{D^+} \tilde{u}(x, y) \sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}} dxdy$
+            $\iint_S u(x, y, z) d\sigma = \iint_{D^+} \tilde{u}(x, y) \sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}} dxdy$
+        \end{enumerate}
 
 
         \item Поверхностный интеграл 2-го рода как поток жидкости через поверхность. Связь между поверхностными интегралами 1-го и 2-го рода.
