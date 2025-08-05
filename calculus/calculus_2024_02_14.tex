@@ -8,48 +8,52 @@
 
 
 \begin{document}
-    \section{1.4. Приложения определенного интеграла}
+    \subsection{1.4. Приложения определенного интеграла}
     \hypertarget{integralapplications}{}
 
-    \section{1.4.1. Площади}
+    \subsubsection{1.4.1. Площади}
 
-    1* \Mem \hypertarget{integralareadpsk}{Значение интеграла} - площадь фигуры под графиком
+    \begin{enumerate}[label*=\arabic** ]
+        \item \Mem \hypertarget{integralareadpsk}{Значение интеграла} - площадь фигуры под графиком
 
-    \begin{center}
-        \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_1}
-    \end{center}
+        \begin{center}
+            \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_1}
+        \end{center}
 
-    \underline{Геом. смысл}. $S = \int_a^b f(x) dx \quad\quad S^\prime = -\int_b^c f(x)dx$
+        \underline{Геом. смысл}. $S = \int_a^b f(x) dx \quad\quad S^\prime = -\int_b^c f(x)dx$
 
-    \mediumvspace
+        \mediumvspace
 
-    2*
+        \item
 
-    \begin{center}
-        \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_3}
-    \end{center}
+        \begin{center}
+            \includegraphics[height=6cm]{calculus/images/calculus_2024_02_14_3}
+        \end{center}
 
-    Площадь фигуры, окруженной графиками функций $S = \int_a^b |f(x) - g(x)| dx$, $a, b$ - абсциссы точек пересечения
+        Площадь фигуры, окруженной графиками функций $S = \int_a^b |f(x) - g(x)| dx$, $a, b$ - абсциссы точек пересечения
+    \end{enumerate}
 
     \Nota Симметрия
 
-    Если $f(x)$ - четная функция, то $\int_{-a}^a f(x) dx = 2 \int_0^a f(x)dx$
+    Если $f(x)$ -- четная функция, то $\int_{-a}^a f(x) dx = 2 \int_0^a f(x)dx$
 
-    Если $f(x)$ - нечетная функция, то $\int_{-a}^a f(x) dx = 0$
+    Если $f(x)$ -- нечетная функция, то $\int_{-a}^a f(x) dx = 0$
 
-    \section{1.4.2. Площадь в ПСК}
+    \subsubsection{1.4.2. Площадь в ПСК}
 
     \hypertarget{integralareapsk}{В ДПСК мы производили дробление фигуры на элементарные прямоугольники.} Сделаем подобное в ПСК для $\rho(\varphi)$:
 
-    1) Дробление $[\alpha;\beta]$ на угловые сектора $[\varphi_{i - 1};\varphi_i]$
+    \begin{enumerate}
+        \item Дробление $[\alpha;\beta]$ на угловые сектора $[\varphi_{i - 1};\varphi_i]$
 
-    $\Delta \varphi_i$ - угол сектора
+        $\Delta \varphi_i$ - угол сектора
 
-    2) Выбор средней точки $\psi_i \in [\varphi_{i - 1};\varphi_i]$, площадь сектора $S_i = \frac{1}{2} \Delta \varphi_i \rho^2(\psi_i)$
+        \item Выбор средней точки $\psi_i \in [\varphi_{i - 1};\varphi_i]$, площадь сектора $S_i = \frac{1}{2} \Delta \varphi_i \rho^2(\psi_i)$
 
-    3) Интегральная сумма $\sigma_n = \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i$
+        \item Интегральная сумма $\sigma_n = \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i$
 
-    4) Предел $\lim_{n \to \infty} \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i = \frac{1}{2} \int_\alpha^\beta \rho^2(\varphi) d\varphi$
+        \item Предел $\lim_{n \to \infty} \frac{1}{2} \sum_{i=1}^n \rho^2 (\varphi_i) \Delta \varphi_i = \frac{1}{2} \int_\alpha^\beta \rho^2(\varphi) d\varphi$
+    \end{enumerate}
 
     \Ex Кардиоида:
 
@@ -63,14 +67,14 @@
 
     $\begin{cases}x = x(t) \\ y = y(t)\end{cases} \quad \alpha \leq t \leq \beta$
 
-    То площадь будет равна $S = \int_a^b y(x)dx = \int^\beta_\alpha y(t)x^\prime(t)dt$
+    то площадь будет равна $S = \int_a^b y(x)dx = \int^\beta_\alpha y(t)x^\prime(t)dt$
 
-    \section{1.4.3. Длина кривой дуги}
+    \subsubsection{1.4.3. Длина кривой дуги}
 
     \hypertarget{lengthofarc}{Пусть дуга $AB$ задана уравнением $y = f(x) \quad x \in [a;b]$}
 
     \begin{enumerate}
-        \item Производим дробление дуги на элементарные дуги точками $A = M_0 < M_1 < \dots < B = M_n$
+        \item Производим дробление дуги на элементарные дуги точками $A = M_0 < M_1 < \dots < M_n = B$
 
         Здесь порядок $M_i$ таков, что их абсциссы $a = x_0 < x_1 < \dots < x_n = b \quad \Delta x_i > 0$
 
@@ -86,7 +90,7 @@
         \item Предельный переход $\lim_{\substack{n\to\infty \\ \tau \to 0}} \sigma_n = \int_a^b \sqrt{1 + (y^\prime(x))^2} dx = l_\text{дуги}$
     \end{enumerate}
 
-    \Nota Очевидно потребовалась гладкость дуги, то есть спрямляемость. Только при этом условии $\Delta l_i \approx \Delta s_i$, и работает \Ths Лагранжа
+    \Nota Очевидно, что требуется гладкость дуги, то есть ее спрямляемость. Только при этом условии $\Delta l_i \approx \Delta s_i$, и работает \Ths Лагранжа
 
     Параметрическое задание:
 
@@ -103,28 +107,30 @@
     4 \int^\frac{\pi}{2}_0 \sqrt{(a^2 - b^2) \sin^2 t + b^2} dt =
     4 \int^\frac{\pi}{2}_0 \sqrt{c^2 \sin^2 t + b^2} dt = 4 \frac{b}{c} \int^\frac{\pi}{2}_0 \sqrt{1 + k^2 \sin^2 t} dt$ - эллиптический интеграл
 
-    \section{1.4.4. Объемы тел}
+    \subsubsection{1.4.4. Объемы тел}
 
-    1* \hypertarget{volumeofbodieswithknownarea}{Объемы тел с известными площадями сечений}
+    \begin{enumerate}[label*=\arabic** ]
+        \item \hypertarget{volumeofbodieswithknownarea}{Объемы тел с известными площадями сечений}
 
-    Для тела известна площадь сечения перпендикулярной $Ox$ плоскости $S(x)$
+        Для тела известна площадь сечения перпендикулярной $Ox$ плоскости $S(x)$
 
-    Аналогично обычному дроблению $\lim_{\substack{n \to \infty \\ \tau \to 0}} \nu_n = \int^b_a S(x)dx = V_\text{тела}$
+        Аналогично обычному дроблению $\lim_{\substack{n \to \infty \\ \tau \to 0}} \nu_n = \int^b_a S(x)dx = V_\text{тела}$
 
-    \Ex Тело отсечено от I октанта плоскостью $\frac{x}{a} + \frac{y}{a} + \frac{z}{a} = 1$
+        \Ex Тело отсечено от I октанта плоскостью $\frac{x}{a} + \frac{y}{a} + \frac{z}{a} = 1$
 
-    \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_2}
+        \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_2}
 
-    $S(x) = S_{DBC} = \frac{(a - x)^2}{2}$
+        $S(x) = S_{DBC} = \frac{(a - x)^2}{2}$
 
-    Тогда $V = \int_0^a \frac{1}{2} (a - x)^2 dx = \frac{1}{2} \int_0^a (x - a)^2 dx =
-    \frac{1}{2} \int^a_0 (x - a)^2 d(x - a) = \frac{1}{6} (x - a)^3 \Big|^a_0 = \frac{a^3}{6}$
+        Тогда $V = \int_0^a \frac{1}{2} (a - x)^2 dx = \frac{1}{2} \int_0^a (x - a)^2 dx =
+        \frac{1}{2} \int^a_0 (x - a)^2 d(x - a) = \frac{1}{6} (x - a)^3 \Big|^a_0 = \frac{a^3}{6}$
 
-    \Nota \hypertarget{volumeofbodyofrevolution}{Объем тела вращения}
+        \Nota \hypertarget{volumeofbodyofrevolution}{Объем тела вращения}
 
-    Пусть дана функция $r(x)$, задающая радиус тела вращения на уровне $x$,
-    тогда объем тела вращения будет равен $\int_a^b \pi r^2(x) dx$
+        Пусть дана функция $r(x)$, задающая радиус тела вращения на уровне $x$,
+        тогда объем тела вращения будет равен $\int_a^b \pi r^2(x) dx$
 
-    \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_4}
+        \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_4}
+    \end{enumerate}
 
 \end{document}

@@ -10,153 +10,146 @@
 \begin{document}
     \Nota В строгом определении интегральная сумма строится так:
 
-    $\overset{\smile}{M_{i-1}M_i}$ - элементарная дуга
+    $\overset{\frown}{M_{i-1}M_i}$ -- элементарная дуга
 
-    $\Delta l_i$ - длина элемента
+    $\Delta l_i$ -- длина элемента
 
-    $\Delta s_i$ - длина стягивающей дуги
+    $\Delta s_i$ -- длина стягивающей дуги
 
     $\Delta l_i \approx \Delta s_i$
 
-    $M_{\text{ср.}}(\xi_i, \eta_i)$ - ср. точка элемента
+    $M_{\text{ср.}}(\xi_i, \eta_i)$ -- средняя точка элемента
 
     \[\sigma_n = \sum_{i = 1}^n f(\xi_i, \eta_i) \Delta s_i\]
 
-    \vspace{10mm}
-
     \hypertarget{curvilinearintegralofsecondkind}{}
 
-    II рода. Задача (вычисление работы силы вдоль пути)
+    Определим криволинейный интеграл II рода. Задача (вычисление работы силы вдоль пути): вдоль пути $\overset{\frown}{AB}$ действует сила $\overrightarrow{F} = (P(x, y), Q(x, y))$. Найдем элементарную работу $dA = \vec{F}_{\text{ср.}} d\vec{s}$, где $d\vec{s}$ -- элементарное приращение
 
-    Вдоль пути $\overset{\smile}{AB}$ действует сила $\overrightarrow{F} = (P(x, y), Q(x, y))$
+    $d\vec{s} = (dx, dy) = (\cos\alpha ds, \sin\alpha ds)$
 
-    Найдем элементарную работу $dA = \overrightarrow{F}_{\text{ср.}} d\overrightarrow{s}$, где $d\overrightarrow{s}$ - элементарное приращение
+    $\vec{F}_{\text{ср.}}$ -- значение силы на элементарном участке в какой-либо его точке
 
-    $d\overrightarrow{s} = (dx, dy) = (\cos\alpha ds, \sin\alpha ds)$
-
-    $\overrightarrow{F}_{\text{ср.}}$ - значение силы на эл. участке в какой-либо его точке
-
-    Тогда. $dA = (P(x, y), Q(x, y)) \cdot (dx, dy) = P(x, y)dx + Q(x, y)dy$
-
-    $A = \int_{AB} dA = \int_{AB} Pdx + Qdy$ - интеграл II рода (в проекциях)
+    Тогда $dA = (P(x, y), Q(x, y)) \cdot (dx, dy) = P(x, y)dx + Q(x, y)dy$, а по всей кривой $A = \int_{AB} dA = \int_{AB} Pdx + Qdy$ -- интеграл II рода (в проекциях)
 
     \Nota В проекциях, потому что $F_x = P, F_y = Q$, таким образом скалярное произведение записано в проекциях
 
-    При этом часто рассматривают по отдельности
-
-    $\int_{AB} f(x, y) dx$ и $\int_{AB} g(x, y) dy$
+    При этом часто рассматривают по отдельности: $\int_{AB} f(x, y) dx$ и $\int_{AB} g(x, y) dy$
 
     \hypertarget{connectionbetweencurvilinearintegrals}{}
 
-    \Nota Связь интегралов I и II рода
+    \Nota Связь интегралов I и II рода:
 
     $\int_L Pdx + Qdy = \int_L (P, Q)(dx, dy) = \int_L (P, Q) (\cos\alpha, \cos\beta) \underset{\approx dl}{\undergroup{ds}} =
     \int_L (P\cos\alpha + Q\cos\beta)dl$
 
-    Обозначим $\overrightarrow{\tau} = (\cos\alpha, \cos\beta)$
+    Обозначим $\vec{\tau} = (\cos\alpha, \cos\beta)$
 
     По теореме Лагранжа $\exists (\xi, \eta) \in$ элементарной дуге, касательная которой параллельна $ds$
 
-    Тогда $d\overrightarrow{s} = \overrightarrow{\tau}ds \approx \overrightarrow{\tau}dl$, где $\overrightarrow{\tau}$ - единичный вектор, касательной в $(\xi, \eta)$
+    Тогда $d\vec{s} = \vec{\tau}ds \approx \vec{\tau}dl$, где $\vec{\tau}$ -- единичный вектор, касательной в $(\xi, \eta)$
 
     Тогда $\int_L Pdx + Qdy \stackrel{\text{пред. в вект. форме}}{=\joinrel=} \int_L \overrightarrow{F}\overrightarrow{\tau} dl =
     \int_L \overrightarrow{F}\underset{\text{ориент. эл. дуги}}{\undergroup{\overrightarrow{dl}}}$
 
     \hypertarget{curvilinearintegraloffirstkindproperties}{}
 
-    Свойства:
+    \mediumvspace
 
-    \Nota Свойства, не зависящие от прохода дуги, аналогичны свойствам определенного интеграла
+    \underline{Свойства}:
 
-    Направление обхода.
+    \Notas Свойства, не зависящие от прохода дуги, аналогичны свойствам определенного интеграла
 
-    \begin{multicols}{2}
-        I рода
+    \begin{itemize}
+        \item Направление обхода:
 
-        $\int_{AB} f(x, y)dl = \int_{BA} f(x, y)dl$
+        \begin{multicols}{2}
+            I рода:
 
-        II рода
+            $\int_{AB} f(x, y)dl = \int_{BA} f(x, y)dl$
 
-        $\int_{AB}Pdx + Qdy = -\int_{BA}Pdx + Qdy$
-    \end{multicols}
+            II рода:
 
-    \Def Часто рассматривают замкнутую дугу, называемую контур. Тогда интегралы обозначаются
+            $\int_{AB}Pdx + Qdy = -\int_{BA}Pdx + Qdy$
+        \end{multicols}
+    \end{itemize}
 
-    $\oint_K f dl$ и $\oint_K Pdx + Qdy$.
+    \Def Часто рассматривают замкнутую дугу, называемую контур. Тогда интегралы обозначаются так: $\oint_K f dl$ и $\oint_K Pdx + Qdy$.
 
-    Если $K$ (контур) обходят против ч. с., то обозн. $\oint_{K^+}$
+    Если $K$ (контур) обходят против часовой стрелки, то обозначают $\oint_{K^+}$, иначе $\oint_{K^-}$
 
     \hypertarget{curvilinearintegraloffirstkindcalculation}{}
 
-    Вычисление. (Сведение к $\int_a^b dx$ или $\int_\alpha^\beta dy$ или $\int_\tau^T dt$)
+    Вычисление сводится к $\int_a^b dx$ или $\int_\alpha^\beta dy$ или $\int_\tau^T dt$
 
-    1) Параметризация дуги $L$:
+    \begin{enumerate}
+        \item Параметризация дуги $L$:
 
-    $\begin{cases}
-        x = \varphi(t) \\
-        y = \psi(t)
-    \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
-        A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
-        B(x_B, y_B) = (\varphi(T), \psi(T))
-    \end{matrix}$
+        $\begin{cases}
+            x = \varphi(t) \\
+            y = \psi(t)
+        \end{cases} \varphi, \psi \in C^1_{[\tau, T]} \quad\quad \begin{matrix}
+            A(x_A, y_A) = (\varphi(\tau), \psi(\tau)) \\
+            B(x_B, y_B) = (\varphi(T), \psi(T))
+        \end{matrix}$
 
-    При этом задании $L \quad y = y(x), x \in [a, b]$ или $x = x(y), y \in [\alpha, \beta]$ - частные случаи параметризации
+        При этом задании $L \quad y = y(x), x \in [a, b]$ или $x = x(y), y \in [\alpha, \beta]$ -- частные случаи параметризации
 
-    2) \begin{multicols}{2}
-        I рода
+        \item \begin{multicols}{2}
+            I рода:
 
-        $\int_{L} f(x, y) dl = \left[dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|\right] = $
+            $\int_{L} f(x, y) dl = \left[dl = \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|\right] = \\
+            = \int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
 
-        $\int_\tau^T f(t) \sqrt{\varphi_t^{\prime 2} + \psi_t^{\prime 2}}|dt|$
+            II рода:
 
-        II рода
+            $\int_{L = \overset{\frown}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = \\
+            = \int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
 
-        $\int_{L = \overset{\smile}{AB}}Pdx + Qdy = [dx = \varphi_t^\prime dt, dy = \psi_t^\prime dt] = $
+        \end{multicols}
+    \end{enumerate}
 
-        $\int_\tau^T (P\varphi^\prime + Q\psi^\prime)dt$
+    \Ex Дуга $L$ -- отрезок прямой от $A(1, 1)$ до $B(3, 5)$. Вычислим $\int_{AB} (x + y) dl$ двумя способами:
 
-    \end{multicols}
+    \begin{enumerate}
+        \item $\int_{AB} (x + y) dl = \begin{bmatrix}AB: \frac{x - 1}{2} = \frac{y - 1}{4} \\
+        \text{или } y = 2x - 1, x \in [1, 3] \\
+        f(x, y) = x + 2x - 1 = 3x - 1 \\
+        dl = \sqrt{1 + y^{\prime 2}}dx = \sqrt{5}dx\end{bmatrix} =
+        \int_1^3 (3x - 1) \sqrt{5}dx = \sqrt{5} \left(\frac{3x^2}{2} - x\right) \Big|_1^3 = \sqrt{5}(12 - 2) = 10\sqrt{5}$
 
-    \Ex Дуга $L$ - отрезок прямой от $A(1, 1)$ до $B(3, 5)$
-
-    1) $\int_{AB} (x + y) dl = \begin{bmatrix}AB: \frac{x - 1}{2} = \frac{y - 1}{4} \\
-    \text{или} y = 2x - 1, x \in [1, 3] \\
-    f(x, y) = x + 2x - 1 = 3x - 1 \\
-    dl = \sqrt{1 + y^{\prime 2}}dx = \sqrt{5}dx\end{bmatrix} =
-    \int_1^3 (3x - 1) \sqrt{5}dx = \sqrt{5} \left(\frac{3x^2}{2} - x\right) \Big|_1^3 = \sqrt{5}(12 - 2) = 10\sqrt{5}$
-
-    2) $\int_{AB} (x + y) dx + (x + y) dy = \begin{bmatrix}x \uparrow^3_1, y \uparrow^5_1 \\
-    y = 2x - 1, x = \frac{y + 1}{2} \\
-    dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 \left(\frac{y + 1}{2} + y\right) dy = \\
-    \left(\frac{3x^2}{2} - x\right) \Big|_1^3 + \frac{1}{2} \left(\frac{3y^2}{2} + y\right) \Big|_1^5 = 10 + 20 = 30$
+        \item $\int_{AB} (x + y) dx + (x + y) dy = \begin{bmatrix}x \uparrow^3_1, y \uparrow^5_1 \\
+        y = 2x - 1, x = \frac{y + 1}{2} \\
+        dx = dx, dy = dy\end{bmatrix} = \int_1^3 (x + 2x - 1) dx + \int^5_1 \left(\frac{y + 1}{2} + y\right) dy = \\
+        \left(\frac{3x^2}{2} - x\right) \Big|_1^3 + \frac{1}{2} \left(\frac{3y^2}{2} + y\right) \Big|_1^5 = 10 + 20 = 30$
+    \end{enumerate}
 
     \hypertarget{formulaGreen}{}
 
-    \Th Формула Грина
+    \begin{MyTheorem}
+        \Ths Формула Грина
 
-    $D \subset R^2$ - прав. $\uparrow Ox, \uparrow Oy$
+        Пусть дана область $D \subset \Real^2$, которая обходится в правильном направлении ($\uparrow Ox, \uparrow Oy$)
 
-    $K$ - гладкая замкнутая кривая (контур), которая ограничивает $D$
+        $K$ -- гладкая замкнутая кривая (контур), которая ограничивает $D$
 
-    В области $D$ действует $\overrightarrow{F} = (P(x, y), Q(x, y))$ - непрерывные дифференциалы
+        В области $D$ действует $\vec{F} = (P(x, y), Q(x, y))$ -- непрерывные дифференциалы
 
-    Тогда $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = \oint_{K^+} Pdx + Qdy$
+        Тогда $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = \oint_{K^+} Pdx + Qdy$
+    \end{MyTheorem}
 
-    $\Box \iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
-    \iint_D \frac{\partial Q}{\partial x} dxdy - \iint_D \frac{\partial P}{\partial y} dxdy =
-    \int^\beta_\alpha dy \int_{x=x_1(y)}^{x=x_2(y)} \frac{\partial Q}{\partial x} dx -
-    \int^b_a dx \int_{y=y_1(x)}^{y=y_2(x)} \frac{\partial P}{\partial y} dy =
-    \int^\beta_\alpha \left(Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)}\right)dy - \int^b_a \left(P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)}\right)dx = \\
-    \int_\alpha^\beta (Q(x_2(y), y) - Q(x_1(y), y)) dy - \int_a^b (P(x, y_2(x)) - P(x, y_1(x))) dx =
-    \int_{NST}Q dy - \int_{NMT} Q dy - \int_{MTS} P dx + \int_{MNS}Pdx =
-    \underset{\oint_{K^+}Qdy}{\undergroup{\int_{NST} Qdy + \int_{TMN} Qdy}} +
-    \underset{\oint_{K^+}Pdx}{\undergroup{\int_{STM} Qdy + \int_{MNS} Qdy}} =
-    \oint_{K^+} Pdx + Qdy$
-
-    $\Box$
-
-
-
+    \begin{MyProof}
+        $\iint_D \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
+        \iint_D \frac{\partial Q}{\partial x} dxdy - \iint_D \frac{\partial P}{\partial y} dxdy =
+        \int^\beta_\alpha dy \int_{x=x_1(y)}^{x=x_2(y)} \frac{\partial Q}{\partial x} dx -
+        \int^b_a dx \int_{y=y_1(x)}^{y=y_2(x)} \frac{\partial P}{\partial y} dy =
+        \int^\beta_\alpha \left(Q(x, y)\Big|^{x=x_2(y)}_{x=x_1(y)}\right)dy - \int^b_a \left(P(x, y)\Big|^{y=y_2(x)}_{y=y_1(x)}\right)dx = \\
+        \int_\alpha^\beta (Q(x_2(y), y) - Q(x_1(y), y)) dy - \int_a^b (P(x, y_2(x)) - P(x, y_1(x))) dx =
+        \int_{NST}Q dy - \int_{NMT} Q dy - \int_{MTS} P dx + \int_{MNS}Pdx =
+        \underset{\oint_{K^+}Qdy}{\undergroup{\int_{NST} Qdy + \int_{TMN} Qdy}} +
+        \underset{\oint_{K^+}Pdx}{\undergroup{\int_{STM} Qdy + \int_{MNS} Qdy}} =
+        \oint_{K^+} Pdx + Qdy$
+    \end{MyProof}
 \end{document}
 
 

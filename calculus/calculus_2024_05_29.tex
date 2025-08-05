@@ -8,106 +8,105 @@
 
 
 \begin{document}
-    \Mem Дифф. хар.: $div \overrightarrow{F} = \overrightarrow{\triangledown} \overrightarrow{F}, rot \overrightarrow{F} = \overrightarrow{\triangledown} \times \overrightarrow{F}$
+    Поток $\Pi$ и циркуляцию $\Gamma$ называют интегральными характеристиками поля, тогда как дивергенцию $\Div \vec F$ и ротор $\Rot \vec F$ -- дифференциальными
 
-    Инт. хар.: $\Pi = \iint_S \overrightarrow{F} d\overrightarrow{\sigma}, \Gamma = \oint_L \overrightarrow{F} d\overrightarrow{l}$
+    \Nota Ранее выяснили, что смысл
+    
+    \begin{itemize}
+        \item потока $\Pi = \oiint_S \vec F d\vec\sigma$ -- количество пройденной жидкости через поверхность за единицу времени;
+        \item дивергенции $\Div \vec F \Big_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ -- мощность точечного источника (сколько жидкости он \enquote{производит} или \enquote{потребляет})
+        \item теоремы Гаусса-Остроградского: поток через замкнутую поверхность равен суммарной мощности источников внутри
+    \end{itemize}
 
-    Мех. смысл: 1) $div \overrightarrow{F} \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ - мощность точечного источника
+    Выясним смысл ротора и циркуляции на примере конкретного поля
 
-    Г.-О.: поток через замкнутую поверхность равен суммарной мощности источников внутри
-
-    2) $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ - циркуляция по б. м. контуру. Мех. смысл - ?
-
-    3) Поток $\Pi$ - кол-во жидкости через площадку за единицу времени
-
-    4) $\Gamma$ - ?
-
-    \Nota Выясним смысл ротора и циркуляции на примере конкретного поля
-
-    \Ex $\overrightarrow{F} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ - поле линейных скоростей, вращающегося твердого тела, где $\overrightarrow{\omega} = const$ - угловая скорость
+    \Ex $\vec{F} = -\omega y \vec\imath + \omega x \vec\jmath$ -- поле линейных скоростей вращающегося твердого тела, где $\vec{\omega} = const$ -- угловая скорость
 
     Выберем контур $L$, ограничивающий область $S$
 
-    Найдем $\Gamma_L = \oint_L \overrightarrow{F}d\overrightarrow{l} = \oint_L (-\omega y) dx + \omega x dy \stackrel{\text{Стокс}}{=}
-    \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S (\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y})\cos \gamma d\sigma =
+    Найдем $\Gamma_L = \oint_L \vec{F}d\vec{l} = \oint_L (-\omega y) dx + \omega x dy \stackrel{\Ths \text{Стокса}}{=}
+    \iint_S \Rot \vec{F} \vec{n} d\sigma = \iint_S \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos \gamma d\sigma =
     \iint_S 2\omega \cos \gamma d\sigma$
 
     Так как ротор сонаправлен оси $Oz$, получаем $\cos \gamma = 1$
 
     $\iint_S 2\omega \cos \gamma d\sigma = 2\omega \iint_S d\sigma = 2\omega S$
 
-    Раньше в интеграле видно, что $rot \overrightarrow{F} \overrightarrow{n} \Longrightarrow |rot \overrightarrow{F}| = 2\omega$
+    Раньше в интеграле видно, что $\Rot \vec{F} \vec{n} \Longrightarrow |\Rot \vec{F}| = 2\omega$
 
     \hypertarget{rotormechanicalmeaning2}{}
 
-    То есть механический смысл ротора - удвоенная угловая скорость вращающегося тела (или диска)
+    То есть механический смысл ротора -- удвоенная угловая скорость вращающегося тела (или диска)
 
     \Nota Чтобы уточнить смысл $\Gamma$, рассмотрим такое же поле жидких скоростей (водоворот)
+    $\vec{v} = -\omega y \vec\imath + \omega x \vec\jmath$ и погруженное в него колесо с лопатками (водяная мельница)
 
-    $\overrightarrow{v} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ и погруженное в него колесо с лопатками (водяная мельница)
-
-    В качестве контура $L$ берем обод колеса, а его располагаем под углом $\gamma$ к вектору $\overrightarrow{\omega}$
+    В качестве контура $L$ берем обод колеса, а его располагаем под углом $\gamma$ к вектору $\vec{\omega}$
 
     Все равно $\Gamma_L = \iint_S 2\omega \cos \gamma d\sigma = 2\omega\cos \gamma S$
 
-    Если $\gamma = 0$, то $\Gamma_L = 2\omega S$ - максимальная мощность вращения нашей мельницы
+    Если $\gamma = 0$ (мельница расположена в плоскости водоворота), то $\Gamma_L = 2\omega S$ -- максимальная мощность вращения нашей мельницы
 
-    Если, например, $\gamma = \frac{\pi}{2}$, то $\Gamma_L = 0$ - колесо перпендикулярно полю, поэтому оно не вращается
+    Если, например, $\gamma = \frac{\pi}{2}$ (мельница расположена перпендикулярно водовороту), то $\Gamma_L = 0$ - колесо перпендикулярно полю, поэтому оно не вращается
 
-    \section{6.6. Приложения к физике}
+    \subsection{6.6. Приложения к физике}
 
-    1* Уравнение неразрывности (в гидромеханике)
+    \begin{enumerate}[label*=\arabic** ]
+        \item Уравнение неразрывности (в гидромеханике)
 
-    \Nota Здесь потребуются формулы:
+        \Nota Здесь потребуются формулы:
+        $\frac{du(x(t), y(t), z(t))}{dt} = \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x}\frac{dx}{dt} + \frac{\partial u}{\partial y}\frac{dy}{dt} + \frac{\partial u}{\partial z}\frac{dz}{dt}$
 
-    $\frac{du(x(t), y(t), z(t))}{dt} = \frac{\partial u}{\partial t} + \frac{\partial u}{\partial x}\frac{dx}{dt} + \dots$
+        $\vec\nabla \cdot (f\vec{F}) = \vec\nabla f \cdot \vec{F} + f \cdot (\vec\nabla \vec{F})$, где $f$ -- скалярное поле, $\vec{F}$ -- векторное поле
 
-    $\overrightarrow{\triangledown} \cdot (f\overrightarrow{F}) = \overrightarrow{\triangledown} f \cdot \overrightarrow{F} + f \cdot (\overrightarrow{\triangledown} \overrightarrow{F})$, где $f$ - скалярное поле, $\overrightarrow{F}$ - векторное поле
+        \underline{Задача}: дано $\vec{F} = \rho \vec{v}$ -- поле скоростей жидкости с весом $\rho = \rho(x, y, z, t)$
 
-    \underline{Задача} Дано $\overrightarrow{F} = \rho \overrightarrow{v}$ - поле скоростей жидкости с весом $\rho = \rho(x, y, z, t)$
+        Через площадку $dS$ за время $dt$ протекает $d\Pi = \rho v_n dt dS$ или за единицу времени $d\Pi = \rho v_n dS$
 
-    Через площадку $dS$ за время $dt$ протекает $d\Pi = \rho v_n dt dS$ или за ед. времени $d\Pi = \rho v_n dS$
+        Приращение жидкости за единицу времени $|dm| = \left|\frac{\partial \rho}{\partial t} dV\right|$
 
-    Приращение жидкости за единицу времени $|dm| = |\frac{\partial \rho}{\partial t} dV|$
+        Поток жидкости равен ее убыли в объеме $V$, то есть $\Pi = \oiint_S \rho v_n dS = -\iiint_V \frac{\partial \rho}{\partial t} dV$
 
-    Поток жидкости равен ее убыли в объеме $V$, то есть $\Pi = \oiint_S \rho v_n dS = -\iiint_V \frac{\partial \rho}{\partial t} dV$
+        Применяя \Ths Гаусса-Остроградского: $\Pi = \iiint_V \Div (\rho \vec{v}) dV = -\iiint_V \frac{\partial \rho}{\partial t} dV \Longleftrightarrow \\
+        \Longleftrightarrow \iiint_V \left(\Div (\rho \vec{v}) + \frac{\partial \rho}{\partial t}\right) dV = 0 \quad \forall V$ (поэтому подынтегральная функция $= 0$)
 
-    Применяя Г.-О.: $\Pi = \iiint_V \div (\rho \overrightarrow{v}) dV = -\iiint_V \frac{\partial \rho}{\partial t} dV \Longleftrightarrow \iiint_V (div (\rho \overrightarrow{v}) + \frac{\partial \rho}{\partial t}) dV = 0 \quad \forall V$ (поэтому подынт. функ. = 0)
+        $\Longleftrightarrow \vec\nabla (\rho \vec{v}) + \frac{\partial \rho}{\partial t} = 0$
 
-    $\Longleftrightarrow \overrightarrow{\triangledown} (\rho \overrightarrow{v}) + \frac{\partial \rho}{\partial t} = 0$
+        Учтем: $\frac{d \rho}{dt} = \frac{\partial \rho}{\partial t} +  \frac{\partial \rho}{\partial x} \frac{dx}{dt} +  \frac{\partial \rho}{\partial y} \frac{dy}{dt} + \frac{\partial \rho}{\partial z} \frac{dz}{dt} = \frac{\partial \rho}{\partial t} + \vec\nabla \rho \vec{v}$
 
-    Учтем: $\frac{d \rho}{dt} = \frac{\partial \rho}{\partial t} +  \frac{\partial \rho}{\partial x} \frac{dx}{dt} +  \frac{\partial \rho}{\partial y} \frac{dy}{dt} + \frac{\partial \rho}{\partial z} \frac{dz}{dt} = \frac{\partial \rho}{\partial t} + \overrightarrow{\triangledown} \rho \overrightarrow{v}$
+        $\vec\nabla (\rho \vec{v}) = \vec\nabla \rho \cdot \vec{v} + \rho \vec\nabla \vec{v} \Longleftrightarrow \vec\nabla \rho \vec{v} = \vec\nabla (\rho \vec{v}) - \rho \vec\nabla \vec{v}$
 
-    % TODO
+        $\frac{d\rho}{dt} + \rho \Div \vec{v} = 0$ -- уравнение неразрывности (при несжимаемой жидкости $\Div \vec{v} = 0$)
 
-    $\overrightarrow{\triangledown} (\rho \overrightarrow{v}) = \overrightarrow{\triangledown} \rho \cdot \overrightarrow{v} + \rho \overrightarrow{\triangledown} \overrightarrow{v} \Longleftrightarrow \overrightarrow{\triangledown} \rho \overrightarrow{v} = \overrightarrow{\triangledown} (\rho \overrightarrow{v}) - \rho \overrightarrow{\triangledown} \overrightarrow{v}$
+        \item Уравнения Максвелла
 
-    $\frac{d\rho}{dt} + \rho div \overrightarrow{v} = 0$ - уравнение неразрывности (при несжимаемой жидкости $div \overrightarrow{v} = 0$)
+        Экспериментально выяснено, что: 
+        
+        \begin{enumerate}
+            \item $\int_L \vec{H} d\vec{l} = \iint_S \vec{r}d\vec{\sigma}$ -- теорема о циркуляции магнитного поля
 
-    2* Уравнения Максвелла
+            \item $\int_L \vec{E} d\vec{l} = -\frac{\partial}{\partial t} \iint_S \vec{B}d\vec{\sigma}$ -- закон Фарадея
+        \end{enumerate}
 
-    Экспериментально: 1) $\int_L \overrightarrow{H} d\overrightarrow{l} = \iint_S \overrightarrow{r}d\overrightarrow{\sigma}$ - закон Био-Савара
+        где $\vec{H}$ -- напряженность магнитного поля, $\vec{r}$ -- полный ток, $\vec{E}$ -- напряженность электрического поля, $\vec{B}$ -- индукция магнитного поля
 
-    2) $\int_L \overrightarrow{E} d\overrightarrow{l} = -\frac{\partial}{\partial t} \iint_S \overrightarrow{B}d\overrightarrow{\sigma}$ - закон Фарадея
+        Максвелл узнал, что $\vec{r}$ = ток проводимости + ток смещения = $\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}$, где $\lambda$ -- коэффициент проводимости, $\varepsilon, \mu$ -- проницаемость
 
-    где $\overrightarrow{H}$ - магнитная сила, $\overrightarrow{r}$ - полный ток, $\overrightarrow{E}$ - электрическая сила, $\overrightarrow{B}$ - магнитная индукция
+        \begin{enumerate}
+            \item Закон Ампера: $\oint_L \vec{H} d\vec{l} = \iint_S \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right) d\vec{\sigma}$
 
-    Максвелл: $\overrightarrow{r}$ = ток проводимости + ток смещения = $\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}$
+            По \Ths Стокса: $\iint_S \Rot \vec{H} d\vec{\sigma} - \iint_S \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right) d\vec{\sigma} = 0$
 
-    $\lambda$ - коэффициент проводимости, $\varepsilon, \mu$ - проницаемость
+            В векторной форме: $\Rot \vec{H} = \left(\lambda \vec{E} + \varepsilon \frac{\partial \vec{E}}{\partial t}\right)$ -- источники магнитного поля, то есть токи проводимости и смещения
 
-    1) $\oint_L \overrightarrow{H} d\overrightarrow{l} = \iint_S (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}) d\overrightarrow{\sigma}$
+            \item Закон Фарадея: $\oint_L \vec{E}d\vec{l} = \iint_S \Rot \vec{E}d\vec{\sigma} = -\iint_S \frac{\partial \vec{B}}{\partial t}d\vec{\sigma} \Longleftrightarrow
+            \Rot \vec{E} = -\frac{\partial \vec{B}}{\partial t}$ -- изменение индукции дает электрический ток в соленоиде
 
-    Стокс: $\iint_S rot \overrightarrow{H} d\overrightarrow{\sigma} - \iint_S (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t}) d\overrightarrow{\sigma} = 0$
+            \item Теорема Гаусса: $\vec\nabla \varepsilon \vec{E} = \rho$ -- электрический заряд является источником индукции электрического поля
 
-    В векторной форме: $rot \overrightarrow{H} = (\lambda \overrightarrow{E} + \varepsilon \frac{\partial \overrightarrow{E}}{\partial t})$ - источники магнитного поля - токи проводимости и смещения
-
-    2) $\oint_L \overrightarrow{E}d\overrightarrow{l} = \iint_S rot \overrightarrow{E}d\overrightarrow{\sigma} = -\iint_S \frac{\partial \overrightarrow{B}}{\partial t}d\overrightarrow{\sigma} \Longleftrightarrow
-    rot \overrightarrow{E} = -\frac{\partial \overrightarrow{B}}{\partial t}$ - изменение индукции дает эл. ток в соленоиде.
-
-    3) $\overrightarrow{\triangledown} \varepsilon \overrightarrow{E} = \rho$
-
-    4) $\overrightarrow{\triangledown} \mu \overrightarrow{H} = 0$
+            \item Теорема Гаусса для магнитного поля: $\vec\nabla \mu \vec{H} = 0$ -- магнитное поле не создают \enquote{магнитные заряды}
+        \end{enumerate}
+    \end{enumerate}
 
 \end{document}
 

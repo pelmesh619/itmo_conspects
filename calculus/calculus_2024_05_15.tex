@@ -13,331 +13,367 @@
 
     \Exs $S_1:\ x^2 + y^2 = 1, \quad S_2: z = 0, \quad S_3: z = 1$
 
-    $S = \bigunion_{i = 1}^3 S_i$ - цилиндр
+    $S = \bigunion_{i = 1}^3 S_i$ -- цилиндр
 
-    $\overrightarrow{F} = (P, Q, R) = (x, y, z)$
+    $\vec{F} = (P, Q, R) = (x, y, z)$
 
     $\iint_{S_{\text{внешн.}}} x dy dz + y dx dz + z dx dy = \iint_{S_1} + \iint_{S_2} + \iint_{S_3}$
 
-    Так как проекции $S_2$ на $Oxz$ и $Oyz$ - отрезки, то $dxdz = 0$, $dydz = 0$
+    Так как проекции $S_2$ и $S_3$ на $Oxz$ и $Oyz$ -- отрезки, то $dxdz = 0$, $dydz = 0$:
 
     $\iint_{S_2} xdydz + ydxdz + zdxdy = \iint_{S_2} zdxdy = 0$
 
-    $\iint_{S_3} zdxdy \stackrel{z |_{S_3} = 1}{=} \iint_{S_3} dxdy \stackrel{\text{с "+", так как }\overrightarrow{n_3} \uparrow\uparrow Oz}{=} \iint_{D_{xy}} dxdy = \pi$
+    $\iint_{S_3} zdxdy \stackrel{z |_{S_3} = 1}{=} \iint_{S_3} dxdy \stackrel{\text{с \enquote{+}, так как }\vec{n_3} \uparrow\uparrow Oz}{=} \iint_{D_{xy}} dxdy = \pi$
 
-    $\iint_{S_1} xdydz + ydxdz = \iint_{D^+_{yz}: x = \sqrt{1 - y^2}} xdydz + \left(-\iint_{D^-_{yz}: x = -\sqrt{1 - y^2}} xdydz\right) + \iint_{D^+_{xz}} ydxdz + \left(-\iint_{D^-_{xz}} ydxdz\right) = \dots$
+    $\iint_{S_1} xdydz + ydxdz = \iint_{D^+_{yz}: x = \sqrt{1 - y^2}} xdydz + \left(-\iint_{D^-_{yz}: x = -\sqrt{1 - y^2}} xdydz\right) + \iint_{D^+_{xz}} ydxdz + \left(-\iint_{D^-_{xz}} ydxdz\right) = \left(\frac{\pi}{2} + \frac{\pi}{2}\right) + \left(\frac{\pi}{2} + \frac{\pi}{2}\right) = 2\pi$
+
+    $\iint_S = 3\pi$
 
 
-    \section{5.7. Связь поверхностных интегралов с другими}
+    \subsection{5.7. Связь поверхностных интегралов с другими}
 
     \hypertarget{theoremGaussOstrogradskyy}{}
 
-    \Th Гаусса-Остроградского
+    \begin{MyTheorem}
+        \ThNs{Гаусса-Остроградского}
 
-    $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ - кривая)
+        $S_1\ : \ z = z_1(x, y),\ S_3\ :\ z = z_3(x, y),\ S_2\ : \ f(x, y) = 0$ (проекция на $Oxy$ -- кривая)
 
-    $S = \bigunion_{i = 1}^3 S_i$ - замкнута! и ограничивает тело $T$ ($S_2$ - цилиндр, $S_1$ - шапочка, $S_3$ - шапочка снизу)
+        $S = \bigunion_{i = 1}^3 S_i$ - замкнута и ограничивает тело $T$ ($S_2$ -- цилиндр, $S_1$ -- шапочка сверху, $S_3$ -- шапочка снизу)
 
-    $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ - непр. дифф., действуют в области $\Omega \supset T$
+        $P = P(x, y, z), Q = Q(x, y, z), R = R(x, y, z)$ -- непрерывно дифференцируемы, действуют в области $\Omega \supset T$
 
-    Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
+        Тогда $\oiint_{S_{\text{внешн.}}} Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
+    \end{MyTheorem}
 
-    \Mem Формула Грина
+    \Mem Формула Грина: $\oint_K Pdx + Qdy = \iint_{D_{xy}} \left(\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}\right) dxdy$
 
-    $\oint_K Pdx + Qdy = \iint_{D_{xy}} \left(\frac{\partial Q}{\partial x} - \frac{\partial Q}{\partial y}\right) dxdy$
+    \begin{MyProof}
+        Вычислим почленно $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv$
 
-    $\Box$
+        $\iiint_T \left(\frac{\partial R(x, y, z)}{\partial z} dz\right) dxdy = \iint_{D_{xy}} R(x, y, z) \Big|_{z = z_1 (x, y)}^{z = z_3(x, y)} dxdy = \iint_{D_{xy}} (R(x, y, z_3(x, y)) - R(x, y, z_1(x, y))) dxdy =
+        \underset{\text{двойной}}{\iint_{D_{xy}} R(x, y, z_3) dxdy} - \iint_{D_{xy}} R(x, y, z_1(x, y)) dxdy = \underset{\text{поверхностный}}{\iint_{S_3} R(x, y, z) dxdy} + \iint_{S_1} R(x, y, z) dxdy +
+        \underset{\text{равен } 0\text{, т.к. } dxdy\ |_{S_2} = 0}{\iint_{S_2} R(x, y, z) dxdy} = \iint_{S_{\text{внешн.}}} Rdxdy$
 
-    Вычислим почленно $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv$
+        \smallvspace
 
-    $\iiint_T \left(\frac{\partial R(x, y, z)}{\partial z} dz\right) dxdy = \iint_{D_{xy}} R(x, y, z) \Big|_{z = z_1 (x, y)}^{z = z_3(x, y)} dxdy = \iint_{D_{xy}} (R(x, y, z_3(x, y)) - R(x, y, z_1(x, y))) dxdy =
-    \underset{\text{двойной}}{\iint_{D_{xy}} R(x, y, z_3) dxdy} - \iint_{D_{xy}} R(x, y, z_1(x, y)) dxdy = \underset{\text{поверхностный}}{\iint_{S_3} R(x, y, z) dxdy} + \iint_{S_1} R(x, y, z) dxdy +
-    \underset{\text{равен } 0\text{, т.к. } dxdy\ |_{S_2} = 0}{\iint_{S_2} R(x, y, z) dxdy} = \iint_{S_{\text{внешн.}}} Rdxdy$
+        Аналогично остальные члены:
 
-    \smallvspace
+        $\iiint_T \frac{\partial Q}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Qdxdz, \iiint_T \frac{\partial P}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Pdxdz$
+    \end{MyProof}
 
-    Аналогично остальные члены:
-
-    $\iiint_T \frac{\partial Q}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Qdxdz, \iiint_T \frac{\partial P}{\partial y} dxdydz = \iint_{S_{\text{внешн.}}} Pdxdz$
-
-    $\Box$
-
-    \Nota Если $\iint_{S_{\text{внутр}}}$, то $\iint_S = - \iiint_T$
+    \Nota Если считаем поток через внутреннюю поверхность, то $\iint_{S_{\text{внутр}}} = - \iiint_T$
 
     \Nota С учетом связи поверхностных интегралов $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dv =
     \iint_S (P\cos\alpha + Q\cos\beta + R\cos\gamma) dv$
 
     \hypertarget{theoremStokes}{}
 
-    \Th Стокса
+    \begin{MyTheorem}
+        \ThNs{Стокса}
 
-    Пусть $S : z = z(x, y)$ - незамкнутая поверхность, $L$ - контур, на которую она опирается
+        Пусть $S : z = z(x, y)$ -- незамкнутая поверхность, $L$ -- контур, на которую она опирается
 
-    $\text{пр}_{Oxy} L = K_{xy}, \quad \text{пр}_{Oxy} S = D_{xy}$
+        $\text{проек.}_{Oxy} L = K_{xy}, \quad \text{проек.}_{Oxy} S = D_{xy}$
 
-    В области $\Omega \supset S$ действуют функции $P, Q, R$ - непр. дифф.
+        В области $\Omega \supset S$ действуют функции $P, Q, R$, непрерывно дифференцируемые
 
-    Тогда $\oint_{L^+} Pdx + Qdy + Rdz = \iint_{S^+} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha +
-    \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\beta + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma$
+        Тогда $\oint_{L^+} Pdx + Qdy + Rdz = \iint_{S^+} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha +
+        \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\beta + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma$
+    \end{MyTheorem}
 
-    $\Box$
+    \begin{MyProof}
+        Найдем слагаемое $\oint_L P(x, y, z) dx \stackrel{\text{на } L\ : \ z = z(x, y)}{=\joinrel=\joinrel=\joinrel=}
+        \oint_{K^+_{xy}} \tilde{P}(x, y, z(x, y)) dx = \oint_{K_{xy}} \tilde{P}dx + \tilde{Q}dy =
+        \iint_{D_{xy}} \left(\frac{\partial \tilde{Q}}{\partial x} - \frac{\partial \tilde{P}}{\partial y}\right) dxdy =
+        -\iint_{D_{xy}} \frac{\partial \tilde{P}(x, y)}{\partial y} dxdy =
+        -\iint_{S^+} \frac{\partial P(x, y, z)}{\partial y} dxdy =
+        -\iint_{S^+} \left(\frac{\partial P}{\partial y} + \frac{\partial P}{\partial z} \frac{\partial z}{\partial y}\right) dxdy =
+        -\iint_{S^+} \left(\frac{\partial P}{\partial y}\cos\gamma + \frac{\partial P}{\partial z} (-\cos\beta)\right) d\sigma$
 
-    Найдем слагаемое $\oint_L P(x, y, z) dx \stackrel{\text{на } L\ : \ z = z(x, y)}{=\joinrel=\joinrel=\joinrel=}
-    \oint_{K^+_{xy}} \tilde{P}(x, y, z(x, y)) dx = \oint_{K_{xy}} \tilde{P}dx + \tilde{Q}dy =
-    \iint_{D_{xy}} \left(\frac{\partial \tilde{Q}}{\partial x} - \frac{\partial \tilde{P}}{\partial y}\right) dxdy =
-    -\iint_{D_{xy}} \frac{\partial \tilde{P}(x, y)}{\partial y} dxdy =
-    -\iint_{S^+} \frac{\partial P(x, y, z)}{\partial y} dxdy =
-    -\iint_{S^+} \left(\frac{\partial P}{\partial y} + \frac{\partial P}{\partial z} \frac{\partial z}{\partial y}\right) dxdy =
-    -\iint_{S^+} \left(\frac{\partial P}{\partial y}\cos\gamma + \frac{\partial P}{\partial z} (-\cos\beta)\right) d\sigma$
+        $\vec{n} = \left(\frac{-\frac{\partial z}{\partial x}}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}}\right)$
 
-    $\overrightarrow{n} = \left(\frac{-\frac{\partial z}{\partial x}}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}}\right)$
+        $\cos\gamma = \frac{1}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}}$
 
-    $\cos\gamma = \frac{1}{\sqrt{1 + z_x^{\prime 2} + z_y^{\prime 2}}}$
+        Аналогично $\oint_L Qdy = \iint_{S^+} \left(\frac{\partial Q}{\partial x}\cos\gamma - \frac{\partial Q}{\partial z}\cos\alpha\right) d\sigma,
+        \oint_L Rdz = \iint_{S^+} \left(\frac{\partial R}{\partial y}\cos\alpha - \frac{\partial R}{\partial x}\cos\beta\right) d\sigma$
 
-    Аналогично $\oint_L Qdy = \iint_{S^+} \left(\frac{\partial Q}{\partial x}\cos\gamma - \frac{\partial Q}{\partial z}\cos\alpha\right) d\sigma,
-    \oint_L Rdz = \iint_{S^+} \left(\frac{\partial R}{\partial y}\cos\alpha - \frac{\partial R}{\partial x}\cos\beta\right) d\sigma$
+        Остается сложить интегралы
+    \end{MyProof}
 
-    Остается сложить интегралы
+    \Nota Формула Грина является частным случаем теоремы Стокса при $\cos \alpha = \cos \beta = 0$ и $\cos \gamma = 1$ -- элементарная площадка на плоскости $Oxy$ всегда сонаправлена оси $Oz$
 
-    $\Box$
+    \ExN{1} Возьмем пример выше: $S_1:\ x^2 + y^2 = 1, \quad S_2: z = 0, \quad S_3: z = 1$, $S = \bigunion_{i = 1}^3 S_i$ -- замкнутый цилиндр, $\vec F = (P, Q, R) = (x, y, z)$. Получаем по теореме Гаусса-Остроградского:
 
-    \ExN{1} $(P, Q, R) = (x, y, z)$
+    $\iint_{S_{\text{внешн}}} xdydz + ydxdz + zdxdy = \iiint_T \left(\frac{\partial x}{\partial x} + \frac{\partial y}{\partial y} + \frac{\partial z}{\partial z}\right) dv = 3V_{\text{цил.}} = 3 \cdot 1 \cdot \pi \cdot 1^2 = 3\pi$
 
-    В \Exs пункте 5.6. (вычисление поверхностного):
+    \ExN{2} Те же $P, Q, R$. По теореме Стокса:
 
-    $\iint_{S_{\text{внешн}} \text{ - замкнута!}} xdydz + ydxdz + zdxdy = \iiint_T \left(\frac{\partial x}{\partial x} + \frac{\partial y}{\partial y} + \frac{\partial z}{\partial z}\right) dv = 3V_{\text{цил.}}$
-
-    \ExN{2} Те же $P, Q, R$
-
-    $\oint_L Pdx + Qdy + Rdz = \iint_{S} \left(\overset{= 0}{\overgroup{\left(\frac{\partial z}{\partial y} - \frac{\partial y}{\partial z}\right)}} \cos\alpha + 0 + 0\right) d\sigma$
+    $\oint_L Pdx + Qdy + Rdz = \iint_{S} \left(\overset{= 0}{\overgroup{\left(\frac{\partial z}{\partial y} - \frac{\partial y}{\partial z}\right)}} \cos\alpha + 0 + 0\right) d\sigma = 0$
 
     \clearpage
 
 
     \section{6. Теория поля}
 
-
-    \section{6.1. Определения}
+    \subsection{6.1. Определения}
 
     \hypertarget{scalarfield}{}
 
-    \DefN{1} $\Omega \subset \Real^n \quad$ Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
+    \DefN{1} Дано многомерное пространство $\Omega \subset \Real^n$. Функция $u \ : \ \Omega \to \Real$ называется скалярным полем в $\Omega$
 
     \hypertarget{vectorfield}{}
 
-    \DefN{2} Функция $\overrightarrow{F} = (F_1(\overrightarrow{x}), \dots, F_n(\overrightarrow{x})) : \Omega \to \Real^n$ называется векторным полем
+    \DefN{2} Функция $\vec{F} = (F_1(\vec{x}), \dots, F_n(\vec{x})) \ : \ \Omega \to \Real^n$ называется векторным полем
 
-    \Nota Далее будем рассматривать функции в $\Real^3$, то есть $u = u(x, y, z)$ и $\overrightarrow{F} = (P(x, y, z), Q(x, y, z), R(x, y, z))$
+    \Nota Далее будем рассматривать функции в $\Real^3$, то есть $u = u(x, y, z)$ и $\vec{F} = (P(x, y, z), Q(x, y, z), R(x, y, z))$
 
-    \Nota Функции $u$ и $\overrightarrow{F}$ могут зависеть от вренмени $t$. Тогда эти поля называются нестационарными. В противном случае стационарными
+    \Notas Функции $u$ и $\vec{F}$ могут зависеть от времени $t$. Тогда эти поля называются нестационарными. В противном случае стационарными
 
     \hypertarget{scalarandvectorfieldgeometric}{}
 
-    \section{6.2. Геометрические характеристики полей}
+    \subsection{6.2. Геометрические характеристики полей}
 
-    $u = u(x, y, z)$: $l$ - линии уровня $u = const$
+    $u = u(x, y, z)$: $l$ -- линии уровня $u = \const$
 
-    $\overrightarrow{F} = (P, Q, R)$: $w$ - векторная линия, в каждой точке $w$ вектор $\overrightarrow{F}$ - касательная к $w$
+    $\vec{F} = (P, Q, R)$: $w$ -- векторная линия, в каждой точке $w$ вектор $\vec{F}$ -- касательная к $w$
 
-    \underline{Векторная трубка} - совокупность непересекающихся векторных линий
+    \underline{Векторная трубка} -- совокупность непересекающихся векторных линий
 
     \Nota Отыскание векторных линий
 
-    Возьмем $\overrightarrow{\tau}$ - элементарный касательный вектор, $\overrightarrow{\tau} = (dx, dy, dz)$
+    Возьмем $\vec{\tau}$ -- элементарный касательный вектор, $\vec{\tau} = (dx, dy, dz)$
 
-    Определение векторной линии: $\overrightarrow{\tau} || \overrightarrow{F} \quad \frac{dx}{P} = \frac{dy}{Q} = \frac{dz}{R}$ - система ДУ
+    Определение векторной линии: $\vec{\tau} || \vec{F} \quad \frac{dx}{P} = \frac{dy}{Q} = \frac{dz}{R}$ -- система ДУ
 
-    \Ex $\overrightarrow{F} = y \overrightarrow{i} - x \overrightarrow{j}, M_0 (1, 0)$ - ищем векторную линию $w \ni M_0$
+    \Ex $\vec{F} = y \vec\imath - x \vec\jmath, M_0 (1, 0)$ -- ищем векторную линию $w \ni M_0$
 
     Задача Коши:
 
     $\begin{cases}
-         \frac{dx}{y} = -\frac{dy}{x} \\
-         y(1) = 0
+        \frac{dx}{y} = -\frac{dy}{x} \\ y(1) = 0
     \end{cases} \Longleftrightarrow \begin{cases}
-                                        xdx = -ydy \\
-                                        y(1) = 0
+        xdx = -ydy \\ y(1) = 0
     \end{cases} \Longleftrightarrow \begin{cases}
-                                        x^2 = -y^2 + C \\
-                                        y(1) = 0 \Longrightarrow C = +1
+        x^2 = -y^2 + C \\ y(1) = 0 \Longrightarrow C = +1
     \end{cases} \Longleftrightarrow x^2 + y^2 = 1 $
 
     \hypertarget{differentialcharacteristics}{}
 
-    \section{6.3. Дифференциальные характеристики}
+    \subsection{6.3. Дифференциальные характеристики}
 
-    \Mems $\overrightarrow{\triangledown}u = \overrightarrow{grad}u = \left(\frac{\partial u}{\partial x}; \frac{\partial u}{\partial y}; \frac{\partial u}{\partial z}\right)$ - градиент скалярного поля
+    \Mems $\vec\nabla u = \overrightarrow{\operatorname{grad}} \ u = \left(\frac{\partial u}{\partial x}; \frac{\partial u}{\partial y}; \frac{\partial u}{\partial z}\right)$ -- градиент скалярного поля
 
-    $\overrightarrow{\triangledown} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ - набла-оператор
+    $\vec\nabla = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ -- набла-оператор
 
-    \Nota Для $\overrightarrow{\triangledown}$ определены действия:
+    \Nota Так как $\vec\nabla$ -- это вектор, то для $\vec\nabla$ определены действия:
 
-    $\overrightarrow{\triangledown} \cdot \overrightarrow{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z}$
+    \begin{itemize}
+        \item $\vec\nabla \cdot \vec{a} = \frac{\partial a_1}{\partial x} + \frac{\partial a_2}{\partial y} + \frac{\partial a_3}{\partial z}$
 
-    $\overrightarrow{\triangledown} \times \overrightarrow{a} =
-    \begin{vmatrix}
-        \overrightarrow{i}          & \overrightarrow{j}          & \overrightarrow{j}          \\
-        \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-        a_1                         & a_2                         & a_3
-    \end{vmatrix}$
+        \item $\vec\nabla \times \vec{a} =
+        \begin{vmatrix}
+            \vec\imath & \vec\jmath & \vec k \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            a_1 & a_2 & a_3
+        \end{vmatrix}$
+    \end{itemize}
 
-    Причем $\overrightarrow{\triangledown} \cdot \overrightarrow{\triangledown} = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} = \triangle$ - лапласиан
+    Причем:
+    
+    \begin{itemize}
+        \item $\vec\nabla \cdot \vec\nabla = \frac{\partial^2}{\partial x^2} + \frac{\partial^2}{\partial y^2} + \frac{\partial^2}{\partial z^2} = \Delta$ -- лапласиан, оператор Лапласа
 
-    $\overrightarrow{\triangledown} \times \overrightarrow{\triangledown} = 0$
-
-    \Nota $\triangle u = \underset{\text{часть волнового уравнения матфизики}}{\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}} = 0$ - уравнение, определяющее гармоническую функцию $u(x, y, z)$, уравнение Лапласа
+        \item $\vec\nabla \times \vec\nabla = 
+        \begin{vmatrix}
+            \vec\imath & \vec\jmath & \vec k \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+        \end{vmatrix} = 0$ -- повторяющиеся строки в определителе
+    \end{itemize}
+    
+    \Nota $\Delta u = \underset{\substack{\text{часть волнового}\\ \text{уравнения матфизики}}}{\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} + \frac{\partial^2 u}{\partial z^2}} = 0$ -- уравнение, определяющее гармоническую функцию $u(x, y, z)$, уравнение Лапласа
 
     \hypertarget{divergence}{}
 
-    \DefN{1} Дивергенция поля (\textit{divergence} - расхождение)
-
-    $div \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \cdot \overrightarrow{F}$
+    \DefN{1} Дивергенцией поля (от \textit{divergence} -- расхождение) называется
+    $\Div \vec{F} \stackrel{def}{=} \vec\nabla \cdot \vec{F}$
 
     \hypertarget{rotor}{}
 
-    \DefN{2} Вихрь (ротор) поля
-
-    $rot \overrightarrow{F} \stackrel{def}{=} \overrightarrow{\triangledown} \times \overrightarrow{F}$
+    \DefNs{2} Вихрем (ротором) поля называется $\Rot \vec{F} \stackrel{def}{=} \vec\nabla \times \vec{F}$
 
     \hypertarget{vectorfieldtypes}{}
 
-    \DefN{3} Если $rot \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется безвихревым полем
+    \DefNs{3} Если $\Rot \vec{F} = 0$, то $\vec{F}$ называется безвихревым полем
 
-    \DefN{4} Если $div \overrightarrow{F} = 0$, то $\overrightarrow{F}$ называется соленоидальным
+    \DefNs{4} Если $\Div \vec{F} = 0$, то $\vec{F}$ называется соленоидальным полем
 
-    \Nota Безвихревое поле имеет незамкнутые векторные линии, а вихревое - замкнутые
+    \Notas Безвихревое поле имеет незамкнутые векторные линии, а вихревое -- замкнутые
 
     \hypertarget{irrotationalfieldproperty}{}
 
-    \ThN{1} Свойство безвихревого поля
+    \begin{MyTheorem}
+        \ThNs{1} Свойство безвихревого поля: $\Rot \vec{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \vec\nabla u = \vec{F}$
+    \end{MyTheorem}
 
-    $rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown}u = \overrightarrow{F}$
+    \begin{MyProof}
+        \fbox{\Longrightarrow}
 
-    $\Box$ \fbox{\Longrightarrow}
+        $\Rot \overrightarrow{F} =
+        \begin{vmatrix}
+            \vec\imath & \vec\jmath & \vec k \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            P & Q & R
+        \end{vmatrix} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\vec\imath + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\vec\jmath + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\vec{k} = 0$
 
-    $rot \overrightarrow{F} =
-    \begin{vmatrix}
-        \overrightarrow{i}          & \overrightarrow{j}          & \overrightarrow{j}          \\
-        \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
-        P & Q & R
-    \end{vmatrix} = \left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\overrightarrow{i} + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\overrightarrow{j} + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\overrightarrow{k} = 0$
+        $\Longleftrightarrow
+        \begin{cases}
+            \frac{\partial R}{\partial y} = \frac{\partial Q}{\partial z} \\
+            \frac{\partial P}{\partial z} = \frac{\partial R}{\partial x} \\
+            \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}
+        \end{cases}$
 
-    $\Longleftrightarrow
-    \begin{cases}
-        \frac{\partial R}{\partial y} = \frac{\partial Q}{\partial z} \\
-        \frac{\partial P}{\partial z} = \frac{\partial R}{\partial x} \\
-        \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}
-    \end{cases}$
+        Рассмотрим $u = u(x, y, z) \ | \ \frac{\partial u}{\partial x} = P, \frac{\partial u}{\partial y} = Q, \frac{\partial u}{\partial z} = R$ -- эта функция удовлетворяет системе равенств
 
-    Рассмотрим $u = u(x, y, z) \ | \ \frac{\partial u}{\partial x} = P, \frac{\partial u}{\partial y} = Q, \frac{\partial u}{\partial z} = R$ - удовлетворяет системе равенств
+        $\vec{F} = (P, Q, R) = \left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z}\right) = \vec\nabla u$
 
-    $\overrightarrow{F} = (P, Q, R) = \left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z}\right) = \overrightarrow{\triangledown} u$
+        \fbox{\Longleftarrow} Дана $\vec{F} = \vec\nabla u$
 
-    \fbox{\Longleftarrow} $\overrightarrow{F} = \overrightarrow{\triangledown}u$ - дана
+        $\Rot \vec{F} = \vec\nabla \times \vec{F} = \vec\nabla \times (\vec\nabla u) = (\vec\nabla \times \vec\nabla) u = 0$
 
-    $rot \overrightarrow{F} = \overrightarrow{\triangledown} \times \overrightarrow{F} = \overrightarrow{\triangledown} \times (\overrightarrow{\triangledown} u) = (\overrightarrow{\triangledown} \times \overrightarrow{\triangledown}) u = 0$
+    \end{MyProof}
 
-    $\Box$
+    \Nota Доказали, что если векторное поле является градиентом какого-то скалярного, то его вихрь равен нулю: $\Rot \overrightarrow{\operatorname{grad}} u = 0$
 
-    \Nota Доказали, что если векторное поле является градиентом какого-то скалярного, то его вихрь равен нулю: $rot \overrightarrow{grad} u = 0$
-
-    \Def $\overrightarrow{F} = \overrightarrow{\triangledown} u \quad$ Поле $u(x, y, z)$ называется потенциалом поля $\overrightarrow{F}$
+    \Def Пусть $\vec{F} = \vec\nabla u$. Поле $u(x, y, z)$ называется потенциалом поля $\vec{F}$
 
     Таким образом, доказано, что безвихревое поле потенциально
 
     \hypertarget{solenoidalfieldproperty}{}
 
-    \ThN{2} Свойство соленоидального поля
+    \begin{MyTheorem}
+        \ThNs{2} Свойство соленоидального поля: если $\Div \vec{F} = 0$, то $\Div (\Rot \vec{F}) = 0$
+    \end{MyTheorem}
 
-    $div (rot \overrightarrow{F}) = 0$
-
-    $\Box$
-
-    $div (rot \overrightarrow{F}) = div \overrightarrow{a} = \overrightarrow{\triangledown} \overrightarrow{a} = \overrightarrow{\triangledown} (\overrightarrow{\triangledown} \times \overrightarrow{F}) = (\overrightarrow{\triangledown} \times \overrightarrow{\triangledown}) \cdot \overrightarrow{F} = 0$
-
-    $\Box$
+    \begin{MyProof}
+        $\Div (\Rot \vec{F}) = \Div \vec{a} = \vec\nabla \vec{a} = \vec\nabla (\vec\nabla \times \vec{F}) = (\vec\nabla \times \vec\nabla) \cdot \vec{F} = 0$
+    \end{MyProof}
 
     \hypertarget{integralcharacteristics}{}
 
-    \section{6.4. Интегральные характеристики. Теоремы теории поля}
+    \subsection{6.4. Интегральные характеристики. Теоремы теории поля}
 
-    \Mems 1) Поток поля $\overrightarrow{F}: \Pi = \iint_S \overrightarrow{F}d\overrightarrow{\sigma}$
+    \Mems Потоком поля $\vec{F}$ через поверхность $S$ называется величина $\Pi = \iint_S \vec{F}d\vec{\sigma}$
 
-    \Def 2) Циркуляция поля $\overrightarrow{F}: \Gamma = \oint_L Pdx + Qdy + Rdz$
+    \Defs Циркуляцией поля $\vec{F}$ через контур $L$ называется величина $\Gamma = \oint_L \vec F d\vec l = \oint_L Pdx + Qdy + Rdz$
 
     \Nota Запишем \Ths на векторном языке
 
     \hypertarget{theoremGaussOstrogradskyyinvectorform}{}
 
-    1* \textbf{Гаусса-Остроградского}
+    \begin{enumerate}[label*=\textbf{\arabic**} ]
+        \item \textbf{Гаусса-Остроградского}
 
-    $\iint_S Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
+        $\iint_S Pdydz + Qdxdz + Rdxdy = \iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz$
 
-    $\iint_S (P, Q, R) (dydz, dxdz, dxdy) = \iint_S (P, Q, R) (\cos\alpha d\sigma, \cos\beta d\sigma, \cos\gamma d\sigma) =
-    \iint_S \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S \overrightarrow{F} d\overrightarrow{\sigma}$
+        $\iint_S (P, Q, R) (dydz, dxdz, dxdy) = \iint_S (P, Q, R) (\cos\alpha d\sigma, \cos\beta d\sigma, \cos\gamma d\sigma) =
+        \iint_S \vec{F} \vec{n} d\sigma = \iint_S \vec{F} d\vec{\sigma}$
 
-    $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz = \iiint_T (\overrightarrow{\triangledown} \overrightarrow{F}) = \iiint_T div \overrightarrow{F}$
+        $\iiint_T \left(\frac{\partial P}{\partial x} + \frac{\partial Q}{\partial y} + \frac{\partial R}{\partial z}\right) dxdydz = \iiint_T (\vec\nabla \cdot \vec{F}) dv = \iiint_T \Div \vec{F} dv$
 
-    \fbox{$\iint_S \overrightarrow{F} d\overrightarrow{\sigma} = \iiint_T div \overrightarrow{F}$}
+        \begin{MyTheorem}
+            \ThNs{Гаусса-Остроградского} Поток поля $\vec F$ через замкнутую поверхность равен тройному интегралу дивергенции этого поля по объему внутри поверхности: 
+            
+            \[\iint_S \vec{F} d\vec{\sigma} = \iiint_T \Div \vec{F} dv\]
+        \end{MyTheorem}
 
-    \mediumvspace
+        \mediumvspace
 
-    \hypertarget{theoremStokesinvectorform}{}
+        \hypertarget{theoremStokesinvectorform}{}
 
-    2* \textbf{Стокса}
+        \item \textbf{Стокса}
 
-    $Pdx + Qdy + Rdz = \overrightarrow{F}d\overrightarrow{l}$
+        $Pdx + Qdy + Rdz = \vec{F}d\vec{l}$
 
-    $\oint_L \overrightarrow{F}d\overrightarrow{l} = \iint_S rot \overrightarrow{F} \overrightarrow{n} d\sigma = \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma}$
+        $\oint_L Pdx + Qdy + Rdz = 
+        \oint_L \vec{F}d\vec{l} = \iint_{S} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right)\cos\alpha + \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right)\cos\beta + \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\cos\gamma\right) d\sigma = 
+        \iint_{S} \left(\left(\frac{\partial R}{\partial y} - \frac{\partial Q}{\partial z}\right), \left(\frac{\partial P}{\partial z} - \frac{\partial R}{\partial x}\right), \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right)\right) \cdot (\cos \alpha, \cos\beta, \cos\gamma) d\sigma = \iint_S \Rot \vec{F} \vec{n} d\sigma = \iint_S \Rot \vec{F} d\vec{\sigma}$
 
-    \mediumvspace
+        \begin{MyTheorem}
+            \ThNs{Стокса} Циркуляция поля $\vec F$ через контур равен интегралу ротора этого поля по поверхности внутри контура
+            
+            \[\oint_L \vec{F}d\vec{l} = \iint_S \Rot \vec{F} d\vec{\sigma}\]
+        \end{MyTheorem}
 
-    \hypertarget{theoremaboutpotentialinvectorform}{}
+        \mediumvspace
 
-    3* \textbf{\Ths о потенциале}
+        \hypertarget{theoremaboutpotentialinvectorform}{}
 
-    $\forall L \ \oint_L \overrightarrow{F}d\overrightarrow{l} = 0 \Longleftrightarrow rot \overrightarrow{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \overrightarrow{\triangledown} u = \overrightarrow{F}$
+        \item \textbf{\Ths О потенциале}
 
-    (см. \Ths интеграла НЗП)
+        Рассмотрим \Ths об интеграле, не зависящего от пути. Для поля $\vec F = (P(x, y), Q(x, y))$ третий пункт $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$ можно представить как $\Rot \vec F = 
+        \begin{vmatrix}
+            \vec\imath & \vec\jmath & \vec k \\
+            \frac{\partial}{\partial x} & \frac{\partial}{\partial y} & \frac{\partial}{\partial z} \\
+            P & Q & 0
+        \end{vmatrix} = \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) \vec k = 0$
 
-    \Ex $\overrightarrow{F} = x\overrightarrow{i} + xy \overrightarrow{j}, L: x = y, x = -y, x = 1$
+        Так как $\Rot \vec F = 0$, то по свойству безвихревого поля $\exists u(x, y, z) \ | \ \vec\nabla u = \vec F$
 
-    По формуле Грина (Стокса) $\oint_L \overrightarrow{F} d\overrightarrow{l} = \iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
-    \iint_D y dxdy \quad rot \overrightarrow{F} \neq 0$
+        Поэтому $\int_{(x_0, y_0)}^{(x, y)} \vec{F}d\vec{l} =  \int_{(x_0, y_0)}^{(x, y)} \left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, 0\right) \cdot (dx, dy, dz) = \int_{(x_0, y_0)}^{(x, y)} \frac{\partial u}{\partial x} dx + \frac{\partial u}{\partial y} dy = \int_{(x_0, y_0)}^{(x, y)} Pdx + Qdy = \Phi(x, y)$
+
+        \begin{MyTheorem}
+            \ThNs{О потенциале} Для поля $\vec F = (P, Q)$ и для любого контура $L$ верно:
+
+            \[\oint_L \vec{F}d\vec{l} = 0 \Longleftrightarrow \Rot \vec{F} = 0 \Longleftrightarrow \exists u(x, y, z) \ | \ \vec\nabla u = \vec{F}\]
+        \end{MyTheorem}
+
+    \end{enumerate}
+
+    \Ex $\vec{F} = x\vec\imath + xy \vec\jmath, \ L: x = y, x = -y, x = 1$
+
+    По формуле Грина (Стокса) $\oint_L \vec{F} d\vec{l} = \iint_{D} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy =
+    \iint_D y dxdy \quad \Rot \vec{F} \neq 0$
 
     $\oint_L xdx + xydy = \int_{L_1} + \int_{L_2} + \int_{L_3} = \int_0^1 (x + x^2) dx + \int_{-1}^1 y dy - \int_0^1 (x + x^2) dx = \int_{-1}^1 y dy = 0$
 
-    \section{6.5. Механический смысл}
+    $\iint_D y dxdy = \int_0^1 dx \int_{-x}^{x} y dy = \int_0^1 \frac{y^2}{2} \Big|_{-x}^{x} dx = \int_0^1 0 dx = 0$
+
+    \subsection{6.5. Механический смысл}
 
     \hypertarget{divergencemechanicalmeaning}{}
 
-    1* Дивергенция
+    \begin{enumerate}[label*=\arabic** ]
+        \item Дивергенция
 
-    Гаусс-Остроградский: $\iiint_T div \overrightarrow{F} dv = \Pi$
+        По \Ths Гаусса-Остроградского поток $\Pi = \iiint_T div \vec{F} dv$
 
-    \Ths о среднем: $\exists M_1 \in T \ | \ \iiint_T div \overrightarrow{F} dv = div \overrightarrow{F} \Big|_{M_1} \cdot V_T = \Pi$
+        По \Ths о среднем существует точка $M_1 \in T \ \Big| \ \iiint_T \Div \vec{F} dv = \Div \vec{F} \Big|_{M_1} \cdot V_T = \Pi$
 
-    $div \overrightarrow{F} \Big|_{M_1} = \frac{\Pi}{V_T}$, точка $M_0, S$ и $T$ выбраны произвольно
+        $\Div \vec{F} \Big|_{M_1} = \frac{\Pi}{V_T}$
 
-    $\letsymbol V_T \to 0$, тогда $div \overrightarrow{F} \Big|_{M_1 \to M_0} = \lim_{V_T \to 0} \frac{\Pi}{V_T}$ - поток через границу бесконечно малого объема с центром $M_0$, отнесенный к $V_T$ - мощность источника в $M_0$
+        Выберем точку $M_0$ внутри произвольного объема $T$. 
+        Пусть $V_T \to 0$, тогда $\Div \vec{F} \Big|_{M_1 \to M_0} = \lim_{V_T \to 0} \frac{\Pi}{V_T}$ -- поток через границу бесконечно малого объема с центром $M_0$ или мощность источника в $M_0$
 
-    Таким образом, дивергенция поля - мощность источников
+        Таким образом, дивергенция поля -- мощность источников
 
-    \Nota Смысл утверждения $div (rot \overrightarrow F) = 0$ - поле вихря свободно от источников
+        \Notas Смысл утверждения $\Div (\Rot \vec F) = 0$ -- поле вихря свободно от источников
 
-    \Nota Утверждение $rot (\overrightarrow{grad} u) = 0$ - поле потенциалов свободно от вихрей
+        \Notas Утверждение $\Rot (\overrightarrow{\operatorname{grad}} u) = 0$ -- поле потенциалов свободно от вихрей
 
-    \mediumvspace
+        \mediumvspace
 
-    \hypertarget{rotormechanicalmeaning}{}
+        \hypertarget{rotormechanicalmeaning}{}
 
-    2* Ротор
+        \item Ротор
 
-    Стокс $\iint_S rot \overrightarrow{F} d\overrightarrow{\sigma} = \Gamma$
+        По \Ths Стокса циркуляция $\Gamma = \iint_S \Rot \vec{F} d\vec{\sigma}$
 
-    \Ths о среднем: $\exists M_1 : \iint_S rot \overrightarrow{F} d\overrightarrow{\sigma} = rot \overrightarrow{F} \Big|_{M_1} \cdot S = \Gamma$
+        По \Ths о среднем существует точка $M_1 \ \Big| \ \iint_S \Rot \vec{F} d\vec{\sigma} = \Rot \vec{F} \Big|_{M_1} \cdot S = \Gamma$
 
-    $rot \overrightarrow{F} \Big|_{M_1} = \frac{\Gamma}{S}$, будем стягивать $S$ к точке $M_0$ \Longrightarrow $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ - циркуляция по б.м. контуру с центром $M_0$
+        $\Rot \vec{F} \Big|_{M_1} = \frac{\Gamma}{S}$, будем стягивать поверхность $S$ к точке $M_0$, тогда $\Rot \vec{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ -- циркуляция по бесконечно малому контуру с центром $M_0$
+    \end{enumerate}
 
 \end{document}
 

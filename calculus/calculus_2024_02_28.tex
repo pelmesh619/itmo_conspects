@@ -8,20 +8,17 @@
 
 
 \begin{document}
-    Теорема: $\displaystyle J^\prime_\alpha = \left(\int^b_a f(x, \alpha)dx\right)^\prime_\alpha = \int^b_a f^\prime_\alpha(x, \alpha)dx)$
+    \Ex $\displaystyle I(\alpha) = \int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x}dx$
 
-    \Ex
-
-    $\displaystyle I(\alpha) = \int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x}dx$
     $\displaystyle I^\prime_\alpha(\alpha) = \int^{+\infty}_0 \left(e^{-x} \frac{\sin\alpha x}{x}\right)^\prime_\alpha dx = \int^{+\infty}_0 e^{-x} \frac{1}{x} x \cos\alpha x dx =
-    \int^{+\infty}_0 e^{-x} \cos\alpha x dx = \frac{1}{a + \alpha^2}$
+    \int^{+\infty}_0 e^{-x} \cos\alpha x dx = e^{-x} \frac{\alpha \sin \alpha x - \cos \alpha x}{\alpha^2 + 1} \Big|^{+\infty}_0 = \frac{1}{1 + \alpha^2}$
 
-    Из этого следует, что $\displaystyle I(\alpha) = \int_{+\infty}_{0} \frac{1}{a + \alpha^2} dx = arctg(\alpha) + C$
+    Из этого следует, что $\displaystyle I(\alpha) = \int^{+\infty}_{0} \frac{1}{1 + \alpha^2} dx = arctg(\alpha) + C$
 
-    Так как $I(\alpha)$ - несобственный интеграл, это функция, а не семейство функций. Найдем $C$.
+    Так как $I(\alpha)$ -- несобственный интеграл, это функция, а не семейство функций. Найдем $C$.
 
-    $\displaystyle I(0) = \int^{+\infty}_0 e^{-x} \frac{\sin 0 * x}{x}dx = 0 \Longrightarrow C = 0$
-    Таким образом, $\displaystyle I(\alpha) = \left(\int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x} dx\right)^\prime_\alpha = arctg(\alpha)$
+    $\displaystyle I(0) = \int^{+\infty}_0 e^{-x} \frac{\sin 0 \cdot x}{x}dx = 0 \Longrightarrow C = 0$
+    Таким образом, $\displaystyle I(\alpha) = \left(\int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x} dx\right)^\prime_\alpha = \arctg(\alpha)$
 
     \Ex Гамма-функция
 
@@ -31,13 +28,16 @@
 
     \[\Gamma(\alpha) = \int^{+\infty}_0 x^{\alpha - 1} e^{-x} dx = \int^{1}_0 x^{\alpha - 1} e^{-x} dx + \int^{+\infty}_1 x^{\alpha - 1} e^{-x}\]
 
-    На отрезке $[0; 1]$ $e^(-x) \in [0;1]$.
+    На отрезке $[0; 1]$ $e^{-x} \in [0;1]$.
     Тогда $\displaystyle 0 \leq \int^{1}_0 x^{\alpha - 1} e^{-x} dx \leq \int^{1}_0 x^{\alpha - 1} dx \Longrightarrow$ интеграл сходится
 
     Пусть $n > \alpha - 1, n \in \Natural$, тогда:
 
-    $\displaystyle \int^{+\infty}_1 x^{\alpha - 1} e^{-x} dx \leq \int^{+\infty}_1 x^{n} e^{-x} dx$ - по частям, появятся $\displaystyle x^{k} e^{-x} \Big|^{+\infty}_1 \rightarrow 0$ и $\displaystyle \int^{+\infty}_1 e^{-x} dx$ сходится
+    $\displaystyle \int^{+\infty}_1 x^{\alpha - 1} e^{-x} dx \leq \int^{+\infty}_1 x^{n} e^{-x} dx$ -- по частям, появятся $\displaystyle x^{k} e^{-x} \Big|^{+\infty}_1 \rightarrow 0$ и $\displaystyle \int^{+\infty}_1 e^{-x} dx$ сходится
 
+    \begin{wrapfigure}{r}{0pt}
+        \includegraphics[width=75mm]{calculus/images/calculus_2024_02_28_1}
+    \end{wrapfigure}
     Найдем формулу для $\Gamma(\alpha)$:
 
     $\displaystyle \alpha \in \Natural \quad \Gamma(1) = \int^{+\infty}_0 e^{-x} dx = -e^{-x} \Big|^{+\infty}_{0} = 1$
@@ -49,69 +49,80 @@
 
     \Lab Посмотреть, как обобщается понятие факториала на вещественные числа:
 
-    \includegraphics[height=70mm]{calculus/images/calculus_2024_02_28_1}
-
     \clearpage
 
     \section{4. Функция нескольких переменных (ФНП)}
 
-    \section{4.1. Определение}
+    \subsection{4.1. Определение}
 
-    \Nota Дадим определение ФНП
+    \Nota Дадим определение функции нескольких переменных
 
-    \includegraphics[height=90mm]{calculus/images/calculus_2024_02_28_2}
+    \begin{center}
+        \includegraphics[height=90mm]{calculus/images/calculus_2024_02_28_2}
+    \end{center}
 
     \hypertarget{functionoftwovariables}{}
 
-    $\forall M(x, y) \exists! z \in \Real : z = f(x, y) \Longleftrightarrow z = f(x, y)$ - функция двух переменных
+    $\forall M(x, y) \ \exists! z \in \Real : z = f(x, y) \Longleftrightarrow z = f(x, y)$ -- функция двух переменных
 
     \Def Окрестность точки $M_0(x_0, y_0)$
 
-    $U_\delta (M_0) = \Set{(x, y) \in Oxy : (x - x_0)^2 + (y - y_0)^2 < \delta^2, \delta > 0 \text{ - радиус}}$
+    $U_\delta (M_0) = \Set{(x, y) \in Oxy : (x - x_0)^2 + (y - y_0)^2 < \delta^2, \delta > 0 \text{ -- радиус}}$
 
-    $\stackrel{o}{U}_\delta (M_0)$ - выколотая
+    $\overset{\circ}{U}_\delta (M_0) = U_\delta(M_0) \setminus \{M_0\}$ -- выколотая окрестность
 
     \Nota $\Delta x = x - x_0, \Delta y = y - y_0$, одновременное стремление $\Delta x, \Delta y \rightarrow 0$
     можно заменить $\Delta \rho = \sqrt{(x - x_0)^2 + (y - y_0)^2} \rightarrow 0$
 
     \hypertarget{limitoffunctionoftwovariables}{}
-    \Def $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ | \ \forall M \in \stackrel{o}{U}_\delta(M_0) \ \ |z(x, y) - L| < \varepsilon$
+    \Def $\displaystyle \lim_{M \to M_0} z(x, y) = L \in \Real \Longleftrightarrow \forall \varepsilon > 0 \ \exists \underset{\delta = \delta(\varepsilon)}{\delta > 0} \ | \ \forall M \in \overset{\circ}{U}_\delta(M_0) \ |z(x, y) - L| < \varepsilon$
 
-    $M_0$ - точка сгущения и $x_0, y_0 \in \Real$ (здесь)
+    Здесь $M_0$ -- точка сгущения, и $x_0, y_0 \in \Real$
 
     \Nota На плоскости $Oxy$ возможно стремление $M \rightarrow M_0$ по разным путям $F(x, y) = 0$ (уравнение кривой)
 
     При этом значение предела вдоль разных путей могут отличаться (аналог односторонних пределов)
 
-    Предел в определении - предел в общем смысле: его существование и значение не зависит от пути
+    Предел в определении -- предел в общем смысле: его существование и значение не зависит от пути
 
     \hypertarget{continuityoffunctionoftwovariables}{}
     \Def $z = f(x, y)$ называется непрерывной в точке $M(x_0, y_0)$, если $z = f(x_0, y_0) = \lim_{M \to M_0} z(x, y)$
 
     $z$ непрерывна на $D$, если $z$ непрерывна $\forall (x, y) \in D$
 
-    \includegraphics[height=90mm]{calculus/images/calculus_2024_02_28_3}
+    \begin{center}
+        \includegraphics[height=90mm]{calculus/images/calculus_2024_02_28_3}
+    \end{center}
 
     \Nota Справедливы теоремы Вейерштрасса и Больцано-Коши для функции, непрерывной в заданной области
 
     $z = f(x, y)$ непрерывна на $\overline{D} = D \union \Gamma_D$, где $\overline{D}$ - закрытая область, $D$ - открытая область, $\Gamma_D$ - граница
 
-    \ThN{W1} $z = f(x, y)$ ограничена на $\overline{D}$
+    \begin{MyTheorem}
+        \ThNs{W1} $z = f(x, y)$ ограничена на $\overline{D}$
+    \end{MyTheorem}
 
-    \ThN{W2} $\exists$ наибольшее и наименьшее $z \in \overline{D}$
+    \begin{MyTheorem}
+        \ThNs{W2} Для функции $z = f(x, y)$ существуют наибольшее и наименьшее $z$ для $(x, y) \in \overline{D}$
+    \end{MyTheorem}
 
-    \ThN{B-C1} на границе $\Gamma_D$ $z$ принимает значения разных знаков $\Longrightarrow \exists M \in \overline{D} : z(M) = 0$
+    \begin{MyTheorem}
+        \ThNs{B-C1} На границе $\Gamma_D$ $z$ принимает значения разных знаков $\Longrightarrow \exists M \in \overline{D} : z(M) = 0$
+    \end{MyTheorem}
 
-    \ThN{B-C1} $z(x, y)$ принимает все значения от $z_{\text{наим}}$ до $z_{\text{наиб}}$ \\[1\baselineskip]
+    \begin{MyTheorem}
+        \ThNs{B-C1} $z(x, y)$ принимает все значения от $z_{\text{наим}}$ до $z_{\text{наиб}}$
+    \end{MyTheorem}
 
-    \section{4.2. Производные функции двух переменных}
+
+    \subsection{4.2. Производные функции двух переменных}
 
     Путям $l_1, l_2$ соответствуют кривые $L_1, L_2$ на поверхности $z = f(x, y)$.
 
     Пользуясь геометрическим смыслом производной, заметим, что касательные к $L_1, L_2$ могут быть различными.
 
 
-    Поэтому для определения производной выберем координатные направления $x = const$ и $y = const$
+    Поэтому для определения производной выберем координатные направления $x = \const$ и $y = \const$
 
     $z = f(x = c, y)$
 
@@ -120,20 +131,20 @@
     $\displaystyle \frac{\partial z}{\partial y} \stackrel{def}{=} \lim_{\Delta y \to 0} \frac{\Delta_y z}{\Delta y}$,
     где $\Delta_y z = z(x, y + \Delta y) - z(x, y)$
 
-    Определили частную производную $z$ по $y$
+    \Def Частной производной $z = f(x, y)$ по $y$ называется $\displaystyle \frac{\partial z}{\partial y} \stackrel{def}{=} \lim_{\Delta y \to 0} \frac{\Delta_y z}{\Delta y}$
 
-    \Lab Дать определение $\displaystyle \frac{\partial z}{\partial x}$
+    \Lab Аналогично дать определение $\displaystyle \frac{\partial z}{\partial x}$
 
-    \Nota $\Delta_y z = z(x, y + \Delta y) - z(x, y)$ и  $\Delta_y z$ называют частным приращением
+    \Notas $\Delta_y z = z(x, y + \Delta y) - z(x, y)$ и  $\Delta_y z$ называют частным приращением
 
     \Def Полное приращение $\Delta z \stackrel{def}{=} z(x + \Delta x, y + \Delta y) - z(x, y)$
 
-    \Nota $\Delta z \neq \Delta_x z + \Delta_y z$ !!!
+    \Notas При этом $\Delta z \neq \Delta_x z + \Delta_y z$ !!!
 
-    Обозн.: $\displaystyle \frac{\partial z}{\partial x} = z^\prime_x = z_x$, $\displaystyle \frac{\partial z}{\partial y} = z^\prime_y = z_y$
+    Обозначение: $\displaystyle \frac{\partial z}{\partial x} = z^\prime_x = z_x$, $\displaystyle \frac{\partial z}{\partial y} = z^\prime_y = z_y$
 
     Как определить функцию, дифференцируемую в точке?
 
-    По аналогии $\Delta z = A \Delta x + B \Delta y + \alpha \Delta x + \beta \Delta y$, где $A, B \in \Real$, $\alpha, \beta$ - б. м.
+    По аналогии $\Delta z = A \Delta x + B \Delta y + \alpha \Delta x + \beta \Delta y$, где $A, B \in \Real$, $\alpha, \beta$ -- бесконечно малые
 
 \end{document}

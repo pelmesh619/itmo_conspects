@@ -12,11 +12,9 @@
 
     $d^2 z = \left(\frac{\partial }{\partial x}dx + \frac{\partial}{\partial y}dy\right)^2 z \stackrel{\text{инвариант}}{=} z^{(n)}_t dt^n$
 
-    Введем функцию: $z(x(t), y(t)) \stackrel{\text{обозн}}{=} \varphi (t)$ - $(n + 1)$ раз дифференцируема (композиция $(n + 1)$ дифференцируемых и линейных функций)
+    Введем функцию: $z(x(t), y(t)) \stackrel{\text{обозн}}{=} \varphi (t)$ -- она $(n + 1)$ раз дифференцируема (композиция $(n + 1)$ дифференцируемых и линейных функций)
 
-    Заметим, что $x = x_0 + \Delta x t \stackrel{t_0 = 0}{=} x_0$, $y = y_0 + \Delta y t \stackrel{t_0 = 0}{=} y_0$
-
-    \[M \stackrel{t \to t_0 = 0}{\rightarrow} M_0\]
+    Заметим, что $x = x_0 + \Delta x t \stackrel{t_0 = 0}{=} x_0$, $y = y_0 + \Delta y t \stackrel{t_0 = 0}{=} y_0$, тогда $M \stackrel{t \to t_0 = 0}{\rightarrow} M_0$
 
     То есть $z(M_0) = z(x_0, y_0) = z(x(t_0), y(t_0)) = \varphi (t_0) = \varphi(0)$
 
@@ -28,11 +26,11 @@
 
     \[z(x, y) = z(M) = z(M_0) + \frac{dz(M_0)}{1!} + \frac{d^2 z(M_0)}{2!} + \dots + \frac{d^n z(M_0)}{n!} + r_n(x, y)\]
 
-    где $r_n(x, y) = r_n(t) \stackrel{\text{Лагр.}}{=} \frac{\varphi^{(n+1)}(\theta \Delta t)}{(n + 1)!} \Delta t = \frac{\varphi^{(n+1)}(\theta \Delta t)}{(n + 1)!}$
+    где остаток в форме Лагранжа $r_n(x, y) = r_n(t) = \frac{\varphi^{(n+1)}(\theta \Delta t)}{(n + 1)!} \Delta t = \frac{\varphi^{(n+1)}(\theta \Delta t)}{(n + 1)!}$
 
-    $r_n(x, y)$ должен быть б. м. по отношению к $(\Delta \rho)^n$, то есть $r_n(x, y) = o((\Delta \rho)^n)$
+    Остаток $r_n(x, y)$ должен быть бесконечно малым по отношению к $(\Delta \rho)^n$, то есть $r_n(x, y) = o((\Delta \rho)^n)$
 
-    ($r_n(t) \stackrel{n \to \infty}{\rightarrow}$, если $\varphi(t)$ нужное число раз дифференцируема $Rightarrow$ ограничена, $r_n(t)$ - огр. б. м.)
+    ($r_n(t) \stackrel{n \to \infty}{\rightarrow} 0$, если $\varphi(t)$ нужное число раз дифференцируема $\Rightarrow$ ограничена, $r_n(t)$ -- ограниченная бесконечно малая)
 
     \Nota В дальнейшем для исследования $z(x, y)$ на экстремум достаточно разложения по формуле Тейлора до 2-ого порядка включительно.
     Покажем сходимость $r_n(x, y) \stackrel{(\Delta \rho)^n \to 0}{\rightarrow} 0$ на примере $\displaystyle r_2 (x, y) = \frac{d^3 z(M_{\text{сред.}})}{3!}$
@@ -44,34 +42,32 @@
 
     Вообще говоря, значения частных производных берутся в различных средних точках
 
-    $r_2(x, y) = \frac{1}{3!} (z_{xxx}(\mu_1)(\Delta x)^3 + 3 z_{xxy}(\mu_2)(\Delta x)^2 \Delta y + z_{xyy}(\mu_3)(\Delta y)^2 \Delta x + 3 z_{yyy}(\mu_4)(\Delta y)^3) = \Big|$ вынесем $(\Delta \rho)^3$
-
-    $= \frac{(\Delta \rho)^3}{3!} \left(\text{огран.} \cdot \frac{(\Delta x)^3}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta x)^2 \Delta y}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^2 \Delta x}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^3}{(\Delta \rho)^3}\right)$
+    $r_2(x, y) = \frac{1}{3!} (z_{xxx}(\mu_1)(\Delta x)^3 + 3 z_{xxy}(\mu_2)(\Delta x)^2 \Delta y + z_{xyy}(\mu_3)(\Delta y)^2 \Delta x + 3 z_{yyy}(\mu_4)(\Delta y)^3) = \begin{bmatrix} \text{вынесем }(\Delta \rho)^3 \end{bmatrix} = \frac{(\Delta \rho)^3}{3!} \left(\text{огран.} \cdot \frac{(\Delta x)^3}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta x)^2 \Delta y}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^2 \Delta x}{(\Delta \rho)^3} + \text{огран.} \cdot \frac{(\Delta y)^3}{(\Delta \rho)^3}\right)$
 
     $\frac{(\Delta x)^3}{(\Delta \rho)^3} = \frac{(\Delta x)^3}{\sqrt{(\Delta x)^2 + (\Delta y)^2}^3} \stackrel{\Delta x \to 0}{\rightarrow} 0$, то есть дробь и выражение выше ограничены
 
     $\frac{r_2(x, y)}{(\Delta \rho)^2} = \frac{1}{3!} \frac{(\Delta \rho)^3 \cdot \text{огр.}}{(\Delta \rho)^2} = \frac{1}{3!} \Delta \rho \cdot \text{огр.} \stackrel{\Delta \rho \to 0}{\rightarrow} 0$
 
-    \section{4.7. Геометрия ФНП}
+    \subsection{4.7. Геометрия ФНП}
 
 
-    \section{4.7.1. Линии и поверхности уровня}
+    \subsubsection{4.7.1. Линии и поверхности уровня}
 
-    Положим $z = const$.
+    Положим $z = \const$.
 
     В сечении плоскостью $z = c$ образуется кривая $l$ с уравнением $\begin{cases}z = c \\ \varphi(x, y) = 0 \leftarrow \text{уравнение $l_\text{проек}$ на $Oxy$}\end{cases}$
 
-    Кривая $l$ с уравнением $z(x, y) = c$ называется линией уровня Ф$_2$П $z = z(x, y)$
+    Кривая $l$ с уравнением $z(x, y) = c$ называется линией уровня функции двух переменных $z = z(x, y)$
 
-    \Def Поверхность уровня $\mathcal{P}$ - это поверхность с уровнем $u(x, y, z) = c$
+    \Def Поверхность уровня $\mathcal{P}$ -- это поверхность с уровнем $u(x, y, z) = c$
 
-    Физ. смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ - скаляры).
+    Физический смысл: Пусть $u : \Real^3 \rightarrow \Real$ (значения функции $u(x, y, z)$ -- скаляры).
     Тогда говорят, что в $\Real^3$ задано скалярное поле.
     Например, поле температур, давления, плотности и т. д.
 
-    Тогда $u = c$ - поверхности постоянных температур, давления и т. п. (изотермические, изобарные, эквипотенциальные)
+    Тогда $u = c$ -- поверхности постоянных температур, давления и т. п. (изотермические, изобарные, эквипотенциальные)
 
-    \Ex Конус - $z = -\sqrt{x^2 + y^2}$
+    \Ex Конус: $z = -\sqrt{x^2 + y^2}$
 
     \includegraphics[height=90mm]{calculus/images/calculus_2024_03_13_1}
 
@@ -80,33 +76,32 @@
     \begin{enumerate}
         \item $c > 0 \quad \emptyset$
         \item $c = 0 \quad x = y = 0 - $ точка $(0, 0)$
-        \item $c < 0 \quad -|c| = -\sqrt{x^2 + y^2} \quad c^2 = x^2 + y^2$
+        \item $c < 0 \quad -|c| = -\sqrt{x^2 + y^2} \text{ или } c^2 = x^2 + y^2$
     \end{enumerate}
 
 
-    \section{4.7.2. Производная по направлению, Градиент}
+    \subsubsection{4.7.2. Производная по направлению, градиент}
 
-    \underline{Задача}. Дано скалярное поле $u = u(x, y, z)$ (напр. давления). Как меняется давление при перемещении в заданном направлении?
+    \underline{Задача}. Дано скалярное поле $u = u(x, y, z)$ (например, давления). Как меняется давление при перемещении в заданном направлении?
 
-    Это задача о нахождении скорости изменения $u(x, y, z)$ в заданном направлении $\overrightarrow{s}$
+    Это задача о нахождении скорости изменения $u(x, y, z)$ в заданном направлении $\vec{s}$
 
-    Из $M_0(x_0, y_0, z_0)$ движемся в $M(x, y, z)$ в направлении $\overrightarrow{s}$, $x = x_0 + \Delta x$, $y = y_0 + \Delta y$, $z = z_0 + \Delta z$
+    Из $M_0(x_0, y_0, z_0)$ движемся в $M(x, y, z)$ в направлении $\vec{s}$, $x = x_0 + \Delta x$, $y = y_0 + \Delta y$, $z = z_0 + \Delta z$
 
     $\Delta s = \sqrt{(\Delta x)^2 + (\Delta y)^2 + (\Delta z)^2} \quad \Big| \cdot \frac{1}{\Delta s}$
 
     $1 = \sqrt{\left(\frac{\Delta x}{\Delta s}\right)^2 + \left(\frac{\Delta y}{\Delta s}\right)^2 + \left(\frac{\Delta z}{\Delta s}\right)^2}$
 
-    $(\frac{\Delta x}{\Delta s}, \frac{\Delta y}{\Delta s}, \frac{\Delta z}{\Delta s}) = (\cos\alpha, \cos\beta, \cos\gamma) = \overrightarrow{s^0}$
+    $\left(\frac{\Delta x}{\Delta s}, \frac{\Delta y}{\Delta s}, \frac{\Delta z}{\Delta s}\right) = (\cos\alpha, \cos\beta, \cos\gamma) = \vec{s^0}$
 
     Потребуем, чтобы $u(x, y, z)$ имела непрерывность $u_x, u_y, u_z$ в $D$
 
     То есть $u(x, y, z)$ дифференцируема и
+    $\Delta u = du + o(\Delta s) = u_x \Delta x + u_y \Delta y + u_z \Delta x + o(\Delta s)$
 
-    $\Delta u = du + o(\Delta s) = u_x \Delta x + u_y \Delta y + u_z \Delta x + o(\Delta s) \quad \Big| \cdot \frac{1}{\Delta s}$
+    $\frac{\Delta u}{\Delta s} = u_x \cos\alpha + u_y \cos\beta + u_z \cos\gamma + \frac{o(\Delta s)}{\Delta s}$
 
-    $\frac{\Delta u}{\Delta s} = u_x \cos\alpha + u_y \cos\beta + u_z \cos\gamma + \frac{o(\Delta s)}{\Delta s}$ - предельный переход
-
-    $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
+    В предельном переходе получаем: $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
 
     \Nota Изначально $\Delta u = du + \text{(б. м.)} \Delta x + \text{(б. м.)} \Delta y + \text{(б. м.)} \Delta z \quad \Big| \cdot \frac{1}{\Delta s}$
 
@@ -114,55 +109,78 @@
 
     \hypertarget{derivativeoffunctionindirection}{}
 
-    \Def $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$
+    \Def Производной функции $u = u(x, y, z)$ в направлении $\vec{s}$ называют величину $\frac{\partial u}{\partial s} = \frac{\partial u}{\partial x} \cos\alpha + \frac{\partial u}{\partial y} \cos\beta + \frac{\partial u}{\partial z} \cos\gamma$, где $\alpha, \beta, \gamma$ - направления $\vec{s}$
 
-    где $\alpha, \beta, \gamma$ - направления $\overrightarrow{s}$, называют производной функции $u = u(x, y, z)$ в направлении $\overrightarrow{s}$
+    \Nota Производная в определении -- число, но $\frac{\partial u}{\partial s} \vec{s^0}$ -- вектор скорости
 
-    \Nota Производная в определении - число, но $\frac{\partial u}{\partial s} \overrightarrow{s^0}$ - вектор скорости
-
-    \Nota Заметим, что если $\overrightarrow{i}, \overrightarrow{j}, \overrightarrow{k}$ - декартовы орты, то
-
+    \Nota Заметим, что если $\vec \imath, \vec \jmath, \vec{k}$ -- декартовы орты, то
     $\frac{\partial u}{\partial i} = \frac{\partial u}{\partial x} 1 + \frac{\partial u}{\partial y} 0 + \frac{\partial u}{\partial z} 0 = \frac{\partial u}{\partial x}$
 
-    и аналогично в других направлениях: $\frac{\partial u}{\partial j} = \frac{\partial u}{\partial y}, \frac{\partial u}{\partial k} = \frac{\partial u}{\partial z}$
+    И аналогично в других направлениях: $\frac{\partial u}{\partial j} = \frac{\partial u}{\partial y}, \frac{\partial u}{\partial k} = \frac{\partial u}{\partial z}$
 
-    Составим вектор $\frac{\partial u}{\partial x} \overrightarrow{i} + \frac{\partial u}{\partial y} \overrightarrow{j} + \frac{\partial u}{\partial z} \overrightarrow{k} \stackrel{\text{обозн}}{=} \overrightarrow{\triangledown} u$
+    Составим вектор $\frac{\partial u}{\partial x} \vec \imath + \frac{\partial u}{\partial y} \vec \jmath + \frac{\partial u}{\partial z} \vec k \stackrel{\text{обозн}}{=} \vec\nabla u$
 
     \hypertarget{gradientdefinition}{}
 
-    $\overrightarrow{\triangledown}$ - набла-оператор (оператор Гамильтона); $\overrightarrow{\triangledown} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ - условный вектор
+    $\vec\nabla$ -- набла-оператор (оператор Гамильтона); $\vec\nabla = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right)$ -- условный вектор
 
-    \Def $\overrightarrow{grad} \ u \stackrel{def}{=} \overrightarrow{\triangledown} u$ - называют градиентом функции $u(x, y, z)$
+    \Def $\overrightarrow{\operatorname{grad}} \ u \stackrel{def}{=} \vec\nabla u$ -- называют градиентом функции $u(x, y, z)$
 
     \hypertarget{gradientproperties}{}
 
     Свойства градиентов:
 
-    \ThN{1} $\frac{\partial u}{\partial s} = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
+    \begin{MyTheorem}
+        \ThNs{1} $\frac{\partial u}{\partial s} = \text{проек.}_{\vec{s}} \vec\nabla u$
 
-    \ThN{2} $\overrightarrow{\triangledown} u$ - направление наибольшего значения $\frac{\partial u}{\partial s}$
+        В любом заданном направлении $\overrightarrow{s}$ производная $\frac{\partial u}{\partial s} |_M$ равна проекции градиента в $M$
+    \end{MyTheorem}
 
-    \ThN{3} $\overrightarrow{s} \perp \overrightarrow{\triangledown} u \Longrightarrow \frac{\partial u}{\partial s} = 0$
+    \begin{MyTheorem}
+        \ThNs{2} $\vec\nabla u$ -- направление наибольшего значения $\frac{\partial u}{\partial s}$
+    \end{MyTheorem}
 
-    \ThN{4} $u = u(x, y), u = c$ - линии уровня $l$. Тогда $\overrightarrow{\triangledown} u \perp l$
+    \begin{MyTheorem}
+        \ThNs{3} $\vec{s} \perp \vec\nabla u \Longrightarrow \frac{\partial u}{\partial s} = 0$
+    \end{MyTheorem}
+
+    \begin{MyTheorem}
+        \ThNs{4} $u = u(x, y), u = c$ -- линии уровня $l$. Тогда $\vec\nabla u \perp l$
+
+        Прямая, содержащая $\vec\nabla u$ (т. е. перпендикулярная касательной к $l$), называется нормалью к $l$
+        а тогда $\vec\nabla u$ -- вектор нормали
+    \end{MyTheorem}
 
     Доказательства:
 
     \begin{enumerate}
-        \item $\frac{\partial u}{\partial s} = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right) \cdot \overrightarrow{s^0} =
-        \overrightarrow{\triangledown} u \overrightarrow{s^0} = |\overrightarrow{\triangledown} u| |\overrightarrow{s^0}| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) =
-        |\overrightarrow{\triangledown} u| \cos(\overrightarrow{\triangledown} u, \overrightarrow{s^0}) = \text{пр.}_{\overrightarrow{s}} \overrightarrow{\triangledown} u$
+        \item \begin{MyProof}
+            $\frac{\partial u}{\partial s} = \left(\left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right) \cdot \vec{s^0}\right) u = \left(\frac{\partial}{\partial x}; \frac{\partial}{\partial y}; \frac{\partial}{\partial z}\right) u \cdot \vec{s^0} =
+            \vec\nabla u \cdot \vec{s^0}$
+            
+            $|\vec\nabla u \cdot \vec{s^0}| = |\vec\nabla u| |\vec{s^0}| \cos(\widehat{\vec\nabla u, \vec{s^0}}) =
+            |\vec\nabla u| \cos(\widehat{\vec\nabla u, \vec{s^0}}) = \text{проек.}_{\vec{s}} \vec\nabla u$
+        \end{MyProof}
 
-        \item $\frac{\partial u}{\partial s} = |\overrightarrow{\triangledown} u| \cos\varphi \dots $ \Lab
+        \item \begin{MyProof}
+            $\frac{\partial u}{\partial s} = |\vec\nabla u| \cos\varphi$, где $\varphi$ - угол между $\vec{s}$ и $\vec\nabla u$
 
-        \item \Lab
+            Косинус принимает наибольшее значение, если угол между $\vec{s}$ и $\vec\nabla u$ равен нулю, то есть направления векторов совпадает. Значит, при $\vec{s} = \vec\nabla u$ производная принимает наибольшее значение
+        \end{MyProof}
 
-        \item $u = c$ - уравнение $l_{\text{пр}}$ в плоскости $Oxy$, то есть $u(x, y) = c$, можем рассмотреть как неявную функцию $u(x, y(x)) - c = 0$
+        \item \begin{MyProof}
+            Из доказательства \ThNs{2} следует, что если $\vec{s}$ сонаправлен с $\vec\nabla u$, то производная принимает наибольшее значение. Следовательно, если $\vec{s} \perp \vec\nabla s$, то $\cos\varphi = 0$, $\frac{\partial u}{\partial s} = 0$
+        \end{MyProof}
 
-        Производная неявной функции: $\frac{dy}{dx} = -\frac{u_x}{u_y} = k_l$ - угловой коэффициент касательной к $l$
+        \item \begin{MyProof}
+            $u = c$ -- уравнение $l_{\text{пр}}$ в плоскости $Oxy$, то есть $u(x, y) = c$ мы можем рассмотреть как неявную функцию $u(x, y(x)) - c = 0$
 
-        $\overrightarrow{\triangledown} u = (u_x, u_y) \quad \frac{u_y}{u_x} = k_{\text{град.}}$ - наклон вектора градиента.
-        Очевидно $k_l \cdot k_{\text{град.}} = -1 \Longrightarrow \overrightarrow{\triangledown} u \perp l$
+            Производная неявной функции: $\frac{dy}{dx} = -\frac{u_x}{u_y} = k_l$ -- угловой коэффициент касательной к $l$
+
+            $\vec\nabla u = (u_x, u_y) \quad \frac{u_y}{u_x} = k_{\text{град.}}$ -- наклон вектора градиента.
+
+            Очевидно $k_l \cdot k_{\text{град.}} = -1 \Longrightarrow \vec\nabla u \perp l$
+        \end{MyProof}
     \end{enumerate}
 
 
