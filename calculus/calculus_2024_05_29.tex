@@ -8,21 +8,17 @@
 
 
 \begin{document}
-    \Mem Дифф. хар.: $div \overrightarrow{F} = \overrightarrow{\triangledown} \overrightarrow{F}, rot \overrightarrow{F} = \overrightarrow{\triangledown} \times \overrightarrow{F}$
+    Поток $\Pi$ и циркуляцию $\Gamma$ называют интегральными характеристиками поля, тогда как дивергенцию $\Div \vec F$ и ротор $\Rot \vec F$ -- дифференциальными
 
-    Инт. хар.: $\Pi = \iint_S \overrightarrow{F} d\overrightarrow{\sigma}, \Gamma = \oint_L \overrightarrow{F} d\overrightarrow{l}$
+    \Nota Ранее выяснили, что смысл
+    
+    \begin{itemize}
+        \item потока $\Pi = \oiint_S \vec F d\vec\sigma$ -- количество пройденной жидкости через поверхность за единицу времени;
+        \item дивергенции $\Div \vec F \Big_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ -- мощность точечного источника (сколько жидкости он \enquote{производит} или \enquote{потребляет})
+        \item теоремы Гаусса-Остроградского: поток через замкнутую поверхность равен суммарной мощности источников внутри
+    \end{itemize}
 
-    Мех. смысл: 1) $div \overrightarrow{F} \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ - мощность точечного источника
-
-    Г.-О.: поток через замкнутую поверхность равен суммарной мощности источников внутри
-
-    2) $rot \overrightarrow{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ - циркуляция по б. м. контуру. Мех. смысл - ?
-
-    3) Поток $\Pi$ - кол-во жидкости через площадку за единицу времени
-
-    4) $\Gamma$ - ?
-
-    \Nota Выясним смысл ротора и циркуляции на примере конкретного поля
+    Выясним смысл ротора и циркуляции на примере конкретного поля
 
     \Ex $\overrightarrow{F} = -\omega y \overrightarrow{i} + \omega x \overrightarrow{j}$ - поле линейных скоростей, вращающегося твердого тела, где $\overrightarrow{\omega} = const$ - угловая скорость
 
