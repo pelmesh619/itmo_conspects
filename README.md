@@ -6,6 +6,12 @@
 
 [![Спросить DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pelmesh619/itmo_conspects)
 
+## V семестр
+
+* Телекоммуникационные системы и технологии (лектор Береснев А. Д.)
+
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_05.html)
+
 ## [IV семестр](meta/IV.md)
 
 * Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
