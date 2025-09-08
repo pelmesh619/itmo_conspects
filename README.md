@@ -12,6 +12,10 @@
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_05.html)
 
+* Машинное обучение (лектор Власова Е. К.)
+
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_09_05.html)
+
 ## [IV семестр](meta/IV.md)
 
 * Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
