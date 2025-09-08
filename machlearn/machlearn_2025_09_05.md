@@ -1,4 +1,6 @@
-<script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=default"></script>
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=default"></script>
+</head>
 
 # Машинное обучение
 
