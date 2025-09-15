@@ -8,6 +8,10 @@
 
 ## V семестр
 
+* Физические основы компьютерных и сетевых технологий III (лектор Зинчик А. А.)
+
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_01.pdf)
+
 * Телекоммуникационные системы и технологии (лектор Береснев А. Д.)
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_05.html)
