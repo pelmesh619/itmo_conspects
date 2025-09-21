@@ -59,7 +59,7 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
     for link, (header, header_level) in contents.items():
         table_of_contents += '  ' * (header_level - 1) + '* ' + f'[{header}](#{link})\n'
 
-    first_header = re.search('#+.+\n', text)
+    first_header = re.search('[^#]*#+.+\n', text)
     first_header_text = None
     if first_header:
         first_header_text = first_header.group(0)
