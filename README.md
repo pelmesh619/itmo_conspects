@@ -10,8 +10,10 @@
 
 * Физические основы компьютерных и сетевых технологий III (лектор Зинчик А. А.)
 
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_superconspect.pdf)
+
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_01.pdf)
-    * Лекция №2 - в процессе
+    * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_08.pdf)
     * Лекция №3 - в процессе
 
 * Философия (лектор Мавринский И. И.)
