@@ -17,16 +17,21 @@
 * Философия (лектор Мавринский И. И.)
 
     * Лекция №1 - в процессе
+    * Лекция №3 - в процессе
 
 * Телекоммуникационные системы и технологии (лектор Береснев А. Д.)
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_05.html)
     * Лекция №2 - в процессе
+    * Лекция №3 - в процессе
 
 * Машинное обучение (лектор Власова Е. К.)
+* 
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_superconspect.html)
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_09_05.html)
-    * Лекция №2 - в процессе
+    * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_09_12.html)
+    * Лекция №3 - в процессе
 
 * Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е.)
 
