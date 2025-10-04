@@ -16,11 +16,13 @@
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_08.pdf)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_15.pdf)
     * Лекция №4 - в процессе
+    * Лекция №5 - в процессе
 
 * Философия (лектор Мавринский И. И.)
 
     * Лекция №1 - в процессе
     * Лекция №3 - в процессе
+    * Лекция №5 - в процессе
 
 * Телекоммуникационные системы и технологии (лектор Береснев А. Д.)
 
@@ -30,6 +32,7 @@
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_12.html)
     * Лекция №3 - в процессе
     * Лекция №4 - в процессе
+    * Лекция №5 - в процессе
 
 * Машинное обучение (лектор Власова Е. К.)
 
@@ -39,6 +42,7 @@
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_09_12.html)
     * Лекция №3 - в процессе
     * Лекция №4 - в процессе
+    * Лекция №5 - в процессе
 
 * Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е.)
 
@@ -47,6 +51,7 @@
     * Лекция №2 - в процессе
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_17.html)
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_24.html)
+    * Лекция №5 - в процессе
 
 * Web-разработка: Frontend (лектор Макаревич Р. Д.)
 
