@@ -48,7 +48,7 @@
 
     [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_superconspect.html)
 
-    * Лекция №2 - в процессе
+    * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_10.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_17.html)
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_24.html)
     * Лекция №5 - в процессе
