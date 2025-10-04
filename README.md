@@ -48,6 +48,12 @@
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_17.html)
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_24.html)
 
+* Web-разработка: Frontend (лектор Макаревич Р. Д.)
+
+    * Лекция №3 - в процессе
+    * Лекция №4 - в процессе
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_2025_10_04.html)
+
 ## [IV семестр](meta/IV.md)
 
 * Проектирование баз данных (лекторы Мацнев Н. И., Самигуллин Р. Ф., Карчевский А. Д.)
