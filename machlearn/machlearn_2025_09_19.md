@@ -13,9 +13,9 @@
 
     Если рассмотреть расстояние между двумя случайным точками $$a$$ и $$b$$ в $$k$$-мерном кубе $$[0, 1]^k$$ как случайную величину, то обнаружится, что
 
-    * Матожидание для $$(a_i - b_i)^2$$ равно $$\displaystyle E (a_i - b_i)^2 = \int_0^1 \int_0^1 (x - y)^2 dx dy = \int_0^1 \frac{(x - y)^3}{3} \left\|_{x = 0}^{x = 1} dy = \int_0^1 \left(\frac{(1 - y)^3}{3} + \frac{y^3}{3}\right) dy = -\frac{(1 - y)^4}{12} \left\|_0^1 + \frac{y^4}{12} \left\|_0^1 = \frac{1}{12} + \frac{1}{12} = \frac{1}{6}$$
+    * Матожидание для $$(a_i - b_i)^2$$ равно $$\displaystyle E (a_i - b_i)^2 = \int_0^1 \int_0^1 (x - y)^2 dx dy = \int_0^1 \frac{(x - y)^3}{3} \Big\|_{x = 0}^{x = 1} dy = \int_0^1 \Big(\frac{(1 - y)^3}{3} + \frac{y^3}{3}\right) dy = -\frac{(1 - y)^4}{12} \Big\|_0^1 + \frac{y^4}{12} \Big\|_0^1 = \frac{1}{12} + \frac{1}{12} = \frac{1}{6}$$
 
-    * $$\displaystyle E (a_i - b_i)^4 = \int_0^1 \int_0^1 (x - y)^4 dx dy = \int_0^1 \frac{(x - y)^5}{5} \left\|_{x = 0}^{x = 1} dy = \int_0^1 \left(\frac{(1 - y)^5}{5} + \frac{y^5}{5}\right) dy = \frac{1}{30} + \frac{1}{30} = \frac{1}{15}$$
+    * $$\displaystyle E (a_i - b_i)^4 = \int_0^1 \int_0^1 (x - y)^4 dx dy = \int_0^1 \frac{(x - y)^5}{5} \Big\|_{x = 0}^{x = 1} dy = \int_0^1 \left(\frac{(1 - y)^5}{5} + \frac{y^5}{5}\right) dy = \frac{1}{30} + \frac{1}{30} = \frac{1}{15}$$
 
     * Дисперсия для $$(a_i - b_i)^2$$ равна $$D (a_i - b_i)^2 = E (a_i - b_i)^4 - (E (a_i - b_i)^2)^2 = \frac{1}{15} - \frac{1}{36} = \frac{7}{180}$$
 
