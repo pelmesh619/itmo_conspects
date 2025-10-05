@@ -22,6 +22,8 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
 
     text = ''
 
+    script_sources = []
+
     for i in folder_files:
         if not i.endswith('.md') or any([j in i for j in BLACKLIST_WORDS]):
             continue
@@ -31,6 +33,12 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
         if re.match(r'\s*#ignore', file_text):
             print(f'File {i} is ignored')
             continue
+
+        for script in re.finditer(r'<script.+>.+</script>\n', file_text, re.U):
+            if script.group(0) in script_sources:
+                file_text = file_text.replace(script_sources, "")
+            else:
+                script_sources.append(script.group(0))
 
         for header_match in re.finditer('(^|\n)((#+) +(.+))\n', file_text, re.U):
             # for cases when '\n# ...' is a comment in code block
