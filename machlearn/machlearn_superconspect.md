@@ -138,7 +138,6 @@
 Если просто пронумеровать цвета, то в нашу переменную вносится порядок, что на самом деле не так
 
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 ---
 
@@ -413,7 +412,6 @@ P-значение не показывает вероятность того, ч
 
 
 
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-mml-chtml.js"></script>
 
 ## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-3.-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4%D1%8B-%D0%BF%D0%BE%D0%BD%D0%B8%D0%B6%D0%B5%D0%BD%D0%B8%D1%8F-%D1%80%D0%B0%D0%B7%D0%BC%D0%B5%D1%80%D0%BD%D0%BE%D1%81%D1%82%D0%B8%2C-%D0%BC%D0%B5%D1%82%D0%BE%D0%B4-%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D1%8B%D1%85-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82"></a> Лекция 3. Методы понижения размерности, метод главных компонент
 
@@ -426,7 +424,7 @@ P-значение не показывает вероятность того, ч
 
     Если рассмотреть расстояние между двумя случайным точками $$a$$ и $$b$$ в $$k$$-мерном кубе $$[0, 1]^k$$ как случайную величину, то обнаружится, что
 
-    * Матожидание для $$(a_i - b_i)^2$$ равно $$\displaystyle E (a_i - b_i)^2 = \int_0^1 \int_0^1 (x - y)^2 dx dy = \int_0^1 \frac{(x - y)^3}{3} \Big\|_{x = 0}^{x = 1} dy = \int_0^1 \Big(\frac{(1 - y)^3}{3} + \frac{y^3}{3}\right) dy = -\frac{(1 - y)^4}{12} \Big\|_0^1 + \frac{y^4}{12} \Big\|_0^1 = \frac{1}{12} + \frac{1}{12} = \frac{1}{6}$$
+    * Матожидание для $$(a_i - b_i)^2$$ равно $$\displaystyle E (a_i - b_i)^2 = \int_0^1 \int_0^1 (x - y)^2 dx dy = \int_0^1 \frac{(x - y)^3}{3} \Big\|_{x = 0}^{x = 1} dy = \int_0^1 \left(\frac{(1 - y)^3}{3} + \frac{y^3}{3}\right) dy = -\frac{(1 - y)^4}{12} \Big\|_0^1 + \frac{y^4}{12} \Big\|_0^1 = \frac{1}{12} + \frac{1}{12} = \frac{1}{6}$$
 
     * $$\displaystyle E (a_i - b_i)^4 = \int_0^1 \int_0^1 (x - y)^4 dx dy = \int_0^1 \frac{(x - y)^5}{5} \Big\|_{x = 0}^{x = 1} dy = \int_0^1 \left(\frac{(1 - y)^5}{5} + \frac{y^5}{5}\right) dy = \frac{1}{30} + \frac{1}{30} = \frac{1}{15}$$
 
