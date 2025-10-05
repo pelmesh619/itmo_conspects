@@ -142,9 +142,9 @@ plt.grid(True, alpha=0.3)
 
 plt.tight_layout()
 try:
-    plt.savefig("machlearn/images/machlearn_pca_example2.png")
+    plt.savefig("machlearn/images/machlearn_tsne_example2.png")
 except Exception as e:
-    print("Image machlearn_pca_example2.png was not saved:", repr(e))
+    print("Image machlearn_tsne_example2.png was not saved:", repr(e))
 plt.show()
 
 # Анализ результатов
