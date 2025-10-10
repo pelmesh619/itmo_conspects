@@ -156,13 +156,15 @@ window.MathJax = {
 
 ![UMAP фрукты 1](images/machlearn_umap_example1.png)
 
-![UMAp фрукты 2](images/machlearn_umap_example2.png)
+![UMAP фрукты 2](images/machlearn_umap_example2.png)
+
+На маленьких датасетах, как можно заметить, при правильно подобранных параметрах результат UMAP мало отличим от t-SNE
 
 Код пример - [machlearn_umap_example.py](./examples/machlearn_umap_example.py)
 
 ---
 
-Посмотрим, что происходит при разных `n_neighbors` и `min_dist`:
+Посмотрим, что происходит при разных `n_neighbors` и `min_dist` на датасете с изображениями цифр:
 
 ![UMAP цифры 1](images/machlearn_umap_digits_example.png)
 
