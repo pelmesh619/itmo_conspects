@@ -112,13 +112,13 @@ window.MathJax = {
 
 Работает он так:
 
-1. Даны параметры $k = \text{n\_ neighbors}$ - заданное число ближайших соседей у точки и $\text{min\_ dist}$ - минимальное расстояние между точками в целевом пространстве
+1. Даны параметры $k = \text{n\\_neighbors}$ - заданное число ближайших соседей у точки и $\text{min\\_dist}$ - минимальное расстояние между точками в целевом пространстве
 
 2. Далее для каждое точки $x_i$ ищется $k$ ближайших соседей $T = \{t_1, \dots, t_k\}$, используя в качестве расстояния любимую метрику $\mathrm{dist}(x_i, t_i)$ (например, евклидово расстояние $$\mathrm{dist}(x_i, t_i) = \|x_i - t_i\|$$)
 
 3. Теперь для каждой точки вычисляет расстояние до самого ближнего соседа $\displaystyle \rho_i = \min_{t \in T} \mathrm{dist}(x_i, t)$
 
-    Также вычисляется $\sigma_i$ из уравнения $\sum_{t \in T} e^{-\frac{\mathrm{dist}(x_i, t) - \rho_i}{\sigma_i}} = \log_2 k$
+    Также вычисляется $\sigma_i$ из уравнения $\displaystyle \sum_{t \in T} e^{-\frac{\mathrm{dist}(x_i, t) - \rho_i}{\sigma_i}} = \log_2 k$
 
 4. Теперь строится взвешенный ориентированный граф, где вес ребра из точки $x_i$ в точку $x_j$ определяется как $v(x_i \to x_j) = e^{-\frac{\mathrm{dist}(x_i, x_j) - \rho_i}{\sigma_i}}$
 
@@ -128,7 +128,7 @@ window.MathJax = {
 
     $$w_{ij} = \frac{1}{1 + a \cdot \mathrm{dist}(y_i, y_j)^{2b}}$$
 
-    Параметры $a$ и $b$ подбираются так, что бы $\frac{1}{1 + a \cdot \text{min\_ dist}^{2b}} = 0.5$, а значение производной $\frac{\partial w_{ij}}{\partial \mathrm{dist} (y_i, y_j)} = -1$ в точке $\mathrm{dist}(y_i, y_j) = \text{min\_ dist}$
+    Параметры $a$ и $b$ подбираются так, что бы $\frac{1}{1 + a \cdot \text{min\\_dist}^{2b}} = 0.5$, а значение производной $\frac{\partial w_{ij}}{\partial \mathrm{dist} (y_i, y_j)} = -1$ в точке $\mathrm{dist}(y_i, y_j) = \text{min\\_dist}$
 
 7. Теперь составляется функция расстояний Кульбака-Лейбнера
 
@@ -172,7 +172,7 @@ window.MathJax = {
 
 ---
 
-На практике параметры `n_neighbors` и `min_dist` определяются методом тыка, но хорошими начальными значениями являются $\text{n\_ neighbors} = \sqrt{n}$, $\text{min\_ dist} = 0.1$
+На практике параметры `n_neighbors` и `min_dist` определяются методом тыка, но хорошими начальными значениями являются $\text{n\\_neighbors} = \sqrt{n}$, $\text{min\\_dist} = 0.1$
 
 Таким образом, алгоритм UMAP
 
