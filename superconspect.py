@@ -34,7 +34,7 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
             print(f'File {i} is ignored')
             continue
 
-        for script in re.finditer(r'\<script.*\>.*\<\/script\>\n', file_text, re.U):
+        for script in re.finditer(r'\<script.*\>.*\<\/script\>\n', file_text, re.U | re.DOTALL):
             if script.group(0) in script_sources:
                 file_text = file_text.replace(script.group(0), "")
             else:
