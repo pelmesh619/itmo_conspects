@@ -15,7 +15,7 @@
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_01.pdf)
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_08.pdf)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_15.pdf)
-    * Лекция №4 - в процессе
+    * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_22.pdf)
     * Лекция №5 - в процессе
     * Лекция №6 - в процессе
 
