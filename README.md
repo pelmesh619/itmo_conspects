@@ -16,8 +16,8 @@
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_08.pdf)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_15.pdf)
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_22.pdf)
-    * Лекция №5 - в процессе
-    * Лекция №6 - в процессе
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_29.pdf)
+    * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_06.pdf)
 
 * Философия (лектор Мавринский И. И.)
 
