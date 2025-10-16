@@ -18,12 +18,14 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_22.pdf)
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_29.pdf)
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_06.pdf)
+    * Лекция №7 - в процессе
 
 * Философия (лектор Мавринский И. И.)
 
     * Лекция №1 - в процессе
     * Лекция №3 - в процессе
     * Лекция №5 - в процессе
+    * Лекция №7 - в процессе
 
 * Телекоммуникационные системы и технологии (лектор Береснев А. Д.)
 
@@ -56,12 +58,14 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_24.html)
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_01.html)
     * Лекция №6 - отменена
+    * Лекция №7 - отменена
 
 * Web-разработка: Frontend (лектор Макаревич Р. Д.)
 
     * Лекция №3 - в процессе
     * Лекция №4 - в процессе
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_2025_10_04.html)
+    * Лекция №6 - отменена
 
 ## [IV семестр](meta/IV.md)
 
