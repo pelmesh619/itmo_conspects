@@ -32,7 +32,7 @@
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_05.html)
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_12.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_19.html)
-    * Лекция №4 - в процессе
+    * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_26.html)
     * Лекция №5 - в процессе
     * Лекция №6 - в процессе
 
