@@ -551,7 +551,7 @@ Ethernet использует технологию CSMA/CD (Carrier Sense Multip
 * Сетевой уровень - протокол IP и вспомогательные ICMP, IGMP, ARP
 * Канальный уровень - Ethernet, WLAN (то есть Wi-Fi) и другие
 
-![Уровни TCP/IP]()
+![Уровни TCP/IP](images/telecomm_tcpip_stack.png)
 
 На транспортном уровне в основном используются два протокола:
 
