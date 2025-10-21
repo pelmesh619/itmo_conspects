@@ -19,6 +19,7 @@
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_09_29.pdf)
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_06.pdf)
     * Лекция №7 - в процессе
+    * Лекция №8 - отменена
 
 * Философия (лектор Мавринский И. И.)
 
@@ -37,6 +38,7 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_09_26.html)
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_03.html)
     * Лекция №6 - в процессе
+    * Лекция №7 - в процессе
 
 * Машинное обучение (лектор Власова Е. К.)
 
@@ -48,6 +50,7 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_09_26.html)
     * Лекция №5 - в процессе
     * Лекция №6 - в процессе
+    * Лекция №7 - в процессе
 
 * Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е.)
 
@@ -66,6 +69,7 @@
     * Лекция №4 - в процессе
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_2025_10_04.html)
     * Лекция №6 - отменена
+    * Лекция №7 - в процессе
 
 ## [IV семестр](meta/IV.md)
 
