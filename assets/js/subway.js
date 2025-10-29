@@ -7,13 +7,12 @@
     wrapper.innerHTML = `
       <div class="subway-container">
         <video id="subway-player" width="320" height="180" muted loop>
-          <source src="/assets/subway.mp4" type="video/mp4">
+          <source src="./assets/subway.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <button id="subway-close">×</button>
       </div>
     `;
-    document.body.appendChild(wrapper);
   
     const style = document.createElement('style');
     style.textContent = `
@@ -58,7 +57,12 @@
         to { opacity: 1; transform: translateY(0); }
       }
     `;
-    document.head.appendChild(style);
+    
+
+    window.addEventListener("load", () => {
+      document.body.appendChild(wrapper);
+      document.head.appendChild(style);
+    });
   
     const video = wrapper.querySelector('#subway-player');
     const closeBtn = wrapper.querySelector('#subway-close');
