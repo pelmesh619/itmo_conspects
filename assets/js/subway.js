@@ -7,7 +7,7 @@
     wrapper.innerHTML = `
       <div class="subway-container">
         <video id="subway-player" width="161" height="371" loop>
-          <source src="./assets/subway.mp4" type="video/mp4">
+          <source src="/itmo_conspects/assets/subway.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
         <button id="subway-close">×</button>
