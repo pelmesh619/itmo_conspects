@@ -6,7 +6,7 @@
     wrapper.id = 'subway-easter-egg';
     wrapper.innerHTML = `
       <div class="subway-container">
-        <video id="subway-player" width="320" height="180" muted loop>
+        <video id="subway-player" width="161" height="371" loop>
           <source src="./assets/subway.mp4" type="video/mp4">
           Your browser does not support the video tag.
         </video>
