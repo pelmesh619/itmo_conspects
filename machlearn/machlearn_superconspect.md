@@ -662,7 +662,7 @@ P-значение не показывает вероятность того, ч
 
     $$w_{ij} = \frac{1}{1 + a \cdot \mathrm{dist}(y_i, y_j)^{2b}}$$
 
-    Параметры $a$ и $b$ подбираются так, что бы $\frac{1}{1 + a \cdot \text{min\\_dist}^{2b}} = 0.5$, а значение производной $\frac{\partial w_{ij}}{\partial \mathrm{dist} (y_i, y_j)} = -1$ в точке $\mathrm{dist}(y_i, y_j) = \text{min\\_dist}$
+    Параметры $a$ и $b$ подбираются так, что бы $\frac{1}{1 + a \cdot \text{min\textunderscore dist}^{2b}} = 0.5$, а значение производной $\frac{\partial w_{ij}}{\partial \mathrm{dist} (y_i, y_j)} = -1$ в точке $\mathrm{dist}(y_i, y_j) = \text{min\textunderscore dist}$
 
 7. Теперь составляется функция расстояний Кульбака-Лейбнера
 
