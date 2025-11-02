@@ -20,7 +20,7 @@
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_06.pdf)
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_13.pdf)
     * Лекция №8 - отменена
-    * Лекция №9 - в процессе
+    * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_27.pdf)
 
 * Философия (лектор Мавринский И. И.)
 
