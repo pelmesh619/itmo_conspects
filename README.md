@@ -72,7 +72,7 @@
     * Лекция №6 - отменена
     * Лекция №7 - отменена
     * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_10_22.html)
-    * Лекция №9 - в процессе
+    * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_10_29.html)
     * Лекция №10 - отменена
 
 * Web-разработка: Frontend (лектор Макаревич Р. Д.)
