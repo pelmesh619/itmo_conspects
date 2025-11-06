@@ -17,6 +17,7 @@
     Спецификация - формальное описание языка (синтаксис, семантика, JVM) комитетом Java Community Process (JCP)
 
     **Издания Java:**
+
     | **Издание** | **Назначение**                     | **Пример API**                          |
     |-------------|-----------------------------------|----------------------------------------|
     | **Java SE** | Базовые приложения.               | `java.lang`, `java.util`, `java.io`.   |
@@ -27,7 +28,7 @@
 
     **Иерархия интерфейсов:**
     
-    ![Коллекции](images/collections.png)
+    ![Коллекции](./images/javatech_collections.png)
 
     **Map** не наследует `Collection`, но входит в Collections Framework:
     - `HashMap`, `TreeMap`, `LinkedHashMap`.
