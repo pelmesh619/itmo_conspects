@@ -21,6 +21,7 @@
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_13.pdf)
     * Лекция №8 - отменена
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_27.pdf)
+    * Лекция №10 - в процессе
 
 * Философия (лектор Мавринский И. И.)
 
@@ -72,8 +73,11 @@
     * Лекция №7 - отменена
     * Лекция №8 - в процессе
     * Лекция №9 - в процессе
+    * Лекция №10 - отменена
 
 * Web-разработка: Frontend (лектор Макаревич Р. Д.)
+
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_superconspect.html)
 
     * Лекция №3 - в процессе
     * Лекция №4 - в процессе
