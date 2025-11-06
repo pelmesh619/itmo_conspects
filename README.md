@@ -61,17 +61,17 @@
     * Лекция №8 - в процессе
     * Лекция №9 - в процессе
 
-* Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е.)
+* Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е., Большов Максим)
 
     [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_superconspect.html)
 
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_10.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_17.html)
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_24.html)
-    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_09_01.html)
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_10_01.html)
     * Лекция №6 - отменена
     * Лекция №7 - отменена
-    * Лекция №8 - в процессе
+    * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_10_22.html)
     * Лекция №9 - в процессе
     * Лекция №10 - отменена
 
