@@ -104,7 +104,7 @@ window.MathJax = {
 
 ![Пример PCA](images/machlearn_pca_example.png)
 
-Код примера - [machlearn_pca_example.py](./examples/machlearn_pca_example.py)
+> Код примера - [machlearn_pca_example.py](./examples/machlearn_pca_example.py)
 
 ---
 

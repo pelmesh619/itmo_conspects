@@ -182,6 +182,8 @@ window.MathJax = {
 
 ![Регрессия методом k ближайших соседей](./images/machlearn_knn_regression.png)
 
+> Код примера - [machlearn_knn_regression.py](./examples/machlearn_knn_regression.py)
+
 Преимущества метода $k$-ближайших соседей:
 
 * Довольно простой в реализации

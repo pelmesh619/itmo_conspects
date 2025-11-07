@@ -81,7 +81,7 @@ window.MathJax = {
 
 ![t-SNE фрукты 2](images/machlearn_tsne_example2.png)
 
-Код пример - [machlearn_tsne_example.py](./examples/machlearn_tsne_example.py)
+> Код примера - [machlearn_tsne_example.py](./examples/machlearn_tsne_example.py)
 
 ---
 
@@ -160,7 +160,7 @@ window.MathJax = {
 
 На маленьких датасетах, как можно заметить, при правильно подобранных параметрах результат UMAP мало отличим от t-SNE
 
-Код пример - [machlearn_umap_example.py](./examples/machlearn_umap_example.py)
+> Код примера - [machlearn_umap_example.py](./examples/machlearn_umap_example.py)
 
 ---
 

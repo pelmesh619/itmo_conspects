@@ -523,7 +523,7 @@ P-значение не показывает вероятность того, ч
 
 ![Пример PCA](images/machlearn_pca_example.png)
 
-Код примера - [machlearn_pca_example.py](./examples/machlearn_pca_example.py)
+> Код примера - [machlearn_pca_example.py](./examples/machlearn_pca_example.py)
 
 ---
 
@@ -618,7 +618,7 @@ P-значение не показывает вероятность того, ч
 
 ![t-SNE фрукты 2](images/machlearn_tsne_example2.png)
 
-Код пример - [machlearn_tsne_example.py](./examples/machlearn_tsne_example.py)
+> Код примера - [machlearn_tsne_example.py](./examples/machlearn_tsne_example.py)
 
 ---
 
@@ -697,7 +697,7 @@ P-значение не показывает вероятность того, ч
 
 На маленьких датасетах, как можно заметить, при правильно подобранных параметрах результат UMAP мало отличим от t-SNE
 
-Код пример - [machlearn_umap_example.py](./examples/machlearn_umap_example.py)
+> Код примера - [machlearn_umap_example.py](./examples/machlearn_umap_example.py)
 
 ---
 
@@ -906,6 +906,8 @@ P-значение не показывает вероятность того, ч
 Помимо этого метод $k$-ближайших соседей может использоваться для нахождения регрессии. Тогда предсказанное значение $\hat y$ вычисляется как взвешенное среднее $\displaystyle \frac{\sum_{i = 1}^k w_i y_i}{\sum_{i = 1}^k w_i}$ для $k$ ближайших соседей
 
 ![Регрессия методом k ближайших соседей](./images/machlearn_knn_regression.png)
+
+> Код примера - [machlearn_knn_regression.py](./examples/machlearn_knn_regression.py)
 
 Преимущества метода $k$-ближайших соседей:
 
