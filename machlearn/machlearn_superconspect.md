@@ -1014,7 +1014,7 @@ $$w^{(k + 1)} = w^{(k)} - \alpha_{k} \Delta L(w^{(k)})$$
 
     $$w^{(k + 1)} = w^{(k)} - \alpha_{k} \nabla Q(w^{(k)}) + \mu \Delta w^{(k)},$$
 
-    где $\Delta w^{(k + 1)} = \alpha \Delta w^{(k)} - \alpha_{k} \nabla Q(w^{(k)})$
+    где $\Delta w^{(k + 1)} = \Delta w^{(k)} - \alpha_{k} \nabla Q(w^{(k)})$
 
 * Вычислять градиент для нескольких случайных элементов из выборки - пакетный градиентный спуск (Mini-batch Gradient Descent)
 
