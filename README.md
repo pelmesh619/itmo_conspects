@@ -29,7 +29,7 @@
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_09_04.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_09_18.html)
-    * Лекция №5 - в процессе
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_10_02.html)
     * Лекция №7 - в процессе
     * Лекция №9 - в процессе
 
