@@ -129,6 +129,10 @@ $$w^{(k + 1)} = w^{(k)} - \alpha_{k} \Delta L(w^{(k)})$$
 
 Помимо этого мы хотим быть уверены в предсказании, поэтому нужна функция, которая для $(\vec w, \vec x) \in \mathbb{R}$ даст вероятность принадлежности из отрезка $[0, 1]$. В качестве нее можно взять сигмоиду: $f(\vec w, \vec x) = \frac{1}{1 + e^{-(\vec w, \vec x)}}$
 
+<!-- https://www.geogebra.org/calculator/mj2ydpjw -->
+
+![Сигмоида](./images/machlearn_sigmoid.png)
+
 Отсюда $(\vec w, \vec x) = \ln \left(\frac{p}{1 - p}\right)$
 
 Тогда функция потерь формулируется так: $L(w) = \sum_{i = 1}^n \left(y_i \ln(p) + (1 - y_i) \ln(1 - p)\right)$
