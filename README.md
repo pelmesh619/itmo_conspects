@@ -58,7 +58,7 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_09_26.html)
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_03.html)
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_10.html)
-    * Лекция №7 - в процессе
+    * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_17.html)
     * Лекция №8 - в процессе
     * Лекция №9 - в процессе
     * Лекция №10 - в процессе
