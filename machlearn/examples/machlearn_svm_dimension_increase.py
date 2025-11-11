@@ -40,21 +40,19 @@ ax2.set_ylabel("$x_2^2$")
 ax2.set_zlabel("$\\sqrt{2}x_1x_2$")
 
 # --- Плоскость разделения ---
-xx, yy = np.meshgrid(np.linspace(0, 4, 50), np.linspace(0, 4, 50))
+xx, yy = np.meshgrid(np.linspace(0, 2, 400), np.linspace(0, 2, 400))
 w = clf.coef_[0]
 b = clf.intercept_[0]
 zz = (-w[0] * xx - w[1] * yy - b) / w[2]
 
-# Маска по допустимому диапазону z
-z_min, z_max = -19, 19
-zz_masked = np.ma.masked_outside(zz, z_min, z_max)
+z_display_min, z_display_max = -4, 4
+mask = (zz >= z_display_min) & (zz <= z_display_max)
+xx_masked = np.ma.masked_where(~mask, xx)
+yy_masked = np.ma.masked_where(~mask, yy)
+zz_masked = np.ma.masked_where(~mask, zz)
 
-# Построение поверхности
-ax2.plot_surface(xx, yy, zz_masked, alpha=0.5, color='gray')
-
-# Ограничение осей z
-ax2.set_zlim(-4, 4)
-
+ax2.plot_surface(xx_masked, yy_masked, zz_masked, alpha=0.6, color='gray')
+ax2.set_zlim(z_display_min, z_display_max)
 
 plt.tight_layout()
 try:
