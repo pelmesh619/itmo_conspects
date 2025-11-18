@@ -23,6 +23,7 @@
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_27.pdf)
     * Лекция №10 - в процессе
     * Лекция №11 - в процессе
+    * Лекция №12 - в процессе
 
 * Философия (лектор Мавринский И. И.)
 
@@ -46,7 +47,7 @@
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_03.html)
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_10.html)
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_17.html)
-    * Лекция №8 - в процессе
+    * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_24.html)
     * Лекция №9 - в процессе
     * Лекция №10 - отменена
     * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_14.html)
@@ -66,6 +67,7 @@
     * Лекция №9 - в процессе
     * Лекция №10 - в процессе
     * Лекция №11 - отменена
+    * Лекция №12.1 - в процессе
 
 * Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е., Большов Максим)
 
