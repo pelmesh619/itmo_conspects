@@ -51,6 +51,7 @@
     * Лекция №9 - в процессе
     * Лекция №10 - отменена
     * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_14.html)
+    * Лекция №12 - в процессе
 
 * Машинное обучение (лектор Власова Е. К.)
 
@@ -64,10 +65,11 @@
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_10.html)
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_17.html)
     * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_24.html)
-    * Лекция №9 - в процессе
+    * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_31.html)
     * Лекция №10 - в процессе
     * Лекция №11 - отменена
     * Лекция №12.1 - в процессе
+    * Лекция №12.2 - в процессе
 
 * Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е., Большов Максим)
 
@@ -83,6 +85,7 @@
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_10_29.html)
     * Лекция №10 - отменена
     * Лекция №11 - в процессе
+    * Лекция №12 - в процессе
 
 * Web-разработка: Frontend (лектор Макаревич Р. Д.)
 
@@ -97,6 +100,7 @@
     * Лекция №9 - в процессе
     * Лекция №10 - отменена
     * Лекция №11 - отменена
+    * Лекция №12 - в процессе
 
 ## [IV семестр](meta/IV.md)
 
