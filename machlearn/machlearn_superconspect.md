@@ -1277,6 +1277,8 @@ $$\mathrm{IG}(S, A) = H(S) - \sum_{v \in A} \frac{\vert S_v \vert}{\vert S \vert
 
 ![Структура регрессионных деревьев](./images/machlearn_regression_tree_structure.png)
 
+> Код примера: [machlearn_regression_tree.py](./examples/machlearn_regression_tree.py)
+
 Для регрессионных деревьев можно использовать дисперсию подвыборки как критерий остановки
 
 ---
