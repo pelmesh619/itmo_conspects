@@ -15,10 +15,10 @@ window.MathJax = {
 
 Можно выделить 4 подхода:
 
-1) Разделение, основанное на центах (Centroid-based partitioning clustering)
-2) Кластеризация, основанная на плотности (Density-based clustering)
-3) Иерархическая кластеризация (Hierarchical clustering)
-4) Кластеризация, основанная на модели (Model-based clustering) - методы не всегда универсальные, поэтому они не будут здесь разбираться
+1. Разделение, основанное на центах (Centroid-based partitioning clustering)
+2. Кластеризация, основанная на плотности (Density-based clustering)
+3. Иерархическая кластеризация (Hierarchical clustering)
+4. Кластеризация, основанная на модели (Model-based clustering) - методы не всегда универсальные, поэтому они не будут здесь разбираться
 
 ### Кластеризация, основанная на центрах
 
