@@ -88,7 +88,7 @@
     * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_10_22.html)
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_10_29.html)
     * Лекция №10 - отменена
-    * Лекция №11 - в процессе
+    * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_11_12.html)
     * Лекция №12 - в процессе
     * Лекция №13 - отменена
 
