@@ -131,7 +131,7 @@ window.MathJax = {
 
 * Оценка силуэта (Silhouette score)
 
-    Для $i$-ой точки в кластере определим $\displaystyle a(i) = \frac{1}{\vert C \vert - 1} \sum_{x_j \in C_i, i \neq j} \mathrm{dist}(x_i, x_j)$ - среднее расстояние от выбранной точки до остальных в том же кластере
+    Для $i$-ой точки в кластере определим $\displaystyle a(i) = \frac{1}{\vert C_i \vert - 1} \sum_{x_j \in C_i, i \neq j} \mathrm{dist}(x_i, x_j)$ - среднее расстояние от выбранной точки до остальных в том же кластере
 
     Также определим $\displaystyle b(i) = \min_j \frac{1}{\vert C_j \vert} \sum_{x_k \in C_j} \mathrm{dist}(x_i, x_k)$ - минимальное из средних расстояний от выбранной точки до точек другого кластера
 
