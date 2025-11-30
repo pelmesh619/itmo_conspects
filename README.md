@@ -50,7 +50,7 @@
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_10.html)
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_17.html)
     * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_24.html)
-    * Лекция №9 - в процессе
+    * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_31.html)
     * Лекция №10 - отменена
     * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_14.html)
     * Лекция №12 - в процессе
