@@ -53,8 +53,8 @@
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_10_31.html)
     * Лекция №10 - отменена
     * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_14.html)
-    * Лекция №12 - в процессе
-    * Лекция №13 - в процессе
+    * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_21.html)
+    * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_28.html)
 
 * Машинное обучение (лектор Власова Е. К.)
 
