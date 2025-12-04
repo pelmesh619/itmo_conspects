@@ -1060,7 +1060,7 @@ IPv6 таблица маршрута
 
 * Неуказанный адрес (Unspecified address) - `::/128`
 
-    Используется для обнаружения соседей (Neighbor Solicitation) или в протоколе DHCPv4
+    Используется для обнаружения соседей (Neighbor Solicitation) или в протоколе DHCPv
 
 ---
 
