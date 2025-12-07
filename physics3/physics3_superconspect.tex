@@ -911,6 +911,107 @@ E_n = \hbar\omega\left(n + \frac{1}{2}\right), \qquad n = 0, 1, 2, \ldots,
 
 % end physics3_2025_10_27.tex
 
+% begin physics3_2025_11_03.tex
+
+
+
+
+
+\section{7. Квантовые числа}
+
+Рассмотрим ядро атома водорода и электрон. Оператор углового момента (или момента импульса) в квантовой механике выглядит так:
+
+\[\hat L = [\hat r \hat p] = \begin{vmatrix} \vec e_x & \vec e_y & \vec e_z \\ x & y & z \\ -i\hbar \frac{\partial}{\partial x} & -i\hbar \frac{\partial}{\partial y} & -i\hbar \frac{\partial}{\partial z}\end{vmatrix}\]
+
+Работать с угловым моментом в Декартовой прямоугольной системе координат неудобно, поэтому координаты переводят в сферическую систему -- $\begin{cases}x = r\sin\theta\cos\varphi \\ y = r\sin\theta\sin\varphi \\ z = r\cos\theta \varphi\end{cases}$
+
+Тогда $\hat L_x = -i\hbar \left(\sin \varphi \frac{\partial}{\partial \theta} + \ctg \theta \cos \varphi \frac{\partial}{\partial \varphi}\right)$, $\hat L_y = -i\hbar \left(\cos \varphi \frac{\partial}{\partial \theta} - \ctg \theta \sin \varphi \frac{\partial}{\partial \varphi}\right)$, $\hat L_z = -i\hbar \frac{\partial}{\partial \varphi}$
+
+Из этого $\hat {\vec L}^2 = -\hbar^2 \nabla_\theta \nabla_\varphi = -\hbar^2 \Delta_{\theta, \varphi} = -\hbar^2 \left(\frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \varphi^2} + \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left(\sin \theta \frac{\partial}{\partial \theta}\right)\right)$
+
+Теперь напишем стационарное уравнение Шрёдингера:
+
+\[-\frac{\hbar^2}{2m} \nabla^2 \psi(r) - \frac{e^2}{4\pi\varepsilon_0 r} \psi(r) = E \psi(r)\]
+
+Для ядра соблюдается центральная симметрия, поэтому $\psi$ зависит только от $r$, а $U(r) = \frac{e^2}{4\pi\varepsilon_0 r}$
+
+Также оператор Лапласа равен $\nabla^2 = \frac{1}{r^2} \left( \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r}\right) + \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left(\sin \theta \frac{\partial}{\partial \theta}\right) + \frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \varphi^2}\right)$
+
+Будем искать решения $\psi(r, \theta, \varphi) = R(r) Y(\theta, \varphi)$. Тогда, подставляя в уравнение, получаем:
+
+\[-\frac{\hbar^2}{2m} \frac{1}{r^2} \left( \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r}\right) + \frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left(\sin \theta \frac{\partial}{\partial \theta}\right) + \frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \varphi^2}\right) \psi(r) - \frac{e^2}{4\pi\varepsilon_0 r} \psi(r) = E \psi(r)\]
+
+\[-\frac{\hbar^2}{2m} \frac{1}{r^2} \left( \frac{\partial}{\partial r} \left(r^2 \frac{\partial}{\partial r}\right) \right) R(r) + \left(\frac{1}{\sin \theta} \frac{\partial}{\partial \theta} \left(\sin \theta \frac{\partial}{\partial \theta}\right) + \frac{1}{\sin^2 \theta} \frac{\partial^2}{\partial \varphi^2}\right) Y(\theta, \varphi) - \frac{e^2}{4\pi\varepsilon_0 r} \psi(r) = E \psi(r)\]
+
+\[
+  \frac{r}{R}\frac{\partial }{\partial r}\left(r^2\frac{\partial R}{\partial r}\right) + \frac{2m r^2}{\hbar^2}\left( E + \dfrac{e^2}{4\pi\varepsilon_0 r} \right) + \frac{1}{Y}\left( \frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\left(\sin\theta\frac{\partial Y}{\partial \theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2 Y}{\partial \phi^2} \right) = 0.
+\]
+
+Уравнение Шрёдингера разделилось на две части: одна зависит от радиуса, а другая от углов. Из этого получаем связь между радиусом и углами
+
+Пусть $\frac{1}{\sin\theta}\frac{\partial }{\partial \theta}\left(\sin\theta\frac{\partial Y}{\partial \theta}\right) + \frac{1}{\sin^2\theta}\frac{\partial^2 Y}{\partial \phi^2} = -l(l + 1) Y$ (выражение $l (l + 1)$ появляется как следствие уравнения Лежандра), тогда:
+
+\[\hat L^2 Y = \hbar^2 l (l + 1) Y\]
+
+Оператор $\hat L^2$ линейный, поэтому $\hbar^2 l (l + 1)$ -- собственные числа матрицы оператора для собственных функций $Y$, то есть $L = \hbar \sqrt{l (l + 1)}$ -- момент импульса электрона квантуется при $l = 0, 1, 2, \dots$
+
+\mediumvspace
+
+Теперь пусть $Y(\theta, \varphi) = \Theta (\theta) \Phi (\varphi)$, тогда:
+
+\[\sin^2 \theta \frac{1}{\Theta \sin\theta}\frac{\partial }{\partial \theta}\left(\sin\theta\frac{\partial \Theta}{\partial \theta}\right) + l(l + 1) \sin^2 \theta = -\frac{1}{\Phi}\frac{\partial^2 \Phi}{\partial \phi^2}\]
+
+Пусть $-\frac{\partial^2 \Phi}{\partial \phi^2} = m^2$ или $\frac{\partial^2 \Phi}{\partial \phi^2} = -m^2 \Phi$
+
+Оператор $-\frac{\hat L_z^2}{\hbar^2} = \frac{\partial^2}{\partial \phi^2}$ линейный, поэтому $\hat L_z^2 \Phi = \hbar^2 m^2 \Phi$, то есть $m^2$ -- собственные числа и $L_z = m \hbar$, где $m \in \Integer$
+
+\mediumvspace
+
+Таким образом, $L = \hbar \sqrt{l (l + 1)}$ и $L_z = \hbar m$. Числа $l$ и $m$ наряду с $n$ называют квантовыми числами
+
+Кроме того, оператор $\hat L^2$ и оператор квадрата какой-либо из проекций - коммутативные, что означает, что, зная 2 проекции момента импульса и модуль момента импульса, можно узнать третью проекцию
+
+\mediumvspace
+
+Но какое отношение эта математика имеет к физике? 
+
+Для атома водорода $U = -\frac{k Z e^2}{r}$, где $Z = 1$ -- заряд ядра, $k = 9 \cdot 10^9$ -- электрическая постоянная
+
+Функция потенциала описывает потенциальную яму. Для нее уравнение Шрёдингера такое: $\Delta \psi + \frac{2m}{\hbar^2} \left(E + \frac{k Z e^2}{r}\right) \psi = 0$
+
+При решении уравнения Шрёдингера в сферических координатах получаем, что собственные значения полной энергии электрона $E$ и собственные волновые функции $\psi$ зависят от целых чисел
+
+Число $n$ называют главным квантовым числом, $l$ -- орбитальным квантовым числом, а $m$ -- магнитным квантовым числами
+
+Энергия выводится как $E = -\frac{k^2 Z^2 e^4 m^\prime}{2 \hbar^2} \frac{1}{n^2}$, где $m^\prime = \frac{m_p m_e}{m_p + m_e}$ -- приведенная масса. Если $E = 0$ для электрона, то электрон оторвался от атома. Если $E > 0$, то электрон свободный, пролетает вблизи ядра и удаляется. Если $E < 0$, то электрон связан с ядром
+
+Если электрона будет 2, то каждый из них имеет свою $\psi$-функцию. Для молекулы получает два ядра, получаем 6 функция потенциала -- каждая для взаимодействия между двумя ядрами и двумя электронами
+
+Так как $n$, $l$ и $m$ задают волновую функция $\psi$ для электрона, то они задают вероятностное пространство электрона в атоме
+
+Отсюда для разных $l$ и $m$ получаем разные формы орбиталей -- вероятностных мест расположения электронов
+
+\begin{center}
+    \includegraphics[height=8cm]{physics3/images/physics3_orbitals}
+\end{center}
+
+На $n$-ом уровне возможны $n$ орбитальных чисел $l$ (от $0$ до $n - 1$), а для каждого числа $l$ возможны $2l + 1$ магнитных чисел $m$. Из этого получаем, что на $n$-ом энергетическом уровне возможны $n^2$ орбиталей
+
+Каждой группе линий присвоили буквенное обозначение:
+
+\begin{itemize}
+    \item Для $l = 0$ орбиталь s -- sharp (острая)
+    \item Для $l = 1$ орбиталь p -- principal (главная)
+    \item Для $l = 2$ орбиталь d -- diffuse (рассеянная)
+    \item Для $l = 3$ орбиталь f -- fundamental (основная)
+\end{itemize}
+
+Эти термины описывали характер спектральных линий, а не сами орбитали. Сами орбитали обозначаются сочетанием главного квантового числа и буквенного обозначения, например, $3s$ -- орбиталь для $n = 3$ и $l = 0$
+
+В итоге уравнение Шрёдингера для водорода подтвердило модель Бора с поправкой на приведенную массу
+
+% end physics3_2025_11_03.tex
+
 % begin physics3_exam_list.tex
 \clearpage
 
