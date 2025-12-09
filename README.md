@@ -22,7 +22,7 @@
     * Лекция №8 - отменена
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_27.pdf)
     * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_03.pdf)
-    * Лекция №11 - в процессе
+    * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_10.pdf)
     * Лекция №12 - в процессе
     * Лекция №13 - в процессе
     * Лекция №14 - в процессе
