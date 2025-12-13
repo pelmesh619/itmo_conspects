@@ -37,8 +37,8 @@
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_10_02.html)
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_10_16.html)
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_10_30.html)
-    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_11_13.html)
-    * Лекция №13 - в процессе
+    * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_11_13.html)
+    * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_11_27.html)
     * Лекция №15 - в процессе
 
 * Телекоммуникационные системы и технологии (лекторы Береснев А. Д., Самигуллин Р. Ф.)
