@@ -23,10 +23,11 @@
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_10_27.pdf)
     * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_03.pdf)
     * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_10.pdf)
-    * Лекция №12 - в процессе
+    * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_17.pdf)
     * Лекция №13 - в процессе
     * Лекция №14 - в процессе
     * Лекция №15 - в процессе
+    * Лекция №16 - в процессе
 
 * Философия (лекторы Мавринский И. И., Дурнев А. Д.)
 
@@ -97,9 +98,6 @@
     * Лекция №10 - отменена
     * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_11_12.html)
     * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/platlangs/platlangs_2025_11_19.html)
-    * Лекция №13 - отменена
-    * Лекция №14 - отменена
-    * Лекция №15 - отменена
 
 * Web-разработка: Frontend (лектор Макаревич Р. Д.)
 
