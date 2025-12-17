@@ -26,6 +26,7 @@
     * [Другие механизмы](#%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5-%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%D1%8B)
   * [Лекция 12. DNS](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-12.-dns)
 * [X. Программа экзамена](#x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0)
+* [Extra](#extra)
   * [Extra 1. Технология Wi-Fi](#extra-1.-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-wi-fi)
 
 
@@ -1813,6 +1814,8 @@ IP-адреса корневых сервером записаны на кажд
 17.	Соединение IP сетей. Трансляция адресов.
 18.	Система DNS.
 
+
+# <a name="extra"></a> Extra
 
 ## <a name="extra-1.-%D1%82%D0%B5%D1%85%D0%BD%D0%BE%D0%BB%D0%BE%D0%B3%D0%B8%D1%8F-wi-fi"></a> Extra 1. Технология Wi-Fi
 
