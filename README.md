@@ -79,7 +79,7 @@
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_10_31.html)
     * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_11_07.html)
     * Лекция №11 - отменена
-    * Лекция №12.1 - в процессе
+    * [Лекция №12.1](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_11_17.html)
     * Лекция №12.2 - в процессе
     * Лекция №13 - была рубежка
     * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_12_05.html)
