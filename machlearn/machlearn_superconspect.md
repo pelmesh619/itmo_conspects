@@ -1837,7 +1837,7 @@ $$P(\text{письмо - спам} \vert \text{есть слова «выигр�
 
 Пусть есть нейросеть со скрытым слоем $f(x) = w_2 \sigma(w_1 x + b_1) + b_1$, а функция потерь $\mathcal{L} = \frac{1}{2} (y - \hat y)^2$ (константа $\frac{1}{2}$ не изменяет монотонности, но упрощает производную), тогда нужно найти градиенты $\frac{\partial \mathcal{L}}{\partial w_2}$, $\frac{\partial \mathcal{L}}{\partial w_1}$, $\frac{\partial \mathcal{L}}{\partial b_2}$ и $\frac{\partial \mathcal{L}}{\partial b_1}$
 
-1) По цепному правилу дифференцирования $\frac{\partial \mathcal{L}}{\partial w_2} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial w_2}$
+1. По цепному правилу дифференцирования $\frac{\partial \mathcal{L}}{\partial w_2} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial w_2}$
 
     $\frac{\partial \mathcal{L}}{\partial \hat y} = (y - \hat y)$
 
@@ -1845,11 +1845,11 @@ $$P(\text{письмо - спам} \vert \text{есть слова «выигр�
 
     Получаем $\frac{\partial \mathcal{L}}{\partial w_2} = (y - \hat y) \sigma(z)$
 
-2) $\frac{\partial \mathcal{L}}{\partial b_2} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial b_2}$
+2. $\frac{\partial \mathcal{L}}{\partial b_2} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial b_2}$
 
     $\frac{\partial \hat y}{\partial b_2} = 1$, тогда $\frac{\partial \mathcal{L}}{\partial b_2} = (y - \hat y) \cdot 1$
 
-3) $\frac{\partial \mathcal{L}}{\partial w_1} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial \sigma(z)} \frac{\partial \sigma(z)}{\partial z} \frac{\partial z}{\partial w_1}$
+3. $\frac{\partial \mathcal{L}}{\partial w_1} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial \sigma(z)} \frac{\partial \sigma(z)}{\partial z} \frac{\partial z}{\partial w_1}$
 
     $\frac{\partial \hat y}{\partial \sigma(z)} = w_2$
 
@@ -1859,7 +1859,7 @@ $$P(\text{письмо - спам} \vert \text{есть слова «выигр�
 
     Получаем $\frac{\partial \mathcal{L}}{\partial w_1} = (y - \hat y) w_2 \sigma^\prime(z) x$
 
-4) $\frac{\partial \mathcal{L}}{\partial b_1} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial \sigma(z)} \frac{\partial \sigma(z)}{\partial z} \frac{\partial z}{\partial b_1}$
+4. $\frac{\partial \mathcal{L}}{\partial b_1} = \frac{\partial \mathcal{L}}{\partial \hat y} \frac{\partial \hat y}{\partial \sigma(z)} \frac{\partial \sigma(z)}{\partial z} \frac{\partial z}{\partial b_1}$
 
     $\frac{\partial z}{\partial b_1} = 1$, тогда $\frac{\partial \mathcal{L}}{\partial b_1} = (y - \hat y) w_2 \sigma^\prime(z)$
 
