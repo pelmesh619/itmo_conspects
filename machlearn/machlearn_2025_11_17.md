@@ -137,7 +137,7 @@ window.MathJax = {
 
     Вероятности $p_k$ могут быть получены как результат функции активации SoftMax
 
-* Для регрессии используют среднее значение абсолютных разностей (MAE) $\mathcal{L}_{\mathrm{MAE}}(y, \hat y) = \frac{1}{n} \sum_{i = 1}^n \vert y_i - \hat y_i \vert$ или среднее значение квадратов разностей (MSE) $\mathcal{L}_{\mathrm{MSE}}(y, \hat y) = \frac{1}{n} \sum_{i = 1}^n (y_i - \hat y_i)^2$
+* Для регрессии используют среднее значение абсолютных разностей (MAE) $\mathcal{L}_{\mathrm{MAE}}(y, \hat y) = \frac{1}{n} \sum_{i = 1}^n \vert y_i - \hat y_i \vert $ или среднее значение квадратов разностей (MSE) $\mathcal{L}_{\mathrm{MSE}}(y, \hat y) = \frac{1}{n} \sum_{i = 1}^n (y_i - \hat y_i)^2$
 
     Помимо них еще используется функция потерь Хубера:
 
