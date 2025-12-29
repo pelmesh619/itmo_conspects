@@ -106,7 +106,7 @@
 
     [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_superconspect.html)
 
-    * Лекция №3 - в процессе
+    * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_2025_09_20.html)
     * Лекция №4 - в процессе
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_2025_10_04.html)
     * Лекция №6 - отменена
