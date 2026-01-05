@@ -25,7 +25,7 @@
     * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_10.pdf)
     * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_17.pdf)
     * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_24.pdf)
-    * Лекция №14 - в процессе
+    * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_12_01.pdf)
     * Лекция №15 - в процессе
     * Лекция №16 - в процессе
 
@@ -42,7 +42,7 @@
     * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_11_27.html)
     * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/philosophy/philosophy_2025_12_11.html)
 
-* Телекоммуникационные системы и технологии (лекторы Береснев А. Д., Самигуллин Р. Ф.)
+* Телекоммуникационные системы и технологии (лекторы Береснев А. Д., Самигуллин Р. Ф., Воронцов Л. Ю.)
 
     [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_superconspect.html)
 
