@@ -4052,7 +4052,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
     \item Математическая модель регрессии. Основные понятия и определения. Метод наименьших квадратов.
 
-    Пусть случайная величина $X$ зависит от случайной величины $Z$ (необязательно случайной)
+    Пусть случайная величина $X$ зависит от величины $Z$ (необязательно случайной)
 
     \Def \hyperlink{regression}{Регрессией} $X$ на $Z$ называется функция $f(z) = E(X|Z = z)$. 
     Она показывает зависимость среднего значения $X$ от значения $Z$
@@ -4097,7 +4097,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
     Найдем ОМНК параметров $\alpha$ и $\beta$
 
-    $\sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^n (X_i - (a + b Z_i))$
+    $\sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^n (X_i - (a + b Z_i))^2$
 
     $\frac{\partial}{\partial a} \sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^n -2 (X_i - a - b Z_i) = 
     -2 \sum_{i = 1}^n X_i + 2\sum_{i = 1}^n a + 2b \sum_{i = 1}^n Z_i = -2(n \overline{x} - na - bn \overline{z})$
@@ -4117,7 +4117,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
     \begin{cases}
         a = \overline{x} - b \overline{z} \\
-        (\overline{x} b \overline{z}) \overline{z} + b \overline{z^2} = \overline{zx} \\
+        (\overline{x} - b \overline{z}) \overline{z} + b \overline{z^2} = \overline{zx} \\
     \end{cases} $\Longleftrightarrow$ \begin{cases}
         a = \overline{x} - b \overline{z} \\
         b = \frac{\overline{zx} - \overline{z} \, \overline{x}}{\hat \sigma^2_z}
