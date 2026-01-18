@@ -4806,7 +4806,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
         Разбиваем единичный отрезок на отрезки длин $p_1, p_2$ и так далее
 
-        Пусть $r_m = \sum_{i = 1}^m P_i$ - границы отрезков
+        Пусть $r_m = \sum_{i = 1}^m p_i$ - границы отрезков
 
         Если $\eta_i \in U(0, 1)$ и $\eta_i \in [r_{i-1}, r_{i})$, то $\xi_i = x_i$
 
@@ -4849,9 +4849,9 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
 
     \hyperlink{monte_carlo}{Метод Монте-Карло}, общая постановка задачи: пусть требуется найти неизвестное число $a$ и при этом имеется случайная величина $\xi$ такая, что $E \xi = a$. Тогда по Закону Больших Чисел $\frac{\xi_1 + \dots + \xi_n}{n} \ConvergesInProbability a$ -- то есть при длинном разыгрывании $a^* = \frac{S_n}{n}$
 
-    Оценим погрешность метода: если $D\xi_1 < \infty$, то по ЦПТ $\frac{(\xi_1 + \dots + \xi_n) - n a}{\sqrt{n D \xi_1}} = \frac{n \overline{x} - na}{\sqrt{n D\xi_1}} = \frac{n(\overline{x} - a)}{\sqrt{n D\xi_1}} = \sqrt{n} \frac{\overline{x} - a}{\sqrt{D\xi_1}} \rightrightarrows N(0, 1)$
+    Оценим погрешность метода: если $D\xi_1 < \infty$, то по ЦПТ $\frac{(\xi_1 + \dots + \xi_n) - n a}{\sqrt{n D \xi}} = \frac{n \overline{x} - na}{\sqrt{n D\xi}} = \frac{n(\overline{x} - a)}{\sqrt{n D\xi}} = \sqrt{n} \frac{\overline{x} - a}{\sqrt{D\xi}} \rightrightarrows N(0, 1)$
 
-    По правилу \enquote{трех сигм} $P\left(\left|\sqrt{n} \frac{\overline{x} - a}{\sqrt{D\xi_1}}\right| < 3\right) \underset{n \to \infty}{\longrightarrow} 0.9973 \approx 1 \Longrightarrow \sqrt{n} \frac{|\overline{x} - a|}{\sqrt{D \xi_1}} < 3 \Longrightarrow \delta = |\overline{x} - a| < \frac{3\sqrt{D\xi_1}}{\sqrt{n}}$
+    По правилу \enquote{трех сигм} $P\left(\left|\sqrt{n} \frac{\overline{x} - a}{\sqrt{D\xi}}\right| < 3\right) \underset{n \to \infty}{\longrightarrow} 0.9973 \approx 1 \Longrightarrow \sqrt{n} \frac{|\overline{x} - a|}{\sqrt{D \xi}} < 3 \Longrightarrow \delta = |\overline{x} - a| < \frac{3\sqrt{D\xi}}{\sqrt{n}}$
 
     \Nota То есть скорость сходимости в методе Монте-Карло порядка $\sqrt{n}$ -- довольно медленная, поэтому метод Монте-Карло применяется в ситуации, не требующих высокой точности, где допустима погрешность $5\%$
 
@@ -4867,7 +4867,7 @@ $\log_{10} m \leq \{n \log_{10} 2\} < \log_{10} (m + 1)$
     
     Поэтому $I \approx I_n = \frac{1}{n} \sum_{i = 1}^n \xi_i = \frac{1}{n} (\varphi(\eta_1) + \dots + \varphi(\eta_n))$
 
-    При этом оценка погрешности будет $|I - I_n| \leq \frac{3\sqrt{D \xi_1}}{\sqrt{n}}$, где $D \xi_1 = \int_0^1 \varphi^2(y) dy - I^2$
+    При этом оценка погрешности будет $|I - I_n| \leq \frac{3\sqrt{D \xi}}{\sqrt{n}}$, где $D \xi = \int_0^1 \varphi^2(y) dy - I^2$
 
     Недостатки: медленная скорость сходимости; для оценки погрешности надо оценить дисперсию $D\xi_i$; оценка справедлива лишь с вероятностью
 
