@@ -1055,7 +1055,7 @@ $|p^* - p| < t_\gamma \frac{\sqrt{p^* (1 - p^*)}}{\sqrt{n}}$
 $H : F = F_1$, где $F_1$ - распределение известного типа с известными параметрами
 
 В противном случае гипотеза называется \underline{сложной} - она является объединением конечного или бесконечного числа
-гипотез
+простых гипотез
 
 Например, \enquote{величина $X$ принадлежит нормальному распределению} - сложная гипотеза, а 
 \enquote{величина $X$ принадлежит нормальному распределению с матожиданием $a = 1$ и дисперсией $\sigma^2 = 1$} - простая
@@ -1699,7 +1699,7 @@ $(n_1 - 1) + \dots + (n_k - 1) = n - k$
 
 \hypertarget{regression}{}
 
-Пусть случайная величина $X$ зависит от случайной величины $Z$ (необязательно случайной)
+Пусть случайная величина $X$ зависит от величины $Z$ (необязательно случайной)
 
 \Def Регрессией $X$ на $Z$ называется функция $f(z) = E(X|Z = z)$. 
 Она показывает зависимость среднего значения $X$ от значения $Z$
@@ -1747,7 +1747,7 @@ $\hat \varepsilon_i = X_i - f(Z_i) = X_i - (a + b Z_i)$ - эксперимент
 
 Найдем ОМНК параметров $\alpha$ и $\beta$
 
-$\sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^n (X_i - (a + b Z_i))$
+$\sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^n (X_i - (a + b Z_i))^2$
 
 $\frac{\partial}{\partial a} \sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^n -2 (X_i - a - b Z_i) = 
 -2 \sum_{i = 1}^n X_i + 2\sum_{i = 1}^n a + 2b \sum_{i = 1}^n Z_i = -2(n \overline{x} - na - bn \overline{z})$
@@ -1767,7 +1767,7 @@ $\frac{\partial}{\partial b} \sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^
 
 \begin{cases}
     a = \overline{x} - b \overline{z} \\
-    (\overline{x} b \overline{z}) \overline{z} + b \overline{z^2} = \overline{zx} \\
+    (\overline{x} - b \overline{z}) \overline{z} + b \overline{z^2} = \overline{zx} \\
 \end{cases} $\Longleftrightarrow$ \begin{cases}
     a = \overline{x} - b \overline{z} \\
     b = \frac{\overline{zx} - \overline{z} \, \overline{x}}{\hat \sigma^2_z}
