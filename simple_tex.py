@@ -14,9 +14,9 @@ template = r"""
 $topic_preamble$
 
 \pagestyle{fancy}
-\fancyhead[LO,LE]{$subject$}
-\fancyhead[CO,CE]{$date$}
-\fancyhead[RO,RE]{$teacher$}
+\fancyhead[LO]{$subject$}
+\fancyhead[CO]{$date$}
+\fancyhead[RO]{$teacher$}
 
 \fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
 
