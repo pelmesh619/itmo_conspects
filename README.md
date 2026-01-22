@@ -27,7 +27,7 @@
     * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_11_24.pdf)
     * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_12_01.pdf)
     * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_12_08.pdf)
-    * Лекция №16 - в процессе
+    * [Лекция №16](https://pelmesh619.github.io/itmo_conspects/conspects/physics3/physics3_2025_12_15.pdf)
 
 * Философия (лекторы Мавринский И. И., Дурнев А. Д.)
 
