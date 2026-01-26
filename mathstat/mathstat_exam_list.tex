@@ -990,7 +990,7 @@
 
     Так как $\frac{n D_{\text{О}}}{\sigma^2} \in H_{n - 1}, \frac{n D_{\text{В}}}{\sigma^2} \in H_{n - k}$, то $\frac{n D_{\text{М}}}{\sigma^2} \in H_{k - 1}$
 
-    Тогда при верной основной гипотезе получим, что $\frac{n D_{\text{М}}}{\sigma^2} \frac{\sigma^2 (n - k)}{n D_\text{В}} = \frac{n - k}{k - 1} \frac{D_\text{М}}{D_\text{В}} \in F(k - 1, n - k)$ --
+    Тогда при верной основной гипотезе получим, что $\frac{n D_{\text{М}}}{\sigma^2 (k - 1)} \frac{\sigma^2 (n - k)}{n D_\text{В}} = \frac{n - k}{k - 1} \frac{D_\text{М}}{D_\text{В}} \in F(k - 1, n - k)$ --
     распределение Фишера-Снедекера со степенями $k - 1$ и $n - k$
 
     В качестве статистики берется $K = \frac{n - k}{k - 1} \frac{D_\text{М}}{D_\text{В}}$, в качестве критической точки $t_\alpha$ -- квантиль $F(k - 1, n - k)$ уровня $\alpha$
@@ -1338,8 +1338,8 @@
     Согласно модели:
 
     \begin{cases}
-        $X_1 = \beta_1 Z_1^{(1)} + \beta_2 Z_2^{(2)} + \dots + \beta_k Z_k^{(1)} + \varepsilon_1$ \\
-        $X_1 = \beta_1 Z_1^{(1)} + \beta_2 Z_2^{(2)} + \dots + \beta_k Z_k^{(1)} + \varepsilon_1$ \\
+        $X_1 = \beta_1 Z_1^{(1)} + \beta_2 Z_2^{(1)} + \dots + \beta_k Z_k^{(1)} + \varepsilon_1$ \\
+        $X_2 = \beta_1 Z_1^{(2)} + \beta_2 Z_2^{(2)} + \dots + \beta_k Z_k^{(2)} + \varepsilon_2$ \\
         \dots \\
         $X_n = \beta_1 Z_1^{(n)} + \beta_2 Z_2^{(n)} + \dots + \beta_k Z_k^{(n)} + \varepsilon_n$
     \end{cases}
@@ -1378,7 +1378,7 @@
 
     \Nota Согласно $\mathrm{Cond. 1}$ размерность линейной оболочки, порожденной вектором $Z^T \vec t$,  $\dim \langle Z^T \vec t \rangle = k$
 
-    Наименьшее расстояние получаем, когда квадрат расстояния от точки $\vec X$ до данного подпространства, а вектор $\vec B$ - проекция вектора $\vec X$ на него
+    Функция $L(\vec B)$ минимальна, когда квадрат расстояния от точки $\vec X$ до данного подпространства минимален, тогда вектор $Z^T \vec B$ -- проекция вектора $\vec X$ на это подпространство
 
     Таким образом, вектор $\vec X - Z^T \vec B$ должен быть ортогонален данному подпространству, то есть скалярное произведение вектора $\vec X$ и всех векторов подпространства равно 0
 
@@ -1525,7 +1525,7 @@
 
     $a_{ij} = \begin{pmatrix}Z_1^{(i)} & \dots & Z_n^{(i)}\end{pmatrix} \begin{pmatrix}Z_1^{(j)} \\ \vdots \\ Z_n^{(j)}\end{pmatrix} = 
     \begin{cases}
-        n \overline{Z_i Z_j} = \gamma_1 r_{Z_i, Z_j}, & \text{ при } i \neq j \\
+        n \overline{Z_i Z_j} = \gamma_i r_{Z_i, Z_j}, & \text{ при } i \neq j \\
         n \overline{Z_i^2} = n D Z_i = n, & \text{ при } i = j
     \end{cases}$
 
@@ -1742,7 +1742,7 @@
     \item Быстрый показательный датчик.
 
     \begin{MyTheorem}
-        \Ths Пусть независимая случайная величина $\eta_1, \eta_2, \dots, \eta_n, \eta_{n+1}, \dots, \eta_{2n - 1} \in U(0, 1)$, $\xi_1, \xi_2, \dots, \xi_{n - 1}$ - упорядоченные значения случайных величин $\eta_{n + 1}, \dots, \eta_{2n - 1}$, $\xi_0 = 0$, $\xi_n = 1$
+        \Ths Пусть независимые случайные величины $\eta_1, \eta_2, \dots, \eta_n, \eta_{n+1}, \dots, \eta_{2n - 1} \in U(0, 1)$, $\xi_1, \xi_2, \dots, \xi_{n - 1}$ - упорядоченные значения случайных величин $\eta_{n + 1}, \dots, \eta_{2n - 1}$, $\xi_0 = 0$, $\xi_n = 1$
     
         Тогда случайная величина $\mu_i = -\frac{1}{\alpha}(\xi_i - \xi_{i - 1}) \ln (\eta_1 \cdot \eta_2 \cdot \dots \cdot \eta_n) \in E_\alpha$ и независимы, $1 \leq i \leq n$
     \end{MyTheorem}
@@ -1756,7 +1756,7 @@
 
         Разбиваем единичный отрезок на отрезки длин $p_1, p_2$ и так далее
 
-        Пусть $r_m = \sum_{i = 1}^m P_i$ - границы отрезков
+        Пусть $r_m = \sum_{i = 1}^m p_i$ -- границы отрезков
 
         Если $\eta_i \in U(0, 1)$ и $\eta_i \in [r_{i-1}, r_{i})$, то $\xi_i = x_i$
 
