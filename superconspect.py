@@ -30,7 +30,10 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
 
         file_text_origin = open(os.path.join(folder, i), 'r', encoding='utf8').read()
         file_text = file_text_origin
-        if re.match(r'\s*#ignore', file_text):
+
+        file_text = re.sub(r'(\t\r )*#ignore.*?((#noignore)|($))', '', file_text, flags=re.UNICODE | re.DOTALL).strip()
+
+        if not file_text:
             print(f'File {i} is ignored')
             continue
 
