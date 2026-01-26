@@ -86,7 +86,7 @@ window.MathJax = {
 
     $$\mathrm{GELU}(x) = x \cdot \frac{1}{2} \left(1 + \mathrm{erf}\left(\frac{x}{\sqrt{2}}\right)\right)$$
 
-    Здесь $\mathrm{erf}(x)$ - функция ошибок Гаусса. Вместо ее используют аппроксимацию:
+    Здесь $\mathrm{erf}(x)$ - функция ошибок Гаусса. Вместо нее используют аппроксимацию:
 
     $$\mathrm{GELU}(x) = x \cdot \sigma(1.702 x)$$
 
