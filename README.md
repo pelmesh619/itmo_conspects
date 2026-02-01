@@ -205,7 +205,7 @@
 
 * Инструментальные средства разработки программного обеспечения (I)
 
-    [**Конспект**](https://pelmesh619.github.io/itmo_conspects/conspects/devtools/devtools_superconspect.pdf)
+    [**Конспект**](https://pelmesh619.github.io/itmo_conspects/devtools/devtools_superconspect.html)
 
 
 ## Лицензия
