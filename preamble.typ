@@ -1,3 +1,6 @@
+#import "@preview/cetz:0.4.2"
+
+
 #let basic-template(doc) = {
   // Page & text
   set page(
