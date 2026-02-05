@@ -16,11 +16,16 @@ if len(sys.argv) <= 1:
 filename = Path(sys.argv[1])
 folder = filename.parent
 output_directory = None
+watch_flag = False
+
 if '--output-directory' in sys.argv or '-o' in sys.argv:
     ind = sys.argv.index('-o') if '-o' in sys.argv else sys.argv.index('--output-directory')
 
     if ind + 1 < len(sys.argv):
         output_directory = Path(sys.argv[ind + 1])
+
+if '--watch' in sys.argv:
+    watch_flag = True
 
 if output_directory is None:
     output_directory = DEFAULT_OUTPUT_DIRECTORY / folder
@@ -36,14 +41,15 @@ if filename.suffix == '.typ':
     start_time = time.time()
 
     exit_code = os.system(
-        f"typst compile "
+        f"typst {'compile' if not watch_flag else 'watch'} "
         f"{filename} "
         f"{output_filename} "
         f"--root . "
     )
 
-    if exit_code == 0:
-        print(f'Compilation of {output_filename} completed in {round(time.time() - start_time, 2)} s!')
-    else:
-        print(f'Compilation of {output_filename} failed')
+    if not watch_flag:
+        if exit_code == 0:
+            print(f'Compilation of {output_filename} completed in {round(time.time() - start_time, 2)} s!')
+        else:
+            print(f'Compilation of {output_filename} failed')
 
