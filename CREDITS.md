@@ -46,7 +46,7 @@
 
 * THE PERSON READING THIS MEME IS VALID AND BEAUTIFUL! I HOPE YOU HAVE A GREAT DAY!
 
-    Файл: [images/catmeme.jpg](./images/catmeme.jpg)
+    Файл: [javatech/images/catmeme.jpg](./javatech/images/catmeme.jpg)
 
     Источник: [imgflip.com](https://imgflip.com/i/7cb73g)
 
