@@ -1401,7 +1401,7 @@ public interface HandlerAdapter {
 
 Если HTTP-запрос пришел с заголовком `Accept: <MIME_type>/<MIME_subtype>`, то `HttpMessageConverter` будет искать доступные POJO доменной модели, пока не найдет соответствие с указанным в запросе типом. Далее `HttpMessageConverter` конвертирует тела входящих запросов в POJO, а в конце обработки запроса POJO в тела HTTP-ответов. По умолчанию, Spring Boot определяет набор дефолтных `HttpMessageConverter`
 
-![a](../images/catmeme.jpg)
+![a](./images/catmeme.jpg)
 
 ## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-8"></a> Лекция 8
 
