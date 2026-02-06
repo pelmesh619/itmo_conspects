@@ -20,6 +20,10 @@
 
         * Лекция №1 - в процессе
 
+* Администрирование в ОС Linux (лектор Дяченко Е. О.)
+
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_05.html)
+
 ## [V семестр](assets/meta/V.md)
 
 * Физические основы компьютерных и сетевых технологий III (лектор Зинчик А. А.)
@@ -132,7 +136,6 @@
 
     [**Конспект**](https://pelmesh619.github.io/itmo_conspects/devtools/devtools_superconspect.html)
 
-
 ## Лицензия
 
 Текстовые материалы, программный код и изображения в этом репозитории распространяются по лицензии **[Unlicense license](./LICENSE)** или альтернативной лицензии **[CC0 1.0 Universal](./LICENSE.CC0)**, если не указано другое. Это означает, что:
@@ -230,7 +233,7 @@ python superconspect.py ./directory
 
 Для md-конспектов он соединяет все md-файлы, добавляет содержание и сохраняет в `directory_superconspect.md`
 
-`compile_all.py` рендерит все .tex в данной директории, а также вызывает `superconspect.py` для директории 
+`compile_all.py` рендерит все .tex в данной директории, а также вызывает `superconspect.py` для директории
 
 ```bash
 python compile_all.py ./directory
