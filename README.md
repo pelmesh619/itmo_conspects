@@ -20,6 +20,12 @@
 
         * Лекция №1 - в процессе
 
+* Облачные и мобильные технологии
+
+    * Backend-driven UI на Android (лектор Шуст И. В.)
+
+        * Лекция №1 - в процессе
+
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_05.html)
