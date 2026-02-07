@@ -18,7 +18,7 @@
 
     * Программирование на C++ с элементами многопоточности (лектор Демин А. Д.)
 
-        * Лекция №1 - в процессе
+        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_04.html)
 
 * Облачные и мобильные технологии
 
@@ -28,7 +28,11 @@
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
-    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_05.html)
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_06.html)
+
+* Web-разработка: Backend
+
+    * Лекция №1 - в процессе
 
 ## [V семестр](assets/meta/V.md)
 
