@@ -30,7 +30,7 @@
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_06.html)
 
-* Web-разработка: Backend
+* Web-разработка: Backend (лектор Макаревич Р. Д.)
 
     * Лекция №1 - в процессе
 
