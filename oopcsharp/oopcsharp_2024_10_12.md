@@ -36,7 +36,7 @@ public interface IText<T> : IRenderable
 }
 ```
 
-Рекурсивный дженерик нам нужен, чтобы возвращать копию с исходным типов (подробнее об этом в [прототипе](#prototype))
+Рекурсивный дженерик нам нужен, чтобы возвращать копию с исходным типов (подробнее об этом в паттерне ["Прототип"](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html#prototype))
 
 Создадим [реализацию](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Renderables/Text.cs) `Text`
 
