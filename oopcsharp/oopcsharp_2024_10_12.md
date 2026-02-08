@@ -2,7 +2,7 @@
 
 <!-- Лектор - Круглов Г. Н. -->
 
-На этой лекции был воркшоп[^whysecond], на котором рассматривался пример предметной области и его решения, соблюдающего 
+На этой лекции был воркшоп[^whysecond], на котором рассматривался пример предметной области и его решения, соблюдающего
 принципы, сказанные на лекциях ранее, и применяющего порождающие паттеры. Здесь же будут некоторые нудные комментарии того, что происходило на воркшопе, но могут быть полезными в некоторых случаях
 
 [^whysecond]: Почему второй? А вот первый был у y26
@@ -83,11 +83,11 @@ public class Text : IText<Text>
 }
 ```
 
-Немного комментариев: здесь мы сделали приватный конструктор для метода клонирования и неполный публичный 
+Немного комментариев: здесь мы сделали приватный конструктор для метода клонирования и неполный публичный
 
 Сделаем [интерфейс для параграфа](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/IParagraph.cs) `IParagraph` и саму [реализацию](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/Paragraph.cs) `Paragraph`. В ней довольно тривиально реализовываем конструктор и метод `Render`
 
-Также сделаем другую [реализацию/обертку](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/StyledParagraph.cs) `StyledParagraph` для применения модификаторов на весь параграф 
+Также сделаем другую [реализацию/обертку](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/StyledParagraph.cs) `StyledParagraph` для применения модификаторов на весь параграф
 
 Объект параграф довольно-таки громоздкий - 3 атрибута, один из которых список, поэтому сделаем для него билдер. Наш билдер будет состоять из [2 интерфейсов](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/IParagraphBuilder.cs)[^workshoponefile]: `IParagraphHeaderSelector` и `IParagraphBuilder`. Таким образом мы отделили метод `WithHeader` от `AddSection` и `WithFooter`
 
@@ -118,7 +118,7 @@ public class StyledParagraphBuilderFactory : IParagraphBuilderFactory
 
 Перейдем к созданию статей: сделаем [интерфейс](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Articles/IArticle.cs) `IArticle`, который наследуется от `IRenderable` и `IArticleBuilderDirector` - директора билдера. [Интерфейс директора билдера](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Articles/IArticleBuilderDirector.cs) `IArticleBuilderDirector` дает нам метод `Direct` принимающий и возвращающий билдер статьи (о нем позже)
 
-Создадим [интерфейс билдера](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Articles/IArticleBuilder.cs) с методами `WithName`, `AddParagraph`, `WithAuthor` и `Build` и тривиальную [реализацию](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Articles/ArticleBuilder.cs) `ArticleBuilder` 
+Создадим [интерфейс билдера](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Articles/IArticleBuilder.cs) с методами `WithName`, `AddParagraph`, `WithAuthor` и `Build` и тривиальную [реализацию](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Articles/ArticleBuilder.cs) `ArticleBuilder`
 
 Сделаем [реализацию статьи](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Articles/Article.cs) `Article` с уже понятными конструктором и методом `Render`, и методом `Direct`, который берет созданный извне билдер, передает ему данные текущей статьи и возвращает обратно - таким образом делает копию статьи в билдере:
 
@@ -139,5 +139,3 @@ public class StyledParagraphBuilderFactory : IParagraphBuilderFactory
         return builder;
     }
 ```
-
-
