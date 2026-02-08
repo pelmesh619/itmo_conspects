@@ -213,6 +213,8 @@ int main() {
     t.join();
     ```
 
+    ![std::promise и std::future](./images/cppthread_std_thread.png)
+
     Объект `std::async` еще сильнее упрощает работу: он создает поток, запускает функцию и возвращает `std::future` с результатом:
 
     ```cpp
