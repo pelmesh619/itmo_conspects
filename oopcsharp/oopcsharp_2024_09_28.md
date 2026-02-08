@@ -1,5 +1,7 @@
 ## Лекция 4. GRASP
 
+<!-- Лектор - Круглов Г. Н. -->
+
 GRASP (General Responsibility Assignment Software Principles) -  общие принципы распределения ответственности в ПО
 
 GRASP основывается на мыслях из SOLID, в него входят 9 принципов
