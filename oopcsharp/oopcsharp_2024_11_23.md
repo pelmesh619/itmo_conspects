@@ -184,7 +184,7 @@ public static class ServiceCollectionExtensions
 
 ---
 
-[на этом этапе я перестал слушать (каюсь), поэтому мельком прокомментирую код]
+<!-- [на этом этапе я перестал слушать (каюсь), поэтому мельком прокомментирую код] -->
 
 Рассмотрим слой `Infrastructure`. В файле [`Infrastructure/Workshop5.Infrastructure.DataAccess/Migrations/01_Initial.cs`](https://github.com/is-oop-y27/workshop-5/blob/master/src/Infrastructure/Workshop5.Infrastructure.DataAccess/Migrations/01_Initial.cs) происходит миграция базы данных. При помощи библиотеки `Itmo.Dev.Platform.Postgres` мы устанавливаем то, как будет создана (и удалена) наша база данных через SQL-запросы
 
