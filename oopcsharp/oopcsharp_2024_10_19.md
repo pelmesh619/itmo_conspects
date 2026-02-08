@@ -64,7 +64,7 @@ public class ElasticLogStorageAdapter : ILogStorage
 
 Помимо этого адаптеры это:
 
-* соблюдение [OCP](#open%2Fclosed-principle) и [DIP](#dependency-inversion-principle)
+* соблюдение [OCP](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html#open%2Fclosed-principle) и [DIP](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html#dependency-inversion-principle)
 * изоляция объектной модели (то, чего мы достигаем при помощи абстракций)
 
 А также с помощью адаптеров можно проводить адаптивный рефакторинг. Допустим такую ситуацию: все долгие годы мы юзали в проекте старый логгер, теперь пишем все асинхронно и нам нужен асинхронный логгер. Тогда сделаем все в 2 шага:
