@@ -61,7 +61,7 @@ public class HoursEmployeeEvaluator : EmployeeEvaluatorBase
 * неявное нарушение SRP
 * сильная связность из-за наследования
 
-При этом фабричный метод - паттерн порождающий, а шаблонный - поведенческий. Полный код примера с шаблонным методом - https://github.com/is-oop-y27/workshop-4/tree/master/src/1_TemplateMethod
+При этом фабричный метод - паттерн порождающий, а шаблонный - поведенческий. Полный код примера с шаблонным методом - <https://github.com/is-oop-y27/workshop-4/tree/master/src/1_TemplateMethod>
 
 ### Strategy
 
@@ -81,7 +81,7 @@ Employee bestEmployee = evaluator.FindBestEmployee(ratedEmployees);
 
 Помимо этого этот `sorter` можно использовать в двух или более местах.
 
-В целом, стратегией можно называть любую выделенную абстракцию. Код стратегии: https://github.com/is-oop-y27/workshop-4/tree/master/src/2_Strategy
+В целом, стратегией можно называть любую выделенную абстракцию. Код стратегии: <https://github.com/is-oop-y27/workshop-4/tree/master/src/2_Strategy>
 
 ### Responsibility chain
 
@@ -124,8 +124,7 @@ public class OutputRunner : IOutputRunner
 }
 ```
 
-
-В итоге, каждый обработчик ответственнен за одну какую-то штуку. Код пример цепочки: https://github.com/is-oop-y27/workshop-4/tree/master/src/3_ResponsibilityChain
+В итоге, каждый обработчик ответственен за одну какую-то штуку. Код пример цепочки: <https://github.com/is-oop-y27/workshop-4/tree/master/src/3_ResponsibilityChain>
 
 ### Observer
 
@@ -172,7 +171,7 @@ public class Chat
 }
 ```
 
-Код издателя-подписчика: https://github.com/is-oop-y27/workshop-4/tree/master/src/4_Observer
+Код издателя-подписчика: <https://github.com/is-oop-y27/workshop-4/tree/master/src/4_Observer>
 
 ### Command
 
@@ -182,7 +181,7 @@ public class Chat
 
 Пример использования команд: todo список, где команда - это изменение списка. В этом случае для каждой команды мы можем определить обратную к ней и откатывать состояние todo списка
 
-Пример использования команд в веб-приложении: https://github.com/is-oop-y27/workshop-4/tree/master/src/5_Command
+Пример использования команд в веб-приложении: <https://github.com/is-oop-y27/workshop-4/tree/master/src/5_Command>
 
 ### Visitor
 
@@ -223,7 +222,7 @@ var visitor = new ConsoleVisitor();
 component.Accept(visitor);
 ```
 
-мы можем пройтись по всем директории и файлам в них. Код примера: https://github.com/is-oop-y27/workshop-4/blob/master/src/6_Visitor
+мы можем пройтись по всем директории и файлам в них. Код примера: <https://github.com/is-oop-y27/workshop-4/blob/master/src/6_Visitor>
 
 ### Snapshot
 
@@ -252,7 +251,7 @@ caretaker.Restore(snapshot);
 Console.WriteLine(caretaker.Value);
 ```
 
-Здесь кейртейкер хранит в себе и ориджинатор и может изменять его через свой метод, возвращающий снимок. Код из примера: https://github.com/is-oop-y27/workshop-4/tree/master/src/7_Snapshot
+Здесь кейртейкер хранит в себе и ориджинатор и может изменять его через свой метод, возвращающий снимок. Код из примера: <https://github.com/is-oop-y27/workshop-4/tree/master/src/7_Snapshot>
 
 Но в каком-то случае использования, если изменяемый объект тяжелый, а изменения маленькие, то лучше использовать команды
 
@@ -274,8 +273,7 @@ SubmissionActionResult result = submission.Complete();
 Console.WriteLine(result);
 ```
 
-Код примера: https://github.com/is-oop-y27/workshop-4/blob/master/src/8_State
-
+Код примера: <https://github.com/is-oop-y27/workshop-4/blob/master/src/8_State>
 
 ### Iterator
 
@@ -317,5 +315,4 @@ while (breadthIterator.MoveNext())
 }
 ```
 
-Код примера итератора: https://github.com/is-oop-y27/workshop-4/tree/master/src/9_Iterator
-
+Код примера итератора: <https://github.com/is-oop-y27/workshop-4/tree/master/src/9_Iterator>
