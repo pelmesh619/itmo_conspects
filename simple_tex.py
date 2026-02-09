@@ -5,25 +5,7 @@ import sys, os
 
 # for making tex simple and *** fancier ***
 
-template = r"""
-% THIS FILE IS GENERATED AUTOMATICALLY BY simple_tex.py, ALL CHANGES WILL BE LOST
-
-\documentclass[12pt]{article}
-\usepackage{preamble}
-
-$topic_preamble$
-
-\pagestyle{fancy}
-\fancyhead[LO]{$subject$}
-\fancyhead[CO]{$date$}
-\fancyhead[RO]{$teacher$}
-
-\fancyfoot[L]{\scriptsize исходники найдутся тут: \\ \url{https://github.com/pelmesh619/itmo_conspects} \Cat}
-
-\begin{document}
-% content %
-\end{document}
-"""
+template = open('assets/conspect_template.tex', encoding='utf8').read()
 
 def make_full_doc(folder, content):
     global template
