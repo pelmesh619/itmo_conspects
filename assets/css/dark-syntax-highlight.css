@@ -8,7 +8,7 @@ div.highlight, div.highlight pre.highlight {
 }
 
 code.highlighter-rouge {
-    transition: inherit;
+  transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 [data-theme="dark"] {
