@@ -9,7 +9,10 @@ if len(sys.argv) <= 1:
     exit(1)
 
 folder = sys.argv[1]
-BLACKLIST_WORDS = ['cheatsheet', folder + "_superconspect.tex", folder + "_superconspect.md", ]
+BLACKLIST_WORDS = [
+    'cheatsheet', 
+    "superconspect", 
+]
 
 warning_all = '-w' in sys.argv or '--wall' in sys.argv
 
