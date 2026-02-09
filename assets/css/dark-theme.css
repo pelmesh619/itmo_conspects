@@ -121,6 +121,10 @@ hr {
   height: 1px;
 }
 
+.markdown-body h1, .markdown-body h2 {
+  border-bottom: var(--border-color);
+}
+
 .highlight {
   background-color: var(--code-bg);
 }
