@@ -1,0 +1,42 @@
+.theme-toggle-btn {
+  position: absolute;
+  top: 1rem;
+  right: 2rem;
+  padding: 0.5rem 1rem;
+  margin: 0;
+  background-color: var(--code-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  
+  &:hover {
+    background-color: var(--border-color);
+    transform: translateY(-2px);
+    box-shadow: 0 2px 8px var(--shadow-color);
+  }
+  
+  &:active {
+    transform: translateY(0);
+  }
+  
+  &.dark-mode {
+    /* Optional: add visual distinction when in dark mode */
+  }
+  
+  /* Mobile responsive */
+  @media (max-width: 600px) {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+  }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+  }
+}
