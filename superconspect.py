@@ -88,6 +88,12 @@ if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
 
     print('Markdown file is combined.')
 
+elif all(map(lambda x: x.endswith('.typ') or '.' not in x, folder_files)):
+    from assets.build.typst.superconspect_builder import TypstSuperconspectBuilder
+
+    t = TypstSuperconspectBuilder(folder, BLACKLIST_WORDS)
+
+    t.build()
 else:
     supername = folder + "_superconspect.tex"
 
