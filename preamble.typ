@@ -108,3 +108,4 @@
 #let Mem = emph("Mem.")
 #let MemN(N) = [#Mem] + [ ] + emph([#N] + ".")
 #let Lab = underline("Lab.")
+#let Ex = strong("Ex.")
