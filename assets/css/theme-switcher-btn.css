@@ -40,3 +40,9 @@
     transition: none !important;
   }
 }
+
+@media print {
+  .theme-toggle-btn {
+    display: none !important;
+  }
+}
