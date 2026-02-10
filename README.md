@@ -14,7 +14,7 @@
 
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
-        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_20206_02_10.html)
+        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
 
 * Многопоточное программирование
 
