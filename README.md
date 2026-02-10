@@ -4,8 +4,6 @@
 
 Если нашли какую-то ошибку - напишите мне ([t.me/pelmeshke](https://t.me/pelmeshke)) или сделайте [форк](https://github.com/pelmesh619/itmo_conspects/fork) с исправлением и пулл реквест
 
-[![Спросить DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/pelmesh619/itmo_conspects)
-
 ## VI семестр
 
 * Прикладная математика
