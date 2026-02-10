@@ -1,7 +1,7 @@
 .theme-toggle-btn {
   position: absolute;
   top: 1rem;
-  right: 2rem;
+  right: 1rem;
   padding: 0.5rem 1rem;
   margin: 0;
   background-color: var(--code-bg);
