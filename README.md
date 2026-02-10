@@ -12,6 +12,10 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_04.pdf)
 
+    * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
+
+        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_20206_02_10.html)
+
 * Многопоточное программирование
 
     * Программирование на C++ с элементами многопоточности (лектор Демин А. Д.)
