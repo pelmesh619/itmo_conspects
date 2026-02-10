@@ -122,7 +122,7 @@ hr {
 }
 
 .markdown-body h1, .markdown-body h2 {
-  border-bottom: var(--border-color);
+  border-bottom-color: var(--border-color);
 }
 
 .highlight {
