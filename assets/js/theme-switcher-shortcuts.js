@@ -1,6 +1,6 @@
 document.addEventListener('keydown', (e) => {
-  // Cmd/Ctrl + Shift + L for light/dark toggle
-  if ((e.metaKey || e.ctrlKey) && e.shiftKey && e.key === 'L') {
+  // Alt + N for light/dark toggle
+  if (e.altKey && e.key === 'N') {
     e.preventDefault();
     if (window.themeSwitcher) {
       window.themeSwitcher.toggle();
