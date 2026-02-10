@@ -43,14 +43,14 @@ window.MathJax = {
 
 - Произведение матриц $A_{m \times n}$ и $B_{n \times p}$:
 
-    $A_{m \times n} \times B_{n \times p} = \begin{pmatrix}a_{1 1} & a_{1 2} & \dots & a_{1 n} \\ a_{2 1} & a_{2 2} & \dots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} & a_{m 2} & \dots & a_{m n}\end{pmatrix} \times \begin{pmatrix}b_{1 1} & b_{1 2} & \dots & b_{1 p} \\ b_{2 1} & b_{2 2} & \dots & b_{2 p} \\ \vdots & \vdots & \ddots & \vdots \\ b_{n 1} & b_{n 2} & \dots & b_{n p}\end{pmatrix} = \sum_{i = 1}^n \sum_{j = 1}^m \sum_{k = 1}^p a_{j i} \cdot b_{i k}$
+    $$A_{m \times n} \times B_{n \times p} = \begin{pmatrix}a_{1 1} & a_{1 2} & \dots & a_{1 n} \\ a_{2 1} & a_{2 2} & \dots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} & a_{m 2} & \dots & a_{m n}\end{pmatrix} \times \begin{pmatrix}b_{1 1} & b_{1 2} & \dots & b_{1 p} \\ b_{2 1} & b_{2 2} & \dots & b_{2 p} \\ \vdots & \vdots & \ddots & \vdots \\ b_{n 1} & b_{n 2} & \dots & b_{n p}\end{pmatrix} = \sum_{i = 1}^n \sum_{j = 1}^m \sum_{k = 1}^p a_{j i} \cdot b_{i k}$$
 
 - Произведение Адамара матриц $A_{m \times n}$ и $B_{m \times n}$:
 
-    $A_{m \times n} \odot B_{m \times n} = \begin{pmatrix}a_{1 1} & a_{1 2} & \dots & a_{1 n} \\ a_{2 1} & a_{2 2} & \dots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} & a_{m 2} & \dots & a_{m n}\end{pmatrix} \odot \begin{pmatrix}b_{1 1} & b_{1 2} & \dots & b_{1 n} \\ b_{2 1} & b_{2 2} & \dots & b_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ b_{m 1} & b_{m 2} & \dots & b_{m n}\end{pmatrix} = \begin{pmatrix}a_{1 1} b_{1 1} & a_{1 2} b_{1 2} & \dots & a_{1 n} b_{1 n} \\ a_{2 1} b_{2 1} & a_{2 2} b_{2 2} & \dots & a_{2 n} b_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} b_{m 1} & a_{m 2} b_{m 2} & \dots & a_{m n} b_{m n}\end{pmatrix}$
+    $$A_{m \times n} \odot B_{m \times n} = \begin{pmatrix}a_{1 1} & a_{1 2} & \dots & a_{1 n} \\ a_{2 1} & a_{2 2} & \dots & a_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} & a_{m 2} & \dots & a_{m n}\end{pmatrix} \odot \begin{pmatrix}b_{1 1} & b_{1 2} & \dots & b_{1 n} \\ b_{2 1} & b_{2 2} & \dots & b_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ b_{m 1} & b_{m 2} & \dots & b_{m n}\end{pmatrix} = \begin{pmatrix}a_{1 1} b_{1 1} & a_{1 2} b_{1 2} & \dots & a_{1 n} b_{1 n} \\ a_{2 1} b_{2 1} & a_{2 2} b_{2 2} & \dots & a_{2 n} b_{2 n} \\ \vdots & \vdots & \ddots & \vdots \\ a_{m 1} b_{m 1} & a_{m 2} b_{m 2} & \dots & a_{m n} b_{m n}\end{pmatrix}$$
 
 - Гомография
 
-    $H \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} h_{1 1} & h_{1 2} & h_{1 3} \\ h_{2 1} & h_{2 2} & h_{2 3} \\ h_{3 1} & h_{3 2} & h_{3 3} \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} x^\prime \\ y^\prime \\ 1 \end{pmatrix}$
+    $$H \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} h_{1 1} & h_{1 2} & h_{1 3} \\ h_{2 1} & h_{2 2} & h_{2 3} \\ h_{3 1} & h_{3 2} & h_{3 3} \end{pmatrix} \begin{pmatrix} x \\ y \\ 1 \end{pmatrix} = \begin{pmatrix} x^\prime \\ y^\prime \\ 1 \end{pmatrix}$$
 
     Гомография преобразует пространство, например, меняет перспективу изображения
