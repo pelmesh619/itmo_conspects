@@ -107,7 +107,7 @@
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_2025_11_01.html)
     * Лекция №10 - отменена
     * Лекция №11 - отменена
-    * Лекция №12 - в процессе
+    * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_2025_11_22.html)
     * Лекция №13 - в процессе
     * Лекция №14 - отменена
     * Лекция №15 - в процессе
