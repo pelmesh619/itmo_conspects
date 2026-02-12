@@ -1,5 +1,5 @@
 #import "@preview/cetz:0.4.2"
-
+#import "@preview/itemize:0.1.2" as el
 
 #let basic-template(doc) = {
   // Page & text
@@ -44,9 +44,13 @@
   set heading(numbering: none)
 
   // Lists
-  set list(spacing: 0em)
+  set list(indent: 1em)
+  set enum(indent: 1em)
   
   show math.equation.where(block: false): it => math.display(it)
+  
+  show: el.default-list
+  // show: el.default-enum
 
   doc
 }
