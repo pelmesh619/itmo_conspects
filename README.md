@@ -10,6 +10,8 @@
 
     * Вычислительная геометрия (лектор Далевская О. П.)
 
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_superconspect.pdf)
+
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_04.pdf)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_11.pdf)
 
