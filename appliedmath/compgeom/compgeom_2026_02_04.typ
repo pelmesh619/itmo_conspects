@@ -6,10 +6,10 @@
 
 #show: basic-template
 #show: doc => header-template(
-  subject-name: subject-name,
-  date-header: date-header,
-  lecturer-name: lecturer-name,
-  doc
+    subject-name: subject-name,
+    date-header: date-header,
+    lecturer-name: lecturer-name,
+    doc
 )
 
 = Вычислительная геометрия
