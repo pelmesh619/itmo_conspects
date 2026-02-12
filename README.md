@@ -15,19 +15,21 @@
 
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
-        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
+        * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
 
 * Многопоточное программирование
 
     * Программирование на C++ с элементами многопоточности (лектор Демин А. Д.)
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_04.html)
+        * Лекция №2 - в процессе
 
 * Облачные и мобильные технологии
 
     * Backend-driven UI на Android (лектор Шуст И. В.)
 
         * Лекция №1 - в процессе
+        * Лекция №2 - в процессе
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
