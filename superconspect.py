@@ -138,7 +138,7 @@ else:
 
 
     text = re.sub(r'section\[.*]', 'section', text)
-    text = (open('superconspect_template.tex', encoding='utf8').read().
+    text = (open('assets/build/tex/superconspect_template.tex', encoding='utf8').read().
             replace('$conspects$', text).
             replace('$subject$', subject).
             replace('$teacher$', teacher))
