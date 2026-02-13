@@ -35,7 +35,10 @@
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_superconspect.html)
+
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_06.html)
+    * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_13.html)
 
 * Web-разработка: Backend (лектор Макаревич Р. Д.)
 
