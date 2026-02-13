@@ -5,7 +5,7 @@ import sys, os
 
 # for making tex simple and *** fancier ***
 
-template = open('assets/conspect_template.tex', encoding='utf8').read()
+template = open('assets/build/tex/conspect_template.tex', encoding='utf8').read()
 
 def make_full_doc(folder, content):
     global template
