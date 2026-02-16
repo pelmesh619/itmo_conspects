@@ -113,6 +113,7 @@
 #let MemN(N) = [#Mem] + [ ] + emph([#N] + ".")
 #let Lab = underline("Lab.")
 #let Ex = strong("Ex.")
+#let ExN(N) = [#Ex] + [ ] + strong([#N] + ".")
 
 #let equaldef = $attach(=, t: "def")$
 
