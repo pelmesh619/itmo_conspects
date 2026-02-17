@@ -30,7 +30,7 @@
 
     * Backend-driven UI на Android (лектор Шуст И. В.)
 
-        * Лекция №1 - в процессе
+        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_05.html)
         * Лекция №2 - в процессе
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
