@@ -117,3 +117,11 @@
 
 #let equaldef = $attach(=, t: "def")$
 
+#let arc(expr) = $attach(limits(#expr), t: smile)$
+
+#let point(coords, radius: 3pt, fill: gray, name: none) = cetz.draw.circle(coords, radius: radius, fill: fill, name: name)
+
+
+#let vecsum(x, y) = (x.at(0) + y.at(0), x.at(1) + y.at(1))
+#let veck(x, k) = (x.at(0) * k, x.at(1) * k)
+
