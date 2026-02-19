@@ -49,7 +49,7 @@
   
   show math.equation.where(block: false): it => math.display(it)
   
-  show: el.default-list
+  show: doc => el.default-list(doc, label-indent: -1.3em, indent: 2em)
   // show: el.default-enum
 
   doc
