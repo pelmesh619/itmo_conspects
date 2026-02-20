@@ -21,7 +21,6 @@
         [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_superconspect.html)
 
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
-
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_17.html)
 
 * Многопоточное программирование
