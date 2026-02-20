@@ -86,13 +86,13 @@ window.MathJax = {
 
 2. Тон вычисляется так:
 
-    $H^\prime = \begin{cases}
+    $$H^\prime = \begin{cases}
         \text{не определено} & \text{если } C = 0 \\
         \frac{G - B}{C} \ \mathrm{mod} \ 6 & \text{если } M = R \\
         \frac{B - R}{C} + 2 & \text{если } M = G \\ 
-        \frac{R - G}{C} + 4 & \text{если } M = B \end{cases}$
+        \frac{R - G}{C} + 4 & \text{если } M = B \end{cases}$$
 
-    $H = 60^\circ \cdot H^\prime$
+    $$H = 60^\circ \cdot H^\prime$$
 
     Как можно заметить, тон - это угол между лучами из центра цилиндра, направленным к красному цвету (#FF0000) и целевому цвету
 
@@ -102,9 +102,9 @@ window.MathJax = {
 
 5. Насыщенность вычисляется так:
 
-    $S_V = \begin{cases}0 & \text{если } V = 0 \\ \frac{C}{V} & \text{в других случаях}\end{cases}$ в HSV-модели
+    $$S_V = \begin{cases}0 & \text{если } V = 0 \\ \frac{C}{V} & \text{в других случаях}\end{cases}$$
 
-    $S_L = \begin{cases}0 & \text{если } L = 1 \text{ или } L = 0 \\ \frac{C}{1 - \vert 2L - 1 \vert} & \text{в других случаях}\end{cases}$ в HSL-модели
+    $$S_L = \begin{cases}0 & \text{если } L = 1 \text{ или } L = 0 \\ \frac{C}{1 - \vert 2L - 1 \vert} & \text{в других случаях}\end{cases}$$
 
 Также некоторые модели вместо значения и светлоты используют:
 
