@@ -266,6 +266,6 @@ chown -R pelmeshke /var/log/mylogs/
 
 ```bash
 # меняет группу на supercoolusers
-chown supercoolusers /var/log/mylogs/app.log
+chgrp supercoolusers /var/log/mylogs/app.log
 ```
 
