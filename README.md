@@ -18,7 +18,11 @@
 
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_superconspect.html)
+
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
+
+        * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_17.html)
 
 * Многопоточное программирование
 
@@ -26,6 +30,7 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_04.html)
         * Лекция №2 - в процессе
+        * Лекция №3 - в процессе
 
 * Облачные и мобильные технологии
 
@@ -33,6 +38,7 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_05.html)
         * Лекция №2 - в процессе
+        * Лекция №3 - отменена
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
@@ -40,10 +46,12 @@
 
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_06.html)
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_13.html)
+    * Лекция №3 - в процессе
 
 * Web-разработка: Backend (лектор Макаревич Р. Д.)
 
     * Лекция №1 - в процессе
+    * Лекция №2 - в процессе
 
 ## [V семестр](assets/meta/V.md)
 
