@@ -2,6 +2,8 @@ import os
 import re
 import sys
 
+from pathlib import Path
+
 from urllib.parse import quote
 
 if len(sys.argv) <= 1:
@@ -20,7 +22,7 @@ folder_files = [i for i in os.listdir(folder) if not i.startswith('__')]
 folder_files.sort()
 
 if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
-    supername = folder + "_superconspect.md"
+    supername = Path(folder).name + "_superconspect.md"
 
     contents = {}
 
