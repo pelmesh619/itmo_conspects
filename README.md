@@ -69,7 +69,7 @@
 
 * Машинное обучение (лекторы Власова Е. К., Матвеев С. А.)
 
-    [**Почти весь курс**](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_superconspect.html)
 
 * Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е., Большов Максим)
 
