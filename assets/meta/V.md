@@ -76,7 +76,7 @@
     * Лекция №13 - была рубежка
     * [Лекция №14](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_12_05.html)
     * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_12_12.html)
-    * Лекция №16 - в процессе
+    * [Лекция №16](https://pelmesh619.github.io/itmo_conspects/machlearn/machlearn_2025_12_19.html)
 
 * Платформы и среды выполнения языков программирования (лекторы Гаврин Е. А., Недоря А. Е., Большов Максим)
 
