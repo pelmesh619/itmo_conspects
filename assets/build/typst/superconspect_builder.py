@@ -48,8 +48,6 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
         folder_files = [i for i in os.listdir(self.input_folder) if not i.startswith('__')]
         folder_files.sort()
 
-        supername = os.path.split(self.input_folder)[-1] + "_superconspect.typ"
-
         preamble_location = os.path.join(*(['..'] * self.level), 'preamble.typ')
 
         text = ''
