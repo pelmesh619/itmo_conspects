@@ -55,9 +55,16 @@ class TexConspectBuilder(ConspectBuilder):
     def build(self, args):
         print(f'Compiling {self.input_filename}...\n')
 
-        text = self.DISCLAIMER + self.get_specific_preamble()
+        text = self.DISCLAIMER
 
-        text += open(self.input_filename, encoding='utf8').read()
+        file_text = open(self.input_filename, encoding='utf8').read()
+
+        if '\\begin{document}' in file_text:
+            file_text = file_text.replace('\\begin{document}', self.get_specific_preamble() + '\n\\begin{document}')
+        else:
+            file_text = self.get_specific_preamble() + '\n' + file_text
+
+        text += file_text
 
         text = self.insert_displaystyle(text)
 
