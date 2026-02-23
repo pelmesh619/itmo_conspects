@@ -22,73 +22,13 @@ folder_files = [i for i in os.listdir(folder) if not i.startswith('__')]
 folder_files.sort()
 
 if all(map(lambda x: x.endswith('.md') or '.' not in x, folder_files)):
-    supername = Path(folder).name + "_superconspect.md"
+    from assets.build.markdown.superconspect_builder import MarkdownSuperconspectBuilder
 
-    contents = {}
+    t = MarkdownSuperconspectBuilder(folder, BLACKLIST_WORDS)
 
-    text = ''
+    t.build()
 
-    script_sources = []
-
-    for i in folder_files:
-        if not i.endswith('.md') or any([j in i for j in BLACKLIST_WORDS]):
-            continue
-
-        file_text_origin = open(os.path.join(folder, i), 'r', encoding='utf8').read()
-        file_text = file_text_origin
-
-        file_text = re.sub(r'(\t\r )*#ignore.*?((#noignore)|($))', '', file_text, flags=re.UNICODE | re.DOTALL).strip()
-
-        if not file_text:
-            print(f'File {i} is ignored')
-            continue
-
-        for script in re.finditer(r'\<script.*\>.*\<\/script\>\n', file_text, re.U | re.DOTALL):
-            if script.group(0) in script_sources:
-                file_text = file_text.replace(script.group(0), "")
-            else:
-                script_sources.append(script.group(0))
-
-        for header_match in re.finditer('(^|\n)((#+) +(.+))\n', file_text, re.U):
-            # for cases when '\n# ...' is a comment in code block
-            if file_text_origin[:header_match.start(2)].count('```') % 2 == 1:
-                continue
-            header_level = len(header_match.group(3))
-            header_name = header_match.group(4).strip()
-
-            header_link = quote(header_name.lower().replace(' ', '-'), safe='', encoding='utf8')
-
-            temp = header_link
-            counter = 1
-            while temp in contents:
-                temp = header_link + f'-{counter}'
-                counter += 1
-
-            contents[temp] = (header_name, header_level)
-
-            file_text = file_text.replace(
-                header_match.group(2),
-                header_match.group(3) + f' <a name="{header_link}"></a> ' + header_match.group(4), 1)
-
-        text += file_text + '\n\n'
-
-    table_of_contents = ''
-    for link, (header, header_level) in contents.items():
-        table_of_contents += '  ' * (header_level - 1) + '* ' + f'[{header}](#{link})\n'
-
-    first_header = re.search('[^#]*#+.+\n', text)
-    first_header_text = None
-    if first_header:
-        first_header_text = first_header.group(0)
-        text = text[len(first_header_text):]
-
-    text = table_of_contents + '\n\n' + text
-    if first_header:
-        text = first_header_text + '\n\n' + text
-
-    open(os.path.join(folder, supername), 'w', encoding='utf8').write(text)
-
-    print('Markdown file is combined.')
+    print("Markdown file is combined!")
 
 elif all(map(lambda x: x.endswith('.typ') or '.' not in x, folder_files)):
     from assets.build.typst.superconspect_builder import TypstSuperconspectBuilder
