@@ -9,6 +9,8 @@ import time
 
 from pathlib import Path
 
+from assets.build.typst.conspect_builder import TypstConspectBuilder
+
 DEFAULT_OUTPUT_DIRECTORY = Path("conspects")
 
 parser = argparse.ArgumentParser(
@@ -33,21 +35,8 @@ if not output_directory.exists():
 
 if filename.suffix == '.typ':
     output_filename = os.path.join(output_directory, filename.stem + '.pdf')
+    t = TypstConspectBuilder(filename, output_filename)
 
-    print(f'Compiling {filename}...\n')
+    t.build(args)
 
-    start_time = time.time()
-
-    exit_code = os.system(
-        f"typst {'compile' if not args.watch else 'watch'} "
-        f"{filename} "
-        f"{output_filename} "
-        f"--root . "
-    )
-
-    if not args.watch:
-        if exit_code == 0:
-            print(f'Compilation of {output_filename} completed in {round(time.time() - start_time, 2)} s!')
-        else:
-            print(f'Compilation of {output_filename} failed')
 
