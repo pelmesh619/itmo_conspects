@@ -23,7 +23,7 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
         return self.output_filename
 
     def filter(self, file_text):
-        return re.sub(r'(\t\r )*//\s*ignore.*?((//\s*noignore)|($))', '', file_text, flags=re.UNICODE | re.DOTALL).strip()
+        return re.sub(r'(\t\r )*//+\s*ignore.*?((//+\s*noignore)|($))', '', file_text, flags=re.UNICODE | re.DOTALL).strip()
 
     def collect_variables(self, file_text):
         if self.subject_name is None:
