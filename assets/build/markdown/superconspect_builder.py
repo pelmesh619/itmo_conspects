@@ -83,7 +83,7 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
 
         return table_of_contents
 
-    def build(self):
+    def build(self, args):
         folder_files = [i for i in os.listdir(self.input_folder) if not i.startswith('__')]
         folder_files.sort()
 

@@ -44,7 +44,7 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
 
         return file_text
 
-    def build(self):
+    def build(self, args):
         folder_files = [i for i in os.listdir(self.input_folder) if not i.startswith('__')]
         folder_files.sort()
 
