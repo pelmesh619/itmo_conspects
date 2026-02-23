@@ -20,7 +20,7 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
         if self.output_filename is None:
             return Path(self.input_folder) / (Path(self.input_folder).name + "_superconspect.typ")
 
-        return output_filename
+        return self.output_filename
 
     def filter(self, file_text):
         return re.sub(r'(\t\r )*//\s*ignore.*?((//\s*noignore)|($))', '', file_text, flags=re.UNICODE | re.DOTALL).strip()
