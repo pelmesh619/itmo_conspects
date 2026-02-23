@@ -11,6 +11,8 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
     BEGIN_FILE_LABEL = "<!-- begin {} -->\n"
     END_FILE_LABEL = "\n<!-- end {} -->\n\n"
 
+    FILE_EXTENSION = '.md'
+
     def __init__(self, input_folder, blacklist_words, output_filename=None):
         super().__init__(input_folder, blacklist_words, output_filename)
 
@@ -19,13 +21,6 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
         self.table_of_contents = {}
         self.script_sources = []
         self.first_level_header = None
-
-    @property
-    def superconspect_filename(self):
-        if self.output_filename is None:
-            return Path(self.input_folder) / (Path(self.input_folder).name + "_superconspect.md")
-
-        return self.output_filename
 
     def filter(self, file_text):
         return re.sub(r'(\t\r )*\#\s*ignore.*?((\#\s*noignore)|($))', '', file_text, flags=re.UNICODE | re.DOTALL).strip()
