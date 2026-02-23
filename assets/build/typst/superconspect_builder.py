@@ -9,7 +9,7 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
     def __init__(self, input_folder, blacklist_words, output_filename=None):
         super().__init__(input_folder, blacklist_words, output_filename)
 
-        self.level = len(list(i for i in os.path.split(input_folder) if i))
+        self.level = len(list(i for i in Path(input_folder).parts if i))
 
         self.subject_name = None
         self.lecturer_name = None
@@ -49,6 +49,8 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
         folder_files.sort()
 
         preamble_location = os.path.join(*(['..'] * self.level), 'preamble.typ')
+
+        print(preamble_location, self.level, self.input_folder)
 
         text = ''
 
