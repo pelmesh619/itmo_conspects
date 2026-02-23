@@ -14,7 +14,7 @@
     \tableofcontents
     \clearpage
 
-    % begin calculus_2024_02_07.tex
+    %% begin calculus_2024_02_07.tex %%
 
     \section{1. Определенный интеграл}
 
@@ -105,7 +105,7 @@
 
     Можно доказать, что определенный интеграл существует для всякой непрерывной на отрезке функции
 
-    \underline{Геометрический смысл}: \hypertarget{integralgeommeaning}{Заметим, что в определении интеграл} -- площадь подграфика функции $(f(x) \geq 0)$
+    \underline{Геометрический смысл}: \hypertarget{integralgeommeaning}{Заметим, что в определении интеграл} -- площадь под графиком функции $(f(x) \geq 0)$
 
     Заметим, что для $f(x) \leq 0 \quad \int_a^b f(x)dx = -S$
 
@@ -206,8 +206,9 @@
 
             $S = 0: \lim_{n\to\infty} |\sigma_n| = |\lim_{n\to\infty} \sigma_n| = 0$
 
-            $\left| \int^b_a f(x)dx \left| = |\lim_{n\to\infty} \sigma_n| = \lim_{n\to\infty} |\sigma_n| =
-            \lim_{\substack{n\to\infty \\ \tau\to0}} \left|\sum_{i=1}^n f(\xi_i) \Delta x_i\right| \leq \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$ (модуль суммы меньше или равен сумме модулей)
+            $\left| \int^b_a f(x)dx \right| = \left|\lim_{n\to\infty} \sigma_n\right| = \lim_{n\to\infty} |\sigma_n| =
+            \lim_{\substack{n\to\infty \\ \tau\to0}} \left|\sum_{i=1}^n f(\xi_i) \Delta x_i\right| \leq \lim_{\substack{n\to\infty \\ \tau\to0}} \sum_{i=1}^n |f(\xi_i)| \Delta x_i$
+            (модуль суммы меньше или равен сумме модулей)
         \end{MyProof}
 
     \end{enumerate}
@@ -343,9 +344,9 @@
 
         \Ex $\int^e_0 \ln x dx = x \ln x \Big|_0^e - x \Big|_0^e = e \ln e - \underset{0 \cdot \infty}{\undergroup{0 \ln 0}} - e$ -- несобственный интеграл
     \end{enumerate}
-% end calculus_2024_02_07.tex
+%% end calculus_2024_02_07.tex %%
 
-% begin calculus_2024_02_14.tex
+%% begin calculus_2024_02_14.tex %%
 
     \subsection{1.4. Приложения определенного интеграла}
     \hypertarget{integralapplications}{}
@@ -471,9 +472,9 @@
 
         \includegraphics[height=7cm]{calculus/images/calculus_2024_02_14_4}
     \end{enumerate}
-% end calculus_2024_02_14.tex
+%% end calculus_2024_02_14.tex %%
 
-% begin calculus_2024_02_21.tex
+%% begin calculus_2024_02_21.tex %%
 
     \clearpage
 
@@ -542,7 +543,7 @@
     \ExN{2} $\int^{+\infty}_{1} \frac{dx}{x\ln x} = \int^{+\infty}_{1} \frac{d\ln x}{\ln x} = \int^{+\infty}_{0} \frac{dt}{t}
      = \ln t \Big|^{+\infty}_{0} = \ln \ln x \Big|^{+\infty}_{1} = \lim_{x \to +\infty} \ln \ln x - \lim_{x \to 1} \ln \ln x = \infty - \infty$ -- расходится
 
-    Заметим нарушение непрерывности функции $\frac{1}{x \lnx}$ в $x = 1$, что привело к $\ln \ln x \to -\infty$ при $x \to 1$
+    Заметим нарушение непрерывности функции $\frac{1}{x \ln x}$ в $x = 1$, что привело к $\ln \ln x \to -\infty$ при $x \to 1$
 
     Это не интеграл первого рода, а комбинация интегралов первого и второго рода
 
@@ -765,9 +766,9 @@
         Таким образом, $\displaystyle J^\prime_\alpha(\alpha) = \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \alpha) dx + \lim_{\Delta \alpha \to 0} \int^{b}_{a} \varepsilon dx =
         \lim_{\Delta \alpha \to 0} \int^{b}_{a} f^\prime_{\alpha}(x, \xi) dx$
     \end{MyProof}
-% end calculus_2024_02_21.tex
+%% end calculus_2024_02_21.tex %%
 
-% begin calculus_2024_02_28.tex
+%% begin calculus_2024_02_28.tex %%
 
     \Ex $\displaystyle I(\alpha) = \int^{+\infty}_0 e^{-x} \frac{\sin\alpha x}{x}dx$
 
@@ -907,9 +908,9 @@
     Как определить функцию, дифференцируемую в точке?
 
     По аналогии $\Delta z = A \Delta x + B \Delta y + \alpha \Delta x + \beta \Delta y$, где $A, B \in \Real$, $\alpha, \beta$ -- бесконечно малые
-% end calculus_2024_02_28.tex
+%% end calculus_2024_02_28.tex %%
 
-% begin calculus_2024_03_06.tex
+%% begin calculus_2024_03_06.tex %%
 
     \begin{MyTheorem}
         \Ths $\displaystyle z : D \rightarrow \Real, \ D \subset \Real^2, \ \exists$
@@ -1182,9 +1183,9 @@
 
     \Nota Формула выше верна, если $\displaystyle z = z(x, y)$ непрерывна со своими частными производными до $\displaystyle n + 1$ порядка
     включительно в некоторой окрестности $\displaystyle U_\delta(M_0(x_0, y_0))$, где $\displaystyle M(x, y) \in U_\delta(M_0)$
-% end calculus_2024_03_06.tex
+%% end calculus_2024_03_06.tex %%
 
-% begin calculus_2024_03_13.tex
+%% begin calculus_2024_03_13.tex %%
 
     Для линейной параметризации форма дифференциала сохраняется
 
@@ -1360,9 +1361,9 @@
             Очевидно $k_l \cdot k_{\text{град.}} = -1 \Longrightarrow \vec\nabla u \perp l$
         \end{MyProof}
     \end{enumerate}
-% end calculus_2024_03_13.tex
+%% end calculus_2024_03_13.tex %%
 
-% begin calculus_2024_03_20.tex
+%% begin calculus_2024_03_20.tex %%
 
     \hypertarget{tangentandnormaltosurface}{}
 
@@ -1429,6 +1430,8 @@
     \hypertarget{tangentplanetosurface}{}
 
     \Def Плоскость $\kappa$ (содержащая все касательные прямые $\tau$ к $\pi$ в точке $M_0$) называется касательной плоскостью к $\pi$ в $M_0$
+    
+    \hypertarget{normaltosurface}{}
 
     \Defs Прямая в направлении $\vec{N}$ через точку $M_0$ называется нормалью к $\pi$ в $M_0$
 
@@ -1601,9 +1604,9 @@
         Можно доказать при $A \neq 0$, например, выбрав $\tg \alpha = -\frac{A}{B}$, что знак $\Delta z$ зависит от $\alpha$
 
     \end{MyProof}
-% end calculus_2024_03_20.tex
+%% end calculus_2024_03_20.tex %%
 
-% begin calculus_2024_03_27.tex
+%% begin calculus_2024_03_27.tex %%
 
     \clearpage
 
@@ -1686,7 +1689,7 @@
     \begin{enumerate}[label*=\textbf{\arabic**} ]
         \item \textbf{По размерности $\Omega$}
 
-        \begin{tabular}{lp{8cm}p{8cm}}
+        \begin{tabular}{lp{7.5cm}p{7.5cm}}
             $n = 1$: & прямая (определенный интеграл $\int_a^b$)    & кривая (криволинейный интеграл $\int_A^B$)                       \\
 
             $n = 2$: & плоскость (двойной интеграл $\iint_D$) & поверхность, криволинейная (поверхностный интеграл $\iint_S$) \\
@@ -1698,7 +1701,7 @@
 
         \item \textbf{По виду функции}
 
-        \begin{tabular}{lp{8cm}p{8cm}}
+        \begin{tabular}{lp{7.5cm}p{7.5cm}}
             & {\centering Скалярная $g(M)$ (I рода)} & {\centering Векторная $\vec{G}(M)$ (II рода)} \\
 
             $n = 1$: & определенный, криволинейный I рода & криволинейный II рода (интегралы в проекциях) \\
@@ -1708,9 +1711,9 @@
             $n = 3$: & тройной
         \end{tabular}
     \end{enumerate}
-% end calculus_2024_03_27.tex
+%% end calculus_2024_03_27.tex %%
 
-% begin calculus_2024_04_03.tex
+%% begin calculus_2024_04_03.tex %%
 
     \subsection{5.3. Двойной и тройной интегралы}
 
@@ -1838,9 +1841,9 @@
     \hypertarget{tripleintegralcalculation}{}
 
     Тройной интеграл можно вычислить через кратный: $\iiint_T u(x, y, z) dxdydz \stackrel{\text{кратный}}{=} \int^b_a \int_{y_1(x)}^{y_2(x)} \int_{z_1(x, y)}^{z_2(x, y)} u(x, y, z) dz dy dx$
-% end calculus_2024_04_03.tex
+%% end calculus_2024_04_03.tex %%
 
-% begin calculus_2024_04_10.tex
+%% begin calculus_2024_04_10.tex %%
 
     \subsection{5.4. Замена переменной в двойном и тройном интегралах}
 
@@ -1985,16 +1988,16 @@
 
     \hypertarget{curvilinearintegraloffirstkind}{}
 
-    Для криволинейных интегралов I рода область интегрирования -- кривая $l = \stackrel{\HUGE\frown}{AB}$ (дуга). Для простоты начнем с плоской дуги
+    Для криволинейных интегралов I рода область интегрирования -- кривая $l = \stackrel{\Huge \frown}{AB}$ (дуга). Для простоты начнем с плоской дуги
 
     На $l$ действует скалярная функция $f(x, y)$ (физический смысл -- плотность, то есть имеем неоднородный кривой стержень)
 
     Задача в нахождении \enquote{суммарной} величины $f(x, y)$, то есть интеграла: \enquote{складываем} элементы $f_{\text{ср}}(x, y) dl$
 
     Получаем $\int_l f(x, y)dl = \int_{AB} f(x, y)dl$
-% end calculus_2024_04_10.tex
+%% end calculus_2024_04_10.tex %%
 
-% begin calculus_2024_04_17.tex
+%% begin calculus_2024_04_17.tex %%
 
     \Nota В строгом определении интегральная сумма строится так:
 
@@ -2138,9 +2141,9 @@
         \underset{\oint_{K^+}Pdx}{\undergroup{\int_{STM} Qdy + \int_{MNS} Qdy}} =
         \oint_{K^+} Pdx + Qdy$
     \end{MyProof}
-% end calculus_2024_04_17.tex
+%% end calculus_2024_04_17.tex %%
 
-% begin calculus_2024_04_24.tex
+%% begin calculus_2024_04_24.tex %%
 
     \underline{Следствие} формулы Грина: $S_D = \frac{1}{2} \oint_K xdy - ydx$
 
@@ -2187,17 +2190,17 @@
         \begin{enumerate}
             \item I $\Longleftrightarrow$ II
 
-            $\fbox{\Longrightarrow}$ По определению $\int$НЗП $\Longleftrightarrow \int_{AMB} = \int_{ANB}$
+            \fbox{$\Longrightarrow$} По определению $\int$НЗП $\Longleftrightarrow \int_{AMB} = \int_{ANB}$
 
             Рассмотрим $\int_{AMB} - \int_{ANB} = \int_{AMB} + \int_{BNA} = \oint_K = 0 \ \forall K \subset D$
 
-            $\fbox{\Longleftarrow}$ Достаточно разбить $\oint_{K^+} = \int_{AMB} + \int_{BNA} = 0$
+            \fbox{$\Longleftarrow$} Достаточно разбить $\oint_{K^+} = \int_{AMB} + \int_{BNA} = 0$
 
             Поскольку $\int_{AMB} + \int_{BNA} = 0$, то $\int_{AMB} - \int_{ANB} = 0$
 
             \item II $\Longleftrightarrow$ III
 
-            $\fbox{\Longrightarrow} \oint_K = 0 \stackrel{?}{\Longrightarrow} \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
+            \fbox{$\Longrightarrow$} $\oint_K = 0 \stackrel{?}{\Longrightarrow} \frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x} \ \forall M(x, y) \in D$
 
             От противного $\quad \exists M_0(x_0, y_0) \in D \ | \ \frac{\partial P}{\partial y} \Big|_{M_0} \neq \frac{\partial Q}{\partial x} \Big|_{M_0} \Longleftrightarrow \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x}\right) \Big|_{M_0} \neq 0$
 
@@ -2215,13 +2218,13 @@
 
             Таким образом, возникает противоречие
 
-            $\fbox{\Longleftarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \ \forall M \in D$
+            \fbox{$\Longleftarrow$} $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \ \forall M \in D$
 
             Тогда $\forall D^\prime \subset D \ \iint_{D^\prime} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y}\right) dxdy = 0 = \oint_{\Gamma_{D^\prime}} Pdx + Qdy \ \forall \Gamma_{D^\prime} \subset D$
 
             \item III $\Longleftrightarrow$ IV
 
-            $\fbox{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \Longrightarrow \exists \Phi(x, y)$
+            \fbox{$\Longrightarrow$} $\frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y} \Longrightarrow \exists \Phi(x, y)$
 
             Так как доказано $I \Longleftrightarrow III$, то докажем $I \Longrightarrow IV$
 
@@ -2242,7 +2245,7 @@
 
             Аналогично $\frac{\partial \Phi}{\partial y} = Q(x, y)$
 
-            $\fbox{\Longleftarrow} d\Phi = Pdx + Qdy \stackrel{?}{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$
+            \fbox{$\Longleftarrow$} $d\Phi = Pdx + Qdy \stackrel{?}{\Longrightarrow} \frac{\partial Q}{\partial x} = \frac{\partial P}{\partial y}$
 
             Известно $P = \frac{\partial \Phi}{\partial x}, Q = \frac{\partial \Phi}{\partial y}$
 
@@ -2296,9 +2299,9 @@
     \Ex Пусть $\vec{F} = (P, Q) = (0, -mg)$
 
     $\Phi(x, y) = \int_O^M 0dx - mgdy = -\int_0^y mgdy = -mgy$ -- потенциал гравитационного поля (или силы тяжести)
-% end calculus_2024_04_24.tex
+%% end calculus_2024_04_24.tex %%
 
-% begin calculus_2024_05_08.tex
+%% begin calculus_2024_05_08.tex %%
 
     \subsection{5.6. Поверхностные интегралы}
 
@@ -2445,9 +2448,9 @@
         \item $\iint_{S^{\overrightarrow{n}}} \vec F(x, y, z) d\vec\sigma = \iint_{D} \pm \tilde{P}dydz \pm \tilde{Q}dxdz \pm \tilde{R}dxdy = \iint_{D_{yz}} \pm \tilde{P}dydz + \iint_{D_{xz}} \pm \tilde{Q}dxdz + \iint_{D_{xy}} \pm \tilde{R}dxdy$
     \end{enumerate}
     \end{enumerate}
-% end calculus_2024_05_08.tex
+%% end calculus_2024_05_08.tex %%
 
-% begin calculus_2024_05_15.tex
+%% begin calculus_2024_05_15.tex %%
 
 
     Разберем пример поверхностного интеграла:
@@ -2659,7 +2662,7 @@
     \end{MyTheorem}
 
     \begin{MyProof}
-        \fbox{\Longrightarrow}
+        \fbox{$\Longrightarrow$}
 
         $\Rot \overrightarrow{F} =
         \begin{vmatrix}
@@ -2679,7 +2682,7 @@
 
         $\vec{F} = (P, Q, R) = \left(\frac{\partial u}{\partial x}, \frac{\partial u}{\partial y}, \frac{\partial u}{\partial z}\right) = \vec\nabla u$
 
-        \fbox{\Longleftarrow} Дана $\vec{F} = \vec\nabla u$
+        \fbox{$\Longleftarrow$} Дана $\vec{F} = \vec\nabla u$
 
         $\Rot \vec{F} = \vec\nabla \times \vec{F} = \vec\nabla \times (\vec\nabla u) = (\vec\nabla \times \vec\nabla) u = 0$
 
@@ -2815,9 +2818,9 @@
 
         $\Rot \vec{F} \Big|_{M_1} = \frac{\Gamma}{S}$, будем стягивать поверхность $S$ к точке $M_0$, тогда $\Rot \vec{F} \Big|_{M_0} = \lim_{S \to 0} \frac{\Gamma}{S}$ -- циркуляция по бесконечно малому контуру с центром $M_0$
     \end{enumerate}
-% end calculus_2024_05_15.tex
+%% end calculus_2024_05_15.tex %%
 
-% begin calculus_2024_05_29.tex
+%% begin calculus_2024_05_29.tex %%
 
     Поток $\Pi$ и циркуляцию $\Gamma$ называют интегральными характеристиками поля, тогда как дивергенцию $\Div \vec F$ и ротор $\Rot \vec F$ -- дифференциальными
 
@@ -2825,7 +2828,7 @@
     
     \begin{itemize}
         \item потока $\Pi = \oiint_S \vec F d\vec\sigma$ -- количество пройденной жидкости через поверхность за единицу времени;
-        \item дивергенции $\Div \vec F \Big_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ -- мощность точечного источника (сколько жидкости он \enquote{производит} или \enquote{потребляет})
+        \item дивергенции $\Div \vec F \Big|_{M_0} = \lim_{V \to 0} \frac{\Pi}{V}$ -- мощность точечного источника (сколько жидкости он \enquote{производит} или \enquote{потребляет})
         \item теоремы Гаусса-Остроградского: поток через замкнутую поверхность равен суммарной мощности источников внутри
     \end{itemize}
 
@@ -2918,9 +2921,9 @@
             \item Теорема Гаусса для магнитного поля: $\vec\nabla \mu \vec{H} = 0$ -- магнитное поле не создают \enquote{магнитные заряды}
         \end{enumerate}
     \end{enumerate}
-% end calculus_2024_05_29.tex
+%% end calculus_2024_05_29.tex %%
 
-% begin calculus_exam_list.tex
+%% begin calculus_exam_list.tex %%
 
     \clearpage
 
@@ -3430,9 +3433,9 @@
 
         \item Векторная запись теорем теории поля и их механический смысл.
 
-        \hyperlink{gaussostrogradskyyvector}{Теорема Гаусса-Остроградского в векторной форме}: $\iint_S \vec{F} d\vec{\sigma} = \iiint_T \Div \vec{F}$
+        \hyperlink{theoremGaussOstrogradskyyinvectorform}{Теорема Гаусса-Остроградского в векторной форме}: $\iint_S \vec{F} d\vec{\sigma} = \iiint_T \Div \vec{F}$
 
-        \hyperlink{theoremGaussOstrogradskyyinvectorform}{Теорема Стокса в векторной форме}: $Pdx + Qdy + Rdz = \vec{F}d\vec{l}$
+        \hyperlink{theoremStokesinvectorform}{Теорема Стокса в векторной форме}: $Pdx + Qdy + Rdz = \vec{F}d\vec{l}$
 
         $\oint_L \vec{F}d\vec{l} = \iint_S \Rot \vec{F} \vec{n} d\sigma = \iint_S \Rot \vec{F} d\vec{\sigma}$
 
@@ -3440,7 +3443,7 @@
 
 
     \end{enumerate}
-% end calculus_exam_list.tex
+%% end calculus_exam_list.tex %%
 
 
 
