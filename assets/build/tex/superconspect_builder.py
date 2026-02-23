@@ -90,7 +90,6 @@ class TexSuperconspectBuilder(SuperconspectBuilder):
                 .replace('$subject$', self.subject_name)
                 .replace('$teacher$', self.lecturer_name)
         )
-        print(self.superconspect_filename)
 
         open(self.superconspect_filename, 'w', encoding='utf8').write(text)
 
