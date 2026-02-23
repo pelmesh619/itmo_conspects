@@ -21,7 +21,7 @@ class TexConspectBuilder(ConspectBuilder):
         if self.output_filename is None:
             return Path("conspects") / Path(self.input_filename).parent / (Path(self.input_filename).stem + ".pdf")
 
-        return self.output_filename
+        return Path(self.output_filename)
 
     def insert_displaystyle(self, text):
         to_display = True
