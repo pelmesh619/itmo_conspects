@@ -1,31 +1,29 @@
 #!/usr/bin/python
 
+import argparse
+import os
 import re
-import time
 import shutil
-import sys, os
-from pathlib import Path
+import sys
+import time
 
+from pathlib import Path
 
 DEFAULT_OUTPUT_DIRECTORY = Path("conspects")
 
-if len(sys.argv) <= 1:
-    print('Enter source filename as command argument')
-    exit(1)
+parser = argparse.ArgumentParser(
+    prog='build.py',
+    description='This program helps you to build source files into ready-to-read PDFs!'
+)
+parser.add_argument('input_filename', help="Path to an input file")
+parser.add_argument('-o', '--output-directory', help="Path to a directory of the file to be compiled")
+parser.add_argument('--watch', action='store_true', help="Watches an input file and recompiles on changes")
 
-filename = Path(sys.argv[1])
+args = parser.parse_args()
+
+filename = Path(args.input_filename)
 folder = filename.parent
-output_directory = None
-watch_flag = False
-
-if '--output-directory' in sys.argv or '-o' in sys.argv:
-    ind = sys.argv.index('-o') if '-o' in sys.argv else sys.argv.index('--output-directory')
-
-    if ind + 1 < len(sys.argv):
-        output_directory = Path(sys.argv[ind + 1])
-
-if '--watch' in sys.argv:
-    watch_flag = True
+output_directory = Path(args.output_directory) if args.output_directory else None
 
 if output_directory is None:
     output_directory = DEFAULT_OUTPUT_DIRECTORY / folder
@@ -41,13 +39,13 @@ if filename.suffix == '.typ':
     start_time = time.time()
 
     exit_code = os.system(
-        f"typst {'compile' if not watch_flag else 'watch'} "
+        f"typst {'compile' if not args.watch else 'watch'} "
         f"{filename} "
         f"{output_filename} "
         f"--root . "
     )
 
-    if not watch_flag:
+    if not args.watch:
         if exit_code == 0:
             print(f'Compilation of {output_filename} completed in {round(time.time() - start_time, 2)} s!')
         else:
