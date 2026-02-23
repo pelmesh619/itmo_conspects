@@ -95,8 +95,8 @@ class TexConspectBuilder(ConspectBuilder):
             print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
         else:
             print(
-                f'Compilation of {self.conspect_filename} failed.'
-                f'Check {Path(self.AUXIL_DIRECTORY) / (self.input_filename.stem + '.log')} for more info'
+                f'Compilation of {self.conspect_filename} failed. '
+                f'Check {Path(self.AUXIL_DIRECTORY) / (Path(self.input_filename).stem + '.log')} for more info'
             )
         return exit_code
 
