@@ -19,7 +19,7 @@ parser = argparse.ArgumentParser(
     description='This program helps you to build source files into ready-to-read PDFs!'
 )
 parser.add_argument('input_filename', help="Path to an input file")
-parser.add_argument('-o', '--output-directory', help="Path to a directory of the file to be compiled")
+parser.add_argument('-o', '--output-directory', help="Path to a directory of the file to be compiled (by default is `conspects/subjectname`)")
 parser.add_argument('--watch', action='store_true', help="Watches an input file and recompiles on changes (for Typst only)")
 parser.add_argument('-l', '--linted-output', help="Path to a directory which will store temporary files (for Tex only)", default='linted')
 parser.add_argument('-v', '--verbose', action='store_true', help="Show verbose output (for Tex only)")
