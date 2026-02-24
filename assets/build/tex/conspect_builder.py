@@ -51,6 +51,22 @@ class TexConspectBuilder(ConspectBuilder):
 
         return ''
 
+    def make_full_doc(self, content):
+        template = open('assets/build/tex/conspect_template.tex', encoding='utf8').read()
+
+        template = template.replace('$topic_preamble$', self.get_specific_preamble(), 1)
+
+        new_content = content
+        for i in re.finditer(r'((\n)|(^))(\$\w+\$)\=(.*)', content):
+            if i.group(4) in template:
+                template = template.replace(i.group(4), i.group(5), 1)
+                new_content = new_content.replace(i.group(0), '', 1)
+
+        new_content = re.sub('(.+)\n', r'    \g<1>\n', new_content.strip() + '\n')
+
+        new_content = template.replace('% content %', new_content, 1)
+
+        return new_content
 
     def build(self, args):
         print(f'Compiling {self.input_filename}...\n')
@@ -59,10 +75,12 @@ class TexConspectBuilder(ConspectBuilder):
 
         file_text = open(self.input_filename, encoding='utf8').read()
 
-        if '\\begin{document}' in file_text:
-            file_text = file_text.replace('\\begin{document}', self.get_specific_preamble() + '\n\\begin{document}')
+        match = re.search(r'\\begin\{document\}(.*?)\n*\\end\{document\}', file_text, re.S | re.M | re.I)
+
+        if match:
+            file_text = file_text.replace('\\begin{document}', self.get_specific_preamble() + '\n\\begin{document}', 1)
         else:
-            file_text = self.get_specific_preamble() + '\n' + file_text
+            file_text = self.make_full_doc(file_text)
 
         text += file_text
 
