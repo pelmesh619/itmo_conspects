@@ -10,6 +10,7 @@ import time
 from pathlib import Path
 
 from assets.build.typst.conspect_builder import TypstConspectBuilder
+from assets.build.tex.conspect_builder import TexConspectBuilder
 
 DEFAULT_OUTPUT_DIRECTORY = Path("conspects")
 
@@ -19,7 +20,11 @@ parser = argparse.ArgumentParser(
 )
 parser.add_argument('input_filename', help="Path to an input file")
 parser.add_argument('-o', '--output-directory', help="Path to a directory of the file to be compiled")
-parser.add_argument('--watch', action='store_true', help="Watches an input file and recompiles on changes")
+parser.add_argument('--watch', action='store_true', help="Watches an input file and recompiles on changes (for Typst only)")
+parser.add_argument('-l', '--linted-output', help="Path to a directory which will store temporary files (for Tex only)", default='linted')
+parser.add_argument('-v', '--verbose', action='store_true', help="Show verbose output (for Tex only)")
+parser.add_argument('-f', '--force', action='store_true', help="Force continued processing past errors (for Tex only)")
+parser.add_argument('--bibtex', action='store_true', help="Uses bibtex (by default bibtex isn't used) (for Tex only)")
 
 args = parser.parse_args()
 
@@ -36,7 +41,11 @@ if not output_directory.exists():
 if filename.suffix == '.typ':
     output_filename = os.path.join(output_directory, filename.stem + '.pdf')
     t = TypstConspectBuilder(filename, output_filename)
+elif filename.suffix == '.md':
+    print("The file has markdown extension, nothing to do!")
+    exit(0)
+if filename.suffix == '.tex':
+    output_filename = os.path.join(output_directory, filename.stem + '.pdf')
+    t = TexConspectBuilder(filename, output_filename, args.linted_output)
 
-    t.build(args)
-
-
+exit(t.build(args))
