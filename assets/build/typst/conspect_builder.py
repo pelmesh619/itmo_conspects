@@ -35,3 +35,4 @@ class TypstConspectBuilder(ConspectBuilder):
                 print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
             else:
                 print(f'Compilation of {self.conspect_filename} failed')
+            return exit_code
