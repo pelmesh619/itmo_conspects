@@ -66,23 +66,23 @@ $\frac{\partial}{\partial a} \sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^
 $\frac{\partial}{\partial b} \sum_{i = 1}^n \hat \varepsilon_i^2 = \sum_{i = 1}^n -2 Z_i (X_i - a - b Z_i) = 
 -2 \sum_{i = 1}^n X_i Z_i + 2\sum_{i = 1}^n a Z_i + 2b \sum_{i = 1}^n Z_i^2 = -2(n \overline{x z} - a n \overline{z} - bn \overline{z^2})$
 
-\begin{cases}
+$\begin{cases}
     -2 (n \overline{x} - na - nb \overline{z}) = 0 \\
     -2 (n \overline{zx} - na \overline{z} - nb \overline{z^2}) = 0 \\
-\end{cases} $\Longleftrightarrow$ \begin{cases}
+\end{cases} \Longleftrightarrow \begin{cases}
     a + b\overline{z} = \overline{x} \\
     a\overline{z} + b \overline{z^2} = \overline{zx} \\
-\end{cases} 
+\end{cases}$
 
 Получили систему линейных уравнений. Будем называть ее нормальной системой. При решении получаем:
 
-\begin{cases}
+$\begin{cases}
     a = \overline{x} - b \overline{z} \\
     (\overline{x} - b \overline{z}) \overline{z} + b \overline{z^2} = \overline{zx} \\
-\end{cases} $\Longleftrightarrow$ \begin{cases}
+\end{cases} \Longleftrightarrow \begin{cases}
     a = \overline{x} - b \overline{z} \\
     b = \frac{\overline{zx} - \overline{z} \, \overline{x}}{\hat \sigma^2_z}
-\end{cases} - ОМНК 
+\end{cases}$ -- ОМНК 
 
 Запишем уравнение линейной регрессии в удобном виде: $\overline{x}_z = f(z) = E(X | Z = z)$
 
@@ -153,10 +153,10 @@ $\frac{E(X | Z = z) - EX}{\sigma_x} = r \frac{z - EZ}{\sigma_z}$ - теорет�
 
 Получаем критерий. Пусть $t_\alpha$ - квантиль $|T_{n - 2}|$ (двухстороннее распределение Стьюдента) уровня $\alpha$
 
-\begin{cases}
+$\begin{cases}
     H_0 : r = 0, & \text{ если } |K| < t_\alpha \\
     H_1 : r \neq 0, & \text{ если } |K| \geq t_\alpha \\
-\end{cases}
+\end{cases}$
 
 Надо понимать, что корреляция - более тонкое понятие, чем зависимость
 
