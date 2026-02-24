@@ -22,6 +22,7 @@
 
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_17.html)
+        * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_24.html)
 
 * Многопоточное программирование
 
