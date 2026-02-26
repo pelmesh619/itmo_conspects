@@ -15,6 +15,8 @@
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_04.pdf)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_11.pdf)
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_18.pdf)
+        * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_25.pdf)
+        * Лекция №5 - отменена
 
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
@@ -31,6 +33,7 @@
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_04.html)
         * Лекция №2 - в процессе
         * Лекция №3 - в процессе
+        * Лекция №4 - в процессе
 
 * Облачные и мобильные технологии
 
@@ -39,6 +42,7 @@
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_05.html)
         * Лекция №2 - в процессе
         * Лекция №3 - отменена
+        * Лекция №4 - в процессе
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
@@ -47,6 +51,7 @@
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_06.html)
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_13.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_20.html)
+    * Лекция №4 - отменена
 
 * Web-разработка: Backend (лектор Макаревич Р. Д.)
 
