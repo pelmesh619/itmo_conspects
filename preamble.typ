@@ -125,3 +125,42 @@
 #let vecsum(x, y) = (x.at(0) + y.at(0), x.at(1) + y.at(1))
 #let veck(x, k) = (x.at(0) * k, x.at(1) * k)
 
+#let bezier_custom(start, ..ctrl-style, name: none, iters: 10) = {
+  // Extra positional arguments are treated like control points.
+  let (ctrl, style) = (ctrl-style.pos(), ctrl-style.named())
+
+  // Control point check
+  let len = ctrl.len()
+  let coordinates = (start, ..ctrl)
+
+  let compress(points, t) = {
+    let new_points = array(points)
+
+    for i in range(new_points.len() - 1) {
+      new_points.at(i) = vecsum(veck(new_points.at(i), 1 - t), veck(new_points.at(i + 1), t))
+    }
+
+    new_points = new_points.slice(0, count: new_points.len() - 1)
+
+    return new_points
+  }
+
+  let step = 1 / iters
+  let t = step
+  let previous_point = start
+  while t < 1 {
+    let points = array(coordinates)
+
+    while points.len() > 1 {
+      points = compress(points, t)
+    }
+
+    cetz.draw.line(previous_point, points.at(0), ..style)
+
+    previous_point = points.at(0)
+
+    t += step
+  }
+}
+
+
