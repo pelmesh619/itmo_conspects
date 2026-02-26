@@ -25,6 +25,7 @@ parser.add_argument('-l', '--linted-output', help="Path to a directory which wil
 parser.add_argument('-v', '--verbose', action='store_true', help="Show verbose output (for Tex only)")
 parser.add_argument('-f', '--force', action='store_true', help="Force continued processing past errors (for Tex only)")
 parser.add_argument('--bibtex', action='store_true', help="Uses bibtex (by default bibtex isn't used) (for Tex only)")
+parser.add_argument('--only-linter', action='store_true', help="Only uses linter, do not compiles the actual PDF (for Tex only)")
 
 args = parser.parse_args()
 
@@ -44,8 +45,11 @@ if filename.suffix == '.typ':
 elif filename.suffix == '.md':
     print("The file has markdown extension, nothing to do!")
     exit(0)
-if filename.suffix == '.tex':
+elif filename.suffix == '.tex':
     output_filename = os.path.join(output_directory, filename.stem + '.pdf')
     t = TexConspectBuilder(filename, output_filename, args.linted_output)
+else:
+    print('Unsupported file format, only `tex`, `md` and `typ` is allowed')
+    exit(1)
 
 exit(t.build(args))

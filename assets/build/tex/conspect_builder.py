@@ -92,6 +92,10 @@ class TexConspectBuilder(ConspectBuilder):
         linted_output = Path(self.linted_directory) / Path(self.input_filename).name
         open(linted_output, 'w', encoding='utf8').write(text)
 
+        if args.only_linter:
+            print(f"Linted file was written to {linted_output}, job is done")
+            return 1
+
         interaction = 'nonstopmode' if args.verbose else 'batchmode'
 
         start_time = time.time()
