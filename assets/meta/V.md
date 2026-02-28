@@ -52,7 +52,7 @@
     * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_21.html)
     * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_11_28.html)
     * Лекция №14 - в процессе
-    * Лекция №15 - в процессе  
+    * [Лекция №15](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_2025_12_12.html)
 
     * [Extra 1. Технология Wi-Fi](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_x01_wifi.html)
 
