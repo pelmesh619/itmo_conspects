@@ -65,6 +65,8 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
 
     def collect_scripts(self, file_text):
         for script in re.finditer(r'\<script.*\>.*?\<\/script\>\n', file_text, re.U | re.DOTALL):
+            if file_text[:script.start(0)].count('```') % 2 == 1 or file_text[:script.end(0)].count('```') % 2 == 1:
+                continue
             if script.group(0) not in self.script_sources:
                 self.script_sources.append(script.group(0))
             file_text = file_text.replace(script.group(0), "")
