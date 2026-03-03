@@ -14,7 +14,7 @@ class TexSuperconspectBuilder(SuperconspectBuilder):
     FILE_EXTENSION = '.tex'
     OUTPUT_EXTENSION = '.pdf'
 
-    def __init__(self, input_folder, blacklist_words, output_filename=None):
+    def __init__(self, input_folder, blacklist_words, output_filename=None, source_filename=None):
         super().__init__(input_folder, blacklist_words, output_filename)
 
         self.level = len(list(i for i in os.path.split(input_folder) if i))
@@ -22,6 +22,7 @@ class TexSuperconspectBuilder(SuperconspectBuilder):
         self.subject_name = None
         self.lecturer_name = None
         self.top_level_header = None
+        self._source_filename = source_filename
 
 
     def filter(self, file_text):
@@ -90,6 +91,16 @@ class TexSuperconspectBuilder(SuperconspectBuilder):
                 .replace('$teacher$', self.lecturer_name)
         )
 
-        open(self.superconspect_filename, 'w', encoding='utf8').write(text)
+        if Path(self.source_filename).parent.exists():
+            if not Path(self.source_filename).parent.is_dir():
+                print(f"{Path(self.source_filename).parent} is not a directory, check your source filename path")
+                return 1
+        else:
+            Path(self.source_filename).parent.mkdir()
 
-        os.system("python linter.py " + str(self.superconspect_filename) + ("--verbose" if args.verbose else ""))
+        open(self.source_filename, 'w', encoding='utf8').write(text)
+
+        t = TexConspectBuilder(self.source_filename, self.superconspect_filename, args.linted_output)
+
+        args.preamble_path = self.input_folder
+        return t.build(args)
