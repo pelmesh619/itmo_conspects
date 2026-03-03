@@ -12,7 +12,7 @@
 
     \subsection{1.1. Скалярное произведение}
 
-    Пусть $L$ - линейное пространство (ЛП). Тогда $\forall x, y \in L$ величину $\underset{x, y \to c \in \Real}{c = (x, y)}$
+    Пусть $L$ -- линейное пространство (ЛП). Тогда $\forall x, y \in L$ величину $\underset{x, y \to c \in \Real}{c = (x, y)}$
     будем называть скалярным произведением
 
 
@@ -33,7 +33,7 @@
 
     \Def Линейное пространство со скалярным произведением называется \underline{Евклидовым}
 
-    \ExN{1} ЛП - пространство геометрических векторов
+    \ExN{1} ЛП -- пространство геометрических векторов
 
     $(\vec{a}, \vec{b}) \stackrel{def}{=}
     \begin{cases}
@@ -49,11 +49,11 @@
 
     $\int^b_a f^2(x) dx = 0 \stackrel{?}{\Longrightarrow} f(x) = 0$
 
-    \ExN{3} ЛП - пространство числовых строк вида $x = (x_1, x_2, \dots, x_n)$
+    \ExN{3} ЛП -- пространство числовых строк вида $x = (x_1, x_2, \dots, x_n)$
 
-    $(x, y) = x_1 y_1 + \dots x_n y_n = \sum_{i=1}^n x_i y_i$ - сумма произведений компонент
+    $(x, y) = x_1 y_1 + \dots x_n y_n = \sum_{i=1}^n x_i y_i$ -- сумма произведений компонент
 
-    \subsection{1.2. Свойства евклидова пространства - $E$}
+    \subsection{1.2. Свойства евклидова пространства -- $E$}
 
     \hypertarget{inequalityofCauchyBunyakovsky}{}
 
@@ -86,7 +86,7 @@
     \begin{enumerate}
         \item $\|x\| \geq 0$ и $\|x\| = 0 \Longrightarrow x = 0$
         \item $\|\lambda x\| = |\lambda| \cdot \|x\| \quad \lambda \in \Real$
-        \item $\|x + y\| \leq \|x\| + \|y\| \quad \forall x, y \in L$ - неравенство треугольника
+        \item $\|x + y\| \leq \|x\| + \|y\| \quad \forall x, y \in L$ -- неравенство треугольника
     \end{enumerate}
 
     \hypertarget{normalizedeuclidspace}{}
@@ -108,16 +108,16 @@
 
         $(x, y) \leq \sqrt{(x, x)(y, y)}$
 
-        $(x, y)^2 \leq (x, x)(y, y)$ - верно по неравенству Коши-Буняковского
+        $(x, y)^2 \leq (x, x)(y, y)$ -- верно по неравенству Коши-Буняковского
     \end{MyProof}
 
     Обобщим геометрические понятия ортогональности и косинуса угла на случай произвольных векторов
 
-    \Def $x, y$ - ортогональны, если $(x, y) = 0$ и $x \neq 0$ и $y \neq 0 \quad x \perp y$
+    \Def $x, y$ -- ортогональны, если $(x, y) = 0$ и $x \neq 0$ и $y \neq 0 \quad x \perp y$
 
-    \Def $\cos(\widehat{x, y}) = \frac{(x, y)}{\|x\|\cdot\|y\|}$ - косинус угла между векторами
+    \Def $\cos(\widehat{x, y}) = \frac{(x, y)}{\|x\|\cdot\|y\|}$ -- косинус угла между векторами
 
-    \Def $x, y \in E^n, x \perp y$, тогда $z = x + y$ - гипотенуза
+    \Def $x, y \in E^n, x \perp y$, тогда $z = x + y$ -- гипотенуза
 
     \begin{MyTheorem}
         \Ths $x \perp y$, тогда $\|x + y\|^2 = \|x\|^2 + \|y\|^2$
@@ -127,9 +127,9 @@
         $\|x + y\|^2 = (x + y, x + y) = (x, x)^2 + \underset{= 0, x \perp y}{\undergroup{2(x, y)}} + (y, y)^2 = (x, x)^2 + (y, y)^2$
     \end{MyProof}
 
-    \Def $B = \Set{e_i}_{i=1}^n$ - базис $L^n$
+    \Def $B = \Set{e_i}_{i=1}^n$ -- базис $L^n$
 
-    На $L^n$ введены $(x, y)$ и $\|x\|$ (то есть $L^n \to E^n_{\|\cdot\|}$ - нормированное евклидово)
+    На $L^n$ введены $(x, y)$ и $\|x\|$ (то есть $L^n \to E^n_{\|\cdot\|}$ -- нормированное евклидово)
 
     \hypertarget{ortonormalizedbasis}{}
 
