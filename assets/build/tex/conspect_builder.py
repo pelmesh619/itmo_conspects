@@ -115,7 +115,7 @@ class TexConspectBuilder(ConspectBuilder):
             print(f"Warning: file `{temp_output}` will be rewritten as temporary output. Make sure to copy it. To proceed press Enter")
             input()
 
-        exit_code = os.system(command)
+        exit_code = self.run(command)
 
         if exit_code == 0:
             print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
