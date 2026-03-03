@@ -72,7 +72,7 @@ class TexConspectBuilder(ConspectBuilder):
 
     def build(self, args):
         linted_output = Path(self.linted_directory) / Path(self.input_filename).name
-        print(f'Compiling {self.input_filename}... (as {linted_output})\n')
+        print(f'\n\033[96mCompiling {self.input_filename}... (as {linted_output})\033[0m')
 
         text = self.DISCLAIMER
 
@@ -119,12 +119,12 @@ class TexConspectBuilder(ConspectBuilder):
         exit_code = self.run(command)
 
         if exit_code == 0:
-            print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
+            print(f'\033[92mCompilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!\033[0m')
             if temp_output != self.conspect_filename:
                 shutil.move(str(temp_output), str(self.conspect_filename))
         else:
             print(
-                f'Compilation of {self.conspect_filename} failed. '
+                f'\033[91mCompilation of {self.conspect_filename} failed.\033[0m '
                 f'Check {Path(self.AUXIL_DIRECTORY) / (Path(self.input_filename).stem + '.log')} for more info'
             )
         return exit_code

@@ -19,7 +19,7 @@ class TypstConspectBuilder(ConspectBuilder):
 
 
     def build(self, args):
-        print(f'Compiling {self.input_filename}...\n')
+        print(f'\n\033[96mCompiling {self.input_filename}...\033[0m')
 
         start_time = time.time()
 
@@ -34,7 +34,7 @@ class TypstConspectBuilder(ConspectBuilder):
 
         if not getattr(args, "watch", False):
             if exit_code == 0:
-                print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
+                print(f'\033[92mCompilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!\033[0m')
             else:
-                print(f'Compilation of {self.conspect_filename} failed')
+                print(f'\033[91mCompilation of {self.conspect_filename} failed\033[0m')
             return exit_code
