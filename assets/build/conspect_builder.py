@@ -9,6 +9,6 @@ class ConspectBuilder:
         raise NotImplementedError()
         
     def run(self, command):
-        print(f"Running: {command}")
+        print(f"\033[92mRunning: {command}\033[0m")
 
         return os.system(command)
