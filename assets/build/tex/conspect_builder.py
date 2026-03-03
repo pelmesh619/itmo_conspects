@@ -42,8 +42,9 @@ class TexConspectBuilder(ConspectBuilder):
 
         return text
 
-    def get_specific_preamble(self):
-        preamble_path = Path(self.input_filename).parent / '__preamble.sty'
+    def get_specific_preamble(self, args=None):
+        folder = args and Path(args.preamble_path) or Path(self.input_filename).parent
+        preamble_path = folder / '__preamble.sty'
         if preamble_path.exists() and preamble_path.is_file():
             specific_preamble = open(preamble_path, encoding='utf8').read()
 
@@ -54,7 +55,7 @@ class TexConspectBuilder(ConspectBuilder):
     def make_full_doc(self, content):
         template = open('assets/build/tex/conspect_template.tex', encoding='utf8').read()
 
-        template = template.replace('$topic_preamble$', self.get_specific_preamble(), 1)
+        template = template.replace('$topic_preamble$', self.get_specific_preamble(args), 1)
 
         new_content = content
         for i in re.finditer(r'((\n)|(^))(\$\w+\$)\=(.*)', content):
@@ -78,7 +79,7 @@ class TexConspectBuilder(ConspectBuilder):
         match = re.search(r'\\begin\{document\}(.*?)\n*\\end\{document\}', file_text, re.S | re.M | re.I)
 
         if match:
-            file_text = file_text.replace('\\begin{document}', self.get_specific_preamble() + '\n\\begin{document}', 1)
+            file_text = file_text.replace('\\begin{document}', self.get_specific_preamble(args) + '\n\\begin{document}', 1)
         else:
             file_text = self.make_full_doc(file_text)
 
