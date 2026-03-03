@@ -24,7 +24,7 @@ class TypstConspectBuilder(ConspectBuilder):
         start_time = time.time()
 
         command = (
-            f"typst {'compile' if not args.watch else 'watch'} "
+            f"typst {'compile' if not getattr(args, "watch", False) else 'watch'} "
             f"{self.input_filename} "
             f"{self.conspect_filename} "
             f"--root . "
@@ -32,7 +32,7 @@ class TypstConspectBuilder(ConspectBuilder):
 
         exit_code = self.run(command)
 
-        if not args.watch:
+        if not getattr(args, "watch", False):
             if exit_code == 0:
                 print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
             else:
