@@ -71,7 +71,8 @@ class TexConspectBuilder(ConspectBuilder):
         return new_content
 
     def build(self, args):
-        print(f'Compiling {self.input_filename}...\n')
+        linted_output = Path(self.linted_directory) / Path(self.input_filename).name
+        print(f'Compiling {self.input_filename}... (as {linted_output})\n')
 
         text = self.DISCLAIMER
 
