@@ -53,7 +53,7 @@ class TexConspectBuilder(ConspectBuilder):
 
         return ''
 
-    def make_full_doc(self, content):
+    def make_full_doc(self, content, args=None):
         template = open('assets/build/tex/conspect_template.tex', encoding='utf8').read()
 
         template = template.replace('$topic_preamble$', self.get_specific_preamble(args), 1)
@@ -83,7 +83,7 @@ class TexConspectBuilder(ConspectBuilder):
         if match:
             file_text = file_text.replace('\\begin{document}', self.get_specific_preamble(args) + '\n\\begin{document}', 1)
         else:
-            file_text = self.make_full_doc(file_text)
+            file_text = self.make_full_doc(file_text, args)
 
         text += file_text
 
