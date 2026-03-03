@@ -38,10 +38,10 @@
 
         $\Sigma^* = \Set{\triangle^1, \triangle^2, \Box, \star} = (\Sigma, r) \quad r : \Sigma \to \Natural_0 \quad n = |\Sigma^*| = 4 \quad s = |\Sigma| = 3$
 
-        \Nota \begin{cases}
+        \Nota $\begin{cases}
             \triangle^1, \triangle^2, \Box, \star \\
             \triangle^2, \triangle^1, \Box, \star
-        \end{cases} считаются равными перестановками
+        \end{cases}$ считаются равными перестановками
 
         $|P^*(\Sigma^*, n)| = \frac{n!}{r_1! \dots r_s!} = \Comb{n}{r_1, \dots, r_s}$ -- количество перестановок мультимножества, где $r_i$ -- количество $i$-ого элемента в мультимножестве
 
@@ -116,14 +116,14 @@
 
         \item \textbf{Разбиения множества} (Set partitions) -- множество размера $k$ непересекающихся непустых подмножеств
 
-        \begin{tabular}{cp}
-            \Exs $\Set{1, 2, 3, 4}, n = 4, k = 2 \rightarrow [\text{разбиение в 2 части}] \rightarrow & \Set{\Set{1}, \Set{2, 3, 4}}, \\
-            & \Set{\Set{1, 2}, \Set{3, 4}}, \\
-            & \Set{\Set{1, 2, 3}, \Set{4}}, \\
-            & \Set{\Set{1, 3}, \Set{2, 4}}, \\
-            & \Set{\Set{1, 4}, \Set{2, 3}}, \\
-            & \Set{\Set{2}, \Set{1, 3, 4}}, \\
-            & \Set{\Set{3}, \Set{1, 2, 4}}$
+        \begin{tabular}{cl}
+            \Exs $\Set{1, 2, 3, 4}, n = 4, k = 2 \rightarrow [\text{разбиение в 2 части}] \rightarrow$ & $\Set{\Set{1}, \Set{2, 3, 4}}$, \\
+            & $\Set{\Set{1, 2}, \Set{3, 4}}$, \\
+            & $\Set{\Set{1, 2, 3}, \Set{4}}$, \\
+            & $\Set{\Set{1, 3}, \Set{2, 4}}$, \\
+            & $\Set{\Set{1, 4}, \Set{2, 3}}$, \\
+            & $\Set{\Set{2}, \Set{1, 3, 4}}$, \\
+            & $\Set{\Set{3}, \Set{1, 2, 4}}$
         \end{tabular}
 
         $|\Set{\text{разбиение } n \text{ элементов в } k \text{ частей}}| = \Stirling{n}{k} = S^{II}_k (n) = S(n, k)$ -- число Стирлинга второго рода
