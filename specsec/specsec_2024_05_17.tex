@@ -78,11 +78,11 @@
 
     СПЧ: $e^{2x} = e^{2x} (1 \cos 0x + B \sin 0x) \quad k = a \pm ib = 2$
 
-    \begin{rcases*}
-    $y^* = Ae^{2x}$ \\
-    $y^{*\prime} = 2Ae^{2x}$ \\
-    $y^{*\prime\prime} = 4Ae^{2x}$ \\
-    \end{rcases*} ДУ $\longrightarrow \begin{matrix}4Ae^{2x} - 6Ae^{2x} + 2Ae^{2x} = e^{2x} \\ 4A - 6A + 2A = 1 \\ 0A = 1\end{matrix}$ -- нельзя найти $A$ {\Huge 🤯}
+    $\begin{rcases*}
+    y^* = Ae^{2x} \\
+    y^{*\prime} = 2Ae^{2x} \\
+    y^{*\prime\prime} = 4Ae^{2x} \\
+    \end{rcases*}$ ДУ $\longrightarrow \begin{matrix}4Ae^{2x} - 6Ae^{2x} + 2Ae^{2x} = e^{2x} \\ 4A - 6A + 2A = 1 \\ 0A = 1\end{matrix}$ -- нельзя найти $A$ {\Huge 🤯}
 
     Решим ХрУ: $\lambda_2 - 3\lambda + 2 = 0 \Longrightarrow \lambda_1 = 1, \lambda_2 = 2$
 
@@ -215,10 +215,10 @@
     $\underset{=\ 0}{C_1(x)Ly_1} + \underset{=\ 0}{C_2(x)Ly_2} + C_1^\prime(x)y_1^\prime + C_2^\prime(x)y_2^\prime = f(x)$
 
     \underline{Итак}, система для определения $C_1(x), C_2(x)$:
-    \begin{cases}
+    $\begin{cases}
         C^\prime_1(x)y_1 + C^\prime_2(x)y_2 = 0 \\
         C_1^\prime(x)y_1^\prime + C_2^\prime(x)y_2^\prime = f(x)
-    \end{cases}
+    \end{cases}$
 
     $\underset{ = W}{\undergroup{\begin{pmatrix}y_1 & y_2 \\ y^\prime_1 & y^\prime_2\end{pmatrix}}}\begin{pmatrix}C^\prime_1(x) \\ C^\prime_2(x)\end{pmatrix} = \begin{pmatrix}0 \\ f(x)\end{pmatrix} \stackrel{\text{по Крамеру}}{\longrightarrow} \begin{matrix}C_1^\prime(x) = \frac{W_1}{W} \\ C_2^\prime(x) = \frac{W_2}{W}\end{matrix}$
 
