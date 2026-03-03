@@ -1157,10 +1157,10 @@
 
         $\Sigma^* = \Set{\triangle^1, \triangle^2, \Box, \star} = (\Sigma, r) \quad r : \Sigma \to \Natural_0 \quad n = |\Sigma^*| = 4 \quad s = |\Sigma| = 3$
 
-        \Notas \begin{cases}
+        \Notas $\begin{cases}
             \triangle^1, \triangle^2, \Box, \star \\
             \triangle^2, \triangle^1, \Box, \star
-        \end{cases} считаются равными перестановками
+        \end{cases}$ считаются равными перестановками
 
         $|P^*(\Sigma^*, n)| = \frac{n!}{r_1! \dots r_s!} = \Comb{n}{r_1, \dots, r_s}$ -- количество перестановок мультимножества, где $r_i$ -- количество $i$-ого элемента в мультимножестве
 
@@ -1247,7 +1247,7 @@
 
         \item \textbf{Метод характеристического уравнения} (\textit{Solving recurrence relations using characteristic equations})
 
-        \substack{\text{Рекуррентное} \\ \text{соотношение}} \ $\stackrel{a_n \to r^n}{\rightsquigarrow}$ \ \substack{\text{Характеристическое} \\ \text{уравнение}} \ $\stackrel{\text{решение}}{\rightsquigarrow}$ Корни $\stackrel{\text{магия}}{\rightsquigarrow}$ Решение $\rightsquigarrow$ Проверка
+        $\substack{\text{Рекуррентное} \\ \text{соотношение}}$ \ $\stackrel{a_n \to r^n}{\rightsquigarrow}$ \ $\substack{\text{Характеристическое} \\ \text{уравнение}}$ \ $\stackrel{\text{решение}}{\rightsquigarrow}$ Корни $\stackrel{\text{магия}}{\rightsquigarrow}$ Решение $\rightsquigarrow$ Проверка
 
         \vspace{3mm}
 
@@ -1500,12 +1500,12 @@
 
         $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n)) \Longrightarrow T(n) \in \Theta\left(n^p \cdot \left(1 + \int_1^n \frac{f(x)}{x^{p + 1}} dx\right)\right)$, где $p$ -- решение для $\sum_{i = 1}^k a_i b_i^p = 1$
 
-        \begin{cases}
+        $\begin{cases}
             k = const \\
             a_i > 0 \\
             0 < b_i < 1 \\
             h_1(n) \in O\left(\frac{n}{\log^2 n}\right) \text{ -- малые возмущения}
-        \end{cases}
+        \end{cases}$
 
         \Ex $T(n) = T\left(\left\lfloor\frac{n}{2}\right\rfloor\right) + T\left(\left\lceil\frac{n}{2}\right\rceil\right) + n$ -- асимптотика сортировки слиянием
 
