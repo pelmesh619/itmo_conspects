@@ -12,6 +12,7 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
     END_FILE_LABEL = "\n<!-- end {} -->\n\n"
 
     FILE_EXTENSION = '.md'
+    OUTPUT_EXTENSION = FILE_EXTENSION
 
     def __init__(self, input_folder, blacklist_words, output_filename=None):
         super().__init__(input_folder, blacklist_words, output_filename)

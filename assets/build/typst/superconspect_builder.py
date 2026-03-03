@@ -11,6 +11,7 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
     END_FILE_LABEL = "\n// end {} \n\n"
 
     FILE_EXTENSION = '.typ'
+    OUTPUT_EXTENSION = '.pdf'
 
     def __init__(self, input_folder, blacklist_words, output_filename=None):
         super().__init__(input_folder, blacklist_words, output_filename)
