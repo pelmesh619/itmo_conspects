@@ -26,6 +26,13 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
     def filter(self, file_text):
         return re.sub(r'(\t\r )*\#\s*ignore.*?((\#\s*noignore)|($))', '', file_text, flags=re.UNICODE | re.DOTALL).strip()
 
+    @property
+    def superconspect_filename(self):
+        if self.output_filename is None:
+            return Path(self.input_folder) / (Path(self.input_folder).name + "_superconspect" + self.OUTPUT_EXTENSION)
+
+        return self.output_filename
+
     def collect_headers(self, file_text):
         new_text = file_text
         for header_match in re.finditer(r'(^|\n)((#+)\s+(.+))\n', file_text):
