@@ -38,7 +38,7 @@
         \begin{tabular}{l|ccccccc}
             i      & 1          & 2          & 3          & 4          & 5          & 6          & 7          \\
             \hline
-            \pi(i) & \mathtt{2} & \mathtt{7} & \mathtt{1} & \mathtt{3} & \mathtt{5} & \mathtt{4} & \mathtt{6}
+            $\pi(i)$ & $\mathtt{2}$ & $\mathtt{7}$ & $\mathtt{1}$ & $\mathtt{3}$ & $\mathtt{5}$ & $\mathtt{4}$ & $\mathtt{6}$
         \end{tabular}
 
         \item \textbf{$k$-перестановка} - расстановка из $k$ различных элементов из $\Sigma$
@@ -63,12 +63,12 @@
         \begin{minipage}{\linewidth}
             \begin{wrapfigure}{r}{0pt}
                 \begin{tikzpicture}
-                \node[circle, draw=black!60, thick, minimum size=0.2cm] (s00) {\mathtt{7}};
+                \node[circle, draw=black!60, thick, minimum size=0.2cm] (s00) {$\mathtt{7}$};
                 \node[below=0.4cm of s00] (pi1) {$\pi_1$};
-                \node[below left=0.26cm and 0.4cm of s00] (s01) {\mathtt{6}};
-                \node[below right=0.4cm and 0.02cm of s01] (s02) {\mathtt{1}};
-                \node[below right=0.26cm and 0.4cm of s00] (s04) {\mathtt{3}};
-                \node[below left=0.4cm and 0.02cm of s04] (s03) {\mathtt{2}};
+                \node[below left=0.26cm and 0.4cm of s00] (s01) {$\mathtt{6}$};
+                \node[below right=0.4cm and 0.02cm of s01] (s02) {$\mathtt{1}$};
+                \node[below right=0.26cm and 0.4cm of s00] (s04) {$\mathtt{3}$};
+                \node[below left=0.4cm and 0.02cm of s04] (s03) {$\mathtt{2}$};
                 \path[->]
                 (s00) edge [bend right] node {} (s01)
                 (s01) edge [bend right] node {} (s02)
@@ -77,12 +77,12 @@
                 (s04) edge [bend right] node {} (s00)
                 ;
 
-                \node[circle, draw=black!60, thick, minimum size=0.2cm, right=20mm of s00] (s10) {\mathtt{1}};
+                \node[circle, draw=black!60, thick, minimum size=0.2cm, right=20mm of s00] (s10) {$\mathtt{1}$};
                 \node[below=0.4cm of s10] (pi2) {$\pi_2$};
-                \node[below left=0.26cm and 0.4cm of s10] (s11) {\mathtt{2}};
-                \node[below right=0.4cm and 0.02cm of s11] (s12) {\mathtt{3}};
-                \node[below right=0.26cm and 0.4cm of s10] (s14) {\mathtt{6}};
-                \node[below left=0.4cm and 0.02cm of s14] (s13) {\mathtt{7}};
+                \node[below left=0.26cm and 0.4cm of s10] (s11) {$\mathtt{2}$};
+                \node[below right=0.4cm and 0.02cm of s11] (s12) {$\mathtt{3}$};
+                \node[below right=0.26cm and 0.4cm of s10] (s14) {$\mathtt{6}$};
+                \node[below left=0.4cm and 0.02cm of s14] (s13) {$\mathtt{7}$};
                 \path[->]
                 (s10) edge [bend right] node {} (s11)
                 (s11) edge [bend right] node {} (s12)
@@ -146,10 +146,10 @@
 
         $\Sigma^* = \Set{\triangle^1, \triangle^2, \Box, \star} = (\Sigma, r) \quad r : \Sigma \to \Natural_0 \quad n = |\Sigma^*| = 4 \quad s = |\Sigma| = 3$
 
-        \Notas \begin{cases}
+        \Notas $\begin{cases}
                   \triangle^1, \triangle^2, \Box, \star \\
                   \triangle^2, \triangle^1, \Box, \star
-        \end{cases} считаются равными перестановками
+        \end{cases}$ считаются равными перестановками
 
         $|P^*(\Sigma^*, n)| = \frac{n!}{r_1! \dots r_s!} = \begin{pmatrix}
                                                                n \\ r_1, \dots, r_s
@@ -286,7 +286,7 @@
 
         * $X = $ все $n!$ перестановок
 
-        * Плохие свойства $P_1,\dots,P_m : \pi \in X$ имеет свойство $P_i$ \Longleftrightarrow $\pi(i) = i$
+        * Плохие свойства $P_1,\dots,P_m : \pi \in X$ имеет свойство $P_i \Longleftrightarrow \pi(i) = i$
 
         * Посчитаем $N(S): \quad N(S) = (n - |S|)!$
 
