@@ -1,6 +1,7 @@
 import os
 import re
 import time
+import shutil
 from pathlib import Path
 
 from assets.build.conspect_builder import ConspectBuilder
@@ -110,12 +111,17 @@ class TexConspectBuilder(ConspectBuilder):
             f"-interaction={interaction} -file-line-error "
         )
 
-        print(f"Running: {command}")
+        temp_output = Path(self.conspect_filename).parent / (linted_output.stem + '.pdf')
+        if temp_output.exists() and temp_output != self.conspect_filename:
+            print(f"Warning: file `{temp_output}` will be rewritten as temporary output. Make sure to copy it. To proceed press Enter")
+            input()
 
         exit_code = os.system(command)
 
         if exit_code == 0:
             print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
+            if temp_output != self.conspect_filename:
+                shutil.move(str(temp_output), str(self.conspect_filename))
         else:
             print(
                 f'Compilation of {self.conspect_filename} failed. '
