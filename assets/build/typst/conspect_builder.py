@@ -30,6 +30,8 @@ class TypstConspectBuilder(ConspectBuilder):
             f"--root . "
         )
 
+        exit_code = self.run(command)
+
         if not args.watch:
             if exit_code == 0:
                 print(f'Compilation of {self.conspect_filename} completed in {round(time.time() - start_time, 2)} s!')
