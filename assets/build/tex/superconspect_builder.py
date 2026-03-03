@@ -85,7 +85,7 @@ class TexSuperconspectBuilder(SuperconspectBuilder):
 
         text = re.sub(r'section\[.*]', 'section', text)
         text = (
-            open('assets/build/tex/superconspect_template.tex', encoding='utf8').read()
+            self.DISCLAIMER + open('assets/build/tex/superconspect_template.tex', encoding='utf8').read()
                 .replace('$conspects$', text)
                 .replace('$subject$', self.subject_name)
                 .replace('$teacher$', self.lecturer_name)
