@@ -28,7 +28,6 @@ parser.add_argument(
     "(by default is `conspects/subjectname/subjectname_superconspect.pdf` or `subjectname/subjectname_superconspect.md`)"
 )
 parser.add_argument('-s', '--source-filename', help="Path to a source superconspect file to be generated (by default is `subjectname/subjectname_superconspect.tex/typ`) (for Tex and Typst only)")
-parser.add_argument('--watch', action='store_true', help="Watches an input file and recompiles on changes (for Typst only)")
 parser.add_argument('-l', '--linted-output', help="Path to a directory which will store temporary files (for Tex only)", default='linted')
 parser.add_argument('-v', '--verbose', action='store_true', help="Show verbose output (for Tex only)")
 parser.add_argument('-f', '--force', action='store_true', help="Force continued processing past errors (for Tex only)")
