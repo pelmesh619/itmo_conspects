@@ -3,6 +3,7 @@ import re
 from pathlib import Path
 
 from assets.build.superconspect_builder import SuperconspectBuilder
+from assets.build.typst.conspect_builder import TypstConspectBuilder
 
 
 class TypstSuperconspectBuilder(SuperconspectBuilder):
@@ -13,10 +14,11 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
     FILE_EXTENSION = '.typ'
     OUTPUT_EXTENSION = '.pdf'
 
-    def __init__(self, input_folder, blacklist_words, output_filename=None):
+    def __init__(self, input_folder, blacklist_words, output_filename=None, source_filename=None):
         super().__init__(input_folder, blacklist_words, output_filename)
+        self._source_filename = source_filename
 
-        self.level = len(list(i for i in Path(input_folder).parts if i))
+        self.level = len(list(i for i in Path(self.source_filename).parent.parts if i))
 
         self.subject_name = None
         self.lecturer_name = None
@@ -81,6 +83,8 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
                 .replace('$top_level_header$', self.top_level_header)
                 .replace('$preamble_location$', preamble_location)
         )
-        open(self.superconspect_filename, 'w', encoding='utf8').write(text)
+        open(self.source_filename, 'w', encoding='utf8').write(text)
+
+        return t.build(args)
 
         os.system("python build.py " + str(self.superconspect_filename))
