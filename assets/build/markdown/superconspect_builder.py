@@ -128,3 +128,5 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
         open(self.superconspect_filename, 'w', encoding='utf8').write(beginning + text)
 
         print(f"Markdown file {self.superconspect_filename} is combined!")
+
+        return 0
