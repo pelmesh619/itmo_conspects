@@ -9,7 +9,7 @@
 
 \begin{document}
     \Def Пусть $\mathcal{A} : V \rightarrow W; \ \mathcal{B} : U \rightarrow V$, тогда 
-    $\mathcal{A}\mathcal{B}$ - произведение операторов (композиция), причем
+    $\mathcal{A}\mathcal{B}$ -- произведение операторов (композиция), причем
     $(\mathcal{A}\mathcal{B}) x = \mathcal{A}(\mathcal{B}x); \quad x \in U$
 
     \hypertarget{linearoperatorproperties}{}
@@ -30,7 +30,7 @@
 
     \Nota Можно обобщить $4^\circ$ на $n$ равных $\mathcal{A}$
 
-    \Defs $\mathcal{A}^n = \underset{n \text{ раз}}{\underbrace{\mathcal{A} \cdot \mathcal{A} \cdot \dots \cdot \mathcal{A}}}$ - степень оператора
+    \Defs $\mathcal{A}^n = \underset{n \text{ раз}}{\underbrace{\mathcal{A} \cdot \mathcal{A} \cdot \dots \cdot \mathcal{A}}}$ -- степень оператора
 
     Свойства: $\mathcal{A}^{m + n} = \mathcal{A}^n \cdot \mathcal{A}^m$
 
@@ -46,47 +46,47 @@
     Nota: Проще сказать \enquote{линейный изоморфизм}
 
     \begin{MyTheorem}
-        \Ths $\Set{x_i}$ - линейно независима $\stackrel{\mathcal{A}x = y}{\Longrightarrow} \{y_i\}$ - линейно независима
+        \Ths $\Set{x_i}$ -- линейно независима $\stackrel{\mathcal{A}x = y}{\Longrightarrow} \{y_i\}$ -- линейно независима
 
-        В обратную сторону верно, если $\mathcal{A}$ - взаимно-однозначен
+        В обратную сторону верно, если $\mathcal{A}$ -- взаимно-однозначен
     \end{MyTheorem}
 
     \begin{MyProof}
-        Пусть $\mathcal{A} : V \rightarrow W$ и $\texttt{0}_V, \texttt{0}_W$ - нули $V$ и $W$ соответственно
+        Пусть $\mathcal{A} : V \rightarrow W$ и $\texttt{0}_V, \texttt{0}_W$ -- нули $V$ и $W$ соответственно
 
         \begin{enumerate}
             \item $\mathcal{A}(\texttt{0}_V) = \mathcal{A}\left(\sum^k_{i=1} 0 \cdot e_i\right) = \sum^k_{i=1} 0 \cdot \mathcal{A}e_i = \texttt{0}_W$
 
-            \item Докажем, что если ${x_i} \subset V$ - линейно независима, то ${y_i} \subset W$ - линейно независима
+            \item Докажем, что если ${x_i} \subset V$ -- линейно независима, то ${y_i} \subset W$ -- линейно независима
 
             Составим $\sum^m_{j=1} \lambda_j y_j = \texttt{0}_W$ 
             
-            От противного пусть $\{y_i\}$ - линейно зависима, тогда $\exists \lambda_k \neq 0$
+            От противного пусть $\{y_i\}$ -- линейно зависима, тогда $\exists \lambda_k \neq 0$
 
-            При этом $\forall j \ \ y_j = \mathcal{A}x_j$ (т. к. $\mathcal{A}$ - взаимно-однозначен, 
+            При этом $\forall j \ \ y_j = \mathcal{A}x_j$ (т. к. $\mathcal{A}$ -- взаимно-однозначен, 
             то $n^\prime = m^\prime$: кол-во $x_i$ и $y_i$ равно)
 
             $\sum^{m^\prime}_{j=1} \lambda_j \mathcal{A}x_j \stackrel{\text{линейность}}{=} \mathcal{A} (\sum^{m^\prime}_{j=1} \lambda_j x_j) = \texttt{0}_W$
 
-            Так как $\mathcal{A}\texttt{0}_V = \texttt{0}_W$, то $\texttt{0}_W$ - образ $x = \texttt{0}_V$, 
-            но так как $\mathcal{A}$ - взаимно-однозначен, то
+            Так как $\mathcal{A}\texttt{0}_V = \texttt{0}_W$, то $\texttt{0}_W$ -- образ $x = \texttt{0}_V$, 
+            но так как $\mathcal{A}$ -- взаимно-однозначен, то
             $\nexists x^\prime \neq x \ | \ \mathcal{A}(x^\prime) = \texttt{0}_W$
 
             Значит $\sum^{m^\prime}_{j=1} \lambda_j x_j = \texttt{0}_V$, но 
-            $\exists \lambda_k \neq 0 \Longrightarrow \{x_j\}$ - линейно зависима - \underline{противоречие}
+            $\exists \lambda_k \neq 0 \Longrightarrow \{x_j\}$ -- линейно зависима -- \underline{противоречие}
 
-            \item Пусть теперь $\{y_i\}$ - линейно независима, а $\{x_i\}$ (по предположению от противного) - линейно зависима
+            \item Пусть теперь $\{y_i\}$ -- линейно независима, а $\{x_i\}$ (по предположению от противного) -- линейно зависима
 
             $\sum^{n^\prime}_{i = 1} \lambda_i x_i \stackrel{\exists \lambda_k \neq 0}{=} \texttt{0}_V \quad \Big| \mathcal{A}$
 
             $\sum^{n^\prime}_{i = 1} \lambda_i \mathcal{A}x_i = \texttt{0}_W$
 
-            При этом $\exists \lambda_k \neq 0 \Longrightarrow \{y_i\}$ - линейно зависима - \underline{противоречие}
+            При этом $\exists \lambda_k \neq 0 \Longrightarrow \{y_i\}$ -- линейно зависима -- \underline{противоречие}
 
         \end{enumerate}
     \end{MyProof}
 
-    Следствие: $\dim V = \dim W \Longrightarrow \mathcal{A}$ - линейный изоморфизм
+    Следствие: $\dim V = \dim W \Longrightarrow \mathcal{A}$ -- линейный изоморфизм
 
     \hypertarget{reverselinearoperator}{}
 
@@ -106,27 +106,27 @@
     \begin{MyTheorem}
         \Ths Необходимые и Достаточные условия существования $\mathcal{A}^{-1}$
 
-        $\exists \mathcal{A}^{-1} \Longleftrightarrow \mathcal{A}$ - взаимно-однозначный
+        $\exists \mathcal{A}^{-1} \Longleftrightarrow \mathcal{A}$ -- взаимно-однозначный
     \end{MyTheorem}
 
     \begin{MyProof}
-        \fbox{$\Longrightarrow$} $\exists \mathcal{A}^{-1}$, но $\sqsupset \mathcal{A}$ - не взаимно-однозначен, то есть
+        \fbox{$\Longrightarrow$} $\exists \mathcal{A}^{-1}$, но $\sqsupset \mathcal{A}$ -- не взаимно-однозначен, то есть
         $\exists x_1, x_2 \in V (x_1 \neq x_2) \ | \ \mathcal{A}x_1 = \mathcal{A}x_2 \Longleftrightarrow \mathcal{A}x_1 - \mathcal{A}x_2 = \texttt{0} \Longleftrightarrow
-        \mathcal{A}(x_1 - x_2) = \texttt{0}_W \stackrel{\exists \mathcal{A}^{-1}}{\Longrightarrow} x = \texttt{0}_V \Longleftrightarrow x_1 = x_2$ - противоречие
+        \mathcal{A}(x_1 - x_2) = \texttt{0}_W \stackrel{\exists \mathcal{A}^{-1}}{\Longrightarrow} x = \texttt{0}_V \Longleftrightarrow x_1 = x_2$ -- противоречие
 
 
-        \fbox{$\Longleftarrow$} Так как $\mathcal{A}$ - изоморфизм (не учитывая линейность), 
-        то $\exists \mathcal{A}^\prime$ - обратное отображение (не обязательно линейное)
+        \fbox{$\Longleftarrow$} Так как $\mathcal{A}$ -- изоморфизм (не учитывая линейность), 
+        то $\exists \mathcal{A}^\prime$ -- обратное отображение (не обязательно линейное)
 
-        Докажем, что $\mathcal{A}^\prime : W \rightarrow V$ - линейный оператор
+        Докажем, что $\mathcal{A}^\prime : W \rightarrow V$ -- линейный оператор
 
-        $\mathcal{A}$ - взаимно-однозначен $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \sum$
+        $\mathcal{A}$ -- взаимно-однозначен $\Longleftrightarrow \forall x_i \longleftrightarrow y_i \quad \Big| \cdot \lambda_i, \sum$
 
         $\mathcal{A}\left(\sum \lambda_i x_i\right) = \mathcal{A} x = y = \sum \lambda_i y_i \quad$ и $y$ имеет только один прообраз $x$
 
-        Применим $\mathcal{A}^\prime$ к $y = \sum \lambda_i y_i$, получим $\mathcal{A}^\prime y = x = \sum \lambda_i x_i$ - единственный прообраз $y$
+        Применим $\mathcal{A}^\prime$ к $y = \sum \lambda_i y_i$, получим $\mathcal{A}^\prime y = x = \sum \lambda_i x_i$ -- единственный прообраз $y$
 
-        Таким образом, $\mathcal{A}^\prime$ переводит линейную комбинацию в такую же линейную комбинацию прообразов, то есть $\mathcal{A}^\prime$ - линейный: $\mathcal{A}^\prime = \mathcal{A}^{-1}$
+        Таким образом, $\mathcal{A}^\prime$ переводит линейную комбинацию в такую же линейную комбинацию прообразов, то есть $\mathcal{A}^\prime$ -- линейный: $\mathcal{A}^\prime = \mathcal{A}^{-1}$
     \end{MyProof}
 
     \subsection[p2\_4]{2.4. Матрица линейного оператора}
