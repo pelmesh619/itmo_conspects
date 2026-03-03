@@ -26,6 +26,7 @@ parser.add_argument('-v', '--verbose', action='store_true', help="Show verbose o
 parser.add_argument('-f', '--force', action='store_true', help="Force continued processing past errors (for Tex only)")
 parser.add_argument('--bibtex', action='store_true', help="Uses bibtex (by default bibtex isn't used) (for Tex only)")
 parser.add_argument('--only-linter', action='store_true', help="Only uses linter, do not compiles the actual PDF (for Tex only)")
+parser.add_argument('--preamble-path', help="Specific preamble path (for Tex only)")
 
 args = parser.parse_args()
 
