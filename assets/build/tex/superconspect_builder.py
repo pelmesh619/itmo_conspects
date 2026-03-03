@@ -30,15 +30,15 @@ class TexSuperconspectBuilder(SuperconspectBuilder):
 
     def collect_variables(self, file_text):
         if self.subject_name is None:
-            if subject_match := re.search(r'\\fancyhead\[LO,L(E)?]\{(.*)}', file_text):
-                self.subject_name = subject_match.group(2)
+            if subject_match := re.search(r'\\fancyhead\[LO,?L?E?]\{(.*)}', file_text):
+                self.subject_name = subject_match.group(1)
             elif subject_match := re.search(r'\$subject\$=(.*)\n', file_text):
-                self.subject_name = subject_match.group(2)
+                self.subject_name = subject_match.group(1)
                 file_text = file_text.replace(subject_match.group(0), '', 1)
 
         if self.lecturer_name is None:
-            if lecturer_name_match := re.search(r'\\fancyhead\[RO,R(E)?]\{(.*)}', file_text):
-                self.lecturer_name = lecturer_name_match.group(2)
+            if lecturer_name_match := re.search(r'\\fancyhead\[RO,?R?E?]\{(.*)}', file_text):
+                self.lecturer_name = lecturer_name_match.group(1)
             elif lecturer_name_match := re.search(r'\$teacher\$\s*=\s*(.*)\n', file_text):
                 self.lecturer_name = lecturer_name_match.group(1)
                 file_text = file_text.replace(lecturer_name_match.group(0), '', 1)
