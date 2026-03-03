@@ -24,7 +24,7 @@
         \item $\det A^{-1} = \det (T A T^{-1}) = \det T \det A \det T^{-1} = \det A \cdot 1$
     \end{enumerate}
 
-    \Nota То есть характеристика нашего объекта - инвариант при преобразовании $T$
+    \Nota То есть характеристика нашего объекта -- инвариант при преобразовании $T$
 
     \hypertarget{orthogonalmatrix}{}
 
@@ -61,30 +61,30 @@
 
     Возникает вопрос: $A$ ортогональна в каком-либо базисе или во всех сразу?
 
-    Свойство: если $\mathcal{A}$ - ортогонален, то $\det A = \pm 1$ (следует из определения $\det(AA^T) = \det(A) \cdot \det(A^T) = \det(A) \cdot \det(A) = \det(I) = 1 \Longrightarrow \det(A) = \pm \sqrt{1}$)
+    Свойство: если $\mathcal{A}$ -- ортогонален, то $\det A = \pm 1$ (следует из определения $\det(AA^T) = \det(A) \cdot \det(A^T) = \det(A) \cdot \det(A) = \det(I) = 1 \Longrightarrow \det(A) = \pm \sqrt{1}$)
 
     \begin{MyTheorem}
-        \Ths $T_{e\to e^\prime}$ - преобразование координат в $V^n$. Тогда $T$ - ортогональный оператор
+        \Ths $T_{e\to e^\prime}$ -- преобразование координат в $V^n$. Тогда $T$ -- ортогональный оператор
     \end{MyTheorem}
 
-    Здесь базис $e$ - ортонормированный базис
+    Здесь базис $e$ -- ортонормированный базис
 
     \begin{MyProof}
         Пусть в базисе $e$ матрица $T = \begin{pmatrix}
             \tau_{11} & \dots & \tau_{1n} \\
             \vdots & \ddots & \vdots \\
             \tau_{n1} & \dots & \tau_{nn} \\
-        \end{pmatrix}$ - неортогональна
+        \end{pmatrix}$ -- неортогональна
 
         Тогда $e_1^\prime = \sum_{i=1}^n \tau_{1i} e_i \quad \Big| \cdot e_1^\prime$
 
         $1 = (e_1^\prime, e_1^\prime) = \left(\sum_{i=1}^n \tau_{1i} e_i\right)^2 =
-        \tau^2_{11} e^2_1 + \tau_{11} e_1 \tau_{12} e_2 + \dots = \tau_{11}^2 + \dots + \tau_{1n}^2 = 1$, то есть строка - это единичный вектор
+        \tau^2_{11} e^2_1 + \tau_{11} e_1 \tau_{12} e_2 + \dots = \tau_{11}^2 + \dots + \tau_{1n}^2 = 1$, то есть строка -- это единичный вектор
 
         $0 = (e_1^\prime, e_2^\prime) = (\tau_{11} e_1 + \tau_{12}e_1 + \dots) \cdot
         (\tau_{21}e_1 + \tau_{22}e_2 + \dots) = $ произведение 1-ой строки на 2-ую, то есть строки ортогональны
 
-        Таким образом, матрица $T$ - ортогональна
+        Таким образом, матрица $T$ -- ортогональна
     \end{MyProof}
 
     \Nota Тогда $A^\prime = T A T^{-1} = T A T^T$
@@ -95,14 +95,14 @@
     \Def Инвариантное подпространство оператора $\mathcal{A} : V \rightarrow V$ -
     это $U = \{x \in V_1 \in V \ | \ \mathcal{A}x \in V_1\}$
 
-    \Ex $V = \mathcal{P}_n(t)$ - пространство многочленов степени $\leq n$ на $[a; b]$, $\mathcal{D} = \frac{d}{dt}$
+    \Ex $V = \mathcal{P}_n(t)$ -- пространство многочленов степени $\leq n$ на $[a; b]$, $\mathcal{D} = \frac{d}{dt}$
 
-    \Nota $\Ker \mathcal{A}, \IM \mathcal{A}$ - инвариантные $(A : V \rightarrow V)$
+    \Nota $\Ker \mathcal{A}, \IM \mathcal{A}$ -- инвариантные $(A : V \rightarrow V)$
 
     \hypertarget{eigenvalue}{}
 
     \Def Характеристическим многочленом оператора $\mathcal{A} : V \rightarrow V$
-    ($\mathcal{A}x = Ax, A$ - матрица в неком базисе) называют $\xi(\lambda) = \det(A - \lambda I)$
+    ($\mathcal{A}x = Ax, A$ -- матрица в неком базисе) называют $\xi(\lambda) = \det(A - \lambda I)$
 
     \Nota Определитель $|A - \lambda I|$ представляет собой $\begin{vmatrix}a_{11} - \lambda & \dots & a_{1n} \\ \vdots & \ddots & \vdots \\ a_{n1} & \dots & a_{nn} - \lambda \end{vmatrix}$
 
@@ -115,7 +115,7 @@
 
     \Defs Собственное подпространство оператора $\mathcal{A}$, отвечающее числу $\lambda_i$, определяется как $U_{\lambda_i} = \Set{x \in V \ | \ \mathcal{A}x = \lambda_i x} \union \Set{0}$
 
-    \Defs $\dim U_{\lambda_i} = \beta$ - геометрическая кратность числа $\lambda_i$
+    \Defs $\dim U_{\lambda_i} = \beta$ -- геометрическая кратность числа $\lambda_i$
 
     \begin{MyTheorem}
         \Ths $\mathcal{A}x = \lambda x \Longleftrightarrow \det(A - \lambda I) = 0, \quad A : V^n \rightarrow V^n$
@@ -134,7 +134,7 @@
     \Def Кратность корня $\lambda_i$ называется алгебраической кратностью
 
     \begin{MyTheorem}
-        \Ths $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ - линейно независимы
+        \Ths $\lambda_1 \neq \lambda_2 (\mathcal{A}x_1 = \lambda_1 x_1, \mathcal{A}x_2 = \lambda_2 x_2) \Longrightarrow x_1, x_2$ -- линейно независимы
     \end{MyTheorem}
 
     \begin{MyProof}
@@ -150,7 +150,7 @@
 
         $c_1 x_1(\lambda_1 - \lambda_2) = 0$
 
-        Так как $\lambda_1 \neq \lambda_2$ по условию, $x_1 \neq 0$ - собственный вектор, поэтому $c_1 = 0$, а комбинация линейно независима
+        Так как $\lambda_1 \neq \lambda_2$ по условию, $x_1 \neq 0$ -- собственный вектор, поэтому $c_1 = 0$, а комбинация линейно независима
 
         Если $\lambda_1 = 0, \lambda_2 \neq 0$: $c_2 \lambda_2 x_2 = 0 \Longrightarrow c_2 = 0$
     \end{MyProof}
