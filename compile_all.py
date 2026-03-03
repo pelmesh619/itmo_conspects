@@ -12,7 +12,7 @@ from assets.build.tex.superconspect_builder import TexSuperconspectBuilder
 
 DEFAULT_OUTPUT_DIRECTORY = Path("conspects")
 BLACKLIST_WORDS = ['exam', 'superconspect']
-SUPERCONSPECT_BLACKLIST_WORDS = ['superconspect']
+SUPERCONSPECT_BLACKLIST_WORDS = ['cheatsheet', 'superconspect']
 
 parser = argparse.ArgumentParser(
     prog='compile_all.py',
