@@ -61,8 +61,6 @@ class TexSuperconspectBuilder(SuperconspectBuilder):
         folder_files = [i for i in os.listdir(self.input_folder) if not i.startswith('__')]
         folder_files.sort()
 
-        preamble_location = os.path.join(*(['..'] * self.level), 'preamble.typ')
-
         text = ''
 
         for i in folder_files:
