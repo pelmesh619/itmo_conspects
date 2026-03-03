@@ -23,7 +23,7 @@ class TypstConspectBuilder(ConspectBuilder):
 
         start_time = time.time()
 
-        exit_code = os.system(
+        command = (
             f"typst {'compile' if not args.watch else 'watch'} "
             f"{self.input_filename} "
             f"{self.conspect_filename} "
