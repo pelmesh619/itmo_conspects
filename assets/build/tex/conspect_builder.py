@@ -44,7 +44,7 @@ class TexConspectBuilder(ConspectBuilder):
         return text
 
     def get_specific_preamble(self, args=None):
-        folder = args and Path(args.preamble_path) or Path(self.input_filename).parent
+        folder = args and getattr(args, 'preamble_path', None) and Path(args.preamble_path) or Path(self.input_filename).parent
         preamble_path = folder / '__preamble.sty'
         if preamble_path.exists() and preamble_path.is_file():
             specific_preamble = open(preamble_path, encoding='utf8').read()
