@@ -85,6 +85,6 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
         )
         open(self.source_filename, 'w', encoding='utf8').write(text)
 
-        return t.build(args)
+        t = TypstConspectBuilder(self.source_filename, self.superconspect_filename)
 
-        os.system("python build.py " + str(self.superconspect_filename))
+        return t.build(args)
