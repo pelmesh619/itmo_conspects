@@ -1,3 +1,5 @@
+import os
+
 class ConspectBuilder:
     def __init__(self, input_filename, output_filename=None):
         self.input_filename = input_filename
@@ -5,3 +7,8 @@ class ConspectBuilder:
 
     def build(args):
         raise NotImplementedError()
+        
+    def run(self, command):
+        print(f"Running: {command}")
+
+        return os.system(command)
