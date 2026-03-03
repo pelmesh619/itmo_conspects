@@ -66,19 +66,19 @@
 
         Тогда: $A(x) = A_1 \cdot A_2 \cdot A_3 = 1 + 3x + 6x^2 + 10x^3 + 14x^4 + 17x^5 + \underline{18x^6} + 17x^7 + \dots$
 
-        Ответ - 18
+        Ответ -- 18
 
         \item \textbf{Рекуррентные соотношения} (Recurrence relations)
         \hfill\href{https://ru.wikipedia.org/wiki/%D0%A0%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D0%B0%D1%8F_%D1%84%D0%BE%D1%80%D0%BC%D1%83%D0%BB%D0%B0}{*тык*}
 
 
-        \underline{Решить рекуррентное соотношение} - найти закрытую формулу
+        \underline{Решить рекуррентное соотношение} -- найти закрытую формулу
 
         \Exs Арифметическая прогрессия $a_n = a_{n - 1} + d, a_0 = const$
 
-        Решение: $a_n = a_0 + nd$ - анзац (Ansatz, догадка)
+        Решение: $a_n = a_0 + nd$ -- анзац (Ansatz, догадка)
 
-        Проверка: $a_n = a_0 + nd = a_{n - 1} + d = a_0 + (n - 1)d + d = a_0 + nd \quad$ - {\Large👍👍👍}
+        Проверка: $a_n = a_0 + nd = a_{n - 1} + d = a_0 + (n - 1)d + d = a_0 + nd \quad$ -- {\Large👍👍👍}
 
         \item \textbf{Решение при помощи производящих функций}
 
@@ -110,7 +110,7 @@
         ХрУ: $r^n - r^{n - 1} - 6r^{n - 2} = 0 \Longrightarrow r_{1,2} = -2, 3$
 
         \fbox{\begin{tabular}{l}
-            Если $r_1 \neq r_2$, то $a_n = ar_1^n + br_2^n$ - общее решение \\
+            Если $r_1 \neq r_2$, то $a_n = ar_1^n + br_2^n$ -- общее решение \\
             Если $r_1 = r_2 = r$, то $a_n = ar^n + bnr^n$
         \end{tabular}}
 
@@ -118,7 +118,7 @@
 
         $
         \begin{cases}a_n = a(-2)^n + b(3)^n \\ a_0 = 1 = a + b \\ a_1 = 8 = -2a + 3b\end{cases} \Longleftrightarrow
-        \begin{cases}a = -1 \\ b = 2 \\ a_n = -(-2)^n + 2 \cdot 3^n \text{ - решение}\end{cases}
+        \begin{cases}a = -1 \\ b = 2 \\ a_n = -(-2)^n + 2 \cdot 3^n \text{ -- решение}\end{cases}
         $
 
         \item \textbf{Разделяй и властвуй} (Divide-and-Conquer)
@@ -128,7 +128,7 @@
         \item \textbf{Основная теорема о рекуррентных соотношениях} (Master Theorem)
         \hfill\href{https://ru.wikipedia.org/wiki/%D0%9E%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D0%B0%D1%8F_%D1%82%D0%B5%D0%BE%D1%80%D0%B5%D0%BC%D0%B0_%D0%BE_%D1%80%D0%B5%D0%BA%D1%83%D1%80%D1%80%D0%B5%D0%BD%D1%82%D0%BD%D1%8B%D1%85_%D1%81%D0%BE%D0%BE%D1%82%D0%BD%D0%BE%D1%88%D0%B5%D0%BD%D0%B8%D1%8F%D1%85}{*тык*}
 
-        Пусть асимптотика алгоритма - $T(n) = aT\left(\frac{n}{b}\right) + f(n)$, из этого, $c_{crit} = \log_b a$, тогда:
+        Пусть асимптотика алгоритма -- $T(n) = aT\left(\frac{n}{b}\right) + f(n)$, из этого, $c_{crit} = \log_b a$, тогда:
 
         \begin{tabular}{cll}
             \hline
@@ -145,11 +145,11 @@
 
             \hline
 
-            & II.a случай - $k \geq 0$ & $T(n) \in \Theta(n^{c_{crit}} \log^{k + 1} n)$ \\
+            & II.a случай -- $k \geq 0$ & $T(n) \in \Theta(n^{c_{crit}} \log^{k + 1} n)$ \\
 
-            & II.b случай - $k = -1$ & $T(n) \in \Theta(n^{c_{crit}} \log \log n)$ \\
+            & II.b случай -- $k = -1$ & $T(n) \in \Theta(n^{c_{crit}} \log \log n)$ \\
 
-            & II.c случай - $k < -1$ & $T(n) \in \Theta(n^{c_{crit}})$ \\
+            & II.c случай -- $k < -1$ & $T(n) \in \Theta(n^{c_{crit}})$ \\
 
             \hline
 
@@ -165,7 +165,7 @@
         \hfill\href{https://en.wikipedia.org/wiki/Akra%E2%80%93Bazzi_method}{*тык*}
 
 
-        Пусть асимптотика алгоритма - $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n))$,
+        Пусть асимптотика алгоритма -- $T(n) = f(n) + \sum_{i = 1}^k a_i T(b_i n + h_i(n))$,
 
         где $a_i > 0$, $0 < b_i < 1$, $k = const$, $h_i(n) \in O\left(\frac{n}{\log^2 n}\right)$ - малые возмущения
 
@@ -187,13 +187,13 @@
         $\underset{\text{линейная комб. рекуррентных членов}}{\undergroup{k_1 a_n + k_2 a_{n - 1} + k_3 a_{n - 2} + \dots}} =
         \underset{\text{функция от }n}{\undergroup{f(n)}}$
 
-        Линейное рекуррентное соотношение - $\begin{cases}f = 0 \Longrightarrow \text{гомогенное (однородное)} \\ f \neq 0 \Longrightarrow \text{негомогенное (неоднородное)}\end{cases}$
+        Линейное рекуррентное соотношение -- $\begin{cases}f = 0 \Longrightarrow \text{гомогенное (однородное)} \\ f \neq 0 \Longrightarrow \text{негомогенное (неоднородное)}\end{cases}$
 
         \Exs Последовательность Фибоначчи:
 
         $F(n) = \begin{cases}0, \quad n = 0 \\ 1, \quad n = 1 \\ F(n - 1) + F(n - 2)\end{cases}$
 
-        $F(n) - F(n - 1) - F(n - 2) = 0$ - однородное
+        $F(n) - F(n - 1) - F(n - 2) = 0$ -- однородное
 
         \item \textbf{Операторы}:
 
@@ -266,7 +266,7 @@
 
         \end{wrapfigure}
 
-        \item \textbf{Аннигилятор} (Annihilator) - оператор, который трансформирует $f$ в функцию, тождественную $0$
+        \item \textbf{Аннигилятор} (Annihilator) -- оператор, который трансформирует $f$ в функцию, тождественную $0$
 
         \Notas Любой составной оператор аннигилирует класс функций
 
