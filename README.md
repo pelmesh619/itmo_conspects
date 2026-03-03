@@ -25,6 +25,7 @@
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_17.html)
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_24.html)
+        * Лекция №5 - в процессе
 
 * Многопоточное программирование
 
@@ -43,6 +44,7 @@
         * Лекция №2 - в процессе
         * Лекция №3 - отменена
         * Лекция №4 - в процессе
+        * Лекция №5 - отменена
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
@@ -58,6 +60,7 @@
     * Лекция №1 - в процессе
     * Лекция №2 - в процессе
     * Лекция №3 - в процессе
+    * Лекция №4 - в процессе
 
 ## [V семестр](assets/meta/V.md)
 
