@@ -9,9 +9,9 @@
 
 \begin{document}
     \begin{MyProof}
-        Пусть $e_1$ - собственный вектор $\mathcal{A}$
+        Пусть $e_1$ -- собственный вектор $\mathcal{A}$
 
-        $e_1$ найдется, если $\mathcal{A}x = \lambda x$ имеет нетривиальное решение $\Longleftrightarrow \det(\mathcal{A} - \lambda I) = 0 \\ \stackrel{\mathcal{A}\text{ - самосопряженный}}{\Longrightarrow} \exists \lambda \in \Real$
+        $e_1$ найдется, если $\mathcal{A}x = \lambda x$ имеет нетривиальное решение $\Longleftrightarrow \det(\mathcal{A} - \lambda I) = 0 \\ \stackrel{\mathcal{A}\text{ -- самосопряженный}}{\Longrightarrow} \exists \lambda \in \Real$
 
         Для вектора $e_1$ строим инвариантное подпространство $V_1 \perp e_1$ (см. лемму), $\dim V_1 = n - 1$
 
@@ -25,13 +25,13 @@
 
     \Nota Чтобы упорядочить построение базиса, в котором $V_i$ может брать $\max \lambda_i$
 
-    \Notas Из теоремы следует, что самосопряженный оператор диагонализируется: сумма алгебраический кратностей равна $n$ (степень уравнения), а сумма геометрических - $\dim \{e_1, \dots, e_n\} = n$
+    \Notas Из теоремы следует, что самосопряженный оператор диагонализируется: сумма алгебраический кратностей равна $n$ (степень уравнения), а сумма геометрических -- $\dim \{e_1, \dots, e_n\} = n$
 
     \hypertarget{spectraldecomposition}{}
 
     Разложение самосопряженного оператора в спектр:
 
-    $x \in V^n \quad \Set{e_i}_{i=1}^n$ - базис из собственных векторов $\mathcal{A}$ (ортонормированный)
+    $x \in V^n \quad \Set{e_i}_{i=1}^n$ -- базис из собственных векторов $\mathcal{A}$ (ортонормированный)
 
     $x = x_1 e_1 + \dots + x_n e_n = (x, e_1) e_1 + \dots + (x, e_n) e_n = \sum_{i = 1}^{n} (x, e_i) e_i$
 
@@ -49,7 +49,7 @@
         \item $P_i = P_i^* \quad ((P_i x, y) \stackrel{?}{=} (x, P_i y)) \Longleftrightarrow (P_i x, y) = ((x, e_i) e_i, y) = (x, e_i) (e_i, y) = (x, (y, e_i) e_i) = (x, P_i y)$
     \end{enumerate}
 
-    Итак, если $\mathcal{A}: V^n \to V^n$ - самосопряженный и $\Set{e_i}$ - ортонормированный базис собственных векторов $\mathcal{A}$, то
+    Итак, если $\mathcal{A}: V^n \to V^n$ -- самосопряженный и $\Set{e_i}$ -- ортонормированный базис собственных векторов $\mathcal{A}$, то
 
     $x = \sum_{i = 1}^{n} P_i x = \sum_{i = 1}^{n} (x, e_i) e_i$
 
@@ -57,7 +57,7 @@
     \sum_{i = 1}^{n} (x, \mathcal{A}e_i) e_i = \sum_{i = 1}^{n} (x, \lambda_i e_i) e_i =
     \sum_{i = 1}^{n} \lambda_i (x, e_i) e_i = \sum_{i = 1}^{n} \lambda_i P_i x$
 
-    $\Longleftrightarrow \mathcal{A} = \sum_{i = 1}^{n} \lambda_i P_i$ - спектральное разложение $\mathcal{A}$,
+    $\Longleftrightarrow \mathcal{A} = \sum_{i = 1}^{n} \lambda_i P_i$ -- спектральное разложение $\mathcal{A}$,
     спектр $= \Set{\lambda_1, \dots, \lambda_n \ | \ \lambda_i \leq \dots \leq \lambda_n}$
 
     \Ex $y = y_1 e_1 + y_2 e_2 = (y, e_1) e_1 + (y, e_2) e_2 = (\mathcal{A}x, e_1) e_1 + (\mathcal{A}x, e_2) e_2 = \lambda_1 x_1 e_1 + \lambda_2 x_2 e_2$
@@ -66,15 +66,15 @@
 
     \hypertarget{orthogonaloperator}{}
 
-    \Mem Ортогональный оператор $T: V^n \to V^n \overset{def}{\Longleftrightarrow}$ для любого ортонормированного базиса матрица $T$ - ортогональная $T^{-1} = T^T$
+    \Mem Ортогональный оператор $T: V^n \to V^n \overset{def}{\Longleftrightarrow}$ для любого ортонормированного базиса матрица $T$ -- ортогональная $T^{-1} = T^T$
 
-    \Nota Иначе говоря, $T$ - ортогональный оператор $\Longleftrightarrow T^{-1} = T^* \Longrightarrow T T^* = I$
+    \Nota Иначе говоря, $T$ -- ортогональный оператор $\Longleftrightarrow T^{-1} = T^* \Longrightarrow T T^* = I$
 
-    \Def $T$ - ортогональный оператор, если $(Tx, Ty) = (x, y)$
+    \Def $T$ -- ортогональный оператор, если $(Tx, Ty) = (x, y)$
 
     Следствие: $\|Tx\| = \|x\|$, то есть $T$ сохраняет расстояние
 
-    \Nota Ранее в теореме об изменении матрицы $A$ при преобразовании координат $T$ - ортогональный оператор
+    \Nota Ранее в теореме об изменении матрицы $A$ при преобразовании координат $T$ -- ортогональный оператор
 
     Это необязательно, то есть можно переходить в другой произвольный базис (доказательство теоремы позволяет)
 
@@ -83,14 +83,14 @@
     \begin{enumerate}
         \item Находим $\lambda_1, \dots, \lambda_n$
 
-        \item Находим $e_1, \dots e_n$ - ортогональный базис собственных векторов
+        \item Находим $e_1, \dots e_n$ -- ортогональный базис собственных векторов
 
-        \item Составляем $T = \begin{pmatrix}e_{11} & \dots & e_{1n} \\ \vdots & \ddots & \vdots \\ e_{n1} & \dots & e_{nn}\end{pmatrix}$ - матрица поворота базиса
+        \item Составляем $T = \begin{pmatrix}e_{11} & \dots & e_{1n} \\ \vdots & \ddots & \vdots \\ e_{n1} & \dots & e_{nn}\end{pmatrix}$ -- матрица поворота базиса
 
-        \item Находим $T_{e\to f}A_f T_{f\to e} = A_e$ - диагональная
+        \item Находим $T_{e\to f}A_f T_{f\to e} = A_e$ -- диагональная
     \end{enumerate}
 
-    Таким образом диагонализация самосопряженного $\mathcal{A}$ - это нахождение композиции поворотов и симметрий,
+    Таким образом диагонализация самосопряженного $\mathcal{A}$ -- это нахождение композиции поворотов и симметрий,
     как приведение пространства к главным направлением
 
     \clearpage
@@ -112,7 +112,7 @@
 
     \ExN{1} $\mathcal{B}(x, y) \stackrel{\text{в } E^n_\Real}{=} (x, y)$
 
-    \ExNs{2} $\mathcal{B}(x, y) = P_y x$ - проектор $x$ на $y$
+    \ExNs{2} $\mathcal{B}(x, y) = P_y x$ -- проектор $x$ на $y$
 
     \hypertarget{bilinearformmatrix}{}
 
@@ -135,23 +135,23 @@
 
     \Nota Составим из $\mathcal{B}(e_i, e_j)$ матрицу $B = \begin{pmatrix}b_{11} & \dots & b_{1n} \\ \vdots & \ddots & \vdots \\ b_{n1} & \dots & b_{nn}\end{pmatrix}$
 
-    \DefN{1} Если $\mathcal{B}(u, v) = \mathcal{B}(v, u)$, то $\mathcal{B}$ - симметричная
+    \DefN{1} Если $\mathcal{B}(u, v) = \mathcal{B}(v, u)$, то $\mathcal{B}$ -- симметричная
 
-    \DefNs{2} Если $\mathcal{B}(u, v) = -\mathcal{B}(v, u)$, то $\mathcal{B}$ - антисимметричная
+    \DefNs{2} Если $\mathcal{B}(u, v) = -\mathcal{B}(v, u)$, то $\mathcal{B}$ -- антисимметричная
 
-    \DefNs{3} Если $\mathcal{B}(u, v) = \overline{\mathcal{B}(v, u)}$, то $\mathcal{B}$ - кососимметричная (в $\mathcal{C}$)
+    \DefNs{3} Если $\mathcal{B}(u, v) = \overline{\mathcal{B}(v, u)}$, то $\mathcal{B}$ -- кососимметричная (в $\mathcal{C}$)
 
     \Def $\rang \mathcal{B}(u, v) \stackrel{def}{=} \rang B$
 
     \NotaN{1} $\mathcal{B}$ называется невырожденной, если $\rang \mathcal{B} = n$
 
-    \NotaN{2} $\rang \mathcal{B}_e = \rang \mathcal{B}_{e^\prime} $ ($e, e^\prime$ - различные базисы $V^n$), то есть $\rang \mathcal{B}$ инвариантно относительно преобразования $e \to e^\prime$
+    \NotaN{2} $\rang \mathcal{B}_e = \rang \mathcal{B}_{e^\prime} $ ($e, e^\prime$ -- различные базисы $V^n$), то есть $\rang \mathcal{B}$ инвариантно относительно преобразования $e \to e^\prime$
 
     \Ex $\mathcal{B}(u, v) \stackrel{\text{ск. пр.}}{=} (u, v)$
 
     $u = u_1 e_1 + u_2 e_2, v = v_1 e_1 + v_2 e_2$, тогда $\mathcal{B}(e_i, e_j) \stackrel{\text{об}}{=} b_{ij} = (e_i, e_j)$
 
-    Таким образом, $B = \begin{pmatrix}(e_1, e_1) & (e_1, e_2) \\ (e_2, e_1) & (e_2, e_2)\end{pmatrix}$ - матрица Грама
+    Таким образом, $B = \begin{pmatrix}(e_1, e_1) & (e_1, e_2) \\ (e_2, e_1) & (e_2, e_2)\end{pmatrix}$ -- матрица Грама
 
     \Ex $u(t) = 1 + 3t, v(t) = 2 - t$, $\{e_i\} = (1, t)$, $\mathcal{B}(u, v) = (u, v) = \int_{-1}^1 uv dt$
 
