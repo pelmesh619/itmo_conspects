@@ -91,7 +91,6 @@ class TexConspectBuilder(ConspectBuilder):
         if not os.path.exists(self.linted_directory):
             os.mkdir(self.linted_directory)
 
-        linted_output = Path(self.linted_directory) / Path(self.input_filename).name
         open(linted_output, 'w', encoding='utf8').write(text)
 
         if args.only_linter:
