@@ -18,6 +18,16 @@
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_25.pdf)
         * Лекция №5 - отменена
 
+    * Теория игр (лектор Блаженов А. В.)
+
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_superconspect.pdf)
+
+        * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_02_09.pdf)
+        * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_02_16.pdf)
+        * Лекция №4 - календарный праздник
+        * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_03_02.pdf)
+        * Лекция №6 - календарный праздник
+
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
         [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_superconspect.html)
