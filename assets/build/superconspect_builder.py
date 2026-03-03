@@ -9,9 +9,16 @@ class SuperconspectBuilder:
     @property
     def superconspect_filename(self):
         if self.output_filename is None:
-            return Path(self.input_folder) / (Path(self.input_folder).name + "_superconspect" + self.FILE_EXTENSION)
+            return Path("conspects") / Path(self.input_folder) / (Path(self.input_folder).name + "_superconspect" + self.OUTPUT_EXTENSION)
 
         return self.output_filename
+
+    @property
+    def source_filename(self):
+        if self._source_filename is None:
+            return Path(self.input_folder) / (Path(self.input_folder).name + "_superconspect" + self.FILE_EXTENSION)
+
+        return self._source_filename
 
     def build(args):
         raise NotImplementedError()
