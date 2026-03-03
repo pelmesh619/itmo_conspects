@@ -50,8 +50,6 @@ class TypstSuperconspectBuilder(SuperconspectBuilder):
 
         preamble_location = os.path.join(*(['..'] * self.level), 'preamble.typ')
 
-        print(preamble_location, self.level, self.input_folder)
-
         text = ''
 
         for i in folder_files:
