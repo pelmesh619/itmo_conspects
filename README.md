@@ -96,7 +96,7 @@
 
 * Web-разработка: Frontend (лектор Макаревич Р. Д.)
 
-    [**Почти весь курс**](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_superconspect.html)
 
 ## [IV семестр](assets/meta/IV.md)
 
