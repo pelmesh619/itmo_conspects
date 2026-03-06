@@ -9,7 +9,7 @@ $teacher$=Лекции Далевской О. П.
 \end{MyTheorem}
 
 \begin{MyProof}
-    Докажем, что если $\varphi(t)$ - $2\pi$-периодична, то $\int_{-\pi}^\pi \varphi(t) dt = \int_a^{a + 2\pi} \varphi(t) dt$
+    Докажем, что если $\varphi(t)$ -- $2\pi$-периодична, то $\int_{-\pi}^\pi \varphi(t) dt = \int_a^{a + 2\pi} \varphi(t) dt$
 
     У нас $f(x)$ с периодом $[-\pi, \pi]$, обозначим $x = t - 2\pi \ (t = x + 2\pi)$.
 
@@ -25,7 +25,7 @@ $teacher$=Лекции Далевской О. П.
 \begin{MyTheorem}
     \ThNs{2} о растяжении:
 
-    $f(x)$ - $2l$-периодична: $(T \ : \ [-l, l])$
+    $f(x)$ -- $2l$-периодична: $(T \ : \ [-l, l])$
 
     $a_0 = \frac{1}{l} \int_{-l}^l f(x) dx$
 
@@ -37,11 +37,11 @@ $teacher$=Лекции Далевской О. П.
 \end{MyTheorem}
 
 \begin{MyProof}
-    $f(x)$ - $2l$-периодична: $(T \ : \ [-l, l])$
+    $f(x)$ -- $2l$-периодична: $(T \ : \ [-l, l])$
 
     Обозначим $x = \frac{lt}{\pi} \quad t\Big\uparrow^\pi_{-\pi} \quad x\Big\uparrow^l_{-l}$
 
-    $f(\frac{lt}{\pi}) = \varphi(t)$ - $2\pi$-периодична
+    $f(\frac{lt}{\pi}) = \varphi(t)$ -- $2\pi$-периодична
 
     Ряд Фурье для $\varphi(t) = \frac{a_0}{2} + \sum_{k = 1}^\infty a_k \cos kt + b_k \sin kt$, где 
 
@@ -76,12 +76,12 @@ $x = \sum_{k = 1}^\infty \frac{(-1)^{k + 1} \cdot 2}{k\pi} \sin k\pi x$
 $\delta_n^2 = \|f - T_n\|^2 = (f - T_n, f - T_n) = \frac{1}{b - a} \int_a^b \left(f(x) - T_n(x)\right)^2 dx = \left[\begin{matrix}[a, b] = [-\pi, \pi]\end{matrix}\right] = \\ 
 \frac{1}{2\pi} \int_{-\pi}^\pi \left(f(x) - \frac{a_0}{2} - \sum_{m = 1}^n a_m \cos mx + b_m \sin mx\right)^2 dx$
 
-Далее, честно интегрируя, можно убедиться, что $\delta$ будет наименьшим, если $a_m$ и $b_m$ - коэффициенты Фурье
+Далее, честно интегрируя, можно убедиться, что $\delta$ будет наименьшим, если $a_m$ и $b_m$ -- коэффициенты Фурье
 
 Преобразуем $\|f - f_0\|^2$:
 
 $\delta_n^2 = \|f - \sum_{m = 0}^n (f, e_m) e_m\|^2 = \|f\|^2 - 2\left(f, \sum_{m = 0}^n (f, e_m) e_m\right) + \left\|\sum_{m = 0}^n (f, e_m) e_m\right\|^2 = 
-\|f\|^2 - 2\sum_{m = 0}^n (f, e_m)^2 + \sum_{m = 0}^n (f, e_m)^2 = \|f\|^2 - \sum_{m = 0}^n (f, e_m)^2$ - квадраты коэффициентов разложения
+\|f\|^2 - 2\sum_{m = 0}^n (f, e_m)^2 + \sum_{m = 0}^n (f, e_m)^2 = \|f\|^2 - \sum_{m = 0}^n (f, e_m)^2$ -- квадраты коэффициентов разложения
 
 Тогда $\delta^2_n = \frac{1}{2\pi} \int_{-\pi}^\pi f^2(x) dx - \frac{a_0^2}{4} - \frac{1}{2} \sum_{m = 1}^n (a_m^2 + b_m^2)$
 
@@ -89,18 +89,18 @@ $\delta_n^2 = \|f - \sum_{m = 0}^n (f, e_m) e_m\|^2 = \|f\|^2 - 2\left(f, \sum_{
 
 Так как $\sum_{m = 1}^n$ растет и ограничена, то ряд $\sum_{m = 1}^\infty$ сходитсяя
 
-Можем записать: \fbox{$\frac{1}{\pi} \int_{-\pi}^\pi f^2(x) dx \geq \frac{a_0^2}{2} + \sum_{m = 1}^\infty (a_m^2 + b_m^2)$} - неравенство Бесселя
+Можем записать: \fbox{$\frac{1}{\pi} \int_{-\pi}^\pi f^2(x) dx \geq \frac{a_0^2}{2} + \sum_{m = 1}^\infty (a_m^2 + b_m^2)$} -- неравенство Бесселя
 
 Можем усилить неравенство, если доказать, что при $n \to \infty \ \delta_n^2 \to 0$. В этом случае $f(x)$ 
 раскладывается по полной системе функций $\{\cos mx, \sin mx\}$
 
 \Def Система $\{\varphi_m(x)\}_{m = 1}^\infty$ называется полной, если $\forall f(x) \not\in \{\varphi_m\}_{m = 1}^\infty \quad \int_a^b f(x)\varphi(x) dx = 0 \Longrightarrow f(x) = 0$
 
-\fbox{$\frac{1}{\pi} \int_{-\pi}^\pi f^2(x) dx = \frac{a_0^2}{2} + \sum_{m = 1}^\infty (a_m^2 + b_m^2)$} - равенство Парсеваля
+\fbox{$\frac{1}{\pi} \int_{-\pi}^\pi f^2(x) dx = \frac{a_0^2}{2} + \sum_{m = 1}^\infty (a_m^2 + b_m^2)$} -- равенство Парсеваля
 
 Заметим, что из оценки ранее $\|f\|^2 = \sum_{m = 1}^n (f, e_m)^2 = \sum_{m = 1}^n f_m^2$
 
-В $\infty$-мерном пространстве $\|f\|^2 = \sum_{m = 1}^\infty f_m^2$ - \enquote{теорема Пифагора}
+В $\infty$-мерном пространстве $\|f\|^2 = \sum_{m = 1}^\infty f_m^2$ -- \enquote{теорема Пифагора}
 
 \Nota Эти утверждения верны для любых ортогональных систем функций, а не только для тригонометрических
 
@@ -125,11 +125,11 @@ $\frac{1}{2l} \int_{-l}^l f(t)dt \leq \frac{1}{2l} \int_{-l}^l |f(t)| dt \leq \f
 Рассмотрим $\sum_{m = 1}^\infty \underset{\text{функция переменной }l}{\underbrace{\frac{1}{l} \int_{-l}^l f(t) \cos \frac{m\pi(t - x)}{l} dt}} = 
 \sum_{m = 1}^\infty \frac{1}{\pi} \left(\int_{-l}^l f(t) \cos \alpha_m (t - x) dt\right) \Delta \alpha_m$
 
-Рассмотрим переменную $\alpha \in \Real, \ \alpha_m = \alpha(m), \Delta \alpha_m = \Delta \alpha$ - дифференциальное
+Рассмотрим переменную $\alpha \in \Real, \ \alpha_m = \alpha(m), \Delta \alpha_m = \Delta \alpha$ -- дифференциальное
 
 Имеем аналог интегральной суммы $\sum_{m = 1}^n \varphi(\alpha_m) \Delta \alpha_m, n \to \infty$
 
-Тогда \fbox{$f(x) = \frac{1}{\pi} \int_0^{+\infty} \left(\int_{-\infty}^{+\infty} f(t) \cos \alpha (t - x) dt\right) d\alpha$} - интеграл Фурье
+Тогда \fbox{$f(x) = \frac{1}{\pi} \int_0^{+\infty} \left(\int_{-\infty}^{+\infty} f(t) \cos \alpha (t - x) dt\right) d\alpha$} -- интеграл Фурье
 
 \Nota От дискретного спектра частот $\alpha_1, \alpha_2, \dots, \alpha_m$ перешли к непрерывному спектру $\alpha$
 
@@ -144,9 +144,9 @@ $\frac{1}{2l} \int_{-l}^l f(t)dt \leq \frac{1}{2l} \int_{-l}^l |f(t)| dt \leq \f
          & = \int_0^\infty \left(\int_{-\infty}^{+\infty} \cos \alpha t \cos \alpha x dt + \int_{-\infty}^{+\infty} \sin \alpha t \sin \alpha x dt\right) d\alpha
 \end{flalign*}
 
-Если $f(x)$ - четная, то $\int_{-\infty}^{+\infty} f(t) \cos \alpha t dt = 2\int_0^{+\infty} \dots; \quad \int_{-\infty}^{\infty} \sin\alpha t dt = 0$
+Если $f(x)$ -- четная, то $\int_{-\infty}^{+\infty} f(t) \cos \alpha t dt = 2\int_0^{+\infty} \dots; \quad \int_{-\infty}^{\infty} \sin\alpha t dt = 0$
 
-Если $f(x)$ - нечетная, то $\int_{-\infty}^{+\infty} f(t) \sin \alpha t dt = 2\int_0^{+\infty} \dots; \quad \int_{-\infty}^{\infty} \cos\alpha t dt = 0$
+Если $f(x)$ -- нечетная, то $\int_{-\infty}^{+\infty} f(t) \sin \alpha t dt = 2\int_0^{+\infty} \dots; \quad \int_{-\infty}^{\infty} \cos\alpha t dt = 0$
 
 \mediumvspace
 
