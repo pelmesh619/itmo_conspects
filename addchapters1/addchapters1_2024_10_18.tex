@@ -37,7 +37,7 @@
 
         и $\forall \varepsilon > 0 \ \exists N = N(\varepsilon) \ | \ |r_n(x + \Delta x)| < \frac{\varepsilon}{3}$ (так как $N$ не зависит от $x$; $x + \Delta x \in [a, b]$) 
     
-        $\Delta S_n = S_n(x + \Delta x) - S(x) = u_1(x + \Delta x) - u_1(x) + \dots + u_n(x + \Delta x) - u_n(x)$ - конечная сумма непрерывна
+        $\Delta S_n = S_n(x + \Delta x) - S(x) = u_1(x + \Delta x) - u_1(x) + \dots + u_n(x + \Delta x) - u_n(x)$ -- конечная сумма непрерывна
 
         Сама $\Delta S_n(x)$ непрерывна, тогда $\forall \varepsilon > 0 \ $ (при фиксированном $N$) $\exists \delta > 0 \ | \ |\Delta S_n(x)| < \frac{\varepsilon}{3}$ при $|\Delta x| < \delta$
 
@@ -73,15 +73,15 @@
     \begin{MyProof}
         $\Box$
 
-        $S(x) = S_n(x) + r_n(x) = u_1(x) + u_2(x) + \dots + u_n(x) + r_n(x)$ - конечное число слагаемых из непрерывных функций
+        $S(x) = S_n(x) + r_n(x) = u_1(x) + u_2(x) + \dots + u_n(x) + r_n(x)$ -- конечное число слагаемых из непрерывных функций
         ($r_n(x)$ как хвост равномерно сходящегося ряда)
 
-        Тогда для $x_0, x \in [a, b] \quad \int_{x_0}^x S(x) = \sum_{k = 1}^n \int_{x_0}^x u_k(x) dx + \int_{x_0}^x r_n(x) dx$ - это будет
+        Тогда для $x_0, x \in [a, b] \quad \int_{x_0}^x S(x) = \sum_{k = 1}^n \int_{x_0}^x u_k(x) dx + \int_{x_0}^x r_n(x) dx$ -- это будет
         верно, если $\int_{x_0}^x r_n(x) dx \underset{n \to \infty}{\longrightarrow} 0$
 
         По свойству интегралов $\left|\int_{x_0}^x r_n(x) dx\right| \leq \int_{x_0}^x |r_n(x)| dx$
 
-        $\left|\int_{x_0}^x r_n(x) dx\right| \leq \int_{x_0}^x |r_n(x)| dx < \int_{x_0}^x \varepsilon_n dx = \underset{\varepsilon_n \to 0}{\varepsilon_n (x - x_0)}$ ($x, x_0$ - фикс.)
+        $\left|\int_{x_0}^x r_n(x) dx\right| \leq \int_{x_0}^x |r_n(x)| dx < \int_{x_0}^x \varepsilon_n dx = \underset{\varepsilon_n \to 0}{\varepsilon_n (x - x_0)}$ ($x, x_0$ -- фикс.)
 
         То есть $\lim_{n \to \infty} \int_{x_0}^x r_n(x) dx = 0$
 
@@ -111,7 +111,7 @@
         $\int_{x_0}^x g(x)dx = \int_{x_0}^x \left(\sum_{n = 1}^\infty u^\prime_n(x)\right) dx = \sum_{n = 1}^\infty 
         \left(\int_{x_0}^x u_n^\prime (x)dx\right) = u_1(x) \Big|_{x_0}^x + u_2(x) \Big|_{x_0}^x + \dots$
 
-        $ = (u_1(x) - u_1(x_0)) + (u_2(x) - u_2(x_0)) + \dots = S(x) - S(x_0)$ - разность сходящихся рядов
+        $ = (u_1(x) - u_1(x_0)) + (u_2(x) - u_2(x_0)) + \dots = S(x) - S(x_0)$ -- разность сходящихся рядов
 
         $\int_{x_0}^x g(x) dx = S(x) - S(x_0) \Longrightarrow \left(\int_{x_0}^x g(x) dx\right)^\prime = g(x) = S^\prime(x)$
 
@@ -122,9 +122,9 @@
 
     \hypertarget{powerseries}{}
 
-    \Def $\sum_{n = 0}^\infty c_n(x - x_0)^n, \ c_n \in \Real, x_0 \in \Real$ - степенной ряд с центром $x_0$ (в точке $x_0$, по степеням $(x - x_0)$)
+    \Def $\sum_{n = 0}^\infty c_n(x - x_0)^n, \ c_n \in \Real, x_0 \in \Real$ -- степенной ряд с центром $x_0$ (в точке $x_0$, по степеням $(x - x_0)$)
 
-    \Nota В частности $\sum_{n = 1}^\infty c_n x^n$ - степенной с центром в $x_0 = 0$
+    \Nota В частности $\sum_{n = 1}^\infty c_n x^n$ -- степенной с центром в $x_0 = 0$
 
     $\sum_{n = 0}^\infty c_n(x - x_0)^n$ легко сводится заменой $x - x_0 = t$ к $\sum_{n = 0}^\infty c_n t^n$
 
@@ -141,7 +141,7 @@
     \begin{MyProof}
         $\Box$
 
-        1) В точке $x_1$ $\sum_{n = 0}^\infty c_n x_1^n = c_0 + c_1 x_1 + c_2 x_1^2 + \dots$ - числовой ряд, сходящийся
+        1) В точке $x_1$ $\sum_{n = 0}^\infty c_n x_1^n = c_0 + c_1 x_1 + c_2 x_1^2 + \dots$ -- числовой ряд, сходящийся
 
         В точке $x \ (|x| < |x_1|) \quad \sum_{n = 0}^\infty c_n x^n = c_0 + c_1 x + c_2 x^2 + \dots = 
         c_0 + c_1 x_1 \frac{x}{x_1} + c_1 x_1^2 \frac{x^2}{x_1^2} + \dots$ 
@@ -155,7 +155,7 @@
         И $\left|\frac{x^k}{x_1^k}\right| < 1$, так как $|x| < |x_1|$
 
         Тогда $|c_0| + |c_1 x_1| \left|\frac{x}{x_1}\right| + |c_1 x_1^2| \left|\frac{x^2}{x_1^2}\right| + \dots + |c_k x_1^k| \left|\frac{x^k}{x_1^k}\right| < 
-        M\left(1 + \left|\frac{x}{x_1}\right| + \left|\frac{x}{x_1}\right|^2 + \dots + \left|\frac{x}{x_1}\right|^k\right)$ - геометрическая прогрессия с $|q| < 1$
+        M\left(1 + \left|\frac{x}{x_1}\right| + \left|\frac{x}{x_1}\right|^2 + \dots + \left|\frac{x}{x_1}\right|^k\right)$ -- геометрическая прогрессия с $|q| < 1$
 
         Таким образом $\sum_{n = 0}^\infty |c_n x^n| \sim M\sum_{n = 0}^\infty \left|\frac{x}{x_1}\right|^n$, который сходится
 
@@ -175,7 +175,7 @@
 
         \Nota Заметим, что должно существовать такое $R$, для которого для всех $x$ меньше $R$ ряд сходится
 
-        Зафиксируем между $x_0$ и $R$ число $x_0 < r < R$ - тогда $\sum c_n r^n$ - мажорирует $c_n x^n$, то есть ряд сходится равномерно
+        Зафиксируем между $x_0$ и $R$ число $x_0 < r < R$ -- тогда $\sum c_n r^n$ мажорирует $c_n x^n$, то есть ряд сходится равномерно
 
         \hypertarget{convergenceradius}{}
 
@@ -185,7 +185,7 @@
             \includegraphics[width=0.4\textwidth]{addchapters1/images/addchapters1_2024_10_18_2}
         \end{wrapfigure}
 
-        Для сдвинутого ряда $\sum_{n = 0}^\infty c_n (x - x_0)^n \quad \forall x: \ |x - x_0| < R$ - сходится; $\forall x: \ |x - x_0| > R$ - расходится
+        Для сдвинутого ряда $\sum_{n = 0}^\infty c_n (x - x_0)^n \quad \forall x: \ |x - x_0| < R$ -- сходится; $\forall x: \ |x - x_0| > R$ -- расходится
         
         Сходимость ряда в $x_0 \pm R$ нужно проверять специально
 
@@ -202,9 +202,9 @@
     
     Далее, рассмотрим $x = \pm 1$: 
     
-    $\quad (x = 1): \sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n}$ - сходится
+    $\quad (x = 1): \sum_{n = 1}^\infty \frac{(-1)^{n + 1}}{n}$ -- сходится
 
-    $\quad (x = -1): \sum_{n = 1}^\infty \frac{-1}{n}$ - расходится
+    $\quad (x = -1): \sum_{n = 1}^\infty \frac{-1}{n}$ -- расходится
 
     Итак, $D = (-1; 1]$
 
