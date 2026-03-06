@@ -251,6 +251,34 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
     \end{enumerate}
 \end{MyProof}
 
+\begin{MyProof}
+    Альтернативное доказательство через модифицированную лемму Фишера (y28 notes)
+    \begin{enumerate}
+        \item Аналогично предыдущей версии
+
+        \item Аналогично предыдущей версии
+        
+        \item Так как $X_i \in N(a, \sigma^2)$, то $\frac{X_i - a}{\sigma} \in N(0, 1)$ и $\sum_{i = 1}^n \frac{(X_i - a)^2}{\sigma^2} \in H_n$ по определению
+        
+        \item $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i = 1}^n \left(\frac{X_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
+        \sum_{i = 1}^n (Y_i - \overline{Y})^2$, где $Y_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{Y} = \frac{1}{n} \sum_{i = 1}^n Y_i = \frac{\sum_{i = 1}^n X_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
+
+        $\vec Y = (Y_1, \dots , Y_n)$ - стандартные нормальные вектора.
+
+        Тогда получаем: $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i=1}^n (Y_i - \overline{Y})^2 = nD_Y^*$ - квадрат расстояния от
+        $\vec Y$ до прямой $l: x_1 = x_2 = \dots = x_n$, а $\overline{Y}$ - проекция $\vec Y$ на эту прямую.
+
+        Тогда по модифицированной лемме Фишера: $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} \in H_{n-1}$,
+        
+        \setcounter{enumi}{4}
+        \item Согласно модифицированной лемме Фишера и выкладкам  из пункта 3: 
+        $\frac{(n-1)S^2}{\sigma}$ - не зависит от $\overline{Y} = \frac{\overline{x} - a}{\sigma}$, следовательно $S^2$ не зависит от $\overline{x}$.
+          
+        \setcounter{enumi}{3}
+        \item Аналогично предыдущей версии
+    \end{enumerate}
+\end{MyProof}
+
 
 
 
