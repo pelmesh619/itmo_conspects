@@ -14,7 +14,7 @@
     \hypertarget{taylorsseries}{}
 
     \begin{MyTheorem}
-        \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ - ряд Тейлора
+        \Ths Если $R_n(x) \underset{n \to \infty}{\longrightarrow} 0$, то $f(x) = \sum_{n = 0}^\infty \frac{f^{(n)}(x_0)}{n!} (x - x_0)^n$ -- ряд Тейлора
     \end{MyTheorem}
 
     \Nota Если $x_0 = 0$, то ряд Маклорена 
@@ -100,7 +100,7 @@
 
     Таким образом: $(1 + x)^m = \sum_{k = 0}^\infty C_m^k x^k$
 
-    При $m \in \Natural$ ряд - конечная сумма, при остальных - бесконечная
+    При $m \in \Natural$ ряд -- конечная сумма, при остальных -- бесконечная
 
     \Lab $\frac{1}{\sqrt{1 - x^2}} = (1 + (-x^2))^{-\frac{1}{2}} = (\mathrm{arcsin} x)^\prime \qquad \int_0^t \frac{dx}{\sqrt{1 - x^2}} = \mathrm{arcsin} t$
 
@@ -117,16 +117,16 @@
     Интервал сходимости: $\lim_{n \to \infty} \left|\frac{u_{n + 1}}{u_n}\right| = 
     \lim_{n \to \infty} \left|\frac{x^{n + 1} n}{(n + 1) x^n}\right| = |x| < 1 \quad D = (-1, 1)$
 
-    При $x = 1 \quad \ln(1 + x) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots$ - сходится $\quad D = (-1, 1]$
+    При $x = 1 \quad \ln(1 + x) = 1 - \frac{1}{2} + \frac{1}{3} - \frac{1}{4} + \dots$ -- сходится $\quad D = (-1, 1]$
 
     \Notas Сходимость остатка требует исследования
 
-    \Nota Заметим, если $x = \frac{1}{k}$, где $k \in \Natural$, то $\ln(1 + \frac{1}{k}) = \ln\frac{k + 1}{k} = \ln (k + 1) - \ln k$ - рекуррентная формула
+    \Nota Заметим, если $x = \frac{1}{k}$, где $k \in \Natural$, то $\ln(1 + \frac{1}{k}) = \ln\frac{k + 1}{k} = \ln (k + 1) - \ln k$ -- рекуррентная формула
     логарифмов натуральных чисел
 
     \mediumvspace
 
-    7$^\circ$ $\mathrm{arctg} x$ - \Lab ($(\mathrm{arctg} x)^\prime = \frac{1}{1 + x^2}$)
+    7$^\circ$ $\mathrm{arctg} x$ -- \Lab ($(\mathrm{arctg} x)^\prime = \frac{1}{1 + x^2}$)
 
     \subsubsection{3.2. Приложения}
 
@@ -137,7 +137,7 @@
     $I = \int_0^{\frac{1}{2}} (1 - \frac{x^2}{3!} + \frac{x^4}{5!} - \dots) dx = x - \frac{x^3}{3 \cdot 3!} + \frac{x^5}{5 \cdot 5!} + \dots \Big|_{0}^{\frac{1}{2}} = 
     \frac{1}{2} - \frac{1}{8 \cdot 3 \cdot 6} + \frac{1}{32 \cdot 5 \cdot 120} - \cdot$
 
-    Ряд знакопеременный - можем найти такой $u_n$, который будет меньше заданной точности вычисления $\varepsilon$
+    Ряд знакопеременный -- можем найти такой $u_n$, который будет меньше заданной точности вычисления $\varepsilon$
 
     \ExN{2} $\int_0^{a} e^{-x^2} dx = \int_0^a (1 + (-x^2) + \frac{x^4}{2!} + \dots) dx = x - \frac{x^3}{2} + \frac{x^5}{10} + \dots \Big|_0^a = a - \frac{a^3}{5} + \frac{a^5}{10} - \dots$
 
@@ -160,8 +160,8 @@
 
     Из этого норма $\|f\| = \sqrt{(f,f)} = \left(\int_a^b f^2(x) dx\right)^\frac{1}{2}$
 
-    Главное приложение евклидовых пространств - задача о перпендикуляре: найти перпендикуляр $h$ из конца вектора $f$ на подпространство $L^\prime$.
-    Иначе: ищем расстояние $\|f - h\|$ (метрика) или ортогональную проекция $f_0$ вектора $f$ на $L^\prime$, такую, что $f_0 + h = f$
+    Главное приложение евклидовых пространств -- задача о перпендикуляре: найти перпендикуляр $h$ из конца вектора $f$ на подпространство $L^\prime$.
+    Иначе: ищем расстояние $\|f -- h\|$ (метрика) или ортогональную проекция $f_0$ вектора $f$ на $L^\prime$, такую, что $f_0 + h = f$
 
     Будем искать $f_0$, задав подпространство $L^\prime$ множеством функций $\{\sin mx, \cos mx\}$
 
