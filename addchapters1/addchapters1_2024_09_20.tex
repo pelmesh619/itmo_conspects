@@ -21,7 +21,7 @@
         \item Признак Коши (интегральный)
     \end{enumerate}
 
-    Далее $\sum_{n = 1}^\infty u_n$ - исследуемый ряд, $\sum_{n = 1}^\infty v_n$ - вспомогательный (уже исследован на сходимость),
+    Далее $\sum_{n = 1}^\infty u_n$ -- исследуемый ряд, $\sum_{n = 1}^\infty v_n$ -- вспомогательный (уже исследован на сходимость),
     для простоты $v_n, u_n > 0$ (для отрицательных доказывается аналогично)
 
     \mediumvspace
@@ -86,7 +86,7 @@
         $\Box$
     \end{MyProof}
 
-    \Nota При $q = 0$ можем говорить, что $u_n$ - бесконечно малая высшего порядка, чем $v_n$, а значит, если ряд $v_n$
+    \Nota При $q = 0$ можем говорить, что $u_n$ -- бесконечно малая высшего порядка, чем $v_n$, а значит, если ряд $v_n$
     сходится, то $u_n$ сходится
 
     \ExN{1} $\sum_{n = 1}^\infty \frac{1}{n^2} = \sum_{n = 1}^\infty u_n$
@@ -106,7 +106,7 @@
 
     \ExN{3} $\sum_{n = 1}^\infty \arcsin \frac{1}{n}$
 
-    \Nota Члены рядов $u_n$ и $v_n$ - бесконечно малые последовательности. Иначе ряды расходятся по необходимому условию.
+    \Nota Члены рядов $u_n$ и $v_n$ -- бесконечно малые последовательности. Иначе ряды расходятся по необходимому условию.
     Тогда в \ThNs{2} сравниваются порядки бесконечно малых, и ряды одновременно сходятся или расходятся, если $u_n$ и $v_n$ одного
     порядка малости. По этому принципу подбирается вспомогательный ряд
 
@@ -117,7 +117,7 @@
     \begin{MyTheorem}
         \ThNs{3} Признак Даламбера
 
-        $\sum_{n = 1}^\infty u_n$ - исследуемый, $\exists \mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n} \in \Real^+$
+        $\sum_{n = 1}^\infty u_n$ -- исследуемый, $\exists \mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n} \in \Real^+$
 
         \begin{tabular}{ll}
             а) $0 \leq \mathcal{D} < 1$ & $\Longrightarrow \sum u_n$ сходится                                \\
@@ -149,7 +149,7 @@
 
         $\sum_{n = 1}^\infty u_n = \underset{k}{\underbrace{u_1 + u_2 + \dots + u_{n_0 - 1}}} + u_{n_0} + \dots = k + \sum_{m = 1}^\infty v_m $ % u_{n_0} + u_{n_0 + 1} + \dots
 
-        Члены $v_m < r^l u_{n_0}$; $u_{n_0}$ - фикс. число, а $\sum_{l = 1}^\infty r^l$ сходится как геометрический при $|r| < 1$
+        Члены $v_m < r^l u_{n_0}$; $u_{n_0}$ -- фикс. число, а $\sum_{l = 1}^\infty r^l$ сходится как геометрический при $|r| < 1$
 
         Итак ряд $\sum_{l = 1}^\infty r^l u_{n_0}$ сходится и почленно превышает $\sum v_m = \left(\sum u_n\right) - k$
 
@@ -162,11 +162,11 @@
         $\Box$
     \end{MyProof}
 
-    \ExN{1} $\sum_{n = 1}^\infty \frac{1}{n!} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n} = \lim_{n \to \infty} \frac{n!}{(n + 1)!} = \lim_{n \to \infty} \frac{1}{n + 1} = 0$ - сходится
+    \ExN{1} $\sum_{n = 1}^\infty \frac{1}{n!} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{u_{n + 1}}{u_n} = \lim_{n \to \infty} \frac{n!}{(n + 1)!} = \lim_{n \to \infty} \frac{1}{n + 1} = 0$ -- сходится
 
-    \ExN{2} $\sum_{n = 1}^\infty \frac{1}{n} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{n}{n + 1} = 1$ - расходится
+    \ExN{2} $\sum_{n = 1}^\infty \frac{1}{n} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{n}{n + 1} = 1$ -- расходится
 
-    $\sum_{n = 1}^\infty \frac{1}{n^2} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{n^2}{(n + 1)^2} = 1$ - сходится
+    $\sum_{n = 1}^\infty \frac{1}{n^2} \quad\quad \mathcal{D} = \lim_{n \to \infty} \frac{n^2}{(n + 1)^2} = 1$ -- сходится
 
     \hypertarget{cauchyradicalsign}{}
 
@@ -180,7 +180,7 @@
         б) $K > 1 \Longrightarrow \sum u_n$ расходится
     \end{MyTheorem}
 
-    \Notas $K = 1$ - ничего не следует
+    \Notas $K = 1$ -- ничего не следует
 
     \begin{MyProof}
         $\Box$
@@ -189,7 +189,7 @@
 
         $\Longleftrightarrow K - \varepsilon < \sqrt[n]{u_n} < K + \varepsilon$ Положим $\varepsilon = r - K$, где $K < r < 1$
 
-        $\Longrightarrow 0 \leq u_n < r^n$ - геом. ряд с $|r| < 1$, то есть $\sum r^n$ сходится
+        $\Longrightarrow 0 \leq u_n < r^n$ -- геом. ряд с $|r| < 1$, то есть $\sum r^n$ сходится
 
         б) Аналогично
 
@@ -200,9 +200,9 @@
 
     $\mathcal{D} = \lim_{n \to \infty} \frac{\left(1 - \frac{1}{n + 2}\right)^{n + 1}}{\left(1 - \frac{1}{n + 1}\right)^{n}}$
 
-    Но $\lim_{n \to \infty} u_n = e^{-1} \neq 0$ - необходимое условие не выполняется
+    Но $\lim_{n \to \infty} u_n = e^{-1} \neq 0$ -- необходимое условие не выполняется
 
-    \ExN{2} $\sum_{n = 1}^\infty \left(\frac{n}{n + 1}\right)^{n^2}, \quad\quad K = \lim_{n \to \infty} \sqrt[n]{\left(\frac{n}{n + 1}\right)^n} = e^{-1} < 1$ - сходится
+    \ExN{2} $\sum_{n = 1}^\infty \left(\frac{n}{n + 1}\right)^{n^2}, \quad\quad K = \lim_{n \to \infty} \sqrt[n]{\left(\frac{n}{n + 1}\right)^n} = e^{-1} < 1$ -- сходится
 
     \hypertarget{cauchyintegralsign}{}
 
@@ -236,7 +236,7 @@
 
     \subsection{4. Знакочередующиеся ряды}
 
-    \Def $\sum_{n = 0}^\infty (-1)^n u_n$ ($u_n > 0$) - знакочередующийся ряд
+    \Def $\sum_{n = 0}^\infty (-1)^n u_n$ ($u_n > 0$) -- знакочередующийся ряд
 
     \hypertarget{leibniztheorem}{}
 
