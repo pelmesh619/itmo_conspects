@@ -759,20 +759,23 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
     Согласно свойству 5 $Y_i \in N(0, 1)$ и независимы, то по определению \enquote{хи-квадрат} $T(\vec X) \in H_{n - k}$ и не зависит от $Y_1, \dots, Y_k$
 \end{MyProof}
 
-\subsection{Модифицированная лемма Фишера (y28 notes)}
+\subsection{Модифицированная лемма Фишера}
+
+\vspace{-2.5em}
+\hfill \TagYTwoEight
 
 \hypertarget{modified_fishers_lemma}{}
 
 \begin{MyTheorem}
     Пусть вектор $\vec X$ - стандартный нормальный вектор, который рассматриваем как радиус-вектор, 
-    соответсвующий точке в пространсве $\Real^n$. $L \subset Real^n$ - минимальное подпространство размерности $k$, 
-    $dim(L) = k$. Тогда квадрат расстояния от $\vec X$ до $L$ имеет распределение \enquote{хи-квадрат} со степенями свободы $n - k$,
+    соответствующий точке в пространстве $\Real^n$. $L \subset \Real^n$ - минимальное подпространство размерности $k$, 
+    $\mathrm{dim}(L) = k$. Тогда квадрат расстояния от $\vec X$ до $L$ имеет распределение \enquote{хи-квадрат} со степенями свободы $n - k$,
     и не зависит от проекции $\vec X$ на $L$.
 \end{MyTheorem}
 
 \begin{MyProof}
     Пусть $f_1, \dots , f_k$ - ортонормированный базис $L$;
-    $f_{k+1}, f_{k+2}, \dots , f_n$ - его ортонормированние дополнение до базиса $\Real^n$.
+    $f_{k+1}, f_{k+2}, \dots , f_n$ - его ортонормированное дополнение до базиса $\Real^n$.
     Пусть $C$ - матрица перехода от базиса $\{f_i\}$ к естественному базису $\{e_i\}$, поэтому она ортогональная.
     Координаты вектора $\vec X$ в новом базисе $\vec Y = C \cdot \vec X$. Тогда по свойству 5 $\vec Y$ - тоже стандартный  нормальный вектор.
     $\vec Y = \vec {Y'} + \vec {Y''}$, где $\vec {Y'}$ - проекция $\vec X$ на подпространство $L$,
@@ -832,13 +835,11 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
 \end{MyProof}
 
 \begin{MyProof}
-    Альтернативное доказательство через модифицированную лемму Фишера (y28 notes)
+    Альтернативное доказательство через модифицированную лемму Фишера \hfill \TagYTwoEight
     \begin{enumerate}
         \item Аналогично предыдущей версии
 
         \item Аналогично предыдущей версии
-        
-        \item Так как $X_i \in N(a, \sigma^2)$, то $\frac{X_i - a}{\sigma} \in N(0, 1)$ и $\sum_{i = 1}^n \frac{(X_i - a)^2}{\sigma^2} \in H_n$ по определению
         
         \item $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i = 1}^n \left(\frac{X_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
         \sum_{i = 1}^n (Y_i - \overline{Y})^2$, где $Y_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{Y} = \frac{1}{n} \sum_{i = 1}^n Y_i = \frac{\sum_{i = 1}^n X_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
@@ -851,7 +852,7 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
         Тогда по модифицированной лемме Фишера: $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} \in H_{n-1}$,
         
         \setcounter{enumi}{4}
-        \item Согласно модифицированной лемме Фишера и выкладкам  из пункта 3: 
+        \item Согласно модифицированной лемме Фишера и выкладкам из пункта 3: 
         $\frac{(n-1)S^2}{\sigma}$ - не зависит от $\overline{Y} = \frac{\overline{x} - a}{\sigma}$, следовательно $S^2$ не зависит от $\overline{x}$.
           
         \setcounter{enumi}{3}
