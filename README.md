@@ -87,7 +87,7 @@
 
 * Телекоммуникационные системы и технологии (лекторы Береснев А. Д., Самигуллин Р. Ф., Воронцов Л. Ю.)
 
-    [**Почти весь курс**](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/telecomm/telecomm_superconspect.html)
 
 * Машинное обучение (лекторы Власова Е. К., Матвеев С. А.)
 
