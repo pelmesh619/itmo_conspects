@@ -45,6 +45,7 @@
         * Лекция №2 - в процессе
         * Лекция №3 - в процессе
         * Лекция №4 - в процессе
+        * Лекция №5 - в процессе
 
 * Облачные и мобильные технологии
 
@@ -64,13 +65,15 @@
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_13.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_20.html)
     * Лекция №4 - отменена
+    * Лекция №5 - в процессе
 
 * Web-разработка: Backend (лектор Макаревич Р. Д.)
 
-    * Лекция №1 - в процессе
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_02_07.html)
     * Лекция №2 - в процессе
     * Лекция №3 - в процессе
     * Лекция №4 - в процессе
+    * Лекция №5 - в процессе
 
 ## [V семестр](assets/meta/V.md)
 
