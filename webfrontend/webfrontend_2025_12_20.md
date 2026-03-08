@@ -80,11 +80,7 @@ Promise.race([slowRequest, timeout]).then(...)
 
 ![Петля событий](./images/webfrontend_js_event_loop.png)
 
----
-
-# Лекция 11. Fetch API в JavaScript
-
-## Что такое Fetch API
+### Fetch API
 
 Fetch API — это современный браузерный интерфейс для выполнения HTTP-запросов к серверу. Он пришёл на смену устаревшему объекту XMLHttpRequest и предоставляет более удобный синтаксис, основанный на `Promise`
 
