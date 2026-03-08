@@ -118,29 +118,28 @@ E_n = \hbar\omega\left(n + \frac{1}{2}\right), \qquad n = 0, 1, 2, \ldots,
 
 Таким образом, квантовая механика описывает не отдельные траектории частиц, а распределения вероятностей и энергетические уровни, определяемые волновыми функциями и их собственными значениями
 
-Сравним физический величины классической механики и операторы квантовой
+Сравним физический величины классической механики и операторы квантовой:
+
 \begin{center}
     \begin{tabularx}{\textwidth}{p{0.25\textwidth}|X|X}
         Физическая величина & Классическая & Квантовая \\
         \hline
-        Координата & $\vec r = (x, y, z)$ & $\vec r = (x, y, z)$ \\
+        Координата & $\vec{r} = (x, y, z)$ & $\vec{r} = (x, y, z)$ \\
         \hline
-        Импульс & $\vec p = (p_x, p_y, p_z)$ & $-ih \vec \nabla = \left(-ih \frac{\partial}{\partial x}, -ih \frac{\partial}{\partial y}, -ih \frac{\partial}{\partial z}\right)$ \\
+        Импульс & $\vec{p} = (p_x, p_y, p_z)$ & $-i\hbar\vec{\nabla} = \left(-i\hbar\dfrac{\partial}{\partial x},\, -i\hbar\dfrac{\partial}{\partial y},\, -i\hbar\dfrac{\partial}{\partial z}\right)$ \\
         \hline
-        Угловой момент & $\vec L = [\vec r \times \vec p] = (y p_x - z p_y, z p_x - x p_z, x p_y - y p_x)$ & 
-        \begin{tabular}{@{}c@{}}$
-        \hat{\vec L} = -i\hbar [\vec r \times \vec{\nabla}] = \\[3pt]
-        \biggl(
-          -i\hbar\!\left(y \frac{\partial}{\partial z} - z \frac{\partial}{\partial y}\right), \\[3pt]
-          -i\hbar\!\left(z \frac{\partial}{\partial x} - x \frac{\partial}{\partial z}\right), \\[3pt]
-          -i\hbar\!\left(x \frac{\partial}{\partial y} - y \frac{\partial}{\partial x}\right)
-        \biggr)
-        $ \end{tabular}\\
+        Угловой момент &
+        $\vec{L} = [\vec{r} \times \vec{p}] = (yp_z - zp_y,\; zp_x - xp_z,\; xp_y - yp_x)$ &
+        $\hat{\vec{L}} = -i\hbar[\vec{r} \times \vec{\nabla}] =
+        \Bigl(
+          -i\hbar\bigl(y\tfrac{\partial}{\partial z} - z\tfrac{\partial}{\partial y}\bigr),\;
+          -i\hbar\bigl(z\tfrac{\partial}{\partial x} - x\tfrac{\partial}{\partial z}\bigr),\;
+          -i\hbar\bigl(x\tfrac{\partial}{\partial y} - y\tfrac{\partial}{\partial x}\bigr)
+        \Bigr)$ \\
         \hline
-        Энергия (в нерелятивистском приближении) & $E = \frac{p^2}{2m} + U(\vec r)$ & $H = -\frac{\hbar^2}{2m} \nabla^2 + U(\vec r)$
-
-
+        Энергия (в нерелятивистском приближении) &
+        $E = \dfrac{p^2}{2m} + U(\vec{r})$ &
+        $\hat{H} = -\dfrac{\hbar^2}{2m}\nabla^2 + U(\vec{r})$ \\
     \end{tabularx}
-
 \end{center}
 
