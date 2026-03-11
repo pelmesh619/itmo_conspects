@@ -114,7 +114,7 @@ window.MathJax = {
 
     Градиент определяется аналогично, как и в матанализе: $\nabla f = \begin{pmatrix}\frac{\partial f}{\partial x} \\ \frac{\partial f}{\partial y}\end{pmatrix}$ - направление наискорейшего роста
 
-    Вместо градиентов используют приближение в виде операторов Собеля: для градиента по оси $Ox$ - $\begin{pmatrix}-1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1\end{pmatrix}$, для градиента по оси $Oy$ - $\begin{pmatrix}-1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1\end{pmatrix}$
+    Вместо градиентов используют приближение в виде операторов Собеля: для градиента по оси $Ox$ - $$\begin{pmatrix}-1 & 0 & 1 \\ -2 & 0 & 2 \\ -1 & 0 & 1\end{pmatrix}$$, для градиента по оси $Oy$ - $$\begin{pmatrix}-1 & -2 & -1 \\ 0 & 0 & 0 \\ 1 & 2 & 1\end{pmatrix}$$
 
     ![Градиент](./images/cvmethods_gradient.png)
 
