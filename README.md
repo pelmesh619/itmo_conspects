@@ -66,7 +66,7 @@
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_13.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_20.html)
     * Лекция №4 - отменена
-    * Лекция №5 - в процессе
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_03_06.html)
 
 * Web-разработка: Backend (лектор Макаревич Р. Д.)
 
