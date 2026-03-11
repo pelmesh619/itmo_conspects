@@ -659,7 +659,7 @@ chgrp supercoolusers /var/log/mylogs/app.log
     Альтернативно терминал позволяет запустить процесс в фоновом режиме, если после команды написать `&`:
 
     ```bash
-    python.py script.py &
+    python3 script.py &
     ```
 
     В таком случае у демона будет стандартный поток вывода, который перенаправлен в терминал
@@ -667,14 +667,14 @@ chgrp supercoolusers /var/log/mylogs/app.log
     Также после закрытия терминала дочерние фоновые процессы также завершаются. Чтобы этого избежать, можно применить команду `disown`:
 
     ```bash
-    python.py script.py &
+    python3 script.py &
     disown %1
     ```
 
     Или команду `nohup` (от no hang up):
 
     ```bash
-    nohup python.py script.py &
+    nohup python3 script.py &
     ```
 
 * На языке C можно:
