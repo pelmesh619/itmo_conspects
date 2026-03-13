@@ -164,3 +164,23 @@
 }
 
 
+#let hatching(anchor_point, square_size, step) = {
+    let (x0, y0) = anchor_point
+    let x1 = x0 + square_size.at(0)
+    let y1 = y0 + square_size.at(1)
+
+    let c_min = y0 - x1
+    let c_max = y1 - x0
+    let n = int((c_max - c_min) / step) + 1
+
+    for i in range(0, n) {
+        let c = c_min + i * step
+        let x_start = if x0 >= y0 - c { x0 } else { y0 - c }
+        let x_end   = if x1 <= y1 - c { x1 } else { y1 - c }
+        if x_start < x_end {
+            cetz.draw.line((x_start, x_start + c), (x_end, x_end + c), stroke: (dash: "dashed", paint: luma(50%)))
+        }
+    }
+}
+
+
