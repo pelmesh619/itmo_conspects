@@ -436,25 +436,6 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
 
 Рассмотрим построение отрезка прямой с известным наклоном или проходящей через две данные точки на экране в пикселях
 
-#let hatching(anchor_point, square_size, step) = {
-    let (x0, y0) = anchor_point
-    let x1 = x0 + square_size
-    let y1 = y0 + square_size
-
-    let c_min = y0 - x1
-    let c_max = y1 - x0
-    let n = int((c_max - c_min) / step) + 1
-
-    for i in range(0, n) {
-        let c = c_min + i * step
-        let x_start = if x0 >= y0 - c { x0 } else { y0 - c }
-        let x_end   = if x1 <= y1 - c { x1 } else { y1 - c }
-        if x_start < x_end {
-            cetz.draw.line((x_start, x_start + c), (x_end, x_end + c), stroke: (dash: "dashed", paint: luma(50%)))
-        }
-    }
-}
-
 + Естественный алгоритм
 
   Нам известно уравнение прямой $(x - x_A)/(x_B - x_A) = (y - y_A)/(y_B - y_A)$
@@ -482,12 +463,12 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
 
     let incline = vecsum(dots.at(1), veck(dots.at(0), -1))
 
-    grid((0.5,0), (2,2), step: .5, stroke: (dash: "dashed", paint: luma(50%)))
+    grid((0.5, 0), (2, 2), step: .5, stroke: (dash: "dashed", paint: luma(50%)))
 
-    hatching((0.5, 0.5), 0.5, 0.133)
-    hatching((1, 0.5), 0.5, 0.133)
-    hatching((1, 1), 0.5, 0.133)
-    hatching((1.5, 1), 0.5, 0.133)
+    hatching((0.5, 0.5), (0.5, 0.5), 0.133)
+    hatching((1, 0.5), (0.5, 0.5), 0.133)
+    hatching((1, 1), (0.5, 0.5), 0.133)
+    hatching((1.5, 1), (0.5, 0.5), 0.133)
 
     line(vecsum(dots.at(0), veck(incline, -0.5)), vecsum(dots.at(1), veck(incline, 0.8)), stroke: (thickness: 2.5pt))
 
@@ -523,7 +504,7 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
         let size = 0.5
         let step = 0.1      // шаг между линиями штриховки
 
-        hatching(P, size, step)
+        hatching(P, (size, size), step)
 
 
         line((-0.2, 0), (3, 0), mark: (end: "stealth"))
@@ -613,16 +594,18 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
 
     let incline = vecsum(dots.at(1), veck(dots.at(0), -1))
 
-    grid((0,0), (4,2), step: .5, stroke: (dash: "dashed", paint: luma(50%)))
+    let grid_step = .5
 
-    hatching((0, 0), 0.5, 0.133)
-    hatching((0.5, 0), 0.5, 0.133)
-    hatching((1, 0.5), 0.5, 0.133)
-    hatching((1.5, 0.5), 0.5, 0.133)
-    hatching((2, 1), 0.5, 0.133)
-    hatching((2.5, 1), 0.5, 0.133)
-    hatching((3, 1), 0.5, 0.133)
-    hatching((3.5, 1.5), 0.5, 0.133)
+    grid((0,0), (4,2), step: grid_step, stroke: (dash: "dashed", paint: luma(50%)))
+
+    hatching((0, 0), (grid_step, grid_step), 0.133)
+    hatching((0.5, 0), (grid_step, grid_step), 0.133)
+    hatching((1, 0.5), (grid_step, grid_step), 0.133)
+    hatching((1.5, 0.5), (grid_step, grid_step), 0.133)
+    hatching((2, 1), (grid_step, grid_step), 0.133)
+    hatching((2.5, 1), (grid_step, grid_step), 0.133)
+    hatching((3, 1), (grid_step, grid_step), 0.133)
+    hatching((3.5, 1.5), (grid_step, grid_step), 0.133)
 
     line(vecsum(dots.at(0), veck(incline, -0.1)), vecsum(dots.at(1), veck(incline, 0.1)), stroke: (thickness: 2.5pt))
 
