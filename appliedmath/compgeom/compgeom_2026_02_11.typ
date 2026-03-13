@@ -24,7 +24,7 @@
 
     #set par(justify: true)
     #grid(columns: 2, column-gutter: 1em,
-        [$arrow(a) times arrow(b) = mat(arrow(i), arrow(j), arrow(k); a_1, a_2, a_3; b_1, b_2, b_3) = arrow(c) : cases(|arrow(c)| = |arrow(a)| |arrow(b)| sin(hat(upright(arrow(a)\, arrow(b)))), arrow(c) perp arrow(a), arrow(c) perp arrow(b), (arrow(a), arrow(b), arrow(c)) " - правая тройка векторов")$],
+        [$arrow(a) times arrow(b) = mat(arrow(i), arrow(j), arrow(k); a_1, a_2, a_3; b_1, b_2, b_3; delim: "|") = arrow(c) : cases(|arrow(c)| = |arrow(a)| |arrow(b)| sin(hat(upright(arrow(a)\, arrow(b)))), arrow(c) perp arrow(a), arrow(c) perp arrow(b), (arrow(a), arrow(b), arrow(c)) " - правая тройка векторов")$],
         [
         #cetz.canvas(length: 1.5cm, {
             import cetz.draw: *
