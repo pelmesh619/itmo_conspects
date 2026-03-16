@@ -28,6 +28,7 @@
         * Лекция №4 - календарный праздник
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_03_02.pdf)
         * Лекция №6 - календарный праздник
+        * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_03_16.pdf)
 
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
