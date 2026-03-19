@@ -856,14 +856,14 @@ App Bundle содержит все ресурсы, а магазин (напри
 
 * Создание новой активности:
 
-    ```kt
+    ```kotlin
     val intent = Intent(this, MyNewActivity::class.java)
     startActivity(intent)
     ```
 
 * Запуск службы
 
-    ```kt
+    ```kotlin
     // Запуск Service
     val intent = Intent(this, MyService::class.java)
     intent.putExtra("action", "start_sync")
@@ -875,7 +875,7 @@ App Bundle содержит все ресурсы, а магазин (напри
 
 * Отправка широковещательного сообщения для его получения объектами `BroadcastReceiver`
 
-    ```kt
+    ```kotlin
     // Отправка своего Broadcast
     val intent = Intent("com.example.MY_PAGE_IS_LOADED")
     sendBroadcast(intent)
@@ -887,13 +887,13 @@ App Bundle содержит все ресурсы, а магазин (напри
 
 * Явные (Explicit Intent) указывают на конкретный компонент по имени класса:
 
-    ```kt
+    ```kotlin
     val intent = Intent(this, MyService::class.java)
     ```
 
 * Неявные (Implicit Intent) указывают только действие. Далее система сама находит подходящий компонент, например, открытие ссылки в браузере:
 
-    ```kt
+    ```kotlin
     val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://example.com"))
     startActivity(intent)
     ```
@@ -973,13 +973,13 @@ App Bundle содержит все ресурсы, а магазин (напри
 
 Фрагмент создается как класс, наследующийся от `Fragment`:
 
-```kt
+```kotlin
 class MyFragment : Fragment(R.layout.fragment_main)
 ```
 
 Или вручную с созданием представления:
 
-```kt
+```kotlin
 override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
     _binding = FragmentMyBinding.inflate(inflater, container, false)
     return binding.root
@@ -999,7 +999,7 @@ override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, saved
 
 * Динамически в коде:
 
-    ```kt
+    ```kotlin
     supportFragmentManager.beginTransaction()
         .replace(R.id.container, MyFragment())
         .commit()
@@ -1013,7 +1013,7 @@ override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, saved
 
 Другой метод, `addToBackStack()`, добавляет транзакцию в стек. При нажатии на кнопку "Назад" транзакция откатится и вернётся предыдущий фрагмент. Без этого нажатие кнопки "Назад" закроет активность
 
-```kt
+```kotlin
 supportFragmentManager.beginTransaction()
     .replace(R.id.container, DetailFragment())
     .addToBackStack(null)
@@ -1022,7 +1022,7 @@ supportFragmentManager.beginTransaction()
 
 Для передачи данных между фрагментами можно использовать объект `Bundle`:
 
-```kt
+```kotlin
 companion object {
     fun newInstance(name: String) = MyFragment().apply {
         arguments = Bundle().apply { putString("key", name) }
@@ -1032,7 +1032,7 @@ companion object {
 
 Получить данные можно с помощью свойства `arguments`
 
-```kt
+```kotlin
 val name = arguments?.getString("key")
 ```
 <!-- end uiandroid_2026_02_12.md -->
