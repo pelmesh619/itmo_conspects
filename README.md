@@ -18,6 +18,7 @@
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_02_25.pdf)
         * Лекция №5 - отменена
         * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/compgeom/compgeom_2026_03_11.pdf)
+        * Лекция №7 - в процессе
 
     * Теория игр (лектор Блаженов А. В.)
 
@@ -39,6 +40,7 @@
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_24.html)
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_03.html)
         * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_10.html)
+        * Лекция №7 - в процессе
 
 * Многопоточное программирование
 
@@ -50,17 +52,19 @@
         * Лекция №4 - в процессе
         * Лекция №5 - в процессе
         * Лекция №6 - в процессе
+        * Лекция №7 - в процессе
 
 * Облачные и мобильные технологии
 
     * Backend-driven UI на Android (лектор Шуст И. В.)
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_05.html)
-        * Лекция №2 - в процессе
+        * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_12.html)
         * Лекция №3 - отменена
         * Лекция №4 - в процессе
         * Лекция №5 - отменена
         * Лекция №6 - отменена
+        * Лекция №7 - в процессе
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
