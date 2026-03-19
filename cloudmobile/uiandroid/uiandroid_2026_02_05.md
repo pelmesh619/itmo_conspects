@@ -795,10 +795,10 @@ App Bundle содержит все ресурсы, а магазин (напри
 
 Далее `Looper` работает с этим компонентами:
 
-* `android.app.Activity`
-* `android.app.Service`
-* `android.content.BroadcastReceiver`
-* `android.content.ContentProvider`
+* `android.app.Activity` - активность, один экран с интерфейс, через который взаимодействует пользователь
+* `android.app.Service` - компонент-служба для исполнения на заднем фоне задач, не требующих взаимодействие пользователя
+* `android.content.BroadcastReceiver` - компонент для получения сообщений от других приложений или системы
+* `android.content.ContentProvider` - компонент для передачи контента между сообщениями
 
 ---
 
