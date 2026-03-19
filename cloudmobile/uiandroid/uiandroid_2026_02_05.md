@@ -713,7 +713,7 @@ fun example() {
 
 ```kotlin
 fun <T> check(value: Any): Boolean {
-    return value is T  // ошибка
+    return value is T  // ошибка, так как T - это Object
 }
 ```
 
