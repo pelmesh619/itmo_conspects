@@ -46,6 +46,8 @@
 
     * Программирование на C++ с элементами многопоточности (лектор Демин А. Д.)
 
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_superconspect.html)
+
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_04.html)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_11.html)
         * Лекция №3 - в процессе
@@ -57,6 +59,8 @@
 * Облачные и мобильные технологии
 
     * Backend-driven UI на Android (лектор Шуст И. В.)
+
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_superconspect.html)
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_05.html)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_12.html)
