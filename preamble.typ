@@ -164,23 +164,57 @@
 }
 
 
-#let hatching(anchor_point, square_size, step) = {
-    let (x0, y0) = anchor_point
-    let x1 = x0 + square_size.at(0)
-    let y1 = y0 + square_size.at(1)
+#let hatching(anchor_point, square_size, step, angle: 45deg, stroke-style: (dash: "dashed", paint: luma(50%))) = {
+  let (x0, y0) = anchor_point
+  let (dx, dy) = square_size
+  let x1 = x0 + dx
+  let y1 = y0 + dy
 
-    let c_min = y0 - x1
-    let c_max = y1 - x0
-    let n = int((c_max - c_min) / step) + 1
+  let eps = 1e-6
+  let cos_a = calc.cos(angle)
+  let sin_a = calc.sin(angle)
 
+  if calc.abs(cos_a) < eps {
+    // вертикальные линии
+    let n = int((x1 - x0) / step) + 1
     for i in range(0, n) {
-        let c = c_min + i * step
-        let x_start = if x0 >= y0 - c { x0 } else { y0 - c }
-        let x_end   = if x1 <= y1 - c { x1 } else { y1 - c }
-        if x_start < x_end {
-            cetz.draw.line((x_start, x_start + c), (x_end, x_end + c), stroke: (dash: "dashed", paint: luma(50%)))
-        }
+      let x = x0 + i * step
+      cetz.draw.line((x, y0), (x, y1), stroke: stroke-style)
     }
+  } else {
+    // невертикальные линии
+    let k = sin_a / cos_a  // tan θ
+    let step_b = step / calc.abs(cos_a)  // шаг по параметру b
+
+    // вычисляем b_min и b_max по углам
+    let corners = (
+      (x0, y0), (x0, y1), (x1, y0), (x1, y1)
+    )
+    let b_vals = corners.map(((x, y)) => y - k * x)
+    let b_min = calc.min(..b_vals)
+    let b_max = calc.max(..b_vals)
+
+    let n = int((b_max - b_min) / step_b) + 1
+    for i in range(0, n) {
+      let b = b_min + i * step_b
+
+      // интервал x, дающий y внутри [y0, y1]
+      let (x_low, x_high) = if k > 0 {
+        ((y0 - b) / k, (y1 - b) / k)
+      } else if k < 0 {
+        ((y1 - b) / k, (y0 - b) / k)
+      } else {
+        (x0, x1)
+      }
+
+      let x_start = calc.max(x0, x_low)
+      let x_end   = calc.min(x1, x_high)
+
+      if x_start < x_end {
+        let p1 = (x_start, k * x_start + b)
+        let p2 = (x_end,   k * x_end   + b)
+        cetz.draw.line(p1, p2, stroke: stroke-style)
+      }
+    }
+  }
 }
-
-
