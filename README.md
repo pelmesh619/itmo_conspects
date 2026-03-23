@@ -30,6 +30,7 @@
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_03_02.pdf)
         * Лекция №6 - календарный праздник
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_03_16.pdf)
+        * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_03_23.pdf)
 
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
@@ -41,6 +42,7 @@
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_03.html)
         * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_10.html)
         * Лекция №7 - в процессе
+        * Лекция №8 - отменена
 
 * Многопоточное программирование
 
