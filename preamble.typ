@@ -124,8 +124,8 @@
 #let point(coords, radius: 3pt, fill: gray, name: none) = cetz.draw.circle(coords, radius: radius, fill: fill, name: name)
 
 
-#let vecsum(x, y) = (x.at(0) + y.at(0), x.at(1) + y.at(1))
-#let veck(x, k) = (x.at(0) * k, x.at(1) * k)
+#let vecsum(x, y) = cetz.vector.add(x, y)
+#let veck(x, k) = cetz.vector.scale(x, k)
 
 #let bezier_custom(start, ..ctrl-style, name: none, iters: 10) = {
   // Extra positional arguments are treated like control points.
