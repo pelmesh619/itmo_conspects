@@ -328,7 +328,7 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
             point(dots.at(4))
             content((), [$P_4$], anchor: "north", padding: 0.15)
 
-            line(dots.at(4), dots.at(0), stroke: (dash: "dashed", paint: luma(50%)))
+            on-layer(-1, {line(dots.at(4), dots.at(0), stroke: (dash: "dashed", paint: luma(50%)))})
 
             content((1.5, -2.7), align(center)[Кривая находится \ в пятиугольнике $P_0 P_1 P_2 P_3 P_4$])
         })
@@ -362,9 +362,11 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
             point(dots.at(4))
             content((), [$P_4$], anchor: "north", padding: 0.15)
 
-            line(dots.at(0), dots.at(2), stroke: (dash: "dashed", paint: luma(50%)))
-            line(dots.at(1), dots.at(3), stroke: (dash: "dashed", paint: luma(50%)))
-            line(dots.at(4), dots.at(0), stroke: (dash: "dashed", paint: luma(50%)))
+            on-layer(-1, {
+              line(dots.at(0), dots.at(2), stroke: (dash: "dashed", paint: luma(50%)))
+              line(dots.at(1), dots.at(3), stroke: (dash: "dashed", paint: luma(50%)))
+              line(dots.at(4), dots.at(0), stroke: (dash: "dashed", paint: luma(50%)))
+            })
 
             content((1.5, -2.7), align(center)[Кривая находится \ в пятиугольнике $P_0 P_2 P_1 P_3 P_4$])
         })
