@@ -99,13 +99,51 @@
     })]
 )
 
-Для данного точечного набора существуют различные выпуклые множества, содержащие набор точек:
-
-// картинка
-
 #let Conv(x) = $op("conv") #x$
 
-#Def Наименьшее из выпуклых множеств $V$, содержащих данное множество $M$, называется выпуклой оболочкой $Conv(M)$ множества $M$
+#grid(columns: (1fr, auto), column-gutter: 1em,
+    [Для данного точечного набора существуют различные выпуклые множества, содержащие набор точек
+
+    #Def Наименьшее из выпуклых множеств $V$, содержащих данное множество $M$, называется выпуклой оболочкой $Conv(M)$ множества $M$
+    ],
+    [
+        // картинка
+
+        #cetz.canvas(length: 0.8cm, {
+            import cetz.draw: *
+
+            set-style(
+                mark: (fill: black, scale: 1),
+                stroke: (thickness: 1pt, cap: "round")
+            )
+
+            let dots = ((3.3, 1), (4.9, 1.8), (5.4, 3.6), (3.2, 2.7), (2.1, 1.5), (3.7, 1.8))
+
+
+            for (i, p) in dots.enumerate() {
+                circle(p, name: "M" + str(i), fill: none, stroke: none, radius: 0.1)
+            }
+
+            for (i, p) in dots.enumerate() {
+                point(p, name: "M" + str(i), fill: gray, radius: 2.5pt)
+            }
+
+            let green_points = (0, 1, 2, 3, 4)
+            on-layer(-1, {line(..green_points.map(i => "M" + str(i)), "M0", stroke: (paint: red))})
+
+            merge-path(stroke: green, {
+                bezier((6, 3), (2.6, 3), (6.8, 6))
+                bezier((2.6, 3), (6, 3), (-1.6, 0), (5.2, 0))
+            })
+
+            circle((4, 2.3), radius: 2.2, stroke: blue)
+
+            for (i, p) in dots.enumerate() {
+                content("M" + str(i), box(fill: rgb("#ffffffbb"), inset: (y: 2pt))[#text(0.9em)[$M_(#i)$]], anchor: "south", padding: 0.2)
+            }
+        })
+    ]
+)
 
 
 #grid(columns: (auto, auto), [#Nota], [
