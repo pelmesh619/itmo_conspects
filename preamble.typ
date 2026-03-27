@@ -52,6 +52,8 @@
   show: doc => el.default-list(doc, label-indent: -1.3em, indent: 2em)
   // show: el.default-enum
 
+  show emptyset: text(features: ("cv01",), $emptyset$)
+
   doc
 }
 
