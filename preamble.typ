@@ -127,6 +127,20 @@
 #let vecsum(x, y) = cetz.vector.add(x, y)
 #let veck(x, k) = cetz.vector.scale(x, k)
 
+#let vec_sign(vec1, origin, vec2) = {
+    return cetz.vector.cross(cetz.vector.sub(vec1, origin) + (0, ), cetz.vector.sub(vec2, origin) + (0, )).at(2)
+}
+
+#let vec_angle(vec1, origin, vec2) = {
+    if vec1 == origin or vec2 == origin {
+        return 0deg
+    }
+    let a = cetz.vector.angle(vec1, origin, vec2)
+    let b = vec_sign(vec1, origin, vec2)
+    
+    return if b == 0 { 0deg } else { a * b / calc.abs(b) }
+}
+
 #let bezier_custom(start, ..ctrl-style, name: none, iters: 10) = {
   // Extra positional arguments are treated like control points.
   let (ctrl, style) = (ctrl-style.pos(), ctrl-style.named())
