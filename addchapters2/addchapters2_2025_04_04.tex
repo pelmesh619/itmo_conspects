@@ -123,7 +123,7 @@ $teacher$=Лекции Далевской О. П.
     Рассмотрим $\frac{\Phi(z + \Delta z) - \Phi(z)}{\Delta z} = \frac{1}{\Delta z} \left(\int_{z_0}^{z + \Delta z} f(\zeta) d\zeta - \int_{z_0}^z f(\zeta) d\zeta\right) = 
     \frac{1}{\Delta z} \int_z^{z + \Delta z} f(\zeta) d\zeta = \frac{1}{\Delta z} \int_z^{z + \Delta z} (f(\zeta) - f(z) + f(z))d\zeta = 
     \frac{1}{\Delta z} \int_z^{z + \Delta z} f(z) d\zeta + \frac{1}{\Delta z} \int_z^{z + \Delta z} (f(\zeta) - f(z))d\zeta = 
-    \cancelto\frac{1}{\Delta z}  f(z) \cancelto{\zeta \Big|_{z}^{z + \Delta z}} + \frac{1}{\Delta z} \int_z^{z + \Delta z} (f(\zeta) - f(z))d\zeta$
+    \cancelto{\frac{1}{\Delta z}}  f(z) \cancelto{\zeta \Big|_{z}^{z + \Delta z}} + \frac{1}{\Delta z} \int_z^{z + \Delta z} (f(\zeta) - f(z))d\zeta$
 
     $\left|\int_z^{z + \Delta z} (f(\zeta) - f(z)) d\zeta\right| \leq \int_z^{z + \Delta z} |f(\zeta) - f(z)| d\zeta \leq \max_{[z, z + \Delta z]} |f(\zeta) - f(z)| \Delta z$
 
