@@ -64,7 +64,7 @@ $w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - 
 \end{MyTheorem}
 
 \begin{MyProof}
-    \fbox{\Longrightarrow} \ $f$ аналитическая в $z$ $\Longleftrightarrow \exists$ непрерывная 
+    \fbox{$\Longrightarrow$} \ $f$ аналитическая в $z$ $\Longleftrightarrow \exists$ непрерывная 
     $f^\prime(z) = \\ = \lim_{\Delta z \to 0} \frac{\Delta f}{\Delta z} = [\text{предел не зависит от пути}] = 
     \lim_{\Delta x \to 0} \frac{f(x + \Delta x, y) - f(x, y)}{\Delta x} = \\
     = \lim_{\Delta x \to 0} \frac{u(x + \Delta x, y) + i v(x + \Delta x, y) - u(x, y) - v(x, y)}{\Delta x} = \\
@@ -84,7 +84,7 @@ $w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - 
 
     \mediumvspace 
 
-    \fbox{\Longleftarrow} \ $\exists$ непрерывные $u_x, u_y, v_x, v_y \Longleftrightarrow u(x, y), v(x, y)$ 
+    \fbox{$\Longleftarrow$} \ $\exists$ непрерывные $u_x, u_y, v_x, v_y \Longleftrightarrow u(x, y), v(x, y)$ 
     дифференцируемы в $(x, y)$, тогда $\Delta u = u_x \Delta x + u_y \Delta y + \alpha_1 (x, y, \Delta x, \Delta y) + 
     \alpha_2 (x, y, \Delta x, \Delta y)$
 
@@ -109,10 +109,10 @@ $w(z_0)$ - это предел $\lim_{\Delta z \to 0} \frac{f(z_0 + \Delta z) - 
 
 \Notas Коши-Риман в ПСК:
 
-\begin{cases}
+$\begin{cases}
     \frac{\partial u}{\partial \rho} = \frac{1}{\rho} \frac{\partial v}{\partial \varphi} \\
     \frac{\partial u}{\partial \varphi} = -\frac{1}{\rho} \frac{\partial v}{\partial \rho}
-\end{cases}
+\end{cases}$
 
 Тогда $f^\prime(z) = \frac{1}{z} \left(\frac{\partial v}{\partial \varphi} - i \frac{\partial u}{\partial \varphi}\right) = \frac{\rho}{z} \left(\frac{\partial u}{\partial \rho} + i \frac{\partial v}{\partial \rho}\right)$
 
