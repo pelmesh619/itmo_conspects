@@ -1,0 +1,4 @@
+# Tell GitHub to detect Markdown files
+*.md linguist-detectable=true
+# Tell GitHub that Markdown is not just documentation
+*.md linguist-documentation=false
