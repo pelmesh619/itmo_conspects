@@ -159,6 +159,18 @@ code.highlighter-rouge {
     }
   }
 
+  pre:has(code[class^="language-"]) {
+    background-color: #f6f8fa;
+    border: 1px solid #d0d0d0;
+    border-radius: 6px;
+    overflow-x: auto;
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    background-color: #f6f8fa;
+  }
+
   code {
     background-color: #f6f8fa;
     color: #24292e;
