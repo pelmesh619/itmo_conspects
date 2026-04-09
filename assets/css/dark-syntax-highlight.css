@@ -29,6 +29,14 @@ code.highlighter-rouge {
     }
   }
 
+  pre:has(code[class^="language-"]) {
+    margin: 0;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.45;
+    background-color: #161b22;
+  }
+
   /* Inline code */
   code {
     background-color: #252c37;
