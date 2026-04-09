@@ -30,6 +30,9 @@ code.highlighter-rouge {
   }
 
   pre:has(code[class^="language-"]) {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    overflow-x: auto;
     margin: 0;
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     font-size: 0.875rem;
