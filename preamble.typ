@@ -1,5 +1,6 @@
 #import "@preview/cetz:0.4.2"
 #import "@preview/itemize:0.1.2" as el
+#import "@preview/suiji:0.5.1"
 
 #let basic-template(doc) = {
   // Page & text
