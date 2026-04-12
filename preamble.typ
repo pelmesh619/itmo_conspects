@@ -124,6 +124,36 @@
 
 #let point(coords, radius: 3pt, fill: gray, name: none) = cetz.draw.circle(coords, radius: radius, fill: fill, name: name)
 
+#let dashed_gray = (dash: "dashed", paint: luma(50%))
+
+#let default-style = {
+  cetz.draw.set-style(
+    mark: (fill: black, scale: 1),
+    stroke: (thickness: 1pt, cap: "round")
+  )
+  cetz.draw.register-mark("||", style => {
+    import cetz.draw: anchor
+
+    let w = style.width
+    let i = style.length
+
+    let pts1 = if style.harpoon {
+      ((-i / 2, w / 2), (-i / 2, 0))
+    } else {
+      ((-i / 2, w / 2), (-i / 2, -w / 2))
+    }
+    let pts2 = if style.harpoon {
+      ((i / 2, w / 2), (i / 2, 0))
+    } else {
+      ((i / 2, w / 2), (i / 2, -w / 2))
+    }
+
+    cetz.draw.line(..pts1, stroke: style.stroke, fill: style.fill)
+    cetz.draw.line(..pts2, stroke: style.stroke, fill: style.fill)
+    // cetz.draw.line(..pts, stroke: style.stroke, fill: style.fill)
+    cetz.draw.anchor("center", (0, 0))
+  })
+}
 
 #let vecsum(x, y) = cetz.vector.add(x, y)
 #let veck(x, k) = cetz.vector.scale(x, k)
