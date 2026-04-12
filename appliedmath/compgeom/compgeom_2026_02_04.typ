@@ -60,22 +60,19 @@
     #align(center)[Геометрическое]
 
     #align(center)[
-    #cetz.canvas(length: 2cm, {
+    #cetz.canvas(length: 1cm, {
       import cetz.draw: *
 
-      set-style(
-        mark: (fill: black, scale: 2),
-        stroke: (thickness: 0.4pt, cap: "round"),
-        content: (padding: 1pt, font: 17pt)
-      )
+      default-style
 
-
-      line((0, 0), (0.6, 1.3), mark: (end: "stealth"))
-      content((rel: (0.12, 0)), [$arrow(a)$], anchor: "west")
-      line((0, 0), (-1.1, 0.2), mark: (end: "stealth"))
-      line((0, 0), (1.2, -0.4), mark: (end: "stealth"))
+      line((0, 0), (1.2, 2.6), mark: (end: "stealth"))
+      content((), [$arrow(a)$], anchor: "west", padding: 0.15)
+      line((0, 0), (-2.2, 0.4), mark: (end: "stealth"))
+      content((), [$arrow(b)$], anchor: "north", padding: 0.2)
+      line((0, 0), (2.4, -0.8), mark: (end: "stealth"))
+      content((), [$arrow(c)$], anchor: "north", padding: 0.2)
       circle((0, 0), radius: 3pt, fill: gray)
-      content((rel: (0, -0.14)), [$O$], anchor: "north")
+      content((), [$O$], anchor: "north", padding: 0.2)
     })
     ]
   ],
@@ -112,41 +109,38 @@
 
 + Осевая симметрия $S_l$ относительно оси $l$
 
-    #cetz.canvas(length: 2cm, {
+    #cetz.canvas(length: 1cm, {
         import cetz.draw: *
 
-        set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.7pt, cap: "round"),
-            content: (padding: 1pt, font: 17pt)
-        )
+        default-style
 
-        let line_1 = (-0.25, -0.4)
-        let line_2 = (0.8, 1.3)
+        let line_1 = (-0.5, -0.8)
+        let line_2 = (1.6, 2.6)
         let decline = (-line_1.at(0) + line_2.at(0), -line_1.at(1) + line_2.at(1))
         line(line_1, line_2, name: "main-line")
 
-        let m_dot = (-0.4, 0.8)
+        let m_dot = (-0.8, 1.6)
         circle(m_dot, radius: 3pt, fill: gray, name: "M")
-        content((rel: (-0.14, 0)), [$M$], anchor: "east")
+        content((), [$M$], anchor: "east", padding: 0.2)
 
         let k = (decline.at(0) * m_dot.at(1) - decline.at(1) * m_dot.at(0) - line_1.at(1) * decline.at(0) + line_1.at(0) * decline.at(1)) / (decline.at(1) * decline.at(1) + decline.at(0) * decline.at(0))
 
         circle((m_dot.at(0) + 2 * k * decline.at(1), m_dot.at(1) - 2 * k * decline.at(0)), radius: 3pt, fill: red, name: "Mprime")
-        content((rel: (0.14, 0)), [$M^prime$], anchor: "west")
+        content((), [$M^prime$], anchor: "west", padding: 0.2)
 
         line("M", "Mprime", stroke: (dash: "dashed", paint: gray))
+        line(("M", 25%, "Mprime"), ("M", 75%, "Mprime"), mark: (symbol: "|", stroke: luma(50%) + 1pt, scale: 2), stroke: (thickness: 0pt))
 
         circle((m_dot.at(0) + k * decline.at(1), m_dot.at(1) - k * decline.at(0)), radius: 3pt, fill: gray, name: "K")
-        content((rel: (0, -0.18)), [$K$], anchor: "north")
+        content((), [$K$], anchor: "north", padding: 0.3)
 
-        content((line_2.at(0) + 0.1, line_2.at(1)), [$l$], anchor: "west")
+        content("main-line.end", [$l$], anchor: "west", padding: 0.2)
 
         cetz.angle.right-angle(
             "K",
             "M",
             line_2,
-            radius: 0.2,
+            radius: 0.4,
             label: ""
         )
     })
@@ -158,12 +152,7 @@
     #cetz.canvas(length: 2cm, {
         import cetz.draw: *
 
-        set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.4pt, cap: "round"),
-            content: (padding: 1pt, font: 17pt)
-        )
-
+        default-style
 
         let alpha = 30deg
         let phi = 70deg
@@ -189,11 +178,7 @@
     #cetz.canvas(length: 2cm, {
         import cetz.draw: *
 
-        set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.4pt, cap: "round"),
-            content: (padding: 1pt, font: 17pt)
-        )
+        default-style
 
         circle((0, 0), radius: 3pt, fill: gray, name: "O")
         content((rel: (0, -0.1)), [$O$], anchor: "north")
@@ -235,11 +220,7 @@
     #cetz.canvas(length: 2cm, {
         import cetz.draw: *
 
-        set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.4pt, cap: "round"),
-            content: (padding: 1pt, font: 17pt)
-        )
+        default-style
 
         line((-0.8, -0.4), (2, 1))
 
@@ -263,11 +244,7 @@
     #cetz.canvas(length: 2cm, {
         import cetz.draw: *
 
-        set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.4pt, cap: "round"),
-            content: (padding: 1pt, font: 17pt)
-        )
+        default-style
 
         line((-0.5, -0.4), (1, 0), (0.2, 1), close: true)
         line((1.25, -0.6), (3.5, 0), (2.3, 1.5), close: true)
@@ -299,12 +276,8 @@ $cal(A)(x) = cal(A)(sum_(i = 1)^n lambda_i e_i) = sum_(i = 1)^n lambda_i cal(A)(
 
     #cetz.canvas(length: 2cm, {
         import cetz.draw: *
-
-        set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.4pt, cap: "round"),
-            content: (padding: 1pt, font: 17pt)
-        )
+    
+        default-style
 
         line((-0.2, 0), (1.5, 0), mark: (end: "stealth"))
         content((rel: (0, -0.1)), [$x$], anchor: "north")
@@ -360,11 +333,7 @@ $cal(A)(x) = cal(A)(sum_(i = 1)^n lambda_i e_i) = sum_(i = 1)^n lambda_i cal(A)(
 #cetz.canvas(length: 2cm, {
     import cetz.draw: *
 
-    set-style(
-        mark: (fill: black, scale: 2),
-        stroke: (thickness: 0.4pt, cap: "round"),
-        content: (padding: 1pt, font: 17pt)
-    )
+    default-style
 
     line((-0.2, 0), (1.5, 0), mark: (end: "stealth"))
     content((rel: (0, -0.1)), [$x$], anchor: "north")
@@ -418,11 +387,7 @@ $cal(A)(x) = cal(A)(sum_(i = 1)^n lambda_i e_i) = sum_(i = 1)^n lambda_i cal(A)(
     #cetz.canvas(length: 2cm, {
         import cetz.draw: *
 
-        set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.4pt, cap: "round"),
-            content: (padding: 1pt, font: 17pt)
-        )
+        default-style
 
         line((-1, 1), (2, 0), mark: (end: "stealth"))
         content((rel: (0, -0.1)), [$l$], anchor: "north")
@@ -440,7 +405,7 @@ $cal(A)(x) = cal(A)(sum_(i = 1)^n lambda_i e_i) = sum_(i = 1)^n lambda_i cal(A)(
 
         circle((1.5, 0.16), radius: 3pt, fill: gray, name: "r")
         content((rel: (0, 0.1)), [$r$], anchor: "south")
-        line("O", "r", mark: (end: "stealth"), stroke: (dash: "dashed", paint: gray))
+        line("O", "r", mark: (end: ">", fill: gray, stroke: (dash: "solid", paint: gray)), stroke: (dash: "dashed", paint: gray))
 
     })
 
