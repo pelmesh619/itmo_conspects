@@ -66,7 +66,7 @@ document.addEventListener('DOMContentLoaded', function () {
     else {
         const easter = getEasterDate(year);
         const diffDays = Math.floor((now - easter) / (1000 * 60 * 60 * 24));
-        if (-3 <= diffDays <= 0) {
+        if (-3 <= diffDays && diffDays <= 0) {
             emoji = '🥚';
         }
     }
