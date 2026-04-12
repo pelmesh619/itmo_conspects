@@ -20,8 +20,8 @@
   import cetz.draw: *
 
   set-style(
-    mark: (fill: black, scale: 2),
-    stroke: (thickness: 0.4pt, cap: "round"),
+    mark: (fill: black, scale: 1.6),
+    stroke: (thickness: 1.4pt, cap: "round"),
     content: (padding: 1pt, font: 17pt)
   )
 
@@ -109,8 +109,8 @@
   import cetz.draw: *
 
   set-style(
-    mark: (fill: black, scale: 2),
-    stroke: (thickness: 0.4pt, cap: "round"),
+    mark: (fill: black, scale: 1.4),
+    stroke: (thickness: 1.4pt, cap: "round"),
     content: (padding: 1pt, font: 17pt)
   )
 
@@ -125,9 +125,9 @@
 
   let (nx, ny) = (-2.3, 0.6)
 
-  line((nx + 3.8, ny - 0.06), (nx + 5.6, ny + 0.48), mark: (end: "stealth"), stroke: (dash: "dashed"))
+  line((nx + 3.8, ny - 0.06), (nx + 5.6, ny + 0.48), mark: (end: "stealth", stroke: 0pt), stroke: (dash: "dashed"))
   content((rel: (0, -0.1)), [$xi$], anchor: "north")
-  line((nx + 4.1, ny - 0.2), (nx + 3.5, ny + 1), mark: (end: "stealth"), stroke: (dash: "dashed"))
+  line((nx + 4.1, ny - 0.2), (nx + 3.5, ny + 1), mark: (end: "stealth", stroke: 0pt), stroke: (dash: "dashed"))
   content((rel: (-0.1, 0)), [$eta$], anchor: "east")
 
   circle((nx + 4, ny), radius: 3pt, fill: gray, name: "Oprime")
@@ -136,7 +136,7 @@
   let (mxi, meta) = (4.3, 0.9)
   circle((nx + mxi, ny + meta), radius: 3pt, fill: gray, name: "M")
   content((rel: (0, 0.1)), [$M (x, y)_(O i j) = M(xi, eta)_(O' e_1 e_2)$], anchor: "south-west")
-  line("Oprime", "M", mark: (end: "stealth"), stroke: (dash: "dashed"))
+  line("Oprime", "M", mark: (end: "stealth", stroke: 0pt), stroke: (dash: "dashed"))
 
   content(("O", 50%, "Oprime"), [$arrow(c)$],
     angle: "Oprime",
@@ -203,7 +203,7 @@ $ I_1 = a_(1 1) + a_(2 2), I_2 = mat(a_(1 1), a_(1 2); a_(1 2), a_(2 2); delim: 
 
     set-style(
       mark: (fill: black, scale: 2),
-      stroke: (thickness: 0.4pt, cap: "round"),
+      stroke: (thickness: 1.4pt, cap: "round"),
       content: (padding: 1pt, font: 17pt)
     )
 
@@ -249,7 +249,7 @@ $ I_1 = a_(1 1) + a_(2 2), I_2 = mat(a_(1 1), a_(1 2); a_(1 2), a_(2 2); delim: 
 
     set-style(
       mark: (fill: black, scale: 1.4),
-      stroke: (thickness: 0.4pt, cap: "round"),
+      stroke: (thickness: 1.4pt, cap: "round"),
       content: (padding: 1pt, font: 17pt)
     )
 
