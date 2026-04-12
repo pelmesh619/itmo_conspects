@@ -265,3 +265,70 @@
     }
   }
 }
+
+#let hatching-fill(
+  step: 10pt,           // размер ячейки паттерна
+  angle: 45deg,         // угол наклона линий (0° – горизонталь, 90° – вертикаль)
+  stroke-style: (dash: "dashed", paint: luma(50%))
+) = {
+  let rad = -angle.rad()
+  let is-vertical = calc.abs(calc.cos(rad)) < 1e-6
+
+  let get-ends() = {
+    if is-vertical {
+      return ((0.5, 0), (0.5, 1))
+    }
+    let tan-a = calc.tan(rad)
+    let points = ()
+
+    // Пересечение с левой границей (x = 0)
+    let y-left = 0.5 - tan-a * 0.5
+    if y-left >= 0 and y-left <= 1 {
+      points.push((0, y-left))
+    }
+    // Пересечение с правой границей (x = 1)
+    let y-right = 0.5 + tan-a * 0.5
+    if y-right >= 0 and y-right <= 1 {
+      points.push((1, y-right))
+    }
+    // Пересечение с нижней границей (y = 0)
+    if tan-a != 0 {
+      let x-bottom = 0.5 - 0.5 / tan-a
+      if x-bottom >= 0 and x-bottom <= 1 {
+        points.push((x-bottom, 0))
+      }
+    }
+    // Пересечение с верхней границей (y = 1)
+    if tan-a != 0 {
+      let x-top = 0.5 + 0.5 / tan-a
+      if x-top >= 0 and x-top <= 1 {
+        points.push((x-top, 1))
+      }
+    }
+
+    let unique = ()
+    for p in points {
+      if not unique.any(q =>
+        calc.abs(q.at(0) - p.at(0)) < 1e-6 and
+        calc.abs(q.at(1) - p.at(1)) < 1e-6
+      ) {
+        unique.push(p)
+      }
+    }
+
+    if unique.len() >= 2 {
+      (unique.at(0), unique.at(1))
+    } else {
+      ((0, 0.5), (1, 0.5))
+    }
+  }
+
+  let (start, end) = get-ends()
+  tiling(size: (step, step))[
+    #place(line(
+      start: (start.at(0) * 100%, start.at(1) * 100%),
+      end:   (end.at(0) * 100%,   end.at(1) * 100%),
+      stroke: (..stroke-style, cap: "round")
+    ))
+  ]
+}
