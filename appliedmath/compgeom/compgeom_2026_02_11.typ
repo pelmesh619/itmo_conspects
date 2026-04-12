@@ -30,8 +30,8 @@
             import cetz.draw: *
 
             set-style(
-                mark: (fill: black, scale: 2),
-                stroke: (thickness: 0.4pt, cap: "round"),
+                mark: (fill: black, scale: 1.5),
+                stroke: (thickness: 1pt, cap: "round"),
                 content: (padding: 1pt, font: 17pt)
             )
             
@@ -64,15 +64,14 @@
     Тогда такие вектора можно представить двумя точками
     ],
     [
-    #cetz.canvas(length: 2.5cm, {
+    #cetz.canvas(length: 2cm, {
         import cetz.draw: *
 
         set-style(
-            mark: (fill: black, scale: 2),
-            stroke: (thickness: 0.4pt, cap: "round"),
+            mark: (fill: black, scale: 1.5),
+            stroke: (thickness: 1.3pt, cap: "round"),
             content: (padding: 1pt, font: 17pt)
         )
-
 
         let a = ((1, 1), (1.8, 0.5))
 
@@ -143,7 +142,7 @@ $ vec(x^prime, y^prime, 1) = mat(f_(1 1), f_(1 2), x_0; f_(2 1), f_(2 2), y_0; 0
 
     set-style(
         mark: (fill: black, scale: 2),
-        stroke: (thickness: 0.4pt, cap: "round"),
+        stroke: (thickness: 1pt, cap: "round"),
         content: (padding: 1pt, font: 17pt)
     )
 
@@ -215,7 +214,7 @@ $mat(a, c; b, d)$ представляет композицию из симме�
 
     set-style(
         mark: (fill: black, scale: 2),
-        stroke: (thickness: 0.4pt, cap: "round"),
+        stroke: (thickness: 1.5pt, cap: "round"),
         content: (padding: 1pt, font: 17pt)
     )
 
