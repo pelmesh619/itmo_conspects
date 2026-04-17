@@ -540,6 +540,7 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
         content((0, 0.5), [$q$], anchor: "east")
         line((0, 1), (1.2, 1), stroke: (dash: "dashed", paint: luma(50%)))
         content((0, 1), [$q + 1$], anchor: "east")
+        line((0, 1.5), (1.2, 1.5), stroke: (dash: "dashed", paint: luma(50%)))
 
         content((1.95, 0.75), [?])
         content((1.95, 1.25), [?])
