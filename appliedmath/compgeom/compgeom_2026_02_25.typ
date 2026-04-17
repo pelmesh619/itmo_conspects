@@ -580,14 +580,14 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
     import cetz.draw: *
 
     set-style(
-        mark: (fill: black, scale: 2),
+        mark: (fill: black),
         stroke: (thickness: 1pt, cap: "round"),
         content: (padding: 0.13, font: 17pt),
     )
 
-    line((-0.2, 0), (3.5, 0), mark: (end: "stealth"))
+    line((-0.2, 0), (4.75, 0), mark: (end: "stealth"))
     content((), [$x$], anchor: "north")
-    line((0, -0.2), (0, 2), mark: (end: "stealth"))
+    line((0, -0.2), (0, 2.25), mark: (end: "stealth"))
     content((), [$y$], anchor: "east")
 
     point((0, 0), name: "O")
@@ -599,7 +599,7 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
 
     let grid_step = .5
 
-    grid((0,0), (4,2), step: grid_step, stroke: (dash: "dashed", paint: luma(50%)))
+    grid((0,0), (4.5,2), step: grid_step, stroke: (dash: "dashed", paint: luma(50%)))
 
     hatching((0, 0), (grid_step, grid_step), 0.133)
     hatching((0.5, 0), (grid_step, grid_step), 0.133)
@@ -609,12 +609,14 @@ $B(t) = (1 - t)^3 P_0 + 3 t (1 - t)^2 P_1 + 3 t^2 (1 - t) P_2 + t^3 P_3$
     hatching((2.5, 1), (grid_step, grid_step), 0.133)
     hatching((3, 1), (grid_step, grid_step), 0.133)
     hatching((3.5, 1.5), (grid_step, grid_step), 0.133)
+    hatching((4, 1.5), (grid_step, grid_step), 0.133)
 
-    line(vecsum(dots.at(0), veck(incline, -0.1)), vecsum(dots.at(1), veck(incline, 0.1)), stroke: (thickness: 2.5pt))
+    let offset = (0.25, 0.25)
+    line(vecsum(cetz.vector.add(dots.at(0), offset), veck(incline, -0.1)), vecsum(cetz.vector.add(dots.at(1), offset), veck(incline, 0.1)), stroke: (thickness: 2.5pt))
 
-    point(dots.at(0), name: "A")
+    point(cetz.vector.add(dots.at(0), offset), name: "A")
     content((), [$A$], anchor: "south-east")
-    point(dots.at(1), name: "B")
+    point(cetz.vector.add(dots.at(1), offset), name: "B")
     content((), [$B$], anchor: "south")
   })]
 
