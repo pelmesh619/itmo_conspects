@@ -496,6 +496,8 @@ chgrp supercoolusers /var/log/mylogs/app.log
     * `/var/spool/` - очереди печати, почтовых запросов и так далее
     * `/var/mail/` - данные почтовых серверов
     * `/var/tmp/` - временные файлы, которые нужно сохранить после перезагрузки
+
+![Filesystem Hierarchy Standard](./images/admlinux_fhs.png)
 <!-- end admlinux_2026_02_20.md -->
 
 <!-- begin admlinux_2026_03_06.md -->
