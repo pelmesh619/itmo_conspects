@@ -81,7 +81,7 @@
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_02_26.html)
         * Лекция №5 - отменена
         * Лекция №6 - отменена
-        * Лекция №7 - в процессе
+        * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_03_19.html)
         * Лекция №8 - отменена
         * Лекция №9 - в процессе
 
