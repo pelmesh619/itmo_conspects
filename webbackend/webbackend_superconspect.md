@@ -54,7 +54,7 @@ HTTP работает по принципу запрос-ответ (Request-Res
 
 HTTP-запрос имеет такую структуру:
 
-```http
+```txt
 МЕТОД /[имя-ресурса][?параметры-запроса] HTTP/номер-версии
 Имя-заголовка-1: значение
 Имя-заголовка-2: значение
@@ -101,18 +101,17 @@ HTTP-запрос имеет такую структуру:
 * `номер-версии` - версия протокола (1.0, 1.1 или 2.0)
 * `Имя-заголовка-1: значение` - заголовок
 
-Пример запроса (здесь разрывы строки обозначены `\r\n`):
+Пример запроса:
 
 ```http
-GET / HTTP/1.1\r\n
-Host: httpforever.com\r\n
-Connection: keep-alive\r\n
-Upgrade-Insecure-Requests: 1\r\n
-User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0\r\n
-Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7\r\n
-Accept-Encoding: gzip, deflate\r\n
-Accept-Language: ru\r\n
-\r\n
+GET / HTTP/1.1
+Host: httpforever.com
+Connection: keep-alive
+Upgrade-Insecure-Requests: 1
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/145.0.0.0 Safari/537.36 Edg/145.0.0.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7
+Accept-Encoding: gzip, deflate
+Accept-Language: ru
 ```
 
 Запрос пишется в текстовом формате, причем конец блока заголовков обозначается последовательностью `\r\n\r\n`. Запрос также содержит информацию о клиенте - его операционную систему (здесь это 64-битная Windows 10/11), его браузер (здесь это Microsoft Edge на базе Chromium), движок рендера (здесь это `AppleWebKit`), и принимаемые кодировки (например, можно заархивировать контент), форматы документов и язык контента
@@ -123,21 +122,21 @@ Accept-Language: ru\r\n
 
 HTTP-ответ выглядит так:
 
-```http
-HTTP/1.1 200 OK\r\n
-Server: nginx/1.18.0 (Ubuntu)\r\n
-Date: Sun, 08 Mar 2026 15:13:19 GMT\r\n
-Content-Type: text/html\r\n
-Last-Modified: Wed, 22 Mar 2023 14:54:48 GMT\r\n
-Transfer-Encoding: chunked\r\n
-Connection: keep-alive\r\n
-ETag: W/"641b16b8-1404"\r\n
-Referrer-Policy: strict-origin-when-cross-origin\r\n
-X-Content-Type-Options: nosniff\r\n
-Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'\r\n
+```txt
+HTTP/1.1 200 OK
+Server: nginx/1.18.0 (Ubuntu)
+Date: Sun, 08 Mar 2026 15:13:19 GMT
+Content-Type: text/html
+Last-Modified: Wed, 22 Mar 2023 14:54:48 GMT
+Transfer-Encoding: chunked
+Connection: keep-alive
+ETag: W/"641b16b8-1404"
+Referrer-Policy: strict-origin-when-cross-origin
+X-Content-Type-Options: nosniff
+Feature-Policy: accelerometer 'none'; camera 'none'; geolocation 'none'; gyroscope 'none'; magnetometer 'none'; microphone 'none'; payment 'none'; usb 'none'
 Content-Security-Policy: default-src 'self'; script-src cdnjs.cloudflare.com 'self' 'report-sha256'; style-src cdnjs.cloudflare.com 'self' fonts.googleapis.com 'unsafe-inline'; font-src fonts.googleapis.com fonts.gstatic.com cdnjs.cloudflare.com; frame-ancestors 'none'; report-uri https://scotthelme.report-uri.com/r/d/csp/enforce
-Content-Encoding: gzip\r\n
-\r\n
+Content-Encoding: gzip
+
 [[HTML-документ]]
 ```
 
