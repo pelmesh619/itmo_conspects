@@ -53,9 +53,7 @@
       arc((0, 1), start: 135deg, stop: -45deg, radius: calc.sqrt(2) / 2)
       line((1, 0), (0, 0))
       line((0, 0), (0, 1))
-    }, fill: gradient.linear(
-      green.transparentize(60%), white.transparentize(100%), angle: 45deg, space: color.hsv
-    ).sharp(2, smoothness: 0%).repeat(9))
+    }, fill: hatching-fill(stroke-style: (paint: green.transparentize(60%))))
     content((0.5, 0.5), box(fill: rgb(255, 255, 255, 70%), inset: (y: 2pt))[#text(1.5em)[$D$]])
 })
 ]
@@ -87,9 +85,7 @@
       arc((0, 1), start: 135deg, stop: -45deg, radius: calc.sqrt(2) / 2)
       line((1, 0), (0, 0))
       line((0, 0), (0, 1))
-    }, fill: gradient.linear(
-      green.transparentize(60%), white.transparentize(100%), angle: 45deg, space: color.hsv
-    ).sharp(2, smoothness: 0%).repeat(9))
+    }, fill: hatching-fill(stroke-style: (paint: green.transparentize(60%))))
     content((0.5, 0.5), box(fill: rgb(255, 255, 255, 70%), inset: (y: 2pt))[#text(1.5em)[$D$]])
 
     arc((0.5, calc.sqrt(2) / 2 + 0.5), start: 90deg, stop: 0deg, radius: calc.sqrt(2) / 2, stroke: red + 2.3pt)
