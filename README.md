@@ -110,7 +110,7 @@
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_02_14.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_02_21.html)
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_02_28.html)
-    * Лекция №5 - в процессе
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_03_07.html)
     * Лекция №6 - в процессе
     * Лекция №7 - в процессе
     * Лекция №8 - в процессе
