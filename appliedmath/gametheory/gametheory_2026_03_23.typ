@@ -113,9 +113,9 @@
             content((), text(0.9em, if node.content in ([A], [B], [C]) { white } else { black }, [#node.content]))
         },
         draw-edge: (from, to, ..) => {
-            let (a, b) = (from + ".center", to + ".center")
+            let (a, b) = (from.name, to.name)
             line((a, .4, b), (b, .4, a))
-            content((a, 60%, b), box(fill: color.linear-rgb(100%, 100%, 100%, 60%), [#("ABC".at(int(to.at(-1))))], inset: 4pt))
+            content((a, 50%, b), box(fill: color.linear-rgb(100%, 100%, 100%, 65%), [#("123".at(int(to.name.at(-1))))], inset: 4pt))
         }
     )
 })]
@@ -188,10 +188,10 @@
             }
         },
         draw-edge: (from, to, ..) => {
-            let (a, b) = (from + ".center", to + ".center")
+            let (a, b) = (from.name, to.name)
             line((a, .5, b), (b, .5, a))
 
-            content((a, 50%, b), box(fill: color.linear-rgb(100%, 100%, 100%, 60%), [#("123".at(int(to.at(-1))))], inset: 4pt))
+            content((a, 50%, b), box(fill: color.linear-rgb(100%, 100%, 100%, 65%), [#("123".at(int(to.name.at(-1))))], inset: 4pt))
         }
     )
 })]
