@@ -1,7 +1,7 @@
 #import "../../preamble.typ": *
 
 #let subject-name = [Теория игр]
-#let date-header = [06.04.2026]
+#let date-header = [13.04.2026]
 #let lecturer-name = [Лекции Блаженова А. В.]
 
 #show: basic-template
