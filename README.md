@@ -36,6 +36,7 @@
         * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_03_30.pdf)
         * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_04_06.pdf)
         * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_04_13.pdf)
+        * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_04_20.pdf)
 
     * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
 
