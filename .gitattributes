@@ -1,3 +1,6 @@
 # Tell GitHub to detect Markdown files
 */**/*.md linguist-detectable=true linguist-documentation=false
 assets/meta/*.md linguist-vendored
+
+# Ignore superconspect files in stats
+*/**/*_superconspect.md linguist-vendored
