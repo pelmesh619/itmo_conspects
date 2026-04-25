@@ -84,7 +84,7 @@
         * Лекция №6 - отменена
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_03_19.html)
         * Лекция №8 - отменена
-        * Лекция №9 - в процессе
+        * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/cloudmobile/uiandroid/uiandroid_2026_04_02.html)
 
 * Администрирование в ОС Linux (лектор Дяченко Е. О.)
 
