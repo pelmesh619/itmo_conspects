@@ -238,7 +238,7 @@ $ A' = mat(-10, 110; 120, -20) $
         (
             (content: "1"),
             (
-                (content: "", mean: 26.5, low-text: "Заказать\nсейсморазведку", upper-text: -10, stroke: 2.5pt), 
+                (content: "", mean: 26.5, low-text: "Заказать\nсейсморазведку", upper-text: dollar(-10), stroke: 2.5pt), 
                 (
                     (content: 4, mean: 91.25, low-text: "Закрытая", upper-text: $P ("О") = 0.4$, stroke: (thickness: 2.5pt, dash: "dashed")), 
                     (profit: 0, mean: 0, low-text: "Не бурить"), 
@@ -261,7 +261,7 @@ $ A' = mat(-10, 110; 120, -20) $
                 ),
             ),
             (
-                (content: 2, mean: 20, low-text: "Не заказывать\nсейсморазведку", upper-text: 0), 
+                (content: 2, mean: 20, low-text: "Не заказывать\nсейсморазведку", upper-text: dollar(0)), 
                 (profit: 0, low-text: "Не бурить"), 
                 (
                     (content: "", mean: 20, low-text: "Бурить"), 
