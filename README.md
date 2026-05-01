@@ -115,7 +115,7 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_02_28.html)
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_03_07.html)
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_03_14.html)
-    * Лекция №7 - в процессе
+    * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_03_21.html)
     * Лекция №8 - в процессе
     * Лекция №9 - отменена
     * Лекция №10 - в процессе
