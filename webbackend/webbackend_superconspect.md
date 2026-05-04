@@ -30,6 +30,8 @@
     * [WebSocket](#websocket)
 
 <!-- begin webbackend_2026_02_07.md -->
+Презентации доступны в репозитории <https://github.com/is-web-y25/lectures>
+
 ## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-1.-%D0%B2%D0%B2%D0%B5%D0%B4%D0%B5%D0%BD%D0%B8%D0%B5"></a> Лекция 1. Введение
 
 Как ранее обсуждалось на курсе [фронтенд-разработки](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_superconspect.html), сейчас документный обмен через сеть Интернет преимущественно с помощью веб-технологий

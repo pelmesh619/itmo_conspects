@@ -1,5 +1,7 @@
 # Web-разработка: Backend
 
+Презентации доступны в репозитории <https://github.com/is-web-y25/lectures>
+
 ## Лекция 1. Введение
 
 Как ранее обсуждалось на курсе [фронтенд-разработки](https://pelmesh619.github.io/itmo_conspects/webfrontend/webfrontend_superconspect.html), сейчас документный обмен через сеть Интернет преимущественно с помощью веб-технологий
