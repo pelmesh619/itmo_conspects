@@ -119,7 +119,7 @@
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_03_21.html)
     * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_03_28.html)
     * Лекция №9 - отменена
-    * Лекция №10 - в процессе
+    * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/webbackend/webbackend_2026_04_11.html)
 
 ## [V семестр](assets/meta/V.md)
 
