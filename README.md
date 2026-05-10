@@ -39,7 +39,7 @@
         * [Лекция №12](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_04_20.pdf)
         * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/conspects/appliedmath/gametheory/gametheory_2026_04_27.pdf)
 
-    * Методы машинного обучения в компьютерном зрении (лектор Селин Н. В.)
+    * Методы машинного обучения в компьютерном зрении (лекторы Селин Н. В., Насибуллина К. Ф.)
 
         [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_superconspect.html)
 
@@ -50,10 +50,11 @@
         * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_10.html)
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_17.html)
         * Лекция №8 - отменена
-        * Лекция №9 - в процессе
+        * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_31.html)
         * Лекция №10 - в процессе
         * Лекция №11 - в процессе
         * Лекция №12 - отменена
+        * Лекция №13 - в процессе
 
 * Многопоточное программирование
 
