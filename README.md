@@ -51,7 +51,7 @@
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_17.html)
         * Лекция №8 - отменена
         * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_31.html)
-        * Лекция №10 - в процессе
+        * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_04_11.html)
         * Лекция №11 - в процессе
         * Лекция №12 - отменена
         * Лекция №13 - в процессе
