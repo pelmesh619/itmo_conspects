@@ -37,7 +37,18 @@
 
         [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_superconspect.html)
 
-        TODO
+        * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_10.html)
+        * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_17.html)
+        * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_02_24.html)
+        * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_03.html)
+        * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_10.html)
+        * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_17.html)
+        * Лекция №8 - отменена
+        * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_03_31.html)
+        * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_04_11.html)
+        * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_04_14.html)
+        * Лекция №12 - отменена
+        * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_04_28.html)
 
 * Многопоточное программирование
 
