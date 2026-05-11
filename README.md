@@ -54,7 +54,7 @@
         * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_04_11.html)
         * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_04_14.html)
         * Лекция №12 - отменена
-        * Лекция №13 - в процессе
+        * [Лекция №13](https://pelmesh619.github.io/itmo_conspects/appliedmath/cvmethods/cvmethods_2026_04_28.html)
 
 * Многопоточное программирование
 
