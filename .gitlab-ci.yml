@@ -3,7 +3,6 @@ image: ruby:3.1
 pages:
   stage: deploy
   before_script:
-    - gem install bundler
     - bundle install
   script:
     - bundle exec jekyll build -d public
