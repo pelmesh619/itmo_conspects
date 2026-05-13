@@ -1,1 +1,5 @@
 theme: minima
+title: itmo_conspects
+description: "Конспекты по разным предметам первого потока ИСy27 университета ИТМО"
+baseurl: "/itmo_conspects"
+repository: pelmesh619/itmo_conspects
