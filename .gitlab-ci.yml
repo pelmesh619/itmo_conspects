@@ -6,6 +6,9 @@ pages:
     - bundle install
   script:
     - bundle exec jekyll build -d public
+  after_script:
+    # Replace the GitHub Pages domain with the GitLab Pages domain
+    - find public -type f -name "*.html" -exec sed -i 's|https://pelmesh619.github.io/itmo_conspects|https://pelmeshke.gitlab.io/itmo_conspects|g' {} +
   artifacts:
     paths:
       - public
