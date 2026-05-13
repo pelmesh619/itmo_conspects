@@ -2,9 +2,14 @@
   const targetWord = 'subway';
   let buffer = '';
 
-  const wrapper = document.createElement('div');
-  wrapper.id = 'subway-easter-egg';
-  wrapper.innerHTML = `
+  var wrapper = null;
+  var video = null;
+  var closeBtn = null;
+
+  function createVideoPlayer() {
+    wrapper = document.createElement('div');
+    wrapper.id = 'subway-easter-egg';
+    wrapper.innerHTML = `
       <div class="subway-container">
         <video id="subway-player" width="161" height="371" loop>
           <source src="/itmo_conspects/assets/subway.mp4" type="video/mp4">
@@ -14,8 +19,8 @@
       </div>
     `;
 
-  const style = document.createElement('style');
-  style.textContent = `
+    style = document.createElement('style');
+    style.textContent = `
       #subway-easter-egg {
         display: none;
         position: fixed;
@@ -58,37 +63,34 @@
       }
     `;
 
-  var isWrapperInBody = false;
+    video = wrapper.querySelector('#subway-player');
+    closeBtn = wrapper.querySelector('#subway-close');
 
-  window.addEventListener("load", () => {
+    closeBtn.addEventListener('click', () => {
+      wrapper.style.display = 'none';
+      video.pause();
+    });
+
+    document.body.appendChild(wrapper);
     document.head.appendChild(style);
-  });
-
-  const video = wrapper.querySelector('#subway-player');
-  const closeBtn = wrapper.querySelector('#subway-close');
+  }
 
   document.addEventListener('keydown', (e) => {
     if (/^[a-zA-Z]$/.test(e.key)) {
       buffer += e.key.toLowerCase();
       if (buffer.length > targetWord.length) buffer = buffer.slice(-targetWord.length);
       if (buffer === targetWord) {
-        if (!isWrapperInBody) {
-          document.body.appendChild(wrapper);
-          isWrapperInBody = true;
+        if (wrapper === null) {
+          createVideoPlayer();
         }
         wrapper.style.display = 'block';
         video.play();
       }
     } else if (e.key === 'Escape') {
-      if (isWrapperInBody) {
+      if (wrapper !== null) {
         wrapper.style.display = 'none';
         video.pause();
       }
     }
-  });
-
-  closeBtn.addEventListener('click', () => {
-    wrapper.style.display = 'none';
-    video.pause();
   });
 })();
