@@ -1,10 +1,10 @@
-(function() {
-    const targetWord = 'subway';
-    let buffer = '';
-  
-    const wrapper = document.createElement('div');
-    wrapper.id = 'subway-easter-egg';
-    wrapper.innerHTML = `
+(function () {
+  const targetWord = 'subway';
+  let buffer = '';
+
+  const wrapper = document.createElement('div');
+  wrapper.id = 'subway-easter-egg';
+  wrapper.innerHTML = `
       <div class="subway-container">
         <video id="subway-player" width="161" height="371" loop>
           <source src="/itmo_conspects/assets/subway.mp4" type="video/mp4">
@@ -13,9 +13,9 @@
         <button id="subway-close">×</button>
       </div>
     `;
-  
-    const style = document.createElement('style');
-    style.textContent = `
+
+  const style = document.createElement('style');
+  style.textContent = `
       #subway-easter-egg {
         display: none;
         position: fixed;
@@ -57,32 +57,38 @@
         to { opacity: 1; transform: translateY(0); }
       }
     `;
-    
 
-    window.addEventListener("load", () => {
-      document.body.appendChild(wrapper);
-      document.head.appendChild(style);
-    });
-  
-    const video = wrapper.querySelector('#subway-player');
-    const closeBtn = wrapper.querySelector('#subway-close');
-  
-    document.addEventListener('keydown', (e) => {
-      if (/^[a-zA-Z]$/.test(e.key)) {
-        buffer += e.key.toLowerCase();
-        if (buffer.length > targetWord.length) buffer = buffer.slice(-targetWord.length);
-        if (buffer === targetWord) {
-          wrapper.style.display = 'block';
-          video.play();
+  var isWrapperInBody = false;
+
+  window.addEventListener("load", () => {
+    document.head.appendChild(style);
+  });
+
+  const video = wrapper.querySelector('#subway-player');
+  const closeBtn = wrapper.querySelector('#subway-close');
+
+  document.addEventListener('keydown', (e) => {
+    if (/^[a-zA-Z]$/.test(e.key)) {
+      buffer += e.key.toLowerCase();
+      if (buffer.length > targetWord.length) buffer = buffer.slice(-targetWord.length);
+      if (buffer === targetWord) {
+        if (!isWrapperInBody) {
+          document.body.appendChild(wrapper);
+          isWrapperInBody = true;
         }
-      } else if (e.key === 'Escape') {
+        wrapper.style.display = 'block';
+        video.play();
+      }
+    } else if (e.key === 'Escape') {
+      if (isWrapperInBody) {
         wrapper.style.display = 'none';
         video.pause();
       }
-    });
-  
-    closeBtn.addEventListener('click', () => {
-      wrapper.style.display = 'none';
-      video.pause();
-    });
-  })();
+    }
+  });
+
+  closeBtn.addEventListener('click', () => {
+    wrapper.style.display = 'none';
+    video.pause();
+  });
+})();
