@@ -1,9 +1,11 @@
-image: ruby:2.7
+image: ruby:3.1
 
 pages:
   stage: deploy
-  script:
+  before_script:
+    - gem install bundler
     - bundle install
+  script:
     - bundle exec jekyll build -d public
   artifacts:
     paths:
