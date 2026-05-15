@@ -25,8 +25,9 @@
     * [Система инициализации](#%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)
   * [X. Программа экзамена 2025/2026](#x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-2025%2F2026)
   * [Extra](#extra)
-    * [Extra 1. Система инициализации Upstart](#extra-1.-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-upstart)
-    * [Extra 2. Система инициализации systemd](#extra-2.-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-systemd)
+    * [Extra 1. Современные системы инициализации](#extra-1.-%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)
+      * [Upstart](#upstart)
+      * [systemd](#systemd)
     * [Extra 3. Механизмы контейнеризации](#extra-3.-%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%D1%8B-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8)
     * [Extra 4. Установка ПО, пакетные менеджеры](#extra-4.-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE%2C-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D1%8B)
 
@@ -1170,29 +1171,29 @@ StandardOutput=journal      # записывать логи в журнал syst
 16. Пакетная установка пользовательского ПО: внутреннее устройство пакетов RPM.
 <!-- end admlinux_exam_list.md -->
 
-<!-- begin admlinux_x1_upstart.md -->
+<!-- begin admlinux_x1_upstart_systemd.md -->
 ## <a name="extra"></a> Extra
 
-### <a name="extra-1.-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-upstart"></a> Extra 1. Система инициализации Upstart
+### <a name="extra-1.-%D1%81%D0%BE%D0%B2%D1%80%D0%B5%D0%BC%D0%B5%D0%BD%D0%BD%D1%8B%D0%B5-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D1%8B-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8"></a> Extra 1. Современные системы инициализации
+
+#### <a name="upstart"></a> Upstart
 
 TODO
-<!-- end admlinux_x1_upstart.md -->
 
-<!-- begin admlinux_x2_systemd.md -->
-### <a name="extra-2.-%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0-%D0%B8%D0%BD%D0%B8%D1%86%D0%B8%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-systemd"></a> Extra 2. Система инициализации systemd
+#### <a name="systemd"></a> systemd
 
 TODO
-<!-- end admlinux_x2_systemd.md -->
+<!-- end admlinux_x1_upstart_systemd.md -->
 
-<!-- begin admlinux_x3_containerization.md -->
+<!-- begin admlinux_x2_containerization.md -->
 ### <a name="extra-3.-%D0%BC%D0%B5%D1%85%D0%B0%D0%BD%D0%B8%D0%B7%D0%BC%D1%8B-%D0%BA%D0%BE%D0%BD%D1%82%D0%B5%D0%B9%D0%BD%D0%B5%D1%80%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8"></a> Extra 3. Механизмы контейнеризации
 
 TODO
-<!-- end admlinux_x3_containerization.md -->
+<!-- end admlinux_x2_containerization.md -->
 
-<!-- begin admlinux_x4_software_install.md -->
+<!-- begin admlinux_x3_software_install.md -->
 ### <a name="extra-4.-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE%2C-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D1%8B"></a> Extra 4. Установка ПО, пакетные менеджеры
 
 TODO
-<!-- end admlinux_x4_software_install.md -->
+<!-- end admlinux_x3_software_install.md -->
 
