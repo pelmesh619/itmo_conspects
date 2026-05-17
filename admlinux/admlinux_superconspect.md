@@ -34,7 +34,7 @@
       * [Установка ПО из пакета](#%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE-%D0%B8%D0%B7-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0)
         * [Пакет формата `deb`](#%D0%BF%D0%B0%D0%BA%D0%B5%D1%82-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0-%60deb%60)
         * [Пакета формата `rpm`](#%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%B0-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0-%60rpm%60)
-    * [Extra 4. Установка ПО, пакетные менеджеры](#extra-4.-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE%2C-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D1%8B)
+    * [Extra 4. Графические среды](#extra-4.-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D1%81%D1%80%D0%B5%D0%B4%D1%8B)
 
 <!-- begin admlinux_2026_02_06.md -->
 > **Операционная система** - это базовое системное программное обеспечение, управляющее работой вычислительного узла и реализующее универсальный интерфейс между аппаратным обеспечением, программным обеспечением и пользователем
@@ -1365,7 +1365,7 @@ TODO
 <!-- end admlinux_x3_software_install.md -->
 
 <!-- begin admlinux_x4_graphical_environments.md -->
-### <a name="extra-4.-%D1%83%D1%81%D1%82%D0%B0%D0%BD%D0%BE%D0%B2%D0%BA%D0%B0-%D0%BF%D0%BE%2C-%D0%BF%D0%B0%D0%BA%D0%B5%D1%82%D0%BD%D1%8B%D0%B5-%D0%BC%D0%B5%D0%BD%D0%B5%D0%B4%D0%B6%D0%B5%D1%80%D1%8B"></a> Extra 4. Установка ПО, пакетные менеджеры
+### <a name="extra-4.-%D0%B3%D1%80%D0%B0%D1%84%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D1%81%D1%80%D0%B5%D0%B4%D1%8B"></a> Extra 4. Графические среды
 
 TODO
 <!-- end admlinux_x4_graphical_environments.md -->
