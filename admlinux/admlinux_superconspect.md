@@ -1489,9 +1489,145 @@ make install  # установка
 
 ##### <a name="%D0%BF%D0%B0%D0%BA%D0%B5%D1%82-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0-%60deb%60"></a> Пакет формата `deb`
 
-TODO
+Такой формат используется в дистрибутивах Ubuntu, Debian, Linux Mint и других производных
+
+Пакет формата `deb` представляет архив с расширением `.deb` (архивация происходит через утилиту `ar`). В этом архиве есть:
+
+* файл `debian-binary`, который содержит версию формата пакета (сейчас это `2.0`)
+* архив `control.tar.gz`
+* архив `data.tar.gz`
+
+В архиве `control.tar.gz` находятся файлы, которые не устанавливаются в систему напрямую, а используются пакетным менеджером `dpkg` для управления установкой. Ключевые файлы в нем:
+
+* `control`  - основной файл с информацией о пакете
+
+    Здесь хранятся название пакета, версия, архитектура, описание, а также зависимости, без которых программа не будет работать. Например, `control` для бинарного пакета выглядит так:
+
+    ```debian control
+    Package: fastfetch
+    Version: 2.62.1+dfsg-1
+    Architecture: amd64
+    Maintainer: Hiago De Franco <hiago@defranco.dev.br>
+    Installed-Size: 1915
+    Depends: libc6 (>= 2.38), libyyjson0 (>= 0.12.0+ds)
+    Section: utils
+    Priority: optional
+    Multi-Arch: foreign
+    Homepage: https://github.com/fastfetch-cli/fastfetch
+    Description: neofetch-like tool for fetching system information
+     Fastfetch is a neofetch-like tool for fetching system information and
+     displaying them in a pretty way. It is written mainly in C, with
+     performance and customizability in mind.
+    ```
+
+    Здесь:
+
+    * `Architecture` - архитектура процессора
+    * `Depends` - зависимости
+    * `Section` - раздел репозитория
+    * `Package` - уникальное имя пакета
+    * `Version` - версия программы
+    * `Maintainer` - контакты разработчика, который занимается упаковкой программы
+    * `Description` - описание
+    * `Installed-Size` - примерный размер, который пакет займет на диске после установки (в килобайтах)
+    * `Priority` - приоритет пакета для системы (в порядке убывания важности: `Required`, `Important`, `Standard`, `Optional`, `Extra`)
+    * `Homepage` - ссылка на официальный сайт проекта
+
+* `md5sums` - контрольные суммы для каждого файла из архива данных для проверки файлов на повреждения или подмену
+* Всяческие опциональные скрипты обслуживания (обычно на языка Bash, но допустимы любые исполняемые файлы), такие как:
+    * `preinst` запускается перед установкой
+    * `postinst` запускается после установки (например, может запустить службу в systemd)
+    * `prerm` запускается перед удалением
+    * `postrm` запускается после удаления
+* `conffiles` - список файлов, которые считаются конфигурационными. При обновлении пакета `dpkg` не будет их просто перезаписывать, а задаст вопрос, что делать с изменениями
+
+В другом архиве `data.tar.gz` содержатся файлы, которые будут скопированы в файловую систему: исполняемые файлы, библиотеки, документация и так далее. Пути к файлам внутри архива указываются относительно корня файловой системы. Содержимое архива может выглядеть так:
+
+```
+usr
+├── bin
+│   └── flashfetch
+└── share
+    ├── fastfetch
+    │   └── presets
+    │       └── ...
+    ├── man
+    │   └── man1
+    │       └── fastfetch.1
+    └── ...
+```
+
+Таким образом, программа `dpkg`:
+
+* распаковывает внешний архив
+* читает `control.tar.gz` и проверяет зависимости из файла `control`
+* выполняет скрипт `preinst`
+* извлекает файлы из `data.tar.gz` в соответствующие места в системе (в примере выше добавятся `/usr/bin/fastfetch`, страницы для утилиты `man` и другое)
+* выполняет скрипт `postinst`
+
+> Источник: <https://manpages.debian.org/unstable/dpkg-dev/deb.5.en.html>
+
+---
+
+Помимо создания пакетов с готовыми программами, формат предполагает создание пакетов с исходным кодом. Такой пакет состоит из 3 частей:
+
+* `<пакет>_<версия>.dsc` (Debian Source Control) - текстовый файл с метаданными исходного пакета. Он содержит короткую версию `control`, контрольные суммы архивов ниже и подпись разработчика
+* `<пакет>_<версия>.orig.tar.xz` - архив с немодифицированным исходным кодом программы
+* `<пакет>_<версия>-<ревизия>.debian.tar.xz` - архив, содержащий все файлы, добавленные мейнтейнером этого пакета для Debian, содержащий только папку `debian` (или `DEBIAN`)
+
+    В этой папке есть свой `control`, и выглядит он так:
+
+    ```debian control
+    Source: fastfetch
+    Section: utils
+    Priority: optional
+    Maintainer: Hiago De Franco <hiago@defranco.dev.br>
+    Uploaders: Carlos Henrique Lima Melara <charlesmelara@riseup.net>,
+               Maytham Alsudany <maytham@debian.org>,
+    Rules-Requires-Root: no
+    Build-Depends:
+     cmake,
+     debhelper-compat (= 13),
+     directx-headers-dev,
+     libchafa-dev,
+     ...
+    Standards-Version: 4.7.2
+    Homepage: https://github.com/fastfetch-cli/fastfetch
+    Vcs-Browser: https://salsa.debian.org/debian/fastfetch
+    Vcs-Git: https://salsa.debian.org/debian/fastfetch.git
+
+    Package: fastfetch
+    Architecture: any
+    Multi-Arch: foreign
+    Depends:
+     ${shlibs:Depends},
+     ${misc:Depends},
+    Description: neofetch-like tool for fetching system information
+     Fastfetch is a neofetch-like tool for fetching system information and
+     displaying them in a pretty way. It is written mainly in C, with
+     performance and customizability in mind.
+    ```
+
+    Здесь:
+
+    * `Source` - имя исходного пакета, из которого будут собраны один или несколько бинарных пакетов
+    * `Uploaders` - сопровождающие, имеющие право загружать пакет в архив Debian
+    * `Build-Depends` - зависимости, необходимые для сборки исходного пакета в бинарные
+    * `Standards-Version` - версия политики Debian, которой соответствует пакет
+    * `Vcs-Browser` и `Vcs-Git` - ссылки на репозиторий пакета в системе контроля версий Debian
+
+    Также эта папка содержит:
+
+    * `rules` - правила сборки (обычно это файл для утилиты Make)
+    * `copyright` - информация о правообладателя кода
+    * `changelog` - журнал изменений
+    * опциональные скрипты `preinst`, `postinst`, `prerm`, `postinst`
+
+Дальше из этих двух архивов с помощью утилиты `dpkg-buildpackage` собирает готовый пакет `.deb`
 
 ##### <a name="%D0%BF%D0%B0%D0%BA%D0%B5%D1%82-%D1%84%D0%BE%D1%80%D0%BC%D0%B0%D1%82%D0%B0-%60rpm%60"></a> Пакет формата `rpm`
+
+Такой формат используется в дистрибутивах Red Hat Enterprise Linux, Fedora и CentOS
 
 TODO
 <!-- end admlinux_x3_software_install.md -->
