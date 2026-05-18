@@ -116,7 +116,7 @@ make install  # установка
 
     Здесь хранятся название пакета, версия, архитектура, описание, а также зависимости, без которых программа не будет работать. Например, `control` для бинарного пакета выглядит так:
 
-    ```debian control
+    ```debiancontrol
     Package: fastfetch
     Version: 2.62.1+dfsg-1
     Architecture: amd64
@@ -190,7 +190,7 @@ usr
 
     В этой папке есть свой `debian/control`, и выглядит он так:
 
-    ```debian control
+    ```debiancontrol
     Source: fastfetch
     Section: utils
     Priority: optional
