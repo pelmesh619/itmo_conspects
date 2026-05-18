@@ -4,6 +4,9 @@
 
 Если нашли какую-то ошибку - напишите мне ([t.me/pelmeshke](https://t.me/pelmeshke)) или сделайте [форк](https://github.com/pelmesh619/itmo_conspects/fork) с исправлением и пулл реквест
 
+> Зеркало этого репозитория доступно на GitLab: <https://gitlab.com/pelmeshke/itmo_conspects>
+> Также конспекты доступны на <https://pelmeshke.gitlab.io/itmo_conspects/>
+
 ## VI семестр
 
 * Прикладная математика
