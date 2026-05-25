@@ -81,11 +81,13 @@
 
     Рассмотрим 3 ситуации:
 
-    1) $np$ - целое, тогда $np + p$ - нецелое, и $k = np$ - наиболее вероятное
+    \begin{enumerate}
+        \item $np$ -- целое, тогда $np + p$ -- нецелое, и $k = np$ -- наиболее вероятное
 
-    2) $np + p$ - нецелое, тогда $k = \lfloor np + p \rfloor$
+        \item $np + p$ -- нецелое, тогда $k = \lfloor np + p \rfloor$
 
-    3) $np + p$ - целое, тогда $np + p - 1$ - целое, и 2 наиболее вероятных числа успеха
+        \item $np + p$ -- целое, тогда $np + p - 1$ -- целое, и 2 наиболее вероятных числа успеха
+    \end{enumerate}
 
     Геометрическая интерпретация:
 
@@ -103,31 +105,37 @@
 
     При увеличении числа испытаний $n$ формула Бернулли вырождается в следующие асимптотические формы (применяем, если требуется найти вероятность точного числа успеха)
 
-    1) Локальная формула Муавра-Лапласа
+    \begin{enumerate}
+        \item Локальная формула Муавра-Лапласа
 
-    $p_n(k) \underset{n \to \infty}{\longrightarrow} \frac{1}{\sqrt{npq}} \varphi(x)$, где $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ - функция Гаусса
+        $p_n(k) \underset{n \to \infty}{\longrightarrow} \frac{1}{\sqrt{npq}} \varphi(x)$, где $\varphi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ -- функция Гаусса
 
-    $x = \frac{k - np}{\sqrt{npq}}$
+        $x = \frac{k - np}{\sqrt{npq}}$
 
-    Свойства $\varphi(x)$:
+        Свойства $\varphi(x)$:
 
-    1. $\varphi(x) = \varphi(-x)$ - функция четная
+        \begin{itemize}
+            \item $\varphi(x) = \varphi(-x)$ -- функция четная
 
-    2. при $x > 5 \quad \varphi(x) \approx 0$
+            \item при $x > 5 \quad \varphi(x) \approx 0$
+        \end{itemize}
 
-    \hypertarget{integralformulademoivrelaplace}{}
+        \hypertarget{integralformulademoivrelaplace}{}
 
-    2) Интегральная формула Муавра-Лапласа (если требуется найти вероятность того, что число успехов в данном диапазоне)
+        \item Интегральная формула Муавра-Лапласа (если требуется найти вероятность того, что число успехов в данном диапазоне)
 
-    $p_n(k_1 \leq k \leq k_2) \underset{n \to \infty}{\longrightarrow} \Phi(x_2) - \Phi(x_1)$, где $\Phi(x) = \frac{1}{\sqrt{2\pi}} \int_0^x e^{-\frac{z^2}{2}} dz$ - функция Лапласа
+        $p_n(k_1 \leq k \leq k_2) \underset{n \to \infty}{\longrightarrow} \Phi(x_2) - \Phi(x_1)$, где $\Phi(x) = \frac{1}{\sqrt{2\pi}} \int_0^x e^{-\frac{z^2}{2}} dz$ - функция Лапласа
 
-    $x_1 = \frac{k_1 - np}{\sqrt{npq}}$ - отклонение от левой границы, $x_2 = \frac{k_2 - np}{\sqrt{npq}}$ - отклонение от правой
+        $x_1 = \frac{k_1 - np}{\sqrt{npq}}$ -- отклонение от левой границы, $x_2 = \frac{k_2 - np}{\sqrt{npq}}$ -- отклонение от правой
 
-    Свойства $\Phi(x)$
+        Свойства $\Phi(x)$:
 
-    1. $\Phi(-x) = -\Phi(x)$ - функция нечетная
+        \begin{itemize}
+            \item $\Phi(-x) = -\Phi(x)$ -- функция нечетная
 
-    2. при $x > 5 \quad \Phi(x) \approx 0.5$
+            \item при $x > 5 \quad \Phi(x) \approx 0.5$
+        \end{itemize}
+    \end{enumerate}
 
     \Nota Эти формулы обычно можно применять при $n \geq 100$ и $0.1 \leq p \leq 0.9$
 
@@ -138,17 +146,21 @@
 
     \Ex Вероятность попадания стрелка в цель $0.8$, стрелок сделал 400 выстрелов. Найти вероятность того, что:
 
-    а) произошло ровно 330 попаданий
+    \begin{enumerate}
+        \item произошло ровно 330 попаданий
 
-    б) произошло от 312 до 336 попаданий
+        \item произошло от 312 до 336 попаданий
+    \end{enumerate}
 
-    а) $x = \frac{k - np}{\sqrt{npq}} = \frac{330 - 400 \cdot 0.8}{\sqrt{400 \cdot 0.8 \cdot 0.2}} = \frac{330 - 320}{8} = 1.25$
+    \begin{enumerate}
+        \item $x = \frac{k - np}{\sqrt{npq}} = \frac{330 - 400 \cdot 0.8}{\sqrt{400 \cdot 0.8 \cdot 0.2}} = \frac{330 - 320}{8} = 1.25$
 
-    $p_{400}(330) \approx \frac{1}{\sqrt{npq}} \varphi(1.25) = \frac{1}{8} \varphi(1.25) \approx \frac{1}{8} \cdot 0.1826 \approx 0.0228$
+        $p_{400}(330) \approx \frac{1}{\sqrt{npq}} \varphi(1.25) = \frac{1}{8} \varphi(1.25) \approx \frac{1}{8} \cdot 0.1826 \approx 0.0228$
 
-    б) $x_1 = \frac{312 - 320}{8} = -1$, $x_2 = \frac{336 - 320}{8} = 2$
+        \item $x_1 = \frac{312 - 320}{8} = -1$, $x_2 = \frac{336 - 320}{8} = 2$
 
-    $p_{400}(312 \leq k \leq 336) \approx \Phi(2) - \Phi(-1) = \Phi(2) + \Phi(1) \approx 0.4772 + 0.3413 = 0.8185$
+        $p_{400}(312 \leq k \leq 336) \approx \Phi(2) - \Phi(-1) = \Phi(2) + \Phi(1) \approx 0.4772 + 0.3413 = 0.8185$
+    \end{enumerate}
 
     \subsection{Статистическое понятие вероятности}
 
