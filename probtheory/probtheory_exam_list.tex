@@ -356,21 +356,23 @@
 
     \hyperlink{distributionfunctionproperties}{Свойства}: 
 
-    1) $F(x)$ ограничена $0 \leq F(x) \leq 1$
+    \begin{enumerate}
+        \item $F(x)$ ограничена $0 \leq F(x) \leq 1$
 
-    2) $F(x)$ неубывающая функция: $x_1 < x_2 \Longrightarrow F(x_1) \leq F(x_2)$ 
+        \item $F(x)$ неубывающая функция: $x_1 < x_2 \Longrightarrow F(x_1) \leq F(x_2)$ 
 
-    3) $p(\alpha \leq \xi < \beta) = F(\beta) - F(\alpha)$
+        \item $p(\alpha \leq \xi < \beta) = F(\beta) - F(\alpha)$
 
-    4) $\lim_{x \to -\infty} F(x) = 0; \quad \lim_{x \to +\infty} F(x) = 1$
-    
-    5) $F(x)$ непрерывна слева: $F(x_0 - 0) = F(x_0)$
+        \item $\lim_{x \to -\infty} F(x) = 0; \quad \lim_{x \to +\infty} F(x) = 1$
 
-    6) Скачок в точке $x_0$ равен вероятности попадания в данную точку: $F(x_0 + 0) - F(x_0) = p(\xi = x_0)$ или $F(x_0 + 0) = p(\xi = x_0) + p(\xi < x_0) = p(\xi \leq x_0)$
+        \item $F(x)$ непрерывна слева: $F(x_0 - 0) = F(x_0)$
 
-    7) Если функция распределения непрерывна в точке $x = x_0$, то очевидно, что вероятность попадания в эту точка $p(\xi = x_0) = 0$ (следствие из 6 пункта)
-    
-    8) Если $F(x)$ непрерывна $\forall x \in \Real$, то $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
+        \item Скачок в точке $x_0$ равен вероятности попадания в данную точку: $F(x_0 + 0) - F(x_0) = p(\xi = x_0)$ или $F(x_0 + 0) = p(\xi = x_0) + p(\xi < x_0) = p(\xi \leq x_0)$
+
+        \item Если функция распределения непрерывна в точке $x = x_0$, то очевидно, что вероятность попадания в эту точка $p(\xi = x_0) = 0$ (следствие из 6 пункта)
+        
+        \item Если $F(x)$ непрерывна $\forall x \in \Real$, то $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
+    \end{enumerate}
     
     \item \textit{Абсолютно непрерывные случайные величины. Плотность и ее свойства.}
 
@@ -381,23 +383,25 @@
 
     \hyperlink{densityfunctionproperties}{Свойства}:
 
-    1) Вероятносто-геометрический смысл плотности: $p(\alpha \leq \xi < \beta) = \int_{\alpha}^\beta f_\xi(x) dx$
+    \begin{enumerate}
+        \item Вероятностно-геометрический смысл плотности: $p(\alpha \leq \xi < \beta) = \int_{\alpha}^\beta f_\xi(x) dx$
 
-    2) Условие нормировки: $\int_{-\infty}^{+\infty} f_\xi(x)dx = 1$
+        \item Условие нормировки: $\int_{-\infty}^{+\infty} f_\xi(x)dx = 1$
 
-    3) $F_\xi(x) = \int_{-\infty}^x f_\xi(x)dx$
+        \item $F_\xi(x) = \int_{-\infty}^x f_\xi(x)dx$
 
-    4) $F_\xi(x)$ непрерывна 
+        \item $F_\xi(x)$ непрерывна 
 
-    5) $F_\xi(x)$ дифференцируема почти везде и $f_\xi(x) = F^\prime_\xi(x)$ для почти всех $x$
+        \item $F_\xi(x)$ дифференцируема почти везде и $f_\xi(x) = F^\prime_\xi(x)$ для почти всех $x$
 
-    6) $f_\xi(x) \geq 0$ по определению и как производная неубывающей $F_\xi(x)$
+        \item $f_\xi(x) \geq 0$ по определению и как производная неубывающей $F_\xi(x)$
 
-    7) $p(\xi = x) = 0 \ \forall x \in \Real$ - так как $F_\xi(x)$ непрерывна
+        \item $p(\xi = x) = 0 \ \forall x \in \Real$ -- так как $F_\xi(x)$ непрерывна
 
-    8) $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
+        \item $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
 
-    9) \Ths Если $f(x) \geq 0$ и $\int_{-\infty}^{\infty} f(x)dx = 1$ (выполнены свойства 2 и 6), то $f(x)$ - плотность некоторого распределения
+        \item \Ths Если $f(x) \geq 0$ и $\int_{-\infty}^{\infty} f(x)dx = 1$ (выполнены свойства 2 и 6), то $f(x)$ -- плотность некоторого распределения
+    \end{enumerate}
 
     \item \textit{Числовые характеристики абсолютно непрерывной случайной величины, их свойства.}
 
@@ -465,20 +469,22 @@
 
     \hyperlink{connectionbetweennormalandstandard}{Связь}: 
 
-    1) $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $F_\xi(x) = F_0\left(\frac{x - a}{\sigma}\right)$
+    \begin{enumerate}
+        \item $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $F_\xi(x) = F_0\left(\frac{x - a}{\sigma}\right)$
 
-    2) Если $\xi \in N(a, \sigma^2)$, то $\eta = \frac{\xi - a}{\sigma} \in N(0, 1)$ (процесс $\xi \to \eta$ называется стандартизацией)
+        \item Если $\xi \in N(a, \sigma^2)$, то $\eta = \frac{\xi - a}{\sigma} \in N(0, 1)$ (процесс $\xi \to \eta$ называется стандартизацией)
 
-    3) $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $p(\alpha < \xi < \beta) = \Phi\left(\frac{\beta - a}{\sigma}\right) - \Phi\left(\frac{\alpha - a}{\sigma}\right)$
+        \item $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $p(\alpha < \xi < \beta) = \Phi\left(\frac{\beta - a}{\sigma}\right) - \Phi\left(\frac{\alpha - a}{\sigma}\right)$
 
-    4) Вероятность попадания в симметричный интервал (вероятность отклонения случайной величины от матожидания) 
-    $p(|\xi - a| < t) = 2\Phi\left(\frac{t}{\sigma}\right)$
+        \item Вероятность попадания в симметричный интервал (вероятность отклонения случайной величины от матожидания) 
+        $p(|\xi - a| < t) = 2\Phi\left(\frac{t}{\sigma}\right)$
 
-    5) Правило 3 \enquote{сигм}: $p(|\xi - a| < 3\sigma) \approx 0.9973$ - попадание случайной величины нормального распределения в интервал $(a - 3\sigma, a + 3\sigma)$ близко к 1
+        \item Правило 3 \enquote{сигм}: $p(|\xi - a| < 3\sigma) \approx 0.9973$ -- попадание случайной величины нормального распределения в интервал $(a - 3\sigma, a + 3\sigma)$ близко к 1
 
-    6) Свойство линейности: если случайная величина $\xi \in N(a, \sigma^2)$, то $\eta = \gamma \xi + b \in N(a \gamma + b, \gamma^2 \sigma^2)$ 
-    
-    7) Устойчивость относительно суммирования: если случайные величины $\xi_1 \in N(a_1, \sigma_1^2), \xi_2 \in N(a_2, \sigma_2^2)$, и они независимы, то $\xi_1 + \xi_2 \in N(a_1 + a_2, \sigma^2_1 + \sigma^2_2)$
+        \item Свойство линейности: если случайная величина $\xi \in N(a, \sigma^2)$, то $\eta = \gamma \xi + b \in N(a \gamma + b, \gamma^2 \sigma^2)$ 
+
+        \item Устойчивость относительно суммирования: если случайные величины $\xi_1 \in N(a_1, \sigma_1^2), \xi_2 \in N(a_2, \sigma_2^2)$, и они независимы, то $\xi_1 + \xi_2 \in N(a_1 + a_2, \sigma^2_1 + \sigma^2_2)$
+    \end{enumerate}
 
     \item \textit{Сингулярные распределения. Теорема Лебега (без док-ва).}
 
@@ -566,13 +572,17 @@
 
     Для непрерывной случайной величины $Eg(\xi) = \int_{-\infty}^{\infty} g(x) f_\xi(x) dx$
 
-    \hyperlink{momentsproperties}{Свойства моментов}: 1) Если $\xi \geq 0$, то $E\xi \geq 0$
+    \hyperlink{momentsproperties}{Свойства моментов}:
+    
+    \begin{enumerate}
+        \item Если $\xi \geq 0$, то $E\xi \geq 0$
 
-    2) Если $\xi \leq \eta$, то $E\xi \leq E\eta$
+        \item Если $\xi \leq \eta$, то $E\xi \leq E\eta$
 
-    3) Если $|\xi| \leq |\eta|$, то $E|\xi|^k \leq E|\eta|^k$
+        \item Если $|\xi| \leq |\eta|$, то $E|\xi|^k \leq E|\eta|^k$
 
-    4) Если существует момент $m_t$ случайной величины $\xi$, то существует $m_s$ при $s < t$ (при условии, что интеграл/сумма сходятся)
+        \item Если существует момент $m_t$ случайной величины $\xi$, то существует $m_s$ при $s < t$ (при условии, что интеграл/сумма сходятся)
+    \end{enumerate}
 
     
     \item \textit{Неравенство Йенсена, следствие.}
