@@ -17,21 +17,21 @@ $teacher$=Лекции Блаженова А. В.
 
     Пусть имеется вероятностное пространство $(\Omega, \mathcal{F}, P)$
 
-    Введем пространство $L_2 (\Omega, \mathcal{F}, P) = \{\xi \ | \ D\xi < \infty\}$ - множество случайных величин 
+    Введем пространство $L_2 (\Omega, \mathcal{F}, P) = \{\xi \ | \ D\xi < \infty\}$ -- множество случайных величин 
     на данном пространстве с конечной дисперсией
 
-    Ясно, что $L_2$ - линейное пространство. Введем на нем скалярное произведение
+    Ясно, что $L_2$ -- линейное пространство. Введем на нем скалярное произведение
 
     \hypertarget{scalarproductoftwovariables}{}
 
     \Def Скалярным произведением случайных величин $\xi$ и $\eta$ из $L_2(\Omega, \mathcal{F}, P)$ 
     называется число $(\xi, \eta) = E(\xi\eta)$
 
-    \Nota Если $(\xi, \eta)$ - дискретная система случайных величин ($p(\xi = x_i, \eta = y_i) = p_{ij}$), 
+    \Nota Если $(\xi, \eta)$ -- дискретная система случайных величин ($p(\xi = x_i, \eta = y_i) = p_{ij}$), 
     то $E(\xi\eta) = \sum_{i, j} x_i y_j p_{ij}$
 \end{minipage}
 
-Если же $(\xi, \eta)$ - непрерывная система с плотностью $f_{\xi, \eta}(x, y)$, 
+Если же $(\xi, \eta)$ -- непрерывная система с плотностью $f_{\xi, \eta}(x, y)$, 
 то $E(\xi\eta) = \iint_{\Real^2} xy f_{\xi, \eta}(x, y) dxdy$
 
 \mediumvspace
@@ -174,9 +174,9 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
     \item $D(\xi_1 + \dots + \xi_n) = \sum_{i = 1}^n D\xi_i + 2\sum_{i < j} \mathrm{cov}(\xi_i, \xi_j) = \sum_{i, j = 1}^{n} \mathrm{cov}(\xi_i, \xi_j)$
 
     \item \begin{enumerate}
-        \item Если $\xi$ и $\eta$ - независимы, то $\mathrm{cov}(\xi, \eta) = 0$
+        \item Если $\xi$ и $\eta$ -- независимы, то $\mathrm{cov}(\xi, \eta) = 0$
 
-        \item Если $\mathrm{cov}(\xi, \eta) \neq 0$, то $\xi$ и $\eta$ - зависимы
+        \item Если $\mathrm{cov}(\xi, \eta) \neq 0$, то $\xi$ и $\eta$ -- зависимы
 
         \item Если $\mathrm{cov}(\xi, \eta) = 0$, то неясно
     \end{enumerate}
@@ -194,7 +194,7 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 называется величина $r_{\xi,\eta} = \frac{\mathrm{cov(\xi, \eta)}}{\sqrt{D\xi} \sqrt{D\eta}} = \frac{E(\xi\eta) - E\xi E\eta}{\sigma_\xi \sigma_\eta}$
 
 Можно записать в другой форме: $r_{\xi,\eta} = \frac{E((\xi - E\xi)(\eta - E\eta))}{\sqrt{E(\xi - E\xi)^2}\sqrt{E(\eta - E\eta)^2}} = 
-\frac{(\xi - E\xi, \eta - E\eta)}{\|\xi - E\xi\|\|\eta - E\eta\|} = \cos(\widehat{\xi - E\xi, \eta - E\eta})$ - косинус угла между величинами (грубая интерпретация)
+\frac{(\xi - E\xi, \eta - E\eta)}{\|\xi - E\xi\|\|\eta - E\eta\|} = \cos(\widehat{\xi - E\xi, \eta - E\eta})$ -- косинус угла между величинами (грубая интерпретация)
 
 \mediumvspace
 
@@ -204,9 +204,9 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
     \item $r_{\xi, \eta} = r_{\eta, \xi}$
 
     \item \begin{enumerate}
-        \item Если $\xi$ и $\eta$ - независимы, то $r_{\xi,\eta} = 0$
+        \item Если $\xi$ и $\eta$ -- независимы, то $r_{\xi,\eta} = 0$
 
-        \item Если $r_{\xi,\eta} \neq 0$, то $\xi$ и $\eta$ - зависимы
+        \item Если $r_{\xi,\eta} \neq 0$, то $\xi$ и $\eta$ -- зависимы
 
         \item Если $r_{\xi,\eta} = 0$, то неясно
     \end{enumerate}
@@ -237,7 +237,7 @@ $E(h(\eta)g(\eta)) = \int_{-\infty}^{\infty} h(y) g(y) f_{\eta}(y) dy = \int_{-\
 \end{enumerate}
 
 \Def Если $r_{\xi,\eta} \neq 0$, то говорят, что случайные величины коррелированы друг с другом. Если $r_{\xi,\eta} > 0$, 
-то имеет прямая корреляция, если $r_{\xi,\eta} < 0$ - обратная
+то имеет прямая корреляция, если $r_{\xi,\eta} < 0$ -- обратная
 
 \Nota Корреляция не транзитивна: $r_{\xi_1,\xi_2} > 0 \land r_{\xi_2,\xi_3} > 0 \centernot\Longrightarrow r_{\xi_1,\xi_3} > 0$
 
