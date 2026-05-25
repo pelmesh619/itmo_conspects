@@ -104,18 +104,18 @@
 
     \includegraphics[height=4cm]{probtheory/images/probtheory_2024_10_29_5}
 
-    Смысл параметров распределения: $a = E\xi$ - матожидание и медиана, $\sigma$ - СКО, а $D\xi = \sigma^2$
+    Смысл параметров распределения: $a = E\xi$ -- матожидание и медиана, $\sigma$ -- СКО, а $D\xi = \sigma^2$
 
     Функция распределения: $F(x) = \frac{1}{\sigma \sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{(t - a)^2}{2\sigma^2}} dt$
 
     \includegraphics[height=4cm]{probtheory/images/probtheory_2024_10_29_6}
 
-    Проверим корректность определения - условие нормировки. Покажем, что $\int_{-\infty}^\infty f(x)dx = 1$
+    Проверим корректность определения -- условие нормировки. Покажем, что $\int_{-\infty}^\infty f(x)dx = 1$
 
     $\int_{-\infty}^\infty \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}} dx = \left[\begin{matrix}t = \frac{x - a}{\sigma \sqrt{2}} & dt = \frac{dx}{\sigma\sqrt{2}} \\ t (\pm \infty) = \pm \infty & dx = \sigma\sqrt{2}dt\end{matrix}\right] = 
-    \int_{-\infty}^\infty \frac{1}{\sigma\sqrt{2\pi}} e^{-t^2} \sigma\sqrt{2} dt = \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-t^2} dt = \frac{1}{\sqrt{\pi}} \sqrt{\pi} = 1$ - верно
+    \int_{-\infty}^\infty \frac{1}{\sigma\sqrt{2\pi}} e^{-t^2} \sigma\sqrt{2} dt = \frac{1}{\sqrt{\pi}} \int_{-\infty}^{\infty} e^{-t^2} dt = \frac{1}{\sqrt{\pi}} \sqrt{\pi} = 1$ -- верно
 
-    Ясно, что $m_k = \int_{-\infty}^\infty x^k f(x) dx = \int_{-\infty}^\infty x^k \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}} dx$ - интеграл сходится абсолютно для любого $k$ (степень $e$ задавит полином)
+    Ясно, что $m_k = \int_{-\infty}^\infty x^k f(x) dx = \int_{-\infty}^\infty x^k \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}} dx$ -- интеграл сходится абсолютно для любого $k$ (степень $e$ задавит полином)
 
     $E\xi = m_1 = \int_{-\infty}^\infty x \frac{1}{\sigma \sqrt{2\pi}} e^{-\frac{(x - a)^2}{2\sigma^2}} dx = a$ в силу симметрии
 
@@ -127,7 +127,7 @@
     
     $\frac{1}{\sqrt{2\pi}} \int_{-\infty}^\infty e^{-\frac{(x - a)^2}{2\sigma^2}} \left(-\frac{(x - a)^2}{2} (-2\sigma^{-3})\right) dx = 1$
     
-    $\frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^\infty (x - a)^2 e^{-\frac{(x - a)^2}{2\sigma^2}} dx = \sigma^2 = D\xi$, получаем, что $\sigma$ - СКО
+    $\frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^\infty (x - a)^2 e^{-\frac{(x - a)^2}{2\sigma^2}} dx = \sigma^2 = D\xi$, получаем, что $\sigma$ -- СКО
 
     \mediumvspace
 
@@ -137,13 +137,13 @@
 
     \Def Стандартным нормальным распределением называется нормальное распределение с параметрами $a = 0, \sigma^2 = 1$: $\xi \in N(0, 1)$
 
-    Плотность: $\phi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ - функция Гаусса
+    Плотность: $\phi(x) = \frac{1}{\sqrt{2\pi}} e^{-\frac{x^2}{2}}$ -- функция Гаусса
 
     $E\xi = 0; \ D\xi = 1$
 
-    Распределение: $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{z^2}{2}} dz$ - функция стандартного нормального распределения
+    Распределение: $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{z^2}{2}} dz$ -- функция стандартного нормального распределения
 
-    Заметим, что $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^0 e^{-\frac{z^2}{2}} dz + \frac{1}{\sqrt{2\pi}} \int_0^x e^{-\frac{z^2}{2}} dz = \frac{1}{2} + \Phi(x)$, где $\Phi(x)$ - функция Лапласа
+    Заметим, что $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^0 e^{-\frac{z^2}{2}} dz + \frac{1}{\sqrt{2\pi}} \int_0^x e^{-\frac{z^2}{2}} dz = \frac{1}{2} + \Phi(x)$, где $\Phi(x)$ -- функция Лапласа
 
     Функция Лапласа нечетная и из соображения симметрии легко вычисляется для отрицательных $x$, однако большинство ПО используют $F_0(x)$
     
