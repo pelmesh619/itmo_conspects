@@ -129,41 +129,43 @@
 
     \subsubsection{Свойства плотности абсолютно непрерывного распределения}
 
-    1) Вероятносто-геометрический смысл плотности: $p(\alpha \leq \xi < \beta) = \int_{\alpha}^\beta f_\xi(x) dx$
+    \begin{enumerate}
+        \item Вероятностно-геометрический смысл плотности: $p(\alpha \leq \xi < \beta) = \int_{\alpha}^\beta f_\xi(x) dx$
 
-    \includegraphics[height=6cm]{probtheory/images/probtheory_2024_10_22_4}
+        \includegraphics[height=6cm]{probtheory/images/probtheory_2024_10_22_4}
 
-    2) Условие нормировки: $\int_{-\infty}^{+\infty} f_\xi(x)dx = 1$
+        \item Условие нормировки: $\int_{-\infty}^{+\infty} f_\xi(x)dx = 1$
 
-    \begin{MyProof}
-        Из определения, если $B = \Real$
-    \end{MyProof}
+        \begin{MyProof}
+            Из определения, если $B = \Real$
+        \end{MyProof}
 
-    3) $F_\xi(x) = \int_{-\infty}^x f_\xi(x)dx$
+        \item $F_\xi(x) = \int_{-\infty}^x f_\xi(x)dx$
 
-    \begin{MyProof}
-        Если $B = (-\infty; x)$, то $F_\xi(x) = p(\xi \in (-\infty; x)) = \int_{-\infty}^x f_\xi(x)dx$
-    \end{MyProof}
+        \begin{MyProof}
+            Если $B = (-\infty; x)$, то $F_\xi(x) = p(\xi \in (-\infty; x)) = \int_{-\infty}^x f_\xi(x)dx$
+        \end{MyProof}
 
-    4) $F_\xi(x)$ непрерывна 
-    
-    \begin{MyProof}
-        Из свойства непрерывности интеграла с верхним переменным пределом
-    \end{MyProof}
+        \item $F_\xi(x)$ непрерывна 
+        
+        \begin{MyProof}
+            Из свойства непрерывности интеграла с верхним переменным пределом
+        \end{MyProof}
 
-    5) $F_\xi(x)$ дифференцируема почти везде и $f_\xi(x) = F^\prime_\xi(x)$ для почти всех $x$
-    
-    \begin{MyProof}
-        По теореме Барроу
-    \end{MyProof}
+        \item $F_\xi(x)$ дифференцируема почти везде и $f_\xi(x) = F^\prime_\xi(x)$ для почти всех $x$
+        
+        \begin{MyProof}
+            По теореме Барроу
+        \end{MyProof}
 
-    6) $f_\xi(x) \geq 0$ по определению и как производная неубывающей $F_\xi(x)$
+        \item $f_\xi(x) \geq 0$ по определению и как производная неубывающей $F_\xi(x)$
 
-    7) $p(\xi = x) = 0 \ \forall x \in \Real$ - так как $F_\xi(x)$ непрерывна
+        \item $p(\xi = x) = 0 \ \forall x \in \Real$ -- так как $F_\xi(x)$ непрерывна
 
-    8) $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
+        \item $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
 
-    9) \Ths Если $f(x) \geq 0$ и $\int_{-\infty}^{\infty} f(x)dx = 1$ (выполнены свойства 2 и 6), то $f(x)$ - плотность некоторого распределения
+        \item \Ths Если $f(x) \geq 0$ и $\int_{-\infty}^{\infty} f(x)dx = 1$ (выполнены свойства 2 и 6), то $f(x)$ -- плотность некоторого распределения
+    \end{enumerate}
 
     \hypertarget{attributesofcontinuousrandomvariable}{}
 
