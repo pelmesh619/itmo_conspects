@@ -37,76 +37,77 @@
 
     \subsubsection{Свойства функции распределения}
 
-    1) $F(x)$ ограничена $0 \leq F(x) \leq 1$
+    \begin{enumerate}
+        \item $F(x)$ ограничена $0 \leq F(x) \leq 1$
 
-    2) $F(x)$ неубывающая функция: $x_1 < x_2 \Longrightarrow F(x_1) \leq F(x_2)$ 
+        \item $F(x)$ неубывающая функция: $x_1 < x_2 \Longrightarrow F(x_1) \leq F(x_2)$ 
 
-    \begin{MyProof}
-        $x_1 < x_2 \Longrightarrow \{\xi < x_1\} \subset \{\xi < x_2\} \Longrightarrow p(\xi < x_1) \leq p(\xi < x_2)$, то есть $F(x_1) \leq F(x_2)$
-    \end{MyProof}
+        \begin{MyProof}
+            $x_1 < x_2 \Longrightarrow \{\xi < x_1\} \subset \{\xi < x_2\} \Longrightarrow p(\xi < x_1) \leq p(\xi < x_2)$, то есть $F(x_1) \leq F(x_2)$
+        \end{MyProof}
 
-    3) $p(\alpha \leq \xi < \beta) = F(\beta) - F(\alpha)$
+        \item $p(\alpha \leq \xi < \beta) = F(\beta) - F(\alpha)$
 
-    \begin{MyProof}
-        $p(\xi < \beta) = p(\xi < \alpha) + p(\alpha \leq \xi < \beta) \Longrightarrow F(\beta) = F(\alpha) + p(\alpha \leq \xi < \beta)$
-    \end{MyProof}
-    
-    \Notas Функция распределения $F(x)$ - вероятность попадания в интервал $(-\infty; x)$. Так как Борелевская $\sigma$-алгебра порождается такими интервалами,
-    то распределение полностью задается этой функцией
+        \begin{MyProof}
+            $p(\xi < \beta) = p(\xi < \alpha) + p(\alpha \leq \xi < \beta) \Longrightarrow F(\beta) = F(\alpha) + p(\alpha \leq \xi < \beta)$
+        \end{MyProof}
+        
+        \Notas Функция распределения $F(x)$ -- вероятность попадания в интервал $(-\infty; x)$. Так как Борелевская $\sigma$-алгебра порождается такими интервалами,
+        то распределение полностью задается этой функцией
 
-    4) $\lim_{x \to -\infty} F(x) = 0; \quad \lim_{x \to +\infty} F(x) = 1$
+        \item $\lim_{x \to -\infty} F(x) = 0; \quad \lim_{x \to +\infty} F(x) = 1$
 
-    \begin{MyProof}
-        Так как $F(x)$ монотонна и ограничена, то эти пределы существуют. Поэтому достаточно доказать эти пределы для некоторой последовательности $x_n \to \pm \infty$
+        \begin{MyProof}
+            Так как $F(x)$ монотонна и ограничена, то эти пределы существуют. Поэтому достаточно доказать эти пределы для некоторой последовательности $x_n \to \pm \infty$
 
-        $\letsymbol A_n = \{n - 1 \leq \xi < n, n \in \mathbb{Z}\}$ - несовместные события, так как $\Real = \bigunion_{n = -\infty}^\infty A_n$, то
-        по аксиоме счетной аддитивности, вероятность $p(\xi \in \Real) = 1 = \sum_{n = -\infty}^\infty P(A_n) = \lim_{N \to \infty} \sum_{n = -N}^N p(n - 1 \leq \xi < n) = 
-        \lim_{N \to \infty} \sum_{n = -N}^N (F(n) - F(n - 1)) = \lim_{N \to \infty} (F(N) - F(-N - 1)) = \lim_{N \to \infty} F(N) - \lim_{N \to -\infty} F(N) = 1$
+            $\letsymbol A_n = \{n - 1 \leq \xi < n, n \in \mathbb{Z}\}$ -- несовместные события, так как $\Real = \bigunion_{n = -\infty}^\infty A_n$, то
+            по аксиоме счетной аддитивности, вероятность $p(\xi \in \Real) = 1 = \sum_{n = -\infty}^\infty P(A_n) = \lim_{N \to \infty} \sum_{n = -N}^N p(n - 1 \leq \xi < n) = 
+            \lim_{N \to \infty} \sum_{n = -N}^N (F(n) - F(n - 1)) = \lim_{N \to \infty} (F(N) - F(-N - 1)) = \lim_{N \to \infty} F(N) - \lim_{N \to -\infty} F(N) = 1$
 
-        $\Longrightarrow \lim_{N \to \infty} F(N) = 1 + \lim_{N \to -\infty} F(N) $
+            $\Longrightarrow \lim_{N \to \infty} F(N) = 1 + \lim_{N \to -\infty} F(N) $
 
-        Так как $\lim_{N \to \infty} F(N) \leq 1$ и $\lim_{N \to -\infty} F(N) \geq 0$, то $\lim_{N \to \infty} F(N) = 1$ и $\lim_{N \to -\infty} = 0$
-    \end{MyProof}
-    
-    5) $F(x)$ непрерывна слева: $F(x_0 - 0) = F(x_0)$
+            Так как $\lim_{N \to \infty} F(N) \leq 1$ и $\lim_{N \to -\infty} F(N) \geq 0$, то $\lim_{N \to \infty} F(N) = 1$ и $\lim_{N \to -\infty} = 0$
+        \end{MyProof}
+        
+        \item $F(x)$ непрерывна слева: $F(x_0 - 0) = F(x_0)$
 
-    \begin{MyProof}
-        Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $B_n = \{x_0 - \frac{1}{n} \leq \xi < x_0, n \in \mathbb{Z}\}$
+        \begin{MyProof}
+            Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $B_n = \{x_0 - \frac{1}{n} \leq \xi < x_0, n \in \mathbb{Z}\}$
 
-        Так как $B_1 \supset B_2 \supset \dots \supset B_n \supset \dots$ и $\bigcap_{n = 1}^\infty B_n = \emptyset$
+            Так как $B_1 \supset B_2 \supset \dots \supset B_n \supset \dots$ и $\bigcap_{n = 1}^\infty B_n = \emptyset$
 
-        То по аксиоме непрерывности $p(B_n) \to 0$
+            То по аксиоме непрерывности $p(B_n) \to 0$
 
-        $P(B_n) = F(x_0) - F(x_0 - \frac{1}{n}) \rightarrow 0$
+            $P(B_n) = F(x_0) - F(x_0 - \frac{1}{n}) \rightarrow 0$
 
-        $F(x_0 - \frac{1}{n}) \to F(x_0)$
+            $F(x_0 - \frac{1}{n}) \to F(x_0)$
 
-        $\lim_{x \to x_0 - 0} F(x) = F(x_0)$
-    \end{MyProof}
-    
-    6) Скачок в точке $x_0$ равен вероятности попадания в данную точку: $F(x_0 + 0) - F(x_0) = p(\xi = x_0)$ или $F(x_0 + 0) = p(\xi = x_0) + p(\xi < x_0) = p(\xi \leq x_0)$
+            $\lim_{x \to x_0 - 0} F(x) = F(x_0)$
+        \end{MyProof}
+        
+        \item Скачок в точке $x_0$ равен вероятности попадания в данную точку: $F(x_0 + 0) - F(x_0) = p(\xi = x_0)$ или $F(x_0 + 0) = p(\xi = x_0) + p(\xi < x_0) = p(\xi \leq x_0)$
 
-    
-    \begin{MyProof}
-        Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $C_n = \{x_0 \leq \xi < x_0 + \frac{1}{n}, n \in \mathbb{Z}\}$
+        \begin{MyProof}
+            Этот предел существует в силу монотонности и ограниченности функции, поэтому рассмотрим последовательность событий $C_n = \{x_0 \leq \xi < x_0 + \frac{1}{n}, n \in \mathbb{Z}\}$
 
-        Так как $C_1 \supset C_2 \supset \dots \supset C_n \supset \dots$ и $\bigcap_{n = 1}^\infty C_n = \emptyset$
+            Так как $C_1 \supset C_2 \supset \dots \supset C_n \supset \dots$ и $\bigcap_{n = 1}^\infty C_n = \emptyset$
 
-        То по аксиоме непрерывности $p(C_n) \to 0$
+            То по аксиоме непрерывности $p(C_n) \to 0$
 
-        $P(C_n) = F(x_0 + \frac{1}{n}) - F(x_0) \rightarrow 0$
+            $P(C_n) = F(x_0 + \frac{1}{n}) - F(x_0) \rightarrow 0$
 
-        $p(x_0 \leq \xi < x_0 + \frac{1}{n}) + p(\xi = x_0) \rightarrow p(\xi = x_0)$
+            $p(x_0 \leq \xi < x_0 + \frac{1}{n}) + p(\xi = x_0) \rightarrow p(\xi = x_0)$
 
-        $F(x_0 + \frac{1}{n}) - F(x_0) \to p(\xi = x_0)$
+            $F(x_0 + \frac{1}{n}) - F(x_0) \to p(\xi = x_0)$
 
-        $F(x_0 + 0) - F(x_0) \to p(\xi = x_0)$
-    \end{MyProof}
-    
-    7) Если функция распределения непрерывна в точке $x = x_0$, то очевидно, что вероятность попадания в эту точка $p(\xi = x_0) = 0$ (следствие из 6 пункта)
-    
-    8) Если $F(x)$ непрерывна $\forall x \in \Real$, то $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
-    
+            $F(x_0 + 0) - F(x_0) \to p(\xi = x_0)$
+        \end{MyProof}
+        
+        \item Если функция распределения непрерывна в точке $x = x_0$, то очевидно, что вероятность попадания в эту точка $p(\xi = x_0) = 0$ (следствие из 6 пункта)
+        
+        \item Если $F(x)$ непрерывна $\forall x \in \Real$, то $p(\alpha \leq \xi < \beta) = p(\alpha < \xi < \beta) = p(\alpha \leq \xi \leq \beta) = p(\alpha < \xi \leq \beta) = F(\beta) - F(\alpha)$
+    \end{enumerate}
+
     \begin{MyTheorem}
         \Ths Случайная величина $\xi$ имеет дискретное распределение тогда и только тогда, когда ее функция распределения имеет ступенчатый вид
     \end{MyTheorem}
