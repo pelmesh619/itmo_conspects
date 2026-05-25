@@ -45,7 +45,7 @@
         \item Слабая сходимость
 
         \Defs Последовательность случайных величин $\xi_n$ слабо сходится к случайной величине $\xi$ при $n \to \infty$
-        ($\xi_n \rightrightarrows \xi$), если $F_{\xi_n}(x) \longrightarrow F_\xi(x) \forall x$, где $F_\xi(x)$ - непрерывна
+        ($\xi_n \rightrightarrows \xi$), если $F_{\xi_n}(x) \longrightarrow F_\xi(x) \forall x$, где $F_\xi(x)$ -- непрерывна
     
     \end{itemize}
 
@@ -73,9 +73,9 @@
     \end{MyProof}
 
     \Nota В общем случае не только из слабой сходимости не следует сходимость по вероятности, но и бессмысленно говорить
-    об этом, так как слабая сходимость - это сходимость не случайных величин, а их распределений
+    об этом, так как слабая сходимость -- это сходимость не случайных величин, а их распределений
 
-    \Ex $\letsymbol \xi_n \rightrightarrows \xi \in N(0, 1)$, тогда $\eta = -\xi \in N(0, 1)$, но ясно, что $\xi_n \overset{p}{\longrightarrow} \eta = -\xi$ - неверно 
+    \Ex $\letsymbol \xi_n \rightrightarrows \xi \in N(0, 1)$, тогда $\eta = -\xi \in N(0, 1)$, но ясно, что $\xi_n \overset{p}{\longrightarrow} \eta = -\xi$ -- неверно 
     
     \subsection{Ключевые неравенства}
 
@@ -90,7 +90,7 @@
     \end{MyTheorem}
 
     \begin{MyProof}
-        $I_A(\omega) = \begin{cases}0, & \omega \notin A \quad - A\text{ нет} \\ 1, & \omega \in A \quad - A\text{ есть}\end{cases}$
+        $I_A(\omega) = \begin{cases}0, & \omega \notin A \quad -- A\text{ нет} \\ 1, & \omega \in A \quad -- A\text{ есть}\end{cases}$
 
         $EI_A = p(A)$
 
@@ -130,19 +130,19 @@
 
     \subsection{Среднее арифмитическое независимых одинаково распределенных случайных величин}
 
-    Пусть $\xi_1, \xi_2, \dots, \xi_n$ - независимые одинаково распределенные случайные величины с конечным вторым моментом
+    Пусть $\xi_1, \xi_2, \dots, \xi_n$ -- независимые одинаково распределенные случайные величины с конечным вторым моментом
 
     Обозначим $a = E\xi_i, d = D\xi_i, \sigma = \sigma_{\xi_i}, \quad 1 \leq i \leq n$
 
-    $S_n = \xi_1 + \dots + \xi_n$ - их сумма
+    $S_n = \xi_1 + \dots + \xi_n$ -- их сумма
 
-    $\frac{S_n}{n} = \frac{\xi_1 + \dots + \xi_n}{n}$ - среднее арифмитическое
+    $\frac{S_n}{n} = \frac{\xi_1 + \dots + \xi_n}{n}$ -- среднее арифметическое
 
-    $E\left(\frac{S_n}{n}\right) = \frac{1}{n} (E\xi_1 + \dots + E\xi_n) = \frac{1}{n} na = a = E\xi_1$ - математическое ожидание не меняется
+    $E\left(\frac{S_n}{n}\right) = \frac{1}{n} (E\xi_1 + \dots + E\xi_n) = \frac{1}{n} na = a = E\xi_1$ -- математическое ожидание не меняется
 
-    $D\left(\frac{S_n}{n}\right) = \frac{1}{n^2} (D\xi_1 + \dots + D\xi_n) = \frac{1}{n^2} nd = \frac{d}{n} = \frac{D\xi_1}{n}$ - дисперсия уменьшилась в $n$ раз
+    $D\left(\frac{S_n}{n}\right) = \frac{1}{n^2} (D\xi_1 + \dots + D\xi_n) = \frac{1}{n^2} nd = \frac{d}{n} = \frac{D\xi_1}{n}$ -- дисперсия уменьшилась в $n$ раз
 
-    $\sigma\left(\frac{S_n}{n}\right) = \frac{\sigma}{\sqrt{n}}$ - СКО уменьшилось в $\sqrt{n}$ раз
+    $\sigma\left(\frac{S_n}{n}\right) = \frac{\sigma}{\sqrt{n}}$ -- СКО уменьшилось в $\sqrt{n}$ раз
 
     \subsection{Законы больших чисел}
 
@@ -151,7 +151,7 @@
     \subsubsection{I. Закон больших чисел Чебышева}
 
     \begin{MyTheorem}
-        \Ths Пусть $\xi_1, \dots, \xi_n, \dots$ - последовательность независимых одинаково распределенных с конечным вторым моментом,
+        \Ths Пусть $\xi_1, \dots, \xi_n, \dots$ -- последовательность независимых одинаково распределенных с конечным вторым моментом,
         тогда $\frac{\xi_1 + \dots + \xi_n}{n} \overset{p}{\underset{n \to \infty}{\longrightarrow}} E\xi_1$
     \end{MyTheorem}
 
@@ -178,14 +178,14 @@
     \hypertarget{lawofbignumbersbernoulli2}{}
 
     \begin{MyTheorem}
-        \Ths Пусть $v_n$ - число успехов из $n$ независимых испытаний, $p = P(A)$ - вероятность успеха при одном испытании.
+        \Ths Пусть $v_n$ -- число успехов из $n$ независимых испытаний, $p = P(A)$ -- вероятность успеха при одном испытании.
         Тогда $\frac{v_n}{n} \overset{p}{\longrightarrow} P(A)$
     \end{MyTheorem}
 
     При этом $P\left(\left|\frac{v_n}{n} - p\right| \leq \varepsilon\right) \leq \frac{p(1 - p)}{n\varepsilon^2}$
 
     \begin{MyProof}
-        $v_n = \xi_1 + \dots + \xi_n$, где $\xi_i \in B_p$ - число успехов при $i$-ом испытании
+        $v_n = \xi_1 + \dots + \xi_n$, где $\xi_i \in B_p$ -- число успехов при $i$-ом испытании
 
         $E\xi_i = p; D\xi_i = pq$
 
@@ -228,7 +228,7 @@
     \begin{MyTheorem}
         \Ths Центральная предельная теорема (ЦПТ Ляпунова, $\approx$1901 год)
 
-        Пусть $\xi_1, \dots, \xi_n, \dots$ - последовательность независимых одинаково распределенных случайных величин
+        Пусть $\xi_1, \dots, \xi_n, \dots$ -- последовательность независимых одинаково распределенных случайных величин
         с конечной дисперсией ($D\xi_1 < \infty$) и $S_n = \sum_{i = 1}^n \xi_i$. Тогда имеет место слабая сходимость:
 
         \[\frac{S_n - nE\xi_1}{\sqrt{nD\xi_1}} \rightrightarrows N(0, 1)\]
