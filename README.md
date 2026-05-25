@@ -109,7 +109,6 @@
     * Лекция №11 - отменена
     * Лекция №12 - отменена
     * Лекция №13 - календарный праздник
-
     * [Extra 1. Современные системы инициализации](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_x1_upstart_systemd.html)
     * [Extra 2. Механизмы контейнеризации](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_x2_containerization.html)
     * [Extra 3. Установка ПО, пакетные менеджеры](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_x3_software_install.html)
