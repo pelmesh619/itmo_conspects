@@ -15,13 +15,13 @@
 
     \hypertarget{bernoullischema}{}
 
-    Схемой Бернулли - называется серия одинаковых независимых экспериментов, каждый из которых имеет 2 исхода: произошло интересующее нас событие или нет
+    Схемой Бернулли -- называется серия одинаковых независимых экспериментов, каждый из которых имеет 2 исхода: произошло интересующее нас событие или нет
 
-    $p = p(A)$ - вероятность успеха при одном испытании
+    $p = p(A)$ -- вероятность успеха при одном испытании
 
-    $q = 1 - p$ - вероятность неудачи
+    $q = 1 - p$ -- вероятность неудачи
 
-    $v_n$ - число успехов в серии из $n$ испытаний
+    $v_n$ -- число успехов в серии из $n$ испытаний
 
     $p(v_n = k) = p_n(k)$
 
@@ -51,7 +51,7 @@
         $\Box$
     \end{MyProof}
 
-    \Ex Вероятность попадания стрелка при одном выстреле - $0.8$. Какова вероятность того, что из пяти выстрелов точными будут три
+    \Ex Вероятность попадания стрелка при одном выстреле -- $0.8$. Какова вероятность того, что из пяти выстрелов точными будут три
 
     $n = 5 \quad p = 0.8 \quad q = 1 - p = 0.2 \quad k = 3$
 
@@ -152,15 +152,15 @@
 
     \subsection{Статистическое понятие вероятности}
 
-    Пусть проводим $n$ реальных экспериментов, $n_A$ - число появления события $A$, $\frac{n_A}{n}$ - относительная частота события $A$.
+    Пусть проводим $n$ реальных экспериментов, $n_A$ -- число появления события $A$, $\frac{n_A}{n}$ -- относительная частота события $A$.
 
-    Эксперименты с монетой показали, что при больших $n$, $\frac{n_A}{n} \approx p(A)$ - явление стабилизации
+    Эксперименты с монетой показали, что при больших $n$, $\frac{n_A}{n} \approx p(A)$ -- явление стабилизации
 
     \hypertarget{probabilityofdeviation}{}
 
     Вероятность отклонения относительной частоты от вероятности события
 
-    $n$ - число испытаний, $p = p(A), \frac{n_A}{n}$ - экспериментальная частота
+    $n$ -- число испытаний, $p = p(A), \frac{n_A}{n}$ -- экспериментальная частота
 
     $p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) = p\left(-\varepsilon \leq \frac{n_A}{n} - p \leq \varepsilon\right) = p(-n\varepsilon \leq n_A - np \leq n\varepsilon) = p(np - n\varepsilon \leq n_A \leq n\varepsilon + np) \underset{n \to \infty}{\longrightarrow}$ [по интегральной формуле Лапласа] $\underset{n \to \infty}{\longrightarrow} \Phi\left(\frac{n\varepsilon}{\sqrt{npq}}\right) - \Phi\left(-\frac{n\varepsilon}{\sqrt{npq}}\right)$
 
@@ -176,10 +176,10 @@
 
     Итак, $p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \underset{n \to \infty}{\longrightarrow} 2 \Phi\left(\frac{\varepsilon}{\sqrt{pq}}\sqrt{n}\right)$
 
-    при $n \to \infty, \sqrt{n} \to \infty, \frac{\varepsilon}{\sqrt{pq}} \sqrt{n} \to \infty, \Phi\left(\frac{\varepsilon}{\sqrt{pq}}\sqrt{n}\right) \to 0.5, p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \to 2 \cdot 0.5 = 1$ - 
+    при $n \to \infty, \sqrt{n} \to \infty, \frac{\varepsilon}{\sqrt{pq}} \sqrt{n} \to \infty, \Phi\left(\frac{\varepsilon}{\sqrt{pq}}\sqrt{n}\right) \to 0.5, p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) \to 2 \cdot 0.5 = 1$ -- 
     закон больших чисел показывает, что вероятность попадания относительной частоты в $\varepsilon$-трубу приближается к 1
 
-    $\lim_{n \to \infty} p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) = 1$ или $\frac{n_A}{n} \underset{n \to \infty}{\longrightarrow} p$ - сходимость по вероятности
+    $\lim_{n \to \infty} p\left(|\frac{n_A}{n} - p| \leq \varepsilon\right) = 1$ или $\frac{n_A}{n} \underset{n \to \infty}{\longrightarrow} p$ -- сходимость по вероятности
 
     \Ex Для оценки доли $p$ курящих людей берется выборка объема $n$, и делается оценка доли курящих людей по формуле $p^* = \frac{n_A}{n}$.
     Каким должен быть объем $n$, чтобы с вероятностью $\gamma = 0.95$ данная оценка отличалась от истинного значения не более, чем на $\varepsilon = 0.01$
