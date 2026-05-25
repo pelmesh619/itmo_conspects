@@ -63,19 +63,21 @@
 
     \underline{Следствие}
 
-    1) Если $\xi \in N(a, \sigma^2)$, то $\eta = \gamma \xi + b \in N(a\gamma + b; \gamma^2 \sigma^2)$
+    \begin{enumerate}
+        \item Если $\xi \in N(a, \sigma^2)$, то $\eta = \gamma \xi + b \in N(a\gamma + b; \gamma^2 \sigma^2)$
 
-    \begin{MyProof}
-        Так как $\xi \in N(a, \sigma^2)$, то $f_\xi(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x - a)}{2\sigma^2}}, x \in \Real$
+        \begin{MyProof}
+            Так как $\xi \in N(a, \sigma^2)$, то $f_\xi(x) = \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(x - a)}{2\sigma^2}}, x \in \Real$
 
-        Тогда $f_\eta(x) = \frac{1}{|\gamma|} \cdot \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(\frac{x - b}{\gamma} - a)^2}{2\sigma^2}} = \frac{1}{|\gamma|\sigma\sqrt{2\pi}} e^{-\frac{(x - b - a\gamma)^2}{2\sigma^2\gamma^2}} \Longrightarrow \eta \in N(b + a\gamma; \sigma^2\gamma^2)$
-    \end{MyProof}
+            Тогда $f_\eta(x) = \frac{1}{|\gamma|} \cdot \frac{1}{\sigma\sqrt{2\pi}} e^{-\frac{(\frac{x - b}{\gamma} - a)^2}{2\sigma^2}} = \frac{1}{|\gamma|\sigma\sqrt{2\pi}} e^{-\frac{(x - b - a\gamma)^2}{2\sigma^2\gamma^2}} \Longrightarrow \eta \in N(b + a\gamma; \sigma^2\gamma^2)$
+        \end{MyProof}
 
-    2) Если $\eta \in N(0, 1)$ - стандартное нормальное распределение, то $\xi = \sigma \eta + a \in N(a, \sigma^2)$
+        \item Если $\eta \in N(0, 1)$ -- стандартное нормальное распределение, то $\xi = \sigma \eta + a \in N(a, \sigma^2)$
 
-    3) Если $\eta \in U(0, 1)$ - стандартное равномерное распределение и $a > 0$, то $\xi = a\eta + b \in U(b, a + b)$
+        \item Если $\eta \in U(0, 1)$ -- стандартное равномерное распределение и $a > 0$, то $\xi = a\eta + b \in U(b, a + b)$
 
-    4) Если $\xi \in E_\alpha$, то $\alpha \xi \in E_1$
+        \item Если $\xi \in E_\alpha$, то $\alpha \xi \in E_1$
+    \end{enumerate}
 
     \subsubsection{Монотонное преобразование}
 
@@ -104,13 +106,15 @@
     \begin{MyProof}
         Ясно, что $0 \leq \eta \leq 1$
 
-        a) $F(x)$ - строго возрастающая функция. Тогда $\exists F^{-1}(x)$ - обратная, $F_\eta(x) = p(\eta < x) = p(F(\xi) < x) = 
-        \begin{cases}0, & x < 0 \\ p(\xi < F^{-1}(x)) = F(F^{-1}(x)) = x, & 0 \leq x \leq 1 \text{ - функция распределения } U(0, 1) \\ 1, & x > 1 \end{cases}$
+        \begin{enumerate}
+            \item $F(x)$ -- строго возрастающая функция. Тогда $\exists F^{-1}(x)$ -- обратная, $F_\eta(x) = p(\eta < x) = p(F(\xi) < x) = 
+            \begin{cases}0, & x < 0 \\ p(\xi < F^{-1}(x)) = F(F^{-1}(x)) = x, & 0 \leq x \leq 1 \text{ -- функция распределения } U(0, 1) \\ 1, & x > 1 \end{cases}$
 
-        б) $F(x)$ - не является строго возрастающей функцией - то есть существуют участки постоянства, в этом случае
-        определим $F^{-1}$ как $F^{-1}(x) = \min_{t} (t \ | \ F(t) = x)$ - то есть берем самую левую точку такого интервала
+            \item $F(x)$ -- не является строго возрастающей функцией -- то есть существуют участки постоянства, в этом случае
+            определим $F^{-1}$ как $F^{-1}(x) = \min_{t} (t \ | \ F(t) = x)$ -- то есть берем самую левую точку такого интервала
 
-        Тогда снова будет при $0 \leq x \leq 1 \ F_\eta(x) = p(\eta < x) = p(F(\xi) < x) = F(F^{-1}(x)) = x$
+            Тогда снова будет при $0 \leq x \leq 1 \ F_\eta(x) = p(\eta < x) = p(F(\xi) < x) = F(F^{-1}(x)) = x$
+        \end{enumerate}
 
     \end{MyProof}
 
@@ -157,24 +161,26 @@
 
     \subsubsection{Свойства моментов}
 
-    1) Если $\xi \geq 0$, то $E\xi \geq 0$
+    \begin{enumerate}
+        \item Если $\xi \geq 0$, то $E\xi \geq 0$
 
-    2) Если $\xi \leq \eta$, то $E\xi \leq E\eta$
+        \item Если $\xi \leq \eta$, то $E\xi \leq E\eta$
 
-    \begin{MyProof}
-        $\xi \leq \eta \Longrightarrow \eta - \xi \geq 0 \Longrightarrow E(\eta - \xi) \geq 0 \Longrightarrow E\eta - E\xi \geq 0 \Longrightarrow E\eta \geq E\xi$
-    \end{MyProof}
+        \begin{MyProof}
+            $\xi \leq \eta \Longrightarrow \eta - \xi \geq 0 \Longrightarrow E(\eta - \xi) \geq 0 \Longrightarrow E\eta - E\xi \geq 0 \Longrightarrow E\eta \geq E\xi$
+        \end{MyProof}
 
-    3) Если $|\xi| \leq |\eta|$, то $E|\xi|^k \leq E|\eta|^k$
+        \item Если $|\xi| \leq |\eta|$, то $E|\xi|^k \leq E|\eta|^k$
 
-    4) Если существует момент $m_t$ случайной величины $\xi$, то существует $m_s$ при $s < t$ (при условии, что интеграл/сумма сходятся)
+        \item Если существует момент $m_t$ случайной величины $\xi$, то существует $m_s$ при $s < t$ (при условии, что интеграл/сумма сходятся)
 
-    \begin{MyProof}
-        Пусть $s < t$. Тогда $|x|^s \leq \max(1, |x|^t) \leq 1 + |x|^t$, так как при $|x| < 1, \ |x|^s \leq 1$ и при $|x| \geq 1, \ |x|^s \leq |x|^t$
-    
-        $E|\xi|^s \leq E|\xi|^t + 1$ и если $E|\xi|^t$ существует (конечно), то $\exists E|\xi|^s$
-    
-    \end{MyProof}
+        \begin{MyProof}
+            Пусть $s < t$. Тогда $|x|^s \leq \max(1, |x|^t) \leq 1 + |x|^t$, так как при $|x| < 1, \ |x|^s \leq 1$ и при $|x| \geq 1, \ |x|^s \leq |x|^t$
+        
+            $E|\xi|^s \leq E|\xi|^t + 1$ и если $E|\xi|^t$ существует (конечно), то $\exists E|\xi|^s$
+        
+        \end{MyProof}
+    \end{enumerate}
 
     \hypertarget{jensensinequality}{}
 
