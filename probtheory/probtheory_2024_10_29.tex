@@ -151,51 +151,53 @@
 
     \subsubsection{Связь между нормальным и стандартным нормальным распределениями}
 
-    1) $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $F_\xi(x) = F_0\left(\frac{x - a}{\sigma}\right)$
+    \begin{enumerate}
+        \item $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $F_\xi(x) = F_0\left(\frac{x - a}{\sigma}\right)$
 
-    \begin{MyProof}
-        $\Box$
-        
-        $F_\xi(x) = \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{(t - a)^2}{2\sigma^2}} dt = \left[\begin{matrix}z = \frac{t - a}{\sigma} & t = \sigma z + a & dt = \sigma dz \\ z (-\infty) = -\infty & z(x) = \frac{x - a}{\sigma} & \end{matrix}\right] = 
-        \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^\frac{x - a}{\sigma} e^{-\frac{z^2}{2}} \sigma dz = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\frac{x - a}{\sigma} e^{-\frac{z^2}{2}} dz = F_0\left(\frac{x - a}{\sigma}\right)$
-        
-        $\Box$
-    \end{MyProof}
+        \begin{MyProof}
+            $\Box$
+            
+            $F_\xi(x) = \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^x e^{-\frac{(t - a)^2}{2\sigma^2}} dt = \left[\begin{matrix}z = \frac{t - a}{\sigma} & t = \sigma z + a & dt = \sigma dz \\ z (-\infty) = -\infty & z(x) = \frac{x - a}{\sigma} & \end{matrix}\right] = 
+            \frac{1}{\sigma\sqrt{2\pi}} \int_{-\infty}^\frac{x - a}{\sigma} e^{-\frac{z^2}{2}} \sigma dz = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^\frac{x - a}{\sigma} e^{-\frac{z^2}{2}} dz = F_0\left(\frac{x - a}{\sigma}\right)$
+            
+            $\Box$
+        \end{MyProof}
 
-    2) Если $\xi \in N(a, \sigma^2)$, то $\eta = \frac{\xi - a}{\sigma} \in N(0, 1)$ (процесс $\xi \to \eta$ называется стандартизацией)
+        \item Если $\xi \in N(a, \sigma^2)$, то $\eta = \frac{\xi - a}{\sigma} \in N(0, 1)$ (процесс $\xi \to \eta$ называется стандартизацией)
 
-    \begin{MyProof}
-        $\Box$
-        
-        $F_\eta(x) = p(\eta < x) = p\left(\frac{\xi - a}{\sigma} < x\right) = p(\xi < \sigma x + a) = F_\xi(\sigma x + a) = F_0\left(\frac{\sigma x + a - a}{\sigma}\right) = F_0(x)$, так как $F_\eta(x) = F_0(x)$, то $\eta \in N(0, 1)$
-        
-        $\Box$
-    \end{MyProof}
+        \begin{MyProof}
+            $\Box$
+            
+            $F_\eta(x) = p(\eta < x) = p\left(\frac{\xi - a}{\sigma} < x\right) = p(\xi < \sigma x + a) = F_\xi(\sigma x + a) = F_0\left(\frac{\sigma x + a - a}{\sigma}\right) = F_0(x)$, так как $F_\eta(x) = F_0(x)$, то $\eta \in N(0, 1)$
+            
+            $\Box$
+        \end{MyProof}
 
-    3) $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $p(\alpha < \xi < \beta) = \Phi\left(\frac{\beta - a}{\sigma}\right) - \Phi\left(\frac{\alpha - a}{\sigma}\right)$
+        \item $\letsymbol \xi \in N(a, \sigma^2)$. Тогда $p(\alpha < \xi < \beta) = \Phi\left(\frac{\beta - a}{\sigma}\right) - \Phi\left(\frac{\alpha - a}{\sigma}\right)$
 
-    \begin{MyProof}
-        $p(\alpha < \xi < \beta) = F_\xi(\beta) - F_\xi(\alpha) = F_0\left(\frac{\beta - a}{\sigma}\right) - F_0\left(\frac{\alpha - a}{\sigma}\right) = \Phi\left(\frac{\beta - a}{\sigma}\right) - \Phi\left(\frac{\alpha - a}{\sigma}\right)$
-    \end{MyProof}
+        \begin{MyProof}
+            $p(\alpha < \xi < \beta) = F_\xi(\beta) - F_\xi(\alpha) = F_0\left(\frac{\beta - a}{\sigma}\right) - F_0\left(\frac{\alpha - a}{\sigma}\right) = \Phi\left(\frac{\beta - a}{\sigma}\right) - \Phi\left(\frac{\alpha - a}{\sigma}\right)$
+        \end{MyProof}
 
-    4) Вероятность попадания в симметричный интервал (вероятность отклонения случайной величины от матожидания) 
-    $p(|\xi - a| < t) = 2\Phi\left(\frac{t}{\sigma}\right)$
+        \item Вероятность попадания в симметричный интервал (вероятность отклонения случайной величины от матожидания) 
+        $p(|\xi - a| < t) = 2\Phi\left(\frac{t}{\sigma}\right)$
 
-    \begin{MyProof}
-        $p(|\xi - a| < t) = p(-t < \xi - a < t) = p(a - t < \xi < a + t) = \Phi\left(\frac{a + t - a}{\sigma}\right) - \Phi\left(\frac{a - t - a}{\sigma}\right) = \Phi\left(\frac{t}{\sigma}\right) - \Phi\left(-\frac{t}{\sigma}\right) = 2\Phi\left(\frac{t}{\sigma}\right)$
-    \end{MyProof}
+        \begin{MyProof}
+            $p(|\xi - a| < t) = p(-t < \xi - a < t) = p(a - t < \xi < a + t) = \Phi\left(\frac{a + t - a}{\sigma}\right) - \Phi\left(\frac{a - t - a}{\sigma}\right) = \Phi\left(\frac{t}{\sigma}\right) - \Phi\left(-\frac{t}{\sigma}\right) = 2\Phi\left(\frac{t}{\sigma}\right)$
+        \end{MyProof}
 
-    \Notas Если через $F_0(x)$, то $p(|\xi - a| < t) = 2F_0\left(\frac{t}{\sigma}\right) - 1$
+        \Notas Если через $F_0(x)$, то $p(|\xi - a| < t) = 2F_0\left(\frac{t}{\sigma}\right) - 1$
 
-    5) Правило 3 \enquote{сигм}: $p(|\xi - a| < 3\sigma) \approx 0.9973$ - попадание случайной величины нормального распределения в интервал $(a - 3\sigma, a + 3\sigma)$ близко к 1
+        \item Правило 3 \enquote{сигм}: $p(|\xi - a| < 3\sigma) \approx 0.9973$ -- попадание случайной величины нормального распределения в интервал $(a - 3\sigma, a + 3\sigma)$ близко к 1
 
-    \begin{MyProof}
-        $p(|\xi - a| < 3\sigma) = 2\Phi\left(\frac{3\sigma}{\sigma}\right) = 2\Phi(3) = 2 \cdot 0.49685 = 0.9973$
-    \end{MyProof}
+        \begin{MyProof}
+            $p(|\xi - a| < 3\sigma) = 2\Phi\left(\frac{3\sigma}{\sigma}\right) = 2\Phi(3) = 2 \cdot 0.49685 = 0.9973$
+        \end{MyProof}
 
-    6) Свойство линейности: если случайная величина $\xi \in N(a, \sigma^2)$, то $\eta = \gamma \xi + b \in N(a \gamma + b, \gamma^2 \sigma^2)$ (можем доказать при помощи свойств ранее, но мы докажем позже, используя другие методы)
+        \item Свойство линейности: если случайная величина $\xi \in N(a, \sigma^2)$, то $\eta = \gamma \xi + b \in N(a \gamma + b, \gamma^2 \sigma^2)$ (можем доказать при помощи свойств ранее, но мы докажем позже, используя другие методы)
 
-    7) Устойчивость относительно суммирования: если случайные величины $\xi_1 \in N(a_1, \sigma_1^2), \xi_2 \in N(a_2, \sigma_2^2)$, и они независимы, то $\xi_1 + \xi_2 \in N(a_1 + a_2, \sigma^2_1 + \sigma^2_2)$
+        \item Устойчивость относительно суммирования: если случайные величины $\xi_1 \in N(a_1, \sigma_1^2), \xi_2 \in N(a_2, \sigma_2^2)$, и они независимы, то $\xi_1 + \xi_2 \in N(a_1 + a_2, \sigma^2_1 + \sigma^2_2)$
+    \end{enumerate}
 
     \subsubsection{Коэффициенты асимметрии и эксцесса}
 
