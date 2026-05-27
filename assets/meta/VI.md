@@ -78,7 +78,23 @@
 
     [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_superconspect.html)
 
-    TODO
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_06.html)
+    * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_13.html)
+    * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_02_20.html)
+    * Лекция №4 - отменена
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_03_06.html)
+    * Лекция №6 - отменена
+    * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_03_20.html)
+    * Лекция №8 - отменена
+    * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_2026_04_03.html)
+    * Лекция №10 - отменена
+    * Лекция №11 - отменена
+    * Лекция №12 - отменена
+    * Лекция №13 - календарный праздник
+    * [Extra 1. Современные системы инициализации](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_x1_upstart_systemd.html)
+    * [Extra 2. Механизмы контейнеризации](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_x2_containerization.html)
+    * [Extra 3. Установка ПО, пакетные менеджеры](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_x3_software_install.html)
+    * [Extra 4. Графические среды](https://pelmesh619.github.io/itmo_conspects/admlinux/admlinux_x4_graphical_environments.html)
 
 * Web-разработка: Backend (лектор Макаревич Р. Д.)
 
