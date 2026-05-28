@@ -71,8 +71,8 @@
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_25.html)
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_03_04.html)
         * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_03_11.html)
-        * Лекция №7 - в процессе
-        * Лекция №8 - в процессе
+        * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_03_18.html)
+        * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_03_25.html)
         * Лекция №9 - отменена
         * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_04_08.html)
 
