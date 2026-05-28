@@ -20,6 +20,8 @@
   * [Лекция 3. Общение по протоколам TCP и UDP в Boost](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-3.-%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%BC-tcp-%D0%B8-udp-%D0%B2-boost)
   * [Лекция 4. Общение по протоколам HTTP и WebSocket в Boost](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-4.-%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%BC-http-%D0%B8-websocket-%D0%B2-boost)
     * [Таймеры в Boost](#%D1%82%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B-%D0%B2-boost)
+  * [Лекция 5. Основные инструменты в Qt](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-5.-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D0%B2-qt)
+  * [Лекция 6. Виджеты и локализация в Qt](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-6.-%D0%B2%D0%B8%D0%B4%D0%B6%D0%B5%D1%82%D1%8B-%D0%B8-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-qt)
   * [Лекция 9. Другие оптимизации в C++](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-9.-%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2-c%2B%2B)
 
 <!-- begin cppthread_2026_02_04.md -->
@@ -960,6 +962,227 @@ int main() {
 }
 ```
 <!-- end cppthread_2026_02_25.md -->
+
+<!-- begin cppthread_2026_03_04.md -->
+## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-5.-%D0%BE%D1%81%D0%BD%D0%BE%D0%B2%D0%BD%D1%8B%D0%B5-%D0%B8%D0%BD%D1%81%D1%82%D1%80%D1%83%D0%BC%D0%B5%D0%BD%D1%82%D1%8B-%D0%B2-qt"></a> Лекция 5. Основные инструменты в Qt
+
+Qt - это кросс-платформенный фреймворк на C++ для разработки графических интерфейсов и не только. Центральным классом является `QObject`, от которого наследуются почти все классы Qt, особенно виджеты и объекты, работающие с сигналами и слотами
+
+`QObject` поддерживает иерархию родитель-потомок. Когда объект-родитель удаляется, он автоматически удаляет всех своих детей. Это позволяет строить деревья владения и не заботиться о ручном освобождении. Пример:
+
+```cpp
+QObject *parent = new QObject;
+QObject *child = new QObject(parent); // child принадлежит parent
+delete parent; // child тоже удалится
+```
+
+---
+
+Сигналы и слоты - основной механизм коммуникации между объектами. Сигнал объявляется в классе с ключевым словом `signals`, слот - с `slots` или как обычная функция. У слота не может быть аргументов больше, чем у сигнала, но может быть меньше: лишние аргументы сигнала просто отбрасываются. Соединение выполняется через `connect`
+
+Новый стиль `connect` использует указатели на функции. Пример, где сигнал испускается внутри метода, а слот просто печатает значение:
+
+```cpp
+class Sender : public QObject {
+    Q_OBJECT
+public:
+    void doWork() {
+        // emit подчёркивает, что испускается сигнал
+        emit valueChanged(42);
+    }
+signals:
+    void valueChanged(int newValue);
+};
+
+class Receiver : public QObject {
+    Q_OBJECT
+public slots:
+    void onValueChanged(int val) { qDebug() << val; }
+};
+
+Sender sender;
+Receiver receiver;
+QObject::connect(&sender, &Sender::valueChanged,
+                 &receiver, &Receiver::onValueChanged);
+
+sender.doWork(); // внутри будет испущен сигнал, вызовется слот
+```
+
+Отсоединение выполняется методом `disconnect` с теми же указателями
+
+Потоковая принадлежность: объект `QObject` привязан к тому потоку, в котором был создан. Сигналы и слоты могут пересекать потоки: если соединение прямое, слот выполняется в потоке отправителя; если через очередь (`QueuedConnection`), то вызов слота будет помещён в очередь событий потока-получателя. По умолчанию для межпоточных соединений автоматически выбирается `QueuedConnection`
+
+`moveToThread` перемещает объект в другой поток. Объект должен быть без родителя, и его события будут обрабатываться в целевом потоке:
+
+```cpp
+QThread workerThread;
+workerThread.start();
+Receiver receiver; // без родителя
+receiver.moveToThread(&workerThread);
+// Теперь receiver живёт в workerThread, его слоты будут выполняться в этом потоке
+```
+
+Слово `emit` необязательно, но служит для ясности, что вызывается сигнал (обычно его пишут непосредственно перед именем сигнала)
+
+---
+
+Динамические свойства позволяют во время выполнения добавить к `QObject` свойство по имени и значению, используя `setProperty` и `property`. Это удобно для стилей и анимаций
+
+```cpp
+QPushButton button;
+button.setProperty("urgent", true);
+QVariant urgent = button.property("urgent");
+```
+
+---
+
+События в Qt обрабатываются через виртуальный метод `event(QEvent*)`. Обычно виджеты переопределяют конкретные обработчики: `mousePressEvent`, `keyPressEvent` и так далее. Если нужно перехватить события до их доставки к целевому объекту, используется фильтр событий. Объект-фильтр переопределяет `eventFilter(QObject *watched, QEvent *event)` и устанавливается через `installEventFilter`
+
+```cpp
+class Filter : public QObject {
+protected:
+    bool eventFilter(QObject *obj, QEvent *event) override {
+        if (event->type() == QEvent::KeyPress) {
+            // обработать или подавить
+            return true; // событие перехвачено
+        }
+        return QObject::eventFilter(obj, event);
+    }
+};
+
+// использование:
+Filter filter;
+targetWidget.installEventFilter(&filter);
+```
+
+Преобразование типов в иерархии `QObject` выполняется с помощью `qobject_cast<Type*>(obj)`, что безопаснее `dynamic_cast`, если у класса есть макрос `Q_OBJECT`
+
+Макрос `Q_OBJECT` обязателен в определении класса для поддержки сигналов, слотов, `tr()` и другой метаинформации
+
+---
+
+Фреймворк предоставляет свою реализацию потоков `QThread`, однако не рекомендуется наследоваться от `QThread` и переопределять `run()`. Предпочтительнее создать рабочие объекты и переместить их в `QThread` через `moveToThread`
+
+---
+
+Сборка проектов Qt обычно осуществляется с помощью CMake. Основные директивы:
+
+```cmake
+find_package(Qt6 COMPONENTS Widgets REQUIRED)
+qt_add_executable(my_app main.cpp)
+target_link_libraries(my_app PRIVATE Qt6::Widgets)
+```
+
+---
+
+Для проектов с QML добавляют `Qt6::Quick` и соответствующие модули. QML - декларативный язык для описания интерфейса. Он исполняется в QML-движке. Объекты на C++ могут быть доступны из QML через регистрацию. Пример простого QML-файла:
+
+```qml
+import QtQuick
+Rectangle {
+    width: 200; height: 100
+    color: "lightblue"
+    Text {
+        anchors.centerIn: parent
+        text: "Hello, QML"
+    }
+}
+```
+
+В CMake для QML-приложения может потребоваться `qt_add_qml_module` для регистрации
+<!-- end cppthread_2026_03_04.md -->
+
+<!-- begin cppthread_2026_03_11.md -->
+## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-6.-%D0%B2%D0%B8%D0%B4%D0%B6%D0%B5%D1%82%D1%8B-%D0%B8-%D0%BB%D0%BE%D0%BA%D0%B0%D0%BB%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D1%8F-%D0%B2-qt"></a> Лекция 6. Виджеты и локализация в Qt
+
+В Qt все элементы графического интерфейса называются виджетами. Базовым классом для любого виджета является `QWidget`, от него наследуются кнопки, поля ввода, метки, контейнеры и даже окна
+
+Любой виджет можно встроить в другой виджет, передав родителя в конструктор. Родитель же автоматически удаляет всех детей при своём разрушении
+
+Все виджеты должны создаваться и использоваться исключительно в главном потоке приложения, вызов методов виджета из других потоков приведёт к неопределённому поведению и краху
+
+Взаимодействовать с виджетами можно двумя основными способами:
+
+* Сигналы и слоты - например, нажатие кнопки генерирует сигнал `clicked()`, который соединяется со слотом-обработчиком
+* Перехват событий - можно переопределить виртуальные методы `keyPressEvent`, `mousePressEvent` и подобные или установить фильтр событий через `installEventFilter`
+
+Пример виджета `QLineEdit` - однострочное поле ввода:
+
+```cpp
+QLineEdit *edit = new QLineEdit(parent);
+QObject::connect(edit, &QLineEdit::returnPressed, [edit]() {
+    qDebug() << "Введено:" << edit->text();
+});
+```
+
+Любое окно имеет корневой виджет или корневой макет (layout):
+
+* Если у виджета задан макет, то все дочерние виджеты автоматически размещаются внутри него
+* У каждого виджета может быть свой собственный макет, но обычно для главного окна задают вертикальный или сеточный макет
+* Внутри основного виджета вложенные элементы выстраиваются в соответствии с макетом, который управляет геометрией
+
+Упрощённо все виджеты в окне образуют дерево:
+
+* Корень - главное окно (`QMainWindow` или `QWidget`)
+* Ствол - контейнерные виджеты, на которых установлены макеты
+* Листья - кнопки, поля ввода, надписи
+
+Кастомные виджеты создают в основном для группировки элементов и переиспользования. Они наследуются от `QWidget`, а в конструкторе создаются дочерние виджеты, и сразу им передается `this` как родителя. Например:
+
+```cpp
+class MyWidget : public QWidget {
+public:
+    explicit MyWidget(QWidget *parent = nullptr) : QWidget(parent) {
+        auto *layout = new QVBoxLayout(this);
+        layout->addWidget(new QLabel("Заголовок", this));
+        layout->addWidget(new QPushButton("Кнопка", this));
+    }
+};
+```
+
+---
+
+Для локализации используется функция `tr()` для перевода строк. С помощью утилит `lupdate` извлекаются строки, переводятся и загружаются через `QTranslator`
+
+```cpp
+class MyWindow : public QWidget {
+    Q_OBJECT
+public:
+    MyWindow() {
+        // будет переведено при загруженном переводе
+        QPushButton *button = new QPushButton(tr("Hello"), this);
+    }
+};
+```
+
+Для этого Qt использует файлы локализации в формате XML (файлы `.ts`):
+
+* `lupdate` сканирует исходники и извлекает строки, обёрнутые в `tr()`, создавая `.ts`-файлы
+* Лингвисты переводят их, затем `lrelease` компилирует в компактные `.qm` файлы
+* Qt позволяет встраивать эти файлы прямо в исполняемый файл через систему ресурсов Qt Resource System. Для этого `.qm`-файлы добавляются в `.qrc` и загружаются из ресурсов так же, как с диска
+
+CMake для управления переводами предоставляет команду `qt_add_translations` или ручную обработку
+
+* Пример сборки с автоматическим добавлением перевода:
+
+    ```cmake
+    find_package(Qt6 COMPONENTS Widgets LinguistTools REQUIRED)
+    qt_add_executable(my_app main.cpp)
+    qt_add_translations(my_app
+        TS_FILES myapp_de.ts myapp_fr.ts
+        QM_FILES_OUTPUT_VARIABLE qm_files
+    )
+    target_link_libraries(my_app PRIVATE Qt6::Widgets)
+    ```
+
+* В коде загрузка перевода из встроенных ресурсов:
+
+    ```cpp
+    QTranslator *translator = new QTranslator(qApp);
+    if (translator->load(":/translations/myapp_de.qm"))
+        qApp->installTranslator(translator);
+    ```
+<!-- end cppthread_2026_03_11.md -->
 
 <!-- begin cppthread_2026_04_08.md -->
 ## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-9.-%D0%B4%D1%80%D1%83%D0%B3%D0%B8%D0%B5-%D0%BE%D0%BF%D1%82%D0%B8%D0%BC%D0%B8%D0%B7%D0%B0%D1%86%D0%B8%D0%B8-%D0%B2-c%2B%2B"></a> Лекция 9. Другие оптимизации в C++
