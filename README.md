@@ -67,14 +67,14 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_04.html)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_11.html)
-        * Лекция №3 - в процессе
-        * Лекция №4 - в процессе
+        * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_18.html)
+        * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_02_25.html)
         * Лекция №5 - в процессе
         * Лекция №6 - в процессе
         * Лекция №7 - в процессе
         * Лекция №8 - в процессе
         * Лекция №9 - отменена
-        * Лекция №10 - в процессе
+        * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/multithread/cppthread/cppthread_2026_04_08.html)
 
 * Облачные и мобильные технологии
 
