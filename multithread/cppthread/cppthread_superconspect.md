@@ -17,6 +17,9 @@
     * [Spinlock](#spinlock)
     * [Петля событий](#%D0%BF%D0%B5%D1%82%D0%BB%D1%8F-%D1%81%D0%BE%D0%B1%D1%8B%D1%82%D0%B8%D0%B9)
     * [`std::condition_variable`](#%60std%3A%3Acondition_variable%60)
+  * [Лекция 3. Общение по протоколам TCP и UDP в Boost](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-3.-%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%BC-tcp-%D0%B8-udp-%D0%B2-boost)
+  * [Лекция 4. Общение по протоколам HTTP и WebSocket в Boost](#%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-4.-%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%BC-http-%D0%B8-websocket-%D0%B2-boost)
+    * [Таймеры в Boost](#%D1%82%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B-%D0%B2-boost)
 
 <!-- begin cppthread_2026_02_04.md -->
 ## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-1.-%D0%B8%D0%B4%D0%B8%D0%BE%D0%BC%D1%8B-c%2B%2B"></a> Лекция 1. Идиомы C++
@@ -592,4 +595,368 @@ void enqueue(std::function<void()> task) {
 
 Также важно заметить, что поток может проснуться без вызова `notify`. Именно поэтому `wait` принимает предикат - без него нужно писать цикл `while (!predicate()) cv.wait(lock);` вручную
 <!-- end cppthread_2026_02_11.md -->
+
+<!-- begin cppthread_2026_02_18.md -->
+## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-3.-%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%BC-tcp-%D0%B8-udp-%D0%B2-boost"></a> Лекция 3. Общение по протоколам TCP и UDP в Boost
+
+Boost.Asio - это библиотека для сетевого и низкоуровневого ввода-вывода, которая позволяет писать и синхронные, и асинхронные программы. Главная идея в том, что все операции (чтение, запись, подключения) можно делать без ожидания завершения, а когда операция завершится - вызывается функция-обработчик. Это позволяет обслуживать тысячи соединений в одном или нескольких потоках
+
+Раньше для имитации постоянного соединения с сервером использовали Long polling. Клиент отправлял HTTP-запрос, сервер не отвечал сразу, а держал соединение открытым до появления новых данных, затем отвечал, и клиент тут же делал новый запрос. Это создавало много накладных расходов: постоянные переподключения, HTTP-заголовки, задержки
+
+Позже появились WebSocket - протокол полного дуплекса (full duplex) поверх TCP. После установки соединения и сервер, и клиент могут отправлять данные в любой момент без дополнительных запросов. Это позволяет делать настоящие приложения: чаты, игры, биржевые котировки. В Boost для работы с WebSocket обычно используют Boost.Beast, который построен на основе Boost.Asio
+
+Пространство имён `boost::asio::ip` содержит классы для работы с адресами и конечными точками (endpoint). Внутри него есть:
+
+* `boost::asio::ip::tcp` - для TCP-соединений: классы `socket`, `acceptor` (для приёма входящих соединений), `resolver` (разрешение имён). TCP гарантирует доставку и порядок данных, но медленнее, чем UDP
+* `boost::asio::ip::udp` - для UDP-дейтаграмм: классы `socket`, `endpoint`, `resolver`. UDP не устанавливает соединение, доставка и порядок не гарантируются, зато низкая задержка
+
+Пример простого TCP-клиента, который подключается к серверу и отправляет сообщение:
+
+```cpp
+#include <boost/asio.hpp>
+#include <iostream>
+
+using namespace boost::asio;
+using ip::tcp;
+
+int main() {
+    io_context io;
+    tcp::socket socket(io);
+    tcp::resolver resolver(io);
+
+    // подключаемся к localhost на порт 12345
+    connect(socket, resolver.resolve("127.0.0.1", "12345"));
+    std::string message = "Hello, Boost!\n";
+    write(socket, buffer(message));
+
+    // читаем ответ
+    char reply[1024];
+    size_t len = socket.read_some(buffer(reply));
+    std::cout << "Server replied: ";
+    std::cout.write(reply, len);
+    std::cout << std::endl;
+    return 0;
+}
+```
+
+Для защищённых соединений используется `boost::asio::ssl`. Это обёртка над OpenSSL (или другой библиотекой), которая позволяет делать рукопожатие TLS/SSL и шифрованный обмен. Контекст `ssl::context` хранит сертификаты и настройки. Поток `ssl::stream` оборачивает TCP-сокет и предоставляет методы `handshake`, `async_handshake`, `write`, `read` для защищённой передачи
+
+Пример простого синхронного SSL-сервера, принимающего одно соединение и читающего данные:
+
+```cpp
+#include <boost/asio.hpp>
+#include <boost/asio/ssl.hpp>
+#include <iostream>
+
+using namespace boost::asio;
+using ip::tcp;
+
+int main() {
+    io_context io;
+    ssl::context ctx(ssl::context::sslv23);
+    ctx.set_options(ssl::context::default_workarounds);
+    ctx.use_certificate_chain_file("server.crt");
+    ctx.use_private_key_file("server.key", ssl::context::pem);
+
+    tcp::acceptor acceptor(io, tcp::endpoint(tcp::v4(), 12345));
+    tcp::socket socket(io);
+    acceptor.accept(socket);  // ждём подключения
+
+    ssl::stream<tcp::socket> stream(std::move(socket), ctx);
+    stream.handshake(ssl::stream_base::server);  // SSL-рукопожатие
+
+    char data[256];
+    size_t len = stream.read_some(buffer(data));
+    std::cout << "Received: ";
+    std::cout.write(data, len);
+    std::cout << std::endl;
+
+    stream.shutdown();
+    return 0;
+}
+```
+
+Теперь перейдём к асинхронному серверу. В нём вместо блокирующих операций используются функции, начинающиеся с `async_`, и `io_context.run()` запускает цикл обработки событий. Каждая операция принимает обработчик, который будет вызван после завершения. Это позволяет обрабатывать множество соединений одновременно в одном потоке
+
+Пример асинхронного TCP-сервера, который принимает соединения, читает сообщение и отправляет ответ:
+
+```cpp
+#include <boost/asio.hpp>
+#include <iostream>
+#include <memory>
+
+using namespace boost::asio;
+using ip::tcp;
+
+// Класс сессии: владеет сокетом, читает данные, отправляет ответ
+class Session : public std::enable_shared_from_this<Session> {
+public:
+    explicit Session(tcp::socket socket) : socket_(std::move(socket)) {}
+
+    void start() {
+        do_read();
+    }
+
+private:
+    tcp::socket socket_;
+    char data_[1024];
+
+    void do_read() {
+        auto self(shared_from_this());
+        socket_.async_read_some(buffer(data_),
+            [this, self](boost::system::error_code ec, size_t length) {
+                if (!ec) {
+                    // обрабатываем полученные данные и шлём ответ
+                    std::string message(data_, length);
+                    std::cout << "Received: " << message;
+                    std::string reply = "Echo: " + message;
+                    async_write(socket_, buffer(reply),
+                        [this, self](boost::system::error_code, size_t) {
+                            // после ответа закрываем соединение
+                            socket_.close();
+                        });
+                }
+            });
+    }
+};
+
+// Класс сервера: слушает порт и принимает новые соединения
+class Server {
+public:
+    Server(io_context& io, short port)
+        : acceptor_(io, tcp::endpoint(tcp::v4(), port)) {
+        do_accept();
+    }
+
+private:
+    tcp::acceptor acceptor_;
+
+    void do_accept() {
+        acceptor_.async_accept(
+            [this](boost::system::error_code ec, tcp::socket socket) {
+                if (!ec) {
+                    std::make_shared<Session>(std::move(socket))->start();
+                }
+                do_accept();  // продолжаем принимать
+            });
+    }
+};
+
+int main() {
+    io_context io;
+    Server server(io, 12345);
+    std::cout << "Async server listening on port 12345\n";
+    io.run();  // запуск цикла обработки асинхронных операций
+    return 0;
+}
+```
+
+В этом коде нет блокировок: `acceptor_.async_accept` сразу возвращает управление, и когда приходит новое подключение - вызывается лямбда. Сессия создаётся через `shared_ptr`, чтобы объект жил, пока идёт асинхронная операция. Внутри `do_read` тоже асинхронное чтение, и после чтения асинхронно отправляется ответ. `io_context::run()` крутит цикл событий до тех пор, пока есть незавершённые операции
+
+Такой асинхронный подход лежит в основе масштабируемых сетевых приложений на Boost.Asio, включая WebSocket-серверы через Boost.Beast
+<!-- end cppthread_2026_02_18.md -->
+
+<!-- begin cppthread_2026_02_25.md -->
+## <a name="%D0%BB%D0%B5%D0%BA%D1%86%D0%B8%D1%8F-4.-%D0%BE%D0%B1%D1%89%D0%B5%D0%BD%D0%B8%D0%B5-%D0%BF%D0%BE-%D0%BF%D1%80%D0%BE%D1%82%D0%BE%D0%BA%D0%BE%D0%BB%D0%B0%D0%BC-http-%D0%B8-websocket-%D0%B2-boost"></a> Лекция 4. Общение по протоколам HTTP и WebSocket в Boost
+
+Boost.Beast - это надстройка над Boost.Asio, предоставляющая готовую реализацию HTTP и WebSocket. Классы для работы с HTTP находятся в пространстве имён `boost::beast::http`, а для веб-сокетов - в `boost::beast::ws`. Это позволяет быстро создавать сетевые приложения, работающие по этим протоколам, не изобретая разбор заголовков и рукопожатий вручную
+
+* HTTP в `boost::beast::http` умеет формировать запросы и ответы, парсить их, обрабатывать поля заголовков. Можно использовать синхронный и асинхронный ввод-вывод
+* WebSocket в `boost::beast::ws` даёт класс `stream`, который после выполнения обновления протокола позволяет отправлять и принимать текстовые и бинарные кадры в режиме полного дуплекса
+
+Пример простого HTTP-клиента, который отправляет GET-запрос и выводит тело ответа:
+
+```cpp
+#include <boost/beast/core.hpp>
+#include <boost/beast/http.hpp>
+#include <boost/beast/version.hpp>
+#include <boost/asio/connect.hpp>
+#include <boost/asio/ip/tcp.hpp>
+#include <iostream>
+#include <string>
+
+namespace beast = boost::beast;
+namespace http = beast::http;
+namespace net = boost::asio;
+using tcp = net::ip::tcp;
+
+int main() {
+    net::io_context io;
+    tcp::resolver resolver(io);
+    beast::tcp_stream stream(io);
+    auto const results = resolver.resolve("example.com", "80");
+    stream.connect(results);
+
+    http::request<http::string_body> req{http::verb::get, "/", 11};
+    req.set(http::field::host, "example.com");
+    req.set(http::field::user_agent, BOOST_BEAST_VERSION_STRING);
+    http::write(stream, req);
+
+    beast::flat_buffer buffer;
+    http::response<http::dynamic_body> res;
+    http::read(stream, buffer, res);
+    std::cout << res << std::endl;
+
+    beast::error_code ec;
+    stream.socket().shutdown(tcp::socket::shutdown_both, ec);
+    return 0;
+}
+```
+
+Пример WebSocket-клиента, который подключается к серверу, отправляет сообщение и читает ответ:
+
+```cpp
+#include <boost/beast/core.hpp>
+#include <boost/beast/websocket.hpp>
+#include <boost/asio/connect.hpp>
+#include <boost/asio/ip/tcp.hpp>
+#include <iostream>
+
+namespace beast = boost::beast;
+namespace ws = beast::websocket;
+namespace net = boost::asio;
+using tcp = net::ip::tcp;
+
+int main() {
+    net::io_context io;
+    tcp::resolver resolver(io);
+    ws::stream<tcp::socket> ws(io);
+    auto const results = resolver.resolve("echo.websocket.org", "80");
+    net::connect(ws.next_layer(), results);
+    ws.handshake("echo.websocket.org", "/");
+    ws.write(net::buffer(std::string("Hello, WebSocket!")));
+    beast::flat_buffer buffer;
+    ws.read(buffer);
+    std::cout << beast::make_printable(buffer.data()) << std::endl;
+    ws.close(ws::close_code::normal);
+    return 0;
+}
+```
+
+Для кастомных протоколов, где сообщения не оформлены как HTTP или WebSocket, часто используют разделители (например, конец строки `\n` или специальная последовательность байт). Здесь помогает свободная функция `boost::asio::read_until`. Она читает данные из потока до тех пор, пока во входном буфере не встретится заданный разделитель. Это удобно для текстовых протоколов или бинарных фреймов с известной сигнатурой конца. После завершения операции можно обработать полученные данные
+
+Пример сервера, читающего из сокета строки, разделённые символом перевода строки:
+
+```cpp
+#include <boost/asio.hpp>
+#include <iostream>
+
+using namespace boost::asio;
+using ip::tcp;
+
+int main() {
+    io_context io;
+    tcp::acceptor acceptor(io, tcp::endpoint(tcp::v4(), 12345));
+    tcp::socket socket(io);
+    acceptor.accept(socket);
+
+    streambuf buf;
+    // читаем до '\n' включительно
+    read_until(socket, buf, '\n');
+    std::istream is(&buf);
+    std::string line;
+    std::getline(is, line);
+    std::cout << "Received: " << line << std::endl;
+    return 0;
+}
+```
+
+### <a name="%D1%82%D0%B0%D0%B9%D0%BC%D0%B5%D1%80%D1%8B-%D0%B2-boost"></a> Таймеры в Boost
+
+Кроме сетевых операций, Boost.Asio предоставляет таймеры для отсроченных действий. Есть два основных типа:
+
+* `boost::asio::steady_timer` - таймер на основе монотонных часов, которые не подвержены ручному переводу системного времени. Рекомендуется для измерения временных интервалов
+* `boost::asio::system_timer` - таймер на основе системного времени. Его показания могут скакать при переводе часов или переходе на летнее/зимнее время
+
+У обоих классов схожий набор методов:
+
+* `wait` - синхронно блокирует выполнение до истечения заданного времени
+* `async_wait` - асинхронное ожидание; принимает обработчик, который будет вызван, когда таймер сработает
+* `expires_from_now` - устанавливает таймер на срабатывание через указанную длительность относительно текущего момента
+* `expires_at` - задаёт абсолютное время срабатывания (например, конкретную временную точку)
+* `cancel` - отменяет все ожидающие асинхронные операции таймера; обработчики `async_wait` будут вызваны с кодом ошибки `operation_aborted`
+
+Пример использования `steady_timer` с синхронным ожиданием:
+
+```cpp
+#include <boost/asio.hpp>
+#include <iostream>
+
+using namespace boost::asio;
+
+int main() {
+    io_context io;
+    steady_timer timer(io, chrono::seconds(3));
+    std::cout << "Waiting 3 seconds...\n";
+    timer.wait();  // блокировка на 3 секунды
+    std::cout << "Done.\n";
+    return 0;
+}
+```
+
+Пример асинхронного таймера с `async_wait`:
+
+```cpp
+#include <boost/asio.hpp>
+#include <iostream>
+
+using namespace boost::asio;
+
+int main() {
+    io_context io;
+    steady_timer timer(io, chrono::seconds(2));
+    timer.async_wait([](boost::system::error_code ec) {
+        if (!ec)
+            std::cout << "Timer expired!\n";
+        else
+            std::cout << "Timer cancelled.\n";
+    });
+    std::cout << "Starting async wait...\n";
+    io.run();  // цикл обработки событий
+    return 0;
+}
+```
+
+Установка таймера через `expires_from_now` и его последующая отмена:
+
+```cpp
+#include <boost/asio.hpp>
+#include <iostream>
+
+using namespace boost::asio;
+
+int main() {
+    io_context io;
+    steady_timer timer(io);
+    timer.expires_from_now(chrono::seconds(5));
+    timer.async_wait([](boost::system::error_code ec) {
+        if (ec == error::operation_aborted)
+            std::cout << "Cancelled.\n";
+    });
+    // через какое-то время решаем отменить
+    timer.cancel();
+    io.run();
+    return 0;
+}
+```
+
+Использование `expires_at` для задания абсолютного времени срабатывания:
+
+```cpp
+#include <boost/asio.hpp>
+#include <iostream>
+
+using namespace boost::asio;
+
+int main() {
+    io_context io;
+    system_timer timer(io);
+    // сработает через 1 час от текущего системного времени
+    timer.expires_at(chrono::system_clock::now() + chrono::hours(1));
+    timer.wait();
+    std::cout << "One hour passed (or system time changed).\n";
+    return 0;
+}
+```
+<!-- end cppthread_2026_02_25.md -->
 
