@@ -152,6 +152,8 @@
     cetz.draw.line(..pts2, stroke: style.stroke, fill: style.fill)
     // cetz.draw.line(..pts, stroke: style.stroke, fill: style.fill)
     cetz.draw.anchor("center", (0, 0))
+    cetz.draw.anchor("tip", (0, 0))
+    cetz.draw.anchor("base", (0, 0))
   })
 }
 
