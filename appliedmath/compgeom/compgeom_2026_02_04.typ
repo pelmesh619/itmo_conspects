@@ -262,7 +262,7 @@
 
 $cal(A)(x) = cal(A)(sum_(i = 1)^n lambda_i e_i) = sum_(i = 1)^n lambda_i cal(A)(e_i) = sum_(i = 1)^n lambda_i sum_(j = 1)^m mu_j e^prime_j = sum_(i = 1)^n sum_(j = 1)^m a_(i j) e^prime_j$
 
-#Def Матрица $A = {a_(i j)}_(i = 1..n, j = 1..m) = mat(a_(1 1), dots, a_(1 n); dots.v, dots.down, dots.v; a_(m 1), dots, a_(m n))$ называется матрицей оператора $cal(A) : V arrow W$
+#Def Матрица $A = {a_(i j)}_(i = 1..m, j = 1..n) = mat(a_(1 1), dots, a_(1 n); dots.v, dots.down, dots.v; a_(m 1), dots, a_(m n))$ называется матрицей оператора $cal(A) : V arrow W$
 
 Тогда $cal(A) x = y arrow.l.r.double.long A vec(x_1, dots.v, x_n) = vec(y_1, dots.v, y_m)$
 
@@ -311,9 +311,9 @@ $cal(A)(x) = cal(A)(sum_(i = 1)^n lambda_i e_i) = sum_(i = 1)^n lambda_i cal(A)(
 
   Активным преобразованием называется поворот плоскости, а пассивным -- поворот системы координат. Такие преобразования взаимно обратны
 
-  Тогда поворот системы координат задается матрицей $mat(cos phi, -sin phi; sin phi, cos phi) $
+  Тогда поворот системы координат задается матрицей $mat(cos phi, sin phi; -sin phi, cos phi) $
 
-  А поворот плоскости задается обратной матрицей $mat(cos phi, sin phi; -sin phi, cos phi) $
+  А поворот плоскости задается обратной матрицей $mat(cos phi, -sin phi; sin phi, cos phi) $
 
 + Гомотетия
 
