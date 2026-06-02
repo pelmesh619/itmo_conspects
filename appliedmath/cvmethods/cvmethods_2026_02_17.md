@@ -68,7 +68,7 @@ window.MathJax = {
 
     ![Смешивание](./images/cvmethods_blending.png)
 
-    Вес пикселя первого изображения обозначается $\alpha$. Значение конечного пикселя вычисляется как $\mathrm{dst}(x, y) = \alpha \cdot \mathrm{src}_1 (x, y) + (1 + \alpha) \cdot \mathrm{src}_2 (x, y)$, где $\mathrm{src}_1 (x, y)$ - значение пикселя на первой картинке, а $\mathrm{src}_2 (x, y)$ - на второй
+    Вес пикселя первого изображения обозначается $\alpha$. Значение конечного пикселя вычисляется как $\mathrm{dst}(x, y) = \alpha \cdot \mathrm{src}_1 (x, y) + (1 - \alpha) \cdot \mathrm{src}_2 (x, y)$, где $\mathrm{src}_1 (x, y)$ - значение пикселя на первой картинке, а $\mathrm{src}_2 (x, y)$ - на второй
 
     В более усложненном алгоритме значение конечного пикселя выглядит так: $\mathrm{dst}(x, y) = \alpha \cdot \mathrm{src}_1 (x, y) + \beta \cdot \mathrm{src}_2 (x, y) + \gamma$, где $\alpha, \beta$ - веса, а $\gamma$ - смещение
 

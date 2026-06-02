@@ -65,7 +65,7 @@ window.MathJax = {
 
 * Swish:
 
-    $$\mathrm{Swish}(x) = x \sigma(\beta x) = \frac{x}{1 + e^{-\beta} x}$$
+    $$\mathrm{Swish}(x) = x \sigma(\beta x) = \frac{x}{1 + e^{-\beta x}}$$
 
 <!-- https://www.geogebra.org/calculator/x7qfg7yz -->
 
