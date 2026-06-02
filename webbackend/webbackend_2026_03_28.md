@@ -32,7 +32,7 @@
 async function subscribe() {
     const response = await fetch("/subscribe");
 
-    if (response.status == 502) {
+    if (response.status in [502, 504]) {
         // Таймаут соединения
         await subscribe();
     } else if (response.status != 200) {
