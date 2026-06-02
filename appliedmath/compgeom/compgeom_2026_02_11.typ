@@ -201,7 +201,7 @@ $ vec(x^prime, y^prime, 1) = mat(f_(1 1), f_(1 2), x_0; f_(2 1), f_(2 2), y_0; 0
 
 Рассмотрим матрицы преобразований в однородных координатах:
 
-$ F = mat(a, b, m; b, d, h; p, q, s; augment: #(vline: 2, hline: 2, stroke: (dash: "dashed"))) $
+$ F = mat(a, c, m; b, d, h; p, q, s; augment: #(vline: 2, hline: 2, stroke: (dash: "dashed"))) $
 
 $mat(a, c; b, d)$ представляет композицию из симметрии, поворота, гомотетии и сдвига
 
@@ -274,4 +274,4 @@ $ mat(1, 0, 0; 0, 1, 0; p, q, 1; augment: #(vline: 2, hline: 2, stroke: (dash: "
 
 Преобразование осуществляется так:
 
-$ mat(a, b, m; b, d, h; 0, 0, 1; augment: #(vline: 2, hline: 2, stroke: (dash: "dashed"))) mat(x_1, x_2, x_3; y_1, y_2, y_3; 1, 1, 1) = mat(x'_1, x'_2, x'_3; y'_1, y'_2, y'_3; 1, 1, 1) $
+$ mat(a, c, m; b, d, h; 0, 0, 1; augment: #(vline: 2, hline: 2, stroke: (dash: "dashed"))) mat(x_1, x_2, x_3; y_1, y_2, y_3; 1, 1, 1) = mat(x'_1, x'_2, x'_3; y'_1, y'_2, y'_3; 1, 1, 1) $
