@@ -25,7 +25,7 @@ datasource db {
 }
 
 model User {
-  id Int @id @default(autoincrement()) @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   email String @unique
   name String?
   createdAt DateTime? @default(now()) @map("created_at")
@@ -34,7 +34,7 @@ model User {
 }
 
 model Post {
-  id Int @id @default(autoincrement()) @id @default(autoincrement())
+  id Int @id @default(autoincrement())
   title String
   content String?
   user User @relation(fields: [authorId], references: [id])
