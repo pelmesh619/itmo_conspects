@@ -53,4 +53,4 @@ window.MathJax = {
 
     $H \begin{pmatrix} x \\\\ y \\\\ 1 \end{pmatrix} = \begin{pmatrix} h_{1 1} & h_{1 2} & h_{1 3} \\\\ h_{2 1} & h_{2 2} & h_{2 3} \\\\ h_{3 1} & h_{3 2} & h_{3 3} \end{pmatrix} \begin{pmatrix} x \\\\ y \\\\ 1 \end{pmatrix} = \begin{pmatrix} x^\prime \\\\ y^\prime \\\\ 1 \end{pmatrix}$
 
-    Гомография преобразует пространство, например, меняет перспективу изображения
+    Гомография преобразует пространство, например, меняет перспективу изображения. Здесь используются однородные координаты вида $\begin{pmatrix} x \\\\ y \\\\ 1 \end{pmatrix}$
