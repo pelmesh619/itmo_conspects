@@ -82,7 +82,7 @@ $date$=18.02.2025
 X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \text{если } n = 2k\end{cases}$
 
 \begin{MyTheorem}
-    \Ths $\overline{x}$ - состоятельная несмещенная оценка теоретического матожидания $EX = a$
+    \Ths $\overline{x}$ -- состоятельная несмещенная оценка теоретического матожидания $EX = a$
 
     1) $E \overline{x} = a$
 
@@ -97,7 +97,7 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
     согласно Закону Больших Чисел
 \end{MyProof}
 
-\Nota Если второй момент конечен, то $\overline{x}$ - асимптотически нормальная оценка. По ЦПТ $\frac{S_n - n E X_1}{\sqrt{n} \sqrt{D X_1}} = \sqrt{n} \frac{\overline{x} - E X_1}{\sqrt{D X_1}} \rightrightarrows N(0, 1)$
+\Nota Если второй момент конечен, то $\overline{x}$ -- асимптотически нормальная оценка. По ЦПТ $\frac{S_n - n E X_1}{\sqrt{n} \sqrt{D X_1}} = \sqrt{n} \frac{\overline{x} - E X_1}{\sqrt{D X_1}} \rightrightarrows N(0, 1)$
 или $\sqrt{n} (\overline{x} - E X_1) \rightrightarrows N(0; D X_1)$
 
 \begin{MyTheorem}
@@ -112,7 +112,7 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
 
 \begin{MyTheorem}
     \Ths Выборочная дисперсия $D^*$ и исправленная дисперсия $S^2$ являются состоятельными оценками теоретической дисперсией, при этом $D^*$ - смещенная оценка, а
-    $S^2$ - несмещенная оценка
+    $S^2$ -- несмещенная оценка
 \end{MyTheorem}
 
 \begin{MyProof}
@@ -123,16 +123,16 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
 
     Так как $D \overline{X} = E(\overline{X}^2) - (E \overline{X})^2$, то $E X^2 - E (\overline{X}^2) = 
     E X^2 - ((E\overline{X})^2 + D\overline{X}) = (E X^2 - EX) - D\overline{X} = D X - D \overline{X} = D X - D \left(\frac{X_1 + \dots + X_n}{n}\right) = 
-    DX - \frac{1}{n^2} \sum_{i = 1}^n D X_i = DX - \frac{1}{n^2} n D X_1 = DX - \frac{1}{n} DX = \frac{n - 1}{n} DX$, то есть $D^*$ - смещенная вниз оценка
+    DX - \frac{1}{n^2} \sum_{i = 1}^n D X_i = DX - \frac{1}{n^2} n D X_1 = DX - \frac{1}{n} DX = \frac{n - 1}{n} DX$, то есть $D^*$ -- смещенная вниз оценка
 
-    $E S^2 = E(\frac{n}{n - 1} D^*) = \frac{n}{n - 1} \frac{n - 1}{n} DX = DX \Longrightarrow S^2$ - несмещенная оценка 
+    $E S^2 = E(\frac{n}{n - 1} D^*) = \frac{n}{n - 1} \frac{n - 1}{n} DX = DX \Longrightarrow S^2$ -- несмещенная оценка 
 
-    2. $D^* = \overline{X^2} - \overline{X}^2 \overset{p}{\longrightarrow} E X^2 - (E X)^2 = DX$ - состоятельная оценка
+    2. $D^* = \overline{X^2} - \overline{X}^2 \overset{p}{\longrightarrow} E X^2 - (E X)^2 = DX$ -- состоятельная оценка
 
     $S^2 = \frac{n}{n - 1} D^* \overset{p}{\longrightarrow} DX$
 \end{MyProof}
 
-\Nota Отсюда видим, что выборочная дисперсия - асимптотически несмещенная оценка. Поэтому при большом (обычно не меньше 100) объеме выборке можно
+\Nota Отсюда видим, что выборочная дисперсия -- асимптотически несмещенная оценка. Поэтому при большом (обычно не меньше 100) объеме выборке можно
 считать обычную выборочную дисперсию
 
 \subsection{Метод моментов (Пирсона)}
@@ -146,7 +146,7 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
 Идея метода состоит в том, что сначала находим оценки $k$ моментов, а затем с помощью теоретических формул
 из теории вероятности даем оценки этих параметров
 
-Пусть $\vec{X}$ - выборка из абсолютно непрерывного распределения $F_\theta$ с плотностью известного типа, 
+Пусть $\vec{X}$ -- выборка из абсолютно непрерывного распределения $F_\theta$ с плотностью известного типа, 
 которая задается $k$ параметрами $f_\theta (x, \theta_1, \dots, \theta_k)$
 
 Тогда теоретические моменты находим по формуле $m_i = \int_{-\infty}^{\infty} x^i f_\theta (x, \theta_1, \dots, \theta_k) dx = h_i(\theta_1, \dots, \theta_n)$

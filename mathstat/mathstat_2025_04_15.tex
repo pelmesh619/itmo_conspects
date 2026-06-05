@@ -40,15 +40,15 @@ $date$=15.04.2025
 
 Пусть при $n$ экспериментах получены значения случайных величин $X$ и $Z$: $(X_1, Z_1), \dots, (X_n, Z_n)$
 
-Пусть $X = \alpha + \beta Z + \varepsilon$ - теоретическая модель линейной регрессии, где $\varepsilon$ - случайная величина,
+Пусть $X = \alpha + \beta Z + \varepsilon$ -- теоретическая модель линейной регрессии, где $\varepsilon$ -- случайная величина,
 отражающая влияние невключенных факторов, нелинейность модели, ошибок измерений и просто случая.
 
 Пусть построили с помощью метода наименьших квадратов выборочное уравнение линейной регрессии $\hat X = a + b Z$
 
-Обозначим $\hat \varepsilon_i = X_i - \hat X_i$ - экспериментальная ошибка, разница между наблюдаемыми значениями и 
+Обозначим $\hat \varepsilon_i = X_i - \hat X_i$ -- экспериментальная ошибка, разница между наблюдаемыми значениями и 
 вычисляемыми по модели
 
-Тогда $X_i = \hat X_i + \hat \varepsilon_i$ или $X_i = a + b Z_i + \hat \varepsilon_i$, где $a$ и $b$ - точечные оценки параметров $\alpha$ и $\beta$
+Тогда $X_i = \hat X_i + \hat \varepsilon_i$ или $X_i = a + b Z_i + \hat \varepsilon_i$, где $a$ и $b$ -- точечные оценки параметров $\alpha$ и $\beta$
 
 Свойства $\hat \varepsilon_i$:
 
@@ -70,11 +70,11 @@ $date$=15.04.2025
 
 \subsection{Анализ дисперсии результата}
 
-\Def $D(X) = \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{X})^2$ - дисперсия наблюдаемых значений
+\Def $D(X) = \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{X})^2$ -- дисперсия наблюдаемых значений
 
-\Defs $D(\hat X) = \frac{1}{n} \sum_{i = 1}^n (\hat X_i - \overline{X})^2$ - дисперсия расчетных значений
+\Defs $D(\hat X) = \frac{1}{n} \sum_{i = 1}^n (\hat X_i - \overline{X})^2$ -- дисперсия расчетных значений
 
-\Defs $D(\hat \varepsilon) = \frac{1}{n} \sum_{i = 1}^n (\hat \varepsilon_i)^2$ - дисперсия остатков
+\Defs $D(\hat \varepsilon) = \frac{1}{n} \sum_{i = 1}^n (\hat \varepsilon_i)^2$ -- дисперсия остатков
 
 Так как $X = \hat X + \hat \varepsilon$, $\cov (\hat X, \hat \varepsilon) = 0$, то $D(X) = D(\hat X) + D(\hat \varepsilon) + 2\cov (\hat X, \hat \varepsilon) = D(\hat X) + D(\hat \varepsilon)$
 
@@ -86,7 +86,7 @@ $date$=15.04.2025
 
 \Def Коэффициентом детерминации $R^2$ называется величина $R^2 = \frac{D(\hat X)}{D(X)}$ или $R^2 = 1 - \frac{D(\hat \varepsilon)}{D(X)}$
 
-\Notas Смысл $R^2$ - доля объясненной дисперсии, а $1 - R^2$ - доля необъясненной дисперсии
+\Notas Смысл $R^2$ -- доля объясненной дисперсии, а $1 - R^2$ -- доля необъясненной дисперсии
 
 Свойства: 
 
@@ -108,7 +108,7 @@ $date$=15.04.2025
     \Ths Если $H_0$ верна, то $F = \frac{R^2 (n - 2)}{1 - R^2} \in F(1, n - 2)$
 \end{MyTheorem}
 
-Пусть $t_\alpha$ - квантиль $F(1, n - 2)$ уровня $\alpha$, тогда:
+Пусть $t_\alpha$ -- квантиль $F(1, n - 2)$ уровня $\alpha$, тогда:
 
 $\begin{cases}
     H_0 : R^2_{\text{теор}} = 0 & \text{ если } F < t_\alpha \\
@@ -122,7 +122,7 @@ $\begin{cases}
 \subsection{Связь между коэффициентом детерминации и коэффициентом линейной корреляции}
 
 \begin{enumerate}
-    \item $\sqrt{R^2} = r_{\hat X, X}$ - коэффициент корреляции между $\hat X$ и $X$
+    \item $\sqrt{R^2} = r_{\hat X, X}$ -- коэффициент корреляции между $\hat X$ и $X$
     \begin{MyProof}
         $r_{\hat X, X} = \frac{\cov (\hat X, X)}{\sqrt{D(\hat X) D(X)}} = \frac{\cov (\hat X, \hat X + \hat \varepsilon)}{\sqrt{D(\hat X) D(X)}} = 
         \frac{D(\hat X) + \cancelto{0}{\cov (\hat X, \hat \varepsilon)}}{\sqrt{D(\hat X) D(X)}} = \sqrt{\frac{D(\hat X)}{D(X)}} = R$
@@ -149,18 +149,18 @@ $H_0 : R^2_{\text{теор}} = 0 \Longleftrightarrow H_0 : r = 0 \Longleftrighta
 \hypertarget{gauss_markov_theorem}{}
 
 \begin{MyTheorem}
-    \Ths Пусть $X_i = \alpha + \beta Z_i + \varepsilon_i$ - теоретическая модель регрессии
+    \Ths Пусть $X_i = \alpha + \beta Z_i + \varepsilon_i$ -- теоретическая модель регрессии
 
-    $X = a + b Z$ - модель, полученная по методу наименьших квадратов
+    $X = a + b Z$ -- модель, полученная по методу наименьших квадратов
 
     Если выполнено условия:
 
     \begin{enumerate}[label=\asbuk*),ref=\asbuk*]
         \item Случайные члены $\varepsilon_i$ независимые случайные величины, имеющие одинаковое нормальное распределение $\varepsilon_i \in N(0, \sigma^2)$
-        \item Случайные величины $\varepsilon_i$ и $Z_i$ - независимы
+        \item Случайные величины $\varepsilon_i$ и $Z_i$ -- независимы
     \end{enumerate}
 
-    Тогда $a$ и $b$ - состоятельные, несмещенные, эффективные оценки параметров $\alpha$ и $\beta$, то есть
+    Тогда $a$ и $b$ -- состоятельные, несмещенные, эффективные оценки параметров $\alpha$ и $\beta$, то есть
 
     \begin{enumerate}
         \item Состоятельность: $a \underset{n \to \infty}{\ConvergesInProbability} \alpha, b \underset{n \to \infty}{\ConvergesInProbability} \beta$
@@ -199,13 +199,13 @@ $E(D(\hat \varepsilon)) = \frac{n - 2}{n} \sigma^2$
 
 \subsection{Прогнозирование регрессионных моделей}
 
-Пусть $X = \alpha + \beta Z + \varepsilon$ - теоретическая модель
+Пусть $X = \alpha + \beta Z + \varepsilon$ -- теоретическая модель
 
-$\hat X = a + b Z$ - модель МНК, построенная по выборке объема $n$
+$\hat X = a + b Z$ -- модель МНК, построенная по выборке объема $n$
 
 С помощью данной модели надо дать прогноз значения $X_p$ при заданном значении $Z_p$ и оценить качество прогноза 
 
-Теоретическое значение - $X_p = \alpha + \beta Z_p + \varepsilon$, а точечный прогноз $\hat X_p = a + b Z_p$
+Теоретическое значение -- $X_p = \alpha + \beta Z_p + \varepsilon$, а точечный прогноз $\hat X_p = a + b Z_p$
 
 Разность между ними $\Delta_p = \hat X_p - X_p$ называется ошибкой предсказания
 
@@ -217,9 +217,9 @@ $\hat X = a + b Z$ - модель МНК, построенная по выбор
 
     Заменив $\sigma^2$ на $S^2$, получим стандартную ошибку прогноза: $S_{\Delta_p} = S \sqrt{1 + \frac{1}{n} + \frac{(Z_p - \overline{z})^2}{n DZ}}$
 
-    \item $D(\Delta_p) > \sigma^2$ - то есть точность прогноза ограничена случайным членом $\varepsilon$
+    \item $D(\Delta_p) > \sigma^2$ -- то есть точность прогноза ограничена случайным членом $\varepsilon$
 
-    \item При $n \to \infty$ $D(\Delta_p) \ConvergesInProbability \sigma^2$ - качество модели тем лучше, чем больше объем выборки
+    \item При $n \to \infty$ $D(\Delta_p) \ConvergesInProbability \sigma^2$ -- качество модели тем лучше, чем больше объем выборки
 
     \item Чем больше $Z_p$ отклоняется от $\overline{z}$, тем хуже качество прогноза. Наилучшее качество в точке $Z_p = \overline{z}: \ D(\Delta_p) = \left(1 + \frac{1}{n}\right) \sigma^2$
 
@@ -232,7 +232,7 @@ $\hat X = a + b Z$ - модель МНК, построенная по выбор
 
 \subsection{Доверительные интервалы прогноза и коэффициентов уравнения линейной регрессии}
 
-Пусть $t_\gamma$ - квантиль $|T_{n - 2}|$ уровня $\gamma$
+Пусть $t_\gamma$ -- квантиль $|T_{n - 2}|$ уровня $\gamma$
 
 Тогда доверительные интервалы надежности $\gamma$ для параметров $\alpha$ и $\beta$:
 

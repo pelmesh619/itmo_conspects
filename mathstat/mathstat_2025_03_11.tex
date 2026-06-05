@@ -8,7 +8,7 @@ $date$=11.03.2025
 
 \hypertarget{quantile_distribution}{}
 
-Предполагаем, что распределение абсолютно непрерывное, и $F(x)$ - функция распределения
+Предполагаем, что распределение абсолютно непрерывное, и $F(x)$ -- функция распределения
 
 \DefN{1} Число $t_\gamma$ называется квантилем распределения уровня $\gamma$, если значения
 функции распределения $F(t_\gamma) = \gamma$ или $P(X < t_\gamma) = \gamma$ ($t_\gamma = F^{-1}(\gamma)$)
@@ -19,7 +19,7 @@ $date$=11.03.2025
     \includegraphics[width=15cm]{mathstat/images/mathstat_2025_03_11_1}
 \end{center}
 
-\Ex Медиана - квантиль уровня $\frac{1}{2}$
+\Ex Медиана -- квантиль уровня $\frac{1}{2}$
 
 \DefN{2} Число $t_\alpha$ называется квантилем уровня значимости $\alpha$, если
 $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
@@ -30,7 +30,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \hypertarget{interval_estimation}{}
 
-Недостатки точечных оценок - неизвестно насколько они далеки от реального значения параметра и 
+Недостатки точечных оценок -- неизвестно насколько они далеки от реального значения параметра и 
 насколько им можно доверять. Особенно это заметно при малых выборках. Поэтому мы указываем интервал, в котором 
 лежит этот параметр с заданной вероятностью (надежностью) $\gamma$. Такие оценки называются интервальными 
 (доверительными)
@@ -40,7 +40,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \Nota Если имеем дискретную случайную величину, то $P(\theta^-_\gamma < \theta < \theta^+_\gamma) \geq \gamma$
 
-\Notas Так как параметр $\theta$ - константа, то бессмысленно говорить о его попадании в интервал. Правильно: 
+\Notas Так как параметр $\theta$ -- константа, то бессмысленно говорить о его попадании в интервал. Правильно: 
 доверительный интервал накрывает параметр $\theta$ с вероятностью $\gamma$
 
 \NotaN{1} $\alpha = 1 - \gamma$ называется уровнем значимости доверительного интервала
@@ -54,9 +54,9 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 Вспомним основную теорему:
 
 \begin{MyTheorem}
-    $\letsymbol (X_1, \dots, X_n)$ - выборка объема $n$ из $N(\alpha, \sigma^2)$
+    $\letsymbol (X_1, \dots, X_n)$ -- выборка объема $n$ из $N(\alpha, \sigma^2)$
 
-    $\overline{x}$ - выборочное среднее, $S^2$ - исправленная дисперсия, $D^*$ - выборочная дисперсия
+    $\overline{x}$ -- выборочное среднее, $S^2$ -- исправленная дисперсия, $D^*$ -- выборочная дисперсия
 
     Тогда:
 
@@ -67,12 +67,12 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
         \item $\sum_{i = 1}^n \left(\frac{X_i - \overline{x}}{\sigma}\right)^2 = \frac{(n - 1)S^2}{\sigma^2} = 
         \frac{nD^*}{\sigma^2} \in H_{n - 1}$
         \item $\sqrt{n} \frac{\overline{x} - a}{S} \in T_{n - 1}$
-        \item $\overline{x}$ и $S^2$ - независимы
+        \item $\overline{x}$ и $S^2$ -- независимы
     \end{enumerate}
 \end{MyTheorem}
 
 
-\Nota Если $F(x)$ - функция симметричного относительно $x = 0$ распределения, то $P(|X| < t) = 2F(t) - 1$
+\Nota Если $F(x)$ -- функция симметричного относительно $x = 0$ распределения, то $P(|X| < t) = 2F(t) - 1$
 
 % https://www.geogebra.org/calculator/msnwgfyp
 
@@ -82,7 +82,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \subsection{Доверительные интервалы для параметров нормального распределения}
 
-Пусть $\vec X = (X_1, \dots, X_n)$ - выборка объема $n$ из $N(a, \sigma^2)$. 
+Пусть $\vec X = (X_1, \dots, X_n)$ -- выборка объема $n$ из $N(a, \sigma^2)$. 
 Хотим найти интервалы для параметров $a$ и $\sigma^2$
 
 \begin{enumerate}[label*=\Roman*.]
@@ -95,7 +95,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     $P\left(-t_\gamma < \sqrt{n} \frac{\overline{x} - a}{\sigma} < t_\gamma\right) = 
     P\left(\left|\sqrt{n} \frac{\overline{x} - a}{\sigma}\right| < t_\gamma\right) = 2F_0 (t_\gamma) - 1 = \gamma$
 
-    $F_0(t_\gamma) = \frac{1 + \gamma}{2} \Longrightarrow t_\gamma$ - квантиль уровня 
+    $F_0(t_\gamma) = \frac{1 + \gamma}{2} \Longrightarrow t_\gamma$ -- квантиль уровня 
     $\frac{1 + \gamma}{2}$ для $N(0, 1)$, где
     $F_0(x) = \frac{1}{\sqrt{2\pi}} \int_{-\infty}^{\infty} e^{-\frac{z^2}{2}} dz$
 
@@ -103,12 +103,12 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
     $-t_\gamma \frac{\sigma}{\sqrt{n}} < \overline{x} - a < t_\gamma \frac{\sigma}{\sqrt{n}}$
 
-    $\overline{x} - t_\gamma \frac{\sigma}{\sqrt{n}} < a < \overline{x} + t_\gamma \frac{\sigma}{\sqrt{n}}$ - 
+    $\overline{x} - t_\gamma \frac{\sigma}{\sqrt{n}} < a < \overline{x} + t_\gamma \frac{\sigma}{\sqrt{n}}$ -- 
     симметричный интервал относительно $\overline{x}$
 
     Доверительный интервал надежности $\gamma$: $\left(\overline{x} - t_\gamma \frac{\sigma}{\sqrt{n}}, 
     \overline{x} + t_\gamma \frac{\sigma}{\sqrt{n}}\right)$, 
-    где $t_\gamma$ - квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
+    где $t_\gamma$ -- квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
 
     \hypertarget{confidence_interval_for_a_unknown_sigma}{}
 
@@ -118,12 +118,12 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
     $P\left(-t_\gamma < \sqrt{n} \frac{\overline{x} - a}{S} < t_\gamma\right) = P\left(\left|\sqrt{n} \frac{\overline{x} - a}{S}\right| < t_\gamma\right) = 2F_{T_{n - 1}}(t_\gamma) = \gamma$
 
-    $F_{T_{n - 1}}(t_\gamma) = \frac{1 + \gamma}{2} \Longrightarrow t_\gamma$ - квантиль $T_{n - 1}$ уровня 
+    $F_{T_{n - 1}}(t_\gamma) = \frac{1 + \gamma}{2} \Longrightarrow t_\gamma$ -- квантиль $T_{n - 1}$ уровня 
     $\frac{1 + \gamma}{2}$
 
     Аналогично с примером выше получаем интервал $\left(\overline{x} - t_\gamma \frac{S}{\sqrt{n}}, 
     \overline{x} + t_\gamma \frac{S}{\sqrt{n}}\right)$, 
-    где $t_\gamma$ - квантиль $T_{n - 1}$ уровня $\frac{1 + \gamma}{2}$
+    где $t_\gamma$ -- квантиль $T_{n - 1}$ уровня $\frac{1 + \gamma}{2}$
 
     \hypertarget{confidence_interval_for_sigma_unknown_a}{}
 
@@ -132,7 +132,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     По пункту 3 из теоремы $\sum_{i = 1}^n \left(\frac{X_i - \overline{x}}{\sigma}\right)^2 = \frac{(n - 1)S^2}{\sigma^2} = 
     \frac{nD^*}{\sigma^2} \in H_{n - 1}$
 
-    Пусть $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
+    Пусть $\chi_1^2$ и $\chi_2^2$ -- квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
 
     Тогда $P\left(\chi_1^2 < \frac{(n - 1)S^2}{\sigma^2} < \chi_2^2\right) = F_{H_{n - 1}}(\chi_1^2) - F_{H_{n - 1}}(\chi_2^2) = \frac{1 - \gamma}{2} - \frac{1 + \gamma}{2} = \gamma$
 
@@ -143,7 +143,7 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
     $\frac{(n - 1)S^2}{\chi_2^2} < \sigma^2 < \frac{(n - 1)S^2}{\chi_1^2}$ или 
     $\frac{nD^*}{\chi_2^2} < \sigma^2 < \frac{nD^*}{\chi_1^2}$
 
-    Получаем интервал $\left(\frac{(n - 1)S^2}{\chi_2^2}, \frac{(n - 1)S^2}{\chi_1^2}\right)$, где $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
+    Получаем интервал $\left(\frac{(n - 1)S^2}{\chi_2^2}, \frac{(n - 1)S^2}{\chi_1^2}\right)$, где $\chi_1^2$ и $\chi_2^2$ -- квантили $H_{n - 1}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
 
     \Nota Данный интервал не симметричен относительно неизвестного параметра $\sigma^2$
 
@@ -153,12 +153,12 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
     По пункту 2 из теоремы $\sum_{i = 1}^n \left(\frac{X_i - a}{\sigma}\right)^2 = \frac{n \tilde{\sigma^2}}{\sigma^2} \in H_{n - 1}$
     
-    Пусть $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
+    Пусть $\chi_1^2$ и $\chi_2^2$ -- квантили $H_{n}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$
 
     Тогда $P\left(\chi_1^2 < \frac{n \tilde{\sigma^2}}{\sigma^2} < \chi_2^2\right) = F_{H_{n}}(\chi_1^2) - F_{H_{n}}(\chi_2^2) = \frac{1 - \gamma}{2} - \frac{1 + \gamma}{2} = \gamma$
 
     Аналогично получаем интервал $\left(\frac{n \tilde{\sigma^2}}{\chi_2^2}, \frac{n \tilde{\sigma^2}}{\chi_1^2}\right)$, 
-    где $\chi_1^2$ и $\chi_2^2$ - квантили $H_{n}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$, $n \tilde{\sigma^2} = \sum_{i = 1}^n (X_i - a)^2$
+    где $\chi_1^2$ и $\chi_2^2$ -- квантили $H_{n}$ уровней $\frac{1 - \gamma}{2}$ и $\frac{1 + \gamma}{2}$, $n \tilde{\sigma^2} = \sum_{i = 1}^n (X_i - a)^2$
 
     \Nota $\tilde{\sigma^2} - D^* = \frac{1}{n} \sum_{i = 1}^n (X_i - a)^2 - \frac{1}{n} \sum_{i = 1}^n (X_i - \overline{x})^2 = 
     \frac{1}{n} \sum_{i = 1}^n (X_i^2 - 2aX_i + a^2 - X_i^2 + 2 \overline{x} X_i - \overline{x}^2) = 
@@ -176,9 +176,9 @@ $P(X > t_\alpha) = \alpha$ или $F(t_\alpha) = 1 - \alpha$
 
 \Ex Доверительный интервал вероятности события $A$
 
-Пусть $p = P(A), q = 1 - p, n$ - число испытаний или объем выборки $(X_1, \dots, X_n)$, где $X_i \in \{0, 1\}$
+Пусть $p = P(A), q = 1 - p, n$ -- число испытаний или объем выборки $(X_1, \dots, X_n)$, где $X_i \in \{0, 1\}$
 
-$p^* = \frac{n_A}{n} = \overline{x}$ - оценка $p$
+$p^* = \frac{n_A}{n} = \overline{x}$ -- оценка $p$
 
 Согласно Центральной предельной теореме $\sqrt{n} \frac{p^* - p}{D X_1} = \sqrt{n} \frac{p^* - p}{\sqrt{pq}} \rightrightarrows N(0, 1)$
 
@@ -188,13 +188,13 @@ $p^* = \frac{n_A}{n} = \overline{x}$ - оценка $p$
 
 $P\left(\left|\sqrt{n} \frac{p^* - p}{\sqrt{p^* (1 - p^*)}}\right| < t_\gamma\right) \underset{n \to \infty}{\longrightarrow} 2F_0(t_\gamma) - 1 = \gamma$
 
-$F_0(t_\gamma) = \frac{1 + \gamma}{2}$, $t_\gamma$ - квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
+$F_0(t_\gamma) = \frac{1 + \gamma}{2}$, $t_\gamma$ -- квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
 
 Получаем $\left|\sqrt{n} \frac{p^* - p}{\sqrt{p^* (1 - p^*)}}\right| < t_\gamma$
 
 $|p^* - p| < t_\gamma \frac{\sqrt{p^* (1 - p^*)}}{\sqrt{n}}$
 
-Итак, $\left(-t_\gamma \frac{\sqrt{\overline{x} (1 - \overline{x})}}{\sqrt{n}}, t_\gamma \frac{\sqrt{\overline{x} (1 - \overline{x})}}{\sqrt{n}}\right)$, где $t_\gamma$ - квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
+Итак, $\left(-t_\gamma \frac{\sqrt{\overline{x} (1 - \overline{x})}}{\sqrt{n}}, t_\gamma \frac{\sqrt{\overline{x} (1 - \overline{x})}}{\sqrt{n}}\right)$, где $t_\gamma$ -- квантиль $N(0, 1)$ уровня $\frac{1 + \gamma}{2}$
 
 
 
