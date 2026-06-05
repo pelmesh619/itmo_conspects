@@ -123,9 +123,10 @@ class TexConspectBuilder(ConspectBuilder):
             if temp_output != self.conspect_filename:
                 shutil.move(str(temp_output), str(self.conspect_filename))
         else:
+            self.log_path = Path(self.AUXIL_DIRECTORY) / (Path(self.input_filename).stem + '.log')
             print(
                 f'\033[91mCompilation of {self.conspect_filename} failed.\033[0m '
-                f'Check {Path(self.AUXIL_DIRECTORY) / (Path(self.input_filename).stem + '.log')} for more info'
+                f'Check {self.log_path} for more info'
             )
         return exit_code
 
