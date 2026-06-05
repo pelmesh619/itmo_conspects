@@ -88,10 +88,10 @@ $\varepsilon$
 \begin{MyProof}
     Пусть $t_\text{кр}$ - критическая точка такая, что $P(|Z| \geq t_\text{кр}) = \varepsilon$ - заданный уровень ошибки первого рода
 
-    \begin{cases}
+    $\begin{cases}
         H_0, & \text{ если } |K| < t_\text{кр} \\ 
         H_1, & \text{ если } |K| \geq t_\text{кр} \\ 
-    \end{cases}
+    \end{cases}$
 
     \begin{enumerate}
         \item Тогда $\alpha = P(|K| \geq t_\text{кр} \ | \ H_0) = 1 - P(|K| < t_\text{кр} \ | \ H_0) = 1 - (F_K(t_\text{кр}) - F_K(-t_\text{кр})) 
@@ -124,10 +124,10 @@ $\varepsilon$
 
 $F_0(t_\text{кр}) = 1 - \frac{\alpha}{2}$ - то есть $t_\text{кр}$ - квантиль стандартного нормального распределения уровня $1 - \frac{\alpha}{2}$
 
-\begin{cases}
+$\begin{cases}
     H_0, & \text{ если } |K| < t_\text{кр} \\ 
     H_1, & \text{ если } |K| \geq t_\text{кр} \\ 
-\end{cases}
+\end{cases}$
 
 \subsection{Гипотеза о среднем нормальной совокупности при неизвестной дисперсии}
 
@@ -153,10 +153,10 @@ $F_0(t_\text{кр}) = 1 - \frac{\alpha}{2}$ - то есть $t_\text{кр}$ - к
 $P(\theta_\gamma^- < \theta < \theta_\gamma^+) = \gamma$.
 
 Тогда критерий 
-\begin{cases}
+$\begin{cases}
     H_0, & \text{ если } \theta_0 \in (\theta_\gamma^-, \theta_\gamma^+) \\ 
     H_1, & \text{ если } \theta_0 \not\in (\theta_\gamma^-, \theta_\gamma^+) \\ 
-\end{cases} будет уровня $\alpha = 1 - \gamma$
+\end{cases}$ будет уровня $\alpha = 1 - \gamma$
 
 $\alpha = P(\theta_0 \not\in (\theta_\gamma^-, \theta_\gamma^+) \ | \ H_0) = 1 - P(\theta_0 \in (\theta_\gamma^-, \theta_\gamma^+) \ | \ X \in F_{\theta_0}) = 1 - \gamma$
 
@@ -164,15 +164,15 @@ $\alpha = P(\theta_0 \not\in (\theta_\gamma^-, \theta_\gamma^+) \ | \ H_0) = 1 -
 
 \mediumvspace 
 
-Но почему в схеме \begin{cases}
+Но почему в схеме $\begin{cases}
     H_0 \, : \, a = \overline{x} \\
     H_1 \, : \, a \neq \overline{x} \\
-\end{cases} основная гипотеза всегда верна, тогда как выборочно среднее на практике почти всегда не равняется матожиданию. Потому что ...
+\end{cases}$ основная гипотеза всегда верна, тогда как выборочно среднее на практике почти всегда не равняется матожиданию. Потому что ...
 
 \begin{tcolorbox}
     А вот нефиг такие гипотезы вообще выдвигать
 
-    \hfill ©️ Блаженов А. В.
+    \hfill © Блаженов А. В.
 \end{tcolorbox}
 
 \subsection{Критерий вероятности появления события}
@@ -190,10 +190,10 @@ $\letsymbol P(A) = p$ - вероятность успеха при одном и
 
 Из тех же соображений $t_\text{кр}$ - квантиль $N(0, 1)$ уровня $1 - \frac{\alpha}{2}$
 
-\begin{cases}
+$\begin{cases}
     H_0: \, p = p_0, & \text{ если } |K| < t_\text{кр} \\
     H_1: \, p \neq p_0  & \text{ если } |K| \geq t_\text{кр} \\
-\end{cases}
+\end{cases}$
 
 \Ex При посеве 4000 семян 970 всходов оказались рецессивного цвета, а 3030 - доминантного. 
 Проверим гипотезу $H_0: p = \frac{1}{4}$ - Мендель прав, против $H_1: p \neq \frac{1}{4}$ - Мендель не прав, для уровня значимости - $0.05$
