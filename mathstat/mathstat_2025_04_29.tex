@@ -58,11 +58,11 @@ $r = \begin{pmatrix}
 а затем $Z_3$ (этот фактор меньше всего коррелирует с $Z_2$)
 
 \begin{tabular}{c|c|c|c|c}
-    & X & Z_1 & Z_2 & Z_3 \\
-    X & 1 & - & - & - \\
-    Z_1 & 0.81 & 1 & - & - \\
-    Z_2 & 0.85 & 0.93 & 1 & - \\
-    Z_3 & -0.65 & -0.38 & -0.28 & 1
+    & $X$ & $Z_1$ & $Z_2$ & $Z_3$ \\
+    $X$ & $1$ & -- & -- & -- \\
+    $Z_1$ & $0.81$ & $1$ & -- & -- \\
+    $Z_2$ & $0.85$ & $0.93$ & $1$ & -- \\
+    $Z_3$ & $-0.65$ & $-0.38$ & $-0.28$ & $1$
 \end{tabular}
 
 \subsection{Анализ уравнения линейной регрессии}
@@ -121,12 +121,12 @@ $t_x = \gamma_1 t_1 + \gamma_2 t_2 + \dots + \gamma_k t_k$
 
 \smallvspace
 
-\begin{cases}
-    $\gamma_1 + r_{Z_1, Z_2} \gamma_2 + \dots + r_{Z_1, Z_k} \gamma_k = r_{Z_1, x}$ \\
-    $r_{Z_1, Z_2} \gamma_1 + \gamma_2 + \dots + r_{Z_2, Z_k} \gamma_k = r_{Z_2, x}$ \\
-    $\dots$ \\
-    $r_{Z_k, Z_1} \gamma_1 + r_{Z_k, Z_2} \gamma_2 + \dots + \gamma_k = r_{Z_k, x}$ \\
-\end{cases}
+$\begin{cases}
+    \gamma_1 + r_{Z_1, Z_2} \gamma_2 + \dots + r_{Z_1, Z_k} \gamma_k = r_{Z_1, x} \\
+    r_{Z_1, Z_2} \gamma_1 + \gamma_2 + \dots + r_{Z_2, Z_k} \gamma_k = r_{Z_2, x} \\
+    \dots \\
+    r_{Z_k, Z_1} \gamma_1 + r_{Z_k, Z_2} \gamma_2 + \dots + \gamma_k = r_{Z_k, x} \\
+\end{cases}$
 
 \smallvspace
 
@@ -209,10 +209,10 @@ $r_{Z_i Z_1} \gamma_1 + \dots + \gamma_i + \dots + r_{Z_i Z_k} \gamma_k = r_{Z_i
 
     Получаем критерий, называемый F-тестом: $t_\alpha$ - квантиль $F(k, n - k - 1)$ уровня значимости $\alpha$
 
-    \begin{cases}
+    $\begin{cases}
         H_0 : R^2_\text{теор} = 0, & \text{ если } F < t_\alpha \\ 
         H_0 : R^2_\text{теор} \neq 0, & \text{ если } F \geq t_\alpha
-    \end{cases}
+    \end{cases}$
 
     \item T-тест: проверка гипотезы о значимости отдельного коэффициента регрессии 
     $H_0 : \beta_i = 0$ ($b_i$ статистически незначим) против $H_1 : \beta_i \neq 0$
@@ -224,10 +224,10 @@ $r_{Z_i Z_1} \gamma_1 + \dots + \gamma_i + \dots + r_{Z_i Z_k} \gamma_k = r_{Z_i
     
     Получаем критерий, называемый T-тестом: $t_\alpha$ - квантиль двухстороннего распределения Стьюдента $|T_{n - k - 1}|$ уровня значимости $\alpha$
 
-    \begin{cases}
+    $\begin{cases}
         H_0 : \beta_i = 0, & \text{ если } |T_i| < t_\alpha \\ 
         H_0 : \beta_i \neq 0, & \text{ если } |T_i| \geq t_\alpha
-    \end{cases}
+    \end{cases}$
 
     \Nota T-тест служит для отсева несущественных факторов из модели при условии, что все другие факторы включены в модель
 
