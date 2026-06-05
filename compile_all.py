@@ -58,6 +58,7 @@ if output_directory is None:
     pdf_output_directory = DEFAULT_OUTPUT_DIRECTORY / folder
 
 start = time.time()
+log_paths = {}
 
 for filename in folder_files:
     if filename.stem.endswith('superconspect'):
@@ -86,8 +87,10 @@ for filename in folder_files:
 
     if exit_code not in results:
         results[exit_code] = []
+        log_paths[exit_code] = []
 
     results[exit_code].append(filename)
+    log_paths[exit_code].append(getattr(t, "log_path", None))
 
 
 if list(map(lambda x: x.suffix == '.md', folder_files)).count(True) >= len(folder_files) / 2:
@@ -134,7 +137,7 @@ if 0 in results:
 
 for i in filter(lambda x: isinstance(x, int) and x != 0 and results[x], results):
     print(f"\033[91mExit code = {i}\033[0m:")
-    for j in results[i]:
-        print(f'\t{j}')
+    for j, file in enumerate(results[i]):
+        print(f'\t{file}' + ("" if len(log_paths.get(i, [])) <= j or log_paths[i][j] == None else f"\t(check {log_paths[i][j]})"))
 
 print(f"Time spent: {round(time.time() - start, 2)} s")
