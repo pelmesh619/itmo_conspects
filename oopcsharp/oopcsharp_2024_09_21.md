@@ -18,7 +18,7 @@
 
 Например: делать класс, который создает отчеты и для Excel, и в .pdf - плохо, так как в них могут быть методы с одинаковыми названиями, но с разной логикой, этот класс будет труднее изменять
 
-```csharp
+```cs
 public record OperationResult(...);
 
 public class ReportGenerator
@@ -36,7 +36,7 @@ public class ReportGenerator
 
 Поэтому лучше сделать интерфейс генераторов отчета, от которого наследуются классы генераторов в Excel и pdf
 
-```csharp
+```cs
 public record OperationResult(...);
 public interface IReportGenerator
 {
@@ -77,7 +77,7 @@ public class PdfReportGenerator : IReportGenerator
 
 Пример несоблюдения OCP:
 
-```csharp
+```cs
 public enum BinaryOperation
 {
     Summation,
@@ -100,7 +100,7 @@ public class BinaryOperand
 
 В этом примере калькулятор использует перечисления для определения оператора и оператор `switch`, чтобы возвращать нужный результат. В итоге, чтобы добавить операцию умножения, нужно изменить инструкции в операторе `switch`. Поэтому более расширяемым будет такой код:
 
-```csharp
+```cs
 public interface IBinaryOperation
 {
     int Evaluate(int left, int right);
@@ -133,7 +133,7 @@ public sealed class BinaryOperand
 
 Например: создадим классы для обычной птицы, пингвина и летучей мыши, чтобы заставить их мигрировать:
 
-```csharp
+```cs
 public record Coordinate(int X, int Y);
 
 public class Creature{
@@ -185,7 +185,7 @@ void StartMigration(IEnumerable<Creature> creatures, Coordinate coordinate)
 
 В этом случае, летучая мышь не является птицей, но летать и мигрировать она умеет, поэтому в функции миграции нам пришлось отдельно переопределять поведение для летучей мыши, так как она не является наследником птицы. Поэтому лучше сделать отдельный интерфейс для летающий существ:
 
-```csharp
+```cs
 public record Coordinate(int X, int Y);
 public interface ICreature
 {
@@ -239,7 +239,7 @@ void StartMigration(IEnumerable<IFlyingCreature> creatures, Coordinate coordinat
 
 Поэтому лучше делать не так:
 
-```csharp
+```cs
 public interface ICanAllDevice
 {
     void Print();
@@ -250,7 +250,7 @@ public interface ICanAllDevice
 
 А так:
 
-```csharp
+```cs
 public interface IPrinter
 {
     void Print();
