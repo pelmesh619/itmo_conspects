@@ -151,48 +151,49 @@ public sealed class BinaryOperand
 ```cs
 public record Coordinate(int X, int Y);
 
-public class Creature{
-    public void Die()    
+public class Creature
+{
+    public void Die()
     {
-        Console.WriteLine("I am dead now");    
+        Console.WriteLine("Я мертв");
     }
 }
 
 public class Bird : Creature
 {
-    public virtual void FlyTo(Coordinate coordinate)    
-    {        
-        Console.WriteLine("I am flying");    
+    public virtual void FlyTo(Coordinate coordinate)
+    {
+        Console.WriteLine("Я летаю");
     }
 }
 
 public class Penguin : Bird
 {
-    public override void FlyTo(Coordinate coordinate)    
+    public override void FlyTo(Coordinate coordinate)
     {
-        Die();  // it cannot fly :(   
+        Die();  // пингвины не летают :(
     }
 }
 
 public class Bat : Creature
 {
-    public void FlyTo(Coordinate coordinate)    
+    public void FlyTo(Coordinate coordinate)
     {
-        Console.WriteLine("I bat and am flying");    
+        Console.WriteLine("Я летучая мышь и летаю");
     }
 }
 
 void StartMigration(IEnumerable<Creature> creatures, Coordinate coordinate)
 {
-    foreach (var creature in creatures)    
+    foreach (var creature in creatures)
     {
-        if (creature is Bird bird)        
+        if (creature is Bird bird)
         {
-            bird.FlyTo(coordinate);        
+            bird.FlyTo(coordinate);
         }
-        if (creature is Bat bat)        
-        {            
-            bat.FlyTo(coordinate);        
+        if (creature is Bat bat)
+        {
+            bat.FlyTo(coordinate);
         }
     }
 }
@@ -202,43 +203,55 @@ void StartMigration(IEnumerable<Creature> creatures, Coordinate coordinate)
 
 ```cs
 public record Coordinate(int X, int Y);
+
 public interface ICreature
 {
     void Die();
 }
+
 public interface IFlyingCreature : ICreature
 {
     void FlyTo(Coordinate coordinate);
 }
+
 public class CreatureBase : ICreature
 {
-    public void Die()    
+    public void Die()
     {
-        Console.WriteLine("I am dead now");    
+        Console.WriteLine("Я мертв");
     }
 }
-public class Bird : CreatureBase { }
+
+public class Bird : CreatureBase {
+    public virtual void FlyTo(Coordinate coordinate)
+    {
+        Console.WriteLine("Я летаю");
+    }
+}
+
 public class Penguin : Bird { }
-public class Colibri : Bird, IFlyingCreature
+
+public class Hummingbird : Bird, IFlyingCreature
 {
-    public void FlyTo(Coordinate coordinate)    
+    public void FlyTo(Coordinate coordinate)
     {
-        Console.WriteLine("I am colibri and I'm flying");    
+        Console.WriteLine("Я колибри и летаю");
     }
 }
+
 public class Bat : CreatureBase, IFlyingCreature
 {
-    public void FlyTo(Coordinate coordinate)    
+    public void FlyTo(Coordinate coordinate)
     {
-        Console.WriteLine("I am bat and I'm flying");    
+        Console.WriteLine("Я летучая мышь и летаю");
     }
 }
 
 void StartMigration(IEnumerable<IFlyingCreature> creatures, Coordinate coordinate)
 {
-    foreach (var creature in creatures)    
+    foreach (var creature in creatures)
     {
-        creature.FlyTo(coordinate);  
+        creature.FlyTo(coordinate);
     }
 }
 
