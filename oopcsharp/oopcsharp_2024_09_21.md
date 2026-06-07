@@ -374,3 +374,4 @@ var pushService = new NotificationService(new PushSender());
 pushService.Notify("Hello by Push");
 ```
 
+Такой подход позволяет избавиться от сильной связанности между типами, улучшить расширяемость типов и упростить тестирование
