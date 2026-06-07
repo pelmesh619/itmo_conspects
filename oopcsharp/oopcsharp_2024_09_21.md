@@ -23,11 +23,11 @@ public record OperationResult(...);
 
 public class ReportGenerator
 {
-    public void GenerateExcelReport(OperationResult result)    
+    public void GenerateExcelReport(OperationResult result)
     {
-        ...    
+        ...
     }
-    public void GeneratePdfReport(OperationResult result)    
+    public void GeneratePdfReport(OperationResult result)
     {
         ...
     }
@@ -38,25 +38,26 @@ public class ReportGenerator
 
 ```cs
 public record OperationResult(...);
+
 public interface IReportGenerator
 {
     void GenerateReport(OperationResult result);
 }
+
 public class ExcelReportGenerator : IReportGenerator
 {
-    public void GenerateReport(OperationResult result)    
+    public void GenerateReport(OperationResult result)
     {
         ...
     }
 }
 public class PdfReportGenerator : IReportGenerator
 {
-    public void GenerateReport(OperationResult result)    
+    public void GenerateReport(OperationResult result)
     {
         ...
     }
 }
-
 ```
 
 **Преимущества несоблюдения**:
