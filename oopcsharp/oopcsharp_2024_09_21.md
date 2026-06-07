@@ -121,6 +121,7 @@ public class Subtraction : IBinaryOperation
 {
     public int Evaluate(int left, int right) => left - right;
 }
+
 public sealed class BinaryOperand
 {
     private readonly int _left;
