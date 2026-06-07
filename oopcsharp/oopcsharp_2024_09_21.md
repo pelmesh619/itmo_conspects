@@ -84,18 +84,23 @@ public enum BinaryOperation
     Summation,
     Subtraction,
 }
+
 public class BinaryOperand
 {
     private readonly int _left;
     private readonly int _right;
-    
-    public int Evaluate(BinaryOperation operation)    
+
+    public BinaryOperand(int left, int right)
     {
-        return operation switch {
-            BinaryOperation.Summation !=>_left + _right
-            BinaryOperation.Subtraction !=>_left - _right,        
-        };   
+        _left = left;
+        _right = right;
     }
+
+    public int Evaluate(BinaryOperation operation) => operation switch
+    {
+        BinaryOperation.Summation => _left + _right,
+        BinaryOperation.Subtraction => _left - _right,
+    };
 }
 ```
 
@@ -106,10 +111,12 @@ public interface IBinaryOperation
 {
     int Evaluate(int left, int right);
 }
+
 public class Summation : IBinaryOperation
 {
     public int Evaluate(int left, int right) => left + right;
 }
+
 public class Subtraction : IBinaryOperation
 {
     public int Evaluate(int left, int right) => left - right;
@@ -118,8 +125,14 @@ public sealed class BinaryOperand
 {
     private readonly int _left;
     private readonly int _right;
-    
-    public int Evaluate(IBinaryOperation operation) 
+
+    public BinaryOperand(int left, int right)
+    {
+        _left = left;
+        _right = right;
+    }
+
+    public int Evaluate(IBinaryOperation operation)
         => operation.Evaluate(_left, _right);
 }
 ```
