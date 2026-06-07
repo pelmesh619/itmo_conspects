@@ -283,10 +283,12 @@ public interface IPrinter
 {
     void Print();
 }
+
 public interface IMusicPlayer
 {
     void Play();
 }
+
 public interface IBakery
 {
     void BakeBread();
