@@ -298,6 +298,8 @@ public interface IBakery
 > **Interface segregation principle** - проектирование маленьких абстракций, которые ответственны за свой конкретный функционал, а не одной всеобъемлющей, содержащий много различного
 ### Принцип зависимости инверсий
 
+**Принцип зависимости инверсий** (Dependency Inversion Principle) гласит, что реализации должны зависеть только от интерфейсов, а не от самих реализаций
+
 Например: есть общий сервис `NotificationService`, отправляющий уведомления, который использует определенный отправитель для электронной почти и для SMS:
 
 ```cs
@@ -344,7 +346,6 @@ public class EmailSender : IMessageSender
     public void Send(string message) => Console.WriteLine($"Email: {message}");
 }
 
-Принцип зависимости инверсий гласит, что реализации должны зависеть только от интерфейсов.
 public class SmsSender : IMessageSender
 {
     public void Send(string message) => Console.WriteLine($"SMS: {message}");
