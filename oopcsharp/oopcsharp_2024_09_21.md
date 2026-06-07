@@ -298,9 +298,83 @@ public interface IBakery
 > **Interface segregation principle** - проектирование маленьких абстракций, которые ответственны за свой конкретный функционал, а не одной всеобъемлющей, содержащий много различного
 ### Принцип зависимости инверсий
 
+Например: есть общий сервис `NotificationService`, отправляющий уведомления, который использует определенный отправитель для электронной почти и для SMS:
+
+```cs
+public class EmailSender
+{
+    public void Send(string message) => Console.WriteLine($"Email: {message}");
+}
+
+public class SmsSender
+{
+    public void Send(string message) => Console.WriteLine($"SMS: {message}");
+}
+
+public class NotificationService
+{
+    private readonly EmailSender _emailSender;
+    private readonly SmsSender _smsSender;
+
+    public NotificationService()
+    {
+        _emailSender = new EmailSender();
+        _smsSender = new SmsSender();
+    }
+
+    public void NotifyByEmail(string message) => _emailSender.Send(message);
+    public void NotifyBySms(string message) => _smsSender.Send(message);
+}
+
+var service = new NotificationService();
+service.NotifyByEmail("Hello!");
+service.NotifyBySms("Hello!");
+```
+
+Получаем, что `NotificationService` зависит от реализаций `EmailSender` и `SmsSender`, несмотря на то, что они выполняют одну цель - отправить сообщение методом `Send`. Поэтому лучше сделать интерфейс `IMessageSender`, реализации которого принимает `NotificationService`:
+
+```cs
+public interface IMessageSender
+{
+    void Send(string message);
+}
+
+public class EmailSender : IMessageSender
+{
+    public void Send(string message) => Console.WriteLine($"Email: {message}");
+}
 
 Принцип зависимости инверсий гласит, что реализации должны зависеть только от интерфейсов.
+public class SmsSender : IMessageSender
+{
+    public void Send(string message) => Console.WriteLine($"SMS: {message}");
+}
 
-Например: пусть будет консольный логгер для клиента, сделаем зависимость клиента от методов логгер, тогда, когда мы захотим сделать второй логгер, файловый, то придется изменять логику клиента. В этом случае лучше сделать прослойку, состоящую из интерфейса логгера - мы избавляемся от сильной связанности между типами, улучшаем расширяемость типов и упрощаем тестирование
+public class PushSender : IMessageSender
+{
+    public void Send(string message) => Console.WriteLine($"Push: {message}");
+}
+
+public class NotificationService
+{
+    private readonly IMessageSender _messageSender;
+
+    public NotificationService(IMessageSender messageSender)
+    {
+        _messageSender = messageSender;
+    }
+
+    public void Notify(string message) => _messageSender.Send(message);
+}
+
+var emailService = new NotificationService(new EmailSender());
+emailService.Notify("Hello by Email");
+
+var smsService = new NotificationService(new SmsSender());
+smsService.Notify("Hello by SMS");
+
+var pushService = new NotificationService(new PushSender());
+pushService.Notify("Hello by Push");
+```
 
 > **Dependency inversion principle** - проектирование типов, таким образом, что одни реализации не зависят от других напрямую
