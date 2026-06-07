@@ -2,6 +2,16 @@
 
 <!-- Лектор - Круглов Г. Н. -->
 
+Принципы SOLID были сформированы в статье Роберта Мартина "Design Principles and Design Patterns" ([источник](https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf)) в 2000 году, которые были предложены в ответ на деградацию программного обеспечения - процесс, в течение которого код становится трудно поддерживаемым
+
+Аббревиатура SOLID состоит из первых букв названий соответствующих принципов:
+
+* Single Responsibility Principle (SRP) - принцип единственной ответственности
+* Open-Closed Principle (OCP) - принцип открытости/закрытости
+* Liskov Substitution Principle (LSP) - принцип подстановки Лисков
+* Interface Segregation Principle (ISP) - принцип разделения интерфейса
+* Dependency Inversion Principle (DIP) - принцип инверсии зависимостей
+
 ### Single responsibility principle
 
 Принцип единственной ответственности (SRP) гласит, что класс должен быть ответственным только за одну сущность
