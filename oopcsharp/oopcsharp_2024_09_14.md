@@ -119,7 +119,7 @@ if (long.TryParse("123", out long number))
 }
 ```
 
-Но, если нам нужно более 2 значений, чтобы передать, что именно пошло не так, можно воспользоваться Result Types:
+Но, если нам нужно более 2 значений, чтобы передать, что именно пошло не так, можно воспользоваться типом результата (Result type):
 
 ```csharp
 public abstract record AddStudentResult
@@ -146,7 +146,7 @@ public AddStudentResult AddStudent(long studentId)
 }
 ```
 
-И после этого уже проверять наш Result Type:
+И после этого уже проверять наш тип результата:
 
 ```csharp
 if (result is AddStudentResult.AlreadyMember)
