@@ -149,7 +149,7 @@ public class Line : IGraphicComponent
 }
 ```
 
-Сделаем из них объект-композицию, который циклом проходится и выполняет это действие у всех объектов:
+Сделаем из них объект-_компоновщик_ `GraphicComponentGroup`, который циклом проходится и выполняет это действие у всех объектов:
 
 ```csharp
 public class GraphicComponentGroup : IGraphicComponent
