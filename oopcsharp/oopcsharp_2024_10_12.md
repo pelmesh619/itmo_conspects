@@ -88,9 +88,8 @@ public class Text : IText<Text>
 
 Также сделаем другую [реализацию/обертку](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/StyledParagraph.cs) `StyledParagraph` для применения модификаторов на весь параграф
 
-Объект параграф довольно-таки громоздкий - 3 атрибута, один из которых список, поэтому сделаем для него билдер. Наш билдер будет состоять из [2 интерфейсов](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/IParagraphBuilder.cs)[^workshoponefile]: `IParagraphHeaderSelector` и `IParagraphBuilder`. Таким образом мы отделили метод `WithHeader` от `AddSection` и `WithFooter`
+Объект параграф довольно-таки громоздкий - 3 атрибута, один из которых список, поэтому сделаем для него строитель. Наш строитель будет состоять из [2 интерфейсов](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/IParagraphBuilder.cs): `IParagraphHeaderSelector` и `IParagraphBuilder` (лучшей практикой является разделение этих интерфейсов на два отдельных файла). Таким образом мы отделили метод `WithHeader` от `AddSection` и `WithFooter`
 
-[^workshoponefile]: Говорилось, что лучше бы эти два интерфейса разделить на два файла, так что так не делайте
 
 Сделаем [абстрактную реализацию](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/Builders/ParagraphBuilderBase.cs) `ParagraphBuilderBase` - в нем через методы мы собираем данные. Аналогично сделаем реализацию билдера [обычного параграфа](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/Builders/DefaultParagraphBuilder.cs) `DefaultParagraphBuilder` и [стилизованного параграфа](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Paragraphs/Builders/StyledParagraphBuilder.cs) `StyledParagraphBuilder`, который передает модификаторы в `StyledParagraph`
 
