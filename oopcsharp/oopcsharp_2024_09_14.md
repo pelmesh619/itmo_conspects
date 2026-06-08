@@ -113,7 +113,7 @@ public Post? FindPost(string title)
 Вместо исключений можно возвращать `bool`, который означает успех операции:
 
 ```csharp
-if (long.TryParse("123", out long number)) 
+if (long.TryParse("123", out long number))
 {
     Console.WriteLine(number);
 }
