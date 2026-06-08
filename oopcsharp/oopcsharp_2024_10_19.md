@@ -316,7 +316,11 @@ public class ParticleFactory
         return new Particle(0, 0, model);
     }
 }
+```
 
+Вместо создания множества копий значения `Model` можно всего лишь хранить ссылки на них в кеше _легковеса_ `ParticleFactory`:
+
+```cs
 public record ModelData(byte[] Value);
 
 public record Particle(int X, int Y, ModelData Model);
