@@ -68,7 +68,7 @@ public abstract class PaymentCalculator
 
 public class CashPaymentCalculator : PaymentCalculator
 {
-    protected override IPayment CreatePayment(decimal amount) 
+    protected override IPayment CreatePayment(decimal amount)
         => new CashPayment(amount);
 }
 
@@ -279,23 +279,23 @@ public class Model
 Конечно же, билдер можно наследовать от интерфейса, чтобы иметь возможность создавать разные модели и осуществить полиморфизм.
 
 ```csharp
-public interface IModelBuilder { 
+public interface IModelBuilder {
     ...
-  
-    Model Build(); 
-} 
 
-public class ConcreteBuilderA : IModelBuilder 
-{   
+    Model Build();
+}
+
+public class ConcreteBuilderA : IModelBuilder
+{
     ...
-  
-    public Model Build() { ... } 
-} 
-public class ConcreteBuilderB : IModelBuilder 
-{ 
+
+    public Model Build() { ... }
+}
+public class ConcreteBuilderB : IModelBuilder
+{
     ...
-  
-    public Model Build() { ... } 
+
+    public Model Build() { ... }
 }
 ```
 
@@ -304,31 +304,31 @@ public class ConcreteBuilderB : IModelBuilder
 Здесь же можем к билдеру внедрить директора:
 
 ```csharp
-public static class BuilderDirector 
-{ 
+public static class BuilderDirector
+{
     public static Builder DirectNumeric(
-        this Builder builder, 
-        int count)   
-    { 
-        var enumerable = Enumerable.Range(0, count); 
-        foreach (var i in enumerable)   
-        { 
-            var data = new DataA(i);   
-            builder = builder.WithDataA(data);   
-        } 
-        return builder;   
-    } 
+        this Builder builder,
+        int count)
+    {
+        var enumerable = Enumerable.Range(0, count);
+        foreach (var i in enumerable)
+        {
+            var data = new DataA(i);
+            builder = builder.WithDataA(data);
+        }
+        return builder;
+    }
 }
-public interface IBuilderDirector 
-{ 
-    Builder Direct(Builder builder); 
-} 
-public class InstanceDirector : IBuilderDirector 
-{ 
-    private readonly int _size; 
-    private IEnumerable<Model> _prototypes; 
+public interface IBuilderDirector
+{
+    Builder Direct(Builder builder);
+}
+public class InstanceDirector : IBuilderDirector
+{
+    private readonly int _size;
+    private IEnumerable<Model> _prototypes;
     ...
-    public Builder Direct(Builder builder) { ... } 
+    public Builder Direct(Builder builder) { ... }
 }
 
 ```
@@ -338,28 +338,28 @@ public class InstanceDirector : IBuilderDirector
 Или же сделать цепочку из интерфейсов для получения данных:
 
 ```csharp
-public interface IAddressBuilder 
-{ 
-    ISubjectBuilder WithAddress(string address); 
-} 
-public interface ISubjectBuilder 
-{ 
-    IEmailBuilder WithSubject(string subject); 
-} 
-public interface IEmailBuilder 
-{ 
-    IEmailBuilder WithBody(string body); 
-    Email Build(); 
-} 
-public class Email 
-{ 
-    public static IAddressBuilder Builder => new EmailBuilder(); 
-    private class EmailBuilder : IAddressBuilder, ISubjectBuilder, IEmailBuilder { } 
+public interface IAddressBuilder
+{
+    ISubjectBuilder WithAddress(string address);
+}
+public interface ISubjectBuilder
+{
+    IEmailBuilder WithSubject(string subject);
+}
+public interface IEmailBuilder
+{
+    IEmailBuilder WithBody(string body);
+    Email Build();
+}
+public class Email
+{
+    public static IAddressBuilder Builder => new EmailBuilder();
+    private class EmailBuilder : IAddressBuilder, ISubjectBuilder, IEmailBuilder { }
 }
 
-var email = Email.Builder 
- .WithAddress("aboba@email.com") 
- .WithSubject("subject") 
+var email = Email.Builder
+ .WithAddress("aboba@email.com")
+ .WithSubject("subject")
  .Build();
 ```
 
@@ -378,78 +378,78 @@ var email = Email.Builder
 Примитивный прототип может быть таким:
 
 ```csharp
-public class Prototype 
-{ 
-    private readonly IReadOnlyCollection<int> _relatedEntityIds; 
-    public Prototype(IReadOnlyCollection<int> relatedEntityIds) 
-    { 
-        _relatedEntityIds = relatedEntityIds; 
-    } 
-    public Prototype Clone() 
-    { 
-        return new Prototype(_relatedEntityIds); 
-    } 
+public class Prototype
+{
+    private readonly IReadOnlyCollection<int> _relatedEntityIds;
+    public Prototype(IReadOnlyCollection<int> relatedEntityIds)
+    {
+        _relatedEntityIds = relatedEntityIds;
+    }
+    public Prototype Clone()
+    {
+        return new Prototype(_relatedEntityIds);
+    }
 }
 ```
 
 Заметим, что здесь в методе `Clone` передаем ссылку на коллекцию, то есть не копируем ее. Сделаем прототип с глубокой копией:
 
 ```csharp
-public class WrappedValue 
-{ 
-    public int Value { get; set; } 
-    public WrappedValue Clone() 
-        => new WrappedValue{ Value = Value }; 
-} 
-public class DeepCopyPrototype 
-{ 
-    private readonly List<WrappedValue> _values; 
-    public DeepCopyPrototype(List<WrappedValue> values)     
-    { 
+public class WrappedValue
+{
+    public int Value { get; set; }
+    public WrappedValue Clone()
+        => new WrappedValue{ Value = Value };
+}
+public class DeepCopyPrototype
+{
+    private readonly List<WrappedValue> _values;
+    public DeepCopyPrototype(List<WrappedValue> values)
+    {
         _values = values;
-    } 
-    public DeepCopyPrototype Clone()     
-    { 
-        List<WrappedValue> values = _values.Select(x =>x.Clone()).ToList(); 
-        return new DeepCopyPrototype(values);     
-    } 
+    }
+    public DeepCopyPrototype Clone()
+    {
+        List<WrappedValue> values = _values.Select(x =>x.Clone()).ToList();
+        return new DeepCopyPrototype(values);
+    }
 }
 ```
 
 Теперь внедрим прототип в иерархию классов:
 
 ```csharp
-public abstract class Prototype 
-{ 
-    public void DoSomeStuff() { ... } 
-    public abstract Prototype Clone(); 
-} 
-public class ClassPrototype : Prototype 
-{ 
-    public void DoOtherStuff() { ... } 
-    public override Prototype Clone() => new ClassPrototype(); 
+public abstract class Prototype
+{
+    public void DoSomeStuff() { ... }
+    public abstract Prototype Clone();
+}
+public class ClassPrototype : Prototype
+{
+    public void DoOtherStuff() { ... }
+    public override Prototype Clone() => new ClassPrototype();
 }
 ```
 
 Ну и напишем какой-нибудь скриптик для этого:
 
 ```csharp
-public class Scenario 
-{ 
-    public static Prototype CloneAndDoSomeStuff(Prototype prototype)     
-    { 
-        var clone = prototype.Clone();         
-        clone.DoSomeStuff(); 
-        return clone;     
-    } 
-    public static void TopLevelScenario()     
-    { 
-        var prototype = new ClassPrototype(); 
-        Prototype clone = CloneAndDoSomeStuff(prototype);         
-        
-        clone.DoOtherStuff();     
-    } 
-} 
+public class Scenario
+{
+    public static Prototype CloneAndDoSomeStuff(Prototype prototype)
+    {
+        var clone = prototype.Clone();
+        clone.DoSomeStuff();
+        return clone;
+    }
+    public static void TopLevelScenario()
+    {
+        var prototype = new ClassPrototype();
+        Prototype clone = CloneAndDoSomeStuff(prototype);
+
+        clone.DoOtherStuff();
+    }
+}
 ```
 
 Здесь строка `clone.DoOtherStuff();` вызовется ошибкой, так как у базового класса нет метода `DoOtherStuff`. Ладно, попробуем сделать прототип при помощи интерфейса:
@@ -457,14 +457,14 @@ public class Scenario
 ```csharp
 public interface IPrototype
 {
-    IPrototype Clone(); 
+    IPrototype Clone();
     void DoSomeStuff();
 }
 public class InterfacePrototype : IPrototype
 {
-    IPrototype IPrototype.Clone() => Clone(); 
-    
-    public InterfacePrototype Clone() => new InterfacePrototype(); 
+    IPrototype IPrototype.Clone() => Clone();
+
+    public InterfacePrototype Clone() => new InterfacePrototype();
     public void DoSomeStuff() { ... }
     public void DoOtherStuff() { ... }
 }
@@ -475,21 +475,21 @@ public class InterfacePrototype : IPrototype
 ```csharp
 public class Scenario
 {
-    public static IPrototype CloneAndDoSomeStuff(IPrototype prototype)    
+    public static IPrototype CloneAndDoSomeStuff(IPrototype prototype)
     {
-        var clone = prototype.Clone();         
-        clone.DoSomeStuff(); 
-        
-        return clone;    
+        var clone = prototype.Clone();
+        clone.DoSomeStuff();
+
+        return clone;
     }
-    public static void TopLevelScenario()    
+    public static void TopLevelScenario()
     {
-        var prototype = new InterfacePrototype(); 
-        IPrototype clone = CloneAndDoSomeStuff(prototype);         
-        
-        clone.DoOtherStuff();    
+        var prototype = new InterfacePrototype();
+        IPrototype clone = CloneAndDoSomeStuff(prototype);
+
+        clone.DoOtherStuff();
     }
-} 
+}
 ```
 
 Здесь опять же в `clone.DoOtherStuff();` возникнет ошибка - мы ничего не знаем про класс-наследник. В этом случае мы можем скастить интерфейс к известному нами типу:
@@ -503,12 +503,12 @@ InterfacePrototype clone = (InterfacePrototype)CloneAndDoSomeStuff(prototype);
 ```csharp
 public interface IPrototype<T> where T : IPrototype<T>
 {
-    T Clone(); 
+    T Clone();
     void DoSomeStuff();
 }
 public class Prototype : IPrototype<Prototype>
 {
-    public Prototype Clone() => new Prototype(); 
+    public Prototype Clone() => new Prototype();
     public void DoSomeStuff() { ... }
     public void DoOtherStuff() { ... }
 }
@@ -519,21 +519,21 @@ public class Prototype : IPrototype<Prototype>
 ```csharp
 public class Scenario
 {
-    public static T CloneAndDoSomeStuff<T>(T prototype) where T : IPrototype<T>    
+    public static T CloneAndDoSomeStuff<T>(T prototype) where T : IPrototype<T>
     {
-        var clone = prototype.Clone();         
-        clone.DoSomeStuff(); 
-        
-        return clone;    
+        var clone = prototype.Clone();
+        clone.DoSomeStuff();
+
+        return clone;
     }
-    public static void TopLevelScenario()    
+    public static void TopLevelScenario()
     {
-        var prototype = new Prototype(); 
-        Prototype clone = CloneAndDoSomeStuff(prototype);         
-        
-        clone.DoOtherStuff();    
+        var prototype = new Prototype();
+        Prototype clone = CloneAndDoSomeStuff(prototype);
+
+        clone.DoOtherStuff();
     }
-} 
+}
 ```
 
 И здесь метод `Clone` возвращает именно тип наследника
@@ -574,7 +574,7 @@ public class Singleton
     private static readonly Lazy<Singleton> _instance;
     static Singleton()
     {
-        _instance = new Lazy<Singleton>(() 
+        _instance = new Lazy<Singleton>(()
             => new Singleton(), LazyThreadSafetyMode.ExecutionAndPublication);
     }
     private Singleton() { }
