@@ -262,8 +262,11 @@ public class Model
         Data = data;
         ...
     }
+
     public IReadOnlyCollection<Data> Data { get; }
+
     public static ModelBuilder Builder => new ModelBuilder();
+
     public class ModelBuilder
     {
         private readonly List<Data> _data;
@@ -325,10 +328,12 @@ public static class BuilderDirector
         return builder;
     }
 }
+
 public interface IBuilderDirector
 {
     Builder Direct(Builder builder);
 }
+
 public class InstanceDirector : IBuilderDirector
 {
     private readonly int _size;
@@ -336,7 +341,6 @@ public class InstanceDirector : IBuilderDirector
     ...
     public Builder Direct(Builder builder) { ... }
 }
-
 ```
 
 <!-- не понял, че тут происходит -->
@@ -416,7 +420,7 @@ public class DeepCopyPrototype
     }
     public DeepCopyPrototype Clone()
     {
-        List<WrappedValue> values = _values.Select(x =>x.Clone()).ToList();
+        List<WrappedValue> values = _values.Select(x => x.Clone()).ToList();
         return new DeepCopyPrototype(values);
     }
 }
