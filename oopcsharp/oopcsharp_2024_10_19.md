@@ -232,7 +232,7 @@ public class Service : IService
     ```csharp
     public class VirtualServiceProxy : IService
     {
-        private readonly Lazy<IService> _service = 
+        private readonly Lazy<IService> _service =
             new Lazy<IService>(() => new Service());
         public void DoOperation(OperationArgs args)
         {
@@ -332,7 +332,7 @@ public class ParticleFactory
     {
         var model = _cache.TryGetValue(modelName, out var data)
             ? data
-            : _cache[modelName] = 
+            : _cache[modelName] =
                 new ModelData(_assetLoader.Load(modelName));
         return new Particle(0, 0, model);
     }
