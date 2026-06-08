@@ -21,7 +21,7 @@
 
 Лучше всего начинать с абстракций, которые меньше всего зависят от других, поэтому создадим общий [интерфейс](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/IRenderable.cs) `IRenderable` для объектов, которые мы будем отображать в консоль, с методом `Render`, возвращающий строку
 
-Диаметрально сделаем [интерфейс для отрисовщиков](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/IDrawer.cs) `IDrawer`, принимающий реализацию интерфейса `IRenderable`. Сделаем [реализацию](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Drawers/ConsoleDrawer.cs) `ConsoleDrawer`, который просто вызывает метод `Render` и выводит строку в консоль классическим методом.
+Теперь сделаем [интерфейс для отрисовщиков](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/IDrawer.cs) `IDrawer`, принимающий реализацию интерфейса `IRenderable`. Сделаем [реализацию](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/Drawers/ConsoleDrawer.cs) `ConsoleDrawer`, который просто вызывает метод `Render` и выводит строку в консоль классическим методом.
 
 Теперь сделаем [интерфейс](https://github.com/is-oop-y27/workshop-2/blob/master-12-10-2024/src/Articles/IText.cs) `IText` с рекурсивным дженериком:
 
