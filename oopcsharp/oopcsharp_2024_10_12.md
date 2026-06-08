@@ -7,7 +7,7 @@
 
 [^whysecond]: Почему второй? А вот первый был у y26
 
-Код с воркшопа можно посмотреть здесь: [https://github.com/is-oop-y27/workshop-2/tree/master-12-10-2024](https://github.com/is-oop-y27/workshop-2/tree/master-12-10-2024)
+> Код с воркшопа можно посмотреть здесь: <https://github.com/is-oop-y27/workshop-2/tree/master-12-10-2024>
 
 Перед нами стоят такие требования:
 
