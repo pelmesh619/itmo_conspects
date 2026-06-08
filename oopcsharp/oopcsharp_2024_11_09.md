@@ -4,7 +4,7 @@
 
 На этом воркшопе будут рассматриваться поведенческие паттерны. Рассматриваемый код доступен в этом репозитории: <https://github.com/is-oop-y27/workshop-4>
 
-### Template method
+### Шаблонный метод
 
 > Шаблонный метод
 
@@ -63,7 +63,7 @@ public class HoursEmployeeEvaluator : EmployeeEvaluatorBase
 
 При этом фабричный метод - паттерн порождающий, а шаблонный - поведенческий. Полный код примера с шаблонным методом - <https://github.com/is-oop-y27/workshop-4/tree/master/src/1_TemplateMethod>
 
-### Strategy
+### Стратегия
 
 > Стратегия
 
@@ -83,7 +83,7 @@ Employee bestEmployee = evaluator.FindBestEmployee(ratedEmployees);
 
 В целом, стратегией можно называть любую выделенную абстракцию. Код стратегии: <https://github.com/is-oop-y27/workshop-4/tree/master/src/2_Strategy>
 
-### Responsibility chain
+### Цепочка обязанностей
 
 > Цепочка обязанностей
 
@@ -126,7 +126,7 @@ public class OutputRunner : IOutputRunner
 
 В итоге, каждый обработчик ответственен за одну какую-то штуку. Код пример цепочки: <https://github.com/is-oop-y27/workshop-4/tree/master/src/3_ResponsibilityChain>
 
-### Observer
+### Наблюдатель
 
 > Издатель - подписчик
 
@@ -173,7 +173,7 @@ public class Chat
 
 Код издателя-подписчика: <https://github.com/is-oop-y27/workshop-4/tree/master/src/4_Observer>
 
-### Command
+### Команда
 
 > Команда
 
@@ -183,7 +183,7 @@ public class Chat
 
 Пример использования команд в веб-приложении: <https://github.com/is-oop-y27/workshop-4/tree/master/src/5_Command>
 
-### Visitor
+### Посетитель
 
 > Визитор
 
@@ -224,7 +224,7 @@ component.Accept(visitor);
 
 мы можем пройтись по всем директории и файлам в них. Код примера: <https://github.com/is-oop-y27/workshop-4/blob/master/src/6_Visitor>
 
-### Snapshot
+### Снимок
 
 > Снимок
 
@@ -255,7 +255,7 @@ Console.WriteLine(caretaker.Value);
 
 Но в каком-то случае использования, если изменяемый объект тяжелый, а изменения маленькие, то лучше использовать команды
 
-### State
+### Состояние
 
 > Состояние
 
@@ -275,7 +275,7 @@ Console.WriteLine(result);
 
 Код примера: <https://github.com/is-oop-y27/workshop-4/blob/master/src/8_State>
 
-### Iterator
+### Итератор
 
 > Итератор
 
