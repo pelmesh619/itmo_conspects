@@ -30,7 +30,7 @@ public class PaymentCalculator
     {
         var totalCost = order.TotalCost;
 
-        // Apply discounts and coupons
+        // применить скидки и купоны
         ...
 
         return new CashPayment(totalCost);
@@ -57,7 +57,7 @@ public abstract class PaymentCalculator
     {
         var totalCost = order.TotalCost;
 
-        // Apply discounts and coupons
+        // применить скидки и купоны
         ...
 
         return CreatePayment(totalCost);
@@ -144,7 +144,7 @@ public class PaymentCalculator : IPaymentCalculator
     {
         var totalCost = order.TotalCost;
 
-        // Apply discounts and coupons
+        // применить скидки и купоны
         ...
 
         return _paymentFactory.Create(totalCost);
@@ -169,7 +169,7 @@ public class FixedPaymentCalculator : IPaymentCalculator
     {
         var totalCost = order.Items.Sum(item =>_fixedPrice * item.Amount);
 
-        // Apply discounts and coupons
+        // применить скидки и купоны
         ...
 
         return _paymentFactory.Create(totalCost);
