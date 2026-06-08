@@ -153,22 +153,22 @@ public AddStudentResult AddStudent(long studentId)
 ```csharp
 if (result is AddStudentResult.AlreadyMember)
 {
-    Console.WriteLine("Student is already member of specified group");
+    Console.WriteLine("Студент уже участник группы");
     return;
 }
 if (result is AddStudentResult.StudentLimitReached err)
 {
-    var message = $"Cannot add student to specified group, maximum student count of {err.Limit} already reached";
+    var message = $"Нельзя добавить студента, максимум в {err.Limit} студентов уже достигнут";
     Console.WriteLine(message);
     return;
 }
 if (result is not AddStudentResult.Success)
 {
-    Console.WriteLine("Operation finished unexpectedly");
+    Console.WriteLine("Операция завершилась с ошибкой");
     return;
 }
 
-Console.WriteLine("Student successfully added");
+Console.WriteLine("Студент успешно добавлен");
 ```
 
 В итоге это выходит:
@@ -197,7 +197,7 @@ Console.WriteLine("Student successfully added");
         public void Withdraw(decimal value)
         {
             if (value < 0)
-                throw new ArgumentException("Value cannot be negative", nameof(value));
+                throw new ArgumentException("Значение не может быть отрицательным", nameof(value));
 
             Balance -= value;
         }
@@ -213,7 +213,7 @@ Console.WriteLine("Student successfully added");
         {
             if (value < 0)
             {
-                throw new ArgumentException("Value cannot be negative", nameof(value));
+                throw new ArgumentException("Значение не может быть отрицательным", nameof(value));
             }
             Value = value;
         }
