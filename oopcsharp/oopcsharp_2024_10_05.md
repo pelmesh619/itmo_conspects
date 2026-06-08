@@ -431,7 +431,7 @@ public class ClassPrototype : Prototype
 }
 ```
 
-Ну и напишем какой-нибудь скриптик для этого:
+Пример использования может быть таким:
 
 ```csharp
 public class Scenario
@@ -470,7 +470,7 @@ public class InterfacePrototype : IPrototype
 }
 ```
 
-И точно такой же скриптик:
+И точно такой же сценарий работы:
 
 ```csharp
 public class Scenario
@@ -514,7 +514,7 @@ public class Prototype : IPrototype<Prototype>
 }
 ```
 
-Тот же самый скриптик:
+Тот же самый сценарий:
 
 ```csharp
 public class Scenario
