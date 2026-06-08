@@ -23,22 +23,22 @@
 Приведем пример заказа и создателя чека:
 
 ```csharp
-public record OrderItem(
-    int Id,
-    decimal Price,
-    int Quantity);
+public record OrderItem(int Id, decimal Price, int Quantity);
+
 public class Order
 {
     private readonly List<OrderItem> _items;
+
     public Order()
     {
         _items = new List<OrderItem>();
     }
+
     public IReadOnlyCollection<OrderItem> Items => _items;
 }
-public record Receipt(
-    decimal TotalCost,
-    DateTime Timestamp);
+
+public record Receipt(decimal TotalCost, DateTime Timestamp);
+
 public class ReceiptService
 {
     public Receipt CalculateReceipt(Order customer)
@@ -62,13 +62,11 @@ public class ReceiptService
 Исправим пример:
 
 ```csharp
-public record OrderItem(
-    int Id,
-    decimal Price,
-    int Quantity)
+public record OrderItem(int Id, decimal Price, int Quantity)
 {
     public decimal Cost => Price * Quantity;
 }
+
 public class Order
 {
     private readonly List<OrderItem> _items;
@@ -80,10 +78,8 @@ public class Order
     public decimal TotalCost => _items.Sum(x => x.Cost);
 }
 
-public record Receipt(
-    decimal TotalCost,
-    DateTime Timestamp);
-    
+public record Receipt(decimal TotalCost, DateTime Timestamp);
+
 public class ReceiptService
 {
     public Receipt CalculateReceipt(Order customer)
@@ -133,15 +129,14 @@ public class OrderService
 public class Order
 {
     private readonly List<OrderItem> _items;
-    public Order AddItem(
-        int id,
-        decimal price,
-        int quantity)
+
+    public Order AddItem(int id, decimal price, int quantity)
     {
         _items.Add(new OrderItem(id, price, quantity));
         return this;
     }
 }
+
 public class OrderService
 {
     public Order CreateDefaultOrder()
