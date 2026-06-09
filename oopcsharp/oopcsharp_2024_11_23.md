@@ -159,7 +159,7 @@ serviceProvider.GetRequiredService<MyAnotherService>().SayMyName("Walter White")
 
 выведет в консоль текст, несмотря на то, что конструктор `MyAnotherService` требует сервис `IMyConsole` - поставщик сервисов догадался об этом и засунул вместо `IMyConsole` добавленный нами ранее `MyConsole`.
 
-При помощи расширений в C# мы можем добавить расширение для ServiceCollection, которое пачкой добавляет нужные нам сервисы для нашего проекта, например, `Workshop5.Application/Extensions/ServiceCollectionExtensions`:
+При помощи расширений в C# мы можем добавить расширение для `ServiceCollection`, которое пачкой добавляет нужные нам сервисы для нашего проекта, например, `Workshop5.Application/Extensions/ServiceCollectionExtensions`:
 
 ```csharp
 public static class ServiceCollectionExtensions
