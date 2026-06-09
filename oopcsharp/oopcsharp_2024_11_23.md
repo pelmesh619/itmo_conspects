@@ -186,7 +186,7 @@ public static class ServiceCollectionExtensions
 
 Рассмотрим слой `Infrastructure`. В файле [`Infrastructure/Workshop5.Infrastructure.DataAccess/Migrations/01_Initial.cs`](https://github.com/is-oop-y27/workshop-5/blob/master/src/Infrastructure/Workshop5.Infrastructure.DataAccess/Migrations/01_Initial.cs) происходит миграция базы данных. При помощи библиотеки `Itmo.Dev.Platform.Postgres` мы устанавливаем то, как будет создана (и удалена) наша база данных через SQL-запросы
 
-Здесь же в слое `Infrastructure` представлены реализации репозиториев, которые связывают слои `Application` и `Infrastructure` и содержает SQL-запросы к БД для получения данных и преобразования этих данных в объекты домена
+Здесь же в слое `Infrastructure` представлены реализации репозиториев, которые связывают слои `Application` и `Infrastructure` и содержит SQL-запросы к БД для получения данных и преобразования этих данных в объекты домена
 
 Далее при помощи расширений мы можем добавить репозитории и другие сервисы в провайдер сервисов
 
@@ -197,6 +197,8 @@ public static class ServiceCollectionExtensions
 Поведение представления реализуем с помощью сценариев (данный воркшоп реализует сценарии входа в систему и частично выбора магазина). Далее `ScenarioRunner` предлагает выбрать нужный сценарий пользователю через умную консоль из `Spectre.Console` и запускает его
 
 <!-- почему-то явно видно, что воркшоп не дописан, раз есть IChainLink и ChainLinkBase, хотя уже год прошел😡😡😡 -->
+
+<!-- лол 👆, привет из 2026 -->
 
 ---
 
