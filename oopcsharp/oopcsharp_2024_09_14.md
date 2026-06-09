@@ -13,9 +13,9 @@
 ```csharp
 public class StudentGroup
 {
-    public long Id { get; set; }
+    public long Id { get; private set; }
 
-    public string Name { get; set; }
+    public string Name { get; private set; }
 
     public List<long> StudentIds { get; set; }
 
