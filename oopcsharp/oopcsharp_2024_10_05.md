@@ -368,7 +368,10 @@ public interface IEmailBuilder
 public class Email
 {
     public static IAddressBuilder Builder => new EmailBuilder();
-    private class EmailBuilder : IAddressBuilder, ISubjectBuilder, IEmailBuilder { }
+
+    public class EmailBuilder : IAddressBuilder, ISubjectBuilder, IEmailBuilder {
+        ...
+    }
 }
 
 var email = Email.Builder
