@@ -2,234 +2,270 @@
 
 <!-- Лектор - Круглов Г. Н. -->
 
-### Single responsibility principle
+Принципы SOLID были сформированы в статье Роберта Мартина "Design Principles and Design Patterns" ([источник](https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf)) в 2000 году, которые были предложены в ответ на деградацию программного обеспечения - процесс, в течение которого код становится трудно поддерживаемым
 
-Принцип единственной ответственности (SRP) гласит, что класс должен быть ответственным только за одну сущность
+Аббревиатура SOLID состоит из первых букв названий соответствующих принципов:
 
-Например: делать класс, который создает отчеты и для Excel, и в .pdf - плохо, так как в них могут быть методы с одинаковыми названиями, но с разной логикой, этот класс будет труднее изменять
+* Single Responsibility Principle (SRP) - принцип единственной ответственности
+* Open-Closed Principle (OCP) - принцип открытости/закрытости
+* Liskov Substitution Principle (LSP) - принцип подстановки Лисков
+* Interface Segregation Principle (ISP) - принцип разделения интерфейса
+* Dependency Inversion Principle (DIP) - принцип инверсии зависимостей
 
-```csharp
+### Принцип единственной ответственности
+
+**Принцип единственной ответственности** (Single Responsibility Principle, SRP) гласит, что класс должен быть ответственным только за одну сущность и у класса должна быть только одна причина для изменения
+
+Например: делать класс, который создает отчеты одновременно в форматах `.xlsx` для Excel и `.pdf` - плохо, так как в них могут быть методы с одинаковыми названиями, но с разной логикой, этот класс будет труднее изменять
+
+```cs
 public record OperationResult(...);
 
 public class ReportGenerator
 {
-    public void GenerateExcelReport(OperationResult result)    
+    public void GenerateExcelReport(OperationResult result)
     {
-        ...    
+        ...
     }
-    public void GeneratePdfReport(OperationResult result)    
+    public void GeneratePdfReport(OperationResult result)
     {
         ...
     }
 }
 ```
 
-Поэтому лучше сделать интерфейс генераторов отчета, от которого наследуются классы генераторов в Excel и pdf
+Поэтому лучше сделать интерфейс генераторов отчета, от которого наследуются классы генераторов отчетов в Excel и в PDF:
 
-```csharp
+```cs
 public record OperationResult(...);
+
 public interface IReportGenerator
 {
     void GenerateReport(OperationResult result);
 }
+
 public class ExcelReportGenerator : IReportGenerator
 {
-    public void GenerateReport(OperationResult result)    
+    public void GenerateReport(OperationResult result)
     {
         ...
     }
 }
 public class PdfReportGenerator : IReportGenerator
 {
-    public void GenerateReport(OperationResult result)    
+    public void GenerateReport(OperationResult result)
     {
         ...
     }
 }
-
 ```
 
-**Преимущества несоблюдения**:
+Преимущества такого подхода:
 
- * простота: нет необходимости в абстракциях, низкий порог вхождения
- * переиспользование логики: часто логика в типах не соблюдающих SRP имеет общие части, вызвать приватный метод типа в нескольких местах проще, чем реализовывать грамотную декомпозицию
+* Простота, потому что нет необходимости в абстракциях
+* Переиспользование логики: часто логика в типах, не соблюдающих _принцип единственной ответственности_, имеет общие части, поэтому вызвать приватный метод класса в нескольких местах проще, чем реализовывать грамотную декомпозицию
 
-**Последствия несоблюдения**:
+При несоблюдении _принципа единственной ответственности_ появляются проблемы:
 
-* сильная связанность реализации различных бизнес требований; от простого: загрязнённый контекст для анализатора; до тяжёлого: усложнение тестирования
-* усложнённая кастомизация отдельных реализаций - изменения в общем коде могут поломать другие решения
+* Сильная связанность реализации различных бизнес требований, что приводит к усложнению тестирования
+* Изменения в общем коде могут поломать другие решения
 
-> **Single Responsibility Principle** - проектирование типов, таким образом, что они имеют единственную причину для изменения
+### Принцип открытости/закрытости
 
-### Open/closed principle
+**Принцип открытости/закрытости** (Open-Closed Principle, OCP) гласит, что программные сущности должны быть открытыми для расширения и закрытыми для модификации
 
-Принцип открытости и закрытости гласит, что программные сущности должны быть открытыми для расширения и закрытыми для изменения
+По сути это значит, что новая логика, которая расширяет старый тип, должна быть создана путем создания новых типов, а не изменения существующих типов
 
-Пример несоблюдения OCP:
+Пример несоблюдения _принципа открытости/закрытости_:
 
-```csharp
+```cs
 public enum BinaryOperation
 {
     Summation,
     Subtraction,
 }
+
 public class BinaryOperand
 {
     private readonly int _left;
     private readonly int _right;
-    
-    public int Evaluate(BinaryOperation operation)    
+
+    public BinaryOperand(int left, int right)
     {
-        return operation switch {
-            BinaryOperation.Summation !=>_left + _right
-            BinaryOperation.Subtraction !=>_left - _right,        
-        };   
+        _left = left;
+        _right = right;
     }
+
+    public int Evaluate(BinaryOperation operation) => operation switch
+    {
+        BinaryOperation.Summation => _left + _right,
+        BinaryOperation.Subtraction => _left - _right,
+    };
 }
 ```
 
-В этом примере калькулятор использует перечисления для определения оператора и оператор `switch`, чтобы возвращать нужный результат. В итоге, чтобы добавить операцию умножения, нужно изменить инструкции в операторе `switch`. Поэтому более расширяемым будет такой код:
+В этом примере калькулятор `BinaryOperand` использует перечисления `BinaryOperation` для определения оператора и ключевое слово `switch`, чтобы возвращать нужный результат. В итоге, чтобы добавить операцию умножения, нужно изменить инструкции в блоке `switch`. Поэтому более расширяемым будет такой код:
 
-```csharp
+```cs
 public interface IBinaryOperation
 {
     int Evaluate(int left, int right);
 }
+
 public class Summation : IBinaryOperation
 {
     public int Evaluate(int left, int right) => left + right;
 }
+
 public class Subtraction : IBinaryOperation
 {
     public int Evaluate(int left, int right) => left - right;
 }
+
 public sealed class BinaryOperand
 {
     private readonly int _left;
     private readonly int _right;
-    
-    public int Evaluate(IBinaryOperation operation) 
+
+    public BinaryOperand(int left, int right)
+    {
+        _left = left;
+        _right = right;
+    }
+
+    public int Evaluate(IBinaryOperation operation)
         => operation.Evaluate(_left, _right);
 }
 ```
 
-Создаем интерфейс операции, классы конкретных операторов с их реализацией, и передаем объекты классов в класс `BinaryOperand`
+Здесь мы определяем интерфейс операции `IBinaryOperation`, классы конкретных операторов `Summation` и `Subtraction` с их реализацией и передаем объекты классов в класс `BinaryOperand`
 
-> **Open/Closed Principle** - проектирование типов, таким образом, что их логику можно расширять, не изменяя их исходный код; тип должен быть открытым для расширения, но закрытым для изменений
+### Принцип подстановки Лисков
 
-### Liskov substitution principle
-
-Принцип подстановки Лисков гласит, что при замене похожих объектов логика программы не должна нарушаться
+**Принцип подстановки Лисков** (Liskov Substitution Principle, LSP) гласит, что при замене похожих объектов логика программы не должна нарушаться
 
 Например: создадим классы для обычной птицы, пингвина и летучей мыши, чтобы заставить их мигрировать:
 
-```csharp
+```cs
 public record Coordinate(int X, int Y);
 
-public class Creature{
-    public void Die()    
+public class Creature
+{
+    public void Die()
     {
-        Console.WriteLine("I am dead now");    
+        Console.WriteLine("Я мертв");
     }
 }
 
 public class Bird : Creature
 {
-    public virtual void FlyTo(Coordinate coordinate)    
-    {        
-        Console.WriteLine("I am flying");    
+    public virtual void FlyTo(Coordinate coordinate)
+    {
+        Console.WriteLine("Я летаю");
     }
 }
 
 public class Penguin : Bird
 {
-    public override void FlyTo(Coordinate coordinate)    
+    public override void FlyTo(Coordinate coordinate)
     {
-        Die();  // it cannot fly :(   
+        Die();  // пингвины не летают :(
     }
 }
 
 public class Bat : Creature
 {
-    public void FlyTo(Coordinate coordinate)    
+    public void FlyTo(Coordinate coordinate)
     {
-        Console.WriteLine("I bat and am flying");    
+        Console.WriteLine("Я летучая мышь и летаю");
     }
 }
 
 void StartMigration(IEnumerable<Creature> creatures, Coordinate coordinate)
 {
-    foreach (var creature in creatures)    
+    foreach (var creature in creatures)
     {
-        if (creature is Bird bird)        
+        if (creature is Bird bird)
         {
-            bird.FlyTo(coordinate);        
+            bird.FlyTo(coordinate);
         }
-        if (creature is Bat bat)        
-        {            
-            bat.FlyTo(coordinate);        
+        if (creature is Bat bat)
+        {
+            bat.FlyTo(coordinate);
         }
     }
 }
 ```
 
-В этом случае, летучая мышь не является птицей, но летать и мигрировать она умеет, поэтому в функции миграции нам пришлось отдельно переопределять поведение для летучей мыши, так как она не является наследником птицы. Поэтому лучше сделать отдельный интерфейс для летающий существ:
+В этом случае, летучая мышь не является птицей, но летать и мигрировать она умеет, поэтому в функции миграции нам пришлось отдельно переопределять поведение для летучей мыши, так как она не является наследником птицы. Поэтому лучше сделать отдельный интерфейс для летающих существ `IFlyingCreature`:
 
-```csharp
+```cs
 public record Coordinate(int X, int Y);
+
 public interface ICreature
 {
     void Die();
 }
+
 public interface IFlyingCreature : ICreature
 {
     void FlyTo(Coordinate coordinate);
 }
+
 public class CreatureBase : ICreature
 {
-    public void Die()    
+    public void Die()
     {
-        Console.WriteLine("I am dead now");    
+        Console.WriteLine("Я мертв");
     }
 }
-public class Bird : CreatureBase { }
+
+public class Bird : CreatureBase {
+    public virtual void FlyTo(Coordinate coordinate)
+    {
+        Console.WriteLine("Я летаю");
+    }
+}
+
 public class Penguin : Bird { }
-public class Colibri : Bird, IFlyingCreature
+
+public class Hummingbird : Bird, IFlyingCreature
 {
-    public void FlyTo(Coordinate coordinate)    
+    public void FlyTo(Coordinate coordinate)
     {
-        Console.WriteLine("I am colibri and I'm flying");    
+        Console.WriteLine("Я колибри и летаю");
     }
 }
+
 public class Bat : CreatureBase, IFlyingCreature
 {
-    public void FlyTo(Coordinate coordinate)    
+    public void FlyTo(Coordinate coordinate)
     {
-        Console.WriteLine("I am bat and I'm flying");    
+        Console.WriteLine("Я летучая мышь и летаю");
     }
 }
 
 void StartMigration(IEnumerable<IFlyingCreature> creatures, Coordinate coordinate)
 {
-    foreach (var creature in creatures)    
+    foreach (var creature in creatures)
     {
-        creature.FlyTo(coordinate);  
+        creature.FlyTo(coordinate);
     }
 }
 
 ```
 
-В итоге, получаем, что для летучей мыши не нужны дополнительный if
+В итоге, получаем, что для летучей мыши не нужен дополнительный условный блок, так как, как пингвин и колибри, летучая мышь реализовывает интерфейс `IFlyingCreature`
 
-> **Liskov Substitution Principle** - проектирование иерархий типов, таким образом, что логика дочерних типов не нарушает инвариант и интерфейс родительских типов
+### Принцип разделения интерфейса
 
-### Interface segregation principle
+**Принцип разделения интерфейса** (Interface Segregation Principle, ISP) рекомендует проектирование маленьких абстракций, которые ответственны за свой конкретный функционал, а не одной всеобъемлющей, содержащий много различного
 
-Принцип разделения интерфейса является аналогом SRP для интерфейсов - когда абстракции начинают выполнять больше одной задачи, их реализации тоже начинают брать более одной ответственности.
+_Принцип разделения интерфейса_ является аналогом _принципа единственной ответственности_ для интерфейсов - когда абстракции начинают выполнять больше одной задачи, их реализации тоже начинают брать более одной ответственности
 
 Поэтому лучше делать не так:
 
-```csharp
+```cs
 public interface ICanAllDevice
 {
     void Print();
@@ -240,27 +276,105 @@ public interface ICanAllDevice
 
 А так:
 
-```csharp
+```cs
 public interface IPrinter
 {
     void Print();
 }
+
 public interface IMusicPlayer
 {
     void Play();
 }
+
 public interface IBakery
 {
     void BakeBread();
 }
 ```
 
-> **Interface segregation principle** - проектирование маленьких абстракций, которые ответственны за свой конкретный функционал, а не одной всеобъемлющей, содержащий много различного
+Такой подход позволяет уменьшить связность зависимостей
 
-### Dependency inversion principle
+### Принцип зависимости инверсий
 
-Принцип зависимости инверсий гласит, что реализации должны зависеть только от интерфейсов.
+**Принцип зависимости инверсий** (Dependency Inversion Principle) гласит, что реализации должны зависеть только от интерфейсов, а не от самих реализаций
 
-Например: пусть будет консольный логгер для клиента, сделаем зависимость клиента от методов логгер, тогда, когда мы захотим сделать второй логгер, файловый, то придется изменять логику клиента. В этом случае лучше сделать прослойку, состоящую из интерфейса логгера - мы избавляемся от сильной связанности между типами, улучшаем расширяемость типов и упрощаем тестирование
+Например: есть общий сервис `NotificationService`, отправляющий уведомления, который использует определенный отправитель для электронной почти и для SMS:
 
-> **Dependency inversion principle** - проектирование типов, таким образом, что одни реализации не зависят от других напрямую
+```cs
+public class EmailSender
+{
+    public void Send(string message) => Console.WriteLine($"Email: {message}");
+}
+
+public class SmsSender
+{
+    public void Send(string message) => Console.WriteLine($"SMS: {message}");
+}
+
+public class NotificationService
+{
+    private readonly EmailSender _emailSender;
+    private readonly SmsSender _smsSender;
+
+    public NotificationService()
+    {
+        _emailSender = new EmailSender();
+        _smsSender = new SmsSender();
+    }
+
+    public void NotifyByEmail(string message) => _emailSender.Send(message);
+    public void NotifyBySms(string message) => _smsSender.Send(message);
+}
+
+var service = new NotificationService();
+service.NotifyByEmail("Hello!");
+service.NotifyBySms("Hello!");
+```
+
+Получаем, что `NotificationService` зависит от реализаций `EmailSender` и `SmsSender`, несмотря на то, что они выполняют одну цель - отправить сообщение методом `Send`. Поэтому лучше сделать интерфейс `IMessageSender`, реализации которого принимает `NotificationService`:
+
+```cs
+public interface IMessageSender
+{
+    void Send(string message);
+}
+
+public class EmailSender : IMessageSender
+{
+    public void Send(string message) => Console.WriteLine($"Email: {message}");
+}
+
+public class SmsSender : IMessageSender
+{
+    public void Send(string message) => Console.WriteLine($"SMS: {message}");
+}
+
+public class PushSender : IMessageSender
+{
+    public void Send(string message) => Console.WriteLine($"Push: {message}");
+}
+
+public class NotificationService
+{
+    private readonly IMessageSender _messageSender;
+
+    public NotificationService(IMessageSender messageSender)
+    {
+        _messageSender = messageSender;
+    }
+
+    public void Notify(string message) => _messageSender.Send(message);
+}
+
+var emailService = new NotificationService(new EmailSender());
+emailService.Notify("Hello by Email");
+
+var smsService = new NotificationService(new SmsSender());
+smsService.Notify("Hello by SMS");
+
+var pushService = new NotificationService(new PushSender());
+pushService.Notify("Hello by Push");
+```
+
+Такой подход позволяет избавиться от сильной связанности между типами, улучшить расширяемость типов и упростить тестирование

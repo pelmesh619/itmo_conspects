@@ -209,7 +209,7 @@
 
 * Объектно-ориентированное проектирование и программирование (лекторы Макаревич Р. Д., Круглов Г. Н.)
 
-    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html)
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html) [✨Remastered]
 
 ## [II семестр](assets/meta/II.md)
 
@@ -308,7 +308,6 @@
 * Проверить на очепятки и неточности
 * Рефактор `physics2` + побольше картинок (миссия невыполнима)
 * Исправить ошибки компиляции конспектов `physics1`, `physics2`, `physics3`
-* Рефактор `oopcsharp`, добавить больше схем паттернов
 * Добавить примеры алгоритмов в `appliedmath/compgeom`
 
 ## Сборка конспектов

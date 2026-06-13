@@ -1197,7 +1197,7 @@ val service = retrofit.Builder()
 
 Далее этот сервис работает так:
 
-* Создается прокси (паттерн ["Заместитель"](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html#proxy)), который реализует интерфейс `JsonPlaceholderApi`
+* Создается прокси (паттерн ["Заместитель"](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html#%D0%B7%D0%B0%D0%BC%D0%B5%D1%81%D1%82%D0%B8%D1%82%D0%B5%D0%BB%D1%8C)), который реализует интерфейс `JsonPlaceholderApi`
 * Вызов сервиса передается прокси
 * На основе аннотаций и аргументов собирается HTTP-запрос
 * Запрос отправляется через библиотеку OkHttp, которая выполняет реальную передачу данных
@@ -1749,7 +1749,7 @@ binding.viewModel = myViewModel
 binding.lifecycleOwner = this   // для наблюдения
 ```
 
-Для реактивного подхода используется классы, подобные `LiveData`, за которыми можно закрепить функцию, исполняющуюся при изменении данных (паттерн ["Наблюдатель"](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html#observer))
+Для реактивного подхода используется классы, подобные `LiveData`, за которыми можно закрепить функцию, исполняющуюся при изменении данных (паттерн ["Наблюдатель"](https://pelmesh619.github.io/itmo_conspects/oopcsharp/oopcsharp_superconspect.html#%D0%BD%D0%B0%D0%B1%D0%BB%D1%8E%D0%B4%D0%B0%D1%82%D0%B5%D0%BB%D1%8C))
 
 Data Binding позволяет уменьшить количество кода в активности, поддерживает двухстороннее изменение (если есть поле для ввода, то значение поменяется и в коде), но приложение медленнее компилируется, и его сложнее отлаживать
 
