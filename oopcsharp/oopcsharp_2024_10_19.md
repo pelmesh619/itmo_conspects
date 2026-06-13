@@ -172,6 +172,8 @@ public class GraphicComponentGroup : IGraphicComponent
 }
 ```
 
+![Компоновщик](./images/oopcsharp_composite.png)
+
 ### Декоратор
 
 **Декоратор** (Decorator) - это тип-обёртка над объектом абстракции, которую он реализует, добавляя к поведению объекта новую логику
