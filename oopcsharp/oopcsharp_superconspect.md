@@ -1078,6 +1078,8 @@ public class BankPaymentCalculator : PaymentCalculator
 }
 ```
 
+![Фабричный метод](./images/oopcsharp_factory_method.png)
+
 Здесь же можно выделить в паттерне фабричного метода две сущности:
 
 * создатель (creator) - содержит логику создания объектов-наследников
@@ -1144,6 +1146,8 @@ public class PaymentCalculator : IPaymentCalculator
     }
 }
 ```
+
+![Фабрика](./images/oopcsharp_abstract_factory.png)
 
 Здесь все фабрики с разными логикам создания нашего `Payment` реализуются от интерфейса `IPaymentFactory`. Поэтому мы можем какой-нибудь другой калькулятор `FixedPaymentCalculator`, который этим пользуется:
 
@@ -1221,6 +1225,8 @@ class ServiceBuilder
     }
 }
 ```
+
+![Строитель](./images/oopcsharp_builder.png)
 
 С помощью строителя с сохранением состояния мы можем принимать аргументы через методы строителя. В итоге вместо такого вызова конструктора:
 
