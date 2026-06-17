@@ -169,7 +169,7 @@ $(Z^T \vec t, \vec X - Z^T \vec B) = (Z^T \vec t)^T (\vec X - Z^T \vec B) = {\ve
     $E(\vec{c}^T(\vec B - \vec \beta)) = \vec{c}^T E(\vec B - \vec \beta) = \vec{c}^T \vec 0$, так как $\vec B$ - несмещенная оценка $\vec \beta$ \\
     $D(\vec{c}^T(\vec B - \vec \beta)) = \vec{c}^T D(\vec B - \vec \beta) \vec c = \vec{c}^T \sigma^2 A^{-1} \vec c$ \\
     $\frac{\vec{c}^T(\vec B - \vec \beta)}{S\sqrt{\vec{c}^T A^{-1} \vec c}} = \frac{\vec{c}^T(\vec B - \vec \beta)}{\sigma\sqrt{\vec{c}^T A^{-1} \vec c}} \frac{\sigma}{\hat{\sigma} \sqrt{\frac{n}{n - k}}}$ \\
-    Рассмотрим отдельные части: \\
+    Рассмотрим отдельные части:
     \begin{enumerate}
         \item $\frac{\vec{c}^T(\vec B - \vec \beta)}{\sigma\sqrt{\vec{c}^T A^{-1} \vec c}} \in N(0, 1)$, так как $\vec B = \vec \beta + A^{-1} Z \Pi_V \vec \varepsilon$ и $D(\vec{c}^T(\vec B - \vec \beta)) = \sigma \sqrt{\vec{c}^T A^{-1} \vec c}$ (при этом $\vec \varepsilon \in N(0, \sigma^2 E_n)$) и $\sqrt{D(\vec{c}^T(\vec B - \vec \beta))} = \sigma \sqrt{\vec{c}^T A^{-1} \vec c}$
         \item $\frac{n \hat{\sigma}^2}{\sigma^2} \in H_{n - k}$ по предыдущей теореме
