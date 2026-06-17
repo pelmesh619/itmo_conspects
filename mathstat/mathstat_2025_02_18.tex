@@ -93,7 +93,7 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
     1) $E \overline{x} = E\left(\frac{X_1 + \dots + X_n}{n}\right) = \frac{1}{n} \sum_{i = 1}^n E X_i = 
     \frac{1}{n} n E X_1 = E X_1 = a$
 
-    2) $\overline{x} = \frac{\overline{x}_1 + \dots + \overline{x}_n}{n} \overset{p}{\longrightarrow} a$ 
+    2) $\overline{x} = \frac{x_1 + \dots + x_n}{n} \overset{p}{\longrightarrow} a$ 
     согласно Закону Больших Чисел
 \end{MyProof}
 
@@ -108,7 +108,34 @@ X_{(k)}, & \text{если } n = 2k - 1 \\ \frac{X_{(k)} + X_{(k + 1)}}{2}, & \te
     2) $\overline{X^k} \overset{p}{\longrightarrow} X^k$
 \end{MyTheorem}
 
-Это следует из предыдущей теоремы, если взять $X^k$ вместо $X$
+Это следует из предыдущей теоремы, если взять $X^k$ вместо $X$ \\
+
+Геометрическая интерпретация выборочного среднего и выборочной дисперсии   \hfill \TagYTwoEight
+
+Пусть $a, \sigma^2$ - теоретические матожидание и дисперсия, а $\bar x$, $D^*$ - их оценки. \\
+Выборку $\vec X = (X_1, \dots , X_n)$ будем рассматривать как точку в $n$-мерном пространстве \\
+В $n$-мерном пространстве построим прямую, которая задается равенством $x_1 = x_2 = \dots = x_n$, где $x_i$ - координата по $i$-ой оси пространства \\
+У этой прямой направляющий вектор назовем $\vec S = (1, 1, ..., 1)$ \\
+Отметим на прямой две точки $A = (a, a, \dots , a)$ и $B = (\bar x, \bar x, \dots , \bar x)$
+
+% https://www.geogebra.org/calculator/bxb8j8bm
+
+\begin{center}
+        \includegraphics[width=0.7\textwidth]{mathstat/images/mathstat_2025_02_18_1.png}
+\end{center}
+Так как $\overrightarrow{BX} \cdot \vec S = (x_1 - \bar x, x_2 - \bar x, \dots , x_n - \bar x) \cdot (1, 1, \dots , 1) = \sum_{i = 1}^{n}(x_i - \bar x) = \sum_{i = 1}^{n}x_i - \sum_{i = 1}^{n} \bar x = n \bar x - n \bar x = 0 \Rightarrow$
+$\Rightarrow B = (\bar x, \bar x, \dots , \bar x)$ - проекция выборки на данную прямую \\
+$|BX|^2 = \sum_{i = 1}^{n}(x_i - \bar x)^2 = n D^*$ \\
+$|AX|^2 = \sum_{i = 1}^{n}(x_i - a)^2$ \\
+$|AB|^2 = |AX|^2 - |BX|^2 = \sum_{i = 1}^{n}(x_i - a)^2 - n D^*$
+
+Следствие: $\sum_{i = 1}^{n}(x_i - a)^2 = n(D^* + (\bar x - a)^2)$ \hfill \TagYTwoEight
+
+\begin{MyProof}
+    Из геометрического смысла выборочного среднего и выборочной дисперсии: \\
+    $|AB|^2 = n (\bar x - a)^2$ \\
+    Тогда доказываемое равенство очевидно
+\end{MyProof}
 
 \begin{MyTheorem}
     \Ths Выборочная дисперсия $D^*$ и исправленная дисперсия $S^2$ являются состоятельными оценками теоретической дисперсией, при этом $D^*$ - смещенная оценка, а
