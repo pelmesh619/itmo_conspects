@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             block1.style.padding = '14px 18px';
             block1.style.margin = '12px 0';
             block1.style.borderRadius = '6px';
-            block1.style.backgroundColor = '#f8f9fa';
+            block1.style.backgroundColor = '--bg-color';
 
             const title1 = document.createElement('p');
             title1.style.fontWeight = 'bold';
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             block2.style.padding = '14px 18px';
             block2.style.margin = '12px 0';
             block2.style.borderRadius = '6px';
-            block2.style.backgroundColor = '#f8f9fa';
+            block2.style.backgroundColor = '--bg-color';
 
             const title2 = document.createElement('p');
             title2.style.fontWeight = 'bold';
