@@ -13,7 +13,7 @@ function getEasterDate(year) {
 
     const shift = Math.floor(year / 100) - Math.floor(year / 400) - 2;
 
-    const julianMonthIndex = monthJul - 1; // JS: 0..11
+    const julianMonthIndex = monthJul - 1;
     const msPerDay = 24 * 60 * 60 * 1000;
     const julianUtc = Date.UTC(year, julianMonthIndex, dayJul);
     const gregorianUtcMs = julianUtc + shift * msPerDay;
@@ -23,7 +23,7 @@ function getEasterDate(year) {
 
 document.addEventListener('DOMContentLoaded', function () {
     const now = new Date();
-    const month = now.getMonth() + 1; // 1–12
+    const month = now.getMonth() + 1;
     const day = now.getDate();
     const year = now.getFullYear();
 
