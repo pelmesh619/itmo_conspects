@@ -35,7 +35,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             const title1 = document.createElement('p');
             title1.style.fontWeight = 'bold';
             title1.style.margin = '0 0 8px 0';
-            title1.textContent = 'Для изучения этой дисциплины рекомендовано изучить эти курсы:';
+            title1.textContent = 'Для изучения этой дисциплины рекомендовано изучить ' + (recommended.length >= 2 ? 'эти курсы:' : "этот курс:");
             block1.appendChild(title1);
 
             const list1 = document.createElement('ul');
