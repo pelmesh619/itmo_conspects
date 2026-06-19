@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', async function () {
     const h1s = document.querySelectorAll('h1');
-    if (!h1s && h1s.size() <= 2) {
+    if (!h1s && h1s.length < 2) {
         return;
     }
     const h1 = h1s[1];
@@ -23,9 +23,8 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         const suggestionBlock = document.createElement('div');
 
-        let block1 = null;
         if (recommended != []) {
-            block1 = document.createElement('div');
+            const block1 = document.createElement('div');
             block1.style.border = '2px solid #2c3e50';
             block1.style.padding = '14px 18px';
             block1.style.margin = '12px 0';
@@ -50,7 +49,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 list1.appendChild(li);
             });
             block1.appendChild(list1);
-            h1.insertAdjacentElement('afterend', block1);
+            suggestionBlock.append(block1);
         }
 
         if (seeAlso != []) {
@@ -79,7 +78,10 @@ document.addEventListener('DOMContentLoaded', async function () {
                 list2.appendChild(li);
             });
             block2.appendChild(list2);
-            (block1 || h1).insertAdjacentElement('afterend', block2);
+            suggestionBlock.appendChild(block2);
+        }
+        if (seeAlso != [] || recommended != []) {
+            h1.insertAdjacentElement('afterend', suggestionBlock);
         }
     } catch (error) {
         console.warn('Meta file could not be loaded:', error);
