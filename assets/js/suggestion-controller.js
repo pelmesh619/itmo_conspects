@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const seeAlso = data.seeAlso || [];
 
         const suggestionBlock = document.createElement('div');
+        suggestionBlock.style = "display: flex; flex - direction: row; flex - basis: fit - content; gap: 1em;";
 
         if (recommended != []) {
             const block1 = document.createElement('div');
