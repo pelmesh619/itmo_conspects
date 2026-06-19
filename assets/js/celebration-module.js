@@ -28,22 +28,22 @@ document.addEventListener('DOMContentLoaded', function () {
     const year = now.getFullYear();
 
     if (month === 4 && day === 1) {
-        const headings = document.querySelectorAll('h1, h2, h3, h4, h5, h6');
-        headings.forEach((heading, index) => {
-            const originalText = heading.textContent.trim();
-            if (originalText) {
-                heading.textContent = reverseString(originalText);
-            }
+        document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
+            el.style.direction = 'rtl';
+            el.style.unicodeBidi = 'bidi-override';
         });
 
-        const firstH1 = document.querySelector('h1');
-        if (firstH1) {
-            let text = firstH1.textContent.trim();
-            text = text.replace(/^[\u{1F000}-\u{1FFFF}]|[\u{1F000}-\u{1FFFF}]$/gu, '').trim();
-            firstH1.textContent = `🤪 ${text} 🤪`;
-        }
-
-        return;
+        const style = document.createElement('style');
+        style.textContent = `
+            h1:first-of-type::before {
+                content: "🤪 ";
+            }
+            h1:first-of-type::after {
+                content: " 🤪";
+            }
+        `;
+        document.head.appendChild(style);
+        return
     }
 
     const h1 = document.querySelector('h1');
@@ -72,9 +72,16 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (emoji) {
-        let text = h1.textContent.trim();
-        text = text.replace(/^[\u{1F000}-\u{1FFFF}]|[\u{1F000}-\u{1FFFF}]$/gu, '').trim();
-        h1.textContent = `${emoji} ${text} ${emoji}`;
+        const style = document.createElement('style');
+        style.textContent = `
+        h1:first-of-type::before {
+            content: "${emoji} ";
+        }
+        h1:first-of-type::after {
+            content: " ${emoji}";
+        }
+        `;
+        document.head.appendChild(style);
     }
 });
 
