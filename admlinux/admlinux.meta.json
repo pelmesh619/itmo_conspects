@@ -1,0 +1,14 @@
+{
+    "recommended": [
+        {
+            "title": "Операционные системы",
+            "link": "/opersys/opersys_superconspect.html"
+        }
+    ],
+    "seeAlso": [
+        {
+            "title": "Телекоммуникационные системы и технологии",
+            "link": "/telecomm/telecomm_superconspect.html"
+        }
+    ]
+}
