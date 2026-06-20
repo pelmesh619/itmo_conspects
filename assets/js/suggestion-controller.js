@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', async function () {
         const suggestionBlock = document.createElement('div');
         suggestionBlock.style = "display: flex; flex - direction: row; flex - basis: fit - content; gap: 1em;";
 
-        if (recommended != []) {
+        if (recommended.length != 0) {
             const block1 = document.createElement('div');
             block1.style.border = '2px solid #2c3e50';
             block1.style.padding = '14px 18px';
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', async function () {
             suggestionBlock.append(block1);
         }
 
-        if (seeAlso != []) {
+        if (seeAlso.length != 0) {
             const block2 = document.createElement('div');
             block2.style.border = '2px solid #2c3e50';
             block2.style.padding = '14px 18px';
