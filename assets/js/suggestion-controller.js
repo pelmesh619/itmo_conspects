@@ -22,15 +22,11 @@ document.addEventListener('DOMContentLoaded', async function () {
         const seeAlso = data.seeAlso || [];
 
         const suggestionBlock = document.createElement('div');
-        suggestionBlock.style = "display: flex; flex - direction: row; flex - basis: fit - content; gap: 1em;";
+        suggestionBlock.classList.add("suggestion-block-container");
 
         if (recommended.length != 0) {
             const block1 = document.createElement('div');
-            block1.style.border = '2px solid #2c3e50';
-            block1.style.padding = '14px 18px';
-            block1.style.margin = '12px 0';
-            block1.style.borderRadius = '6px';
-            block1.style.backgroundColor = '--bg-color';
+            block1.classList.add("suggestion-block");
 
             const title1 = document.createElement('p');
             title1.style.fontWeight = 'bold';
@@ -55,11 +51,7 @@ document.addEventListener('DOMContentLoaded', async function () {
 
         if (seeAlso.length != 0) {
             const block2 = document.createElement('div');
-            block2.style.border = '2px solid #2c3e50';
-            block2.style.padding = '14px 18px';
-            block2.style.margin = '12px 0';
-            block2.style.borderRadius = '6px';
-            block2.style.backgroundColor = '--bg-color';
+            block2.classList.add("suggestion-block");
 
             const title2 = document.createElement('p');
             title2.style.fontWeight = 'bold';
