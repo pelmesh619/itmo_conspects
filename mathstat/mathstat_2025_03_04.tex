@@ -234,7 +234,7 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
         \item Так как $X_i \in N(a, \sigma^2)$, то $\frac{X_i - a}{\sigma} \in N(0, 1)$ и $\sum_{i = 1}^n \frac{(X_i - a)^2}{\sigma^2} \in H_n$ по определению
         
         \item $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i = 1}^n \left(\frac{X_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
-        \sum_{i = 1}^n (z_i - \overline{z})^2$, где $z_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{z} = \frac{1}{n} \sum_{i = 1}^n z_i = \frac{\sum_{i = 1}^n X_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
+        \sum_{i = 1}^n (z_i - \overline{z})^2$, где $z_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{z} = \frac{1}{n} \sum_{i = 1}^n z_i = \frac{\sum_{i = 1}^n X_i - na}{n \sigma} = \frac{\overline{x} - a}{\sigma}$
 
         Поэтому можно считать, что изначально $X_i \in N(0, 1)$
 
@@ -262,9 +262,9 @@ $f_{\vec \xi} (\vec X) = \frac{1}{\left(\sqrt{2\pi}\right)^n \sqrt{\det K}} e^{-
         \item Аналогично предыдущей версии
         
         \item $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i = 1}^n \left(\frac{X_i - a}{\sigma} - \frac{\overline{x} - a}{\sigma}\right)^2 = 
-        \sum_{i = 1}^n (Y_i - \overline{Y})^2$, где $Y_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{Y} = \frac{1}{n} \sum_{i = 1}^n Y_i = \frac{\sum_{i = 1}^n X_i - na}{\sigma} = \frac{\overline{x} - a}{\sigma}$
+        \sum_{i = 1}^n (Y_i - \overline{Y})^2$, где $Y_i = \frac{X_i - a}{\sigma} \in N(0, 1)$, $\overline{Y} = \frac{1}{n} \sum_{i = 1}^n Y_i = \frac{\sum_{i = 1}^n X_i - na}{n \sigma} = \frac{\overline{x} - a}{\sigma}$
 
-        $\vec Y = (Y_1, \dots , Y_n)$ -- стандартные нормальные вектора.
+        $\vec Y = (Y_1, \dots , Y_n)$ -- стандартный нормальный вектор.
 
         Тогда получаем: $\sum_{i = 1}^n \frac{(X_i - \overline{x})^2}{\sigma^2} = \sum_{i=1}^n (Y_i - \overline{Y})^2 = nD_Y^*$ -- квадрат расстояния от
         $\vec Y$ до прямой $l: x_1 = x_2 = \dots = x_n$, а $\overline{Y}$ -- проекция $\vec Y$ на эту прямую.
