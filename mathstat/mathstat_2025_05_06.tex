@@ -25,7 +25,7 @@ $date$=06.05.2025
 
 Логично наблюдениям с меньшей дисперсии ошибки предать больший вес. Пусть вес $w_i = \frac{1}{v_i}$. Домножим обе части уравнения регрессии на $\sqrt{w_i}$, тогда получим $\vec \tilde{X} = \tilde Z^T \vec \beta + \vec \tilde{\varepsilon}$, где $\tilde x_i=  \sqrt{w_i} x_i$, $\tilde Z^{(j)}_i = \sqrt{w_i} Z^{(j)}_i$, $\tilde \varepsilon_i = \sqrt{w_i} \varepsilon_i$
 
-$D \vec \tilde{\varepsilon} = D(\sqrt{w_i} \varepsilon_i) = w_i D \varepsilon_i = \frac{1}{v_i} v_i \sigma^2 = \sigma^2$ -- получаем, что $D \vec \tilde{\varepsilon} = \sigma^2 E_n$, то есть стандартную ситуацию
+$D \tilde{\varepsilon_i} = D(\sqrt{w_i} \varepsilon_i) = w_i D \varepsilon_i = \frac{1}{v_i} v_i \sigma^2 = \sigma^2$ -- получаем, что $D \vec \tilde{\varepsilon} = \sigma^2 E_n$, то есть стандартную ситуацию
 
 Тогда оценки $\vec b$ будут несмещенными и эффективными
 
@@ -35,7 +35,7 @@ $D \vec \tilde{\varepsilon} = D(\sqrt{w_i} \varepsilon_i) = w_i D \varepsilon_i 
 
 Теоретическое уравнение $A \vec B = Z \vec X$, где $Z = \left(Z_1, \dots, Z_n\right)$ -- матрица плана, $\vec B = \hat \beta_0$, $A = Z Z^T = z_1^2 + \dots + z_n^2$, $Z \vec X = z_1 x_1 + \dots + z_n x_n$
 
-$\sum_{i = 1}^n z^2_i \hat \beta_0 = \sum_{i = 1}^n z_i x_i \Longrightarrow \hat \beta_0 = \frac{\sum_{z_i x_i}}{\sum z^2_i}$ -- оценка МНК 
+$\sum_{i = 1}^n z^2_i \hat \beta_0 = \sum_{i = 1}^n z_i x_i \Longrightarrow \hat \beta_0 = \frac{\sum z_i x_i}{\sum z^2_i}$ -- оценка МНК 
 
 По взвешенному методу наименьших квадратов $\tilde \beta_0 = \frac{\sum w_i z_i x_i}{\sum w_i z_i^2}$ -- оценка взвешенного МНК
 
@@ -63,7 +63,7 @@ $\sum_{i = 1}^n z^2_i \hat \beta_0 = \sum_{i = 1}^n z_i x_i \Longrightarrow \hat
 
     \item Дисперсия ошибки квадратично зависит от $Z$: $D\varepsilon_i = C Z_i^2 = \sigma^2 \frac{C Z_i^2}{\sigma^2}$
 
-    Тогда $w_i = \frac{\sigma^2}{C Z_i^2}$ и $\hat \beta_0 = \frac{\sum_{i = 1}^n \frac{\sigma^2}{C Z_i^2} Z_i X_i}{\sum_{i = 1}^n \frac{\sigma^2}{C Z_i^2} Z_i^2} = \frac{\sum X_i}{\sum Z_i} = \frac{\sum \frac{X_i}{Z_i}}{n} = \overline{\left(\frac{x}{z}\right)}$
+    Тогда $w_i = \frac{\sigma^2}{C Z_i^2}$ и $\hat \beta_0 = \frac{\sum_{i = 1}^n \frac{\sigma^2}{C Z_i^2} Z_i X_i}{\sum_{i = 1}^n \frac{\sigma^2}{C Z_i^2} Z_i^2} = \frac{\sum \frac{X_i}{Z_i}}{n} = \overline{\left(\frac{x}{z}\right)}$
 \end{enumerate}
 
 \subsection{Коррелированные наблюдения}
@@ -76,7 +76,7 @@ $\sum_{i = 1}^n z^2_i \hat \beta_0 = \sum_{i = 1}^n z_i x_i \Longrightarrow \hat
 
 $\vec X = Z^T \vec{\beta} + \vec \varepsilon \ \Big| \ \cdot \sqrt{V^{-1}}$
 
-$\vec \tilde{X} = \tilde Z^T \vec \beta + \varepsilon$, где $\vec \tilde{X} = \sqrt{V^{-1}} \vec X$, $\tilde Z = \sqrt{V^{-1}} Z$, $\vec \tilde{\varepsilon} = \sqrt{V^{-1}} \vec \varepsilon$
+$\vec \tilde{X} = \tilde Z^T \vec \beta + \vec \tilde{\varepsilon}$, где $\vec \tilde{X} = \sqrt{V^{-1}} \vec X$, $\tilde Z = \sqrt{V^{-1}} Z$, $\vec \tilde{\varepsilon} = \sqrt{V^{-1}} \vec \varepsilon$
 
 Тогда матрица ковариаций нового вектора ошибок будет $D \vec \tilde{\varepsilon} = D(\sqrt{V^{-1}} \vec \varepsilon) = \sqrt{V^{-1}} D \vec \varepsilon \left(\sqrt{V^{-1}}\right)^T = \sigma^2 I_n$
 
