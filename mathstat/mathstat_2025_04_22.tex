@@ -161,7 +161,7 @@ $(Z^T \vec t, \vec X - Z^T \vec B) = (Z^T \vec t)^T (\vec X - Z^T \vec B) = {\ve
 
 \begin{MyTheorem}
     \Ths Пусть выполнены условия $\mathrm{Cond. 1}$ и $\mathrm{Cond. 2}$.  \hfill \TagYTwoEight \\
-    Пусть $\vec c$ - стандартный нормальный вектор из $\Real^n$. \\
+    Пусть $\vec c$ - любой константный вектор из $\Real^n$ (не случайная величина). \\
     Тогда для конструкции $\frac{\vec{c}^T(\vec B - \vec \beta)}{S\sqrt{\vec{c}^T A^{-1} \vec c}}$ справедлив следующий факт: $\frac{\vec{c}^T(\vec B - \vec \beta)}{S\sqrt{\vec{c}^T A^{-1} \vec c}} \in T_{n - k}$
 \end{MyTheorem}
 
@@ -171,7 +171,7 @@ $(Z^T \vec t, \vec X - Z^T \vec B) = (Z^T \vec t)^T (\vec X - Z^T \vec B) = {\ve
     $\frac{\vec{c}^T(\vec B - \vec \beta)}{S\sqrt{\vec{c}^T A^{-1} \vec c}} = \frac{\vec{c}^T(\vec B - \vec \beta)}{\sigma\sqrt{\vec{c}^T A^{-1} \vec c}} \frac{\sigma}{\hat{\sigma} \sqrt{\frac{n}{n - k}}}$ \\
     Рассмотрим отдельные части:
     \begin{enumerate}
-        \item $\frac{\vec{c}^T(\vec B - \vec \beta)}{\sigma\sqrt{\vec{c}^T A^{-1} \vec c}} \in N(0, 1)$, так как $\vec B = \vec \beta + A^{-1} Z \Pi_V \vec \varepsilon$ и $D(\vec{c}^T(\vec B - \vec \beta)) = \sigma \sqrt{\vec{c}^T A^{-1} \vec c}$ (при этом $\vec \varepsilon \in N(0, \sigma^2 E_n)$) и $\sqrt{D(\vec{c}^T(\vec B - \vec \beta))} = \sigma \sqrt{\vec{c}^T A^{-1} \vec c}$
+        \item $\frac{\vec{c}^T(\vec B - \vec \beta)}{\sigma\sqrt{\vec{c}^T A^{-1} \vec c}} \in N(0, 1)$, так как $\vec B = \vec \beta + A^{-1} Z \Pi_V \vec \varepsilon$ и $\sqrt{D(\vec{c}^T(\vec B - \vec \beta))} = \sigma \sqrt{\vec{c}^T A^{-1} \vec c}$ (при этом $\vec \varepsilon \in N(0, \sigma^2 E_n)$) и $\sqrt{D(\vec{c}^T(\vec B - \vec \beta))} = \sigma \sqrt{\vec{c}^T A^{-1} \vec c}$
         \item $\frac{n \hat{\sigma}^2}{\sigma^2} \in H_{n - k}$ по предыдущей теореме
     \end{enumerate}
 

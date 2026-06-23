@@ -101,7 +101,7 @@ $F_{X_1} (x) = \begin{cases}
 \end{cases} \Longrightarrow f_{X_{(n)}}(x) = \begin{cases}
     0, & x < 0 \\
     n\frac{x^{n - 1}}{\theta^n}, & 0 \leq x \leq \theta \\
-    1, & x > \theta
+    0, & x > \theta
 \end{cases}$
 
 $EX_{(n)} = \int_0^\theta x \cdot \frac{nx^{n - 1}}{\theta^n} dx = \frac{n}{\theta^n} \int_0^\theta x^n dx = \frac{n x^{n + 1}}{\theta^n (n + 1)} \Big|_0^\theta = 
@@ -109,7 +109,7 @@ $EX_{(n)} = \int_0^\theta x \cdot \frac{nx^{n - 1}}{\theta^n} dx = \frac{n}{\the
 
 $\tilde{\theta} = \frac{n + 1}{n} X_{(n)}$ -- несмещенная оценка (будем считать, что эффективность не изменилась)
 
-$E\tilde{\theta}^2 = E(\frac{n + 1}{n} X_{(n)})^2 = \frac{(x + 1)^2}{n^2} E X_{(n)} = \frac{(n + 1)^2}{n^2} \int_0^\theta x^2 \frac{n x^{n - 1}}{\theta^n} dx = 
+$E\tilde{\theta}^2 = E(\frac{n + 1}{n} X_{(n)})^2 = \frac{(n + 1)^2}{n^2} E X_{(n)}^2 = \frac{(n + 1)^2}{n^2} \int_0^\theta x^2 \frac{n x^{n - 1}}{\theta^n} dx = 
 \frac{(n + 1)^2 \theta^2}{n (n + 2)}$
 
 $D\tilde{\theta} = E\tilde{\theta}^2 - (E\tilde{\theta})^2 = \frac{\theta^2}{n(n + 2)}$

@@ -10,7 +10,7 @@ $date$=29.04.2025
 
 При $n > k$ получены результаты экспериментов $\vec X = (X_1, \dots, X_n)$ при соответствующих значениях факторов $\vec Z^{(j)} = (Z^{(j)}_1, Z^{(j)}_2, \dots, Z^{(j)}_k)$
 
-Предполагаем, что зависимость всех факторов от $X$ линейная. Требуется по данным построить линейную модель, наилучшим образом объясняющую предсказывающую поведение $X$
+Предполагаем, что зависимость $X$ от всех факторов линейная. Требуется по данным построить линейную модель, наилучшим образом предсказывающую поведение $X$
 
 \subsection{Мультиколлинеарность}
 
@@ -40,7 +40,7 @@ $X$ -- вес, $Z_1$ -- рост, $Z_2$ -- размер обуви,
 $r = \begin{pmatrix}
     1 & r_{X, Z_1} & r_{X, Z_2} & \dots & r_{X, Z_k} \\ 
     r_{X, Z_1} & 1 & r_{Z_1, Z_2} & \dots & r_{Z_1, Z_k} \\ 
-    r_{X, Z_2} & r_{Z_2, Z_1} & 1 & \dots & r_{X, Z_k} \\ 
+    r_{X, Z_2} & r_{Z_2, Z_1} & 1 & \dots & r_{Z_2, Z_k} \\ 
     \vdots & \vdots & \vdots & \ddots & \vdots \\ 
     r_{X, Z_k} & r_{Z_k, Z_1} & r_{Z_k, Z_2} & \dots & 1 \\ 
 \end{pmatrix}$
@@ -141,13 +141,13 @@ $\begin{pmatrix}Z_1^{(i)} & \dots & Z_n^{(i)}\end{pmatrix} \begin{pmatrix}X_1 \\
 
 $a_{ij} = \begin{pmatrix}Z_1^{(i)} & \dots & Z_n^{(i)}\end{pmatrix} \begin{pmatrix}Z_1^{(j)} \\ \vdots \\ Z_n^{(j)}\end{pmatrix} = 
 \begin{cases}
-    n \overline{Z_i Z_j} = \gamma_i r_{Z_i, Z_j}, & \text{ при } i \neq j \\
+    n \overline{Z_i Z_j} = n r_{Z_i, Z_j}, & \text{ при } i \neq j \\
     n \overline{Z_i^2} = n D Z_i = n, & \text{ при } i = j
 \end{cases}$
 
 Перевод коэффициентов можно выполнять по формулам:
 
-$b_i = \gamma_i \frac{\sigma_X}{\sigma_{Z_i}}; \quad \gamma_i = b \frac{\sigma_{Z_i}}{\sigma_X}$, $b_0 = \overline{x} - \sum_{i = 1}^n b_i \overline{z_i}$
+$b_i = \gamma_i \frac{\sigma_X}{\sigma_{Z_i}}; \quad \gamma_i = b_i \frac{\sigma_{Z_i}}{\sigma_X}$, $b_0 = \overline{x} - \sum_{i = 1}^n b_i \overline{z_i}$
 
 \Ex Уравнение парной линейной регрессии:
 $\frac{x - \overline{x}}{\hat \sigma_x} = \hat r \frac{z - \overline{z}}{\hat \sigma_z}$
