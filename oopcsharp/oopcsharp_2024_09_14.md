@@ -31,7 +31,9 @@ public class StudentGroup
 
 ```csharp
 public class StudentGroup {
-    private readonly HashSet<long> _studentsIds; // ну еще лист на хешсетик поменяли
+    private readonly HashSet<long> _studentsIds;
+    // так как в группе не бывает двух студентов с одинаковым
+    // идентификатором, имеет смысл использовать HashSet
 
     public StudentGroup(long id, string name)
     {
