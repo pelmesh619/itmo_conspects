@@ -392,7 +392,7 @@ Console.WriteLine("Студент успешно добавлен");
 
 <!-- Лектор - Круглов Г. Н. -->
 
-Принципы SOLID были сформированы в статье Роберта Мартина "Design Principles and Design Patterns" ([источник](https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf)) в 2000 году, которые были предложены в ответ на деградацию программного обеспечения - процесс, в течение которого код становится трудно поддерживаемым
+Принципы SOLID были сформированы в статье Роберта Мартина "Design Principles and Design Patterns" (статья - [\*тык\*](https://web.archive.org/web/20150906155800/http://www.objectmentor.com/resources/articles/Principles_and_Patterns.pdf)) в 2000 году, которые были предложены в ответ на деградацию программного обеспечения - процесс, в течение которого код становится трудно поддерживаемым
 
 Аббревиатура SOLID состоит из первых букв названий соответствующих принципов:
 
