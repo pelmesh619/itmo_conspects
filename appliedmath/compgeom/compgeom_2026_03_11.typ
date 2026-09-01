@@ -192,7 +192,7 @@
 
 #Mem Пусть $arrow(a), arrow(b)$ находятся на плоскости. Косое произведение $arrow(a) or arrow(b) #equaldef |arrow(a)| |arrow(b)| sin(hat(upright(arrow(a)\, arrow(b)))) = |arrow(a) times arrow(b)| = plus.minus lr(|mat(arrow(i), arrow(j), arrow(k); a_1, a_2, 0; b_1, b_2, 0; delim: "|")|, size: #115%) = plus.minus lr(|mat(a_1, a_2; b_1, b_2; delim: "|") arrow(k)|, size: #115%) = plus.minus lr(|mat(a_1, a_2; b_1, b_2; delim: "|")|, size: #115%) = mat(a_1, a_2; b_1, b_2; delim: "|")$ -- площадь параллелограмма
 
-Косое произведение со знаком "плюс" равна площадь параллелограмма, образованными векторами, концы которых расположенные по часовой стрелке
+Косое произведение со знаком "плюс" равняется площади параллелограмма, образованного векторами, концы которых расположенны против часовой стрелки
 
 #grid(columns: (1fr, 1fr), align: center,
 [#cetz.canvas(length: 1.5cm, {
