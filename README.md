@@ -7,6 +7,14 @@
 > Зеркало этого репозитория доступно на GitLab: <https://gitlab.com/pelmeshke/itmo_conspects>  
 > Также конспекты доступны на <https://pelmeshke.gitlab.io/itmo_conspects/>
 
+## VII семестр
+
+* Технологии сборки и развертывания программного обеспечения (DevOps)
+
+    * Трек от Nexign (лектор Кравченко А. П.)
+
+        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.html)
+
 ## [VI семестр](assets/meta/VI.md)
 
 * Прикладная математика
