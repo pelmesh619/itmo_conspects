@@ -15,6 +15,18 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.html)
 
+* Функциональное программирование
+
+    * Трек от Холопова Д. С. (лектор Холопов Д. С.)
+
+        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.html)
+
+<!--
+* Тестирование ПО
+
+    * Трек от Яндекса (лектор Гилёва В. С.)
+-->
+
 ## [VI семестр](assets/meta/VI.md)
 
 * Прикладная математика
