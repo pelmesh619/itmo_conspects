@@ -21,6 +21,10 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.html)
 
+* Разработка нагруженных систем (лектор Суховицкий А. А.)
+
+    * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/highload/highload_2026_09_03.html) - в разработке
+
 <!--
 * Тестирование ПО
 
