@@ -25,11 +25,11 @@
 
     * Лекция №1 - отменена
 
-<!--
 * Тестирование ПО
 
     * Трек от Яндекса (лектор Гилёва В. С.)
--->
+
+        * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_04.html)
 
 ## [VI семестр](assets/meta/VI.md)
 
