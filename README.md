@@ -13,6 +13,8 @@
 
     * Трек от Nexign (лектор Кравченко А. П.)
 
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_superconspect.html)
+
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.html)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_12.html)
         * Лекция №3 - в разработке
