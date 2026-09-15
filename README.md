@@ -14,6 +14,8 @@
     * Трек от Nexign (лектор Кравченко А. П.)
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.html)
+        * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_12.html)
+        * Лекция №3 - в разработке
 
 * Функциональное программирование
 
@@ -24,12 +26,14 @@
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
     * Лекция №1 - отменена
+    * Лекция №2 - отменена
 
 * Тестирование ПО
 
     * Трек от Яндекса (лектор Гилёва В. С.)
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_04.html)
+        * Лекция №2 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
@@ -38,6 +42,10 @@
 * Администрирование в ОС Windows (лектор Береснев А. Д.)
 
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_09_07.html)
+
+* Анализ данных и информационных поиск (лектор Хлопотов М. В.)
+
+    * Лекция №3 - в разработке
 
 ## [VI семестр](assets/meta/VI.md)
 
