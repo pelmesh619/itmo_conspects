@@ -26,7 +26,7 @@
         [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_superconspect.html)
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.html)
-        * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html)
+        * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html)
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
