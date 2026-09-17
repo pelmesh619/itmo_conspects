@@ -23,12 +23,14 @@
 
     * Трек от Холопова Д. С. (лектор Холопов Д. С.)
 
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_superconspect.html)
+
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.html)
+        * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html)
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
-    * Лекция №1 - отменена
-    * Лекция №2 - отменена
+    Лекций по этому предмету не будет, но возможно тут появится конспект теории
 
 * Тестирование ПО
 
