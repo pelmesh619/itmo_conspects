@@ -84,6 +84,8 @@
 * В 2021 году выходит **Windows 11** и **Windows Server 2022**
 * В 2024 году выходит **Windows Server 2025** с улучшенной поддержкой NVMe-накопителей, распределения ресурсов графических процессоров (GPU-P, от GPU Partitioning), DTrace - инструментом для мониторинга и диагностики, поддержкой протокола SMB через QUIC, использующегося для обмена файлами и многое другое
 
+![История версий Windows](./images/admwindows_windows_timeline.png)
+
 Сейчас операционные системы Windows для ПК и Windows Server используют одно ядро, однако серверные ОС отличаются набором компонентов. На 2026 году поддерживаются Windows Server 2016 (до января 2027), Windows Server 2019 (до января 2029), Windows Server 2022 (до октября 2031) и Windows Server 2025 (до ноября 2034)
 
 ### <a name="%D0%B8%D0%B7%D0%B4%D0%B0%D0%BD%D0%B8%D1%8F-windows-server"></a> Издания Windows Server
