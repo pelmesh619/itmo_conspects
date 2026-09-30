@@ -18,6 +18,8 @@
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.html)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_12.html)
         * Лекция №3 - в разработке
+        * Лекция №4 - в разработке
+        * Лекция №5 - в разработке
 
 * Функциональное программирование
 
@@ -38,18 +40,25 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_04.html)
         * Лекция №2 - в разработке
+        * Лекция №3 - в разработке
+        * Лекция №4 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
     * Лекция №1 - в разработке
+    * Лекция №3 - в разработке
 
 * Администрирование в ОС Windows (лектор Береснев А. Д.)
 
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_superconspect.html)
+
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_09_07.html)
+    * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_09_21.html)
 
 * Анализ данных и информационных поиск (лектор Хлопотов М. В.)
 
     * Лекция №3 - в разработке
+    * Лекция №5 - в разработке
 
 ## [VI семестр](assets/meta/VI.md)
 
