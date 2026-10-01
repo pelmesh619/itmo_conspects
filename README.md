@@ -29,6 +29,7 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.html)
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html)
+        * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_01.html)
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
@@ -42,6 +43,7 @@
         * Лекция №2 - в разработке
         * Лекция №3 - в разработке
         * Лекция №4 - в разработке
+        * Лекция №5 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
