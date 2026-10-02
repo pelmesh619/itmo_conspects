@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    console.log(window.location.pathname);
     if (window.location.host == "pelmeshke.gitlab.io" && ["/itmo_conspects", "/itmo_conspects/"].includes(window.location.pathname)) {
         const blockquotes = document.getElementsByTagName("blockquote");
         if (blockquotes.length == 0)
