@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', async function () {
+    if (["/itmo_conspects", "/itmo_conspects/"].includes(window.location.pathname))
+        return;
+
     const h1s = document.querySelectorAll('h1');
     if (!h1s && h1s.length < 2) {
         return;
