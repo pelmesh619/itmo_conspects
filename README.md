@@ -49,8 +49,11 @@
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_superconspect.html)
+
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_09_05.html)
     * Лекция №3 - в разработке
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_03.html)
 
 * Администрирование в ОС Windows (лектор Береснев А. Д.)
 
