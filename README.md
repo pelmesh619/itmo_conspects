@@ -61,6 +61,7 @@
 
     * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_09_07.html)
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_09_21.html)
+    * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_10_05.html)
 
 * Анализ данных и информационных поиск (лектор Хлопотов М. В.)
 
