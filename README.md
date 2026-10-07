@@ -39,7 +39,7 @@
 
     * Трек от Яндекса (лектор Гилёва В. С.)
 
-        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_superconspect.html)
+        [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_superconspect.html)
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_04.html)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_11.html)
