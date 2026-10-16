@@ -8,17 +8,17 @@ class ThemeSwitcher {
     this.htmlElement = document.documentElement;
     this.toggleButton = null;
     this.prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
-    
+
     this.init();
   }
 
   init() {
     // Restore saved theme or use system preference
     this.loadTheme();
-    
+
     // Set up toggle button
     this.setupToggleButton();
-    
+
     // Listen for system preference changes
     this.prefersDark.addEventListener('change', (e) => this.handleSystemPreferenceChange(e));
   }
@@ -28,7 +28,7 @@ class ThemeSwitcher {
    */
   loadTheme() {
     const savedTheme = localStorage.getItem('theme');
-    
+
     if (savedTheme) {
       this.setTheme(savedTheme);
     } else if (this.prefersDark.matches) {
@@ -47,7 +47,7 @@ class ThemeSwitcher {
       localStorage.removeItem('theme');
       return;
     }
-    
+
     this.htmlElement.setAttribute('data-theme', theme);
     localStorage.setItem('theme', theme);
     this.updateToggleButton();
@@ -67,7 +67,7 @@ class ThemeSwitcher {
    */
   setupToggleButton() {
     this.toggleButton = document.getElementById('theme-toggle');
-    
+
     if (this.toggleButton) {
       this.toggleButton.addEventListener('click', () => this.toggle());
       this.updateToggleButton();
@@ -79,9 +79,9 @@ class ThemeSwitcher {
    */
   updateToggleButton() {
     if (!this.toggleButton) return;
-    
+
     const currentTheme = this.htmlElement.getAttribute('data-theme') || 'light';
-    
+
     if (currentTheme === 'dark') {
       this.toggleButton.innerHTML = '☀️ Светлая тема';
       this.toggleButton.setAttribute('aria-label', 'Переключиться на светлую тему');
@@ -100,7 +100,7 @@ class ThemeSwitcher {
    */
   handleSystemPreferenceChange(e) {
     const savedTheme = localStorage.getItem('theme');
-    
+
     // Only auto-switch if user hasn't explicitly set a theme
     if (!savedTheme) {
       if (e.matches) {
