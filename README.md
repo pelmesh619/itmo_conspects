@@ -7,6 +7,8 @@
 > Зеркало этого репозитория доступно на GitLab: <https://gitlab.com/pelmeshke/itmo_conspects>  
 > Также конспекты доступны на <https://pelmeshke.gitlab.io/itmo_conspects/>
 
+<!-- recently-visited -->
+
 ## VII семестр
 
 * Технологии сборки и развертывания программного обеспечения (DevOps)
