@@ -11,6 +11,8 @@
     const MAX_STORED = 30;
     const NESTED_KEYWORDS = ['Трек от'];
 
+    const HOME_URL = "https://pelmesh619.github.io/itmo_conspects";
+
     const RECENTLY_VISITED_HEADER_TEXT = "Недавно посещенные конспекты";
     const HIDE_BUTTON_TEXT = "Скрыть";
     const SHOW_BUTTON_TEXT = "Показать";
@@ -71,9 +73,16 @@
         catch (_) { return /\.pdf(\?.*)?$/i.test(url); }
     }
 
+    function isMainPage(url) {
+        try {
+            return new URL(url, location.href).pathname === HOME_URL;
+        } catch (_) { return false; }
+    }
+
     function isRecordableUrl(url) {
         if (isPdfUrl(url)) return true;
         if (isSuperconspect(url)) return true;
+        if (isMainPage(url)) return true;
         try {
             const p = new URL(url, location.href).pathname;
             // .html/.htm files, or extensionless paths served as index pages ("/foo/")
