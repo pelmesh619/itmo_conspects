@@ -75,7 +75,7 @@
 
     function isMainPage(url) {
         try {
-            return new URL(url, location.href).href == new URL(HOME_URL).href;
+            return new URL(url, location.href).href.replace(/\/$/, "") == new URL(HOME_URL).href;
         } catch (_) { return false; }
     }
 
