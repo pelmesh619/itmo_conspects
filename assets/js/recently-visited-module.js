@@ -485,6 +485,10 @@
         if (placeholder) {
             // main page → render the widget, do not record the main page itself
             mountBlock(placeholder);
+            window.addEventListener('pageshow', function () {
+                resyncTitles();
+                render();
+            });
         } else {
             // any other page → remember it
             handlePageLoad();
@@ -493,11 +497,6 @@
         markPdfLinks(document);
         document.addEventListener('click', handleLinkClick);
     }
-
-    window.addEventListener('pageshow', function () {
-        resyncTitles();
-        render();
-    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
