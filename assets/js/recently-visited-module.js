@@ -474,7 +474,10 @@
                 catEl.insertAdjacentElement('afterend', span);
             });
 
-        window.addEventListener('pageshow', render);
+        window.addEventListener('pageshow', function () {
+            resyncTitles();
+            render();
+        });
     }
 
     /* ============================== init ================================ */
@@ -485,10 +488,6 @@
         if (placeholder) {
             // main page → render the widget, do not record the main page itself
             mountBlock(placeholder);
-            window.addEventListener('pageshow', function () {
-                resyncTitles();
-                render();
-            });
         } else {
             // any other page → remember it
             handlePageLoad();
