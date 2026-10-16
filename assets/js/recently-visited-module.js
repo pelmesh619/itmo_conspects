@@ -123,6 +123,21 @@
         return out.replace(/\s+/g, ' ').trim();
     }
 
+    function findPageAnchor(url) {
+        const anchors = document.querySelectorAll('a[href]');
+        for (const a of anchors) {
+            if (a.closest('.recent-pages')) continue;
+            const href = a.getAttribute('href');
+            if (!href || href.startsWith('#')) continue;
+            try {
+                const u = new URL(a.href, location.href);
+                u.hash = '';
+                if (u.href === url) return a;
+            } catch (_) { /* ignore */ }
+        }
+        return null;
+    }
+
     /**
      * Prefix shown before " -- ".
      * For:
@@ -172,6 +187,36 @@
         return prefix;
     }
 
+    function resyncTitles() {
+        const list = readList();
+        let changed = false;
+
+        for (const item of list) {
+            const anchor = findPageAnchor(item.url);
+            if (!anchor) continue;
+
+            const prefix = getPrefix(anchor);
+
+            // Keep the h2 / link-text tail from the stored title.
+            const sep = item.title.lastIndexOf(' -- ');
+            let tail = sep >= 0 ? item.title.slice(sep + 4) : item.title;
+
+            // For PDFs and superconspect pages the tail *is* the link text,
+            // so we can refresh it from the current anchor.
+            if (isPdfUrl(item.url) || isSuperconspect(item.url)) {
+                const lt = (anchor.textContent || '').replace(/\s+/g, ' ').trim();
+                if (lt) tail = lt;
+            }
+
+            const newTitle = prefix ? prefix + ' -- ' + tail : tail;
+            if (newTitle !== item.title) {
+                item.title = newTitle;
+                changed = true;
+            }
+        }
+
+        if (changed) writeList(list);
+    }
 
     /* ========================= page-visit recording ===================== */
 
@@ -216,9 +261,36 @@
         // Let them navigate normally and don't try to derive a new prefix —
         // otherwise the "×" remove button gets picked up as the list-item text.
         if (a.closest('.recent-pages')) {
-            const url = normalizeUrl(a.href);
-            const existing = readList().find(p => p.url === url);
-            if (existing) upsert(url, { title: existing.title });
+            const href = a.getAttribute('href');
+            if (!href || href.startsWith('#')) return;
+
+            let url;
+            try {
+                const u = new URL(a.href, location.href);
+                if (u.origin !== location.origin) return;
+                u.hash = '';
+                url = u.href;
+            } catch (_) { return; }
+
+            if (url === normalizeUrl(location.href)) return;
+            if (!isRecordableUrl(url)) return;
+
+            const pageAnchor = findPageAnchor(url);
+            if (!pageAnchor) {
+                const existing = readList().find(p => p.url === url);
+                if (existing) upsert(url, { title: existing.title });
+                return;
+            }
+
+            const prefix = getPrefix(pageAnchor);
+            const linkText = (pageAnchor.textContent || '').replace(/\s+/g, ' ').trim();
+            const fallback = prefix ? prefix + ' -- ' + linkText : linkText;
+
+            if (isPdfUrl(url) || isSuperconspect(url)) {
+                upsert(url, { title: fallback, prefix });
+            } else {
+                upsert(url, { title: fallback, prefix, pending: true });
+            }
             return; // let navigation proceed
         }
 
@@ -241,7 +313,7 @@
         const fallback = prefix ? prefix + ' -- ' + linkText : linkText;
 
         if (isPdfUrl(url) || isSuperconspect(url)) {
-            upsert(url, { title: fallback });
+            upsert(url, { title: fallback, prefix });
         } else {
             upsert(url, { title: fallback, prefix, pending: true });
         }
@@ -379,6 +451,7 @@
             empty.hidden = !isEmpty;
         }
 
+        resyncTitles();
         applyCollapsed();
         render();
 
@@ -412,6 +485,11 @@
         markPdfLinks(document);
         document.addEventListener('click', handleLinkClick);
     }
+
+    window.addEventListener('pageshow', function () {
+        resyncTitles();
+        render();
+    });
 
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
