@@ -132,6 +132,10 @@ hr {
   background-color: var(--code-bg);
 }
 
+.highlight .err {
+    background-color: transparent;
+}
+
 button, input, select, textarea {
   background-color: var(--code-bg);
   color: var(--text-color);
