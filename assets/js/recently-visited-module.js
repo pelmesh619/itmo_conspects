@@ -431,7 +431,6 @@
                 remove.type = 'button';
                 remove.className = 'recent-pages__remove';
                 remove.textContent = '\u00d7';
-                remove.style.paddingBottom = "3.2px";
                 remove.title = REMOVE_BUTTON_TEXT;
                 remove.setAttribute('aria-label', REMOVE_BUTTON_TEXT + ' "' + item.title + '" ' + REMOVE_BUTTON_CONT_TEXT);
                 remove.addEventListener('click', function (e) {

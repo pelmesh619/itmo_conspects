@@ -70,6 +70,8 @@
     font: inherit;
     line-height: 1;
     padding: 0 .2rem;
+    font-size: x-large;
+    padding-bottom: "4px";
 }
 
 .recent-pages__remove:hover {
