@@ -82,7 +82,7 @@
     function isRecordableUrl(url) {
         if (isPdfUrl(url)) return true;
         if (isSuperconspect(url)) return true;
-        if (isMainPage(url)) return true;
+        if (isMainPage(url)) return false;
         try {
             const p = new URL(url, location.href).pathname;
             // .html/.htm files, or extensionless paths served as index pages ("/foo/")
