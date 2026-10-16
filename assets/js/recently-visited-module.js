@@ -260,37 +260,6 @@
         });
     }
 
-    /* ============================== styles ============================== */
-
-    const CSS = [
-        '.recent-pages{margin:1.25rem 0;padding:.75rem 1rem;border:1px solid rgba(128,128,128,.35);border-radius:8px}',
-        '.recent-pages__header{display:flex;align-items:center;justify-content:space-between;gap:.75rem;}',
-        '.recent-pages__title{font-weight:600}',
-        '.recent-pages__toggle{font:inherit;font-size:.85em;padding:.15rem .6rem;cursor:pointer;',
-        'border:1px solid rgba(128,128,128,.5);border-radius:6px;background:transparent;color:inherit}',
-        '.recent-pages__list{list-style:none;margin:.3rem 0 0;padding:0;',
-        'display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:.3rem 1.25rem; margin-top: 16px !important}',
-        '.recent-pages--collapsed .recent-pages__list,',
-        '.recent-pages--collapsed .recent-pages__empty{display:none}',
-        '.recent-pages [hidden]{display:none !important}',
-        '.recent-pages__item{display:flex;align-items:baseline;gap:.35rem;min-width:0}',
-        /* full page name — no truncation */
-        '.recent-pages__link{flex:1 1 auto;min-width:0;word-break:break-word;overflow-wrap:anywhere}',
-        '.recent-pages__remove{flex:0 0 auto;border:0;background:transparent;color:inherit;opacity:.45;',
-        'cursor:pointer;font:inherit;line-height:1;padding:0 .2rem}',
-        '.recent-pages__remove:hover{opacity:1;color:#d33}',
-        '.recent-pages__empty{margin:.3rem 0 0;opacity:.6;font-size:.9em; margin-top: 16px !important}',
-        '@media (max-width:700px){.recent-pages__list{grid-template-columns:1fr}}'
-    ].join('');
-
-    function injectStyles() {
-        if (document.getElementById('recent-pages-styles')) return;
-        const style = document.createElement('style');
-        style.id = 'recent-pages-styles';
-        style.textContent = CSS;
-        document.head.appendChild(style);
-    }
-
     /* ============================ the block ============================= */
 
     function findPlaceholder() {
@@ -327,8 +296,6 @@
     }
 
     function mountBlock(placeholder) {
-        injectStyles();
-
         const section = document.createElement('section');
         section.className = 'recent-pages';
 
