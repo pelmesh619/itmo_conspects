@@ -83,14 +83,14 @@ class ThemeSwitcher {
     const currentTheme = this.htmlElement.getAttribute('data-theme') || 'light';
 
     if (currentTheme === 'dark') {
-      this.toggleButton.innerHTML = '☀️ Светлая тема';
+      this.toggleButton.innerHTML = '☀️ Светлая тема <code>Shift+D</code>';
       this.toggleButton.setAttribute('aria-label', 'Переключиться на светлую тему');
-      this.toggleButton.setAttribute('title', 'Переключиться на светлую тему (Alt+N / ⌥+N)');
+      this.toggleButton.setAttribute('title', 'Переключиться на светлую тему (Shift+D)');
       this.toggleButton.classList.add('dark-mode');
     } else {
-      this.toggleButton.innerHTML = '🌙 Тёмная тема';
+      this.toggleButton.innerHTML = '🌙 Тёмная тема <code>Shift+D</code>';
       this.toggleButton.setAttribute('aria-label', 'Переключиться на тёмную тему');
-      this.toggleButton.setAttribute('title', 'Переключиться на тёмную тему (Alt+N / ⌥+N)');
+      this.toggleButton.setAttribute('title', 'Переключиться на тёмную тему (Shift+D)');
       this.toggleButton.classList.remove('dark-mode');
     }
   }
@@ -123,8 +123,9 @@ class ThemeSwitcher {
 const button = document.createElement("button");
 button.id = "theme-toggle";
 button.classList.add("theme-toggle-btn");
+button.setAttribute("aria-keyshortcuts", "Shift+D");
 button.setAttribute('aria-label', 'Включить тёмную тему');
-button.setAttribute('title', 'Включить тёмную тему (Alt+N / ⌥+N)');
+button.setAttribute('title', 'Включить тёмную тему (Shift+D)');
 button.innerText = "🌙 Тёмная тема";
 
 // Initialize when DOM is ready
