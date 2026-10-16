@@ -17,3 +17,9 @@ __pycache__
 
 *_superconspect.tex
 *_superconspect.typ
+
+# Jekyll generated files
+_site/
+.jekyll-cache/
+.jekyll-metadata
+Gemfile.lock
