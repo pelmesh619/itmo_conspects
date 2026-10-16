@@ -79,7 +79,7 @@ body {
 /* Apply to common elements */
 a {
   color: var(--link-color);
-  
+
   &:hover {
     color: var(--link-hover);
   }
@@ -106,6 +106,7 @@ pre {
   tr {
     background-color: var(--table-bg);
   }
+
   tr:nth-child(2n) {
     background-color: var(--table-bg-alternative);
   }
@@ -210,12 +211,12 @@ button:hover {
 
 [data-theme="light"] ::-webkit-scrollbar-thumb {
   background: #d0d0d0;
-  border-color: #f6f8fa;  
+  border-color: #f6f8fa;
   transition: background 0.5s ease, border-color 0.5s ease;
 }
 
 [data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-  background: #a9a9a9;  
+  background: #a9a9a9;
   transition: background 0.5s ease;
 }
 
