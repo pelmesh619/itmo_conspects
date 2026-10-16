@@ -177,9 +177,23 @@ button:hover {
   transition: scrollbar-color 0.5s ease;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) {
+    scrollbar-color: #30363d #0d1117;
+    transition: scrollbar-color 0.5s ease;
+  }
+}
+
 [data-theme="dark"] ::-webkit-scrollbar-track {
   background: #0d1117;
   transition: background 0.5s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) ::-webkit-scrollbar-track {
+    background: #0d1117;
+    transition: background 0.5s ease;
+  }
 }
 
 [data-theme="dark"] ::-webkit-scrollbar-thumb {
@@ -188,14 +202,36 @@ button:hover {
   transition: background 0.5s ease, border-color 0.5s ease;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) ::-webkit-scrollbar-thumb {
+    background: #30363d;
+    border-color: #0d1117;
+    transition: background 0.5s ease, border-color 0.5s ease;
+  }
+}
+
 [data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
   background: #444c56;
   transition: background 0.5s ease;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) ::-webkit-scrollbar-thumb:hover {
+    background: #444c56;
+    transition: background 0.5s ease;
+  }
+}
+
 [data-theme="dark"] ::-webkit-scrollbar-corner {
   background: #0d1117;
   transition: background 0.5s ease;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme]) ::-webkit-scrollbar-corner {
+    background: #0d1117;
+    transition: background 0.5s ease;
+  }
 }
 
 /* Light theme - explicit */
