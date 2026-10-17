@@ -126,7 +126,7 @@ button.classList.add("theme-toggle-btn");
 button.setAttribute("aria-keyshortcuts", "Shift+D");
 button.setAttribute('aria-label', 'Включить тёмную тему');
 button.setAttribute('title', 'Включить тёмную тему (Shift+D)');
-button.innerText = "🌙 Тёмная тема";
+button.innerText = '🌙 Тёмная тема <code class="theme-switch-shortcut-hint">Shift+D</code>';
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
