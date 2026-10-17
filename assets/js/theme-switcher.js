@@ -83,12 +83,12 @@ class ThemeSwitcher {
     const currentTheme = this.htmlElement.getAttribute('data-theme') || 'light';
 
     if (currentTheme === 'dark') {
-      this.toggleButton.innerHTML = '☀️ Светлая тема <code>Shift+D</code>';
+      this.toggleButton.innerHTML = '☀️ Светлая тема <code class="theme-switch-shortcut-hint">Shift+D</code>';
       this.toggleButton.setAttribute('aria-label', 'Переключиться на светлую тему');
       this.toggleButton.setAttribute('title', 'Переключиться на светлую тему (Shift+D)');
       this.toggleButton.classList.add('dark-mode');
     } else {
-      this.toggleButton.innerHTML = '🌙 Тёмная тема <code>Shift+D</code>';
+      this.toggleButton.innerHTML = '🌙 Тёмная тема <code class="theme-switch-shortcut-hint">Shift+D</code>';
       this.toggleButton.setAttribute('aria-label', 'Переключиться на тёмную тему');
       this.toggleButton.setAttribute('title', 'Переключиться на тёмную тему (Shift+D)');
       this.toggleButton.classList.remove('dark-mode');

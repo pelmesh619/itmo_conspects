@@ -30,7 +30,14 @@
   /* Mobile responsive */
   @media (max-width: 600px) {
     padding: 0.4rem 0.8rem;
-    font-size: 0.8rem;
+    font-size: 0.7rem;
+  }
+}
+
+.theme-switch-shortcut-hint {
+  display: inline;
+  @media (max-width: 600px) {
+    display: none;
   }
 }
 
