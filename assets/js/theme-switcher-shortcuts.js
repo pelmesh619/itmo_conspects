@@ -14,7 +14,7 @@ document.addEventListener('keydown', (e) => {
         !e.ctrlKey &&
         !e.metaKey &&
         !e.altKey &&
-        e.key.toLowerCase() === 'd'
+        (e.key.toLowerCase() === 'd' || e.key.toLowerCase() === "в")
     ) {
         e.preventDefault();
         if (window.themeSwitcher) {
