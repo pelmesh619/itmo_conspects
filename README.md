@@ -23,6 +23,7 @@
         * Лекция №4 - в разработке
         * Лекция №5 - в разработке
         * Лекция №6 - в разработке
+        * Лекция №7 - в разработке
 
 * Функциональное программирование
 
@@ -33,6 +34,7 @@
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.html)
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html)
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_01.html)
+        * Лекция №7 - в разработке
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
@@ -50,6 +52,8 @@
         * Лекция №4 - в разработке
         * Лекция №5 - в разработке
         * Лекция №6 - перенесена
+        * Лекция №7.1 - в разработке
+        * Лекция №7.2 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
@@ -58,6 +62,7 @@
     * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_09_05.html)
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_09_19.html)
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_03.html)
+    * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_17.html)
 
 * Администрирование в ОС Windows (лектор Береснев А. Д.)
 
