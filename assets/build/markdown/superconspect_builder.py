@@ -35,7 +35,7 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
 
     def collect_headers(self, file_text):
         new_text = file_text
-        for header_match in re.finditer(r'(^|\n)((#+)\s+(.+))\n', file_text):
+        for header_match in re.finditer(r'(^|\n)((#+)\s+(.+))(\n)?', file_text):
             # for cases when '\n# ...' is a comment in code block
             if file_text[:header_match.start(2)].count('```') % 2 == 1:
                 continue
