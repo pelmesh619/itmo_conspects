@@ -1,3 +1,27 @@
+async function readMetaFile(metaUrl) {
+    const response = await fetch(metaUrl);
+    if (!response.ok) {
+        console.warn(`Meta file loading error: ${response.status} ${response.statusText}`);
+        return;
+    }
+
+    return await response.json();
+}
+
+function readMetaData() {
+    const element = document.getElementById("subject-info");
+
+    if (!element)
+        return null;
+
+    try {
+        return JSON.parse(element.innerText);
+    } catch (error) {
+        console.error("Error parsing subject info" + $error);
+        return null;
+    }
+}
+
 document.addEventListener('DOMContentLoaded', async function () {
     if (["/itmo_conspects", "/itmo_conspects/"].includes(window.location.pathname))
         return;
@@ -14,12 +38,7 @@ document.addEventListener('DOMContentLoaded', async function () {
     const metaUrl = new URL(metaPath, window.location.href).href;
 
     try {
-        const response = await fetch(metaUrl);
-        if (!response.ok) {
-            console.warn(`Meta file loading error: ${response.status} ${response.statusText}`);
-            return;
-        }
-        const data = await response.json();
+        const data = readMetaData() || await readMetaFile(metaUrl);
 
         const recommended = data.recommended || [];
         const seeAlso = data.seeAlso || [];
