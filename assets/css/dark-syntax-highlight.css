@@ -287,7 +287,7 @@ code.highlighter-rouge {
 /* Light mode syntax highlighting (override) */
 [data-theme="light"] {
   div.highlight {
-    background-color: #f6f8fa;
+    background-color: var(--code-bg);
     border: 1px solid #d0d0d0;
     border-radius: 6px;
     overflow-x: auto;
@@ -298,12 +298,12 @@ code.highlighter-rouge {
       font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
       font-size: 0.875rem;
       line-height: 1.45;
-      background-color: #f6f8fa;
+      background-color: var(--code-bg);
     }
   }
 
   code {
-    background-color: #f6f8fa;
+    background-color: var(--code-bg);
     color: #24292e;
     padding: 0.2em 0.4em;
     border-radius: 3px;
@@ -318,7 +318,7 @@ code.highlighter-rouge {
   }
 
   pre:has(code[class^="language-"]) {
-    background-color: #f6f8fa;
+    background-color: var(--code-bg);
     border: 1px solid #d0d0d0;
     border-radius: 6px;
     overflow-x: auto;
@@ -326,7 +326,6 @@ code.highlighter-rouge {
     font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
     font-size: 0.875rem;
     line-height: 1.45;
-    background-color: #f6f8fa;
   }
 
   /* Light mode syntax tokens */
