@@ -12,6 +12,7 @@
     const NESTED_KEYWORDS = ['Трек от'];
 
     const HOME_URL = "https://pelmesh619.github.io/itmo_conspects";
+    const BLACKLIST_URLS = ["assets/debug"];
 
     const RECENTLY_VISITED_HEADER_TEXT = "Недавно посещенные конспекты";
     const HIDE_BUTTON_TEXT = "Скрыть";
@@ -75,14 +76,45 @@
 
     function isMainPage(url) {
         try {
-            return new URL(url, location.href).href.replace(/\/$/, "") == new URL(HOME_URL).href;
+            return new URL(url, location.href).href.replace(/\/$/, "") == new URL(HOME_URL).href
+                || new URL(url, location.href).pathname.replace(/\/$/, "") == new URL(HOME_URL).pathname;
         } catch (_) { return false; }
+    }
+
+    const withTrailingSlash = u => (u.endsWith('/') ? u : u + '/');
+
+    const normPath = p => p.replace(/\/{2,}/g, '/').replace(/\/+$/, '') || '/';
+
+    function isBlacklisted(rawUrl) {
+        let target;
+        try {
+            target = new URL(rawUrl, HOME_URL);
+        } catch {
+            return false;
+        }
+
+        const base = withTrailingSlash(HOME_URL);
+
+        return BLACKLIST_URLS.some(entry => {
+            let blocked;
+            try {
+                blocked = new URL(String(entry).replace(/^\/+/, ''), base);
+            } catch {
+                return false;
+            }
+
+            return (
+                target.origin === blocked.origin &&
+                normPath(target.pathname) === normPath(blocked.pathname)
+            );
+        });
     }
 
     function isRecordableUrl(url) {
         if (isPdfUrl(url)) return true;
         if (isSuperconspect(url)) return true;
         if (isMainPage(url)) return false;
+        if (isBlacklisted(url)) return false;
         try {
             const p = new URL(url, location.href).pathname;
             // .html/.htm files, or extensionless paths served as index pages ("/foo/")
