@@ -313,7 +313,7 @@ g :: Integer -> Integer
 g x = x + 1
 
 -- (f ○ g)(x) = f(g(x))
-example -: Integer -> Integer
+example :: Integer -> Integer
 example x = (f . g) x
 
 -- или так
