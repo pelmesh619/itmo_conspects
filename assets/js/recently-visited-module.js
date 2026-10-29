@@ -137,31 +137,34 @@
     function listItemLabel(li) {
         if (!li) return '';
 
-        // Walk the li in document order, accumulating text, and stop as soon as
-        // we hit a nested list, a link, or a non-text control. That way:
-        //   <li>Physics <p><a>Full course</a></p>
-        //       <p>Problems solutions: <a>Sol #1</a>, <a>Sol #2</a>…</p></li>
-        //     → "Physics"
-        //   <li>foofoofoo <ul>…</ul></li>  → "foofoofoo"
-        //   <li><a>hahaha</a></li>          → ""      (falls through to ancestor)
         const STOP = /^(A|UL|OL|BUTTON|IMG|TABLE|PRE)$/i;
-        let out = '';
-        let stopped = false;
 
-        (function walk(node) {
-            if (stopped) return;
-            for (const child of node.childNodes) {
+        function walkText(root) {
+            let out = '';
+            let stopped = false;
+            (function walk(node) {
                 if (stopped) return;
-                if (child.nodeType === Node.TEXT_NODE) {
-                    out += child.textContent;
-                } else if (child.nodeType === Node.ELEMENT_NODE) {
-                    if (STOP.test(child.tagName)) { stopped = true; return; }
-                    walk(child); // recurse into inline (em, strong, code, span, …) and <p>
+                for (const child of node.childNodes) {
+                    if (stopped) return;
+                    if (child.nodeType === Node.TEXT_NODE) {
+                        out += child.textContent;
+                    } else if (child.nodeType === Node.ELEMENT_NODE) {
+                        if (STOP.test(child.tagName)) { stopped = true; return; }
+                        walk(child);
+                    }
                 }
-            }
-        })(li);
+            })(root);
+            return out.replace(/\s+/g, ' ').trim();
+        }
 
-        return out.replace(/\s+/g, ' ').trim();
+        // Prefer the first direct-child <p> if it yields a non-empty label.
+        const firstP = li.querySelector(':scope > p');
+        if (firstP) {
+            const label = walkText(firstP);
+            if (label) return label;
+        }
+
+        return walkText(li);
     }
 
     function findPageAnchor(url) {
