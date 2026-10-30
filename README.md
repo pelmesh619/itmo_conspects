@@ -37,7 +37,7 @@
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html)
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_01.html)
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_15.html)
-        * Лекция №9 - в разработке
+        * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_29.html)
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
