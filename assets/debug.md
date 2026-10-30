@@ -38,6 +38,33 @@ window.MathJax = {
     * ~~Перечеркивание~~
     * <u>Подчеркивание</u>
 
+* Празднований:
+
+    <style>
+    .celebration-button {
+        display: inline-block;
+        margin: 5px;
+        padding: 4px;
+        border-radius: 4px;
+    }
+    </style>
+
+    <div>
+    <button class="celebration-button" onclick="getDate = function () { let now = new Date(); return new Date(now.getFullYear(), 0, 1); }; reloadCelebration();">Новый год</button>
+
+    <button class="celebration-button" onclick="getDate = function () { let now = new Date(); return new Date(now.getFullYear(), 9, 25); }; reloadCelebration();">Хэллоуин</button>
+
+    <button class="celebration-button" onclick="getDate = function () { let now = new Date(); return getEasterDate(now.getFullYear()); }; reloadCelebration();">Пасха</button>
+
+    <button class="celebration-button" onclick="getDate = function () { let now = new Date(); return new Date(now.getFullYear(), 6, 1); }; reloadCelebration();">Летние каникулы</button>
+
+    <button class="celebration-button" onclick="getDate = function () { return new Date(2024, 1, 29); }; reloadCelebration();">29 февраля</button>
+
+    <button class="celebration-button" onclick="getDate = function () { let now = new Date(); return new Date(now.getFullYear(), 3, 1); }; reloadCelebration();">1 апреля</button>
+
+    <button class="celebration-button" onclick="getDate = function () { return getCurrentDate(); }; reloadCelebration();">Текущая дата</button>
+    </div>
+
 * Цитаты:
 
     > _В жизни всегда есть две дороги: одна — первая, а другая — вторая._  
