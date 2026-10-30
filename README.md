@@ -25,6 +25,7 @@
         * Лекция №6 - в разработке
         * Лекция №7 - в разработке
         * Лекция №8 - в разработке
+        * Лекция №9 - в разработке
 
 * Функциональное программирование
 
@@ -36,6 +37,7 @@
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html)
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_01.html)
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_15.html)
+        * Лекция №9 - в разработке
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
@@ -56,7 +58,10 @@
         * Лекция №5 - в разработке
         * Лекция №6 - перенесена
         * Лекция №7.1 - в разработке
-        * Лекция №7.2 - в разработке
+        * [Лекция №7.2](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_16.html)
+        * Лекция №8 - в разработке
+        * Лекция №9 - в разработке
+        * Лекция №10 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
@@ -81,6 +86,7 @@
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/dataanalysis/dataanalysis_2026_09_14.html)
     * Лекция №5 - в разработке
     * Лекция №7 - в разработке
+    * Лекция №9 - в разработке
 
 ## [VI семестр](assets/meta/VI.md)
 
