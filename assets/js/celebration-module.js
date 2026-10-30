@@ -52,6 +52,11 @@ function reloadCelebration() {
         `;
         document.head.appendChild(style);
         return
+    } else {
+        document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
+            el.style.direction = 'ltr';
+            el.style.unicodeBidi = 'bidi-override';
+        });
     }
 
     const h1 = document.querySelector('h1');
