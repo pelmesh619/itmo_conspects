@@ -21,8 +21,16 @@ function getEasterDate(year) {
     return new Date(gregorianUtcMs);
 }
 
-document.addEventListener('DOMContentLoaded', function () {
-    const now = new Date();
+function getCurrentDate() {
+    return new Date();
+}
+
+function getDate() {
+    return getCurrentDate();
+}
+
+function reloadCelebration() {
+    const now = getDate();
     const month = now.getMonth() + 1;
     const day = now.getDate();
     const year = now.getFullYear();
@@ -83,5 +91,7 @@ document.addEventListener('DOMContentLoaded', function () {
         `;
         document.head.appendChild(style);
     }
-});
+}
+
+document.addEventListener('DOMContentLoaded', reloadCelebration);
 
