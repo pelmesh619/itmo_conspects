@@ -119,6 +119,8 @@ class ThemeSwitcher {
   }
 }
 
+const buttonCont = document.createElement("div");
+buttonCont.classList.add("theme-buttons-container");
 
 const button = document.createElement("button");
 button.id = "theme-toggle";
@@ -127,14 +129,15 @@ button.setAttribute("aria-keyshortcuts", "Shift+D");
 button.setAttribute('aria-label', 'Включить тёмную тему');
 button.setAttribute('title', 'Включить тёмную тему (Shift+D)');
 button.innerText = '🌙 Тёмная тема <code class="theme-switch-shortcut-hint">Shift+D</code>';
+buttonCont.appendChild(button);
 
 // Initialize when DOM is ready
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    document.documentElement.appendChild(button);
+    document.body.appendChild(buttonCont);
     window.themeSwitcher = new ThemeSwitcher();
   });
 } else {
-  document.documentElement.appendChild(button);
+  document.body.appendChild(buttonCont);
   window.themeSwitcher = new ThemeSwitcher();
 }
