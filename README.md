@@ -71,6 +71,7 @@
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_09_19.html)
     * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_03.html)
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_17.html)
+    * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_31.html)
 
 * Администрирование в ОС Windows (лектор Береснев А. Д.)
 
