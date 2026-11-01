@@ -59,7 +59,8 @@ function reloadCelebration() {
         emoji = '🍀';
     }
     else if ((month === 12 && day >= 24) || (month === 1 && day <= 7)) {
-        emoji = '🎄';
+        const newYearEmojis = ["🎄", "🎅", "❄️", "⛄"];
+        emoji = newYearEmojis[Math.floor(Math.random() * newYearEmojis.length)];
     }
     else {
         const easter = getEasterDate(year);
