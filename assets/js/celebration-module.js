@@ -84,7 +84,7 @@ function reloadCelebration() {
     else if (month === 2 && day === 29) {
         emoji = '🍀';
     }
-    else if ((month === 12 && day >= 24) || (month === 1 && day <= 7)) {
+    else if ((month === 12 && day >= 14) || (month === 1 && day <= 7)) {
         const newYearEmojis = ["🎄", "🎅", "❄️", "⛄"];
         emoji = newYearEmojis[Math.floor(Math.random() * newYearEmojis.length)];
         showSnowCanvas();
