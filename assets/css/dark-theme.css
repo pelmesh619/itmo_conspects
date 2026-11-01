@@ -29,7 +29,7 @@
   --table-border: #444c56;
   --table-bg: #161b22;
   --table-bg-alternative: #272f38;
-  --blockquote-color: #8b949e;
+  --blockquote-color: #b1b9c3;
   --pre-bg: #0d1117;
   --pre-text: #e6edf3;
 }
@@ -46,7 +46,7 @@
   --shadow-color: rgba(0, 0, 0, 0.1);
   --table-border: #d1d5da;
   --table-bg: #eef0f2;
-  --blockquote-color: #6a737d;
+  --blockquote-color: #b1b9c3;
   --pre-bg: #2d2d2d;
   --pre-text: #f8f8f2;
 }
