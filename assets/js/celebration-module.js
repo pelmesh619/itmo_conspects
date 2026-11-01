@@ -29,11 +29,37 @@ function getDate() {
     return getCurrentDate();
 }
 
+function resetCelebrationSetup() {
+    document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
+        el.style.direction = 'ltr';
+        el.style.unicodeBidi = 'bidi-override';
+    });
+
+    if (document.stopSnowflakesAnimation)
+        document.setSnowflakesAnimation(false);
+    const snowCanvas = document.getElementById('snow-canvas');
+    if (snowCanvas)
+        snowCanvas.style.display = "none";
+
+    const snowflakesAnimationToggleButton = document.getElementById('snowflakes-animation-toggle');
+    if (snowflakesAnimationToggleButton)
+        snowflakesAnimationToggleButton.style.display = "none";
+
+    const style = document.getElementById('celebration-style');
+    if (style)
+        style.textContent = `
+            h1:first-of-type::before { content: ""; }
+            h1:first-of-type::after { content: ""; }
+            `;
+}
+
 function reloadCelebration() {
     const now = getDate();
     const month = now.getMonth() + 1;
     const day = now.getDate();
     const year = now.getFullYear();
+
+    resetCelebrationSetup();
 
     let emoji = '';
 
