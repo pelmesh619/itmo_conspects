@@ -36,7 +36,7 @@ function resetCelebrationSetup() {
     });
 
     if (document.stopSnowflakesAnimation)
-        document.setSnowflakesAnimation(false);
+        document.setSnowflakesAnimation(false, false);
     const snowCanvas = document.getElementById('snow-canvas');
     if (snowCanvas)
         snowCanvas.style.display = "none";
@@ -125,7 +125,7 @@ function showSnowCanvas() {
         if (snowflakesAnimationToggleButton)
             snowflakesAnimationToggleButton.style.display = "block";
 
-        document.setSnowflakesAnimation(true);
+        document.setSnowflakesAnimation(localStorage.getItem('snowflakes-animation') === "true");
         return;
     }
 
@@ -264,7 +264,9 @@ function showSnowCanvas() {
         ctx.globalAlpha = 1;
     }
 
-    function setRunning(on) {
+    function setRunning(on, savePreference = true) {
+        if (savePreference)
+            localStorage.setItem('snowflakes-animation', on);
         on ? start() : stop();
 
         button.setAttribute('aria-pressed', String(on));
