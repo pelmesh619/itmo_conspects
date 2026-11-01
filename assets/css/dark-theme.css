@@ -147,6 +147,10 @@ button:hover {
   background-color: var(--border-color);
 }
 
+.footer.text-gray {
+  color: var(--blockquote-color) !important;
+}
+
 
 ::-webkit-scrollbar {
   width: 12px;
