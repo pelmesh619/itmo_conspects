@@ -70,13 +70,22 @@ function reloadCelebration() {
     }
 
     if (emoji) {
-        const style = document.createElement('style');
+        const style = document.getElementById('celebration-style')
+            || (function () {
+                let style = document.createElement('style');
+                style.id = "celebration-style";
+                document.head.appendChild(style);
+                return style;
+            })();
+
         style.textContent = `
-        h1:first-of-type::before {
-            content: "${emoji} ";
-        }
-        h1:first-of-type::after {
-            content: " ${emoji}";
+            h1:first-of-type::before {
+                content: "${emoji} ";
+            }
+            h1:first-of-type::after {
+                content: " ${emoji}";
+            }
+            `;
         }
         `;
         document.head.appendChild(style);
