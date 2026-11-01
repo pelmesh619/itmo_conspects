@@ -975,7 +975,7 @@ JavaScript имеет C-подобный синтаксис, является р
         age: 67,
         account_ids: {
             bank: 137921,
-            facebook: 2472374
+            twitter: 2472374
         }
     }
     ```
