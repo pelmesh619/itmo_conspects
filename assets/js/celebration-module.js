@@ -61,6 +61,7 @@ function reloadCelebration() {
     else if ((month === 12 && day >= 24) || (month === 1 && day <= 7)) {
         const newYearEmojis = ["🎄", "🎅", "❄️", "⛄"];
         emoji = newYearEmojis[Math.floor(Math.random() * newYearEmojis.length)];
+        showSnowCanvas();
     }
     else {
         const easter = getEasterDate(year);
@@ -87,10 +88,179 @@ function reloadCelebration() {
                 content: " ${emoji}";
             }
             `;
-        }
-        `;
-        document.head.appendChild(style);
     }
+}
+
+function showSnowCanvas() {
+    if (document.getElementById('snow-canvas')) {  // already initialised
+        document.getElementById('snow-canvas').style.display = "block";
+
+        const snowflakesAnimationToggleButton = document.getElementById('snowflakes-animation-toggle');
+        if (snowflakesAnimationToggleButton)
+            snowflakesAnimationToggleButton.style.display = "block";
+
+        document.setSnowflakesAnimation(true);
+        return;
+    }
+
+    const canvas = document.createElement('canvas');
+    canvas.id = 'snow-canvas';
+    document.body.appendChild(canvas);
+
+    let themeButtonsContainer = document.querySelector('.theme-buttons-container');
+    if (!themeButtonsContainer) {
+        themeButtonsContainer = document.createElement('div');
+        themeButtonsContainer.classList.add('theme-buttons-container');
+        document.body.appendChild(themeButtonsContainer);
+    }
+
+    const button = document.createElement('button');
+    button.id = 'snowflakes-animation-toggle';
+    button.classList.add('snowflakes-animation-toggle-btn');
+    button.setAttribute('aria-pressed', 'true');
+    themeButtonsContainer.appendChild(button);
+
+    const ctx = canvas.getContext('2d');
+
+    let width, height;
+    let flakes = [];
+    let flakeColor = '#ffffff';
+
+    function readColor() {
+        const c = getComputedStyle(document.documentElement)
+            .getPropertyValue('--snow-color')
+            .trim();
+        if (c) flakeColor = c;
+    }
+
+    const FLAKES_PER_MPX = 250;
+    const MIN_FLAKES = 40;
+    const MAX_FLAKES = 500;
+
+    function targetCount() {
+        const areaMpx = (width * height) / 1_000_000;
+        const n = Math.round(areaMpx * FLAKES_PER_MPX);
+        return Math.min(MAX_FLAKES, Math.max(MIN_FLAKES, n));
+    }
+
+    function syncFlakeCount() {
+        const n = targetCount();
+        while (flakes.length < n) flakes.push(createFlake(true));
+        if (flakes.length > n) flakes.length = n;
+    }
+
+    function resize() {
+        const dpr = window.devicePixelRatio || 1;
+        width = window.innerWidth;
+        height = window.innerHeight * 4 / 5;
+
+        canvas.width = width * dpr;
+        canvas.height = height * dpr;
+        canvas.style.height = height + 'px';
+
+        ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        readColor();
+        syncFlakeCount();
+    }
+
+    function watchTheme() {
+        const opts = { attributes: true, attributeFilter: ['class', 'data-theme', 'style'] };
+        new MutationObserver(readColor).observe(document.documentElement, opts);
+        new MutationObserver(readColor).observe(document.body, opts);
+        window.matchMedia('(prefers-color-scheme: dark)')
+            .addEventListener('change', readColor);
+    }
+
+    function createFlake(randomY) {
+        return {
+            x: Math.random() * width,
+            y: randomY ? Math.random() * height : -10 - Math.random() * 30,
+            radius: 1 + Math.random() * 2.5,
+            speed: 0.2 + Math.random() * 0.8,
+            drift: (Math.random() - 0.5) * 0.5,
+            phase: Math.random() * Math.PI * 2,
+            sway: 0.01 + Math.random() * 0.02
+        };
+    }
+
+    function init() {
+        flakes = [];
+        resize();
+    }
+
+    // --- run state ------------------------------------------------------
+    let running = false;
+    let rafId = null;
+    let last = performance.now();
+
+    function loop(now) {
+        if (!running) return;
+
+        const dt = Math.min((now - last) / 16.667, 3);
+        last = now;
+
+        ctx.clearRect(0, 0, width, height);
+        ctx.fillStyle = flakeColor;
+
+        for (const f of flakes) {
+            f.phase += f.sway * dt;
+            f.y += f.speed * dt;
+            f.x += f.drift * dt + Math.sin(f.phase) * 0.4;
+
+            if (f.y >= height || f.x < -20 || f.x > width + 20) {
+                Object.assign(f, createFlake(false));
+                continue;
+            }
+
+            ctx.globalAlpha = Math.max(0, 1 - f.y / height);
+            ctx.beginPath();
+            ctx.arc(f.x, f.y, f.radius, 0, Math.PI * 2);
+            ctx.fill();
+        }
+
+        ctx.globalAlpha = 1;
+        rafId = requestAnimationFrame(loop);
+    }
+
+    function start() {
+        if (running) return;
+        running = true;
+        last = performance.now();     // avoid a dt spike after the pause
+        rafId = requestAnimationFrame(loop);
+    }
+
+    function stop() {
+        if (!running) return;
+        running = false;
+        if (rafId !== null) cancelAnimationFrame(rafId);
+        rafId = null;
+        ctx.clearRect(0, 0, width, height);
+        ctx.globalAlpha = 1;
+    }
+
+    function setRunning(on) {
+        on ? start() : stop();
+
+        button.setAttribute('aria-pressed', String(on));
+        const label = on
+            ? 'Отключить анимацию снежинок'
+            : 'Включить анимацию снежинок';
+        button.setAttribute('aria-label', label);
+        button.setAttribute('title', label);
+        button.innerText = on ? '❄️ Отключить анимацию' : '❄️ Включить анимацию';
+    }
+
+    document.setSnowflakesAnimation = setRunning;
+    // --------------------------------------------------------------------
+
+    button.addEventListener('click', () => setRunning(!running));
+
+    window.addEventListener('resize', resize);
+    init();
+    watchTheme();
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    setRunning(!reduceMotion);
 }
 
 document.addEventListener('DOMContentLoaded', reloadCelebration);
