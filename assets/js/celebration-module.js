@@ -35,34 +35,19 @@ function reloadCelebration() {
     const day = now.getDate();
     const year = now.getFullYear();
 
+    let emoji = '';
+
     if (month === 4 && day === 1) {
         document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
             el.style.direction = 'rtl';
             el.style.unicodeBidi = 'bidi-override';
         });
 
-        const style = document.createElement('style');
-        style.textContent = `
-            h1:first-of-type::before {
-                content: "🤪 ";
-            }
-            h1:first-of-type::after {
-                content: " 🤪";
-            }
-        `;
-        document.head.appendChild(style);
-        return
-    } else {
-        document.querySelectorAll('h1, h2, h3, h4, h5, h6').forEach(el => {
-            el.style.direction = 'ltr';
-            el.style.unicodeBidi = 'bidi-override';
-        });
+        emoji = "🤪";
     }
 
     const h1 = document.querySelector('h1');
     if (!h1) return;
-
-    let emoji = '';
 
     if (month === 7 || month === 8) {
         emoji = '☀️';
