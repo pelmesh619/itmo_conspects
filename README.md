@@ -59,7 +59,7 @@
         * Лекция №6 - перенесена
         * Лекция №7.1 - в разработке
         * [Лекция №7.2](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_16.html)
-        * Лекция №8 - в разработке
+        * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_23.html)
         * Лекция №9 - в разработке
         * Лекция №10 - в разработке
 
@@ -81,6 +81,7 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_09_21.html)
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_10_05.html)
     * Лекция №8 - перенесена
+    * Лекция №10 - в разработке
 
 * Анализ данных и информационных поиск (лектор Хлопотов М. В.)
 
