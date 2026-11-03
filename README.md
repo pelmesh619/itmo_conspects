@@ -57,7 +57,7 @@
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_25.html)
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_02.html)
         * Лекция №6 - перенесена
-        * Лекция №7.1 - в разработке
+        * [Лекция №7.1](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_14.html)
         * [Лекция №7.2](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_16.html)
         * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_23.html)
         * Лекция №9 - в разработке
