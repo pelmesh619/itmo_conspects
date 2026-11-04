@@ -44,7 +44,10 @@
 
     Лекций по этому предмету нет, но возможно тут появится конспект теории
 
-    * [Заметка №1](https://pelmesh619.github.io/itmo_conspects/highload/highload_01_intro.html)
+    [**Все заметки**](https://pelmesh619.github.io/itmo_conspects/highload/highload_superconspect.html)
+
+    * [Заметка №1. Введение](https://pelmesh619.github.io/itmo_conspects/highload/highload_01_intro.html)
+    * [Заметка №2. Ограничение нагрузки](https://pelmesh619.github.io/itmo_conspects/highload/highload_02_rate_limit.html)
 
 * Тестирование ПО
 
