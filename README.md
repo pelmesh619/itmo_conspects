@@ -27,6 +27,7 @@
         * Лекция №8 - в разработке
         * Лекция №9 - в разработке
         * Лекция №10 - в разработке
+        * Лекция №11 - в разработке
 
 * Функциональное программирование
 
@@ -39,6 +40,7 @@
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_01.html)
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_15.html)
         * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_29.html)
+        * Лекция №11 - в разработке
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
@@ -66,6 +68,7 @@
         * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_23.html)
         * Лекция №9 - в разработке
         * Лекция №10 - в разработке
+        * Лекция №11 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
@@ -85,7 +88,7 @@
     * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_09_21.html)
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_10_05.html)
     * Лекция №8 - перенесена
-    * Лекция №10 - в разработке
+    * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_11_02.html)
 
 * Анализ данных и информационных поиск (лектор Хлопотов М. В.)
 
@@ -93,6 +96,7 @@
     * Лекция №5 - в разработке
     * Лекция №7 - в разработке
     * Лекция №9 - в разработке
+    * Лекция №11 - в разработке
 
 ## [VI семестр](assets/meta/VI.md)
 
