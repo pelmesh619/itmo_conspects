@@ -57,7 +57,7 @@ window.MathJax = {
 
 Пример реализации фиксированного окна на языке Kotlin:
 
-```kt
+```kotlin
 class FixedWindowLimiter(
     private val limit: Int,    // N, лимит на окно
     private val windowMs: Long // t, длительность окна
@@ -98,7 +98,7 @@ class FixedWindowLimiter(
 
     При появлении нового запроса проходимся по журналу и удаляем те временные метки, которые не входят в окно, а затем проверяем количество таких записей. Если количество не менее порога, то новый запрос отклоняем
 
-    ```kt
+    ```kotlin
     class SlidingWindowLogLimiter(
         private val limit: Int,
         private val windowMs: Long
@@ -135,7 +135,7 @@ class FixedWindowLimiter(
 
 Пример реализации на Kotlin:
 
-```kt
+```kotlin
 class TokenBucket(
     private val ratePerSec: Double,   // v, скорость пополнения маркеров
     private val capacity: Double      // N, максимум маркеров в ведре
@@ -180,7 +180,7 @@ class TokenBucket(
 
     Пример реализации:
 
-    ```kt
+    ```kotlin
     class LeakyBucket(
         private val leakPerSec: Double,   // скорость утечки запросов
         private val capacity: Double      // размер ведра
