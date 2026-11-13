@@ -189,7 +189,7 @@ hello-world:latest   5e2309035332     25.9kB         9.49kB    U
 
 Здесь указаны идентификатор образа и объем на диске
 
-Команда `docker image inspect <image-name>:<version>` позволяет изучить образ:
+Команда `docker image inspect имя-образа:версия` позволяет изучить образ:
 
 ![docker image inspect](./images/devopstech-nexign_docker_image_inspect.png)
 
@@ -200,7 +200,7 @@ hello-world:latest   5e2309035332     25.9kB         9.49kB    U
 Далее образ можно запустить:
 
 ```bash
-docker run -d -p 8000:80 --name <container-name> <image-name>
+docker run -d -p 8000:80 --name имя-контейнера имя-образа
 ```
 
 Здесь применены флаги:
