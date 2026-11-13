@@ -19,7 +19,7 @@
 
         * [Лекция №1](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.html)
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_12.html)
-        * Лекция №3 - в разработке
+        * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_15.html)
         * Лекция №4 - в разработке
         * Лекция №5 - в разработке
         * Лекция №6 - в разработке
