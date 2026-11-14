@@ -116,7 +116,7 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
 
         toc = self.make_toc()
 
-        beginning = f"""---\nlayout: default\ntitle: {self.first_level_header[0]} \\| itmo_conspects\nfooter: footer_generated.html\n---\n""" + self.DISCLAIMER
+        beginning = f"""---\nlayout: default\ntitle: {self.first_level_header[0]}\nfooter: footer_generated.html\n---\n""" + self.DISCLAIMER
 
         suggestion_block = self.build_suggestion_block()
         if suggestion_block:
