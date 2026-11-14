@@ -20,10 +20,14 @@
         {{ content }}
 
         {% if site.github.private != true and site.github.license %}
-        <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
-            Этот сайт имеет открытый исходный код! Вы можете {% github_edit_link "улучшить эту страницу" %} или
-            <a href="{{ site.github.repository_url }}">этот репозиторий</a>!
-        </div>
+            {% if page.footer %}
+                {% include {{ page.footer }} %}
+            {% else %}
+                <div class="footer border-top border-gray-light mt-5 pt-3 text-right text-gray">
+                    Этот сайт имеет открытый исходный код! Вы можете {% github_edit_link "улучшить эту страницу" %} или
+                    <a href="{{ site.github.repository_url }}">этот репозиторий</a>!
+                </div>
+            {% endif %}
         {% endif %}
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js"
