@@ -136,7 +136,7 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
 
         return 0
 
-    def build_suggestion_block():
+    def build_suggestion_block(self):
         suggestion_json = {}
         subject_info = self.read_subject_info()
         if subject_info:
