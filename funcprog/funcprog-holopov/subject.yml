@@ -1,0 +1,85 @@
+code: funcprog/funcprog-holopov
+title: Функциональное программирование
+track_title: Трек от Холопова Д. С.
+semester: 7
+year: 2026
+module: programming
+lecturer: Холопов Д. С.
+description: Курс посвящен изучению основ парадигмы функционального программирования на примере языка Haskell
+
+notes_format: md
+
+notes:
+  - number: 1
+    week: 1
+    date: 2026-09-03
+    title: Введение
+    format: live-online
+    status: done
+
+    notes: funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.html
+    source_notes: funcprog/funcprog-holopov/funcprog-holopov_2026_09_03.md
+
+  - number: 2
+    week: 3
+    date: 2026-09-17
+    title: Синтаксис языка Haskell
+    format: live-online
+    status: done
+
+    notes: funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.html
+    source_notes: funcprog/funcprog-holopov/funcprog-holopov_2026_09_17.md
+
+  - number: 3
+    week: 5
+    date: 2026-10-01
+    title: Кортежи и списки в Haskell
+    format: live-online
+    status: done
+
+    notes: funcprog/funcprog-holopov/funcprog-holopov_2026_10_01.html
+    source_notes: funcprog/funcprog-holopov/funcprog-holopov_2026_10_01.md
+
+  - number: 4
+    week: 7
+    date: 2026-10-15
+    title: Типы и классы типов
+    format: live-online
+    status: done
+
+    notes: funcprog/funcprog-holopov/funcprog-holopov_2026_10_15.html
+    source_notes: funcprog/funcprog-holopov/funcprog-holopov_2026_10_15.md
+
+  - number: 5
+    week: 9
+    date: 2026-10-29
+    title: Полугруппа, моноид и функтор
+    format: live-online
+    status: done
+
+    notes: funcprog/funcprog-holopov/funcprog-holopov_2026_10_29.html
+    source_notes: funcprog/funcprog-holopov/funcprog-holopov_2026_10_29.md
+
+  - number: 6
+    week: 11
+    date: 2026-11-12
+    title: Аппликативный функтор и монада
+    format: live-online
+    status: done
+
+    notes: funcprog/funcprog-holopov/funcprog-holopov_2026_11_12.html
+    source_notes: funcprog/funcprog-holopov/funcprog-holopov_2026_11_12.md
+
+  - number: 7
+    week: 13
+    date: 2026-11-26
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 8
+    week: 15
+    date: 2026-12-10
+    title: \-
+    format: live-online
+    status: planned
