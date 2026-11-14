@@ -322,6 +322,12 @@
 Для сборки есть 3 скрипта, для их запуска нужны:
 
 * Python версии 3.10 или новее
+    *   Библиотека PyYAML:
+
+        ```bash
+        pip install pyyaml
+        ```
+
 * Для TeX-конспектов утилита `latexmk`, поставляемая дистрибутивами (например, [MikTeX](https://miktex.org/) или [TeXLive](https://tug.org/texlive/))
 * Для Typst-конспектов утилита `typst` (подробнее на <https://github.com/typst/typst?tab=readme-ov-file#installation>)
 
