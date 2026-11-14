@@ -36,6 +36,12 @@ see_also:
     title: Мой другой предмет
     link: my/myothersubject/myothersubject_superconspect.html
 
+# Формат заметок, допустимые значения:
+# - md - Markdown
+# - typ - Typst
+# - tex - TeX
+notes_format: md
+
 # Источники, на котором основан курс
 based_on:
   - type: textbook

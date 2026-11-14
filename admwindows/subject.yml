@@ -14,6 +14,8 @@ see_also:
     title: Администрирование в ОС Linux
     link: admlinux/admlinux_superconspect.html
 
+notes_format: md
+
 based_on:
   - type: textbook
     ref: "Внутреннее устройство Windows (авторы: Марк Руссинович, Дэвид Соломон, Алекс Ионеску, Павел Йосифович)"
