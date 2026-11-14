@@ -1,5 +1,6 @@
 import os
 import re
+import json
 from pathlib import Path
 from urllib.parse import quote
 
@@ -117,6 +118,10 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
 
         beginning = self.DISCLAIMER
 
+        suggestion_block = self.build_suggestion_block()
+        if suggestion_block:
+            beginning += suggestion_block + '\n\n'
+
         beginning += '\n'.join(self.script_sources) + '\n'
         if self.first_level_header:
             beginning += self.make_header_with_link(*self.first_level_header, 1) + '\n\n'
@@ -130,3 +135,29 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
         print(f"Markdown file {self.superconspect_filename} is combined!")
 
         return 0
+
+    def build_suggestion_block():
+        suggestion_json = {}
+        subject_info = self.read_subject_info()
+        if subject_info:
+            if "prerequisites" in subject_info and subject_info["prerequisites"]:
+                suggestion_json["recommended"] = [
+                    {
+                        "title": prereq["title"],
+                        "link": prereq["link"]
+                    }
+                    for prereq in subject_info["prerequisites"]
+                ]
+            if "see_also" in subject_info and subject_info["see_also"]:
+                suggestion_json["seeAlso"] = [
+                    {
+                        "title": see_also["title"],
+                        "link": see_also["link"]
+                    }
+                    for see_also in subject_info["see_also"]
+                ]
+
+            return f'<script type="application/json" id="subject-info">{json.dumps(suggestion_json, ensure_ascii=False)}</script>'
+
+        return None
+
