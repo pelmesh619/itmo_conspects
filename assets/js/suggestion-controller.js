@@ -1,3 +1,13 @@
+const BASE_URL = "/itmo_conspects/";
+
+function resolveLink(course) {
+    const link = course?.link;
+    if (link == null || link.trim() === "") return link;
+    if (/^https?:\/\//i.test(link)) return link;
+    if (link.startsWith(BASE_URL)) return link;
+    return BASE_URL + link.replace(/^\/+/, "");
+}
+
 async function readMetaFile(metaUrl) {
     const response = await fetch(metaUrl);
     if (!response.ok) {
@@ -63,7 +73,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.textContent = course.title;
-                a.href = course.link;
+                a.href = resolveLink(course);
                 li.appendChild(a);
                 list1.appendChild(li);
             });
@@ -88,7 +98,7 @@ document.addEventListener('DOMContentLoaded', async function () {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.textContent = course.title;
-                a.href = course.link;
+                a.href = resolveLink(course);
                 li.appendChild(a);
                 list2.appendChild(li);
             });
