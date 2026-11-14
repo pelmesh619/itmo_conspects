@@ -29,6 +29,7 @@ footer: footer_generated.html
     * [Служба каталогов Active Directory](#%D1%81%D0%BB%D1%83%D0%B6%D0%B1%D0%B0-%D0%BA%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%D0%BE%D0%B2-active-directory)
     * [Логические компоненты Active Directory](#%D0%BB%D0%BE%D0%B3%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B-active-directory)
     * [Физические компоненты Active Directory](#%D1%84%D0%B8%D0%B7%D0%B8%D1%87%D0%B5%D1%81%D0%BA%D0%B8%D0%B5-%D0%BA%D0%BE%D0%BC%D0%BF%D0%BE%D0%BD%D0%B5%D0%BD%D1%82%D1%8B-active-directory)
+  * [X. Программа экзамена 2026/2027](#x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-2026%2F2027)
 
 <!-- begin admwindows_2026_09_07.md -->
 На этом курсе будут рассматриваться технологии, инструменты, использующиеся в Windows Server, а также архитектура системы
@@ -862,4 +863,27 @@ Active Directory также обладает гибким механизмом �
 Exchange и дp.
 • Аутентификация - аутентификация на ближайшем контроллере домена -->
 <!-- end admwindows_2026_11_02.md -->
+
+<!-- begin admwindows_exam_list.md -->
+## <a name="x.-%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B0-%D1%8D%D0%BA%D0%B7%D0%B0%D0%BC%D0%B5%D0%BD%D0%B0-2026%2F2027"></a> X. Программа экзамена 2026/2027
+
+1. История развития семейства Windows Server, развитие семейства. Область применения ОС.
+2. Архитектура ОС Windows 
+3. Основные компоненты и службы Windows Server
+4. Файловые системы NTFS, устройство, ACL
+5. Архитектура безопасности Windows Server, управление пользователями и группами.
+6. Управление сервисами Windows Server
+7. Управление компонентами Windows
+8. Реестр Windows, разделы, расположение, инструментальные средства
+9. Инфраструктура хранения. DAS, NAS, SAN
+10. Windows как платформа хранения (Storage Spaces, SAN iSCSI, NAS SMB).
+11. SDS в Windows
+12. Службы каталогов на примере Active Directory, особенности.
+13. AD DS логические компоненты
+14. AD DS физические компоненты
+15. AD DS групповые политики
+16. PowerShell, основные концепции
+17. HyperV, общая характеристика и компоненты платформы
+18. Инфраструктура терминальных серверов Windows
+<!-- end admwindows_exam_list.md -->
 
