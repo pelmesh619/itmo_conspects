@@ -41,6 +41,7 @@ see_also:
 # - typ - Typst
 # - tex - TeX
 notes_format: md
+exam_list_file: my/myfirstsubject/myfirstsubject_exam_list.html
 
 # Источники, на котором основан курс
 based_on:
