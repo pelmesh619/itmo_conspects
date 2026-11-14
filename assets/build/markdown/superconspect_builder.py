@@ -156,8 +156,8 @@ class MarkdownSuperconspectBuilder(SuperconspectBuilder):
                     }
                     for see_also in subject_info["see_also"]
                 ]
-
-            return f'<script type="application/json" id="subject-info">{json.dumps(suggestion_json, ensure_ascii=False)}</script>'
+            if suggestion_json:
+                return f'<script type="application/json" id="subject-info">{json.dumps(suggestion_json, ensure_ascii=False)}</script>'
 
         return None
 
