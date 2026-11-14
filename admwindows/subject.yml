@@ -1,0 +1,88 @@
+code: admwindows
+title: Администрирование в ОС Windows
+semester: 7
+year: 2026
+module: infrastructure-management
+lecturer: Береснев А. Д.
+description: На этом курсе будут рассматриваться технологии, инструменты, использующиеся в Windows Server, а также архитектура системы
+prerequisites:
+  - code: opersys
+    title: Операционные системы
+    link: opersys/opersys_superconspect.html
+see_also:
+  - code: admlinux
+    title: Администрирование в ОС Linux
+    link: admlinux/admlinux_superconspect.html
+
+based_on:
+  - type: textbook
+    ref: "Внутреннее устройство Windows (авторы: Марк Руссинович, Дэвид Соломон, Алекс Ионеску, Павел Йосифович)"
+  - type: course
+    ref: "Администрирование в ОС Windows (автор: Береснев А. Д., https://t.me/ITSMDao/336)"
+
+notes:
+  - number: 1
+    week: 2
+    date: 2026-09-07
+    title: История Windows и общая характеристика
+    format: live-online
+    status: done
+
+    notes: admwindows/admwindows_2026_09_07.html
+    sources_notes: admwindows/admwindows_2026_09_07.md
+
+  - number: 2
+    week: 4
+    date: 2026-09-21
+    title: Архитектура, управление и конфигурация Windows
+    format: live-online
+    status: done
+
+    notes: admwindows/admwindows_2026_09_21.html
+    sources_notes: admwindows/admwindows_2026_09_21.md
+
+  - number: 3
+    week: 6
+    date: 2026-10-05
+    title: PowerShell
+    format: live-online
+    status: done
+
+    notes: admwindows/admwindows_2026_10_05.html
+    sources_notes: admwindows/admwindows_2026_10_05.md
+
+  - number: 4
+    week: 8
+    date: 2026-10-19
+    title: Active Directory
+    format: postponed
+    postponed_to_date: 2026-11-02
+    status: not-planned
+
+  - number: 4
+    week: 10
+    date: 2026-11-02
+    title: Active Directory
+    format: live-online
+    status: done
+
+  - number: 5
+    week: 12
+    date: 2026-11-16
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 6
+    week: 14
+    date: 2026-11-30
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 7
+    week: 16
+    date: 2026-12-14
+    title: \-
+    format: live-online
+    status: planned
