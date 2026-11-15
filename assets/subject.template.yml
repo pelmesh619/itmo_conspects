@@ -41,6 +41,8 @@ see_also:
 # - typ - Typst
 # - tex - TeX
 notes_format: md
+# Использует ли конспект MathJax для отображения матформул? (false по умолчанию)
+uses_mathjax: true
 # Ссылка на заметку с информацией об экзамене
 exam_list_file: my/myfirstsubject/myfirstsubject_exam_list.html
 
