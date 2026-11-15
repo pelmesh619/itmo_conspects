@@ -93,8 +93,10 @@
 
 * Анализ данных и информационных поиск (лектор Хлопотов М. В.)
 
+    [**Весь курс**](https://pelmesh619.github.io/itmo_conspects/dataanalysis/dataanalysis_superconspect.html)
+
     * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/dataanalysis/dataanalysis_2026_09_14.html)
-    * Лекция №5 - в разработке
+    * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/dataanalysis/dataanalysis_2026_09_28.html)
     * Лекция №7 - в разработке
     * Лекция №9 - в разработке
     * Лекция №11 - в разработке
