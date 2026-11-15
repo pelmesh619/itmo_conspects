@@ -167,3 +167,48 @@ docker compose up
 ```bash
 docker compose down
 ```
+
+---
+
+Аналогично, используя Docker Compose, можно запускать контейнер с базой данных, например, PostgreSQL. Для базы данных требуется усложненная конфигурация, поэтому используется больше полей в файле `docker-compose.yml`:
+
+```yml
+services:
+  postgres:
+    # Используем готовый образ, который загрузится с Docker Hub
+    image: postgres:16-alpine
+    container_name: postgres
+    restart: unless-stopped
+    
+    # Переменные среды окружения
+    environment:
+      POSTGRES_USER: postgres
+      # Можно указать в формате `${}`, тогда Docker Compose
+      # обратится к файлу `.env`, где указана эта переменная
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: mydb
+    ports:
+      - "5432:5432"
+    
+    # Монтирование томов наружу
+    volumes:
+      # Вместо имени `postgres_data` можно указать точное
+      # местоположение на хосте
+      - postgres_data:/var/lib/postgresql/data
+    # Такой подход позволяет сохранить данные базы данных
+    # между перезагрузками контейнера
+
+    # Проверка здоровья контейнера
+    healthcheck:
+      # Здесь задана команда, которая проверяет, что приложение работает
+      # Если база данных работает, то `pg_isready` вернет код 0
+      test: ["CMD-SHELL", "pg_isready -U postgres -d mydb"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    # Такая проверка может использоваться другими контейнерами
+
+volumes:
+  postgres_data:
+```
