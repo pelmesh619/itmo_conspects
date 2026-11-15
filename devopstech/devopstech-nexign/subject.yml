@@ -1,0 +1,108 @@
+code: devopstech/devopstech-nexign
+title: Технологии сборки и развертывания программного обеспечения (DevOps)
+track_title: Трек от Nexign
+semester: 7
+year: 2026
+module: infrastructure-management
+lecturer: Кравченко А. П.
+description: В курс будет входить изучение DevOps-технологий, необходимых для непрерывных сборки и развертывания ПО, таких как Docker, Ansible, Kubernetes и виртуальные машины
+
+prerequisites:
+  - code: opersys
+    title: Операционные системы
+    link: opersys/opersys_superconspect.html
+  - code: telecomm
+    title: Телекоммуникационные системы и технологии
+    link: telecomm/telecomm_superconspect.html
+
+notes_format: md
+
+notes:
+  - number: 1
+    week: 1
+    date: 2026-09-01
+    title: Введение
+    format: live-online
+    status: done
+
+    notes: devopstech/devopstech-nexign_2026_09_01.html
+    source_notes: devopstech/devopstech-nexign_2026_09_01.md
+
+  - number: 2
+    week: 2
+    date: 2026-09-12
+    title: Контейнеризация
+    format: live-online
+    status: done
+
+    notes: devopstech/devopstech-nexign_2026_09_12.html
+    source_notes: devopstech/devopstech-nexign_2026_09_12.md
+
+  - number: 3
+    week: 3
+    date: 2026-09-15
+    title: Механизмы Docker
+    format: live-online
+    status: done
+
+    notes: devopstech/devopstech-nexign_2026_09_15.html
+    source_notes: devopstech/devopstech-nexign_2026_09_15.md
+
+  - number: 4
+    week: 4
+    date: 2026-09-22
+    title: Реестр Docker
+    format: live-online
+    status: done
+
+    notes: devopstech/devopstech-nexign_2026_09_22.html
+    source_notes: devopstech/devopstech-nexign_2026_09_22.md
+
+  - number: 5
+    week: 5
+    date: 2026-09-29
+    title: \-
+    format: live-online
+    status: in-progress
+
+  - number: 6
+    week: 6
+    date: 2026-10-06
+    title: \-
+    format: live-online
+    status: in-progress
+
+  - number: 7
+    week: 7
+    date: 2026-10-17
+    title: \-
+    format: live-online
+    status: in-progress
+
+  - number: 8
+    week: 8
+    date: 2026-10-20
+    title: \-
+    format: live-online
+    status: in-progress
+
+  - number: 9
+    week: 9
+    date: 2026-10-27
+    title: \-
+    format: live-online
+    status: in-progress
+
+  - number: 10
+    week: 10
+    date: 2026-11-03
+    title: \-
+    format: live-online
+    status: in-progress
+
+  - number: 11
+    week: 11
+    date: 2026-11-10
+    title: \-
+    format: live-online
+    status: in-progress
