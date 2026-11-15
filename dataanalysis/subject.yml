@@ -1,0 +1,74 @@
+code: dataanalysis
+title: Анализ данных и информационных поиск
+semester: 7
+year: 2026
+module: data-management
+lecturer: Хлопотов М. В.
+description: Курс посвящен изучению анализа данных (в англ. Data Mining) и методов поиска данных
+
+notes_format: md
+uses_mathjax: true
+exam_list_file: dataanalysis/dataanalysis_exam_list.md
+
+notes:
+  - number: 1
+    week: 1
+    date: 2026-09-14
+    title: Методология и структурный анализ данных
+    format: live-online
+    status: done
+
+    notes: dataanalysis/dataanalysis_2026_09_14.html
+    source_notes: dataanalysis/dataanalysis_2026_09_14.md
+
+  - number: 2
+    week: 2
+    date: 2026-09-28
+    title: Классический поиск и вероятностное ранжирование
+    format: live-online
+    status: done
+
+    notes: dataanalysis/dataanalysis_2026_09_28.html
+    source_notes: dataanalysis/dataanalysis_2026_09_28.md
+
+  - number: 3
+    week: 3
+    date: 2026-10-12
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 4
+    week: 4
+    date: 2026-10-26
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 5
+    week: 5
+    date: 2026-11-09
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 6
+    week: 6
+    date: 2026-11-23
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 7
+    week: 7
+    date: 2026-12-07
+    title: \-
+    format: live-online
+    status: planned
+
+  - number: 8
+    week: 8
+    date: 2026-12-21
+    title: \-
+    format: live-online
+    status: planned
