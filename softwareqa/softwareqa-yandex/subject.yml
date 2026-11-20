@@ -1,0 +1,122 @@
+code: softwareqa/softwareqa-yandex
+title: Тестирование ПО. Трек от Яндекса
+supercode: softwareqa
+semester: 7
+year: 2026
+module: software-engineering
+lecturer: Гилёва В. С.
+description: Курс посвящен тому, как проверять работоспособность программного обеспечения
+
+notes_format: md
+uses_mathjax: true
+
+lectures:
+  - number: 1
+    week: 1
+    date: 2026-09-04
+    title: Введение в тестирование
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_04.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_04.md
+
+  - number: 2
+    week: 2
+    date: 2026-09-11
+    title: Требования к ПО
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_11.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_11.md
+
+  - number: 3
+    week: 3
+    date: 2026-09-18
+    title: Проектирование тестов
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_18.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_18.md
+
+  - number: 4
+    week: 4
+    date: 2026-09-25
+    title: Классы эквивалентности и анализ граничных значений
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_25.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_09_25.md
+
+  - number: 5
+    week: 5
+    date: 2026-10-02
+    title: Таблицы решений и комбинации условий
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_02.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_02.md
+
+  - number: 6
+    week: 6
+    date: 2026-10-14
+    title: Тестирование переходов состояний
+    format: postponed
+    status: not-planned
+    postponed_to_date: 2026-10-14
+
+  - number: 6
+    week: 7
+    date: 2026-10-14
+    title: Тестирование переходов состояний
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_14.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_14.md
+
+  - number: 7
+    week: 7
+    date: 2026-10-14
+    title: Исследовательское тестирование
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_16.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_16.md
+
+  - number: 8
+    week: 8
+    date: 2026-10-23
+    title: Дефекты и баг-репорты
+    format: live-online
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_23.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_23.md
+
+  - number: 9
+    week: 9
+    date: 2026-10-30
+    title: Проектирование тестируемого кода
+    format: prerecorded
+    status: done
+    notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_30.html
+    sources_notes: softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_30.md
+
+  - number: 10
+    week: 10
+    date: 2026-11-06
+    title: Юнит-тесты
+    format: prerecorded
+    status: planned
+
+  - number: 11
+    week: 11
+    date: 2026-11-13
+    title: Тестирование API, интеграционное и контрактное тестирование
+    format: prerecorded
+    status: planned
+
+  - number: 12
+    week: 12
+    date: 2026-11-20
+    title: Системное тестирование и архитектура тестирования
+    format: live-online
+    status: planned
