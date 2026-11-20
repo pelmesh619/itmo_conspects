@@ -28,6 +28,7 @@
         * Лекция №9 - в разработке
         * Лекция №10 - в разработке
         * Лекция №11 - в разработке
+        * Лекция №12 - в разработке
 
 * Функциональное программирование
 
@@ -66,9 +67,10 @@
         * [Лекция №7.1](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_14.html)
         * [Лекция №7.2](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_16.html)
         * [Лекция №8](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_23.html)
-        * Лекция №9 - в разработке
+        * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/softwareqa/softwareqa-yandex/softwareqa-yandex_2026_10_30.html)
         * Лекция №10 - в разработке
         * Лекция №11 - в разработке
+        * Лекция №12 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
@@ -90,6 +92,7 @@
     * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_10_05.html)
     * Лекция №8 - перенесена
     * [Лекция №10](https://pelmesh619.github.io/itmo_conspects/admwindows/admwindows_2026_11_02.html)
+    * Лекция №12 - в разработке
 
 * Анализ данных и информационных поиск (лектор Хлопотов М. В.)
 
