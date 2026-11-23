@@ -61,9 +61,12 @@ notes:
   - number: 5
     week: 5
     date: 2026-09-29
-    title: \-
+    title: Инфраструктура как код. Ansible
     format: live-online
-    status: in-progress
+    status: done
+
+    notes: devopstech/devopstech-nexign_2026_09_29.html
+    source_notes: devopstech/devopstech-nexign_2026_09_29.md
 
   - number: 6
     week: 6
