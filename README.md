@@ -1,6 +1,6 @@
 # itmo_conspects
 
-**itmo_conspects** - сборник конспектов по разным предметам, созданных студентами направления "Разработка ПО" университета ИТМО (выпуск 2027 года)
+**itmo_conspects** - это сборник конспектов по разным предметам, созданных студентами направления "Разработка ПО" университета ИТМО (выпуск 2027 года)
 
 Если нашли какую-то ошибку - напишите мне ([t.me/pelmeshke](https://t.me/pelmeshke)) или сделайте [форк](https://github.com/pelmesh619/itmo_conspects/fork) с исправлением и пулл реквест
 
@@ -21,7 +21,7 @@
         * [Лекция №2](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_12.html)
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_15.html)
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_22.html)
-        * Лекция №5 - в разработке
+        * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_29.html)
         * Лекция №6 - в разработке
         * Лекция №7 - в разработке
         * Лекция №8 - в разработке
