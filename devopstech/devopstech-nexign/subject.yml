@@ -25,8 +25,8 @@ notes:
     format: live-online
     status: done
 
-    notes: devopstech/devopstech-nexign_2026_09_01.html
-    source_notes: devopstech/devopstech-nexign_2026_09_01.md
+    notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.html
+    source_notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_01.md
 
   - number: 2
     week: 2
@@ -35,8 +35,8 @@ notes:
     format: live-online
     status: done
 
-    notes: devopstech/devopstech-nexign_2026_09_12.html
-    source_notes: devopstech/devopstech-nexign_2026_09_12.md
+    notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_12.html
+    source_notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_12.md
 
   - number: 3
     week: 3
@@ -45,8 +45,8 @@ notes:
     format: live-online
     status: done
 
-    notes: devopstech/devopstech-nexign_2026_09_15.html
-    source_notes: devopstech/devopstech-nexign_2026_09_15.md
+    notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_15.html
+    source_notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_15.md
 
   - number: 4
     week: 4
@@ -55,8 +55,8 @@ notes:
     format: live-online
     status: done
 
-    notes: devopstech/devopstech-nexign_2026_09_22.html
-    source_notes: devopstech/devopstech-nexign_2026_09_22.md
+    notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_22.html
+    source_notes: devopstech/devopstech-nexign/devopstech-nexign_2026_09_22.md
 
   - number: 5
     week: 5
