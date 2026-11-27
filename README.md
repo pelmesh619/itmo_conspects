@@ -22,13 +22,14 @@
         * [Лекция №3](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_15.html)
         * [Лекция №4](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_22.html)
         * [Лекция №5](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_09_29.html)
-        * Лекция №6 - в разработке
+        * [Лекция №6](https://pelmesh619.github.io/itmo_conspects/devopstech/devopstech-nexign/devopstech-nexign_2026_10_06.html)
         * Лекция №7 - в разработке
         * Лекция №8 - в разработке
         * Лекция №9 - в разработке
         * Лекция №10 - в разработке
         * Лекция №11 - в разработке
         * Лекция №12 - в разработке
+        * Лекция №13 - в разработке
 
 * Функциональное программирование
 
@@ -42,6 +43,7 @@
         * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_15.html)
         * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_10_29.html)
         * [Лекция №11](https://pelmesh619.github.io/itmo_conspects/funcprog/funcprog-holopov/funcprog-holopov_2026_11_12.html)
+        * Лекция №13 - в разработке
 
 * Разработка нагруженных систем (лектор Суховицкий А. А.)
 
@@ -71,6 +73,7 @@
         * Лекция №10 - в разработке
         * Лекция №11 - в разработке
         * Лекция №12 - в разработке
+        * Лекция №13 - в разработке
 
 * Введение в технологическое предпринимательство (лектор Волхонцев А. А.)
 
@@ -82,6 +85,7 @@
     * [Лекция №7](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_17.html)
     * [Лекция №9](https://pelmesh619.github.io/itmo_conspects/techentrep/techentrep_2026_10_31.html)
     * Лекция №11 - в разработке
+    * Лекция №13 - в разработке
 
 * Администрирование в ОС Windows (лектор Береснев А. Д.)
 
@@ -103,6 +107,7 @@
     * Лекция №7 - в разработке
     * Лекция №9 - в разработке
     * Лекция №11 - в разработке
+    * Лекция №13 - в разработке
 
 ## [VI семестр](assets/meta/VI.md)
 
