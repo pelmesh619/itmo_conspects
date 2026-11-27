@@ -71,9 +71,12 @@ notes:
   - number: 6
     week: 6
     date: 2026-10-06
-    title: \-
+    title: Удаленный репозиторий Git
     format: live-online
-    status: in-progress
+    status: done
+
+    notes: devopstech/devopstech-nexign_2026_10_06.html
+    source_notes: devopstech/devopstech-nexign_2026_10_06.md
 
   - number: 7
     week: 7
